@@ -2,7 +2,7 @@
 - 👀 I’m interested in art
 - 🌱 I’m currently learning Clojure, Emacs, PostgresQL, SQLite, event driven microservices architecture and system design 
 - 💞️ I’m looking to collaborate on art related projects
-- 📫 How to reach me mugglebornpadawan@icloud.com
+- 📫 How to reach me [mugglebornpadawan].[at].[icloud.com]
 - 😄 Pronouns: he/him
 - ⚡ Fun fact: I am building my own light saber with special spells
 
