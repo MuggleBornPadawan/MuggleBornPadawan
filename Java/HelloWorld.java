@@ -12,7 +12,7 @@ public class HelloWorld {
         String formattedDateTime = currentDateTime.format(formatter);
 
         // Define the message to log
-        String message = "Hello, World! Current Date and Time: " + formattedDateTime;
+        String message = "Hello, Java World! Current Date and Time: " + formattedDateTime;
 
         // Print the message to the console
         System.out.println(message);
