@@ -23,3 +23,4 @@
 
 ;; Call the function to log the current decoded time
 (log-decoded-time *log-file*)
+(format t "Log written to hello_world.log~%")
