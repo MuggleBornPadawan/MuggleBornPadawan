@@ -13,8 +13,12 @@ def log_message(message):
         log_file.write(log_entry)
 
 def main():
+    # Get the current date and time
+    current_date_time = datetime.datetime.now()
+    # Format the date and time
+    formatted_date_time = current_date_time.strftime("%Y-%m-%d %H:%M:%S")
     # The message to be logged and printed
-    message = "Hello, Python World!"
+    message = "Hello, Python World! Current date and time is: " + str(formatted_date_time) 
     print(message)
     log_message(message)
     print("Log written to hello_world.log")
