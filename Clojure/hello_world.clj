@@ -14,3 +14,4 @@
 ;; Write the message to a log file
 (with-open [writer (FileWriter. "hello_world.log" true)] ;; Open the file in append mode
   (.write writer (str message "\n")))
+(println "Log written to hello_world.log")
