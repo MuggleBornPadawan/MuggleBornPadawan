@@ -1,15 +1,16 @@
-# Use Fedora as the base image
-FROM fedora:latest
+# Use Alpine Linux as the base image
+FROM alpine:latest
 
 # Install Python
-RUN dnf install -y python3
+RUN apk update
+RUN apk add python3
 
 # Copy the Python files into the container
-COPY python/date_sum.py /app/date_sum.py
-COPY python/test_date_sum.py /app/test_date_sum.py
+COPY date_sum.py /app/date_sum.py
+COPY test_date_sum.py /app/test_date_sum.py
 
 # Set the working directory for next set of commands
-WORKDIR /app/python
+WORKDIR /app
 
 # Run the tests
 CMD ["python3", "-m", "unittest", "test_date_sum.py"]
