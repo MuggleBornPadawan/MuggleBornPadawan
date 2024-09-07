@@ -12,5 +12,7 @@ COPY /Python /app
 WORKDIR /app
 
 # Run the tests
-CMD ["python3", "-m", "unittest", "test_date_sum.py"]
+# CMD ["python3", "-m", "unittest", "test_date_sum.py"]
 CMD ["python3", "hello_world.py"]
+
+#Create shell script to run multiple commands 
