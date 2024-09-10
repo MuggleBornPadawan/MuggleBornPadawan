@@ -4,3 +4,4 @@
 # Ignore compiled files
 *.class
 *.o
+.DS_Store
