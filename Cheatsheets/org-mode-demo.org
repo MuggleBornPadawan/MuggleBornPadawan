@@ -5,12 +5,12 @@
 * Welcome
 ** Sub heading
 *** TODO learn lists (Use C-c C-t to toggle)
-*** TODO learn markup
-*** TODO learn tables
+*** DONE learn markup
+*** learn tables
 *** TODO learn links
 *** TODO learn images
 *** TODO learn blocks
-*** TODO HOLD learn export settings
+*** TODO learn export settings
 
 ** Plain lists
 - unordered list (Use Shift left / right to change bullets)
@@ -25,23 +25,23 @@
   - item 4
       
 ** Ordered lists
-1. fruits
-   apple
+1. animals
+2. fruits
+   a. apple
    a. acorn
    b. bacon
    c. camel
    banana
    cinamon 
-2. animals
-3.  getto
+3. getto
    
 ** Checkbox items for tasks
-- [ ] task one (Use C-c C-c to toggle)
+- [X] task one (Use C-c C-c to toggle)
 - [ ] another 
 - [-] task two
   - [X] subtask one
   - [ ] subtask two
-- [ ] task three
+- [X] task three
   
 ** Markup list
 /_ combine _/
@@ -77,10 +77,6 @@
 | c              | c1       | c2       |
 |                |          |          |
 
-<<<<<<< HEAD
-test 
-=======
->>>>>>> 7f05cb7fdf25a07f16df21dd9622762126fb84fa
 
 
 
