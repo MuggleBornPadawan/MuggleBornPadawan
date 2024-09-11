@@ -4,7 +4,9 @@
   - Clojure, Eclipse Public License 1.0
   - OpenJDK, GNU GPL v2 license
   - Processing software sketchbook, GNU GPL v2 license
-- Integrated development environment: Editor Macros (Emacs), GNU GPL v3 license
+- Integrated development environment(s):
+  - Editor Macros (Emacs), GNU GPL v3 license
+  - Processing Development Environment (PDE), GNU GPL v2 license 
 - Database(s):
   - PostgreSQL, PostgreSQL license 
   - SQLite, public domain
