@@ -1,8 +1,65 @@
-# Ignore DS_Store files
+# macOS generated files
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# Ignore compiled files
-*.class
-*.o
-.DS_Store
-.DS_Store
+# Emacs backup files
+*~
+\#*\#
+
+# Compiled object files - Build artifacts 
+.o
+.out
+.a
+.so
+.exe
+.class
+
+# Environment and config files
+.env
+.local
+
+# Sensitive files
+.secret
+
+# SSH private keys
+id_rsa
+
+# Local Docker configuration files
+docker-compose.override.yml
+
+
+# Binary files
+.exe
+.bin
+.iso
+.tar.gz
+.zip
+
+# Temporary files (Logs retained)
+.tmp
+.temp
+.swp
+
+# Python Pipenv, Virtualenv configuration and cache files
+.venv/
+Pipfile.lock
+__pycache__/
+.py[cod]
+
+# Java dependencies
+target/
+.jar
+.war
+
+# Node.js dependencies
+node_modules/
+
+# PHP dependencies
+vendor/
+
+# Go binaries
+bin/
+
+# Rust target directory
+target/
