@@ -81,6 +81,14 @@
   - Multiple bind mounts (-v and --mount): You can mount directories or single files from the host to the container, which is useful for persistent data storage and configuration
 
 ** Docker compose
+  - components:
+    - version
+    - services
+      - web - frontend - image, ports, networks, depends on
+      - app - build / context, volumes, environment, command, networks 
+      - database - backend - image, environment, volumes, network 
+    - volumes (named mount for persistance / bind?) - dbdata
+    - networks (frontend and backend) 
   - docker-compose build | Builds (or rebuilds) the images for the services defined in the docker-compose.yml file
   - docker-compose up | Builds, (re)creates, starts, and attaches to containers defined in the docker-compose.yml file
   - docker-compose up -d | run in detached mode
