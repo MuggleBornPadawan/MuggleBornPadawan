@@ -1,8 +1,9 @@
 - 👋 Hi, I’m @MuggleBornPadawan
-- 👀 I’m building a bespoke generative visual art platform
+- 👀 I craft visual art using creative coding
 - 🌱 Programming language(s):
   - Clojure, Eclipse Public License 1.0
-  - OpenJDK, GNU GPL v2 license  
+  - OpenJDK, GNU GPL v2 license
+  - Processing software sketchbook, GNU GPL v2 license
 - Integrated development environment: Editor Macros (Emacs), GNU GPL v3 license
 - Database(s):
   - PostgreSQL, PostgreSQL license 
