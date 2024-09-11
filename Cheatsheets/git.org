@@ -1,0 +1,63 @@
+* Git Commands
+** Basic Git Commands
+git init | Initializes a new Git repository in your current directory
+git clone <repository-url> | Clones an existing repository to your local machine
+git status | Shows the current status of the working directory, including changed, staged, and untracked files
+git add <file> | Adds a specific file to the staging area for commit
+git add . | Adds all changes (modified, deleted, new files) in the current directory to the staging area
+git commit -m "Commit message" | Commits the staged changes with a message describing what the changes are
+git push origin <branch-name> | Pushes your local commits to a remote repository on the specified branch
+
+** Branching and merging
+git branch <branch-name> | Creates a new branch from the current one
+git checkout <branch-name> | Switches to the specified branch
+git checkout -b <branch-name> | Creates a new branch and switches to it immediately
+git merge <branch-name> | Merges the specified branch into the current branch
+
+** Remote repositories
+git remote add origin <repository-url> | Links your local repository to a remote repository
+git remote -v | Displays the remote repositories and their URLs
+git pull origin <branch-name> | Fetches and merges changes from the remote repository into your current branch
+git push origin <branch-name> | Pushes your committed changes to the specified remote branch
+
+** Viewing history and changes
+git log | Shows the commit history in the current branch
+git log --oneline | Displays the commit history with each commit on a single line
+git diff | Shows the differences between your working directory and the index (staged files)
+git diff <commit1> <commit2> | 	Shows the differences between two commits
+git diff --staged | Shows the differences between staged files and the latest commit
+
+** Undoing changes
+git reset <file> | Removes a file from the staging area but leaves its changes intact
+git checkout -- <file> | Reverts changes in a file back to the last committed version
+git commit --amend | Modifies the last commit by adding new changes or editing the commit message
+git reset --hard <commit-hash> | Resets the current branch to a specific commit and discards all changes after that commit
+
+** Stashing
+git stash | Temporarily saves your changes without committing them, allowing you to switch branches or work on something else
+git stash apply | Applies the most recent stash but keeps the stash
+git stash list | Shows a list of all stashed changes
+git stash pop | Applies the most recent stash and removes it from the stash list
+
+** Tagging
+git tag <tag-name>  | Tags a specific commit for release or reference
+git tag | Lists all tags in the repository
+git push origin --tags | Pushes all local tags to the remote repository
+
+** Collaboration and review
+git fetch | Downloads objects and refs from another repository without merging them into your current branch
+git rebase <branch-name> | Moves or “reapplies” your changes onto the top of another branch, creating a cleaner project history
+
+** Configuration and Information
+git config --global user.name "Your Name" | Set Global Username
+git config --global user.email "your.email@example.com" | Set Global Email
+git config --list | Shows the current Git configuration settings
+git branch | Lists all local branches, with the current one marked with an asterisk
+
+** Deleting branches
+git branch -d <branch-name> | Deletes a local branch (only if it is fully merged)
+git branch -D <branch-name> | Deletes a local branch even if it is not fully merged
+git push origin --delete <branch-name> | Deletes a branch from the remote repository
+
+
+
