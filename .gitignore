@@ -35,6 +35,7 @@ ehthumbs.db
 
 # Environment and config files
 .env
+.env.local
 .local
 
 # Sensitive files
