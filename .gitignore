@@ -7,13 +7,19 @@
 *~
 \#*\#
 
-# Compiled object files - Build artifacts 
+# Compiled object files - Build artifacts - Binaries
 .o
 .out
 .a
 .so
 .exe
 .class
+.jar
+.war
+.bin
+.iso
+.tar.gz
+.zip
 
 # Environment and config files
 .env
@@ -28,14 +34,6 @@ id_rsa
 # Local Docker configuration files
 docker-compose.override.yml
 
-
-# Binary files
-.exe
-.bin
-.iso
-.tar.gz
-.zip
-
 # Temporary files (Logs retained)
 .tmp
 .temp
@@ -49,8 +47,6 @@ __pycache__/
 
 # Java dependencies
 target/
-.jar
-.war
 
 # Node.js dependencies
 node_modules/
