@@ -50,6 +50,7 @@ docker-compose.override.yml
 .tmp
 .temp
 .swp
+.nrepl-port
 .Rhistory
 .Rapp.history
 
@@ -73,3 +74,17 @@ bin/
 
 # Rust target directory
 target/
+
+# Others - clojure?
+
+/target
+/classes
+/checkouts
+profiles.clj
+pom.xml
+pom.xml.asc
+/.lein-*
+/.nrepl-port
+/.prepl-port
+.hgignore
+.hg/
