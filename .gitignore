@@ -38,6 +38,8 @@ docker-compose.override.yml
 .tmp
 .temp
 .swp
+.Rhistory
+.Rapp.history
 
 # Python Pipenv, Virtualenv configuration and cache files
 .venv/
