@@ -13,7 +13,7 @@
     ;; Log the output to a file
     (let ((log-file "elisp-log.txt"))
       (with-temp-buffer
-        (insert (format "Hello, Elisp xWorld!\nLogged at: %s\n\n" current-datetime))
+        (insert (format "Hello, Elisp World!\nLogged at: %s\n\n" current-datetime))
         (append-to-file (point-min) (point-max) log-file)))))
 
 ;; Execute the function
