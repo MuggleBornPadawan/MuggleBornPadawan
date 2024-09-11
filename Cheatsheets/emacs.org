@@ -1,86 +1,79 @@
 #+Title: Emacs Basics - commands
 #+Author: Muggle Born Padawan
 
-* Emacs basics (BoF)
-
+* Emacs basics
 
 ** Init.el file to be configured with full screen, font size / theme, windows in the startup frame  
 
-toggle-frame-fullscreen
-C-x C-c quit emacs
-C-g quit command
-
-C-x C-+ increase font size
-C-x C— decrease font size 
-
-C-h <command> help 
-C-h v variables
-C-h a Apropos 
-
-Esc-Esc-Esc - all purpose “get out” command 
+  - toggle-frame-fullscreen
+  - C-x C-c quit emacs
+  - C-g quit command
+  - C-x C-+ increase font size
+  - C-x C— decrease font size 
+  - C-h <command> help 
+  - C-h v variables
+  - C-h a Apropos 
+  - Esc-Esc-Esc - all purpose “get out” command
+    
 ** Help
-<C-h k key-binding> describe key binding
-<C-h f> desribe function 
+  - <C-h k key-binding> describe key binding
+  - <C-h f> desribe function 
 
 ** IDE setup
-fn-f8 treemacs
+  - fn-f8 treemacs
 
 ** Buffers / Windows / Panes? / Frames
-C-x C-b show buffers
-C-x 1 kill all other windows
-C-h k <C-f> shrinks current window and shows documentation 
-C-x k kill buffer
-C-x C-b show buffer list in another window 
-C-x o move cursor to other window
-C-x 0 close current window 
-C-x 5 2 opens new frame
-C-x 5 0 closes the new frame 
-C-x 5 o move between frames
-
+  - C-x C-b show buffers
+  - C-x 1 kill all other windows
+  - C-h k <C-f> shrinks current window and shows documentation 
+  - C-x k kill buffer
+  - C-x C-b show buffer list in another window 
+  - C-x o move cursor to other window
+  - C-x 0 close current window 
+  - C-x 5 2 opens new frame
+  - C-x 5 0 closes the new frame 
+  - C-x 5 o move between frames
 
 ** Navigation
-<M-g g> go to line
-C-v M-v to move pages down and up
-C-l - move screen up down centre around the cursor location 
-C-p previous line
-C-n - next line
-C-b backward char | M-b backward word
-C-f forward char | M-f forward word 
-C-a beginning of line | M-a beginning of sentence
-C-e end of line | M-e end of sentence 
-M-< beginning of whole text
-M-> end of whole text
-C-u 10 C-n moves down 10 lines 
-
+  - <M-g g> go to line
+  - C-v M-v to move pages down and up
+  - C-l - move screen up down centre around the cursor location 
+  - C-p previous line
+  - C-n - next line
+  - C-b backward char | M-b backward word
+  - C-f forward char | M-f forward word 
+  - C-a beginning of line | M-a beginning of sentence
+  - C-e end of line | M-e end of sentence 
+  - M-< beginning of whole text
+  - M-> end of whole text
+  - C-u 10 C-n moves down 10 lines 
 
 ** Text selection and copy / paste / undo 
-M-w - copy text
-C-w - kill or cut text
-C-k - delete text from cursor to end of the line (kill line)
-C-<spc> start selection 
-C-y yank most recent kill
-M-y yank previous kills
-C-/ undo 
-C-_ undo
-C-x u undo 
-C-x h select all
+  - M-w - copy text
+  - C-w - kill or cut text
+  - C-k - delete text from cursor to end of the line (kill line)
+  - C-<spc> start selection 
+  - C-y yank most recent kill
+  - M-y yank previous kills
+  - C-/ undo 
+  - C-_ undo
+  - C-x u undo 
+  - C-x h select all
 
 
 ** Files
-C-x C-f find file
-C-x C-s save file
-C-x s Save some buffers to files
+  - C-x C-f find file
+  - C-x C-s save file
+  - C-x s Save some buffers to files
 
 
 ** Search
-C-s Regex search
-C-r Regex search for everything before this location 
+  - C-s Regex search
+  - C-r Regex search for everything before this location (reverse) 
 
 
 ** Fun stuff
-<M-x cider-drink-a-sip>
-;; tetris
-;; calendar
-;; doctor?? 
-
-* End of file (EoF)
+ - M-x cider-drink-a-sip
+ - M-x tetris
+ - M-x calendar
+ - M-x doctor
