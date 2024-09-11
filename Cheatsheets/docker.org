@@ -3,11 +3,23 @@
   - docker info
   - docker --version
   - open /Applications/Docker.app | start docker engine 
-  - HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1 (Dockerfile)
   - docker scan myapp 
 
 ** Dockerfile
+  - FROM ubuntu:latest | # Base image
+  - LABEL maintainer="your-email@example.com" | # Author metadata
+  - RUN apt-get update && apt-get install -y python3 | # Install dependencies
+  - COPY ./app /usr/src/app | # Copy files from host to container
+  - ADD https://example.com/file.tar.gz /app | # Downloads and extracts a file from a URL directly into the container
+  - WORKDIR /usr/src/app | # Set the working directory
+  - EXPOSE 8080 | # Expose the application port 
+  - CMD ["python3", "app.py"] | # Define the default command to run
+  - ENTRYPOINT ["python3", "app.py"] | Ensures that the Python app is always executed as the entry point of the container
+  - ARG VERSION=1.0 | Defines a build-time variable. Unlike ENV, which is available during runtime, ARG is only available during the image build process
+  - USER appuser | Specifies the user to run subsequent commands. By default, Docker runs everything as root, but this can be changed for security reasons
+  - SHELL ["/bin/bash", "-c"] | Specifies that all RUN commands should use bash
   - ENV APP_ENV=production (Dockerfile)
+  - HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1 
   - docker run -e APP_ENV=production myapp | run in bash 
   - RUN useradd -m myuser (Dockerfile)
   - USER myuser (Dockerfile)
@@ -23,6 +35,9 @@
   - docker tag <image-id> <repository>:<tag> | Tags an image with a new name and tag |
     docker tag myapp:latest myapp:v1.0
   - docker push <repository>:<tag> | Pushes a tagged image to a Docker registry (e.g., Docker Hub)
+
+** Multistage build
+  - layers of applications / OSs - to be explored further
 
 ** Containers
   - docker ps | list active containers 
