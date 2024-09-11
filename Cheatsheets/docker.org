@@ -15,10 +15,10 @@
   - EXPOSE 8080 | # Expose the application port 
   - CMD ["python3", "app.py"] | # Define the default command to run
   - ENTRYPOINT ["python3", "app.py"] | Ensures that the Python app is always executed as the entry point of the container
+  - ENV APP_ENV=production | Sets the APP_ENV environment variable inside the container 
   - ARG VERSION=1.0 | Defines a build-time variable. Unlike ENV, which is available during runtime, ARG is only available during the image build process
   - USER appuser | Specifies the user to run subsequent commands. By default, Docker runs everything as root, but this can be changed for security reasons
   - SHELL ["/bin/bash", "-c"] | Specifies that all RUN commands should use bash
-  - ENV APP_ENV=production (Dockerfile)
   - HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1 
   - docker run -e APP_ENV=production myapp | run in bash 
   - RUN useradd -m myuser (Dockerfile)
