@@ -81,9 +81,34 @@
   - Multiple bind mounts (-v and --mount): You can mount directories or single files from the host to the container, which is useful for persistent data storage and configuration
 
 ** Docker compose
-  - docker-compose up
+  - docker-compose build | Builds (or rebuilds) the images for the services defined in the docker-compose.yml file
+  - docker-compose up | Builds, (re)creates, starts, and attaches to containers defined in the docker-compose.yml file
   - docker-compose up -d | run in detached mode
-  - docker-compose down
+  - docker-compose down | Stops and removes all the containers, networks, and volumes defined in the docker-compose.yml file. It completely cleans up after the services
+  - docker-compose stop | Stops the running containers but leaves them available to restart
+  - docker-compose down --volumes | To remove the containers, networks, and volumes associated with the services
+  - docker-compose build <service_name> | You can also specify a single service to build
+  - docker-compose build --no-cache | To force a rebuild without using cache
+  - docker-compose run web /bin/bash | shell
+  - docker-compose run web python manage.py migrate | passign arguments
+  - docker-compose ps | list all containers
+  - docker-compose logs
+  - docker-compose logs <service_name>
+  - docker-compose logs --timestamps
+  - docker-compose logs -f | realtime
+  - docker-compose up --scale <service_name>=<num_instances> | scaling
+  - docker-compose up --scale web=3 | example: 3 instances are run
+  - docker-compose images
+  - docker-compose pause
+  - docker-compose unpause
+  - docker-compose restart
+  - docker-compose restart <service_name>
+  - docker-compose rm
+  - docker-compose rm -f | forcefully remove
+  - docker-compose rm -v | remove volumes as well
+  - docker-compose config
+  - docker-compose config --services | YAML validity
+  - docker-compose exec <service_name> <command> | Runs a command inside an already running container
 
 ** Container networking
   - docker network ls | Lists all Docker networks
