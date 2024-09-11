@@ -16,7 +16,6 @@
 .exe
 .a
 
-
 # Node.js dependencies
 node_modules
 
@@ -30,10 +29,10 @@ target/
 vendor/
 
 # Logs and temporary files
-*.log
-*.tmp
-*.swp
-*.swo
+.log
+.tmp
+.swp
+.swo
 
 # Environment variables and sensitive files
 .env
