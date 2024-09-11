@@ -1,0 +1,98 @@
+#+title: playing with org mode
+#+author: muggle born padawan
+#+date: (org-export-timestamp-file)
+
+* Welcome
+** Sub heading
+*** TODO learn lists (Use C-c C-t to toggle)
+*** TODO learn markup
+*** TODO learn tables
+*** TODO learn links
+*** TODO learn images
+*** TODO learn blocks
+*** TODO HOLD learn export settings
+
+** Plain lists
+- unordered list (Use Shift left / right to change bullets)
+  - item 1
+    twer
+    wer
+    
+  - item 2  (Use M-up or M-down to reorder)
+    item x
+  - item 3 (Use M-left or M-right to indent)
+    sdfgs
+  - item 4
+      
+** Ordered lists
+1. fruits
+   apple
+   a. acorn
+   b. bacon
+   c. camel
+   banana
+   cinamon 
+2. animals
+3.  getto
+   
+** Checkbox items for tasks
+- [ ] task one (Use C-c C-c to toggle)
+- [ ] another 
+- [-] task two
+  - [X] subtask one
+  - [ ] subtask two
+- [ ] task three
+  
+** Markup list
+/_ combine _/
+- Bold (Use * before and after)
+  *bold*
+- Italics (Use / before and after)
+  /italics/
+- Underline (Use underscore before and after) 
+  _underline_
+- Strikethrough (Use plus sign before and after)
+  +strikethrough+
+- Combine (not working .. check later) 
+  *combine*
+
+** Links
+- link to website and description
+  [[http://www.google.co.in] [search engine]]
+- link to an image from local folder
+- link to internal heading
+  [[*Pla ] [internal header link]]
+
+
+#+begin_src emacs-lisp (press C-x C-e to evaluate buffer)
+  (message "Hello world")
+  (+ 10 23 34)
+#+end_src
+
+** Table
+| Header 1       | Header 2 | Header 3 |
+|----------------+----------+----------|
+| apple has more | a1       | a2       |
+| b              | b1       | b2       |
+| c              | c1       | c2       |
+|                |          |          |
+
+<<<<<<< HEAD
+test 
+=======
+>>>>>>> 7f05cb7fdf25a07f16df21dd9622762126fb84fa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;; end of file 
