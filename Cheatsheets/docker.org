@@ -1,17 +1,17 @@
 * Docker learn
 ** General
-  docker info
-  docker --version
-  open /Applications/Docker.app
-  ENV APP_ENV=production (Dockerfile)
-  docker run -e APP_ENV=production myapp
-  HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1 (Dockerfile)
-  RUN apt-get update && apt-get install -y \
-    build-essential && \
-    rm -rf /var/lib/apt/lists/* (Dockerfile)
-  docker scan myapp
-  RUN useradd -m myuser (Dockerfile)
-  USER myuser (Dockerfile)
+  - docker info
+  - docker --version
+  - open /Applications/Docker.app
+  - ENV APP_ENV=production (Dockerfile)
+  - docker run -e APP_ENV=production myapp
+  - HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1 (Dockerfile)
+  - RUN apt-get update && apt-get install -y \
+      build-essential && \
+      rm -rf /var/lib/apt/lists/* (Dockerfile)
+  - docker scan myapp
+  - RUN useradd -m myuser (Dockerfile)
+  - USER myuser (Dockerfile)
 
 ** Images
   docker images
