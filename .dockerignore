@@ -2,9 +2,22 @@
 .git
 .gitignore
 
-# macOS files
+# MacOS and other OS generated files
 .DS_Store
 .AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+.directory
+
+# Emacs and other IDE backup files
+*~
+\#*\#
+.idea/
+.vscode/
+.sublime-project
+.sublime-workspace
+.iml
 
 # Build artifacts
 .o
@@ -16,9 +29,6 @@
 .exe
 .a
 
-# Node.js dependencies
-node_modules
-
 # Python virtual environments
 venv/
 
@@ -27,6 +37,9 @@ target/
 
 # PHP dependencies
 vendor/
+
+# Node.js dependencies
+node_modules
 
 # Logs and temporary files
 .log
@@ -44,5 +57,6 @@ docker-compose.override.yml
 
 # Mercurial files
 .hg
+
 # Subversion files
 .svn
