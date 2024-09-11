@@ -12,14 +12,27 @@ RUN apt-get update && apt-get install -y \
 docker scan myapp
 RUN useradd -m myuser (Dockerfile)
 USER myuser (Dockerfile)
+
 ** Images
 docker images
+docker pull <image> | Pulls a Docker image from Docker Hub (or other remote repositories)
 docker rmi <image_name>
+
 ** Containers
 docker ps
 docker ps -a
+docker run <image>
+docker run -d <image> | run in detached mode
+docker run -it <image> | Runs a container interactively, attaching a terminal to it
+docker run -it ubuntu bash | Runs an Ubuntu container and opens a Bash shell inside it
+docker stop <container-id> | Stops a running container gracefully
 docker stop $(docker ps -q)
+docker kill <container-id> | Forcefully kills the container immediately
+docker start <container-id> | 	Starts a container that has been previously stopped
+docker restart <container-id> | Restarts a running or stopped container
 docker rm <container_name>
+docker rm -f <container-id> | Removes a running container by force
 docker container prune 
+
 ** Volumes
 docker run -v /host/data:/container/data myapp
