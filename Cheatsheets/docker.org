@@ -2,17 +2,19 @@
 ** General
   - docker info
   - docker --version
-  - open /Applications/Docker.app
-  - ENV APP_ENV=production (Dockerfile)
-  - docker run -e APP_ENV=production myapp
+  - open /Applications/Docker.app | start docker engine 
   - HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1 (Dockerfile)
+  - docker scan myapp
+
+** Dockerfile
+  - ENV APP_ENV=production (Dockerfile)
+  - docker run -e APP_ENV=production myapp | run in bash 
+  - RUN useradd -m myuser (Dockerfile)
+  - USER myuser (Dockerfile)
   - RUN apt-get update && apt-get install -y \
       build-essential && \
       rm -rf /var/lib/apt/lists/* (Dockerfile)
-  - docker scan myapp
-  - RUN useradd -m myuser (Dockerfile)
-  - USER myuser (Dockerfile)
-
+      
 ** Images
   - docker images
   - docker pull <image> | Pulls a Docker image from Docker Hub (or other remote repositories)
