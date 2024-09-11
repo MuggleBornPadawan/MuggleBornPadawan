@@ -21,11 +21,10 @@
   - SHELL ["/bin/bash", "-c"] | Specifies that all RUN commands should use bash
   - HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1 
   - docker run -e APP_ENV=production myapp | run in bash 
-  - RUN useradd -m myuser (Dockerfile)
-  - USER myuser (Dockerfile)
+  - RUN useradd -m myuser 
   - RUN apt-get update && apt-get install -y \
       build-essential && \
-      rm -rf /var/lib/apt/lists/* (Dockerfile)
+      rm -rf /var/lib/apt/lists/* 
       
 ** Images
   - docker images | list all images
