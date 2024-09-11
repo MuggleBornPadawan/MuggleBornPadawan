@@ -1,11 +1,23 @@
-# macOS generated files
+# Use this to set global gitconfig in bash: git config --global core.excludesfile ~/.gitignore_global
+
+# Use this to remove already commited files in bash: git rm --cached filename
+
+# MacOS and other OS generated files
 .DS_Store
 .AppleDouble
 .LSOverride
+Thumbs.db
+ehthumbs.db
+.directory
 
-# Emacs backup files
+# Emacs and other IDE backup files
 *~
 \#*\#
+.idea/
+.vscode/
+.sublime-project
+.sublime-workspace
+.iml
 
 # Compiled object files - Build artifacts - Binaries
 .o
