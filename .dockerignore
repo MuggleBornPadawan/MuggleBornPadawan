@@ -1,0 +1,49 @@
+# Version control
+.git
+.gitignore
+
+# macOS files
+.DS_Store
+.AppleDouble
+
+# Build artifacts
+.o
+.so
+.out
+.class
+.jar
+.war
+.exe
+.a
+
+
+# Node.js dependencies
+node_modules
+
+# Python virtual environments
+venv/
+
+# Java dependencies
+target/
+
+# PHP dependencies
+vendor/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Environment variables and sensitive files
+.env
+.env.local
+.secret
+
+# Docker-specific local files
+docker-compose.override.yml
+
+# Mercurial files
+.hg
+# Subversion files
+.svn
