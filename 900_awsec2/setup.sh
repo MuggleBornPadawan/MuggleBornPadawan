@@ -1,33 +1,22 @@
 #!/bin/sh
-echo "setup of ec2"
+echo "setup of aws ec2 linux"
+cd
+rm -rf .bash_history
 sudo yum update -y
 sudo yum upgrade -y
 sudo yum install -y git
-git --version
 git clone https://github.com/MuggleBornPadawan/MuggleBornPadawan.git
-
-sudo yum install -y emacs python3 vim sqlite sbcl
+whoami
+uname
+curl ifconfig.me
 emacs --version
+java --version
 python3 --version
 vim --version
 sqlite3 --version
-sbcl --version
-
-sudo yum install -y wget
-wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-chmod +x lein
-sudo mv lein /usr/local/bin/
+clisp --version
 clojure --version
-
-sudo amazon-linux-extras enable R3.4
-sudo yum install -y R
 R --version
-
-sudo amazon-linux-extras enable postgresql12
-sudo yum install -y postgresql-server postgresql
+git --version
 psql --version
-
-sudo yum groupinstall -y "Development Tools"
-
-
-
+rm -rf .bash_history
