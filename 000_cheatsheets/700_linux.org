@@ -1,0 +1,86 @@
+#+title: linux commands
+* fedora
+** packages
+sudo dnf -y git gs python3 neofetch top htop curl emacs
+** file and directory commands
+ls
+ls -l  # detailed listing
+ls -a  # shows hidden files
+cd /path/to/directory  # navigate to a directory
+cd ~                   # go to home directory
+cd ..                  # move one directory up
+pwd
+mkdir new_directory
+rm filename          # delete a file
+rm -r directoryname  # delete a directory and its contents
+cp source_file destination_directory
+cp -r source_directory destination_directory  # copy directory recursively
+mv old_name new_name  # rename a file or directory
+mv file_name /path/to/destination  # move to another directory
+** file viewing and editing commands
+cat file_name
+cat file1.txt file2.txt
+cat file1.txt file2.txt > newfile.txt # concat to new file 
+cat file1.txt file2.txt >> existingfile.txt # concat and append to new file
+cat file1.txt file2.txt | grep "search_term" # search for search_term in the combined output of file1.txt and file2.txt
+cat > newfile.txt # create new file; type content and press Ctrl+D
+cat >> existingfile.txt # append to existing file
+cat -n file_name # numbering lines
+cat -v file_name # display non printable chars (tab / line breaks)
+cat -s file_name # suppress multiple blank lines
+cat -E file_name # end of line markers
+cat file_name | less # display page by page
+emacs file_name  # opens the file for editing
+nano file_name  # opens the file for editing
+less file_name
+head file_name
+tail file_name
+** system information commands
+uname
+uname -r
+df -h  # disk space; human-readable format
+du -h  # usage of files and directories; human-readable format
+top
+sudo dnf install htop
+htop
+free -h
+** package management with dnf
+sudo dnf update
+sudo dnf upgrade
+sudo dnf install package_name
+sudo dnf remove package_name
+sudo dnf search package_name
+** user and permission commands
+chmod 755 file_name  # Give owner full access, others read and execute
+sudo chown new_owner:new_group file_name
+** network commands
+whoami
+uname
+ping google.com
+ifconfig  # might need to install net-tools
+curl ifconfig.me
+ip addr
+curl https://example.com
+** searching and finding files
+find /path/to/search -name "file_name"
+grep "search_term" file_name
+** others
+clear
+history
+alias ll="ls -la"  # example to list files with details and hidden files
+** to be checked
+neofetch
+path
+top, free, iostat, htop, vmstat, or iftop
+dmesg
+ps
+tail
+systemctl
+lsof
+journalctl
+strace
+free 
+lscpu
+** getting help
+man command_name
+command_name -h #?
