@@ -21,9 +21,10 @@
 |----------+-------------+------------+--------------|
 | notation | particulars | cheatsheet | file folders |
 |----------+-------------+------------+--------------|
-|      810 | jenkins     | tbd        | tbd          |
-|      900 | aws         | tbd        | setup done   |
-|          |             |            |              |
+|      810 | jenkins     | tbf        | tbd          |
+|      900 | aws         | tbf        | setup done   |
+|      600 | postgresql  | tbf        | tbf          |
+|      610 | sqlite      | tbf        | tbf          |
 |----------+-------------+------------+--------------|
 
 
