@@ -16,7 +16,7 @@
 - cp source_file destination_directory
 - cp -r source_directory destination_directory  # copy directory recursively
 - mv old_name new_name  # rename a file or directory
-mv file_name /path/to/destination  # move to another directory
+- mv file_name /path/to/destination  # move to another directory
 ** file viewing and editing commands
 - cat file_name
 - cat file1.txt file2.txt
