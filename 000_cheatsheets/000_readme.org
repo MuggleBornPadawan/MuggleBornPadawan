@@ -1,0 +1,29 @@
+#+title: notations
+* numbering system
+|---------+-----------+-----------+--------------+----------------------------------|
+| primary | secondary | teritiary | particulars  | comments                         |
+|---------+-----------+-----------+--------------+----------------------------------|
+|       0 |         0 |         0 | cheatsheets  | packages and utilities           |
+|       1 |         0 |         0 | lisp         | comman lisp                      |
+|       1 |         1 |         0 | lisp dialect | clojure                          |
+|       2 |         0 |         0 | java         |                                  |
+|       3 |         0 |         0 | python       |                                  |
+|       4 |         0 |         0 | statistics   | r                                |
+|       5 |         0 |         0 | art          | processing, quil, visualization  |
+|       7 |         0 |         0 | os           | linux                            |
+|       8 |         0 |         0 | ci/cd        | git, jenkins, docker, kubernates |
+|         |           |           |              |                                  |
+|       9 |         0 |         0 | cloud        | aws                              |
+|         |           |           |              |                                  |
+|---------+-----------+-----------+--------------+----------------------------------|
+
+* to be included
+|----------+-------------+------------+--------------|
+| notation | particulars | cheatsheet | file folders |
+|----------+-------------+------------+--------------|
+|      810 | jenkins     | tbd        | tbd          |
+|      900 | aws         | tbd        | setup done   |
+|          |             |            |              |
+|----------+-------------+------------+--------------|
+
+
