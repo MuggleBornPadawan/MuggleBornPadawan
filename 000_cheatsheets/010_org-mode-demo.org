@@ -1,0 +1,134 @@
+#+title: playing with org mode
+#+author: muggle born padawan
+#+date: (org-export-timestamp-file)
+
+* Welcome
+** Sub heading
+*** TODO learn lists (Use C-c C-t to toggle)
+*** DONE learn markup
+*** learn tables
+*** TODO learn links
+*** TODO learn images
+*** TODO learn blocks
+*** TODO learn export settings
+
+** Plain lists
+- unordered list (Use Shift left / right to change bullets)
+  - item 1
+    twer
+    wer
+    
+  - item 2  (Use M-up or M-down to reorder)
+    item x
+  - item 3 (Use M-left or M-right to indent)
+    sdfgs
+  - item 4
+      
+** Ordered lists
+1. animals
+2. fruits
+   a. apple
+   a. acorn
+   b. bacon
+   c. camel
+   banana
+   cinamon 
+3. getto
+   
+** Checkbox items for tasks
+- [X] task one (Use C-c C-c to toggle)
+- [ ] another 
+- [-] task two
+  - [X] subtask one
+  - [ ] subtask two
+- [X] task three
+  
+** Markup list
+/_ combine _/
+- Bold (Use * before and after)
+  *bold*
+- Italics (Use / before and after)
+  /italics/
+- Underline (Use underscore before and after) 
+  _underline_
+- Strikethrough (Use plus sign before and after)
+  +strikethrough+
+- Combine (not working .. check later) 
+  *combine*
+
+** Links
+- link to website and description
+  [[http://www.google.co.in] [search engine]]
+- link to an image from local folder
+- link to internal heading
+  [[*Pla ] [internal header link]]
+
+
+#+begin_src emacs-lisp (press C-x C-e to evaluate buffer)
+  (message "Hello world")
+  (+ 10 23 34)
+#+end_src
+
+** Table
+| Header 1       | Header 2 | Header 3 |
+|----------------+----------+----------|
+| apple has more | a1       | a2       |
+| b              | b1       | b2       |
+| c              | c1       | c2       |
+|                |          |          |
+
+*** Insert and Modify
+
+- TAB or S-TAB – Move to the next or previous table cell.
+- TAB jumps to the next cell.
+- S-TAB (Shift + TAB) goes to the previous cell.
+- RET – Insert a new row below the current row and move the cursor to the first cell of the new row.
+- M-RET (Meta + RET) – Insert a new row or column. If the cursor is at the end of a row, it creates a new row. If it is at the end of a column, it creates a new column.
+- | – Type this character at any place and it will start a table when followed by a TAB.
+
+*** Resizing and Aligning
+- C-c C-c – Align the table. This ensures that the columns are properly spaced.
+- C-c TAB – Re-align the table based on its current structure. This is useful when you have manually modified content and want to fix the alignment.
+- M-S-right/left – Move the current column to the right or left.
+- M-S-up/down – Move the current row up or down.
+
+*** Column and Row Operations
+- C-c - – Insert a horizontal line separator below the current row.
+- C-c C-w – Widen the current column.
+- C-c C-n – Narrow the current column.
+- M-right/left – Increase or decrease the width of the column under the cursor.
+- C-c C-x M-w – Copy a region of a table to the kill ring (copy).
+- C-c C-x M-y – Paste a previously copied region of a table.
+
+*** Deleting Rows/Columns
+- C-c C-d – Delete the current row.
+- M-S-left/right – Delete the current column (or move it left/right).
+
+*** Calculations and Formulas
+- C-c = – Recalculate all formulas in the current table.
+- C-c + – Insert a formula into the current table cell.
+- C-c * – Recalculate the current cell (useful when working with tables that have numeric data).
+
+*** Advanced Table Operations
+- C-c ~ – Toggle the display of a table in spreadsheet mode, useful for complex calculations.
+- C-c ^ – Sort the table. You will be prompted to enter the column and the type of sorting (numerical or alphabetical).
+- C-c C-s – Split a table at the current point into two separate tables.
+
+*** Creating a Table from Delimited Data
+If you have data separated by spaces, commas, or tabs, you can easily convert it into an Org mode table.
+- Select the text you want to convert.
+- Press C-c | – This will convert the selected region into an Org mode table by detecting the delimiters.
+
+*** Navigating Inside a Table
+- TAB – Jump to the next field.
+- S-TAB – Jump to the previous field.
+- M-a – Move to the beginning of the table cell.
+- M-e – Move to the end of the table cell.
+
+
+
+
+
+
+
+;; end of file 
