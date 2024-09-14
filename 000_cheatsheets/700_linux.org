@@ -63,7 +63,31 @@
 - curl https://example.com
 ** searching and finding files
 - find /path/to/search -name "file_name"
-- grep "search_term" file_name
+- grep "search_term" file_name 
+- `grep "search_term" file.txt` - Search for "search_term" in file.txt
+- `grep -i "search_term" file.txt` - Search for "search_term" in file.txt, ignoring case
+- `grep -v "search_term" file.txt` - Search for lines that do not contain "search_term" in file.txt
+- `grep -c "search_term" file.txt` - Count the number of lines containing "search_term" in file.txt
+- `grep -n "search_term" file.txt` - Search for "search_term" in file.txt and display line numbers
+- `grep -l "search_term" file.txt` - Search for "search_term" in file.txt and display only file names with matches
+- `grep -r "search_term" directory/` - Recursively search for "search_term" in directory and subdirectories
+- `grep -E "search_term1|search_term2" file.txt` - Search for lines containing either "search_term1" or "search_term2" in file.txt
+- `grep -P "search_term" file.txt` - Search for "search_term" in file.txt using Perl-compatible regular expressions
+- `grep -f search_terms.txt file.txt` - Search for multiple search terms in file.txt, one per line in search_terms.txt
+- `ls -l | grep ".txt"` - Search for files with the ".txt" extension in the current directory
+- `grep "search_term" file1.txt file2.txt` - Search for "search_term" in multiple files
+- `grep -Pzo "pattern" file` - Search for a pattern using Perl-compatible regular expressions, with zero-separated output
+- `grep -rno "pattern" directory` - Recursively search for a pattern in a directory, showing line numbers and file names
+- `grep -f patterns.txt file` - Search for multiple patterns in a file, with patterns defined in patterns.txt
+- `grep -E "pattern1|pattern2" file` - Search for lines containing either pattern1 or pattern2
+- `grep -v -E "pattern1|pattern2" file` - Search for lines not containing either pattern1 or pattern2
+- `grep -oP "pattern" file` - Print only the matched text, using Perl-compatible regular expressions
+- `grep -A 2 -B 1 "pattern" file` - Print 2 lines after and 1 line before each match
+- `grep -m 5 "pattern" file` - Stop after finding 5 matches
+- `grep --color=auto "pattern" file` - Highlight matched text in color
+- `grep -R "pattern" directory` - Recursively search for a pattern in a directory, without following symlinks
+- `grep -w "pattern" file` - Match whole words only
+- `grep -x "pattern" file` - Match entire lines only
 ** others
 - clear
 - history
