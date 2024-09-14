@@ -2,7 +2,6 @@
 #+Author: Muggle Born Padawan
 
 * Emacs basics
-
 ** Getting started
   - M-x toggle-frame-fullscreen
   - C-x C-c quit emacs
@@ -13,7 +12,6 @@
   - C-h v variables
   - C-h a Apropos 
   - Esc-Esc-Esc - all purpose “get out” command
-
 ** Initial setup
   - edit .emacs.d/init.el
   - (toggle-frame-fullscreen) | full screen 
@@ -37,15 +35,12 @@
   - (setq global-auto-revert-non-file-buffers t) ;; refreshes non-file buffers (eg: folders)
   - (split-window-vertically)
   - (view-lossage) ;; C-h l
-        
 ** Help
   - <C-h k key-binding> describe key binding
   - <C-h f> desribe function 
-
 ** IDE setup
   - fn-f8 treemacs
   - treesitter
-
 ** Buffers / Windows / Panes? / Frames
   - C-x C-b show buffers
   - C-x 0 close current window
@@ -61,7 +56,6 @@
   - C-x 5 2 opens new frame
   - C-x 5 0 closes the new frame 
   - C-x 5 o move between frames
-
 ** Navigation
   - <M-g g> go to line
   - C-v M-v to move pages down and up
@@ -75,8 +69,8 @@
   - M-< beginning of whole text
   - M-> end of whole text
   - C-u 10 C-n moves down 10 lines 
-
 ** Text selection and copy / paste / undo 
+  - M-x mc/edit-lines | select block and invoke multi cursor edit lines function 
   - M-w - copy text
   - C-w - kill or cut text
   - C-k - delete text from cursor to end of the line (kill line)
@@ -87,16 +81,13 @@
   - C-_ undo
   - C-x u undo 
   - C-x h select all
-
 ** Files
   - C-x C-f find file
   - C-x C-s save file
   - C-x s Save some buffers to files
-
 ** Search
   - C-s Regex search
   - C-r Regex search for everything before this location (reverse) 
-
 ** Fun stuff
  - M-x tetris
  - M-x calendar
