@@ -1,20 +1,19 @@
 #+title: notations
 * numbering system
-|---------+-----------+-----------+--------------+---------------------------------|
-| primary | secondary | teritiary | particulars  | comments                        |
-|---------+-----------+-----------+--------------+---------------------------------|
-|       0 |         0 |         0 | cheatsheets  | packages and utilities          |
-|       1 |         0 |         0 | lisp         | comman lisp                     |
-|       1 |         1 |         0 | lisp dialect | clojure                         |
-|       2 |         0 |         0 | java         |                                 |
-|       3 |         0 |         0 | python       |                                 |
-|       4 |         0 |         0 | statistics   | r                               |
-|       5 |         0 |         0 | art          | processing, quil, visualization |
-|       7 |         0 |         0 | os           | linux                           |
-|       8 |         0 |         0 | ci/cd        | git                             |
-|       8 |           |           |              |                                 |
-|       9 |         0 |         0 | cloud        | aws                             |
-|---------+-----------+-----------+--------------+---------------------------------|
+|---------+-----------+-----------+--------------+-------------------------------------|
+| primary | secondary | teritiary | particulars  | comments                            |
+|---------+-----------+-----------+--------------+-------------------------------------|
+|       0 |         0 |         0 | cheatsheets  | packages and utilities              |
+|       1 |         0 |         0 | lisp         | comman lisp                         |
+|       1 |         1 |         0 | lisp dialect | clojure                             |
+|       2 |         0 |         0 | java         |                                     |
+|       3 |         0 |         0 | python       |                                     |
+|       4 |         0 |         0 | statistics   | r                                   |
+|       5 |         0 |         0 | art          | processing, quil, visualization     |
+|       7 |         0 |         0 | os scripting | macOS, fedora (dckr), debian? (aws) |
+|       8 |         0 |         0 | ci/cd        | git                                 |
+|       9 |         0 |         0 | cloud        | aws                                 |
+|---------+-----------+-----------+--------------+-------------------------------------|
 
 * to be included
 |----------+-------------+------------+--------------+--------------------|
@@ -29,5 +28,3 @@
 |      850 | api         | tbf        | tbf          | rest, graphql, rpc |
 |      900 | aws         | tbf        | setup done   |                    |
 |----------+-------------+------------+--------------+--------------------|
-
-
