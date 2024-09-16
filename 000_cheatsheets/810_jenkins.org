@@ -1,0 +1,29 @@
+#+title: jenkins
+* ci / cd tool
+** getting started
+yum install jenkins-lts
+yum services start jenkins-lts
+browse http://localhost:8080 or the specific port used during configuration time
+
+** best practices
+- jobs alternatives: organization folders, multibranch pipelines, manual pipelines
+
+  
+** pipeline
+tt
+
+** blue ocean
+tt
+
+** nodes and instances
+tt
+
+** backup, restore and maintain 
+tt
+
+** others
+gradle?
+agent?
+job?
+cloud?
+build?
