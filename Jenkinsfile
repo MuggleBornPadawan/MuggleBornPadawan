@@ -1,5 +1,7 @@
+// this is a sample file written in groovy
+// components: agent > environment > stages > post
+// stages: checkout code > build > test > archive artifacts > deploy 
 // Jenkinsfile: A declarative pipeline example for a simple CI/CD workflow
-
 // The 'pipeline' block is the entry point for Jenkins' declarative pipeline.
 pipeline {
     // Define the agent where the pipeline should run. 'any' means it can run on any available agent.
