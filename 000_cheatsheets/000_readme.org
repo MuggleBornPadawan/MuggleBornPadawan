@@ -1,32 +1,33 @@
 #+title: notations
 * numbering system
-|---------+-----------+-----------+--------------+----------------------------------|
-| primary | secondary | teritiary | particulars  | comments                         |
-|---------+-----------+-----------+--------------+----------------------------------|
-|       0 |         0 |         0 | cheatsheets  | packages and utilities           |
-|       1 |         0 |         0 | lisp         | comman lisp                      |
-|       1 |         1 |         0 | lisp dialect | clojure                          |
-|       2 |         0 |         0 | java         |                                  |
-|       3 |         0 |         0 | python       |                                  |
-|       4 |         0 |         0 | statistics   | r                                |
-|       5 |         0 |         0 | art          | processing, quil, visualization  |
-|       7 |         0 |         0 | os           | linux                            |
-|       8 |         0 |         0 | ci/cd        | git, jenkins, docker, kubernates |
-|       8 |           |           |              |                                  |
-|       9 |         0 |         0 | cloud        | aws                              |
-|---------+-----------+-----------+--------------+----------------------------------|
+|---------+-----------+-----------+--------------+---------------------------------|
+| primary | secondary | teritiary | particulars  | comments                        |
+|---------+-----------+-----------+--------------+---------------------------------|
+|       0 |         0 |         0 | cheatsheets  | packages and utilities          |
+|       1 |         0 |         0 | lisp         | comman lisp                     |
+|       1 |         1 |         0 | lisp dialect | clojure                         |
+|       2 |         0 |         0 | java         |                                 |
+|       3 |         0 |         0 | python       |                                 |
+|       4 |         0 |         0 | statistics   | r                               |
+|       5 |         0 |         0 | art          | processing, quil, visualization |
+|       7 |         0 |         0 | os           | linux                           |
+|       8 |         0 |         0 | ci/cd        | git                             |
+|       8 |           |           |              |                                 |
+|       9 |         0 |         0 | cloud        | aws                             |
+|---------+-----------+-----------+--------------+---------------------------------|
 
 * to be included
-|----------+-------------+------------+--------------|
-| notation | particulars | cheatsheet | file folders |
-|----------+-------------+------------+--------------|
-|      600 | postgresql  | tbf        | tbf          |
-|      610 | sqlite      | tbf        | tbf          |
-|      810 | jenkins     | tbf        | tbf          |
-|      820 | docker      | tbf        | tbf          |
-|      830 | kubernates  | tbf        | tbf          |
-|      840 | rabbitMQ    | tbf        | tbf          |
-|      900 | aws         | tbf        | setup done   |
-|----------+-------------+------------+--------------|
+|----------+-------------+------------+--------------+--------------------|
+| notation | particulars | cheatsheet | file folders | comments           |
+|----------+-------------+------------+--------------+--------------------|
+|      600 | postgresql  | tbf        | tbf          |                    |
+|      610 | sqlite      | tbf        | tbf          |                    |
+|      810 | jenkins     | tbf        | tbf          |                    |
+|      820 | docker      | tbf        | tbf          |                    |
+|      830 | kubernates  | tbf        | tbf          |                    |
+|      840 | rabbitMQ    | tbf        | tbf          |                    |
+|      850 | api         | tbf        | tbf          | rest, graphql, rpc |
+|      900 | aws         | tbf        | setup done   |                    |
+|----------+-------------+------------+--------------+--------------------|
 
 
