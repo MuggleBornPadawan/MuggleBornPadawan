@@ -1,5 +1,5 @@
 #+title: notations
-
+* readme first
 ** numbering system
 |---------+-----------+-----------+--------------+-------------------------------------|
 | primary | secondary | teritiary | particulars  | comments                            |
@@ -15,7 +15,6 @@
 |       8 |         0 |         0 | ci/cd        | git                                 |
 |       9 |         0 |         0 | cloud        | aws                                 |
 |---------+-----------+-----------+--------------+-------------------------------------|
-
 ** to be included
 |----------+-------------+------------+--------------+--------------------|
 | notation | particulars | cheatsheet | file folders | comments           |
@@ -29,11 +28,9 @@
 |      850 | api         | tbf        | tbf          | rest, graphql, rpc |
 |      900 | aws         | tbf        | setup done   |                    |
 |----------+-------------+------------+--------------+--------------------|
-
 ** secrets
  - hashicorp vault
  - aws secrets manager
-
 ** others
  - Docker - Env, volume, compose, swarm, secrets  
  - GitHub Actions
