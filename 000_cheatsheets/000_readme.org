@@ -1,5 +1,6 @@
 #+title: notations
-* numbering system
+
+** numbering system
 |---------+-----------+-----------+--------------+-------------------------------------|
 | primary | secondary | teritiary | particulars  | comments                            |
 |---------+-----------+-----------+--------------+-------------------------------------|
@@ -15,7 +16,7 @@
 |       9 |         0 |         0 | cloud        | aws                                 |
 |---------+-----------+-----------+--------------+-------------------------------------|
 
-* to be included
+** to be included
 |----------+-------------+------------+--------------+--------------------|
 | notation | particulars | cheatsheet | file folders | comments           |
 |----------+-------------+------------+--------------+--------------------|
@@ -28,3 +29,24 @@
 |      850 | api         | tbf        | tbf          | rest, graphql, rpc |
 |      900 | aws         | tbf        | setup done   |                    |
 |----------+-------------+------------+--------------+--------------------|
+
+** secrets
+ - hashicorp vault
+ - aws secrets manager
+
+** others
+ - Docker - Env, volume, compose, swarm, secrets  
+ - GitHub Actions
+ - API weather - database
+ - Charts
+ - Unit test
+ - Test automation
+ - Linters
+ - Debug
+ - Caching
+ - Jenkins
+ - Ansible  ? 
+ - Backstage ? 
+ - Postgresql - crud, api crud, stored procedures
+ - SQLlite - same
+ - Deploy to site 
