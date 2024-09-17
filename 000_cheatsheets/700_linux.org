@@ -7,15 +7,15 @@
 - symbolic mode: user (owner) u, group g, others o, all a
 - permission operators: add (+), remove (-), set exact (=)
 - commonly used
-  777: Full permissions for everyone (read, write, execute).
-  755: Full permissions for the owner, and read and execute permissions for group and others.
-  644: Read and write permissions for the owner, and read-only for group and others.
-  600: Read and write permissions for the owner, no permissions for group and others.
-  400: Read-only for the owner, no permissions for group and others.
-  chmod u+x file: Add execute permission for the owner.
-  chmod g-w file: Remove write permission for the group.
-  chmod o=r file: Set read-only permission for others.
-  chmod a+rw file: Add read and write permissions for everyone.
+  - 777: Full permissions for everyone (read, write, execute).
+  - 755: Full permissions for the owner, and read and execute permissions for group and others.
+  - 644: Read and write permissions for the owner, and read-only for group and others.
+  - 600: Read and write permissions for the owner, no permissions for group and others.
+  - 400: Read-only for the owner, no permissions for group and others.
+  - chmod u+x file: Add execute permission for the owner.
+  - chmod g-w file: Remove write permission for the group.
+  - chmod o=r file: Set read-only permission for others.
+  - chmod a+rw file: Add read and write permissions for everyone.
 ** file and directory commands
 - ls
 - ls -l  # detailed listing
