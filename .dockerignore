@@ -2,22 +2,28 @@
 .git
 .gitignore
 
-# MacOS and other OS generated files
-.DS_Store
-.AppleDouble
+# Mercurial files
+.hg
+
+# Subversion files
+.svn
+
+# OS generated files
 .LSOverride
 Thumbs.db
 ehthumbs.db
 .directory
+.DS_Store
+.AppleDouble
 
-# Emacs and other IDE backup files
-*~
-\#*\#
+# IDE backup files
 .idea/
 .vscode/
 .sublime-project
 .sublime-workspace
 .iml
+*~
+\#*\#
 
 # Build artifacts
 .o
@@ -54,9 +60,3 @@ node_modules
 
 # Docker-specific local files
 docker-compose.override.yml
-
-# Mercurial files
-.hg
-
-# Subversion files
-.svn
