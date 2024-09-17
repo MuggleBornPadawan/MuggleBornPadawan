@@ -1,7 +1,5 @@
 # Use this to set global gitconfig in bash: git config --global core.excludesfile ~/.gitignore_global
-
 # Use this to remove already commited files in bash: git rm --cached filename
-
 # OS generated files
 .LSOverride
 Thumbs.db
@@ -52,7 +50,6 @@ sshd_config
 .pub
 .pem
 
-
 # Local Docker configuration files
 docker-compose.override.yml
 
@@ -86,7 +83,6 @@ bin/
 target/
 
 # Others - clojure?
-
 /target
 /classes
 /checkouts
