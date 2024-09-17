@@ -2,22 +2,22 @@
 
 # Use this to remove already commited files in bash: git rm --cached filename
 
-# MacOS and other OS generated files
-.DS_Store
-.AppleDouble
+# OS generated files
 .LSOverride
 Thumbs.db
 ehthumbs.db
 .directory
+.DS_Store
+.AppleDouble
 
-# Emacs and other IDE backup files
-*~
-\#*\#
+# IDE backup files
 .idea/
 .vscode/
 .sublime-project
 .sublime-workspace
 .iml
+*~
+\#*\#
 
 # Compiled object files - Build artifacts - Binaries
 .o
@@ -41,8 +41,17 @@ ehthumbs.db
 # Sensitive files
 .secret
 
-# SSH private keys
+# SSH keys
 id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+known_hosts
+authorized_keys
+sshd_config
+.pub
+.pem
+
 
 # Local Docker configuration files
 docker-compose.override.yml
@@ -89,3 +98,4 @@ pom.xml.asc
 /.prepl-port
 .hgignore
 .hg/
+.svn
