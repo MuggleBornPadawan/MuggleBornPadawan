@@ -109,42 +109,42 @@
 ** extensions
 - CREATE EXTENSION IF NOT EXISTS pg_trgm;
   PostgreSQL is known for its extensibility, allowing users to add new functionality through extensions. Here are some commonly used PostgreSQL extensions:
- - PostGIS
-   Purpose: Adds support for geographic objects, allowing location queries to be run in SQL.
-   Use Case: Ideal for applications that require geographic data processing, such as mapping and location-based services.
- - pg_trgm
-   Purpose: Provides functions and operators for determining the similarity of text based on trigram matching.
-   Use Case: Useful for text search and fuzzy string matching, such as finding similar words or phrases.
- - hstore
-   Purpose: Allows storing sets of key/value pairs within a single PostgreSQL value.
-   Use Case: Useful for semi-structured data where the schema might change frequently.
- - uuid-ossp
-   Purpose: Provides functions to generate universally unique identifiers (UUIDs).
-   Use Case: Useful for generating unique identifiers for database records.
- - citext
-   Purpose: Provides a case-insensitive character string type.
-   Use Case: Useful when you need case-insensitive text comparison without using the LOWER() function.
- - tablefunc
-   Purpose: Provides functions that return tables, including crosstab functions for pivoting.
-   Use Case: Useful for creating pivot tables and other complex table transformations.
- - pg_stat_statements
-   Purpose: Tracks execution statistics of all SQL statements executed by a server.
-   Use Case: Useful for performance monitoring and identifying slow queries.
- - ltree
-   Purpose: Provides a data type for storing labels of data stored in a hierarchical tree-like structure.
-   Use Case: Useful for applications that need to manage hierarchical data, such as organizational charts.
- - unaccent
-   Purpose: Provides a function to remove accents from strings.
-   Use Case: Useful for normalizing text input, especially in search applications.
- - pgcrypto
-   Purpose: Provides cryptographic functions for PostgreSQL.
-   Use Case: Useful for encrypting and decrypting data, as well as generating cryptographic hashes.
- - fuzzystrmatch
-   Purpose: Provides functions for approximate string matching and phonetic matching.
-   Use Case: Useful for applications that require fuzzy matching, such as spell checkers.
- - plpgsql
-   Purpose: A procedural language for PostgreSQL that allows for more complex logic in functions and triggers.
-   Use Case: Useful for writing stored procedures and triggers with complex logic.
+  PostGIS
+  Purpose: Adds support for geographic objects, allowing location queries to be run in SQL.
+  Use Case: Ideal for applications that require geographic data processing, such as mapping and location-based services.
+- pg_trgm
+  Purpose: Provides functions and operators for determining the similarity of text based on trigram matching.
+  Use Case: Useful for text search and fuzzy string matching, such as finding similar words or phrases.
+- hstore
+  Purpose: Allows storing sets of key/value pairs within a single PostgreSQL value.
+  Use Case: Useful for semi-structured data where the schema might change frequently.
+- uuid-ossp
+  Purpose: Provides functions to generate universally unique identifiers (UUIDs).
+  Use Case: Useful for generating unique identifiers for database records.
+- citext
+  Purpose: Provides a case-insensitive character string type.
+  Use Case: Useful when you need case-insensitive text comparison without using the LOWER() function.
+- tablefunc
+  Purpose: Provides functions that return tables, including crosstab functions for pivoting.
+  Use Case: Useful for creating pivot tables and other complex table transformations.
+- pg_stat_statements
+  Purpose: Tracks execution statistics of all SQL statements executed by a server.
+  Use Case: Useful for performance monitoring and identifying slow queries.
+- ltree
+  Purpose: Provides a data type for storing labels of data stored in a hierarchical tree-like structure.
+  Use Case: Useful for applications that need to manage hierarchical data, such as organizational charts.
+- unaccent
+  Purpose: Provides a function to remove accents from strings.
+  Use Case: Useful for normalizing text input, especially in search applications.
+- pgcrypto
+  Purpose: Provides cryptographic functions for PostgreSQL.
+  Use Case: Useful for encrypting and decrypting data, as well as generating cryptographic hashes.
+- fuzzystrmatch
+  Purpose: Provides functions for approximate string matching and phonetic matching.
+  Use Case: Useful for applications that require fuzzy matching, such as spell checkers.
+- plpgsql
+  Purpose: A procedural language for PostgreSQL that allows for more complex logic in functions and triggers.
+  Use Case: Useful for writing stored procedures and triggers with complex logic.
 
 -- common extensions
 middleware
