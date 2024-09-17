@@ -26,10 +26,19 @@
        column2_name data_type,
        ...
    );
+ - ALTER TABLE table_name ADD column_name data_type;
  - DROP TABLE table_name;
+ - TRUNCATE TABLE table_name;
  - INSERT INTO table_name (column1, column2) VALUES (value1, value2);
  - UPDATE table_name SET column1 = value1 WHERE condition;
  - DELETE FROM table_name WHERE condition;
+ - GRANT SELECT, INSERT ON table_name TO user_name;
+ - REVOKE SELECT, INSERT ON table_name FROM user_name;
+** transaction control
+ - COMMIT;
+ - REVOKE;
+ - SAVEPOINT savepoint_name;
+ - RELEASE SAVEPOINT savepoint_name;
 ** querying data
  - SELECT * FROM table_name;
  - SELECT column1, column2 FROM table_name;
@@ -37,6 +46,9 @@
  - SELECT * FROM table_name ORDER BY column_name ASC|DESC;
  - SELECT * FROM table1
    JOIN table2 ON table1.common_column = table2.common_column;
+ - SELECT column1, column2 FROM table_name ORDER BY column1 ASC|DESC;
+ - SELECT column1, COUNT(*) FROM table_name GROUP BY column1;
+ - SELECT column1, COUNT(*) FROM table_name GROUP BY column1 HAVING COUNT(*) > 1;
 ** joins
  - inner join | returns only the rows that have matching values in both tables
    SELECT columns
@@ -109,7 +121,7 @@
 ** extensions
 - CREATE EXTENSION IF NOT EXISTS pg_trgm;
   PostgreSQL is known for its extensibility, allowing users to add new functionality through extensions. Here are some commonly used PostgreSQL extensions:
-  PostGIS
+- PostGIS
   Purpose: Adds support for geographic objects, allowing location queries to be run in SQL.
   Use Case: Ideal for applications that require geographic data processing, such as mapping and location-based services.
 - pg_trgm
@@ -145,10 +157,52 @@
 - plpgsql
   Purpose: A procedural language for PostgreSQL that allows for more complex logic in functions and triggers.
   Use Case: Useful for writing stored procedures and triggers with complex logic.
+** middleware
+*** connection pooling
+- PgBouncer
+- Pgpool-II
+*** caching
+- redis
+- memcached
+*** load balancing and high availablity
+- HAProxy
+- Patroni
+*** security
+- stunnel
+*** data integration and etl tools
+- apache kafka
+- apache nifi
+*** object relational mappers (orm)
+- SQLAlchemy - python
+- Hibernate - java
+** stored procedures
+- psql? | pgproc table | pgadmin tool
+- CREATE PROCEDURE procedure_name (parameter_list)
+  LANGUAGE plpgsql
+  AS $
+  BEGIN
+    -- Procedure logic here
+  END;
+  $;
+- CALL add_employee('John Doe', 'Developer', 75000);
+- DROP PROCEDURE IF EXISTS add_employee; | check references / dependencies / permissions and backup procedures for safety 
+- SELECT proname, proargtypes, prorettype, prosrc
+  FROM pg_proc
+  WHERE proname = 'your_procedure_name'; | accessing stored procedures
+  proname: The name of the procedure.
+  proargtypes: The data types of the procedure's arguments.
+  prorettype: The return type of the procedure (for functions).
+  prosrc: The source code of the procedure.
+- Advanced Features
+  - Parameters: Procedures can have IN, OUT, and INOUT parameters to pass data in and out.
+  - Exception Handling: Use BEGIN ... EXCEPTION ... END blocks to handle errors within procedures.
+  - Dynamic SQL: Execute dynamic SQL statements using the EXECUTE command within procedures.
+- function vs procedures:
+  - Use functions when you need to compute and return a value.
+  - Use procedures for operations that perform actions, such as modifying data.  
+** triggers
+- types: BEFORE, AFTER, INSTEAD OF
+- events: INSERT, UPDATE, DELETE, TRUNCATE
+- execution timing: FOR EACH ROW, FOR EACH STATEMENT
 
--- common extensions
-middleware
-pgpool
-pgbouncer
-stored procedures
- 
+  
