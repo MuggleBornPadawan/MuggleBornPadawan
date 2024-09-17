@@ -1,0 +1,160 @@
+#+title: sqlite
+* getting started
+** important
+- sqlite browser - https://sqlitebrowser.org
+- documentation - https://www.sqlite.org/docs.html
+- backup regularly for production environments 
+** installation
+- sqlite3 --version
+- brew install sqlite
+** database
+- sqlite3 mydatabase.db
+- .tables
+- .schema table_name
+** table management 
+- CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE
+  );
+- INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
+  INSERT INTO users (name, email) VALUES ('Bob', 'bob@example.com');
+- SELECT * FROM users;
+- UPDATE users SET email = 'alice@newdomain.com' WHERE name = 'Alice';
+- DELETE FROM users WHERE name = 'Bob';
+- DROP TABLE table_name;
+- .exit
+** data manipulation
+- INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);
+- SELECT column1, column2, ... FROM table_name WHERE condition;  
+- UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;
+- DELETE FROM table_name WHERE condition;
+** data querying
+- SELECT * FROM table_name;
+- SELECT * FROM table_name ORDER BY column_name ASC|DESC;
+- SELECT * FROM table_name LIMIT number_of_rows;
+- SELECT columns FROM table1 INNER JOIN table2 ON table1.column = table2.column;
+** utility commands
+- .databases
+- .mode csv
+  .import file.csv table_name
+- .headers on
+  .mode csv
+  .output file.csv
+  SELECT * FROM table_name;
+  .output stdout
+** data from postgresql
+- pg_dump -U username -d database_name -F c -f database_dump.sql
+  - U username: Specifies the PostgreSQL username.
+  - d database_name: Specifies the name of the database to dump.
+  - F c: Specifies the format of the dump file. Use -F p for plain text SQL.
+  - f database_dump.sql: Specifies the output file name.
+- brew install pgloader | a tool that can directly migrate data from PostgreSQL to SQLite
+  - brew install pgloader
+      LOAD DATABASE
+      FROM postgresql://username:password@localhost/database_name
+      INTO sqlite:///path/to/sqlite.db
+    WITH include no drop, create tables, create indexes, reset sequences
+    SET work_mem to '16MB', maintenance_work_mem to '512 MB';
+    ALTER SCHEMA 'public' RENAME TO 'main';
+  - pgloader load.script
+- sqlite3 sqlite_database.db < converted_dump.sql
+- sqlite3 sqlite_database.db | verify
+  .tables
+  SELECT * FROM table_name LIMIT 10;
+- key considerations:
+  - Data Types: PostgreSQL and SQLite have different data types. Ensure that the conversion handles these differences appropriately.
+  - Indexes and Constraints: Some PostgreSQL features like certain constraints and indexes may not directly translate to SQLite.
+  - Functions and Triggers: PostgreSQL functions and triggers will need to be rewritten in SQLite's syntax if they are to be used.
+** middleware
+- Middleware in the context of SQLite typically refers to software components that sit between the SQLite database and the application, managing interactions such as database connections, queries, and transactions.
+- Middleware can provide additional functionality like logging, caching, authentication, and more
+*** object relational mapping
+- SQLAlchemy (Python): A powerful ORM for Python that supports SQLite. It provides a full suite of database management tools and can act as middleware by abstracting SQL operations.
+  - from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    engine = create_engine('sqlite:///example.db')
+    Session = sessionmaker(bind=engine)
+    session = Session()
+- Sequelize (Node.js): A promise-based Node.js ORM that supports SQLite. It provides a comprehensive API for managing database operations
+ -  const { Sequelize } = require('sequelize');
+    const sequelize = new Sequelize('sqlite::memory:');
+
+    // Define a model
+    const User = sequelize.define('User', {
+      username: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      birthday: {
+        type: Sequelize.DATE
+      }
+    });
+
+    // Sync and use the model
+    sequelize.sync().then(() => {
+      return User.create({
+        username: 'janedoe',
+        birthday: new Date(1980, 6, 20)
+      });
+    });
+*** web frameworks
+- Django (Python): A high-level web framework that includes an ORM with SQLite support by default. It handles database connections, migrations, and queries.
+- # settings.py
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.sqlite3',
+          'NAME': BASE_DIR / "db.sqlite3",
+      }
+  }
+- Ruby on Rails (Ruby): A web application framework that uses ActiveRecord as its ORM, supporting SQLite out of the box.
+- # config/database.yml
+  default: &default
+    adapter: sqlite3
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    timeout: 5000
+
+  development:
+    <<: *default
+    database: db/development.sqlite3
+*** custom middleware
+- import sqlite3
+  class SQLiteMiddleware:
+    def __init__(self, db_path):
+        self.connection = sqlite3.connect(db_path)
+        self.cursor = self.connection.cursor()
+    def execute_query(self, query, params=()):
+        print(f"Executing query: {query} with params: {params}")
+        self.cursor.execute(query, params)
+        self.connection.commit()
+    def close(self):
+        self.connection.close()
+  # Usage
+  middleware = SQLiteMiddleware('example.db')
+  middleware.execute_query("INSERT INTO users (name, email) VALUES (?, ?)", ('Alice', 'alice@example.com'))
+  middleware.close()
+*** considerations
+- performance: Middleware can introduce additional overhead, so it's important to ensure that it is optimized for performance.
+- security: Middleware can help enforce security policies, such as input validation and access control.
+- scalability: Consider how your middleware will scale with your application, especially if you plan to move beyond SQLite to a more robust database system.
+** stored procedures - alternatives
+- sql scripts
+- application logic
+- user-defined functions (udfs)
+  - import sqlite3
+    def calculate_discount(price, discount):
+    return price * (1 - discount / 100)
+
+    conn = sqlite3.connect('example.db')
+    conn.create_function("discount", 2, calculate_discount)
+
+    cursor = conn.cursor()
+    cursor.execute("SELECT discount(100, 10);")
+    print(cursor.fetchone()[0])  # Output: 90.0
+** triggers
+  - CREATE TRIGGER update_timestamp
+    AFTER UPDATE ON my_table
+    BEGIN
+       UPDATE my_table SET last_modified = CURRENT_TIMESTAMP WHERE id = NEW.id;
+    END;
+
