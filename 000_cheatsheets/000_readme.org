@@ -11,6 +11,7 @@
 |       3 |         0 |         0 | python       |                                     |
 |       4 |         0 |         0 | statistics   | r                                   |
 |       5 |         0 |         0 | art          | processing, quil, visualization     |
+|       6 |         0 |         0 | databases    | postgresql                          |
 |       7 |         0 |         0 | os scripting | macOS, fedora (dckr), debian? (aws) |
 |       8 |         0 |         0 | ci/cd        | git                                 |
 |       9 |         0 |         0 | cloud        | aws                                 |
@@ -19,7 +20,6 @@
 |----------+-------------+------------+--------------+--------------------|
 | notation | particulars | cheatsheet | file folders | comments           |
 |----------+-------------+------------+--------------+--------------------|
-|      600 | postgresql  | tbf        | tbf          |                    |
 |      610 | sqlite      | tbf        | tbf          |                    |
 |      810 | jenkins     | tbf        | tbf          |                    |
 |      820 | docker      | tbf        | tbf          |                    |
@@ -27,6 +27,7 @@
 |      840 | rabbitMQ    | tbf        | tbf          |                    |
 |      850 | api         | tbf        | tbf          | rest, graphql, rpc |
 |      900 | aws         | tbf        | setup done   |                    |
+|          |             |            |              |                    |
 |----------+-------------+------------+--------------+--------------------|
 ** secrets
  - hashicorp vault
