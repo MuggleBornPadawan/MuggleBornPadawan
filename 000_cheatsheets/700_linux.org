@@ -2,7 +2,16 @@
 * fedora + darwin (macOS)
 - dnf - fedora
 - brew - macOS
-- yum - aws
+- yum - aws, Red Hat Enterprise Linux (RHEL), CentOS, Fedora
+- apk - alpine
+- apt - debian, ubuntu, and derivatives like linux mint
+- dpkg - debian
+- rpm - rhel, centos, fedora
+- pacman - arch, manjaro
+- zypper, YaST - suse
+- emerge - gentoo
+- snap - ubuntu
+- flatpak - various distributions
 ** zsh
 - nano ~/.zshrc
 - export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/"
