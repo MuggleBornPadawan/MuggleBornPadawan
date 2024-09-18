@@ -3,6 +3,10 @@
 - documentation page: https://www.rabbitmq.com/docs
 ** installation
 - brew install rabbitmq
+- brew info rabbitmq
+- brew services start rabbitmq
+- brew services stop rabbitmq
+
 - rabbitmq-server
 - sudo rabbitmq-server start
 - rabbitmqctl stop
