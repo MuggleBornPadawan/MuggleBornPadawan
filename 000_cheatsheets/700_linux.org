@@ -1,5 +1,13 @@
 #+title: linux commands
-* fedora
+* fedora + darwin (macOS)
+- dnf - fedora
+- brew - macOS
+- yum - aws
+- 
+** zsh
+- nano ~/.zshrc
+- export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/ganeshrajendran/.local/pipx/venvs/flask:/opt/homebrew/bin:/usr/bin/python3"
+- source ~/.zshrc
 ** packages
 - sudo dnf -y git gs python3 neofetch top htop curl emacs
 ** chmod
