@@ -141,3 +141,15 @@
 ** getting help
 - man command_name
 - command_name -h #?
+** do not run these commands ever
+- rm -rf / | deletes everything from root forever
+- dd - make copies - https://opensource.com/article/18/7/how-use-dd-linux
+- :(){ :|:& };: - bash fork() bomb. Prevention steps:
+  - type -a ulimit
+  - ulimit -u
+  - ulimit -a
+  - ulimit -S -u 5000
+  - man ulimit
+  - help ulimit
+- chmod -R 777 / | permission pulverizer
+- mkfs.ext4 /dev/sda | disk formatter
