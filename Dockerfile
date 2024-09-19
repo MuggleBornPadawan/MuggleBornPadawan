@@ -6,12 +6,12 @@ RUN apk update
 RUN apk add python3 
 
 # Copy files into the container
-COPY /Python /app
-COPY /CLISP /app
-COPY /Clojure /app
-COPY /Elisp /app
-COPY /Java /app
-COPY /R /app
+COPY /300_python /app
+COPY /100_clisp /app
+COPY /110_clojure /app
+COPY /120_elisp /app
+COPY /200_java /app
+COPY /400_r /app
 COPY start.sh /app
 RUN chmod +x /app/start.sh
 
