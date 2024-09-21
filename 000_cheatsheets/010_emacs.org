@@ -1,8 +1,8 @@
-#+Title: Emacs Basics - commands
-#+Author: Muggle Born Padawan
+#+Title: emacs basics - commands
+#+Author: muggle born padawan
 
-* Emacs basics
-** Getting started
+* emacs basics
+** getting started
   - M-x toggle-frame-fullscreen
   - C-x C-c quit emacs
   - C-g quit command
@@ -12,7 +12,7 @@
   - C-h v variables
   - C-h a Apropos 
   - Esc-Esc-Esc - all purpose “get out” command
-** Initial setup
+** initial setup
   - edit .emacs.d/init.el
   - (toggle-frame-fullscreen) | full screen 
   - package archives: gnu, melpa
@@ -35,13 +35,13 @@
   - (setq global-auto-revert-non-file-buffers t) ;; refreshes non-file buffers (eg: folders)
   - (split-window-vertically)
   - (view-lossage) ;; C-h l
-** Help
+** help
   - <C-h k key-binding> describe key binding
   - <C-h f> desribe function 
-** IDE setup
+** ide setup
   - fn-f8 treemacs
   - treesitter
-** Buffers / Windows / Panes? / Frames
+** buffers / windows / panes? / frames
   - C-x C-b show buffers
   - C-x 0 close current window
   - C-x 1 retain current window and close all other windows
@@ -56,7 +56,7 @@
   - C-x 5 2 opens new frame
   - C-x 5 0 closes the new frame 
   - C-x 5 o move between frames
-** Navigation
+** navigation
   - <M-g g> go to line
   - C-v M-v to move pages down and up
   - C-l - move screen up down centre around the cursor location 
@@ -69,7 +69,7 @@
   - M-< beginning of whole text
   - M-> end of whole text
   - C-u 10 C-n moves down 10 lines 
-** Text selection and copy / paste / undo 
+** text selection and copy / paste / undo 
   - M-x mc/edit-lines | select block and invoke multi cursor edit lines function 
   - M-w - copy text
   - C-w - kill or cut text
@@ -79,24 +79,28 @@
   - M-y yank previous kills
   - C-/ undo 
   - C-_ undo
-  - C-x u undo 
-  - C-x h select all
-** Files
-  - C-x C-f find file
-  - C-x C-s save file
-  - C-x s Save some buffers to files
-** Search
-  - C-s Regex search
-  - C-r Regex search for everything before this location (reverse)
-** Gptel
-  - M-x gptel
-  - M-x gptel-send
-  - M-x gptel-select-conversation
-  - M-x gptel-clear-conversation
-  - M-x gptel-append
-  - (setq gptel-model "gpt-4")  ;; or "gpt-3.5-turbo"
-  - (setq gptel-system-prompt "You are an expert programmer. Help me code")
-** Fun stuff
-  - M-x tetris
-  - M-x calendar
-  - M-x doctor
+- C-x u undo 
+- C-x h select all
+** files
+- C-x C-f find file
+- C-x C-s save file
+- C-x s Save some buffers to files
+** search
+- C-s Regex search
+- C-r Regex search for everything before this location (reverse)
+** gptel
+ - M-x gptel
+- M-x gptel-send
+- M-x gptel-select-conversation
+- M-x gptel-clear-conversation
+- M-x gptel-append
+- (setq gptel-model "gpt-4")  ;; or "gpt-3.5-turbo"
+- (setq gptel-system-prompt "You are an expert programmer. Help me code")
+** company mode (complete anything)
+- add melpa
+- 
+
+** fun stuff
+- M-x tetris
+- M-x calendar
+- M-x doctor
