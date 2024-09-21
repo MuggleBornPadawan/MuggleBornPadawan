@@ -21,7 +21,6 @@
   - git push origin <branch-name> | Pushes your committed changes to the specified remote branch
 
 ** Viewing history and changes
-
   - git log | Shows the commit history in the current branch
   - git log --oneline | Displays the commit history with each commit on a single line
   - git diff | Shows the differences between your working directory and the index (staged files)
