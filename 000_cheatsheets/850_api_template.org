@@ -1,6 +1,18 @@
 #+title: apis
-* components checklist
-- endpoints, request methods, headers, request body, response body, status codes, authentication and authorization, rate limiting, versioning, documentation 
+* general information
+** components
+- components: endpoints, request methods, headers, request body, response body, status codes, authentication and authorization, rate limiting, versioning, documentation
+** performance tuning
+- caching, connection pool, N+1 problem, pagination, json serialisers, payload compression, asynchronous logging
+** architecture styles
+- soap, restful, graphQL, gRPC, web socket, web hook, MQTT, AMQP, EDA, EDI, SSE
+** design
+- effective and safe tips: use clear naming (plurals), idempotent (same question - same answer),  add versioning, pagination, query strings for sorting and filtering, security key, simple cross resource reference, rate limit
+** security
+- HTTPS, OAuth2, WebAuthn, beveled API keys, Authorisation (rwx), rate limiting, api versioning, allowlisting (IP / user based), OWASP api security risks, API gateway, error handling, input validation  
+** testing
+- smoke test, functional test, integration test, regression test, load test (JMeter), stress test, security test, UI test, fuzz test
+* components  
 ** endpoints
 - access path for client. RESTful API: https://api.example.com/users
 ** request methods
@@ -19,25 +31,47 @@
 ** response body
 - the response body contains data returned from the server. tt is typically formatted in JSON or XML
 ** status codes
+- five classes:
+  - 1xx: informational
+  - 2xx: success
+  - 3xx: redirection
+  - 4xx: client errors
+  - 5xx: server errors 
 - status codes are part of the HTTP response and indicate the result of the request. common status codes:
+  - 100 Continue
   - 200 OK: the request was successful
   - 201 Created: a new resource was successfully created
+  - 301 Moved Permanently: This response code means that the URI of the requested resource has been changed permanently
+    The new URI is provided in the response. Clients are expected to update their bookmarks to the new URI
+  - 302 Found: This response code means that the URI of the requested resource has been changed temporarily
+    Further changes in the URI might be made in the future
+    Therefore, this same URI should be used by the client in future requests
+  - 304 Not Modified: This is used for caching purposes
+    It tells the client that the response has not been modified
+    So the client can continue to use the same cached version of the response
   - 400 Bad Request: the request was invalid or cannot be served
   - 401 Unauthorized: authentication is required and has failed or has not been provided
+  - 403 Forbidden: access rights not available 
   - 404 Not Found: the requested resource could not be found
-  - 500 Internal Server Error: an error occurred on the server
+  - 500 Internal Server Error: The server has encountered a situation it doesn't know how to handle
+  - 502 Bad Gateway: This error response means that the server, while acting as a gateway or proxy, received an invalid response from the upstream server
+  - 503 Service Unavailable: The server is not ready to handle the request
+    Common causes are a server that is down for maintenance or that is overloaded
+    This response should be used for temporary conditions and the Retry-After HTTP header should, if possible, contain the estimated time before the recovery of the service
+  - 504 Gateway Timeout: This error response is given when the server is acting as a gateway and cannot get a response in time
 ** authentication and authorization
 - mechanisms to ensure that only authorized users can access certain endpoints or perform certain actions. common methods:
   - API Keys: simple tokens that are passed in the request header
+  - OpenId: facebook, google, apple 
   - OAuth: a more secure method that involves token exchange
   - JWT (JSON Web Tokens): Tokens that are signed and can be used to verify the identity of the user
 ** rate limiting
 - a mechanism to control the number of requests a client can make to the API in a given time period. This helps prevent abuse and ensures fair usage.
 ** versioning
-- APIs often have versions to manage changes and updates without breaking existing clients. Versioning can be done through the URL (e.g., https://api.example.com/v1/users) or headers.
+- APIs often have versions to manage changes and updates without breaking existing clients. Versioning can be done through the URL (e.g., https://api.example.com/v1/users) or headers
 ** documentation
-- comprehensive documentation is crucial for developers to understand how to use the API. it typically includes details about endpoints, request/response formats, authentication, and examples.
-
+- comprehensive documentation is crucial for developers to understand how to use the API.
+  it typically includes details about endpoints, request/response formats, authentication, and examples
 * getting started in python
 ** installation
 - pip install Flask
@@ -63,13 +97,16 @@
 ** test the api
 - curl http://localhost:5000/
 ** deploy
-- To make your API accessible to remote clients, you need to deploy it to a server. You can use cloud services like AWS, Heroku, or any other hosting provider that supports Python applications. Here’s a brief overview of deploying on AWS:
+- To make your API accessible to remote clients, you need to deploy it to a server.
+  You can use cloud services like AWS, Heroku, or any other hosting provider that supports Python applications.
+  Here’s a brief overview of deploying on AWS:
   - Set up an EC2 instance: Launch an EC2 instance with a Linux distribution.
   - Install Python and Flask on the instance.
   - Transfer your application files to the server using SCP or any other file transfer method.
   - Run the Flask application on the server, ensuring that the security group allows inbound traffic on port 5000.
-  - Access the API using the public IP address of your EC2 instance.
-- This setup provides a simple way to expose a "Hello, World!" program via an API. For production use, consider using a production-ready server like Gunicorn and a reverse proxy like Nginx.
+  - Access the API using the public IP address of your EC2 instance
+  - This setup provides a simple way to expose a "Hello, World!" program via an API.
+    For production use, consider using a production-ready server like Gunicorn and a reverse proxy like Nginx
 ** secure copy protocol (scp)
 - scp [options] source_file user@host:destination_path
 - scp /path/to/local/file.txt user@remote_host:/path/to/remote/directory/
