@@ -1,13 +1,28 @@
 #+title: web server
+* general
+** network protocols
+- http, http3 (quic), https, web socket, tcp, udp, smtp, ftp
+** distributed system patterns
+- ambassador, circuit breaker, CQRS, event sourcing, leader election, publisher / subscriber, sharding
+** cache systems
+- kafka, redis, elastic
+** message queue
+- pulsar (all in one), rabbitmq (message broker), kafka (event streaming), IBM? (messaging middleware)
+** data structures
+- list, array, stack, queue, heap, tree, suffix tree, graph, r-tree, hash table
+** load balancing algorithms
+- round robin, sticky round robin, weighted round robin, ip / url hash, least connections, least time, geographic, session persistance, response time, dynamic ratio 
+** system design
+- algorithms - consistent hashing, geohash, quad tree, leaky bucket, token bucket, trie, bloom filter, raft / paxos
 * introduction 
 - load balancing software distributes incoming network traffic across multiple servers to improve responsiveness, reliability, and scalability.
 - utilities: reverse proxy, content cache, load balancer, TCP/UDP proxy server, mail proxy server, api gateway 
-** _Types of Load Balancing Software:_
-- Hardware-based (e.g., F5, Cisco)
-- Software-based (e.g., HAProxy, NGINX)
-- Cloud-based (e.g., AWS ELB, Google Cloud Load Balancing)
-- Virtualized (e.g., VMware, VirtualBox)
-** _Popular Load Balancing Software:_
+** types of load balancing software
+- hardware-based (e.g., F5, Cisco)
+- software-based (e.g., HAProxy, NGINX)
+- cloud-based (e.g., AWS ELB, Google Cloud Load Balancing)
+- virtualized (e.g., VMware, VirtualBox)
+** popular load balancing software
 - HAProxy
 - NGINX
 - Apache HTTP Server with mod_proxy_balancer
@@ -16,32 +31,24 @@
 - Microsoft Load Balancer
 - Citrix NetScaler
 - F5 BIG-IP
-** _Key Features:_
-- Server health checks
-- Session persistence
-- Connection draining
+** key features
+- server health checks
+- session persistence
+- connection draining
 - SSL termination
-- Content switching
+- content switching
 - IPv6 support
-- Scalability
-- High availability
-** _Load Balancing Algorithms:_
-- Round-Robin
-- Least Connection
-- IP Hash
-- Geographic
-- Session Persistence
-- Response Time
-- Dynamic Ratio
-** _Benefits:_
-- Improved responsiveness
-- Increased reliability
-- Scalability
-- Flexibility
-- Cost-effective
-- Simplified management
-- Enhanced security
-** _Load Balancing Protocols:_
+- scalability
+- high availability
+** benefits
+- improved responsiveness
+- increased reliability
+- scalability
+- flexibility
+- cost-effective
+- simplified management
+- enhanced security
+** load balancing protocols
 - HTTP/HTTPS
 - TCP
 - UDP
@@ -49,38 +56,39 @@
 - SMTP
 - DNS
 - SIP
-** _Cloud Load Balancing:_
+** cloud load balancing
 - AWS Elastic Load Balancer (ELB)
 - Google Cloud Load Balancing
 - Azure Load Balancer
 - Cloudflare Load Balancing
-** _Open-Source Load Balancing Software:_
+** open-source load balancing software
 - HAProxy
 - NGINX
 - Apache HTTP Server with mod_proxy_balancer
 - Pound
-- Varnish Cache
-** _Commercial Load Balancing Software:_
+- Varnish cache
+** commercial load balancing software
 - F5 BIG-IP
 - Citrix NetScaler
-- Microsoft Load Balancer
-- Cisco Load Balancer
-- Riverbed Load Balancer
-** _Load Balancing Best Practices:_
+- Microsoft load balancer
+- Cisco load balancer
+- Riverbed load balancer
+** load balancing best practices
 - Monitor server health
 - Configure session persistence
 - Optimize algorithm selection
 - Implement security measures
 - Regularly update software
-** _Common Load Balancing Issues:_
+** common load balancing issues
 - Server overload
 - Connection timeouts
 - Session persistence issues
 - Configuration errors
 - Security vulnerabilities
-** _Troubleshooting Load Balancing:_
+** troubleshooting load balancing
 - Check server logs
 - Monitor network traffic
 - Verify configuration
 - Test load balancing
 - Consult documentation and community forums
+  
