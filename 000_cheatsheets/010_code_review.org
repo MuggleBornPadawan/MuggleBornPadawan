@@ -1,16 +1,17 @@
 #+title: code review
 * introduction
 ** getting started
-- familiarize yourself with the project's goals, requirements, and coding standards
-- understand the code's context and functionality
+- familiarize yourself with the project's goals, requirements, user stories, ticket details and coding standards
+- understand the code's context, fit with larger context and functionality
 - set aside biases and focus on providing constructive feedback
 ** checklist
+- typical errors - off-by-one errors, null pointer exceptions, or incorrect logic, edge cases, algorithms, loops, data set size (memory)
 - readablity - variable names and comments, indentation and formatting, well structured code
 - syntax and semantics - logical flow and error handling, language standards 
 - performance - efficiency and optimization, resource management (cpu, memory), bottleneck
 - security - input validation and sensitization, secure data storage and transmission, authentication and authorization
 - testablity - unit tests and integration tests, code coverage and testing strategy, test driven development
-- maintainablity - modularity and seperation of concerns, reusablity and refactorablity, documentation and commenting 
+- maintainablity - modularity and seperation of concerns, reusablity and refactorablity, documentation and commenting
 ** tools
 - github, gitlab, crucible, gerrit, bitbucket
 - pro tip: check compatiblity with source (version) control management
