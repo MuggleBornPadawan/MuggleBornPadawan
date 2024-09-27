@@ -82,16 +82,29 @@ bin/
 # Rust target directory
 target/
 
-# Others - clojure?
-/target
-/classes
-/checkouts
-profiles.clj
+# clojure
 pom.xml
 pom.xml.asc
+*.jar
+*.class
+/lib/
+/classes/
+/target/
+/checkouts/
 /.lein-*
-/.nrepl-port
 /.prepl-port
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.nrepl-port
+.cpcache/
+.clj-kondo/
+.#.gitignore
+.lsp/
+profiles.clj
+
+# others
 .hgignore
 .hg/
 .svn
