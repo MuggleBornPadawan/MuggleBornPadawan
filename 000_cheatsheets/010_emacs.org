@@ -89,13 +89,21 @@
 - C-s Regex search
 - C-r Regex search for everything before this location (reverse)
 ** gptel
- - M-x gptel
+- M-x gptel
 - M-x gptel-send
 - M-x gptel-select-conversation
 - M-x gptel-clear-conversation
 - M-x gptel-append
+- M-x gptel-info
+- M-x gptel-version
 - (setq gptel-model "gpt-4")  ;; or "gpt-3.5-turbo"
 - (setq gptel-system-prompt "You are an expert programmer. Help me code")
+- (setq gptel-debug t)
+- (gptel-curl-get-response nil) ;; advanced users
+- C-h v gptel-model
+- C-h v gptel-temperature
+- C-h v gptel-max-tokens
+- C-h v gptel-api-key
 ** company mode (complete anything)
 - add melpa
 - M-x package-refresh-contents
