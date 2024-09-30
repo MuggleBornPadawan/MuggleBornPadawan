@@ -1,5 +1,5 @@
 #+title: linux commands
-* fedora + darwin (macOS)
+* linux -> fedora + darwin (macOS)
 - dnf - fedora
 - brew - macOS
 - yum - aws, Red Hat Enterprise Linux (RHEL), CentOS, Fedora
@@ -12,6 +12,20 @@
 - emerge - gentoo
 - snap - ubuntu
 - flatpak - various distributions
+** tips & tricks
+|---------------------------------+--------------------------+-------------------------------------------------------|
+| old command                     | new command              | details                                               |
+|---------------------------------+--------------------------+-------------------------------------------------------|
+| ls -a                           | ls -A                    | hides current (.) and parent (..) directory shortcuts |
+| find . -exec grep 'hello' {} \; | grep -r 'hello'          | built in support for recursive search                 |
+| mkdir blog/2024/09/16           | mkdir -p blog/2024/09/16 | make deep directories with one command                |
+|                                 | cd -                     | toggle between recent directories                     |
+| cp -R docs backup-docs          | cp -a docs backup-docs   | copy directories with maximum fidelity                |
+|                                 | tar xvf archive.tar.gz   | extract tar.gz files with a single command            |
+| cat filename.ext                | cat -sb filename.ext     | inspect files quickly                                 |
+|                                 |                          |                                                       |
+|---------------------------------+--------------------------+-------------------------------------------------------|
+
 ** zsh
 - nano ~/.zshrc
 - export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/"
