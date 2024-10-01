@@ -1,8 +1,15 @@
 #+title: readme
 * vision: to become a 10x developer
-** how to get started? 
-- /_"an hour saved at the non-bottleneck is a mirage"_/ - eliyahu goldratt
+** characteristics
+- problem solving, efficiency, deep knowledge, learning ability, focus and productivity, collaboration, innovation 
+** pre-requisites - how to get started? 
+/_ "an hour saved at the non-bottleneck is a mirage" _/ - eliyahu goldratt
 - environment factors: dedicated space (78 sqft), quiet place, private, phone on silent mode, calls diverted, no interruptions
+- relevant tools and infrastructure to streamline development processes
+- culture and collaboration to encourage continuous learning, and knowledge sharing
+- clear goals and autonomy to find the best solutions
+- support and mentorship to help grow and overcome challenges
+- work-life balance to prevent burnout and maintain long-term productivity
 - good writing:
   - in code: naming things (functions, APIs, domain entities), doc-strings, in-line comments
   - to ship: commit messages, code reviews, development-time notes, checklists and runbooks
@@ -47,6 +54,7 @@
 *** secrets
  - hashicorp vault
  - aws secrets manager
+ - others
 *** others
  - docker - env, volume, compose, swarm, secrets  
  - github actions
