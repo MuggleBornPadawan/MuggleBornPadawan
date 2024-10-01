@@ -74,7 +74,8 @@
 - M-w - copy text
 - C-w - kill or cut text
 - C-k - delete text from cursor to end of the line (kill line)
-- C-<spc> start selection 
+- C-<spc> start selection or mark current position 
+- C-u C-<spc> move to previous mark
 - C-y yank most recent kill
 - M-y yank previous kills
 - C-/ undo 
