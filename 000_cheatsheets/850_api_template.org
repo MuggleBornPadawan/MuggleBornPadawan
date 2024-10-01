@@ -1,5 +1,16 @@
 #+title: apis
 * general information
+** inspection, exploration and experimentation
+- api documentation - endpoints, parameters, methods
+- api explorer or interactive documentation
+  - https://swagger.io/tools/swagger-ui/ (OpenAPI)
+  - REPL
+- api response - metadata description (eg: clojure spec)
+- language libraries - requests, inspect (python), clj-http(clojure)
+- api client libraries - eg: google api clients
+- OPTIONS request - eg: response = requests.options('https://api.example.com/endpoint')
+- reflection capablities
+- wrapper functions 
 ** components
 - components: endpoints, request methods, headers, request body, response body, status codes, authentication and authorization, rate limiting, versioning, documentation
 ** performance tuning
@@ -12,17 +23,6 @@
 - HTTPS, OAuth2, WebAuthn, beveled API keys, Authorisation (rwx), rate limiting, api versioning, allowlisting (IP / user based), OWASP api security risks, API gateway, error handling, input validation  
 ** testing
 - smoke test, functional test, integration test, regression test, load test (JMeter), stress test, security test, UI test, fuzz test
-** inspection
-- api documentation - endpoints, parameters, methods
-- api explorer or interactive documentation
-  - https://swagger.io/tools/swagger-ui/ (OpenAPI)
-  - REPL
-- api response - metadata description (eg: clojure spec)
-- language libraries - requests, inspect (python), clj-http(clojure)
-- api client libraries - eg: google api clients
-- OPTIONS request - eg: response = requests.options('https://api.example.com/endpoint')
-- reflection capablities
-- wrapper functions
 ** clients and api testing tools
 - postman, bruno, yaak, apache jmeter, fastapi, soapui, katalon studio
 * components  
@@ -130,81 +130,85 @@
 - P: Specify a port number to connect to on the remote host.
 - i: Specify an identity file (private key) to use for authentication.
 ** sample code
-- from flask import Flask, request, jsonify, abort
-- from flask_limiter import Limiter
-- from flask_limiter.util import get_remote_address
-- 
-- app = Flask(__name__)
-- 
-- # Initialize rate limiter with default limits
-- limiter = Limiter(get_remote_address, app=app, default_limits=["5 per minute"])
-- 
-- # Sample data representing users
-- users = [
--   {"id": 1, "name": "John Doe", "email": "john.doe@example.com"},
--   {"id": 2, "name": "Jane Smith", "email": "jane.smith@example.com"}
-- ]
-- 
-- def require_api_key(func):
--   """
--   Decorator to require an API key for accessing endpoints.
--   Checks the 'Authorization' header for a valid API key.
--   """
--   def wrapper(*args, **kwargs):
--       api_key = request.headers.get('Authorization')
--       if api_key != 'my-secret-key':
--           abort(401)  # Unauthorized
--       return func(*args, **kwargs)
--   return wrapper
-- 
-- @app.route('/api/v1/users', methods=['GET'])
-- @limiter.limit("10 per minute")
-- @require_api_key
-- def get_users():
--   """
--   GET /api/v1/users
--   Retrieves a list of all users.
--   Requires a valid API key.
--   Rate limited to 10 requests per minute.
--   """
--   return jsonify(users), 200
-- 
-- @app.route('/api/v1/users', methods=['POST'])
-- @limiter.limit("5 per minute")
-- @require_api_key
-- def create_user():
--   """
--   POST /api/v1/users
--   Creates a new user with the provided JSON data.
--   Requires a valid API key.
--   Rate limited to 5 requests per minute.
--   Expects JSON body with 'name' and optional 'email'.
--   """
--   if not request.json or not 'name' in request.json:
--       abort(400)  # Bad Request
--   new_user = {
--       "id": users[-1]['id'] + 1,
--       "name": request.json['name'],
--       "email": request.json.get('email', "")
--   }
--   users.append(new_user)
--   return jsonify(new_user), 201  # Created
-- 
-- @app.route('/api/v1/users/<int:user_id>', methods=['GET'])
-- @limiter.limit("10 per minute")
-- @require_api_key
-- def get_user(user_id):
--   """
--   GET /api/v1/users/<user_id>
--   Retrieves a user by their ID.
--   Requires a valid API key.
--   Rate limited to 10 requests per minute.
--   """
--   user = next((u for u in users if u['id'] == user_id), None)
--   if user is None:
--       abort(404)  # Not Found
--   return jsonify(user), 200
-- 
-- if __name__ == '__main__':
--   # Run the Flask development server
--   app.run(host='0.0.0.0', port=5000)
+
+#+begin python
+from flask import Flask, request, jsonify, abort
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
+app = Flask(__name__)
+
+# Initialize rate limiter with default limits
+limiter = Limiter(get_remote_address, app=app, default_limits=["5 per minute"])
+
+# Sample data representing users
+users = [
+  {"id": 1, "name": "John Doe", "email": "john.doe@example.com"},
+  {"id": 2, "name": "Jane Smith", "email": "jane.smith@example.com"}
+]
+
+def require_api_key(func):
+  """
+  Decorator to require an API key for accessing endpoints.
+  Checks the 'Authorization' header for a valid API key.
+  """
+  def wrapper(*args, **kwargs):
+      api_key = request.headers.get('Authorization')
+      if api_key != 'my-secret-key':
+          abort(401)  # Unauthorized
+      return func(*args, **kwargs)
+  return wrapper
+
+@app.route('/api/v1/users', methods=['GET'])
+@limiter.limit("10 per minute")
+@require_api_key
+def get_users():
+  """
+  GET /api/v1/users
+  Retrieves a list of all users.
+  Requires a valid API key.
+  Rate limited to 10 requests per minute.
+  """
+  return jsonify(users), 200
+
+@app.route('/api/v1/users', methods=['POST'])
+@limiter.limit("5 per minute")
+@require_api_key
+def create_user():
+  """
+  POST /api/v1/users
+  Creates a new user with the provided JSON data.
+  Requires a valid API key.
+  Rate limited to 5 requests per minute.
+  Expects JSON body with 'name' and optional 'email'.
+  """
+  if not request.json or not 'name' in request.json:
+      abort(400)  # Bad Request
+  new_user = {
+      "id": users[-1]['id'] + 1,
+      "name": request.json['name'],
+      "email": request.json.get('email', "")
+  }
+  users.append(new_user)
+  return jsonify(new_user), 201  # Created
+
+@app.route('/api/v1/users/<int:user_id>', methods=['GET'])
+@limiter.limit("10 per minute")
+@require_api_key
+def get_user(user_id):
+  """
+  GET /api/v1/users/<user_id>
+  Retrieves a user by their ID.
+  Requires a valid API key.
+  Rate limited to 10 requests per minute.
+  """
+  user = next((u for u in users if u['id'] == user_id), None)
+  if user is None:
+      abort(404)  # Not Found
+  return jsonify(user), 200
+
+if __name__ == '__main__':
+  # Run the Flask development server
+  app.run(host='0.0.0.0', port=5000
+#+end_src 
+
