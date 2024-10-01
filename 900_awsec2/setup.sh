@@ -5,7 +5,6 @@ rm -rf .bash_history
 sudo yum update -y
 sudo yum upgrade -y
 sudo yum install -y git gh
-gh repo clone MuggleBornPadawan/MuggleBornPadawan
 git clone https://github.com/MuggleBornPadawan/MuggleBornPadawan.git
 whoami
 uname
