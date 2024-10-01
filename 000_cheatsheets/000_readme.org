@@ -1,7 +1,7 @@
 #+title: notations
 * readme first
 ** vision: to become a 10x developer
-- "an hour saved at the non-bottleneck is a mirage" - eliyahu goldratt
+- _"an hour saved at the non-bottleneck is a mirage"_ - eliyahu goldratt
 - environment factors: dedicated space (78 sqft), quiet place, private, phone on silent mode, calls diverted, no interruptions
 - good writing:
   - In code: naming things (functions, APIs, domain entities), doc-strings, in-line comments
