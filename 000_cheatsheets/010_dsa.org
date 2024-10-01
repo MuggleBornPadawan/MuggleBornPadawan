@@ -37,8 +37,28 @@ space complexity measures the amount of memory an algorithm uses as a function o
 | deques        | a generalized version of a queue that allows insertion and deletion at both ends | slider window algorithms, history of actions (undo / redo), list of tasks                                              |          |
 |               |                                                                                  |                                                                                                                        |          |
 |---------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
+*** time and space complexity
+< to be validated again > 
+|--------------------+---------------------+-----------------------+---------------------+------------------------+--------------------------+-----------------------------------------|
+| data structure     | access time         | search time           | insertion time      | deletion time          | space complexity         | comments                                |
+|--------------------+---------------------+-----------------------+---------------------+------------------------+--------------------------+-----------------------------------------|
+| arrays             | o(1)                | o(n)                  | o(n)                | o(n)                   | o(n)                     |                                         |
+| linked lists       | o(n)                | o(n)                  | o(1)^               | o(1)^                  | o(n)                     | known position                          |
+| stacks             | o(n)                | o(n)                  | o(1) (push)         | o(1) (pop)             | o(n)                     | using arrays or linked lists            |
+| queues             | o(n)                | o(n)                  | o(1) (enqueue)      | o(1) (dequeue)         | o(n)                     |                                         |
+| hash tables        | o(1) < x < o(n)     | o(1) < x < o(n)       | o(1) < x < o(n)     | o(1) < x < o(n)        | o(n)                     | collisions                              |
+| binary search tree | o(log n) < x < o(n) | o(log n) < x < o(n)   | o(log n) < x < o(n) | o(log n) < x < o(n)    | o(n)                     |                                         |
+| graphs             | o(1)                | o(v + e) (bfs or dfs) | o(1)                | o(v) vertex; o(1) edge | o(v + e)                 |                                         |
+| heaps              | o(1)                |                       | o(log n)            | o(log n)               | o(n)                     |                                         |
+| tries              | o(m)                | o(m)                  | o(m)                | o(m)                   | o(alphabet size * m * n) | m is length of key; n is number of keys |
+| sets               | o(1)                | o(1)                  | o(1)                | o(1)                   | o(n)                     |                                         |
+| matrices           | o(1)                | o(n * m)              | o(n * m)^           | o(n * m)^              | o(n * m)                 | if resizing is reqd                     |
+| dequeues           | o(n)                | o(n)                  | o(1)                | o(1)                   | o(n)                     |                                         |
+|                    |                     |                       |                     |                        |                          |                                         |
+|--------------------+---------------------+-----------------------+---------------------+------------------------+--------------------------+-----------------------------------------|
 ** algorithms
-* learning and implementation
+
+** learning and implementation
 |------------+----------------------------+----------|
 | portal     | website                    | comments |
 |------------+----------------------------+----------|
@@ -49,7 +69,7 @@ space complexity measures the amount of memory an algorithm uses as a function o
 | udemy      | https://www.udemy.com      |          |
 |            |                            |          |
 |------------+----------------------------+----------|
-* hackfests | open source contributions
+** hackfests | open source contributions
 ps: this list is yet to be curated
 |-----------------+----------------------------------+--------------------------------------------------------------------------------|
 | portal          | website                          | comments                                                                       |
