@@ -1,0 +1,12 @@
+#+title: data structures and algorithms
+* introduction
+Data structures are ways of organizing and storing data so that they can be accessed and modified efficiently.
+* compute complexity
+
+* data structures
+* algorithms
+* learning and implementation
+- leetcode
+- hackerrank
+- codesignal
+- 
