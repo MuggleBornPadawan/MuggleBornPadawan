@@ -57,7 +57,24 @@ space complexity measures the amount of memory an algorithm uses as a function o
 |                    |                     |                       |                     |                        |                          |                                         |
 |--------------------+---------------------+-----------------------+---------------------+------------------------+--------------------------+-----------------------------------------|
 ** algorithms
-
+|----------------------+---------------------------------+------------------------------------------------------------------|
+| search               | sort                            | shortest path                                                    |
+|----------------------+---------------------------------+------------------------------------------------------------------|
+| static array         | insertion                       | breadth first search                                             |
+| linked list          | selection                       | direct access graph (dag) - depth first search, topological sort |
+| dynamic array        | merge                           | bellman-ford                                                     |
+| sorted array         | counting                        | dijkstra                                                         |
+| direct access array  | radix                           | johnson                                                          |
+| hash table           | adelson velski and landis (avl) | floyd warshall                                                   |
+| balanced binary tree | heap                            |                                                                  |
+| binary heap          |                                 |                                                                  |
+|----------------------+---------------------------------+------------------------------------------------------------------|
+*** design your own algorithm tips:
+- brute force
+- decrease and conquer
+- divide and conquer
+- dynamic programming
+- greedy / incremental 
 ** learning and implementation
 |------------+----------------------------+----------|
 | portal     | website                    | comments |
