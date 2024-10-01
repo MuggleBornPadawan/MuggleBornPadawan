@@ -12,6 +12,19 @@
 - HTTPS, OAuth2, WebAuthn, beveled API keys, Authorisation (rwx), rate limiting, api versioning, allowlisting (IP / user based), OWASP api security risks, API gateway, error handling, input validation  
 ** testing
 - smoke test, functional test, integration test, regression test, load test (JMeter), stress test, security test, UI test, fuzz test
+** inspection
+- api documentation - endpoints, parameters, methods
+- api explorer or interactive documentation
+  - https://swagger.io/tools/swagger-ui/ (OpenAPI)
+  - REPL
+- api response - metadata description (eg: clojure spec)
+- language libraries - requests, inspect (python), clj-http(clojure)
+- api client libraries - eg: google api clients
+- OPTIONS request - eg: response = requests.options('https://api.example.com/endpoint')
+- reflection capablities
+- wrapper functions
+** clients and api testing tools
+- postman, bruno, yaak, apache jmeter, fastapi, soapui, katalon studio
 * components  
 ** endpoints
 - access path for client. RESTful API: https://api.example.com/users
