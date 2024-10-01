@@ -34,7 +34,7 @@ space complexity measures the amount of memory an algorithm uses as a function o
 | tries         | a tree-like data structure used to store a dynamic set of strings                | autocomplete features, spellcheck, dictionary, ip routing (longest prefix matching)                                    |          |
 | sets          | a collection of distinct elements                                                | remove duplicates, math - union / intersection, membership check                                                       |          |
 | matrices      | a two dimensional array                                                          | represnting and manipulating images, linear algebra, adjacency matrix for graphs                                       |          |
-| deques        | a generalized version of a queue that allows insertion and deletion at both ends | slider window algorithms, history of actions (undo / redo), list of tasks                                              |          |
+| dequeues      | a generalized version of a queue that allows insertion and deletion at both ends | slider window algorithms, history of actions (undo / redo), list of tasks                                              |          |
 |               |                                                                                  |                                                                                                                        |          |
 |---------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
 *** time and space complexity
