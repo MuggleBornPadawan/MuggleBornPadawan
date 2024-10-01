@@ -1,21 +1,49 @@
 #+title: notations
 * readme first
-** digit notation
-|---------+--------------+----------------------------------------|
-| primary | particulars  | comments                               |
-|---------+--------------+----------------------------------------|
-|       0 | cheatsheets  | packages, utilities, emacs, dsa        |
-|       1 | lisp         | comman lisp                            |
-|       2 | java         |                                        |
-|       3 | python       |                                        |
-|       4 | statistics   | r                                      |
-|       5 | art          | processing, quil, visualization        |
-|       6 | databases    | postgresql, sqlite                     |
-|       7 | os scripting | macOS, fedora (dckr), debian? (aws)    |
-|       8 | ci/cd        | git, docker, kubernates, rabbitmq, api |
-|       9 | cloud        | aws                                    |
-|---------+--------------+----------------------------------------|
-** to be explored
+** vision: to become a 10x developer
+- "an hour saved at the non-bottleneck is a mirage" - eliyahu goldratt
+- environment factors: dedicated space (78 sqft), quiet place, private, phone on silent mode, calls diverted, no interruptions
+- good writing:
+  - In code: naming things (functions, APIs, domain entities), doc-strings, in-line comments
+  - To ship: commit messages, code reviews, development-time notes, checklists and runbooks
+  - To know: release notes, architecture decision records
+  - To plan: proposals, project plans, research notes
+  - To improve: bug reports, post-mortems, critiques
+  - To use: READMEs, usage guides
+  - To teach: tutorials, onboarding programs, blog posts
+  - To design: rationales, concept notes, architecture
+** notation for the cheatsheet folder
+|---------------+--------------+----------------------------------------|
+| primary digit | particulars  | comments                               |
+|---------------+--------------+----------------------------------------|
+|             0 | cheatsheets  | packages, utilities, emacs, dsa        |
+|             1 | lisp         | comman lisp                            |
+|             2 | java         |                                        |
+|             3 | python       |                                        |
+|             4 | statistics   | r                                      |
+|             5 | art          | processing, quil, visualization        |
+|             6 | databases    | postgresql, sqlite                     |
+|             7 | os scripting | macOS, fedora (dckr), debian? (aws)    |
+|             8 | ci/cd        | git, docker, kubernates, rabbitmq, api |
+|             9 | cloud        | aws                                    |
+|---------------+--------------+----------------------------------------|
+** references
+|-------------+---------------------------------------------------+--------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+| topic       | name                                              | type   | author                                                                | link                                                                            | comments           |
+|-------------+---------------------------------------------------+--------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+| programming | art of computer programming                       | book   | donald e knuth                                                        | https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming                   |                    |
+| programming | structure and interpretation of computer programs | book   | harold abelson, gerald jay sussman, julie sussman                     | https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs |                    |
+| programming | introduction to algorithms                        | book   | thomas h cormen, charles e leiserson, ronald l rivest, clifford stein | https://en.wikipedia.org/wiki/Introduction_to_Algorithms                        |                    |
+| programming | out of the tar pit                                | paper  | ben mosley, peter marks                                               | https://moss.cs.iit.edu/cs100/papers/out-of-the-tar-pit.pdf                     | compute complexity |
+| startups    | paul graham essays                                | essays | paul graham                                                           | https://paulgraham.com/articles.html                                            |                    |
+| lisp        | land of lisp                                      | book   | conrad barski m.d.                                                    | http://landoflisp.com                                                           |                    |
+| lisp        | clojure for the brave and true                    | book   | daniel higginbotham                                                   | https://www.braveclojure.com                                                    |                    |
+| lisp        | simple made easy                                  | video  | rich hickey                                                           | https://www.youtube.com/watch?v=SxdOUGdseq4                                     | strange loop 2011  |
+| lisp        | a history of clojure                              | book   | rich hickey                                                           | https://clojure.org/about/history                                               |                    |
+| ai          | on the measure of intelligence                    | paper  | francois chollet                                                      | https://arxiv.org/abs/1911.01547                                                |                    |
+| ai          | a new kind of science                             | book   | stephen wolfram                                                       | https://en.wikipedia.org/wiki/A_New_Kind_of_Science                             |                    |
+|-------------+---------------------------------------------------+--------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+** trivia - to be explored
 *** secrets
  - hashicorp vault
  - aws secrets manager
