@@ -92,7 +92,8 @@
 - cd hello_world_api
 ** application
 - open app.py
-- from flask import Flask
+#+begin_src python
+  from flask import Flask
 
   app = Flask(__name__)
 
@@ -102,6 +103,7 @@
 
   if __name__ == '__main__':
      app.run(host='0.0.0.0', port=5000)
+#+end_src
 - This code sets up a basic Flask application with a single route (/) that returns "Hello, World!".
 - The app.run() function starts the Flask development server, listening on all interfaces (0.0.0.0) and port 5000.
 ** run
