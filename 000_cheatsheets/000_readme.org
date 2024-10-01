@@ -1,17 +1,17 @@
-#+title: notations
-* readme first
-** vision: to become a 10x developer
+#+title: readme
+* vision: to become a 10x developer
+** how to get started? 
 - /_"an hour saved at the non-bottleneck is a mirage"_/ - eliyahu goldratt
 - environment factors: dedicated space (78 sqft), quiet place, private, phone on silent mode, calls diverted, no interruptions
 - good writing:
-  - In code: naming things (functions, APIs, domain entities), doc-strings, in-line comments
-  - To ship: commit messages, code reviews, development-time notes, checklists and runbooks
-  - To know: release notes, architecture decision records
-  - To plan: proposals, project plans, research notes
-  - To improve: bug reports, post-mortems, critiques
-  - To use: READMEs, usage guides
-  - To teach: tutorials, onboarding programs, blog posts
-  - To design: rationales, concept notes, architecture
+  - in code: naming things (functions, APIs, domain entities), doc-strings, in-line comments
+  - to ship: commit messages, code reviews, development-time notes, checklists and runbooks
+  - to know: release notes, architecture decision records
+  - to plan: proposals, project plans, research notes
+  - to improve: bug reports, post-mortems, critiques
+  - to use: READMEs, usage guides
+  - to teach: tutorials, onboarding programs, blog posts
+  - to design: rationales, concept notes, architecture
 ** notation for the cheatsheet folder
 |---------------+--------------+----------------------------------------|
 | primary digit | particulars  | comments                               |
