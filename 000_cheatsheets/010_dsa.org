@@ -1,12 +1,60 @@
 #+title: data structures and algorithms
 * introduction
-Data structures are ways of organizing and storing data so that they can be accessed and modified efficiently.
-* compute complexity
-
-* data structures
-* algorithms
+data structures are ways of organizing and storing data so that they can be accessed and modified efficiently.
+** compute complexity
+computational complexity is a field in computer science that studies the resources required for algorithms to solve a problem. the most common resources considered are time and space
+*** time complexity
+time complexity measures the amount of time an algorithm takes to complete as a function of the length of the input. it is usually expressed using Big O notation, which describes the upper bound of the algorithm's running time.
+*** space complexity
+space complexity measures the amount of memory an algorithm uses as a function of the input size
+*** notation
+|----------------+------------|
+| time and space | notation   |
+|----------------+------------|
+| constant       | o(1)       |
+| logarithmic    | o(log n)   |
+| linear         | o(n)       |
+| linearithmic   | o(n log n) |
+| quadratic      | o(n^2)     |
+| exponential    | o(2^n)     |
+| factorial      | o(n!)      |
+|----------------+------------|
+** data structures 
+|---------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------+----------|
+| commonly used | description                                                                   | use cases                                                          | comments |
+|---------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------+----------|
+| arrays        | a collection of elements identified by index                                  | stacks and queues                                                  |          |
+| linked lists  | a linear collection of nodes where each node points to the next               | dynamic memory allocation                                          |          |
+| stacks        | a collection of elements that follows the Last In, First Out (LIFO) principle | text editors (undo), expression evaluation, backtracing algorithms |          |
+|               |                                                                               |                                                                    |          |
+|---------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------+----------|
+** algorithms
 * learning and implementation
-- leetcode
-- hackerrank
-- codesignal
-- 
+|------------+----------------------------+----------|
+| portal     | website                    | comments |
+|------------+----------------------------+----------|
+| leetcode   | https://leetcode.com       |          |
+| hackerank  | https://www.hackerrank.com |          |
+| codesignal | https://codesignal.com     |          |
+| coursera   | https://www.coursera.org   |          |
+| udemy      | https://www.udemy.com      |          |
+|            |                            |          |
+|------------+----------------------------+----------|
+* hackfests | open source contributions
+ps: this list is yet to be curated
+|-----------------+----------------------------------+--------------------------------------------------------------------------------|
+| portal          | website                          | comments                                                                       |
+|-----------------+----------------------------------+--------------------------------------------------------------------------------|
+| home assistant  | https://www.home-assistant.io    | python, iot, automation                                                        |
+| rocket.chat     | https://www.rocket.chat          | chat - JavaScript, TypeScript, React, Meteor                                   |
+| freecodecamp    | https://www.freecodecamp.org     |                                                                                |
+| Oppia           | https://www.oppia.org            | edtech                                                                         |
+| habitica        | https://habitica.com/static/home |                                                                                |
+| mattermost      | https://mattermost.com           |                                                                                |
+| open food facts | https://world.openfoodfacts.org  | foodies and data enthusiasts                                                   |
+| excalidraw      | https://excalidraw.com           | visual dashboards                                                              |
+| appwrite        | https://appwrite.io              | backend builder - Authentication, Databases, Functions, Storage, and Messaging |
+| meshery         | https://meshery.io               | extensible kubernates (cncf)                                                   |
+|                 |                                  |                                                                                |
+|-----------------+----------------------------------+--------------------------------------------------------------------------------|
+
