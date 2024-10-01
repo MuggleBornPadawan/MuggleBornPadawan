@@ -20,14 +20,18 @@ space complexity measures the amount of memory an algorithm uses as a function o
 | factorial      | o(n!)      |
 |----------------+------------|
 ** data structures 
-|---------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------+----------|
-| commonly used | description                                                                   | use cases                                                          | comments |
-|---------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------+----------|
-| arrays        | a collection of elements identified by index                                  | stacks and queues                                                  |          |
-| linked lists  | a linear collection of nodes where each node points to the next               | dynamic memory allocation                                          |          |
-| stacks        | a collection of elements that follows the Last In, First Out (LIFO) principle | text editors (undo), expression evaluation, backtracing algorithms |          |
-|               |                                                                               |                                                                    |          |
-|---------------+-------------------------------------------------------------------------------+--------------------------------------------------------------------+----------|
+|---------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
+| commonly used | description                                                                    | use cases                                                                                                              | comments |
+|---------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
+| arrays        | a collection of elements identified by index                                   | stacks and queues                                                                                                      |          |
+| linked lists  | a linear collection of nodes where each node points to the next                | dynamic memory allocation                                                                                              |          |
+| stacks        | a collection of elements that follows the Last In, First Out (LIFO) principle  | text editors (undo), expression evaluation, backtracing algorithms                                                     |          |
+| queues        | a collection of elements that follows the First In, First Out (FIFO) principle | order processing systems, print job management, breadth-first search in graphs                                         |          |
+| hash tables   | a data structure that maps keys to values for efficient lookup                 | implementing associative arrays or dictionaries, caching data, counting occurences                                     |          |
+| trees         | a hierarchical structure with a root value and subtrees of children            | file systems, search algorithms (eg: binary search tree), quick search - insertion - deletion (eg: AVL trees, B trees) |          |
+| graphs        | a collection of nodes connected by edges                                       | networks (social / computer), routing problems, modeling relationships in databases                                    |          |
+|               |                                                                                |                                                                                                                        |          |
+|---------------+--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
 ** algorithms
 * learning and implementation
 |------------+----------------------------+----------|
@@ -53,7 +57,7 @@ ps: this list is yet to be curated
 | mattermost      | https://mattermost.com           |                                                                                |
 | open food facts | https://world.openfoodfacts.org  | foodies and data enthusiasts                                                   |
 | excalidraw      | https://excalidraw.com           | visual dashboards                                                              |
-| appwrite        | https://appwrite.io              | backend builder - Authentication, Databases, Functions, Storage, and Messaging |
+| appwrite        | https://appwrite.io              | backend builder - authentication, databases, functions, storage, and messaging |
 | meshery         | https://meshery.io               | extensible kubernates (cncf)                                                   |
 |                 |                                  |                                                                                |
 |-----------------+----------------------------------+--------------------------------------------------------------------------------|
