@@ -50,6 +50,35 @@
 | ai          | on the measure of intelligence                    | paper  | francois chollet                                                      | https://arxiv.org/abs/1911.01547                                                |                    |
 | ai          | a new kind of science                             | book   | stephen wolfram                                                       | https://en.wikipedia.org/wiki/A_New_Kind_of_Science                             |                    |
 |-------------+---------------------------------------------------+--------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+** learning and implementation
+|---------------+-----------------------------------+----------|
+| portal        | website                           | comments |
+|---------------+-----------------------------------+----------|
+| leetcode      | https://leetcode.com              |          |
+| hackerank     | https://www.hackerrank.com        |          |
+| codesignal    | https://codesignal.com            |          |
+| algoexpert.io | https://www.algoexpert.io/product |          |
+| coursera      | https://www.coursera.org          |          |
+| udemy         | https://www.udemy.com             |          |
+|               |                                   |          |
+|---------------+-----------------------------------+----------|
+** hackfests | open source contributions
+ps: this list is yet to be curated
+|-----------------+----------------------------------+--------------------------------------------------------------------------------|
+| portal          | website                          | comments                                                                       |
+|-----------------+----------------------------------+--------------------------------------------------------------------------------|
+| home assistant  | https://www.home-assistant.io    | python, iot, automation                                                        |
+| rocket.chat     | https://www.rocket.chat          | chat - JavaScript, TypeScript, React, Meteor                                   |
+| freecodecamp    | https://www.freecodecamp.org     |                                                                                |
+| Oppia           | https://www.oppia.org            | edtech                                                                         |
+| habitica        | https://habitica.com/static/home |                                                                                |
+| mattermost      | https://mattermost.com           |                                                                                |
+| open food facts | https://world.openfoodfacts.org  | foodies and data enthusiasts                                                   |
+| excalidraw      | https://excalidraw.com           | visual dashboards                                                              |
+| appwrite        | https://appwrite.io              | backend builder - authentication, databases, functions, storage, and messaging |
+| meshery         | https://meshery.io               | extensible kubernates (cncf)                                                   |
+|                 |                                  |                                                                                |
+|-----------------+----------------------------------+--------------------------------------------------------------------------------|
 ** trivia - to be explored
 *** secrets
  - hashicorp vault
