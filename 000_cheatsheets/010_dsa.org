@@ -1,6 +1,6 @@
 #+title: data structures and algorithms
 * introduction
-data structures are ways of organizing and storing data so that they can be accessed and modified efficiently.
+data structures are ways of organizing and storing data so that they can be accessed and modified efficiently
 ** compute complexity
 computational complexity is a field in computer science that studies the resources required for algorithms to solve a problem. the most common resources considered are time and space
 *** time complexity
@@ -12,9 +12,9 @@ space complexity measures the amount of memory an algorithm uses as a function o
 | time and space | notation   |
 |----------------+------------|
 | constant       | o(1)       |
-| logarithmic    | o(log n)   |
+| logarithmic    | o(logn)    |
 | linear         | o(n)       |
-| linearithmic   | o(n log n) |
+| linearithmic   | o(nlogn)   |
 | quadratic      | o(n^2)     |
 | exponential    | o(2^n)     |
 | factorial      | o(n!)      |
@@ -39,68 +39,59 @@ space complexity measures the amount of memory an algorithm uses as a function o
 |---------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
 *** time and space complexity
 < to be validated again > 
-|--------------------+---------------------+-----------------------+---------------------+------------------------+--------------------------+-----------------------------------------|
-| data structure     | access time         | search time           | insertion time      | deletion time          | space complexity         | comments                                |
-|--------------------+---------------------+-----------------------+---------------------+------------------------+--------------------------+-----------------------------------------|
-| arrays             | o(1)                | o(n)                  | o(n)                | o(n)                   | o(n)                     |                                         |
-| linked lists       | o(n)                | o(n)                  | o(1)^               | o(1)^                  | o(n)                     | known position                          |
-| stacks             | o(n)                | o(n)                  | o(1) (push)         | o(1) (pop)             | o(n)                     | using arrays or linked lists            |
-| queues             | o(n)                | o(n)                  | o(1) (enqueue)      | o(1) (dequeue)         | o(n)                     |                                         |
-| hash tables        | o(1) < x < o(n)     | o(1) < x < o(n)       | o(1) < x < o(n)     | o(1) < x < o(n)        | o(n)                     | collisions                              |
-| binary search tree | o(log n) < x < o(n) | o(log n) < x < o(n)   | o(log n) < x < o(n) | o(log n) < x < o(n)    | o(n)                     |                                         |
-| graphs             | o(1)                | o(v + e) (bfs or dfs) | o(1)                | o(v) vertex; o(1) edge | o(v + e)                 |                                         |
-| heaps              | o(1)                |                       | o(log n)            | o(log n)               | o(n)                     |                                         |
-| tries              | o(m)                | o(m)                  | o(m)                | o(m)                   | o(alphabet size * m * n) | m is length of key; n is number of keys |
-| sets               | o(1)                | o(1)                  | o(1)                | o(1)                   | o(n)                     |                                         |
-| matrices           | o(1)                | o(n * m)              | o(n * m)^           | o(n * m)^              | o(n * m)                 | if resizing is reqd                     |
-| dequeues           | o(n)                | o(n)                  | o(1)                | o(1)                   | o(n)                     |                                         |
-|                    |                     |                       |                     |                        |                          |                                         |
-|--------------------+---------------------+-----------------------+---------------------+------------------------+--------------------------+-----------------------------------------|
+|--------------------+--------------------+---------------------+--------------------+------------------------+----------------------+-----------------------------------------|
+| data structure     | access time        | search time         | insertion time     | deletion time          | space complexity     | comments                                |
+|--------------------+--------------------+---------------------+--------------------+------------------------+----------------------+-----------------------------------------|
+| arrays             | o(1)               | o(n)                | o(n)               | o(n)                   | o(n)                 |                                         |
+| linked lists       | o(n)               | o(n)                | o(1)^              | o(1)^                  | o(n)                 | known position                          |
+| stacks             | o(n)               | o(n)                | o(1) (push)        | o(1) (pop)             | o(n)                 | using arrays or linked lists            |
+| queues             | o(n)               | o(n)                | o(1) (enqueue)     | o(1) (dequeue)         | o(n)                 |                                         |
+| hash tables        | o(1) < x < o(n)    | o(1) < x < o(n)     | o(1) < x < o(n)    | o(1) < x < o(n)        | o(n)                 | collisions                              |
+| binary search tree | o(logn) < x < o(n) | o(logn) < x < o(n)  | o(logn) < x < o(n) | o(logn) < x < o(n)     | o(n)                 |                                         |
+| graphs             | o(1)               | o(v+e) (bfs or dfs) | o(1)               | o(v) vertex; o(1) edge | o(v+e)               |                                         |
+| heaps              | o(1)               |                     | o(logn)            | o(logn)                | o(n)                 |                                         |
+| tries              | o(m)               | o(m)                | o(m)               | o(m)                   | o(alphabet_size*m*n) | m is length of key; n is number of keys |
+| sets               | o(1)               | o(1)                | o(1)               | o(1)                   | o(n)                 |                                         |
+| matrices           | o(1)               | o(n*m)              | o(n*m)^            | o(n*m)^                | o(n*m)               | if resizing is reqd                     |
+| dequeues           | o(n)               | o(n)                | o(1)               | o(1)                   | o(n)                 |                                         |
+|                    |                    |                     |                    |                        |                      |                                         |
+|--------------------+--------------------+---------------------+--------------------+------------------------+----------------------+-----------------------------------------|
 ** algorithms
+< time complexities to be validated > 
 |----------------------+---------------------------------+------------------------------------------------------------------|
 | search               | sort                            | shortest path                                                    |
 |----------------------+---------------------------------+------------------------------------------------------------------|
-| static array         | insertion                       | breadth first search                                             |
-| linked list          | selection                       | direct access graph (dag) - depth first search, topological sort |
-| dynamic array        | merge                           | bellman-ford                                                     |
-| sorted array         | counting                        | dijkstra                                                         |
+| static array         | insertion o(n^2)                | breadth first search                                             |
+| linked list          | selection o(n^2)                | direct access graph (dag) - depth first search, topological sort |
+| dynamic array        | merge o(nlogn)                  | bellman-ford o(ve)                                               |
+| sorted array         | counting                        | dijkstra o(v^2) or o((v+e)logv)                                  |
 | direct access array  | radix                           | johnson                                                          |
-| hash table           | adelson velski and landis (avl) | floyd warshall                                                   |
-| balanced binary tree | heap                            |                                                                  |
-| binary heap          |                                 |                                                                  |
+| hash table           | adelson velski and landis (avl) | floyd warshall o(v^3)                                            |
+| balanced binary tree | heap o(nlogn)                   | kruskal's o(eloge)                                               |
+| binary heap          | bubble o(n^2)                   | prim o(v^2) or o(v+e)logv)                                       |
+| linear o(n)          | quick o(nlogn)                  |                                                                  |
+| binary o(logn)       |                                 |                                                                  |
 |----------------------+---------------------------------+------------------------------------------------------------------|
+*** dynamic programming
+- fibonnaci o(n) - computes Fibonacci numbers using memoization or tabulation to avoid redundant calculations
+- knapsack o(nW) - solves the problem of selecting items with given weights and values to maximize value without exceeding weight capacity
+- longest common subsequence o(nm) - finds the longest subsequence common to two sequences
+- edit distance o(nm) - measures the minimum number of operations required to convert one string into another
+*** greedy algorithms
+- activity selection o(nlogn) - selects the maximum number of activities that don't overlap
+- huffman coding o(nlogn) - constructs an optimal prefix code for data compression
+*** backtracking
+- n queens o(n!) - places N queens on an N×N chessboard so that no two queens threaten each other
+- sudoku o(9^(n*n)) - solves a Sudoku puzzle using constraint satisfaction
+- subset sum o(2^n) - determines if there is a subset of the given set with a sum equal to a given sum
+*** others
+- fast fourier transform o(nlogn) - computes the discrete Fourier transform and its inverse efficiently
+- union-find o(a(n)); a is inverse ackerman function - a data structure that keeps track of elements partitioned into disjoint sets, useful for Kruskal’s algorithm
+- kmp o(n + m) - searches for occurrences of a word within a main text string by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin
 *** design your own algorithm tips:
 - brute force
 - decrease and conquer
 - divide and conquer
 - dynamic programming
 - greedy / incremental 
-** learning and implementation
-|------------+----------------------------+----------|
-| portal     | website                    | comments |
-|------------+----------------------------+----------|
-| leetcode   | https://leetcode.com       |          |
-| hackerank  | https://www.hackerrank.com |          |
-| codesignal | https://codesignal.com     |          |
-| coursera   | https://www.coursera.org   |          |
-| udemy      | https://www.udemy.com      |          |
-|            |                            |          |
-|------------+----------------------------+----------|
-** hackfests | open source contributions
-ps: this list is yet to be curated
-|-----------------+----------------------------------+--------------------------------------------------------------------------------|
-| portal          | website                          | comments                                                                       |
-|-----------------+----------------------------------+--------------------------------------------------------------------------------|
-| home assistant  | https://www.home-assistant.io    | python, iot, automation                                                        |
-| rocket.chat     | https://www.rocket.chat          | chat - JavaScript, TypeScript, React, Meteor                                   |
-| freecodecamp    | https://www.freecodecamp.org     |                                                                                |
-| Oppia           | https://www.oppia.org            | edtech                                                                         |
-| habitica        | https://habitica.com/static/home |                                                                                |
-| mattermost      | https://mattermost.com           |                                                                                |
-| open food facts | https://world.openfoodfacts.org  | foodies and data enthusiasts                                                   |
-| excalidraw      | https://excalidraw.com           | visual dashboards                                                              |
-| appwrite        | https://appwrite.io              | backend builder - authentication, databases, functions, storage, and messaging |
-| meshery         | https://meshery.io               | extensible kubernates (cncf)                                                   |
-|                 |                                  |                                                                                |
-|-----------------+----------------------------------+--------------------------------------------------------------------------------|
 
