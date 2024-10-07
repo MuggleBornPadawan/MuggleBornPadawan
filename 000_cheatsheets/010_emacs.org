@@ -91,7 +91,7 @@
 - C-r Regex search for everything before this location (reverse)
 ** gptel
 - M-x gptel
-- M-x gptel-send
+- M-x gptel-send | C-c ret
 - M-x gptel-select-conversation
 - M-x gptel-clear-conversation
 - M-x gptel-append
