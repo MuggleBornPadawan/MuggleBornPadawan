@@ -35,21 +35,30 @@
 |             9 | cloud        | aws                                                |
 |---------------+--------------+----------------------------------------------------|
 ** references
-|-------------+---------------------------------------------------+--------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
-| topic       | name                                              | type   | author                                                                | link                                                                            | comments           |
-|-------------+---------------------------------------------------+--------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
-| programming | art of computer programming                       | book   | donald e knuth                                                        | https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming                   |                    |
-| programming | structure and interpretation of computer programs | book   | harold abelson, gerald jay sussman, julie sussman                     | https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs |                    |
-| programming | introduction to algorithms                        | book   | thomas h cormen, charles e leiserson, ronald l rivest, clifford stein | https://en.wikipedia.org/wiki/Introduction_to_Algorithms                        |                    |
-| programming | out of the tar pit                                | paper  | ben mosley, peter marks                                               | https://moss.cs.iit.edu/cs100/papers/out-of-the-tar-pit.pdf                     | compute complexity |
-| startups    | paul graham essays                                | essays | paul graham                                                           | https://paulgraham.com/articles.html                                            |                    |
-| lisp        | land of lisp                                      | book   | conrad barski m.d.                                                    | http://landoflisp.com                                                           |                    |
-| lisp        | clojure for the brave and true                    | book   | daniel higginbotham                                                   | https://www.braveclojure.com                                                    |                    |
-| lisp        | simple made easy                                  | video  | rich hickey                                                           | https://www.youtube.com/watch?v=SxdOUGdseq4                                     | strange loop 2011  |
-| lisp        | a history of clojure                              | book   | rich hickey                                                           | https://clojure.org/about/history                                               |                    |
-| ai          | on the measure of intelligence                    | paper  | francois chollet                                                      | https://arxiv.org/abs/1911.01547                                                |                    |
-| ai          | a new kind of science                             | book   | stephen wolfram                                                       | https://en.wikipedia.org/wiki/A_New_Kind_of_Science                             |                    |
-|-------------+---------------------------------------------------+--------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+|-------------+---------------------------------------------------+----------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+| topic       | name                                              | type     | author                                                                | link                                                                            | comments           |
+|-------------+---------------------------------------------------+----------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+| programming | art of computer programming                       | book     | donald e knuth                                                        | https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming                   |                    |
+| programming | structure and interpretation of computer programs | book     | harold abelson, gerald jay sussman, julie sussman                     | https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs |                    |
+| programming | introduction to algorithms                        | book     | thomas h cormen, charles e leiserson, ronald l rivest, clifford stein | https://en.wikipedia.org/wiki/Introduction_to_Algorithms                        |                    |
+| programming | out of the tar pit                                | paper    | ben mosley, peter marks                                               | https://moss.cs.iit.edu/cs100/papers/out-of-the-tar-pit.pdf                     | compute complexity |
+| programming | how to become a hacker?                           | essay    | eric steven raymond                                                   | http://www.catb.org/esr/faqs/hacker-howto.html                                  |                    |
+| programming | jargon file (the new hacker's dictionary)         | document | eric steven raymond                                                   | http://www.catb.org/jargon/                                                     |                    |
+| startups    | paul graham essays                                | essay    | paul graham                                                           | https://paulgraham.com/articles.html                                            |                    |
+| lisp        | land of lisp                                      | book     | conrad barski m.d.                                                    | http://landoflisp.com                                                           |                    |
+| lisp        | clojure for the brave and true                    | book     | daniel higginbotham                                                   | https://www.braveclojure.com                                                    |                    |
+| lisp        | simple made easy                                  | video    | rich hickey                                                           | https://www.youtube.com/watch?v=SxdOUGdseq4                                     | strange loop 2011  |
+| lisp        | a history of clojure                              | book     | rich hickey                                                           | https://clojure.org/about/history                                               |                    |
+| lisp        | on lisp                                           | book     | paul graham                                                           | https://paulgraham.com/onlisptext.html                                          |                    |
+| lisp        | the Little LISPer                                 | book     | matthias felleisen and daniel p. friedman                             | https://mitpress.mit.edu/9780262560382/the-little-lisper/                       |                    |
+| sql         | sql for web nerds                                 | book     | philip greenspun                                                      | http://philip.greenspun.com/sql/                                                |                    |
+| ai          | paradigms of artificial intelligence programming  | book     | peter norvig                                                          | https://en.wikipedia.org/wiki/Paradigms_of_AI_Programming                       |                    |
+| ai          | how to make a computer appear intelligent         | article  | joseph weizenbaum                                                     | https://ebiquity.umbc.edu/paper/html/id/1130/                                   |                    |
+| ai          | on the measure of intelligence                    | paper    | francois chollet                                                      | https://arxiv.org/abs/1911.01547                                                |                    |
+| ai          | a new kind of science                             | book     | stephen wolfram                                                       | https://en.wikipedia.org/wiki/A_New_Kind_of_Science                             |                    |
+| r&d         | rand corporation                                  | website  | research organization                                                 | https://www.rand.org/about/glance.html                                          |                    |
+|             |                                                   |          |                                                                       |                                                                                 |                    |
+|-------------+---------------------------------------------------+----------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
 ** learning and implementation
 |---------------+-----------------------------------+----------|
 | portal        | website                           | comments |
@@ -62,8 +71,8 @@
 | udemy         | https://www.udemy.com             |          |
 |               |                                   |          |
 |---------------+-----------------------------------+----------|
-** hackfests | open source contributions
-ps: this list is yet to be curated
+** others | open source contributions
+ps: this list is yet to be curated or explored 
 |-----------------+----------------------------------+--------------------------------------------------------------------------------|
 | portal          | website                          | comments                                                                       |
 |-----------------+----------------------------------+--------------------------------------------------------------------------------|
