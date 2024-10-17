@@ -1,6 +1,14 @@
 #+title: data structures and algorithms
 * introduction
 data structures are ways of organizing and storing data so that they can be accessed and modified efficiently
+** considerations
+- problem requirements and priorities: access, update, optimize, sort
+- performance considerations - acceptable limits
+- memory efficience considerations
+- complexity and ease of use
+- language and libraries - builtin support? 
+- scalablity factors
+- team expertise 
 ** compute complexity
 computational complexity is a field in computer science that studies the resources required for algorithms to solve a problem. the most common resources considered are time and space
 *** time complexity
@@ -8,17 +16,18 @@ time complexity measures the amount of time an algorithm takes to complete as a 
 *** space complexity
 space complexity measures the amount of memory an algorithm uses as a function of the input size
 *** notation
-|----------------+------------|
-| time and space | notation   |
-|----------------+------------|
-| constant       | o(1)       |
-| logarithmic    | o(logn)    |
-| linear         | o(n)       |
-| linearithmic   | o(nlogn)   |
-| quadratic      | o(n^2)     |
-| exponential    | o(2^n)     |
-| factorial      | o(n!)      |
-|----------------+------------|
+|----------------+----------|
+| time and space | notation |
+|----------------+----------|
+| constant       | o(1)     |
+| logarithmic    | o(logn)  |
+| linear         | o(n)     |
+| linearithmic   | o(nlogn) |
+| quadratic      | o(n^2)   |
+| exponential    | o(2^n)   |
+| factorial      | o(n!)    |
+|                |          |
+|----------------+----------|
 ** data structures 
 |---------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
 | commonly used | description                                                                      | use cases                                                                                                              | comments |
@@ -71,6 +80,7 @@ space complexity measures the amount of memory an algorithm uses as a function o
 | binary heap          | bubble o(n^2)                   | prim o(v^2) or o(v+e)logv)                                       |
 | linear o(n)          | quick o(nlogn)                  |                                                                  |
 | binary o(logn)       |                                 |                                                                  |
+|                      |                                 |                                                                  |
 |----------------------+---------------------------------+------------------------------------------------------------------|
 *** dynamic programming
 - fibonnaci o(n) - computes Fibonacci numbers using memoization or tabulation to avoid redundant calculations
