@@ -2,7 +2,9 @@
 #+Author: muggle born padawan
 
 * emacs basics
+GNU emacs
 ** getting started
+- C-h C-a open GNU Emacs manual 
 - M-x toggle-frame-fullscreen
 - C-x C-c quit emacs
 - C-g quit command
