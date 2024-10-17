@@ -5,5 +5,5 @@
       (let [guess (Integer. (read-line))]
         (cond
           (= guess target) (println "Congratulations! You guessed it!")
-          (< guess target) (do (println "Too low!") (recur))
-          :else (do (println "Too high!") (recur)))))))
+          (< guess target) (do (println guess "is too low!") (recur))
+          :else (do (println guess "is too high!") (recur)))))))
