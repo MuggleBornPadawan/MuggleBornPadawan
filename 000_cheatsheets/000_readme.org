@@ -19,21 +19,7 @@
   - to use: READMEs, usage guides
   - to teach: tutorials, onboarding programs, blog posts
   - to design: rationales, concept notes, architecture
-** notation for the cheatsheet folder
-|---------------+--------------+----------------------------------------------------|
-| primary digit | particulars  | comments                                           |
-|---------------+--------------+----------------------------------------------------|
-|             0 | cheatsheets  | packages, utilities, emacs, dsa                    |
-|             1 | lisp         | comman lisp, clojure, elisp                        |
-|             2 | java         |                                                    |
-|             3 | python       |                                                    |
-|             4 | statistics   | r                                                  |
-|             5 | art          | processing, quil, visualization                    |
-|             6 | database     | postgresql, sqlite                                 |
-|             7 | os scripting | macos zsh, fedora (dckr), debian? (aws)            |
-|             8 | ci/cd        | git, docker, kubernates, rabbitmq?, memcache?, api |
-|             9 | cloud        | aws                                                |
-|---------------+--------------+----------------------------------------------------|
+
 ** references
 |-------------+---------------------------------------------------+----------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
 | topic       | name                                              | type     | author                                                                | link                                                                            | comments           |
@@ -88,6 +74,21 @@ ps: this list is yet to be curated or explored
 | meshery         | https://meshery.io               | extensible kubernates (cncf)                                                   |
 |                 |                                  |                                                                                |
 |-----------------+----------------------------------+--------------------------------------------------------------------------------|
+** notation for the cheatsheet folder
+|---------------+--------------+----------------------------------------------------|
+| primary digit | particulars  | comments                                           |
+|---------------+--------------+----------------------------------------------------|
+|             0 | cheatsheets  | packages, utilities, emacs, dsa                    |
+|             1 | lisp         | comman lisp, clojure, elisp                        |
+|             2 | java         |                                                    |
+|             3 | python       |                                                    |
+|             4 | statistics   | r                                                  |
+|             5 | art          | processing, quil, visualization                    |
+|             6 | database     | postgresql, sqlite                                 |
+|             7 | os scripting | macos zsh, fedora (dckr), debian? (aws)            |
+|             8 | ci/cd        | git, docker, kubernates, rabbitmq?, memcache?, api |
+|             9 | cloud        | aws                                                |
+|---------------+--------------+----------------------------------------------------|
 ** trivia - to be explored
 *** secrets
  - hashicorp vault
