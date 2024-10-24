@@ -4,7 +4,8 @@ the beta, and the eta…
 (λx.x x) (λx.x x)
 * getting started
 ** turing vs church - the two towers
-
+** axiomatic thinking
+* λ calculus 
 ** λa.a
 - λ - function signifier
 - a - parameter variable
@@ -63,12 +64,19 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 | V      | vireo         | λabf.fab = BCT  | hold a pair of args | flip.flip id    |
 | B1     | blackbird     | λfgab.f(gab)    | 1^<--2^ composition | (.).(.)         |
 ** church encodings: booleans
-| symbol | name  | λ-calculus        | use                |
-| T      | true  | λab.a = K = C(KI) | encoding for true  |
-| F      | false | λab.b = KI = CK   | encoding for false |
-|        | not   | λp.pFT or C       | negation           |
-|        |       |                   |                    |
+| symbol | name  | λ-calculus              | use                |
+| T      | true  | λab.a = K = C(KI)       | encoding for true  |
+| F      | false | λab.b = KI = CK         | encoding for false |
+|        | not   | λp.pFT or C             | negation           |
+|        | and   | λpq.pqF or λpq.pqp      | conjunction        |
+|        | or    | λpq.pTq or λpq.ppq = M* | disjunction        |
+|        | beq   | λpq.p q (not q)         | equality           |
 ** church encodings: numerals
+| symbol | name  | λ-calculus   | use                   |
+| N0     | zero  | λfa.a = F    | apply f no times to a |
+| N1     | once  | λfa.f a = I* | apply f once to a     |
+| N2     | twice | λfa.f (f a)  | apply 2-fold f to a   |
+|        |       |              |                       |
 ** church arithmetic
 ** church arithmetic: boolean ops
 ** church pairs
