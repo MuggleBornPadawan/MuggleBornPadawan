@@ -85,6 +85,7 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 - sk
 ** fixed point combinators
 *** y fixed point combinator
+*** evaluation strategies  
 *** z fixed point combinator 
 * books
 | name                                             | author           |
