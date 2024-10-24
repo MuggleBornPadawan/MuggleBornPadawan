@@ -3,6 +3,8 @@ in the name of the alpha,
 the beta, and the eta…
 (λx.x x) (λx.x x)
 * getting started
+** turing vs church - the two towers
+
 ** λa.a
 - λ - function signifier
 - a - parameter variable
@@ -34,7 +36,7 @@ the beta, and the eta…
 | eta conversion   | equivalent functions          | λx.(f x)      | f           | add or remove redundant lambda abstractions       |
 - explore beta reduction - evaluation order, variable collision avoidance
 - beta reduction - final state is beta normal form 
-** the formalization of mathematical logic
+** formalization of mathematical logic
 | mathematician                     |    year | contribution                    | particulars                                                                              |   
 | Giuseppe Peano                    |    1889 | formal notation for functions   | Peano arithmetic                                                                         |   
 | Gottlob Frege                     |    1891 | axiomatic logic                 | functions as graphs (currying) - quantified axiomatic logic (for all, there exists, ...) |   
@@ -47,10 +49,45 @@ the beta, and the eta…
 | Stephen Kleene (regex) and Rosser | 1931-36 | students of Church              | consistency of pure Lambda                                                               |   
 | Alan Turing                       |    1936 | david hilber's decision problem | fixed point combinators                                                                  |   
 David Hilbert's decision problem is solved by Church in 1936 two months before Turing does - does solution exist? close to halting problem but not the same 
+** combinators
+- trivia: haskell was a bird watcher
+- trivia: schonfinkel named the combinators with bird names as a tribute to haskell
+| symbol | bird          | λ-calculus      | use                 | haskell         |
+| I      | idiot or ibis | λa.a            | identity            | id              |
+| M      | mockingbird   | λf.ff           | self-application    | (cannot define) |
+| K      | kestral       | λab.a           | true, first, const  | const           |
+| KI     | kite          | λab.b = KI = CK | false, second       | const id        |
+| C      | cardinal      | λfab.fba        | reverse arguments   | flip            |
+| B      | bluebird      | λfga.f(ga)      | 1^<--1^ composition | (.)             |
+| Th     | thrush        | λaf.fa = CI     | hold an argument    | flip id         |
+| V      | vireo         | λabf.fab = BCT  | hold a pair of args | flip.flip id    |
+| B1     | blackbird     | λfgab.f(gab)    | 1^<--2^ composition | (.).(.)         |
+** church encodings: booleans
+| symbol | name  | λ-calculus        | use                |
+| T      | true  | λab.a = K = C(KI) | encoding for true  |
+| F      | false | λab.b = KI = CK   | encoding for false |
+|        | not   | λp.pFT or C       | negation           |
+|        |       |                   |                    |
+** church encodings: numerals
+** church arithmetic
+** church arithmetic: boolean ops
+** church pairs
+** basis combinators
+- bcki
+- sk
+** fixed point combinators
+*** y fixed point combinator
+*** z fixed point combinator 
 * books
-| name                  | author           |
-| to mock a mockingbird | raymond smullyan |
-|                       |                  |
+| name                                             | author           |
+| to mock a mockingbird                            | raymond smullyan |
+| purely functional data structures                | chris okasaki    |
+| combinator birds                                 | rathman          |
+| to dissect a mockingbird                         | keenan           |
+| a tutorial introduction to the lambda calculus   | rojas            |
+| the lambda calculus                              | stanford         |
+| history of lambda calculus and combinatory logic | hindley cardone  |
+| an intro to f'nl prog'ng through λ calculus      | michaelson       |
 * references
 | author        | topic       | link                                  |
 | gabriel lebec | lambda talk | https://github.com/glebec/lambda-talk |
