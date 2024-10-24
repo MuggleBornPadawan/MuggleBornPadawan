@@ -1,4 +1,7 @@
-#+title lambda calculus
+#+title: lambda calculus
+in the name of the alpha,
+the beta, and the eta…
+(λx.x x) (λx.x x)
 * getting started
 ** λa.a
 - λ - function signifier
@@ -29,7 +32,6 @@
 | alpha conversion | renaming of bound variables   | λx.x+1        | λy.y+1      | avoid naming conflicts and to clarify expressions |
 | beta reduction   | applying function to argument | (λx.x+1) 2    | (2+1)       | substituting the argument for bound variable      |
 | eta conversion   | equivalent functions          | λx.(f x)      | f           | add or remove redundant lambda abstractions       |
-
 * books
 * references
 | author        | topic       | link                                  |
