@@ -12,9 +12,9 @@ the beta, and the eta…
 |            | expression expression | application |
 |            | λ variable.expression | abstraction |
 |            | (expression)          | grouping    |
-- variables
-  - x x
-  - (a) (a)
+- variable
+  - x 
+  - (a)
 - applications
 | f a     | f(a)       |
 | f a b   | f(a)(b)    |
@@ -32,7 +32,25 @@ the beta, and the eta…
 | alpha conversion | renaming of bound variables   | λx.x+1        | λy.y+1      | avoid naming conflicts and to clarify expressions |
 | beta reduction   | applying function to argument | (λx.x+1) 2    | (2+1)       | substituting the argument for bound variable      |
 | eta conversion   | equivalent functions          | λx.(f x)      | f           | add or remove redundant lambda abstractions       |
+- explore beta reduction - evaluation order, variable collision avoidance
+- beta reduction - final state is beta normal form 
+** the formalization of mathematical logic
+| mathematician                     |    year | contribution                    | particulars                                                                              |   
+| Giuseppe Peano                    |    1889 | formal notation for functions   | Peano arithmetic                                                                         |   
+| Gottlob Frege                     |    1891 | axiomatic logic                 | functions as graphs (currying) - quantified axiomatic logic (for all, there exists, ...) |   
+| Bertrand Russel                   |    1910 | principia mathematica           | Russell's paradox - does set of all sets that do not contain themselves exist?           |   
+| Schonfinkel                       |    1920 | combinatory logic               |                                                                                          |   
+| Von Neumann                       |    1925 | functional system of set theory | overlapped with combinatory logic                                                        |   
+| Haskell Curry                     |    1926 | reinvented combinatory logic    |                                                                                          |   
+| Kurt Godel                        |    1931 | incompleteness theorem          | search for sufficient axioms - logical inconsistency - no way to prove or disprove       |   
+| Alonzo Church                     |    1932 | lambda calculus                 | effective model of computation                                                           |   
+| Stephen Kleene (regex) and Rosser | 1931-36 | students of Church              | consistency of pure Lambda                                                               |   
+| Alan Turing                       |    1936 | david hilber's decision problem | fixed point combinators                                                                  |   
+David Hilbert's decision problem is solved by Church in 1936 two months before Turing does - does solution exist? close to halting problem but not the same 
 * books
+| name                  | author           |
+| to mock a mockingbird | raymond smullyan |
+|                       |                  |
 * references
 | author        | topic       | link                                  |
 | gabriel lebec | lambda talk | https://github.com/glebec/lambda-talk |
