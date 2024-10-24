@@ -46,17 +46,18 @@
 |             |                                                   |          |                                                                       |                                                                                 |                    |
 |-------------+---------------------------------------------------+----------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
 ** learning and implementation
-|---------------+-----------------------------------+----------|
-| portal        | website                           | comments |
-|---------------+-----------------------------------+----------|
-| leetcode      | https://leetcode.com              |          |
-| hackerank     | https://www.hackerrank.com        |          |
-| codesignal    | https://codesignal.com            |          |
-| algoexpert.io | https://www.algoexpert.io/product |          |
-| coursera      | https://www.coursera.org          |          |
-| udemy         | https://www.udemy.com             |          |
-|               |                                   |          |
-|---------------+-----------------------------------+----------|
+|--------------------+-----------------------------------+----------|
+| portal             | website                           | comments |
+|--------------------+-----------------------------------+----------|
+| the advent of code | https://adventofcode.com          |          |
+| leetcode           | https://leetcode.com              |          |
+| hackerank          | https://www.hackerrank.com        |          |
+| codesignal         | https://codesignal.com            |          |
+| algoexpert.io      | https://www.algoexpert.io/product |          |
+| coursera           | https://www.coursera.org          |          |
+| udemy              | https://www.udemy.com             |          |
+|                    |                                   |          |
+|--------------------+-----------------------------------+----------|
 ** others | open source contributions
 ps: this list is yet to be curated or explored 
 |-----------------+----------------------------------+--------------------------------------------------------------------------------|
