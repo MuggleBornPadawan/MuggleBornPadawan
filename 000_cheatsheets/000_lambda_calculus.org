@@ -1,0 +1,12 @@
+#+title lambda calculus
+* getting started
+** λa.a
+- λ - function signifier
+- a - parameter variable
+- a - return expression
+** 
+* books
+* references
+| author        | topic       | link                                  |
+| gabriel lebec | lambda talk | https://github.com/glebec/lambda-talk |
+|               |             |                                       |
