@@ -4,7 +4,32 @@
 - λ - function signifier
 - a - parameter variable
 - a - return expression
-** 
+** λ-calculus syntax
+| expression | variable              | identifier  |
+|            | expression expression | application |
+|            | λ variable.expression | abstraction |
+|            | (expression)          | grouping    |
+- variables
+  - x x
+  - (a) (a)
+- applications
+| f a     | f(a)       |
+| f a b   | f(a)(b)    |
+| (f a) b | (f(a)) (b) |
+| f (a b) | f(a(b))    |
+- abstractions
+| λa.b      | a => b        |
+| λa.b x    | a => b(x)     |
+| λa.(b x)  | a => (b(x))   |
+| (λa.b) x  | (a => b)(x)   |
+| λa.λb.a   | a => b => a   |
+| λa.(λb.a) | a => (b => a) |
+** transformations
+| property         | definition                    | initial state | final state | comment                                           |
+| alpha conversion | renaming of bound variables   | λx.x+1        | λy.y+1      | avoid naming conflicts and to clarify expressions |
+| beta reduction   | applying function to argument | (λx.x+1) 2    | (2+1)       | substituting the argument for bound variable      |
+| eta conversion   | equivalent functions          | λx.(f x)      | f           | add or remove redundant lambda abstractions       |
+
 * books
 * references
 | author        | topic       | link                                  |
