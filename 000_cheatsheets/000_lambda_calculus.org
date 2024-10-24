@@ -89,6 +89,6 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 | history of lambda calculus and combinatory logic | hindley cardone  |
 | an intro to f'nl prog'ng through λ calculus      | michaelson       |
 * references
-| author        | topic       | link                                  |
-| gabriel lebec | lambda talk | https://github.com/glebec/lambda-talk |
-|               |             |                                       |
+| author        | topic       | link                                  | comments                   |
+| gabriel lebec | lambda talk | https://github.com/glebec/lambda-talk | full stack academy of code |
+|               |             |                                       |                            |
