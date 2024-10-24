@@ -3,7 +3,7 @@ in the name of the alpha,
 the beta, and the eta…
 (λx.x x) (λx.x x)
 * getting started
-** turing vs church - the two towers
+** lambda calculus vs turing machines - theory of computation  
 ** axiomatic thinking
 * λ calculus 
 ** λa.a
@@ -72,14 +72,36 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 |        | or    | λpq.pTq or λpq.ppq = M* | disjunction        |
 |        | beq   | λpq.p q (not q)         | equality           |
 ** church encodings: numerals
-| symbol | name  | λ-calculus   | use                   |
-| N0     | zero  | λfa.a = F    | apply f no times to a |
-| N1     | once  | λfa.f a = I* | apply f once to a     |
-| N2     | twice | λfa.f (f a)  | apply 2-fold f to a   |
-|        |       |              |                       |
+| symbol | name     | λ-calculus               | use                   |
+| N0     | zero     | λfa.a = F                | apply f no times to a |
+| N1     | once     | λfa.f a = I*             | apply f once to a     |
+| N2     | twice    | λfa.f (f a)              | apply 2-fold f to a   |
+| N3     | thrice   | λfa.f (f (f a))          | apply 3-fold f to a   |
+| N4     | fourfold | λfa.f (f (f (f a)))      | apply 4-fold f to a   |
+| N5     | fivefold | λfa.f (f (f (f (f a))))) | apply 5-fold f to a   |
 ** church arithmetic
+| name | λ-calculus                                  | use                       |
+| succ | λnf.B f (nf) = λnfa.f(nfa)                  | successor of n            |
+| add  | λnk.n SUCC k = λnkf.B (n f) (k f)           | addition of n and k       |
+| mult | λnkf.n(kf) = B                              | multiplication of n and k |
+| pow  | λnk.kn = Th                                 | raise n to the power of k |
+| pred | λn.n (λg.IS0 (g N1) I (B SUCC g)) (K N0) N0 | predecessor of n          |
+| pred | λn.FST (n Φ (PAIR N0 N0))                   | predecessor of n (easier) |
+| sub  | λnk.k PRED n                                | subtract k from n         |
 ** church arithmetic: boolean ops
+| name | λ-calculus                  | use            |
+| Is0  | λn.n (K F) T                | test if n = 0  |
+| Leq  | λnk.IS0 (SUB n k)           | test if n <= k |
+| Eq   | λnk.AND (LEQ n k) (LEQ k n) | test if n = k  |
+| Gt   | λnk.B1 NOT LEQ              | test if n > k  |
 ** church pairs
+| symbol | name   | λ-calculus                    | use                      |
+|        | pair   | λabf.fab = V                  | pair two arguments       |
+|        | fst    | λp.pK                         | extract first of pair    |
+|        | snd    | λp.p(KI)                      | extract second of pair   |
+|        | phi    | λp.PAIR (SND p) (SUCC (SND p) | copy 2nd to 1st, inc 2nd |
+|        | set1st | λcp.PAIR c (SND p)            | set first, immutably     |
+|        | set2nd | λcp.PAIR (FST p) c            | set second, immutably    |
 ** basis combinators
 - bcki
 - sk
@@ -98,6 +120,7 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 | history of lambda calculus and combinatory logic | hindley cardone  |
 | an intro to f'nl prog'ng through λ calculus      | michaelson       |
 * references
-| author        | topic       | link                                  | comments                   |
-| gabriel lebec | lambda talk | https://github.com/glebec/lambda-talk | full stack academy of code |
-|               |             |                                       |                            |
+| author         | topic                              | link                                        | comments                   |
+| gabriel lebec  | lambda talk                        | https://github.com/glebec/lambda-talk       | full stack academy of code |
+| aditya athalye | functional programming - clojure   | https://www.evalapply.org/index.html        |                            |
+| advait shinde  | lambda calculus vs turing machines | https://www.youtube.com/watch?v=ruOnPmI_40g | theory of computation      |
