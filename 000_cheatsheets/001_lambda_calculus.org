@@ -1,5 +1,6 @@
 #+title: lambda calculus
-in the name of the alpha, the beta, and the eta… (λx.x x) (λx.x x)
+- "in the name of the alpha, the beta, and the eta… (λx.x x) (λx.x x)"
+- "math is the discovery of the consequences of foundational axioms"
 * getting started
 ** axiomatic thinking
 rules - axioms for math - the minimum (non-redundant) set of rules to define all math
@@ -15,7 +16,7 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
   - axioms and theorems stack up to build axiom towers
   - some symbols are syntactic sugar
   - symbols and rules are intrinsically related
-  - 
+  - math is the discovery of the consequences of foundational axioms 
 *** guiseppa peano (1889) - peano arithmetic axioms
 1. 0 is a natural number (#)
 2. x = x (identity)
