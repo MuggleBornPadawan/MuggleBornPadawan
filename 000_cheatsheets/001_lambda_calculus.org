@@ -4,6 +4,7 @@ the beta, and the eta…
 (λx.x x) (λx.x x)
 * getting started
 ** lambda calculus vs turing machines - theory of computation  
+
 ** axiomatic thinking
 * λ calculus 
 ** λa.a
