@@ -1,6 +1,6 @@
 #+title: lambda calculus
-- "in the name of the alpha, the beta, and the eta… (λx.x x) (λx.x x)"
 - "math is the discovery of the consequences of foundational axioms", "math is discovered, not invented" 
+- "transformations... in the name of the alpha, the beta, and the eta… (λx.x x) (λx.x x)"
 - "a 'compiler' is something that reduces programs into their axiomatic form"
 * getting started
 ** axiomatic thinking
