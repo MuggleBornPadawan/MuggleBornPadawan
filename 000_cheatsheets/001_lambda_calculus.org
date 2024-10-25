@@ -2,10 +2,20 @@
 in the name of the alpha, the beta, and the eta… (λx.x x) (λx.x x)
 * getting started
 ** axiomatic thinking
-
 rules - axioms for math - the minimum (non-redundant) set of rules to define all math
 | axioms   | minimum subset of rules | greek axioma: "that which is self evident"   |
 | theorems | derived rules           | greek theorema: "a proposition to be proved" |
+- axiom towers don't have to correspond to reality. eg: euclidean geometry (cartesian) vs non-euclidean geometry (polar)
+- symbols
+  - it might be tempting to think of symbols as seperate from axioms / theorems
+  - in reality, symbols dont mean anything without the rules and the rules only make sense in terms of symbols
+- recap
+  - axioms are "self evident" (taken as given) rules
+  - theorems are "derived" (redundant) rules
+  - axioms and theorems stack up to build axiom towers
+  - some symbols are syntactic sugar
+  - symbols and rules are intrinsically related
+  - 
 *** guiseppa peano (1889) - peano arithmetic axioms
 1. 0 is a natural number (#)
 2. x = x (identity)
