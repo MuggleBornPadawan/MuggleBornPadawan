@@ -85,7 +85,10 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
 |            | expression expression | application |
 |            | λ variable.expression | abstraction |
 |            | (expression)          | grouping    |
-- evaluation order - left to right 
+- evaluation order
+  - left to right
+  - reduced to normal form (beta) 
+  - applicative order (outermost or innermost) may not terminate due to halting problem
 - variable
   - x 
   - (a)
@@ -124,16 +127,19 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 *** combinators
 - trivia: haskell was a bird watcher
 - trivia: schonfinkel(?) named the combinators with bird names as a tribute to haskell
-| symbol | bird          | λ-calculus      | use                 | haskell         |
-| I      | idiot or ibis | λa.a            | identity            | id              |
-| M      | mockingbird   | λf.ff           | self-application    | (cannot define) |
-| K      | kestral       | λab.a           | true, first, const  | const           |
-| KI     | kite          | λab.b = KI = CK | false, second       | const id        |
-| C      | cardinal      | λfab.fba        | reverse arguments   | flip            |
-| B      | bluebird      | λfga.f(ga)      | 1^<--1^ composition | (.)             |
-| Th     | thrush        | λaf.fa = CI     | hold an argument    | flip id         |
-| V      | vireo         | λabf.fab = BCT  | hold a pair of args | flip.flip id    |
-| B1     | blackbird     | λfgab.f(gab)    | 1^<--2^ composition | (.).(.)         |
+| symbol | bird          | λ-calculus                      | use                                | haskell         |
+| I      | idiot or ibis | λa.a                            | identity                           | id              |
+| M      | mockingbird   | λf.ff                           | self-application                   | (cannot define) |
+| K      | kestral       | λab.a                           | true, first, const                 | const           |
+| KI     | kite          | λab.b = KI = CK                 | false, second                      | const id        |
+| C      | cardinal      | λfab.fba                        | reverse arguments                  | flip            |
+| B      | bluebird      | λfga.f(ga)                      | 1^<--1^ composition                | (.)             |
+| Th     | thrush        | λaf.fa = CI                     | hold an argument                   | flip id         |
+| V      | vireo         | λabf.fab = BCT                  | hold a pair of args                | flip.flip id    |
+| B1     | blackbird     | λfgab.f(gab)                    | 1^<--2^ composition                | (.).(.)         |
+| Ω      | (omega)       | (λx.xx)(λx.xx) = M              | non-termination                    |                 |
+| Y      |               | λf.(λx.f(xx))(λx.f(xx))         | fixed point combinator - recursion |                 |
+| Z      |               | λf.(λx.f(λv.xxv))(λx.f(λv.xxv)) | eager eval (y is lazy)             |                 |
 *** church encodings: booleans
 | symbol | name  | λ-calculus              | use                |
 | T      | true  | λab.a = K = C(KI)       | encoding for true  |
