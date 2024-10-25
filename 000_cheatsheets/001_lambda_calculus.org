@@ -1,6 +1,7 @@
 #+title: lambda calculus
 - "in the name of the alpha, the beta, and the eta… (λx.x x) (λx.x x)"
-- "math is the discovery of the consequences of foundational axioms"
+- "math is the discovery of the consequences of foundational axioms", "math is discovered, not invented" 
+- "a 'compiler' is something that reduces programs into their axiomatic form"
 * getting started
 ** axiomatic thinking
 rules - axioms for math - the minimum (non-redundant) set of rules to define all math
@@ -27,7 +28,9 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
 - trivia
   - Turing complete - if an axiom tower can simulate a Turing machine, it is described as turing complete and therefore can compute anything that is computable 
   - Mandelbrot
-  - John Conway's  game of life 
+  - John Conway's  game of life
+  - Magic the gathering
+  - Microsoft PowerPoint 
 *** Giuseppe Peano (1889) - peano arithmetic axioms
 1. 0 is a natural number (#)
 2. x = x (identity)
@@ -41,11 +44,40 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
    (a) 0 is in K
    (b) if n is in K it means that S(n) is in K
    (c) then K contains every natural number (#)
+- tower: peano axioms -> addition -> multiplication -> division -> integers (negatives) -> rational numbers -> exponential -> irrational numbers -> imaginary numbers 
 ** lambda calculus vs turing machines - theory of computation  
-
+- read λ calculus section below and then come back to this comparison again
+- Church-Turing thesis
+  - Turing machines and lambda calculus are computationally equivalent
+    - all Turing machines can be rewritten as lambda expressions
+    - all lambda expressions can be rewritten as Turing machines
+    - also equivalent to Godel's m-recursive functions
+  - Lambda calculus is Turing complete
+    - without any notions of explicit recursion, conditionals, state, etc
+    - all we need is variables, functions, and function application!
+  - peculiarities of λ calculus
+    - no global state - all you have is input arguments to your functions
+    - functions are pure (like math) - idempotent - same input same output
+    - all values are immutable - you cant modify variables but can generate a new value from an existing one
+    - no loops - loops require modifying counter variables; recursion is used instead
+    - function are your unit of composition - because there is no global state, composition is much easier to reason about
+| Turing machine tower | year | key aspect                 | lambda calculus tower | year | key aspect                        |
+| Turing machine       | 1936 | tm instructions            | lambda calculus       | 1936 |                                   |
+| Von Neumann model    | 1945 | vn machine instructions    | LISP                  | 1958 | meta-circular, garbage collection |
+| Assembly             | 1949 | human-readable             | System F              | 1972 | λ-calculus with types             |
+| Fortran              | 1957 | if statements, loops       | ML/OCaml              | 1973 | pattern matching                  |
+| C                    | 1972 | functions, structs, malloc | Haskell               | 1985 | pure                              |
+| C++                  | 1985 | classes, objects           | Elm                   | 2012 | flux / redux pattern              |
+|                      |      |                            | React                 | 2013 | view is a pure function of state  |
+- comparison notes
+  - von neumann machine instructions can be thought of as "axioms" for modern computing
+  - the turing machine axiom tower is so popular because the von neumann machine instructions are easily implementable in hardware (efficient)
+  - a "compiler" is something that reduces programs into their axiomatic form
+  - lambda calculus is the "assembly language" of functional programming
+  - lambda calculus is hard to implement in hardware (?#)
 ** λ calculus 
 *** λa.a
-- λ - function signifier  
+- λ - function signified  
 - a - parameter variable
 - a - return expression
 *** λ-calculus syntax
@@ -57,10 +89,10 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
   - x 
   - (a)
 - applications
-| f a     | f(a)       |
-| f a b   | f(a)(b)    |
-| (f a) b | (f(a)) (b) |
-| f (a b) | f(a(b))    |
+| f a     | f(a)       |          |
+| f a b   | f(a)(b)    |          |
+| (f a) b | (f(a)) (b) |          |
+| f (a b) | f(a(b))    | currying |
 - abstractions
 | λa.b      | a => b        |
 | λa.b x    | a => b(x)     |
