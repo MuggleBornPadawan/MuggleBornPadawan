@@ -85,6 +85,7 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
 |            | expression expression | application |
 |            | λ variable.expression | abstraction |
 |            | (expression)          | grouping    |
+- evaluation order - left to right 
 - variable
   - x 
   - (a)
