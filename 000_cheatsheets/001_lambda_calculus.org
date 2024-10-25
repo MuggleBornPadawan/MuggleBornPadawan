@@ -16,7 +16,8 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
   - axioms and theorems stack up to build axiom towers
   - some symbols are syntactic sugar
   - symbols and rules are intrinsically related
-  - math is the discovery of the consequences of foundational axioms 
+  - math is the discovery of the consequences of foundational axioms
+  - axioms are arbitrary but some axiom towers are more useful than others 
 *** guiseppa peano (1889) - peano arithmetic axioms
 1. 0 is a natural number (#)
 2. x = x (identity)
@@ -34,7 +35,7 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
 
 ** λ calculus 
 *** λa.a
-- λ - function signifier
+- λ - function signifier  
 - a - parameter variable
 - a - return expression
 *** λ-calculus syntax
@@ -79,7 +80,7 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
 David Hilbert's decision problem is solved by Church in 1936 two months before Turing does - does solution exist? close to halting problem but not the same 
 *** combinators
 - trivia: haskell was a bird watcher
-- trivia: schonfinkel named the combinators with bird names as a tribute to haskell
+- trivia: schonfinkel(?) named the combinators with bird names as a tribute to haskell
 | symbol | bird          | λ-calculus      | use                 | haskell         |
 | I      | idiot or ibis | λa.a            | identity            | id              |
 | M      | mockingbird   | λf.ff           | self-application    | (cannot define) |
