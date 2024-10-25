@@ -16,9 +16,9 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
 7. m = n if and only if S(m) = S(n)
 8. there's no n such that S(n) = 0
 9. if K is a set such that
-   a. 0 is in K
-   b. if n is in K it means that S(n) is in K
-   c. then K contains every natural number 
+   (a) 0 is in K
+   (b) if n is in K it means that S(n) is in K
+   (c) then K contains every natural number 
 ** lambda calculus vs turing machines - theory of computation  
 
 ** λ calculus 
