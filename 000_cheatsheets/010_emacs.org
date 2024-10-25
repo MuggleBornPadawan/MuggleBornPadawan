@@ -152,6 +152,20 @@ GNU emacs
 - additional tips
   - performance: LSP Mode can be resource-intensive, especially with large projects. you can customize settings to improve performance, such as adjusting the lsp-idle-delay or disabling certain features
   - debugging: if you encounter issues, you can enable logging with (setq lsp-log-io t) to help diagnose problems
+** spell-checker
+- brew install aspell
+- .emacs/init.el file edit
+  - (setq ispell-program-name "aspell")  ; Use aspell instead of ispell
+  - (setq ispell-extra-args '("--sug-mode=ultra"))  ; Optional: improve performance
+- text edit mode
+  - (add-hook 'text-mode-hook 'flyspell-mode)
+- org mode
+  - (add-hook 'org-mode-hook 'flyspell-mode)
+- programming mode
+  - (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+- fixing errors
+  - M-c-i - fix error at current location 
+  - M-x flyspell-goto-next-error 
 ** fun stuff
 - M-x tetris
 - M-x calendar
