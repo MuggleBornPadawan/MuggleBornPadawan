@@ -1,17 +1,32 @@
 #+title: lambda calculus
-in the name of the alpha,
-the beta, and the eta…
-(λx.x x) (λx.x x)
+in the name of the alpha, the beta, and the eta… (λx.x x) (λx.x x)
 * getting started
+** axiomatic thinking
+
+rules - axioms for math - the minimum (non-redundant) set of rules to define all math
+| axioms   | minimum subset of rules | greek axioma: "that which is self evident"   |
+| theorems | derived rules           | greek theorema: "a proposition to be proved" |
+*** guiseppa peano (1889) - peano arithmetic axioms
+1. 0 is a natural number (*)
+2. x = x (identity)
+3. if x = y, y = x
+4. if x = y and y = z, then x = z
+5. if b is a natural number and a = b, then a is also a natural number
+6. there's a function S, such that S(n) is a natural number (*)
+7. m = n if and only if S(m) = S(n)
+8. there's no n such that S(n) = 0
+9. if K is a set such that
+   a. 0 is in K
+   b. if n is in K it means that S(n) is in K
+   c. then K contains every natural number 
 ** lambda calculus vs turing machines - theory of computation  
 
-** axiomatic thinking
-* λ calculus 
-** λa.a
+** λ calculus 
+*** λa.a
 - λ - function signifier
 - a - parameter variable
 - a - return expression
-** λ-calculus syntax
+*** λ-calculus syntax
 | expression | variable              | identifier  |
 |            | expression expression | application |
 |            | λ variable.expression | abstraction |
@@ -31,14 +46,14 @@ the beta, and the eta…
 | (λa.b) x  | (a => b)(x)   |
 | λa.λb.a   | a => b => a   |
 | λa.(λb.a) | a => (b => a) |
-** transformations
+*** transformations
 | property         | definition                    | initial state | final state | comment                                           |
 | alpha conversion | renaming of bound variables   | λx.x+1        | λy.y+1      | avoid naming conflicts and to clarify expressions |
 | beta reduction   | applying function to argument | (λx.x+1) 2    | (2+1)       | substituting the argument for bound variable      |
 | eta conversion   | equivalent functions          | λx.(f x)      | f           | add or remove redundant lambda abstractions       |
 - explore beta reduction - evaluation order, variable collision avoidance
 - beta reduction - final state is beta normal form 
-** formalization of mathematical logic
+*** formalization of mathematical logic
 | mathematician                     |    year | contribution                    | particulars                                                                              |   
 | Giuseppe Peano                    |    1889 | formal notation for functions   | Peano arithmetic                                                                         |   
 | Gottlob Frege                     |    1891 | axiomatic logic                 | functions as graphs (currying) - quantified axiomatic logic (for all, there exists, ...) |   
@@ -51,7 +66,7 @@ the beta, and the eta…
 | Stephen Kleene (regex) and Rosser | 1931-36 | students of Church              | consistency of pure Lambda                                                               |   
 | Alan Turing                       |    1936 | david hilber's decision problem | fixed point combinators                                                                  |   
 David Hilbert's decision problem is solved by Church in 1936 two months before Turing does - does solution exist? close to halting problem but not the same 
-** combinators
+*** combinators
 - trivia: haskell was a bird watcher
 - trivia: schonfinkel named the combinators with bird names as a tribute to haskell
 | symbol | bird          | λ-calculus      | use                 | haskell         |
@@ -64,7 +79,7 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 | Th     | thrush        | λaf.fa = CI     | hold an argument    | flip id         |
 | V      | vireo         | λabf.fab = BCT  | hold a pair of args | flip.flip id    |
 | B1     | blackbird     | λfgab.f(gab)    | 1^<--2^ composition | (.).(.)         |
-** church encodings: booleans
+*** church encodings: booleans
 | symbol | name  | λ-calculus              | use                |
 | T      | true  | λab.a = K = C(KI)       | encoding for true  |
 | F      | false | λab.b = KI = CK         | encoding for false |
@@ -72,7 +87,7 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 |        | and   | λpq.pqF or λpq.pqp      | conjunction        |
 |        | or    | λpq.pTq or λpq.ppq = M* | disjunction        |
 |        | beq   | λpq.p q (not q)         | equality           |
-** church encodings: numerals
+*** church encodings: numerals
 | symbol | name     | λ-calculus               | use                   |
 | N0     | zero     | λfa.a = F                | apply f no times to a |
 | N1     | once     | λfa.f a = I*             | apply f once to a     |
@@ -80,7 +95,7 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 | N3     | thrice   | λfa.f (f (f a))          | apply 3-fold f to a   |
 | N4     | fourfold | λfa.f (f (f (f a)))      | apply 4-fold f to a   |
 | N5     | fivefold | λfa.f (f (f (f (f a))))) | apply 5-fold f to a   |
-** church arithmetic
+*** church arithmetic
 | name | λ-calculus                                  | use                       |
 | succ | λnf.B f (nf) = λnfa.f(nfa)                  | successor of n            |
 | add  | λnk.n SUCC k = λnkf.B (n f) (k f)           | addition of n and k       |
@@ -89,13 +104,13 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 | pred | λn.n (λg.IS0 (g N1) I (B SUCC g)) (K N0) N0 | predecessor of n          |
 | pred | λn.FST (n Φ (PAIR N0 N0))                   | predecessor of n (easier) |
 | sub  | λnk.k PRED n                                | subtract k from n         |
-** church arithmetic: boolean ops
+*** church arithmetic: boolean ops
 | name | λ-calculus                  | use            |
 | Is0  | λn.n (K F) T                | test if n = 0  |
 | Leq  | λnk.IS0 (SUB n k)           | test if n <= k |
 | Eq   | λnk.AND (LEQ n k) (LEQ k n) | test if n = k  |
 | Gt   | λnk.B1 NOT LEQ              | test if n > k  |
-** church pairs
+*** church pairs
 | symbol | name   | λ-calculus                    | use                      |
 |        | pair   | λabf.fab = V                  | pair two arguments       |
 |        | fst    | λp.pK                         | extract first of pair    |
@@ -103,13 +118,13 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 |        | phi    | λp.PAIR (SND p) (SUCC (SND p) | copy 2nd to 1st, inc 2nd |
 |        | set1st | λcp.PAIR c (SND p)            | set first, immutably     |
 |        | set2nd | λcp.PAIR (FST p) c            | set second, immutably    |
-** basis combinators
+*** basis combinators
 - bcki
 - sk
-** fixed point combinators
-*** y fixed point combinator
+*** fixed point combinators
+**** y fixed point combinator
 λf.M(λx.f(Mx))
-*** evaluation strategies
+**** evaluation strategies
 | call by name                   | call by value                   |
 | apply to args before reduction | reduce args before application  |
 | .                              | .                               |
@@ -117,9 +132,9 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 | .                              | .                               |
 | .                              | .                               |
 | (AKA normal order; lazy)       | (AKA applicative order; strict) |
-*** z fixed point combinator
+**** z fixed point combinator
 λf.M(λx.f(λv.Mxv))
-* books
+** books
 | name                                             | author           |
 | to mock a mockingbird                            | raymond smullyan |
 | purely functional data structures                | chris okasaki    |
@@ -129,7 +144,7 @@ David Hilbert's decision problem is solved by Church in 1936 two months before T
 | the lambda calculus                              | stanford         |
 | history of lambda calculus and combinatory logic | hindley cardone  |
 | an intro to f'nl prog'ng through λ calculus      | michaelson       |
-* references
+** references
 | author         | topic                              | link                                        | comments                   |
 | gabriel lebec  | lambda talk                        | https://github.com/glebec/lambda-talk       | full stack academy of code |
 | aditya athalye | functional programming - clojure   | https://www.evalapply.org/index.html        |                            |
