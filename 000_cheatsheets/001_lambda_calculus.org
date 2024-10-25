@@ -7,18 +7,18 @@ rules - axioms for math - the minimum (non-redundant) set of rules to define all
 | axioms   | minimum subset of rules | greek axioma: "that which is self evident"   |
 | theorems | derived rules           | greek theorema: "a proposition to be proved" |
 *** guiseppa peano (1889) - peano arithmetic axioms
-1. 0 is a natural number (*)
+1. 0 is a natural number (#)
 2. x = x (identity)
 3. if x = y, y = x
 4. if x = y and y = z, then x = z
 5. if b is a natural number and a = b, then a is also a natural number
-6. there's a function S, such that S(n) is a natural number (*)
+6. there's a function S, such that S(n) is a natural number (#)
 7. m = n if and only if S(m) = S(n)
 8. there's no n such that S(n) = 0
 9. if K is a set such that
    (a) 0 is in K
    (b) if n is in K it means that S(n) is in K
-   (c) then K contains every natural number 
+   (c) then K contains every natural number (#)
 ** lambda calculus vs turing machines - theory of computation  
 
 ** λ calculus 
