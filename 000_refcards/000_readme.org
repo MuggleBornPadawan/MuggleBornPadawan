@@ -1,0 +1,146 @@
+#+title: readme
+* vision: to become a 10x developer
+** characteristics
+- problem solving, efficiency, deep knowledge, learning ability, focus and productivity, collaboration, innovation 
+** pre-requisites - how to get started? 
+/_ "an hour saved at the non-bottleneck is a mirage" _/ - eliyahu goldratt
+- environment factors: dedicated space (78 sqft), quiet place, private, phone on silent mode, calls diverted, no interruptions
+- relevant tools and infrastructure to streamline development processes
+- culture and collaboration to encourage continuous learning, and knowledge sharing
+- clear goals and autonomy to find the best solutions
+- support and mentorship to help grow and overcome challenges
+- work-life balance to prevent burnout and maintain long-term productivity
+- good writing:
+  - in code: naming things (functions, APIs, domain entities), doc-strings, in-line comments
+  - to ship: commit messages, code reviews, development-time notes, checklists and runbooks
+  - to know: release notes, architecture decision records
+  - to plan: proposals, project plans, research notes
+  - to improve: bug reports, post-mortems, critiques
+  - to use: READMEs, usage guides
+  - to teach: tutorials, onboarding programs, blog posts
+  - to design: rationales, concept notes, architecture
+** references
+|-------------+--------------------------------------------------------+------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+| topic       | name                                                   | type       | author                                                                | link                                                                            | comments           |
+|-------------+--------------------------------------------------------+------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+| programming | art of computer programming                            | book       | donald e knuth                                                        | https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming                   |                    |
+| programming | structure and interpretation of computer programs      | book       | harold abelson, gerald jay sussman, julie sussman                     | https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs |                    |
+| programming | introduction to algorithms                             | book       | thomas h cormen, charles e leiserson, ronald l rivest, clifford stein | https://en.wikipedia.org/wiki/Introduction_to_Algorithms                        |                    |
+| programming | out of the tar pit                                     | paper      | ben mosley, peter marks                                               | https://moss.cs.iit.edu/cs100/papers/out-of-the-tar-pit.pdf                     | compute complexity |
+| programming | how to become a hacker?                                | essay      | eric steven raymond                                                   | http://www.catb.org/esr/faqs/hacker-howto.html                                  |                    |
+| programming | jargon file (the new hacker's dictionary)              | document   | eric steven raymond                                                   | http://www.catb.org/jargon/                                                     |                    |
+| programming | designing data-intensive applications                  | book       | martin kleppmann                                                      |                                                                                 |                    |
+| programming | system design interview                                | book       | alex xu                                                               |                                                                                 |                    |
+| programming | patterns of enterprise application architecture        | book       | martin fowler                                                         |                                                                                 |                    |
+| programming | understanding distributed systems                      | book       | roberto vitillo                                                       |                                                                                 |                    |
+| programming | clean architecture                                     | book       | robert c. martin                                                      |                                                                                 |                    |
+| programming | systems analysis and design                            | book       | multiple editions; multiple authors                                   |                                                                                 |                    |
+| programming | building microservices: designing fine-grained systems | book       | sam newman                                                            |                                                                                 |                    |
+| programming | fundamentals of software architecture                  | book       | neal ford and mark richards                                           |                                                                                 |                    |
+| programming | software architecture: the hard parts                  | book       | neal ford, mark richards, pramod sadalage and zhamak dehghani         |                                                                                 |                    |
+| programming | system design                                          | newsletter | neo kim                                                               | https://bit.ly/3Q8ROfX                                                          |                    |
+| programming | byte-sized design                                      | newsletter | alex nguyen                                                           | https://bit.ly/3GyRySU                                                          |                    |
+| programming | system design classroom                                | newsletter | raul junco                                                            | https://bit.ly/4ea5npo                                                          |                    |
+| programming | bytebytego                                             | newsletter | alex xu                                                               | https://bit.ly/3uGeAEN                                                          |                    |
+| programming | system design codex                                    | newsletter | saurabh dashora                                                       | https://bit.ly/42hgKaM                                                          |                    |
+| startups    | paul graham essays                                     | essay      | paul graham                                                           | https://paulgraham.com/articles.html                                            |                    |
+| lisp        | land of lisp                                           | book       | conrad barski m.d.                                                    | http://landoflisp.com                                                           |                    |
+| lisp        | clojure for the brave and true                         | book       | daniel higginbotham                                                   | https://www.braveclojure.com                                                    |                    |
+| lisp        | simple made easy                                       | video      | rich hickey                                                           | https://www.youtube.com/watch?v=SxdOUGdseq4                                     | strange loop 2011  |
+| lisp        | a history of clojure                                   | book       | rich hickey                                                           | https://clojure.org/about/history                                               |                    |
+| lisp        | on lisp                                                | book       | paul graham                                                           | https://paulgraham.com/onlisptext.html                                          |                    |
+| lisp        | the Little LISPer                                      | book       | matthias felleisen and daniel p. friedman                             | https://mitpress.mit.edu/9780262560382/the-little-lisper/                       |                    |
+| sql         | sql for web nerds                                      | book       | philip greenspun                                                      | http://philip.greenspun.com/sql/                                                |                    |
+| ai          | paradigms of artificial intelligence programming       | book       | peter norvig                                                          | https://en.wikipedia.org/wiki/Paradigms_of_AI_Programming                       |                    |
+| ai          | how to make a computer appear intelligent              | article    | joseph weizenbaum                                                     | https://ebiquity.umbc.edu/paper/html/id/1130/                                   |                    |
+| ai          | on the measure of intelligence                         | paper      | francois chollet                                                      | https://arxiv.org/abs/1911.01547                                                |                    |
+| ai          | a new kind of science                                  | book       | stephen wolfram                                                       | https://en.wikipedia.org/wiki/A_New_Kind_of_Science                             |                    |
+| r&d         | rand corporation                                       | website    | research organization                                                 | https://www.rand.org/about/glance.html                                          |                    |
+|-------------+--------------------------------------------------------+------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+** list of blogs
+|--------------------------------+----------------------------------------------------------|
+| meta engineering               | https://engineering.fb.com                               |
+| aws architecture               | https://aws.amazon.com/blogs/architecture/               |
+| the netflix tech               | https://netflixtechblog.com                              |
+| apple security tech            | https://security.apple.com/blog/                         |
+| google ai/research             | https://research.google/blog/                            |
+| linkedin engineering           | https://www.linkedin.com/blog/engineering                |
+| uber engineering               | https://eng.uber.com/                                    |
+| engineering at quora           | https://quoraengineering.quora.com                       |
+| pinterest engineering          | https://medium.com/pinterest-engineering                 |
+| lyft engineering               | https://eng.lyft.com/                                    |
+| twitter engineering            | https://blog.x.com/engineering/en_us                     |
+| dropbox engineering            | https://dropbox.tech/                                    |
+| spotify engineering            | https://engineering.atspotify.com                        |
+| github engineering             | https://github.blog/engineering/                         |
+| instagram engineering          | https://instagram-engineering.com                        |
+| canva engineering              | https://canvatechblog.com/                               |
+| booking.com tech               | https://blog.booking.com/                                |
+| the airbnb tech                | https://medium.com/airbnb-engineering                    |
+| stripe engineering             | https://stripe.com/blog/engineering                      |
+| discord engineering and design | https://discord.com/blog                                 |
+| engineering at microsoft       | https://devblogs.microsoft.com/engineering-at-microsoft/ |
+|--------------------------------+----------------------------------------------------------|
+** learning and implementation
+|--------------------+-----------------------------------+----------|
+| portal             | website                           | comments |
+|--------------------+-----------------------------------+----------|
+| the advent of code | https://adventofcode.com          |          |
+| leetcode           | https://leetcode.com              |          |
+| hackerank          | https://www.hackerrank.com        |          |
+| codesignal         | https://codesignal.com            |          |
+| algoexpert.io      | https://www.algoexpert.io/product |          |
+| coursera           | https://www.coursera.org          |          |
+| udemy              | https://www.udemy.com             |          |
+|--------------------+-----------------------------------+----------|
+** others | open source contributions
+ps: this list is yet to be curated or explored 
+|-----------------+----------------------------------+--------------------------------------------------------------------------------|
+| portal          | website                          | comments                                                                       |
+|-----------------+----------------------------------+--------------------------------------------------------------------------------|
+| home assistant  | https://www.home-assistant.io    | python, iot, automation                                                        |
+| rocket.chat     | https://www.rocket.chat          | chat - JavaScript, TypeScript, React, Meteor                                   |
+| freecodecamp    | https://www.freecodecamp.org     |                                                                                |
+| Oppia           | https://www.oppia.org            | edtech                                                                         |
+| habitica        | https://habitica.com/static/home |                                                                                |
+| mattermost      | https://mattermost.com           |                                                                                |
+| open food facts | https://world.openfoodfacts.org  | foodies and data enthusiasts                                                   |
+| excalidraw      | https://excalidraw.com           | visual dashboards                                                              |
+| appwrite        | https://appwrite.io              | backend builder - authentication, databases, functions, storage, and messaging |
+| meshery         | https://meshery.io               | extensible kubernates (cncf)                                                   |
+|-----------------+----------------------------------+--------------------------------------------------------------------------------|
+** notation for the cheatsheet folder
+|---------------+--------------+---------------------------------------------------------------------|
+| primary digit | particulars  | comments                                                            |
+|---------------+--------------+---------------------------------------------------------------------|
+|             0 | refcards     | λ-calculus, functional programming, packages, utilities, emacs, dsa |
+|             1 | lisp         | comman lisp, clojure, elisp                                         |
+|             2 | java         |                                                                     |
+|             3 | python       |                                                                     |
+|             4 | statistics   | r                                                                   |
+|             5 | art          | processing, quil, visualization                                     |
+|             6 | database     | postgresql, sqlite                                                  |
+|             7 | os scripting | macos zsh, fedora (dckr), debian? (aws)                             |
+|             8 | ci/cd        | git, docker, kubernates, rabbitmq?, memcache?, api                  |
+|             9 | cloud        | aws                                                                 |
+|---------------+--------------+---------------------------------------------------------------------|
+** trivia - to be explored
+*** secrets
+ - hashicorp vault
+ - aws secrets manager
+ - others
+*** others
+ - nginx web server - apache tomcat... 
+ - docker - env, volume, compose, swarm, secrets  
+ - github actions
+ - api weather - database
+ - charts
+ - unit test
+ - test automation
+ - linters
+ - debug
+ - caching
+ - jenkins
+ - ansible  ? 
+ - backstage ? 
+ - deploy to site 
