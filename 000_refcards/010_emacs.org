@@ -1,0 +1,172 @@
+#+Title: emacs basics - commands
+#+Author: muggle born padawan
+
+* emacs basics
+GNU emacs
+** getting started
+- C-h C-a open GNU Emacs manual 
+- M-x toggle-frame-fullscreen
+- C-x C-c quit emacs
+- C-g quit command
+- C-x C-+ increase font size
+- C-x C—- decrease font size 
+- C-h <command> help 
+- C-h v variables
+- C-h a Apropos 
+- Esc-Esc-Esc - all purpose “get out” command
+** initial setup
+- edit .emacs.d/init.el
+- (toggle-frame-fullscreen) | full screen 
+- package archives: gnu, melpa
+- packages: magit, doom-themes, others 
+- (add-to-list 'default-frame-alist '(font . "Menlo-26"))
+- (global-display-line-numbers-mode t) ;; set line numbers
+- (column-number-mode t) ;; Enable column numbers
+- (menu-bar-mode -1)       ;; Disable the menu bar
+- (tool-bar-mode -1)       ;; Disable the tool bar
+- (scroll-bar-mode -1)     ;; Disable the scroll bar
+- (setq backup-directory-alist `(("." . "~/.emacs.d/backups"))) ;; Configure backups
+- (global-set-key (kbd "C-c R") 'revert-all-buffers)  ;; Bind to Ctrl + c, Shift + r
+- (list-buffers)
+- (global-visual-line-mode 1) ;; soft wrap text globally
+- (recentf-mode 1) ;; recent files history is saved 
+- (savehist-mode 1) ;; recent commands history is saved | use Mn (next-history-element) Mp (previous-history-element) 
+- (setq history-length 25) ;; saves n recent commands 
+- (save-place-mode 1) ;; saves cursor location on files 
+- (global-auto-revert-mode 1) ;; refreshes all buffers
+- (setq global-auto-revert-non-file-buffers t) ;; refreshes non-file buffers (eg: folders)
+- (split-window-vertically)
+- (view-lossage) ;; C-h l
+** help
+- <C-h k key-binding> describe key binding
+- <C-h f> desribe function 
+** ide setup
+- fn-f8 treemacs
+- treesitter
+** buffers / windows / panes? / frames
+- C-x C-b show buffers
+- C-x 0 close current window
+- C-x 1 retain current window and close all other windows
+- C-x 2 (split-window-vertically)
+- C-x 3 (split-window -horizontally)
+- C-h k <C-f> shrinks current window and shows documentation 
+- C-x k kill buffer
+- C-x C-b show buffer list in another window 
+- C-x o move cursor to other window
+- C-x 4 C-f open different file in new window
+- C-M-v scroll the other window *
+- C-x 5 2 opens new frame
+- C-x 5 0 closes the new frame 
+- C-x 5 o move between frames
+** navigation
+- <M-g g> go to line
+- C-v M-v to move pages down and up
+- C-l - move screen up down centre around the cursor location 
+- C-p previous line
+- C-n - next line
+- C-b backward char | M-b backward word
+- C-f forward char | M-f forward word 
+- C-a beginning of line | M-a beginning of sentence
+- C-e end of line | M-e end of sentence 
+- M-< beginning of whole text
+- M-> end of whole text
+- C-u 10 C-n moves down 10 lines 
+** text selection and copy / paste / undo 
+- M-x mc/edit-lines | select block and invoke multi cursor edit lines function 
+- M-w - copy text
+- C-w - kill or cut text
+- C-k - delete text from cursor to end of the line (kill line)
+- C-<spc> start selection or mark current position 
+- C-u C-<spc> move to previous mark
+- C-y yank most recent kill
+- M-y yank previous kills
+- C-/ undo 
+- C-_ undo
+- C-x u undo 
+- C-x h select all
+** files
+- C-x C-f find file
+- C-x C-s save file
+- C-x s Save some buffers to files
+** search
+- C-s Regex search
+- C-r Regex search for everything before this location (reverse)
+** gptel
+- M-x gptel
+- M-x gptel-send | C-c ret
+- M-x gptel-select-conversation
+- M-x gptel-clear-conversation
+- M-x gptel-append
+- M-x gptel-info
+- M-x gptel-version
+- (setq gptel-model "gpt-4")  ;; or "gpt-3.5-turbo"
+- (setq gptel-system-prompt "You are an expert programmer. Help me code")
+- (setq gptel-debug t)
+- (gptel-curl-get-response nil) ;; advanced users
+- C-h v gptel-model
+- C-h v gptel-temperature
+- C-h v gptel-max-tokens
+- C-h v gptel-api-key
+** company mode (complete anything)
+- add melpa
+- M-x package-refresh-contents
+- M-x package-install RET company RET
+- (add-hook 'after-init-hook 'global-company-mode)
+- (setq company-idle-delay 0.2)  ; time in seconds before suggestions pop up
+- (setq company-minimum-prefix-length 1)  ; minimum prefix length for suggestions
+- (setq company-show-numbers t)  ; show numbers for quick selection
+- (setq company-tooltip-align-annotations t)  ; align annotations to the right tooltip border  
+- usage:
+  - navigate suggestions: use M-n and M-p to navigate through the suggestions, or simply use the arrow keys
+  - select a suggestion: press RET or TAB to select a suggestion
+  - abort completion: Press C-g to cancel the completion menu
+- (company-tng-configure-default) ; tab and go - minor mode - circle through completions 
+- (company-statistics-mode) ; minor mode - sort completion candidates
+** lsp mode
+- add melpa
+- M-x package-refresh-contents
+- M-x package-install RET lsp-mode RET
+- M-x package-install RET lsp-ui RET
+- configuration: 
+  - (require 'lsp-mode)
+  - (add-hook 'prog-mode-hook #'lsp)  ; enable LSP in programming modes
+  - ;; optional: lsp ui settings
+  - (require 'lsp-ui)
+  - (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+  - ;; optional: customize lsp ui settings
+  - (setq lsp-ui-doc-enable t)  ; enable inline documentation
+  - (setq lsp-ui-doc-position 'at-point)  ; position of the documentation
+  - (setq lsp-ui-sideline-enable t)  ; enable sideline diagnostics
+  - (setq lsp-ui-sideline-show-hover t)  ; show hover information in the sideline
+- installation of language servers to be done manualy
+  - npm install -g pyright
+  - npm install -g typescript-language-server typescript
+  - npm install -g typescript-language-server typescript
+  - go install golang.org/x/tools/gopls@latest
+  - clangd for c/c++
+- usage:
+  - go to definition: use M-. to jump to the definition of a symbol
+  - find references: use M-? to find references to a symbol
+  - hover documentation: hover over a symbol to see inline documentation (if LSP UI is enabled)
+  - code actions: use M-x lsp-execute-code-action to perform refactoring or quick fixes
+- additional tips
+  - performance: LSP Mode can be resource-intensive, especially with large projects. you can customize settings to improve performance, such as adjusting the lsp-idle-delay or disabling certain features
+  - debugging: if you encounter issues, you can enable logging with (setq lsp-log-io t) to help diagnose problems
+** spell-checker
+- brew install aspell
+- .emacs/init.el file edit
+  - (setq ispell-program-name "aspell")  ; Use aspell instead of ispell
+  - (setq ispell-extra-args '("--sug-mode=ultra"))  ; Optional: improve performance
+- text edit mode
+  - (add-hook 'text-mode-hook 'flyspell-mode)
+- org mode
+  - (add-hook 'org-mode-hook 'flyspell-mode)
+- programming mode
+  - (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+- fixing errors
+  - M-c-i - fix error at current location 
+  - M-x flyspell-goto-next-error 
+** fun stuff
+- M-x tetris
+- M-x calendar
+- M-x doctor
