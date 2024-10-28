@@ -1,0 +1,107 @@
+#+title: data structures and algorithms
+* introduction
+data structures are ways of organizing and storing data so that they can be accessed and modified efficiently
+** considerations
+- problem requirements and priorities: access, update, optimize, sort
+- performance considerations - acceptable limits
+- memory efficience considerations
+- complexity and ease of use
+- language and libraries - builtin support? 
+- scalablity factors
+- team expertise 
+** compute complexity
+computational complexity is a field in computer science that studies the resources required for algorithms to solve a problem. the most common resources considered are time and space
+*** time complexity
+time complexity measures the amount of time an algorithm takes to complete as a function of the length of the input. it is usually expressed using Big O notation, which describes the upper bound of the algorithm's running time.
+*** space complexity
+space complexity measures the amount of memory an algorithm uses as a function of the input size
+*** notation
+|----------------+----------|
+| time and space | notation |
+|----------------+----------|
+| constant       | o(1)     |
+| logarithmic    | o(logn)  |
+| linear         | o(n)     |
+| linearithmic   | o(nlogn) |
+| quadratic      | o(n^2)   |
+| exponential    | o(2^n)   |
+| factorial      | o(n!)    |
+|                |          |
+|----------------+----------|
+** data structures 
+|---------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
+| commonly used | description                                                                      | use cases                                                                                                              | comments |
+|---------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
+| arrays        | a collection of elements identified by index                                     | stacks and queues                                                                                                      |          |
+| linked lists  | a linear collection of nodes where each node points to the next                  | dynamic memory allocation                                                                                              |          |
+| stacks        | a collection of elements that follows the Last In, First Out (LIFO) principle    | text editors (undo), expression evaluation, backtracing algorithms                                                     |          |
+| queues        | a collection of elements that follows the First In, First Out (FIFO) principle   | order processing systems, print job management, breadth-first search in graphs                                         |          |
+| hash tables   | a data structure that maps keys to values for efficient lookup                   | implementing associative arrays or dictionaries, caching data, counting occurences                                     |          |
+| trees         | a hierarchical structure with a root value and subtrees of children              | file systems, search algorithms (eg: binary search tree), quick search - insertion - deletion (eg: AVL trees, B trees) |          |
+| graphs        | a collection of nodes connected by edges                                         | networks (social / computer), routing problems, modeling relationships in databases                                    |          |
+| heaps         | a specialized tree-based structure that satisfies the heap property              | priority queues, sorting algorithms, scheduling tasks                                                                  |          |
+| tries         | a tree-like data structure used to store a dynamic set of strings                | autocomplete features, spellcheck, dictionary, ip routing (longest prefix matching)                                    |          |
+| sets          | a collection of distinct elements                                                | remove duplicates, math - union / intersection, membership check                                                       |          |
+| matrices      | a two dimensional array                                                          | represnting and manipulating images, linear algebra, adjacency matrix for graphs                                       |          |
+| dequeues      | a generalized version of a queue that allows insertion and deletion at both ends | slider window algorithms, history of actions (undo / redo), list of tasks                                              |          |
+|               |                                                                                  |                                                                                                                        |          |
+|---------------+----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------|
+*** time and space complexity
+< to be validated again > 
+|--------------------+--------------------+---------------------+--------------------+------------------------+----------------------+-----------------------------------------|
+| data structure     | access time        | search time         | insertion time     | deletion time          | space complexity     | comments                                |
+|--------------------+--------------------+---------------------+--------------------+------------------------+----------------------+-----------------------------------------|
+| arrays             | o(1)               | o(n)                | o(n)               | o(n)                   | o(n)                 |                                         |
+| linked lists       | o(n)               | o(n)                | o(1)^              | o(1)^                  | o(n)                 | known position                          |
+| stacks             | o(n)               | o(n)                | o(1) (push)        | o(1) (pop)             | o(n)                 | using arrays or linked lists            |
+| queues             | o(n)               | o(n)                | o(1) (enqueue)     | o(1) (dequeue)         | o(n)                 |                                         |
+| hash tables        | o(1) < x < o(n)    | o(1) < x < o(n)     | o(1) < x < o(n)    | o(1) < x < o(n)        | o(n)                 | collisions                              |
+| binary search tree | o(logn) < x < o(n) | o(logn) < x < o(n)  | o(logn) < x < o(n) | o(logn) < x < o(n)     | o(n)                 |                                         |
+| graphs             | o(1)               | o(v+e) (bfs or dfs) | o(1)               | o(v) vertex; o(1) edge | o(v+e)               |                                         |
+| heaps              | o(1)               |                     | o(logn)            | o(logn)                | o(n)                 |                                         |
+| tries              | o(m)               | o(m)                | o(m)               | o(m)                   | o(alphabet_size*m*n) | m is length of key; n is number of keys |
+| sets               | o(1)               | o(1)                | o(1)               | o(1)                   | o(n)                 |                                         |
+| matrices           | o(1)               | o(n*m)              | o(n*m)^            | o(n*m)^                | o(n*m)               | if resizing is reqd                     |
+| dequeues           | o(n)               | o(n)                | o(1)               | o(1)                   | o(n)                 |                                         |
+|                    |                    |                     |                    |                        |                      |                                         |
+|--------------------+--------------------+---------------------+--------------------+------------------------+----------------------+-----------------------------------------|
+** algorithms
+< time complexities to be validated > 
+|----------------------+---------------------------------+------------------------------------------------------------------|
+| search               | sort                            | shortest path                                                    |
+|----------------------+---------------------------------+------------------------------------------------------------------|
+| static array         | insertion o(n^2)                | breadth first search                                             |
+| linked list          | selection o(n^2)                | direct access graph (dag) - depth first search, topological sort |
+| dynamic array        | merge o(nlogn)                  | bellman-ford o(ve)                                               |
+| sorted array         | counting                        | dijkstra o(v^2) or o((v+e)logv)                                  |
+| direct access array  | radix                           | johnson                                                          |
+| hash table           | adelson velski and landis (avl) | floyd warshall o(v^3)                                            |
+| balanced binary tree | heap o(nlogn)                   | kruskal's o(eloge)                                               |
+| binary heap          | bubble o(n^2)                   | prim o(v^2) or o(v+e)logv)                                       |
+| linear o(n)          | quick o(nlogn)                  |                                                                  |
+| binary o(logn)       |                                 |                                                                  |
+|                      |                                 |                                                                  |
+|----------------------+---------------------------------+------------------------------------------------------------------|
+*** dynamic programming
+- fibonnaci o(n) - computes Fibonacci numbers using memoization or tabulation to avoid redundant calculations
+- knapsack o(nW) - solves the problem of selecting items with given weights and values to maximize value without exceeding weight capacity
+- longest common subsequence o(nm) - finds the longest subsequence common to two sequences
+- edit distance o(nm) - measures the minimum number of operations required to convert one string into another
+*** greedy algorithms
+- activity selection o(nlogn) - selects the maximum number of activities that don't overlap
+- huffman coding o(nlogn) - constructs an optimal prefix code for data compression
+*** backtracking
+- n queens o(n!) - places N queens on an N×N chessboard so that no two queens threaten each other
+- sudoku o(9^(n*n)) - solves a Sudoku puzzle using constraint satisfaction
+- subset sum o(2^n) - determines if there is a subset of the given set with a sum equal to a given sum
+*** others
+- fast fourier transform o(nlogn) - computes the discrete Fourier transform and its inverse efficiently
+- union-find o(a(n)); a is inverse ackerman function - a data structure that keeps track of elements partitioned into disjoint sets, useful for Kruskal’s algorithm
+- kmp o(n + m) - searches for occurrences of a word within a main text string by employing the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin
+*** design your own algorithm tips:
+- brute force
+- decrease and conquer
+- divide and conquer
+- dynamic programming
+- greedy / incremental 
+
