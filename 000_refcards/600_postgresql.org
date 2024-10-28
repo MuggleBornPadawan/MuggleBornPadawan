@@ -1,0 +1,208 @@
+#+title: postgresql
+* getting started
+** installation
+ - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+ - brew install postgresql
+ - brew services start postgresql
+ - createuser -s postgres
+ - psql postgres | command line interface 
+ - brew services stop postgresql
+** basic commands
+ - psql -U username -d database_name | connect to a database 
+ - \l | list all databases
+ - \dt | list all tables in the current database
+ - \d table_name | describe a table
+ - \q | exit psql
+** database management
+ - CREATE DATABASE database_name;
+ - DROP DATABASE database_name;
+** user management
+ - CREATE USER username WITH PASSWORD 'password';
+ - GRANT ALL PRIVILEGES ON DATABASE database_name TO username;
+ - ALTER USER username WITH PASSWORD 'new_password';
+** table management
+ - CREATE TABLE table_name (
+       column1_name data_type,
+       column2_name data_type,
+       ...
+   );
+ - ALTER TABLE table_name ADD column_name data_type;
+ - DROP TABLE table_name;
+ - TRUNCATE TABLE table_name;
+ - INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+ - UPDATE table_name SET column1 = value1 WHERE condition;
+ - DELETE FROM table_name WHERE condition;
+ - GRANT SELECT, INSERT ON table_name TO user_name;
+ - REVOKE SELECT, INSERT ON table_name FROM user_name;
+** transaction control
+ - COMMIT;
+ - REVOKE;
+ - SAVEPOINT savepoint_name;
+ - RELEASE SAVEPOINT savepoint_name;
+** querying data
+ - SELECT * FROM table_name;
+ - SELECT column1, column2 FROM table_name;
+ - SELECT * FROM table_name WHERE condition;
+ - SELECT * FROM table_name ORDER BY column_name ASC|DESC;
+ - SELECT * FROM table1
+   JOIN table2 ON table1.common_column = table2.common_column;
+ - SELECT column1, column2 FROM table_name ORDER BY column1 ASC|DESC;
+ - SELECT column1, COUNT(*) FROM table_name GROUP BY column1;
+ - SELECT column1, COUNT(*) FROM table_name GROUP BY column1 HAVING COUNT(*) > 1;
+** joins
+ - inner join | returns only the rows that have matching values in both tables
+   SELECT columns
+   FROM table1
+   INNER JOIN table2 ON table1.common_column = table2.common_column;
+ - Left Join (or Left Outer Join) - returns all rows from the left table and the matched rows from the right table.
+   If there is no match, the result is NULL on the side of the right table
+   SELECT columns
+   FROM table1
+   LEFT JOIN table2 ON table1.common_column = table2.common_column;
+ - Right Join (or Right Outer Join) - returns all rows from the right table and the matched rows from the left table.
+   If there is no match, the result is NULL on the side of the left table.
+   SELECT columns
+   FROM table1
+   RIGHT JOIN table2 ON table1.common_column = table2.common_column;
+ - Full Join (or Full Outer Join) - returns all rows when there is a match in either left or right table records.
+   If there is no match, the result is NULL from the side that does not have a matc
+   SELECT columns
+   FROM table1
+   FULL JOIN table2 ON table1.common_column = table2.common_column;
+ - Cross Join - returns the Cartesian product of the two tables, meaning it returns all possible combinations of rows from the tables
+   SELECT columns
+   FROM table1
+   CROSS JOIN table2;
+ - Self Join - a regular join but the table is joined with itself.
+   This is useful for comparing rows within the same table.
+   SELECT a.columns, b.columns
+   FROM table a, table b
+   WHERE a.common_column = b.common_column;
+ - Natural Join - based on all columns in the two tables that have the same name and selects rows with equal values in the relevant columns.
+   SELECT columns
+   FROM table1
+   NATURAL JOIN table2;
+ - Using Clause - a shorthand for specifying the columns to join on when the column names are the same in both tables.
+   SELECT columns
+   FROM table1
+   JOIN table2 USING (common_column);
+** importing data
+*** copy method
+ - COPY your_table_name (id, name, age)
+   FROM '/path/to/your/data.csv'
+   DELIMITER ','
+   CSV HEADER;
+ - check permissions - read access to file
+*** \copy command in psql
+ - psql -U username -d database_name
+ - \copy your_table_name (id, name, age) FROM '/path/to/your/data.csv' DELIMITER ',' CSV HEADER;
+*** SQL INSERT statements
+ - INSERT INTO your_table_name (id, name, age) VALUES (1, 'John Doe', 30);
+ - INSERT INTO your_table_name (id, name, age) VALUES (2, 'Jane Smith', 25);
+*** gui tool
+ - pgAdmin
+ - DBeaver
+*** script
+ - psycopg2
+ - SQLAlchemy
+** exporting data
+*** copy method
+ - COPY your_table_name TO '/path/to/your/output.csv' DELIMITER ',' CSV HEADER;
+*** \copy in psql
+ - psql -U username -d database_name
+ - \copy your_table_name TO '/path/to/your/output.csv' DELIMITER ',' CSV HEADER;  
+*** gui tool
+ - pgAdmin
+ - DBeaver
+*** pgdump
+ - pg_dump -U username -d database_name -t your_table_name -F c -f /path/to/your/output.dump
+ - F c: Specifies the format (custom in this case).
+ - f: Specifies the output file.
+** extensions
+- CREATE EXTENSION IF NOT EXISTS pg_trgm;
+  PostgreSQL is known for its extensibility, allowing users to add new functionality through extensions. Here are some commonly used PostgreSQL extensions:
+- PostGIS
+  Purpose: Adds support for geographic objects, allowing location queries to be run in SQL.
+  Use Case: Ideal for applications that require geographic data processing, such as mapping and location-based services.
+- pg_trgm
+  Purpose: Provides functions and operators for determining the similarity of text based on trigram matching.
+  Use Case: Useful for text search and fuzzy string matching, such as finding similar words or phrases.
+- hstore
+  Purpose: Allows storing sets of key/value pairs within a single PostgreSQL value.
+  Use Case: Useful for semi-structured data where the schema might change frequently.
+- uuid-ossp
+  Purpose: Provides functions to generate universally unique identifiers (UUIDs).
+  Use Case: Useful for generating unique identifiers for database records.
+- citext
+  Purpose: Provides a case-insensitive character string type.
+  Use Case: Useful when you need case-insensitive text comparison without using the LOWER() function.
+- tablefunc
+  Purpose: Provides functions that return tables, including crosstab functions for pivoting.
+  Use Case: Useful for creating pivot tables and other complex table transformations.
+- pg_stat_statements
+  Purpose: Tracks execution statistics of all SQL statements executed by a server.
+  Use Case: Useful for performance monitoring and identifying slow queries.
+- ltree
+  Purpose: Provides a data type for storing labels of data stored in a hierarchical tree-like structure.
+  Use Case: Useful for applications that need to manage hierarchical data, such as organizational charts.
+- unaccent
+  Purpose: Provides a function to remove accents from strings.
+  Use Case: Useful for normalizing text input, especially in search applications.
+- pgcrypto
+  Purpose: Provides cryptographic functions for PostgreSQL.
+  Use Case: Useful for encrypting and decrypting data, as well as generating cryptographic hashes.
+- fuzzystrmatch
+  Purpose: Provides functions for approximate string matching and phonetic matching.
+  Use Case: Useful for applications that require fuzzy matching, such as spell checkers.
+- plpgsql
+  Purpose: A procedural language for PostgreSQL that allows for more complex logic in functions and triggers.
+  Use Case: Useful for writing stored procedures and triggers with complex logic.
+** middleware
+*** connection pooling
+- PgBouncer
+- Pgpool-II
+*** caching
+- redis
+- memcached
+*** load balancing and high availablity
+- HAProxy
+- Patroni
+*** security
+- stunnel
+*** data integration and etl tools
+- apache kafka
+- apache nifi
+*** object relational mappers (orm)
+- SQLAlchemy - python
+- Hibernate - java
+** stored procedures
+- psql? | pgproc table | pgadmin tool
+- CREATE PROCEDURE procedure_name (parameter_list)
+  LANGUAGE plpgsql
+  AS $
+  BEGIN
+    -- Procedure logic here
+  END;
+  $;
+- CALL add_employee('John Doe', 'Developer', 75000);
+- DROP PROCEDURE IF EXISTS add_employee; | check references / dependencies / permissions and backup procedures for safety 
+- SELECT proname, proargtypes, prorettype, prosrc
+  FROM pg_proc
+  WHERE proname = 'your_procedure_name'; | accessing stored procedures
+  proname: The name of the procedure.
+  proargtypes: The data types of the procedure's arguments.
+  prorettype: The return type of the procedure (for functions).
+  prosrc: The source code of the procedure.
+- Advanced Features
+  - Parameters: Procedures can have IN, OUT, and INOUT parameters to pass data in and out.
+  - Exception Handling: Use BEGIN ... EXCEPTION ... END blocks to handle errors within procedures.
+  - Dynamic SQL: Execute dynamic SQL statements using the EXECUTE command within procedures.
+- function vs procedures:
+  - Use functions when you need to compute and return a value.
+  - Use procedures for operations that perform actions, such as modifying data.  
+** triggers
+- types: BEFORE, AFTER, INSTEAD OF
+- events: INSERT, UPDATE, DELETE, TRUNCATE
+- execution timing: FOR EACH ROW, FOR EACH STATEMENT
+
+  
