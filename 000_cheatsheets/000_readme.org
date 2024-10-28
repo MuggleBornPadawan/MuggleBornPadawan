@@ -19,32 +19,69 @@
   - to use: READMEs, usage guides
   - to teach: tutorials, onboarding programs, blog posts
   - to design: rationales, concept notes, architecture
-
 ** references
-|-------------+---------------------------------------------------+----------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
-| topic       | name                                              | type     | author                                                                | link                                                                            | comments           |
-|-------------+---------------------------------------------------+----------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
-| programming | art of computer programming                       | book     | donald e knuth                                                        | https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming                   |                    |
-| programming | structure and interpretation of computer programs | book     | harold abelson, gerald jay sussman, julie sussman                     | https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs |                    |
-| programming | introduction to algorithms                        | book     | thomas h cormen, charles e leiserson, ronald l rivest, clifford stein | https://en.wikipedia.org/wiki/Introduction_to_Algorithms                        |                    |
-| programming | out of the tar pit                                | paper    | ben mosley, peter marks                                               | https://moss.cs.iit.edu/cs100/papers/out-of-the-tar-pit.pdf                     | compute complexity |
-| programming | how to become a hacker?                           | essay    | eric steven raymond                                                   | http://www.catb.org/esr/faqs/hacker-howto.html                                  |                    |
-| programming | jargon file (the new hacker's dictionary)         | document | eric steven raymond                                                   | http://www.catb.org/jargon/                                                     |                    |
-| startups    | paul graham essays                                | essay    | paul graham                                                           | https://paulgraham.com/articles.html                                            |                    |
-| lisp        | land of lisp                                      | book     | conrad barski m.d.                                                    | http://landoflisp.com                                                           |                    |
-| lisp        | clojure for the brave and true                    | book     | daniel higginbotham                                                   | https://www.braveclojure.com                                                    |                    |
-| lisp        | simple made easy                                  | video    | rich hickey                                                           | https://www.youtube.com/watch?v=SxdOUGdseq4                                     | strange loop 2011  |
-| lisp        | a history of clojure                              | book     | rich hickey                                                           | https://clojure.org/about/history                                               |                    |
-| lisp        | on lisp                                           | book     | paul graham                                                           | https://paulgraham.com/onlisptext.html                                          |                    |
-| lisp        | the Little LISPer                                 | book     | matthias felleisen and daniel p. friedman                             | https://mitpress.mit.edu/9780262560382/the-little-lisper/                       |                    |
-| sql         | sql for web nerds                                 | book     | philip greenspun                                                      | http://philip.greenspun.com/sql/                                                |                    |
-| ai          | paradigms of artificial intelligence programming  | book     | peter norvig                                                          | https://en.wikipedia.org/wiki/Paradigms_of_AI_Programming                       |                    |
-| ai          | how to make a computer appear intelligent         | article  | joseph weizenbaum                                                     | https://ebiquity.umbc.edu/paper/html/id/1130/                                   |                    |
-| ai          | on the measure of intelligence                    | paper    | francois chollet                                                      | https://arxiv.org/abs/1911.01547                                                |                    |
-| ai          | a new kind of science                             | book     | stephen wolfram                                                       | https://en.wikipedia.org/wiki/A_New_Kind_of_Science                             |                    |
-| r&d         | rand corporation                                  | website  | research organization                                                 | https://www.rand.org/about/glance.html                                          |                    |
-|             |                                                   |          |                                                                       |                                                                                 |                    |
-|-------------+---------------------------------------------------+----------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+|-------------+--------------------------------------------------------+------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+| topic       | name                                                   | type       | author                                                                | link                                                                            | comments           |
+|-------------+--------------------------------------------------------+------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+| programming | art of computer programming                            | book       | donald e knuth                                                        | https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming                   |                    |
+| programming | structure and interpretation of computer programs      | book       | harold abelson, gerald jay sussman, julie sussman                     | https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs |                    |
+| programming | introduction to algorithms                             | book       | thomas h cormen, charles e leiserson, ronald l rivest, clifford stein | https://en.wikipedia.org/wiki/Introduction_to_Algorithms                        |                    |
+| programming | out of the tar pit                                     | paper      | ben mosley, peter marks                                               | https://moss.cs.iit.edu/cs100/papers/out-of-the-tar-pit.pdf                     | compute complexity |
+| programming | how to become a hacker?                                | essay      | eric steven raymond                                                   | http://www.catb.org/esr/faqs/hacker-howto.html                                  |                    |
+| programming | jargon file (the new hacker's dictionary)              | document   | eric steven raymond                                                   | http://www.catb.org/jargon/                                                     |                    |
+| programming | designing data-intensive applications                  | book       | martin kleppmann                                                      |                                                                                 |                    |
+| programming | system design interview                                | book       | alex xu                                                               |                                                                                 |                    |
+| programming | patterns of enterprise application architecture        | book       | martin fowler                                                         |                                                                                 |                    |
+| programming | understanding distributed systems                      | book       | roberto vitillo                                                       |                                                                                 |                    |
+| programming | clean architecture                                     | book       | robert c. martin                                                      |                                                                                 |                    |
+| programming | systems analysis and design                            | book       | multiple editions; multiple authors                                   |                                                                                 |                    |
+| programming | building microservices: designing fine-grained systems | book       | sam newman                                                            |                                                                                 |                    |
+| programming | fundamentals of software architecture                  | book       | neal ford and mark richards                                           |                                                                                 |                    |
+| programming | software architecture: the hard parts                  | book       | neal ford, mark richards, pramod sadalage and zhamak dehghani         |                                                                                 |                    |
+| programming | system design                                          | newsletter | neo kim                                                               | https://bit.ly/3Q8ROfX                                                          |                    |
+| programming | byte-sized design                                      | newsletter | alex nguyen                                                           | https://bit.ly/3GyRySU                                                          |                    |
+| programming | system design classroom                                | newsletter | raul junco                                                            | https://bit.ly/4ea5npo                                                          |                    |
+| programming | bytebytego                                             | newsletter | alex xu                                                               | https://bit.ly/3uGeAEN                                                          |                    |
+| programming | system design codex                                    | newsletter | saurabh dashora                                                       | https://bit.ly/42hgKaM                                                          |                    |
+| startups    | paul graham essays                                     | essay      | paul graham                                                           | https://paulgraham.com/articles.html                                            |                    |
+| lisp        | land of lisp                                           | book       | conrad barski m.d.                                                    | http://landoflisp.com                                                           |                    |
+| lisp        | clojure for the brave and true                         | book       | daniel higginbotham                                                   | https://www.braveclojure.com                                                    |                    |
+| lisp        | simple made easy                                       | video      | rich hickey                                                           | https://www.youtube.com/watch?v=SxdOUGdseq4                                     | strange loop 2011  |
+| lisp        | a history of clojure                                   | book       | rich hickey                                                           | https://clojure.org/about/history                                               |                    |
+| lisp        | on lisp                                                | book       | paul graham                                                           | https://paulgraham.com/onlisptext.html                                          |                    |
+| lisp        | the Little LISPer                                      | book       | matthias felleisen and daniel p. friedman                             | https://mitpress.mit.edu/9780262560382/the-little-lisper/                       |                    |
+| sql         | sql for web nerds                                      | book       | philip greenspun                                                      | http://philip.greenspun.com/sql/                                                |                    |
+| ai          | paradigms of artificial intelligence programming       | book       | peter norvig                                                          | https://en.wikipedia.org/wiki/Paradigms_of_AI_Programming                       |                    |
+| ai          | how to make a computer appear intelligent              | article    | joseph weizenbaum                                                     | https://ebiquity.umbc.edu/paper/html/id/1130/                                   |                    |
+| ai          | on the measure of intelligence                         | paper      | francois chollet                                                      | https://arxiv.org/abs/1911.01547                                                |                    |
+| ai          | a new kind of science                                  | book       | stephen wolfram                                                       | https://en.wikipedia.org/wiki/A_New_Kind_of_Science                             |                    |
+| r&d         | rand corporation                                       | website    | research organization                                                 | https://www.rand.org/about/glance.html                                          |                    |
+|             |                                                        |            |                                                                       |                                                                                 |                    |
+|-------------+--------------------------------------------------------+------------+-----------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------|
+** List of blogs
+|--------------------------------+----------------------------|
+| meta engineering               | https://lnkd.in/epWjhj2v   |
+| aws architecture               | https://lnkd.in/ekVGp6G6   |
+| the netflix tech               | https://lnkd.in/e_RcZ-xh   |
+| apple security tech            | https://lnkd.in/efZmMCE9   |
+| google ai/research             | https://lnkd.in/ek3JW39h   |
+| linkedin engineering           | https://lnkd.in/ebQcWhV3   |
+| uber engineering               | https://eng.uber.com/      |
+| engineering at quora           | https://lnkd.in/eNZbC_Bp   |
+| pinterest engineering          | https://lnkd.in/eFy2xsCc   |
+| lyft engineering               | https://eng.lyft.com/      |
+| twitter engineering            | https://lnkd.in/egazmChv   |
+| dropbox engineering            | https://dropbox.tech/      |
+| spotify engineering            | https://lnkd.in/e8dbBUCF   |
+| github engineering             | https://lnkd.in/ejJzC-XC   |
+| instagram engineering          | https://lnkd.in/e3yWFEiq   |
+| canva engineering              | https://canvatechblog.com/ |
+| booking.com tech               | https://blog.booking.com/  |
+| the airbnb tech                | https://lnkd.in/eWkKmtrv   |
+| stripe engineering             | https://lnkd.in/eRDnNw7a   |
+| discord engineering and design | https://discord.com/blog   |
+| engineering at microsoft       | https://lnkd.in/ewyUA7Pk   |
+|--------------------------------+----------------------------|
 ** learning and implementation
 |--------------------+-----------------------------------+----------|
 | portal             | website                           | comments |
