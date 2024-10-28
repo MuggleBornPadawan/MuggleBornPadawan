@@ -1,0 +1,21 @@
+#+title: aws ec2
+
+** ssh connection
+*** pem file
+- chmod 400 /path/to/your-key.pem
+- ssh -i /path/to/your-key.pem ec2-user@your-ec2-instance-public-dns
+*** ssh config file
+~/.ssh/config
+- Host my-ec2
+       HostName your-ec2-instance-public-dns
+       User ec2-user
+       IdentityFile /path/to/your-key.pem
+- ssh my-ec2
+- ssh-add /path/to/your-key.pem
+*** rotating keys
+- ssh-keygen -t rsa -b 4096 -f ~/.ssh/new_key_name
+- ssh -i /path/to/old_key.pem user@server-address
+- cat ~/.ssh/new_key_name.pub >> ~/.ssh/authorized_keys
+- chmod 600 ~/.ssh/authorized_keys  
+- ssh -i ~/.ssh/new_key_name user@server-address | testing
+- nano ~/.ssh/authorized_keys | remove old keys
