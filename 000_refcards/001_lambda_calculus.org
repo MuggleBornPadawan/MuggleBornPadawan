@@ -1,0 +1,213 @@
+#+title: lambda calculus
+- "math is the discovery of the consequences of foundational axioms", "math is discovered, not invented" 
+- "transformations... in the name of the alpha, the beta, and the eta… (λx.x x) (λx.x x)"
+- "a 'compiler' is something that reduces programs into their axiomatic form"
+- rite of passage of every programmer is to build an interpreter or compiler from the scratch
+* getting started
+** axiomatic thinking
+rules - axioms for math - the minimum (non-redundant) set of rules to define all math
+| axioms   | minimum subset of rules | greek axioma: "that which is self evident"   |
+| theorems | derived rules           | greek theorema: "a proposition to be proved" |
+- axiom towers don't have to correspond to reality. eg: euclidean geometry (cartesian) vs non-euclidean geometry (polar)
+- symbols
+  - it might be tempting to think of symbols as seperate from axioms / theorems
+  - in reality, symbols dont mean anything without the rules and the rules only make sense in terms of symbols
+- recap
+  - axioms are "self evident" (taken as given) rules
+  - theorems are "derived" (redundant) rules
+  - axioms and theorems stack up to build axiom towers
+  - some symbols are syntactic sugar
+  - symbols and rules are intrinsically related
+  - math is the discovery of the consequences of foundational axioms
+  - axioms are arbitrary but some axiom towers are more useful than others 
+- algorithms existed long back
+  - 2000 bc - Egyptians could multiply two numbers
+  - 1600 bc - Babylonians could factorize and find square roots
+  - 300 bc - Euclid's greatest common factor (GCF)
+  - 200 bc - sieve of Eratosthenes to identify prime numbers within given number n
+  - 820 ad - AL-Khwarizmi solving linear equations and quadratic equations (origin of word algorithm) 
+- trivia
+  - Turing complete - if an axiom tower can simulate a Turing machine, it is described as turing complete and therefore can compute anything that is computable 
+  - Mandelbrot
+  - John Conway's  game of life
+  - Magic the gathering
+  - Microsoft PowerPoint 
+*** Giuseppe Peano (1889) - peano arithmetic axioms
+1. 0 is a natural number (#)
+2. x = x (identity)
+3. if x = y, y = x
+4. if x = y and y = z, then x = z
+5. if b is a natural number and a = b, then a is also a natural number
+6. there's a function S, such that S(n) is a natural number (#)
+7. m = n if and only if S(m) = S(n)
+8. there's no n such that S(n) = 0
+9. if K is a set such that
+   (a) 0 is in K
+   (b) if n is in K it means that S(n) is in K
+   (c) then K contains every natural number (#)
+- tower: peano axioms -> addition -> multiplication -> division -> integers (negatives) -> rational numbers -> exponential -> irrational numbers -> imaginary numbers 
+** lambda calculus vs turing machines - theory of computation  
+- read λ calculus section below and then come back to this comparison again
+- Church-Turing thesis
+  - Turing machines and lambda calculus are computationally equivalent
+    - all Turing machines can be rewritten as lambda expressions
+    - all lambda expressions can be rewritten as Turing machines
+    - also equivalent to Godel's m-recursive functions
+  - Lambda calculus is Turing complete
+    - without any notions of explicit recursion, conditionals, state, etc
+    - all we need is variables, functions, and function application!
+  - peculiarities of λ calculus
+    - no global state - all you have is input arguments to your functions
+    - functions are pure (like math) - idempotent - same input same output
+    - all values are immutable - you cant modify variables but can generate a new value from an existing one
+    - no loops - loops require modifying counter variables; recursion is used instead
+    - function are your unit of composition - because there is no global state, composition is much easier to reason about
+| Turing machine tower | year | key aspect                 | lambda calculus tower | year | key aspect                        |
+| Turing machine       | 1936 | tm instructions            | lambda calculus       | 1936 |                                   |
+| Von Neumann model    | 1945 | vn machine instructions    | LISP                  | 1958 | meta-circular, garbage collection |
+| Assembly             | 1949 | human-readable             | System F              | 1972 | λ-calculus with types             |
+| Fortran              | 1957 | if statements, loops       | ML/OCaml              | 1973 | pattern matching                  |
+| C                    | 1972 | functions, structs, malloc | Haskell               | 1985 | pure                              |
+| C++                  | 1985 | classes, objects           | Elm                   | 2012 | flux / redux pattern              |
+|                      |      |                            | React                 | 2013 | view is a pure function of state  |
+- comparison notes
+  - von neumann machine instructions can be thought of as "axioms" for modern computing
+  - the turing machine axiom tower is so popular because the von neumann machine instructions are easily implementable in hardware (efficient)
+  - a "compiler" is something that reduces programs into their axiomatic form
+  - lambda calculus is the "assembly language" of functional programming
+  - lambda calculus is hard to implement in hardware (?#)
+** λ calculus 
+*** λa.a
+- λ - function signified  
+- a - parameter variable
+- a - return expression
+*** λ-calculus syntax
+| expression | variable              | identifier  |
+|            | expression expression | application |
+|            | λ variable.expression | abstraction |
+|            | (expression)          | grouping    |
+- evaluation order
+  - left to right
+  - reduced to normal form (beta) 
+  - applicative order (outermost or innermost) may not terminate due to halting problem
+- variable
+  - x 
+  - (a)
+- applications
+| f a     | f(a)       |          |
+| f a b   | f(a)(b)    |          |
+| (f a) b | (f(a)) (b) |          |
+| f (a b) | f(a(b))    | currying |
+- abstractions
+| λa.b      | a => b        |
+| λa.b x    | a => b(x)     |
+| λa.(b x)  | a => (b(x))   |
+| (λa.b) x  | (a => b)(x)   |
+| λa.λb.a   | a => b => a   |
+| λa.(λb.a) | a => (b => a) |
+*** transformations
+| property         | definition                    | initial state | final state | comment                                           |
+| alpha conversion | renaming of bound variables   | λx.x+1        | λy.y+1      | avoid naming conflicts and to clarify expressions |
+| beta reduction   | applying function to argument | (λx.x+1) 2    | (2+1)       | substituting the argument for bound variable      |
+| eta conversion   | equivalent functions          | λx.(f x)      | f           | add or remove redundant lambda abstractions       |
+- explore beta reduction - evaluation order, variable collision avoidance
+- beta reduction - final state is beta normal form 
+*** formalization of mathematical logic
+| mathematician                     |    year | contribution                    | particulars                                                                              |   
+| Giuseppe Peano                    |    1889 | formal notation for functions   | Peano arithmetic                                                                         |   
+| Gottlob Frege                     |    1891 | axiomatic logic                 | functions as graphs (currying) - quantified axiomatic logic (for all, there exists, ...) |   
+| Bertrand Russel                   |    1910 | principia mathematica           | Russell's paradox - does set of all sets that do not contain themselves exist?           |   
+| Schonfinkel                       |    1920 | combinatory logic               |                                                                                          |   
+| Von Neumann                       |    1925 | functional system of set theory | overlapped with combinatory logic                                                        |   
+| Haskell Curry                     |    1926 | reinvented combinatory logic    |                                                                                          |   
+| Kurt Godel                        |    1931 | incompleteness theorem          | search for sufficient axioms - logical inconsistency - no way to prove or disprove       |   
+| Alonzo Church                     |    1932 | lambda calculus                 | effective model of computation                                                           |   
+| Stephen Kleene (regex) and Rosser | 1931-36 | students of Church              | consistency of pure Lambda                                                               |   
+| Alan Turing                       |    1936 | david hilber's decision problem | fixed point combinators                                                                  |   
+David Hilbert's decision problem is solved by Church in 1936 two months before Turing does - does solution exist? close to halting problem but not the same 
+*** combinators
+- trivia: haskell was a bird watcher
+- trivia: schonfinkel(?) named the combinators with bird names as a tribute to haskell
+| symbol | bird          | λ-calculus                      | use                                | haskell         |
+| I      | idiot or ibis | λa.a                            | identity                           | id              |
+| M      | mockingbird   | λf.ff                           | self-application                   | (cannot define) |
+| K      | kestral       | λab.a                           | true, first, const                 | const           |
+| KI     | kite          | λab.b = KI = CK                 | false, second                      | const id        |
+| C      | cardinal      | λfab.fba                        | reverse arguments                  | flip            |
+| B      | bluebird      | λfga.f(ga)                      | 1^<--1^ composition                | (.)             |
+| Th     | thrush        | λaf.fa = CI                     | hold an argument                   | flip id         |
+| V      | vireo         | λabf.fab = BCT                  | hold a pair of args                | flip.flip id    |
+| B1     | blackbird     | λfgab.f(gab)                    | 1^<--2^ composition                | (.).(.)         |
+| Ω      | (omega)       | (λx.xx)(λx.xx) = M              | non-termination                    |                 |
+| Y      |               | λf.(λx.f(xx))(λx.f(xx))         | fixed point combinator - recursion |                 |
+| Z      |               | λf.(λx.f(λv.xxv))(λx.f(λv.xxv)) | eager eval (y is lazy)             |                 |
+*** church encodings: booleans
+| symbol | name  | λ-calculus              | use                |
+| T      | true  | λab.a = K = C(KI)       | encoding for true  |
+| F      | false | λab.b = KI = CK         | encoding for false |
+|        | not   | λp.pFT or C             | negation           |
+|        | and   | λpq.pqF or λpq.pqp      | conjunction        |
+|        | or    | λpq.pTq or λpq.ppq = M* | disjunction        |
+|        | beq   | λpq.p q (not q)         | equality           |
+*** church encodings: numerals
+| symbol | name     | λ-calculus               | use                   |
+| N0     | zero     | λfa.a = F                | apply f no times to a |
+| N1     | once     | λfa.f a = I*             | apply f once to a     |
+| N2     | twice    | λfa.f (f a)              | apply 2-fold f to a   |
+| N3     | thrice   | λfa.f (f (f a))          | apply 3-fold f to a   |
+| N4     | fourfold | λfa.f (f (f (f a)))      | apply 4-fold f to a   |
+| N5     | fivefold | λfa.f (f (f (f (f a))))) | apply 5-fold f to a   |
+*** church arithmetic
+| name | λ-calculus                                  | use                       |
+| succ | λnf.B f (nf) = λnfa.f(nfa)                  | successor of n            |
+| add  | λnk.n SUCC k = λnkf.B (n f) (k f)           | addition of n and k       |
+| mult | λnkf.n(kf) = B                              | multiplication of n and k |
+| pow  | λnk.kn = Th                                 | raise n to the power of k |
+| pred | λn.n (λg.IS0 (g N1) I (B SUCC g)) (K N0) N0 | predecessor of n          |
+| pred | λn.FST (n Φ (PAIR N0 N0))                   | predecessor of n (easier) |
+| sub  | λnk.k PRED n                                | subtract k from n         |
+*** church arithmetic: boolean ops
+| name | λ-calculus                  | use            |
+| Is0  | λn.n (K F) T                | test if n = 0  |
+| Leq  | λnk.IS0 (SUB n k)           | test if n <= k |
+| Eq   | λnk.AND (LEQ n k) (LEQ k n) | test if n = k  |
+| Gt   | λnk.B1 NOT LEQ              | test if n > k  |
+*** church pairs
+| symbol | name   | λ-calculus                    | use                      |
+|        | pair   | λabf.fab = V                  | pair two arguments       |
+|        | fst    | λp.pK                         | extract first of pair    |
+|        | snd    | λp.p(KI)                      | extract second of pair   |
+|        | phi    | λp.PAIR (SND p) (SUCC (SND p) | copy 2nd to 1st, inc 2nd |
+|        | set1st | λcp.PAIR c (SND p)            | set first, immutably     |
+|        | set2nd | λcp.PAIR (FST p) c            | set second, immutably    |
+*** basis combinators
+- bcki
+- sk
+*** fixed point combinators
+**** y fixed point combinator
+λf.M(λx.f(Mx))
+**** evaluation strategies
+| call by name                   | call by value                   |
+| apply to args before reduction | reduce args before application  |
+| .                              | .                               |
+| .                              | .                               |
+| .                              | .                               |
+| .                              | .                               |
+| (AKA normal order; lazy)       | (AKA applicative order; strict) |
+**** z fixed point combinator
+λf.M(λx.f(λv.Mxv))
+** books
+| name                                             | author           |
+| to mock a mockingbird                            | raymond smullyan |
+| purely functional data structures                | chris okasaki    |
+| combinator birds                                 | rathman          |
+| to dissect a mockingbird                         | keenan           |
+| a tutorial introduction to the lambda calculus   | rojas            |
+| the lambda calculus                              | stanford         |
+| history of lambda calculus and combinatory logic | hindley cardone  |
+| an intro to f'nl prog'ng through λ calculus      | michaelson       |
+** references
+| author         | topic                              | link                                        | comments                   |
+| gabriel lebec  | lambda talk                        | https://github.com/glebec/lambda-talk       | full stack academy of code |
+| aditya athalye | functional programming - clojure   | https://www.evalapply.org/index.html        |                            |
+| advait shinde  | lambda calculus vs turing machines | https://www.youtube.com/watch?v=ruOnPmI_40g | theory of computation      |
