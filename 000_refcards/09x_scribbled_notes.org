@@ -1,0 +1,22 @@
+* scribbled notes
+** Russ Olsen - goto18 - functional programming
+- pure functions, immutable, bridges
+- Pedestal
+- Atoms
+- Agents / actor
+- Record types
+- Persistent data structures
+- Trivia: handcuffs -> bicycles; piechart full of functionalities than operators interfaces
+
+** Richard Feldman - clojuture 2019 - Why isn't functional programs the norm?
+- sponsors: Metosin Futurice Nitor Siili Cognitect Solita Leanheat
+- Language | Paradigm | Style/ Data - company - developer programming languages
+- Language
+  - #1 killer app (visicalc apple, Ruby on rails, php WordPress Drupal, c systems programming, elm elm-ui, clojure datomic, reasonml recovery)
+  - #2 ecosystem (objective Swift apple, js internet, c# Microsoft)
+  - #3 quick upgrades - benefits, familiarity, learning curve, ecosystem access, code migration b effort - c++, kotlin, typescript
+  - #4 epic marketing - $500 million spend by Java --> JavaScript
+  - #5 slow and steady - python
+  - #6 others - syntax, job market, community
+- Paradigm - oo, functional, procedural, logic
+- features - encapsulation, inheritance, objects, methods
