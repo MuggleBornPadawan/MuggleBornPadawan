@@ -20,3 +20,66 @@
   - #6 others - syntax, job market, community
 - Paradigm - oo, functional, procedural, logic
 - features - encapsulation, inheritance, objects, methods
+
+** Numerical linear algebra
+- True Theta - data science consulting
+- Use cases: graphics - 3D to 2D, rotate, pixel colour intensity, rasterisation, weather forecasting, data compression, finite element method, MRI, fluid dynamic simulation, recommendation systems, search, neural networks
+- Computing in science and engineering
+  - Metropolis algorithm for Monte Carlo
+  - Simplex method for linear programming #
+  - Krylov subspace iteration methods #
+  - Decompositional approach #
+  - Fortron optimising compiler
+  - QR algorithm for computing eigenvalues #
+  - Quicksort algorithm for sorting
+  - Fast Fourier transformation #
+  - Integer relation detection
+  - Fast multipole method #
+- Paper: randomised numerical linear algebra - a perspective on the field with an eye to software (2023)
+- Linear algebra - vector and matrices 
+- Matrices - functions (information rich objects) 
+- Linearity is an assumption 
+- Numerical linear algebra - study of applying linear algebra fast and efficiently with computers 
+- Challenges: Finite precision - numerically unstable - eg: order of operationsMachine dependence - 
+- References: 
+  - Introduction to linear algebra, sixth edition - Gilbert Strang, Wellesley - Cambridge Press
+  - Numerical inverting of matrices of higher order - John Von Neumann and HH Goldstine 
+  - Symmetric Decomposition of a positive definite matrix - RS Martin, G Peters, JH Wilkinson
+  - Iterative refinement of the solution of a positive definite system of equations - RS Martin, G Peters, JH Wilkinson
+  - Symmetric Decomposition of a positive definite band matrix - RS Martin, JH Wilkinson
+  - Solution of symmetric and unsymmetric band equations and the calculations of eigenvectors of band matrices - RS Martin and JH Wilkinson 
+- History
+- Fortran IBM - 1957
+- Blas - 1979 - basic linear algebra subprograms 
+- Linpack - 1979Lapack - 1992 - Jack Dongarra, James Demmel - not for parallel, sparse, GPU
+- Scalapack - parallel computing - pblas
+- Sparse - blas
+- GPU - multicore - magma - matrix algebra for GPU and multicore architecture
+- cuBLAS
+- Apple accelerate framework
+- Automatically Tuned Linear Algebra Software (atlas) 
+- Algorithm efficiency -
+  - AB Standard way - O(n^3)
+  - Volker strassen - 1969 - O(n^2.8074)
+- Problem of least squares
+- Given:A (mxn, n << m)b (m dimensional) 
+- Find x: || Ax - b ||2
+- Goal: minimize x 
+- NLA algorithm: O(mn^2)Rand-NLA : accept error (epsilon) - O(mnlog(1/e) + n^3) - with high probability, a random summary of the data shrinks the problem while preserving virtually all of the relevant information 
+- Classic NLA - compute the most exact answer possible as fast as possible
+- RandNLA - compute a close enough answer as fast as possible with high probability
+- Machine learning: Data is noisyComputing exactly is unnecessary 
+- Tradeoff between speed and accuracy 
+- Fixed rank approximation of a positive-semidefinite matrix from streaming data
+- CholeskyQR with randomisation and pivoting for tall matrices 
+- Cur matrix decompositions for improved data analysis
+- Randomised matrix decompositions using
+- LSRN: a parallel iterative solver for strongly over or underdetermined systems
+- Randomised QR with column pivoting
+- Blendenpik : supercharging lapacks least squares solver 
+- YouTube educators
+  - Steven L Brunton (University of Washington) 
+  - J Nathan Kurtz (University of Washington)
+- Improves Singular value decomposition (SVD) algorithm 
+  - Sketch and solve least squares 
+  - Two ways to optimise: hardware acceleration (specialized?), communication avoiding algorithms 
