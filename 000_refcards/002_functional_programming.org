@@ -1,0 +1,45 @@
+#+title: Functional Programming
+* introduction
+Functional programming is a paradigm that emphasizes:
+1. pure functions: no side effects, predictable output
+2. immutable data: data cannot be modified
+3. recursion : functions call themselves
+4. higher-order functions: functions take functions as arguments
+5. compositionality: functions combine to form new functions
+** key concepts
+1. functions as first-class citizens
+2. lambda functions (anonymous functions)
+3. closures (functions with captured variables)
+4. map, filter, reduce (data processing)
+5. recursion schemes (e.g., fold, unfold)
+** programming languages
+1. haskell
+2. lisp - racket, scheme, clojure, arc
+3. f#
+4. scala
+5. erlang
+6. javascript (functional programming aspects)
+7. python (functional programming aspects)
+** benefits
+1. easier code reuse
+2. improved modularity
+3. better code readability
+4. reduced bugs
+5. parallelization and concurrency
+** techniques
+1. function composition
+2. pattern matching
+3. type inference
+4. lazy evaluation
+5. memoization
+** applications
+1. data processing and analytics
+2. artificial intelligence and machine learning
+3. web development (e.g., React, Redux)
+4. distributed systems
+5. scientific computing
+** researchers
+1. alonzo church (lambda calculus)
+2. haskell curry (combinatory logic)
+3. john mccarthy (lisp)
+4. philip wadler (functional programming advocate)
