@@ -1,11 +1,11 @@
 #+title: Functional Programming
 * introduction
-Functional programming is a paradigm that emphasizes:
+functional programming is a paradigm that emphasizes:
 1. pure functions: no side effects, predictable output
 2. immutable data: data cannot be modified
 3. recursion : functions call themselves
 4. higher-order functions: functions take functions as arguments
-5. compositionality: functions combine to form new functions
+5. composablity : functions combine to form new functions
 ** key concepts
 1. functions as first-class citizens
 2. lambda functions (anonymous functions)
@@ -22,7 +22,7 @@ Functional programming is a paradigm that emphasizes:
 7. python (functional programming aspects)
 ** benefits
 1. easier code reuse
-2. improved modularity
+2. improved modularity	
 3. better code readability
 4. reduced bugs
 5. parallelization and concurrency
