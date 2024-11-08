@@ -7,10 +7,10 @@
 *** TODO learn lists (Use C-c C-t to toggle)
 *** DONE learn markup
 *** learn tables
-*** TODO learn links
-*** TODO learn images
-*** TODO learn blocks
-*** TODO learn export settings
+*** DONE learn links
+*** DONE learn images
+*** DONE learn blocks
+*** DONE learn export settings
 
 ** Plain lists
 - unordered list (Use Shift left / right to change bullets)
