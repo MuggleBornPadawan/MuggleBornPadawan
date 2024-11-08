@@ -166,6 +166,14 @@ GNU emacs
 - fixing errors
   - M-c-i - fix error at current location 
   - M-x flyspell-goto-next-error 
+** dired
+- C-x d - open dired
+- R - rename file
+- d - mark for delete
+- x - execute delete
+- u or t - unmark file 
+- g - refresh
+- + - create a new directory 
 ** fun stuff
 - M-x tetris
 - M-x calendar
