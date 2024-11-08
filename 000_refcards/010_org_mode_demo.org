@@ -3,21 +3,20 @@
 #+date: (org-export-timestamp-file)
 
 * Welcome
-** Sub heading
-*** TODO learn lists (Use C-c C-t to toggle)
-*** DONE learn markup
-*** learn tables
-*** DONE learn links
-*** DONE learn images
-*** DONE learn blocks
-*** DONE learn export settings
+** TODO Sub heading
+- TODO learn lists (Use C-c C-t to toggle)
+- DONE  markup
+- DONE tables
+- DONE links
+- DONE images
+- DONE blocks
+- DONE export settings
 
 ** Plain lists
 - unordered list (Use Shift left / right to change bullets)
   - item 1
     twer
     wer
-    
   - item 2  (Use M-up or M-down to reorder)
     item x
   - item 3 (Use M-left or M-right to indent)
@@ -125,11 +124,3 @@ If you have data separated by spaces, commas, or tabs, you can easily convert it
 - S-TAB – Jump to the previous field.
 - M-a – Move to the beginning of the table cell.
 - M-e – Move to the end of the table cell.
-
-
-
-
-
-
-
-;; end of file 
