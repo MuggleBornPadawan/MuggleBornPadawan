@@ -8,10 +8,10 @@ driver = webdriver.Chrome()
 
 try:
     # Open the desired URL
-    driver.get("https://www.canva.com/colors/color-palettes/")  # Replace with your target URL
+    driver.get("https://www.wikipedia.org")  # Replace with your target URL
 
     # Wait for the page to fully load (adjust the condition as needed)
-    WebDriverWait(driver, 100).until(EC.presence_of_all_elements_located((By.XPATH, "//*")))
+    WebDriverWait(driver, 10000).until(EC.presence_of_all_elements_located((By.XPATH, "//*")))
 
     # Find all elements on the page
     elements = driver.find_elements(By.XPATH, "//*")  # Select all elements
@@ -20,7 +20,7 @@ try:
     class_names = set()
 
     # Extract class names from each element
-    print("/n... extraction of class names")
+    print("\n... extraction of class names")
     for element in elements:
         class_name = element.get_attribute('class')
         if class_name:  # Check if the element has a class attribute
@@ -32,7 +32,7 @@ try:
     sorted_class_names = sorted(class_names)
 
     # Print sorted unique class names
-    print("/n... sorted and unique names")
+    print("\n... sorted and unique names")
     for name in sorted_class_names:
         print(name)
 
