@@ -6,7 +6,6 @@ driver = webdriver.Chrome()
 
 # Open the desired URL
 driver.get("http://quotes.toscrape.com")  # Replace with your target URL
-#driver.get("https://www.canva.com/colors/color-palettes/")  # Replace with your target URL
 
 # Find all elements on the page
 elements = driver.find_elements(By.XPATH, "//*")  # Select all elements
