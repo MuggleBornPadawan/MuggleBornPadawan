@@ -1,11 +1,40 @@
-#+title: Functional Programming
+#+title: functional programming paradigm 
 * introduction
-functional programming is a paradigm that emphasizes:
+functional programming approach is a paradigm that emphasizes:
 - pure functions: no side effects, predictable output
 - immutable data: data cannot be modified
 - recursion : functions call themselves
 - higher-order functions: functions take functions as arguments
 - composablity : functions combine to form new functions
+** functional vs imperative programming 
+|------------------------+----------------------------------+------------------------------------------+---------------------------------|
+| aspect                 | imperative                       | functional                               |                                 |
+|------------------------+----------------------------------+------------------------------------------+---------------------------------|
+| state change           | mutable, changes over time       | immutable                                |                                 |
+| side effects           | possible                         | pure                                     |                                 |
+| control structure      | loops, conditionals, ...         | recursion and higher order fn's          |                                 |
+| execution              | sequential                       | concurrent composition                   |                                 |
+| first class functions  | possible in some                 | available by default                     |                                 |
+| higher order functions | fn does not return fn's          | fn returns fn's                          |                                 |
+| readablity             | verbose and complex              | concise and expressive                   |                                 |
+| debugging              | step-by-step flow                | abstraction level unit tests             |                                 |
+| style                  | step-by-step instructions        | declarative / composition of fn's        |                                 |
+| data flow              | explicit control flow            | data transformation pipelines (chains)   |                                 |
+| direction of data flow | multi-directional                | unidirectional                           |flux / redux - react             |
+| data transformation    | in-place modifications           | new data structures at every step        |                                 |
+| concurrency            | shared state -> harder to manage | immutability -> easier to manage         |                                 |
+| code maintenance       | spaghetti code -> technical debt | composition -> technical debt            |                                 |
+| order of operations    | rigid                            | easy to add / remove / reorder steps     |                                 |
+| inspection             | difficult at intermediate steps  | easy to inspect intermediate results     |                                 |
+| reproducible           | difficult                        | idempotent and referentially transparent |                                 |
+| separation of concerns | modular and reusable             | tightly coupled                          | single responsibility principle |
+| extensibility          | hard to extend                   | easy to extend                           |                                 |
+| predictable behavior   | no                               | yes                                      |                                 |
+|------------------------+----------------------------------+------------------------------------------+---------------------------------|
+- flux
+  - actions -> dispatcher -> stores -> views
+- redux
+  - actions -> reducers -> store -> middleware 
 ** to be understood
 - referential transparency (no side effects - expressions) vs idempotent (has side effects - operations)
 ** key concepts
@@ -15,12 +44,15 @@ functional programming is a paradigm that emphasizes:
 - map, filter, reduce (data processing)
 - recursion schemes (e.g., fold, unfold)
 ** programming languages
-- haskell, lisp (racket, scheme, clojure, arc), f#, scala, erlang, javascript (functional programming aspects), python (functional programming aspects)
+- native functional languages - haskell, lisp (racket, scheme, clojure, arc), f#, scala, erlang
+- multi-paradigm languages - javascript, python
 ** benefits
 - easier code reuse, improved modularity, better code readability, reduced bugs, parallelization and concurrency
 ** techniques
 - function composition, pattern matching, type inference, lazy evaluation, memoization
 ** applications
-- data processing and analytics, artificial intelligence and machine learning, web development (e.g., React, Redux), distributed systems, scientific computing
+- data processing and analytics, artificial intelligence and machine learning, web development (e.g., react, redux), distributed systems, scientific computing
 ** researchers
 - alonzo church (lambda calculus), haskell curry (combinatory logic), john mccarthy (lisp), philip wadler (functional programming advocate)
+** evangelists
+- paul graham, robert c martin (uncle bob)
