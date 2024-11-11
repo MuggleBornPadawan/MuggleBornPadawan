@@ -31,10 +31,25 @@ functional programming approach is a paradigm that emphasizes:
 | extensibility          | hard to extend                   | easy to extend                           |                                 |
 | predictable behavior   | no                               | yes                                      |                                 |
 |------------------------+----------------------------------+------------------------------------------+---------------------------------|
-- flux
-  - actions -> dispatcher -> stores -> views
-- redux
-  - actions -> reducers -> store -> middleware 
+- other salient differences: 
+|-------------------------------+------------------------+---------------------+------------------------|
+| particulars                   | functional             | imperative          | example                |
+|-------------------------------+------------------------+---------------------+------------------------|
+| operations generalize         | over processes         | over data           |                        |
+| higher order functions        | yes                    | no                  | (map inc list)         |
+| first class functions         | yes                    | no                  | returns lambda fn's    |
+| anonymous lambda functions    | yes                    | no                  |                        |
+| macros                        | yes                    | no                  |                        |
+| expressive                    | operator is a function | assignment          |                        |
+| immutable data types          | stateless              | statefull           |                        |
+| syntactic sugar (convenience) | yes                    | no                  | lambda usage           |
+| function calls are            | recursive evaluation   | order of operations | () vs bodmas or pemdas |
+| idempotent                    | yes                    | no                  | caching                |
+| closures                      | staple                 | available now       |                        |
+|-------------------------------+------------------------+---------------------+------------------------|
+- data flow 
+  - flux - actions -> dispatcher -> stores -> views
+  - redux - actions -> reducers -> store -> middleware 
 ** to be understood
 - referential transparency (no side effects - expressions) vs idempotent (has side effects - operations)
 ** key concepts
