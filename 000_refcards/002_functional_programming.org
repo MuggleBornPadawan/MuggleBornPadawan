@@ -41,7 +41,7 @@ functional programming approach is a paradigm that emphasizes:
 | anonymous lambda functions    | yes                    | no                  |                        |
 | macros                        | yes                    | no                  |                        |
 | expressive                    | operator is a function | assignment          |                        |
-| immutable data types          | stateless              | statefull           |                        |
+| immutable data types          | stateless              | state               |                        |
 | syntactic sugar (convenience) | yes                    | no                  | lambda usage           |
 | function calls are            | recursive evaluation   | order of operations | () vs bodmas or pemdas |
 | idempotent                    | yes                    | no                  | caching                |
