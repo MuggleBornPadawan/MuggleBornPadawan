@@ -14,8 +14,8 @@ functional programming approach is a paradigm that emphasizes:
 | side effects           | possible                         | pure                                     |                                 |
 | control structure      | loops, conditionals, ...         | recursion and higher order fn's          |                                 |
 | execution              | sequential                       | concurrent composition                   |                                 |
-| first class functions  | possible in some                 | available by default                     |                                 |
-| higher order functions | fn does not return fn's          | fn returns fn's                          |                                 |
+| first class functions  | possible in some                 | available by default                     | returns lambda fn's             |
+| higher order functions | fn does not return fn's          | fn returns fn's                          | (map inc list)                  |
 | readablity             | verbose and complex              | concise and expressive                   |                                 |
 | debugging              | step-by-step flow                | abstraction level unit tests             |                                 |
 | style                  | step-by-step instructions        | declarative / composition of fn's        |                                 |
@@ -32,21 +32,18 @@ functional programming approach is a paradigm that emphasizes:
 | predictable behavior   | no                               | yes                                      |                                 |
 |------------------------+----------------------------------+------------------------------------------+---------------------------------|
 - other salient differences: 
-|-------------------------------+------------------------+---------------------+------------------------|
-| particulars                   | functional             | imperative          | example                |
-|-------------------------------+------------------------+---------------------+------------------------|
-| operations generalize         | over processes         | over data           |                        |
-| higher order functions        | yes                    | no                  | (map inc list)         |
-| first class functions         | yes                    | no                  | returns lambda fn's    |
-| anonymous lambda functions    | yes                    | no                  |                        |
-| macros                        | yes                    | no                  |                        |
-| expressive                    | operator is a function | assignment          |                        |
-| immutable data types          | stateless              | state               |                        |
-| syntactic sugar (convenience) | yes                    | no                  | lambda usage           |
-| function calls are            | recursive evaluation   | order of operations | () vs bodmas or pemdas |
-| idempotent                    | yes                    | no                  | caching                |
-| closures                      | staple                 | available now       |                        |
-|-------------------------------+------------------------+---------------------+------------------------|
+|-------------------------------+---------------------+------------------------+------------------------|
+| particulars                   | imperative          | functional             | example                |
+|-------------------------------+---------------------+------------------------+------------------------|
+| operations generalize         | over data           | over processes         |                        |
+| anonymous lambda functions    | no                  | yes                    |                        |
+| macros                        | no                  | yes                    |                        |
+| expressive                    | assignment          | operator is a function |                        |
+| syntactic sugar (convenience) | no                  | yes                    | lambda usage           |
+| function calls are            | order of operations | recursive evaluation   | () vs bodmas or pemdas |
+| idempotent                    | not necessarily     | yes                    | caching                |
+| closures                      | ?                   | staple                 |                        |
+|-------------------------------+---------------------+------------------------+------------------------|
 - data flow 
   - flux - actions -> dispatcher -> stores -> views
   - redux - actions -> reducers -> store -> middleware 
