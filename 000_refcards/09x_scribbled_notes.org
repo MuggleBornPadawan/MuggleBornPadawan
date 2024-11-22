@@ -148,7 +148,7 @@
   - probabilistic
   - deterministic
 - types of learning
-  - supervised - manually label
+  - supervised - manually label - structured data - confidence value is given 
   - unsupervised - automatically classify and label 
   - reinforcement learning - trial and error - rewards right answers and punishes wrong answers 
 - interacting with ai
@@ -179,8 +179,45 @@
     - entities -  a noun representing a person, place, or thing. It’s not an adjective, verb, or other article of speech
     - relationships - a group of two or more entities that have a strong connection to one another
     - concepts - is something implied in a sentence but not actually stated. this is trickier because it involves matching ideas rather than the specific words present in the sentence      
-
-** general stuff
+*** emotion detection and sentiment analysis
+- emotion examples: anger, happiness, or fear
+- sentiment - a measure of the strength of an emotion. you can think of sentiment as a sliding scale between positive and negative, with neutral in the middle
+*** classification problem
+- running nose, smelly feet
+- you can ship a box by train
+- when a building burns down, it burns up
+- you can fill in a form by filling it out
+- a wise guy is not the same as a wise person
+*** how does chatbot respond
+- intents, entities and dialog
+- intent -  a purpose: the reason why a user is contacting the chatbot. Think of it as something like a verb: a kind of action
+- entity - a noun: a person, place, or thing
+- dialog
+  - a flowchart—an IF / THEN tree structure that illustrates how a machine will respond to user intents
+  - a dialog is what the machine replies after a human asks a question
+  - even if a human uses run-on sentences, poor grammar, chat messaging expressions, and so on, artificial intelligence allows the NLP to understand well enough to provide a response
+  - chatbot software condenses each moment of the conversation into a node. A node contains a statement by the chatbot and a long, expandable list of possible replies  
+*** image classification
+- convolutional neural network (CNN)
+  - Martin Keen, IBM Master inventor - https://www.youtube.com/watch?v=QzY57FaENXg 
+- generative adversarial network (GAN)
+  - Martin Keen, IBM Master inventor - https://www.youtube.com/watch?v=TpMIssRdhco
+*** computer vision applications
+- spotting a dangerous but difficult-to-detect flaw in an airplane’s wing
+- monitoring water flow across a dairy farm to ensure it doesn’t reach nearby food crops
+- counting the number of people in an unruly crowd
+- classifying animal and plant populations to measure biodiversity in a forest
+- performing lip-reading for people who cannot hear or speak
+*** classical computing
+- decision tree - a supervised learning algorithm
+  - it operates like a flowchart
+  - you can think of a flowchart as an upside-down decision tree
+  - the flowchart has a *root* node (where the flowchart begins),
+    - branches that connect to *internal* nodes
+    - and more branches that connect to *leaf* nodes  
+- linear regression
+- logistic regression 
+** ai general stuff
 - john mccarthy - refer book for more details 
   - branches of ai
     - logical
@@ -204,20 +241,22 @@
     - heuristic classification 
   - horn clauses?
 
-- computational intelligence - The study of the design of intelligent agents .
+** computational intelligence
+- the study of the design of intelligent agents .
   - an agent is something that acts in an environment
   - an intelligent agent is an agent that acts intelligently:
     - its actions are appropriate for its goals and circumstances
     - it is flexible to changing environments and goals
     - it learns from experience
     - it makes appropriate choices given perceptual limitations and finite computation    
-  - agents in the world
+- agents in the world
 | prior knowledge ->  | agent | actions |
 | past experiences -> |       |         |
 | goals / values ->   |       |         |
 | observations ->     |       |         |
   - actions -> impact environment -> agent observes and becomes past experiences 
 
+* books
 |--------------------------------------------+---------------------------------------------+--------------------------------------------------|
 | book                                       | authors                                     | url                                              |
 |--------------------------------------------+---------------------------------------------+--------------------------------------------------|
