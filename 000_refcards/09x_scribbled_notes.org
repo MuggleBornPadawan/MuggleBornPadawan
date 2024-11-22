@@ -263,7 +263,9 @@
   - privacy
   - loss of human touch
   - unemployment and job displacement 
-
+** ai ethics
+  - unwanted bias
+  - explainablity and interpretability 
 
 ** ai general stuff
 - john mccarthy - refer book for more details 
