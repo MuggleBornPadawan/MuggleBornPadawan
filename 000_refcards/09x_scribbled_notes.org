@@ -34,14 +34,14 @@
   - Integer relation detection
   - Fast multipole method #
 - Paper: randomised numerical linear algebra - a perspective on the field with an eye to software (2023)
-- Linear algebra - vector and matrices 
-- Matrices - functions (information rich objects) 
-- Linearity is an assumption 
-- Numerical linear algebra - study of applying linear algebra fast and efficiently with computers 
-- Challenges: Finite precision - numerically unstable - eg: order of operationsMachine dependence - 
-- References: 
+- Linear algebra - vector and matrices
+- Matrices - functions (information rich objects)
+- Linearity is an assumption
+- Numerical linear algebra - study of applying linear algebra fast and efficiently with computers
+- Challenges: finite precision - numerically unstable - eg: order of operationsMachine dependence -
+- References:
   - Introduction to linear algebra, sixth edition - Gilbert Strang, Wellesley - Cambridge Press
-  - Numerical inverting of matrices of higher order - John Von Neumann and HH Goldstine 
+  - Numerical inverting of matrices of higher order - John Von Neumann and HH Goldstine
   - Symmetric Decomposition of a positive definite matrix - RS Martin, G Peters, JH Wilkinson
   - Iterative refinement of the solution of a positive definite system of equations - RS Martin, G Peters, JH Wilkinson
   - Symmetric Decomposition of a positive definite band matrix - RS Martin, JH Wilkinson
@@ -60,27 +60,27 @@
   - AB Standard way - O(n^3)
   - Volker strassen - 1969 - O(n^2.8074)
 - Problem of least squares
-- Given:A (mxn, n << m)b (m dimensional) 
+- Given:A (mxn, n << m)b (m dimensional)
 - Find x: || Ax - b ||2
-- Goal: minimize x 
+- Goal: minimize x
 - NLA algorithm: O(mn^2)Rand-NLA : accept error (epsilon) - O(mnlog(1/e) + n^3) - with high probability, a random summary of the data shrinks the problem while preserving virtually all of the relevant information 
 - Classic NLA - compute the most exact answer possible as fast as possible
 - RandNLA - compute a close enough answer as fast as possible with high probability
-- Machine learning: Data is noisyComputing exactly is unnecessary 
-- Tradeoff between speed and accuracy 
+- Machine learning: Data is noisyComputing exactly is unnecessary
+- Tradeoff between speed and accuracy
 - Fixed rank approximation of a positive-semidefinite matrix from streaming data
-- CholeskyQR with randomisation and pivoting for tall matrices 
+- CholeskyQR with randomization and pivoting for tall matrices
 - Cur matrix decompositions for improved data analysis
 - Randomised matrix decompositions using
 - LSRN: a parallel iterative solver for strongly over or underdetermined systems
 - Randomised QR with column pivoting
-- Blendenpik : supercharging lapacks least squares solver 
+- Blendenpik : supercharging lapacks least squares solver
 - YouTube educators
-  - Steven L Brunton (University of Washington) 
+  - Steven L Brunton (University of Washington)
   - J Nathan Kurtz (University of Washington)
-- Improves Singular value decomposition (SVD) algorithm 
-  - Sketch and solve least squares 
-  - Two ways to optimise: hardware acceleration (specialized?), communication avoiding algorithms 
+- Improves Singular value decomposition (SVD) algorithm
+  - Sketch and solve least squares
+  - Two ways to optimise: hardware acceleration (specialized?), communication avoiding algorithms
 ** AI vs augmented intelligence
 - learn patterns and predict 
 - human vs artificial vs augmented
@@ -94,22 +94,29 @@
 | accurate       | emotional         |
 |----------------+-------------------|
 - levels of AI
+|------------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | level            | high level defn                                | example                                                                                                                                                                                                                                                                                                                                                                      |
+|------------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ai               | rules                                          | to separate the chicken, beef, and pork, you could create a programmed rule in the format of if-else statements. This allows the machine to recognize what is on the label and route it to the correct basket                                                                                                                                                                |
 | machine learning | feature extraction, probabilistic calculations | to improve the performance of the machine, you expose it to more data to ensure that the machine is trained on numerous characteristics of each type of meat, such as size, shape, and color. The more data you provide for the algorithm, the better the model gets. By providing more data and adjusting parameters, the machine minimizes errors by repetitive guess work |
 | deep learning    | feature extraction without human help          | feature extraction is built into the process without human input. once you have provided the deep learning model with dozens of meat pictures, it processes the images through different layers of neural networks. The layers can then learn an implicit representation of the raw data on their own                                                                        |
+|------------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 - analyze and predict
   - ingest large amounts of data, sort, organize and analyze
   - based on this information, a certain thing will probably happen
 - evolution of ai 
+|-----------------------+------------------------------------------------------------------|
 | narrow ai             | predict next purchase, plan your day                             |
 | broad (enterprise) ai | business process, global weather, trace pandemics, future trends |
 | general ai            | human level - abstract, strategize, previous experience          |
+|-----------------------+------------------------------------------------------------------|
 - eras of computing
   - tabulation - slice and dice - pivot
   - programming - Electronic Numerical Integrator and Computer (ENIAC) at the University of Pennsylvania
   - ai
+|----------+-----------------------------------+--------------------------------------------|
 | timeline | key events                        | notes                                      |
+|----------+-----------------------------------+--------------------------------------------|
 |     1940 | turing machines                   | can machines think?                        |
 |          | analog robots                     |                                            |
 |     1950 | turing test                       |                                            |
@@ -131,6 +138,7 @@
 |     2017 | AlphaZero                         | K9 Mk1                                     |
 |     2019 | Project debater                   |                                            |
 |     2022 | K9 Mk2                            |                                            |
+|----------+-----------------------------------+--------------------------------------------|
 - ai winter
   - limited calculating power
   - limited information storage
@@ -173,8 +181,11 @@
 *** understanding natural language
   - contextual words: bat, pool
   - groucho marx sentence:
+|-----------+---------+---------+------+------------+----------+-------------+------------+---------|
 | one       | morning | i       | shot | an         | elephant | in          | my         | pajamas |
+|-----------+---------+---------+------+------------+----------+-------------+------------+---------|
 | adjective | noun    | pronoun | verb | determiner | noun     | preposition | determiner | noun    |
+|-----------+---------+---------+------+------------+----------+-------------+------------+---------|
   - sentence segmentation - tokens
     - entities -  a noun representing a person, place, or thing. It’s not an adjective, verb, or other article of speech
     - relationships - a group of two or more entities that have a strong connection to one another
@@ -215,8 +226,45 @@
   - the flowchart has a *root* node (where the flowchart begins),
     - branches that connect to *internal* nodes
     - and more branches that connect to *leaf* nodes  
-- linear regression
-- logistic regression 
+- linear regression - graphed as a straight line 
+- logistic regression - sigmoid function, or an S-shaped curve - outputs value between 0 and 1
+  - binary - dichotomous in nature - only two possible outcomes
+  - multinomial - three or more possible outcomes - no particular order
+  - ordinal - three or more possible outcomes - in specific order 
+*** deep learning ecosystem
+- neural networks - uses electronic circuitry inspired by the way neurons communicate in the human brain
+- flow of information through a perceptron's node
+  - in a neural network, a building block, called a perceptron, acts as the equivalent of a single neuron
+  - a perceptron has an input layer, one or more hidden layers, and an output layer
+  - a signal enters the input layer and the hidden layers run algorithms on the signal
+  - then, the result is passed to the output layer - sigmoid function 
+- trial and error learning process - corpus - make mistakes and adjusts
+*** genAI models
+- variational autoencoder (VAE) models - think of variational autoencoder (VAE) models as a skilled artist who can look at a painting, quickly sketch a simplified version of it, and then recreate a new painting using only that simplified sketch as a reference. the artist is capturing the essential elements of the painting and then using them to create a new work of art
+  - the "encoder" network compresses the input data into a lower-dimensional representation
+  - the "decoder" network reconstructs the original data from this compressed representation
+  - this allows VAEs to capture the underlying structure and patterns in the data, which can then generate new, similar data
+- generative adversarial network (GAN) models - think of a generative adversarial network (GAN) model as a competition between a skilled forger (the generator) and a talented art critic (the discriminator). the forger creates fake paintings, while the critic tries to determine whether each painting is genuine or a forgery. as the forger improves their technique, the critic becomes more discerning, and this cycle continues until the forger can create near-perfect forgeries
+  - the generator creates new data, while the discriminator evaluates the quality of the generated data
+  - the generator tries to create data that is realistic enough to fool the discriminator
+  - while the discriminator learns to better distinguish between real and generated data
+  - this competition leads to the generator creating increasingly realistic content
+- auto-regressive models - imagine an auto-regressive model as a skilled storyteller who listens to the beginning of a story and then continues it by predicting what comes next based on the words and events that have occurred so far. the storyteller uses their knowledge of language, grammar, and storytelling conventions to create a coherent and engaging continuation of the story
+  - generate new content by predicting the next element in a sequence based on the previous elements
+  - they are particularly well-suited for generating text because they can model the conditional probabilities of words and characters in a sentence
+- limitations
+  - lack of originality
+  - incompleteness
+  - bias
+  - computational resources
+- ethical concerns
+  - misinformation and fake content
+  - intellectual property and copyright
+  - privacy
+  - loss of human touch
+  - unemployment and job displacement 
+
+
 ** ai general stuff
 - john mccarthy - refer book for more details 
   - branches of ai
@@ -240,9 +288,8 @@
     - expert systems
     - heuristic classification 
   - horn clauses?
-
 ** computational intelligence
-- the study of the design of intelligent agents .
+- the study of the design of intelligent agents 
   - an agent is something that acts in an environment
   - an intelligent agent is an agent that acts intelligently:
     - its actions are appropriate for its goals and circumstances
@@ -250,19 +297,32 @@
     - it learns from experience
     - it makes appropriate choices given perceptual limitations and finite computation    
 - agents in the world
+|---------------------+-------+---------|
 | prior knowledge ->  | agent | actions |
 | past experiences -> |       |         |
 | goals / values ->   |       |         |
 | observations ->     |       |         |
+|---------------------+-------+---------|
   - actions -> impact environment -> agent observes and becomes past experiences 
 
-* books
-|--------------------------------------------+---------------------------------------------+--------------------------------------------------|
-| book                                       | authors                                     | url                                              |
-|--------------------------------------------+---------------------------------------------+--------------------------------------------------|
-| artificial intelligence: a modern approach | stuart russell and peter norvig             | https://aima.cs.berkeley.edu                     |
-| what is ai                                 | john mccarthy                               | https://www-formal.stanford.edu/jmc/whatisai.pdf |
-| artificial intelligence: a new synthesis   | nils nilsson, morgan kaufman                |                                                  |
-| computational intelligence                 | david poole, alan mack-worth & randy goebel |                                                  |
-|--------------------------------------------+---------------------------------------------+--------------------------------------------------|
+** future forward technologies
+- quantum computing
+- distributed deep learning
+- neuromorphic systems
+- homomorphic encryption
+- machine foresight
+- cognitive discovery
+  
+* resources
+|---------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
+| resource                                                                                    | authors                                     | url                                                                                                                          |
+|---------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
+| artificial intelligence: a modern approach                                                  | stuart russell and peter norvig             | https://aima.cs.berkeley.edu                                                                                                 |
+| what is ai                                                                                  | john mccarthy                               | https://www-formal.stanford.edu/jmc/whatisai.pdf                                                                             |
+| artificial intelligence: a new synthesis                                                    | nils nilsson, morgan kaufman                |                                                                                                                              |
+| computational intelligence                                                                  | david poole, alan mack-worth & randy goebel |                                                                                                                              |
+| backpropagation applied to handwritten zip code recognition (postal services)               | yann lecun                                  | https://direct.mit.edu/neco/article-abstract/1/4/541/5515/Backpropagation-Applied-to-Handwritten-Zip-Code                    |
+| the perceptron: a probabilistic model for information storage and organization in the brain | cristian carabali                           | https://www.academia.edu/60542953/The_perceptron_a_probabilistic_model_for_information_storage_and_organization_in_the_brain |
+|                                                                                             |                                             |                                                                                                                              |
+|---------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
 
