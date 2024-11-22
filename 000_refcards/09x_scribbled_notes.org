@@ -7,7 +7,6 @@
 - Record types
 - Persistent data structures
 - Trivia: handcuffs -> bicycles; piechart full of functionalities than operators interfaces
-
 ** Richard Feldman - clojuture 2019 - Why isn't functional programs the norm?
 - sponsors: Metosin Futurice Nitor Siili Cognitect Solita Leanheat
 - Language | Paradigm | Style/ Data - company - developer programming languages
@@ -20,7 +19,6 @@
   - #6 others - syntax, job market, community
 - Paradigm - oo, functional, procedural, logic
 - features - encapsulation, inheritance, objects, methods
-
 ** Numerical linear algebra
 - True Theta - data science consulting
 - Use cases: graphics - 3D to 2D, rotate, pixel colour intensity, rasterisation, weather forecasting, data compression, finite element method, MRI, fluid dynamic simulation, recommendation systems, search, neural networks
@@ -83,3 +81,149 @@
 - Improves Singular value decomposition (SVD) algorithm 
   - Sketch and solve least squares 
   - Two ways to optimise: hardware acceleration (specialized?), communication avoiding algorithms 
+** AI vs augmented intelligence
+- learn patterns and predict 
+- human vs artificial vs augmented
+- augmented - collision, blind spot - helps humans make decisions - compliments humans 
+- artificial - mimics human thinking - machines can independently make decisions without humans
+|----------------+-------------------|
+| machines       | humans            |
+|----------------+-------------------|
+| ingesting data | generalizing data |
+| repetitive     | creativity        |
+| accurate       | emotional         |
+|----------------+-------------------|
+- levels of AI
+| level            | high level defn                                | example                                                                                                                                                                                                                                                                                                                                                                      |
+| ai               | rules                                          | to separate the chicken, beef, and pork, you could create a programmed rule in the format of if-else statements. This allows the machine to recognize what is on the label and route it to the correct basket                                                                                                                                                                |
+| machine learning | feature extraction, probabilistic calculations | to improve the performance of the machine, you expose it to more data to ensure that the machine is trained on numerous characteristics of each type of meat, such as size, shape, and color. The more data you provide for the algorithm, the better the model gets. By providing more data and adjusting parameters, the machine minimizes errors by repetitive guess work |
+| deep learning    | feature extraction without human help          | feature extraction is built into the process without human input. once you have provided the deep learning model with dozens of meat pictures, it processes the images through different layers of neural networks. The layers can then learn an implicit representation of the raw data on their own                                                                        |
+- analyze and predict
+  - ingest large amounts of data, sort, organize and analyze
+  - based on this information, a certain thing will probably happen
+- evolution of ai 
+| narrow ai             | predict next purchase, plan your day                             |
+| broad (enterprise) ai | business process, global weather, trace pandemics, future trends |
+| general ai            | human level - abstract, strategize, previous experience          |
+- eras of computing
+  - tabulation - slice and dice - pivot
+  - programming - Electronic Numerical Integrator and Computer (ENIAC) at the University of Pennsylvania
+  - ai
+| timeline | key events                        | notes                                      |
+|     1940 | turing machines                   | can machines think?                        |
+|          | analog robots                     |                                            |
+|     1950 | turing test                       |                                            |
+|     1951 | minsky neural net                 |                                            |
+|     1956 | dartmouth conference              | john mccarthy - lisp                       |
+|     1956 | logic theorist - first ai program | allen newell, j.c. shaw, and herbert simon |
+|     1957 | checkers                          |                                            |
+|    1960s | semantic networks                 |                                            |
+|     1966 | eliza                             |                                            |
+|     1969 | SHRDLU                            | Born                                       |
+|  1970-80 | AI winter                         | K9, star wars                              |
+|     1982 | expert systems                    | ZX81                                       |
+|     1982 | hopfield net / back propagation   |                                            |
+|  1982-93 | AI winter                         |                                            |
+|     1997 | Deep Blue beats Kasparov          | chess                                      |
+|     2005 | DARPA Grand Challenge             | self driving vehicles                      |
+|     2011 | Watson wins Jeopardy              | quiz show                                  |
+|     2016 | AlphaGo (Go)                      |                                            |
+|     2017 | AlphaZero                         | K9 Mk1                                     |
+|     2019 | Project debater                   |                                            |
+|     2022 | K9 Mk2                            |                                            |
+- ai winter
+  - limited calculating power
+  - limited information storage
+  - lack of funding and high expectations 
+  - personal computing took preference 
+- ai rise and shine 
+  - in 1997, IBM’s Deep Blue beat the world’s chess champion by processing over 200 million possible moves per second
+  - in 2005, a Stanford University robot drove itself down a 131-mile desert trail
+  - in 2011, IBM’s Watson defeated two grand champions in the game of Jeopardy!
+- types of data
+  - structured data is typically categorized as quantitative data and is highly organized. structured data is information that can be organized in rows and columns. Perhaps you've seen structured data in a spreadsheet, like Google Sheets or Microsoft Excel. Examples of structured data includes names, dates, addresses, credit card numbers, stock information
+  - unstructured data, also known as dark data, is typically categorized as qualitative data. it cannot be processed and analyzed by conventional data tools and methods. Unstructured data lacks any built-in organization, or structure. Examples of unstructured data include images, texts, customer comments, medical records, and even song lyrics
+  - semi-structured data is the “bridge” between structured and unstructured data. it doesn't have a predefined data model. it combines features of both structured data and unstructured data. It's more complex than structured data, yet easier to store than unstructured data. Semi-structured data uses metadata to identify specific data characteristics and scale data into records and preset fields. Metadata ultimately enables semi-structured data to be better cataloged, searched, and analyzed than unstructured data. An example of semi-structured data is a video on a social media site. The video by itself is unstructured data, but a video typically has text for the internet to easily categorize that information, such as through a hashtag to identify a location
+- machine learning
+  - probabilistic
+  - deterministic
+- types of learning
+  - supervised - manually label
+  - unsupervised - automatically classify and label 
+  - reinforcement learning - trial and error - rewards right answers and punishes wrong answers 
+- interacting with ai
+  - ai everywhere - ai will move into all industries, from finance, to education, to healthcare. ai will increase productivity and enable new opportunities
+  - deeper insights - new technologies will sense, analyze, and understand things never before possible
+  - engagement re-imagined - New forms of human-machine interaction and emerging technologies, such as conversational bots, will transform how humans engage with each other and with machines
+  - personalization - machine interactions will be personalized for you, with new levels of detail and scale
+  - instrumented planet - billions of sensors generating exabytes of data will open new possibilities for improving Earth’s safety, sustainability, and security
+** natural language processing
+*** project debater - 2012 - ibm
+- YouTube link: https://www.youtube.com/watch?v=-d4Uj9ViP9o&t=1474s
+- steps
+  - learn and understand the topic - knowledge corpus - structure by concepts 
+  - build a position
+  - organize your proof
+  - respond to your opponent 
+- similar to cognitive systems
+  - understanding
+  - reasoning
+  - learning
+  - interacting
+*** understanding natural language
+  - contextual words: bat, pool
+  - groucho marx sentence:
+| one       | morning | i       | shot | an         | elephant | in          | my         | pajamas |
+| adjective | noun    | pronoun | verb | determiner | noun     | preposition | determiner | noun    |
+  - sentence segmentation - tokens
+    - entities -  a noun representing a person, place, or thing. It’s not an adjective, verb, or other article of speech
+    - relationships - a group of two or more entities that have a strong connection to one another
+    - concepts - is something implied in a sentence but not actually stated. this is trickier because it involves matching ideas rather than the specific words present in the sentence      
+
+** general stuff
+- john mccarthy - refer book for more details 
+  - branches of ai
+    - logical
+    - search
+    - pattern recognition
+    - representation
+    - inference
+    - common sense knowledge and reasoning
+    - learning from experience
+    - planning
+    - epistemology
+    - ontology
+    - heuristics
+    - genetic
+  - applications
+    - game playing
+    - speech recognition
+    - understanding natural language
+    - computer vision
+    - expert systems
+    - heuristic classification 
+  - horn clauses?
+
+- computational intelligence - The study of the design of intelligent agents .
+  - an agent is something that acts in an environment
+  - an intelligent agent is an agent that acts intelligently:
+    - its actions are appropriate for its goals and circumstances
+    - it is flexible to changing environments and goals
+    - it learns from experience
+    - it makes appropriate choices given perceptual limitations and finite computation    
+  - agents in the world
+| prior knowledge ->  | agent | actions |
+| past experiences -> |       |         |
+| goals / values ->   |       |         |
+| observations ->     |       |         |
+  - actions -> impact environment -> agent observes and becomes past experiences 
+
+|--------------------------------------------+---------------------------------------------+--------------------------------------------------|
+| book                                       | authors                                     | url                                              |
+|--------------------------------------------+---------------------------------------------+--------------------------------------------------|
+| artificial intelligence: a modern approach | stuart russell and peter norvig             | https://aima.cs.berkeley.edu                     |
+| what is ai                                 | john mccarthy                               | https://www-formal.stanford.edu/jmc/whatisai.pdf |
+| artificial intelligence: a new synthesis   | nils nilsson, morgan kaufman                |                                                  |
+| computational intelligence                 | david poole, alan mack-worth & randy goebel |                                                  |
+|--------------------------------------------+---------------------------------------------+--------------------------------------------------|
+
