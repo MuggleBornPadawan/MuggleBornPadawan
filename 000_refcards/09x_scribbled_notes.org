@@ -112,6 +112,41 @@
 | prescriptive           | course of action | to eliminate a future problem or take full advantage of a promising trend                                                      |
 |------------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------|
 *** steps
+- collect - threshold limit 
+- clean - wrangle - usable format - outliers, null values, missing data, inaccuracies, duplicates
+- analyze - trends, correlations, variations, and outliers -
+- visualize - bar charts, line graphs, scatter charts, and maps - graphical display of abstract or complex information
+*** etl
+- extract data from legacy systems
+- transform - cleanse the data to improve data quality and establish consistency
+- load data into a target database
+- foreign data wrappers might be another option here
+*** data storytelling
+- data, visualization and narrative - goal is to be effective, attractive, and impactive
+- when narrative is coupled with data, it explains to the audience what is happening in the data and why an insight is important
+- when visualizations are applied to data, they enlighten an audience with insights that they might not obtain without charts or graphs. Patterns and trends emerge from all the rows and columns in a database, with the help of data visualizations
+- when narrative and visualizations come together, they can create a data story that can influence, drive change, and engage an audience
+|---------------------------------------------------------------------+------------------------------------------------------|
+| quant                                                               | qualitative (conceptual)                             |
+|---------------------------------------------------------------------+------------------------------------------------------|
+| pie, bar, column, line, scatter                                     | flow, structure, interrelationship, action plan, map |
+|---------------------------------------------------------------------+------------------------------------------------------|
+- pie - limited categories - 100% coverage
+- bar - many categories - change over time - correlation 
+- line - continuum - trends - minor changes 
+- scatter - relationships and patterns 
+  
+- types of data comparison
+|---------------------+--------------|
+| types               | charts       |
+|---------------------+--------------|
+| relative proportion | pie, column  |
+| ranking             | bar          |
+| time                | column, line |
+| frequency           | column, line |
+| correlation         | bar, scatter |
+|---------------------+--------------|
+
 
 
 
@@ -379,6 +414,14 @@
 | the perceptron: a probabilistic model for information storage and organization in the brain | cristian carabali                           | https://www.academia.edu/60542953/The_perceptron_a_probabilistic_model_for_information_storage_and_organization_in_the_brain |
 |                                                                                             |                                             |                                                                                                                              |
 |---------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
+** data visualization
+|--------------------+------------------------------------------------------------------------|
+| portal             | website                                                                |
+|--------------------+------------------------------------------------------------------------|
+| from data to viz   | https://www.data-to-viz.com                                            |
+| atlassian - charts | https://www.atlassian.com/data/charts/how-to-choose-data-visualization |
+| tableau - public   | https://public.tableau.com/app/discover/viz-of-the-day                 |
+|--------------------+------------------------------------------------------------------------|
 ** portals 
 |-------------------------------------------------------------------+---------------------------------|
 | portals                                                           | website                         |
