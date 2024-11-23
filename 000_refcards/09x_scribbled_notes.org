@@ -1,86 +1,110 @@
 * scribbled notes
-** Russ Olsen - goto18 - functional programming
+** russ olsen - goto18 - functional programming
 - pure functions, immutable, bridges
-- Pedestal
-- Atoms
-- Agents / actor
-- Record types
-- Persistent data structures
-- Trivia: handcuffs -> bicycles; piechart full of functionalities than operators interfaces
+- pedestal
+- atoms
+- agents / actor
+- record types
+- persistent data structures
+- trivia: handcuffs -> bicycles; piechart full of functionalities than operators interfaces
 ** Richard Feldman - clojuture 2019 - Why isn't functional programs the norm?
-- sponsors: Metosin Futurice Nitor Siili Cognitect Solita Leanheat
-- Language | Paradigm | Style/ Data - company - developer programming languages
-- Language
+- sponsors: metosin futurice nitor siili cognitect solita leanheat
+- language | Paradigm | Style/ Data - company - developer programming languages
+- language
   - #1 killer app (visicalc apple, Ruby on rails, php WordPress Drupal, c systems programming, elm elm-ui, clojure datomic, reasonml recovery)
   - #2 ecosystem (objective Swift apple, js internet, c# Microsoft)
   - #3 quick upgrades - benefits, familiarity, learning curve, ecosystem access, code migration b effort - c++, kotlin, typescript
   - #4 epic marketing - $500 million spend by Java --> JavaScript
   - #5 slow and steady - python
   - #6 others - syntax, job market, community
-- Paradigm - oo, functional, procedural, logic
+- paradigm - oo, functional, procedural, logic
 - features - encapsulation, inheritance, objects, methods
-** Numerical linear algebra
-- True Theta - data science consulting
-- Use cases: graphics - 3D to 2D, rotate, pixel colour intensity, rasterisation, weather forecasting, data compression, finite element method, MRI, fluid dynamic simulation, recommendation systems, search, neural networks
-- Computing in science and engineering
-  - Metropolis algorithm for Monte Carlo
-  - Simplex method for linear programming #
-  - Krylov subspace iteration methods #
-  - Decompositional approach #
-  - Fortron optimising compiler
-  - QR algorithm for computing eigenvalues #
-  - Quicksort algorithm for sorting
-  - Fast Fourier transformation #
-  - Integer relation detection
-  - Fast multipole method #
-- Paper: randomised numerical linear algebra - a perspective on the field with an eye to software (2023)
-- Linear algebra - vector and matrices
-- Matrices - functions (information rich objects)
-- Linearity is an assumption
-- Numerical linear algebra - study of applying linear algebra fast and efficiently with computers
-- Challenges: finite precision - numerically unstable - eg: order of operationsMachine dependence -
-- References:
-  - Introduction to linear algebra, sixth edition - Gilbert Strang, Wellesley - Cambridge Press
-  - Numerical inverting of matrices of higher order - John Von Neumann and HH Goldstine
-  - Symmetric Decomposition of a positive definite matrix - RS Martin, G Peters, JH Wilkinson
-  - Iterative refinement of the solution of a positive definite system of equations - RS Martin, G Peters, JH Wilkinson
-  - Symmetric Decomposition of a positive definite band matrix - RS Martin, JH Wilkinson
-  - Solution of symmetric and unsymmetric band equations and the calculations of eigenvectors of band matrices - RS Martin and JH Wilkinson 
-- History
-- Fortran IBM - 1957
-- Blas - 1979 - basic linear algebra subprograms 
-- Linpack - 1979Lapack - 1992 - Jack Dongarra, James Demmel - not for parallel, sparse, GPU
-- Scalapack - parallel computing - pblas
-- Sparse - blas
-- GPU - multicore - magma - matrix algebra for GPU and multicore architecture
-- cuBLAS
-- Apple accelerate framework
-- Automatically Tuned Linear Algebra Software (atlas) 
-- Algorithm efficiency -
-  - AB Standard way - O(n^3)
-  - Volker strassen - 1969 - O(n^2.8074)
-- Problem of least squares
-- Given:A (mxn, n << m)b (m dimensional)
-- Find x: || Ax - b ||2
-- Goal: minimize x
-- NLA algorithm: O(mn^2)Rand-NLA : accept error (epsilon) - O(mnlog(1/e) + n^3) - with high probability, a random summary of the data shrinks the problem while preserving virtually all of the relevant information 
-- Classic NLA - compute the most exact answer possible as fast as possible
-- RandNLA - compute a close enough answer as fast as possible with high probability
-- Machine learning: Data is noisyComputing exactly is unnecessary
-- Tradeoff between speed and accuracy
-- Fixed rank approximation of a positive-semidefinite matrix from streaming data
-- CholeskyQR with randomization and pivoting for tall matrices
-- Cur matrix decompositions for improved data analysis
-- Randomised matrix decompositions using
-- LSRN: a parallel iterative solver for strongly over or underdetermined systems
-- Randomised QR with column pivoting
-- Blendenpik : supercharging lapacks least squares solver
-- YouTube educators
-  - Steven L Brunton (University of Washington)
-  - J Nathan Kurtz (University of Washington)
-- Improves Singular value decomposition (SVD) algorithm
-  - Sketch and solve least squares
-  - Two ways to optimise: hardware acceleration (specialized?), communication avoiding algorithms
+** numerical linear algebra
+- true Theta - data science consulting
+- use cases: graphics - 3D to 2D, rotate, pixel colour intensity, rasterisation, weather forecasting, data compression, finite element method, MRI, fluid dynamic simulation, recommendation systems, search, neural networks
+- computing in science and engineering
+  - metropolis algorithm for monte carlo
+  - simplex method for linear programming #
+  - krylov subspace iteration methods #
+  - decompositional approach #
+  - fortron optimising compiler
+  - qr algorithm for computing eigenvalues #
+  - quicksort algorithm for sorting
+  - fast fourier transformation #
+  - integer relation detection
+  - fast multipole method #
+- paper: randomised numerical linear algebra - a perspective on the field with an eye to software (2023)
+- linear algebra - vector and matrices
+- matrices - functions (information rich objects)
+- linearity is an assumption
+- numerical linear algebra - study of applying linear algebra fast and efficiently with computers
+- challenges: finite precision - numerically unstable - eg: order of operationsMachine dependence -
+- references:
+  - introduction to linear algebra, sixth edition - Gilbert Strang, Wellesley - Cambridge Press
+  - numerical inverting of matrices of higher order - John Von Neumann and HH Goldstine
+  - symmetric decomposition of a positive definite matrix - RS Martin, G Peters, JH Wilkinson
+  - iterative refinement of the solution of a positive definite system of equations - RS Martin, G Peters, JH Wilkinson
+  - symmetric Decomposition of a positive definite band matrix - RS Martin, JH Wilkinson
+  - solution of symmetric and unsymmetric band equations and the calculations of eigenvectors of band matrices - RS Martin and JH Wilkinson 
+- history
+  - fortran ibm - 1957
+  - blas - 1979 - basic linear algebra subprograms 
+  - linpack - 1979Lapack - 1992 - Jack Dongarra, James Demmel - not for parallel, sparse, GPU
+  - scalapack - parallel computing - pblas
+  - sparse - blas
+  - gpu - multicore - magma - matrix algebra for GPU and multicore architecture
+  - cuBLAS
+  - apple accelerate framework
+  - automatically tuned linear algebra software (atlas)
+  - algorithm efficiency -
+    - ab Standard way - O(n^3)
+    - volker strassen - 1969 - O(n^2.8074)
+  - problem of least squares
+  - given:A (mxn, n << m)b (m dimensional)
+  - find x: || Ax - b ||2
+  - goal: minimize x
+  - nla algorithm: O(mn^2)Rand-NLA : accept error (epsilon) - O(mnlog(1/e) + n^3) - with high probability, a random summary of the data shrinks the problem while preserving virtually all of the relevant information 
+  - classic NLA - compute the most exact answer possible as fast as possible
+  - randNLA - compute a close enough answer as fast as possible with high probability
+  - machine learning: Data is noisyComputing exactly is unnecessary
+  - tradeoff between speed and accuracy
+  - fixed rank approximation of a positive-semidefinite matrix from streaming data
+  - choleskyQR with randomization and pivoting for tall matrices
+  - cur matrix decompositions for improved data analysis
+  - randomised matrix decompositions using
+  - lsrn: a parallel iterative solver for strongly over or underdetermined systems
+  - randomised QR with column pivoting
+  - blendenpik : supercharging lapacks least squares solver
+- youtube educators
+  - steven l brunton (university of washington)
+  - j nathan kurtz (university of washington)
+- improves singular value decomposition (SVD) algorithm
+  - sketch and solve least squares
+  - two ways to optimise: hardware acceleration (specialized?), communication avoiding algorithms
+** data fundamentals
+*** types
+- quantitative data
+  - is also called numerical data - discrete (whole numbers) or continuous (finer levels)
+  - represents things that can be measured and assigned values
+  - can be counted and measured, such as height, weight, length, blood pressure, the temperature outside, and so on
+- qualitative data
+  - is also called categorical data - nominal (labels) or ordinal (ordered. eg: scale) 
+  - represents the characteristics, attributes, properties, and qualities of things
+  - describes data using language (rather than numbers), such as smell, location, color, texture, marital status, and so on
+*** big data
+|----------+-------------------------------------+----------------------------------------|
+| v's      | defn                                | comments                               |
+|----------+-------------------------------------+----------------------------------------|
+| volume   | amount of data                      | tools and storage                      |
+| variety  | types of data                       |                                        |
+| velocity | generation speed of data            | real time or batch processing          |
+| veracity | quality and trustworthiness of data | budgets and methods to check integrity |
+| value    | insights from data                  | filter noise                           |
+|          |                                     |                                        |
+|----------+-------------------------------------+----------------------------------------|
+
+
+
 ** AI vs augmented intelligence
 - learn patterns and predict 
 - human vs artificial vs augmented
@@ -264,9 +288,34 @@
   - loss of human touch
   - unemployment and job displacement 
 ** ai ethics
-  - unwanted bias
+  - fairness - unwanted bias
+  - robustness 
   - explainablity and interpretability 
-
+  - transparency and governance - model creation, evaluation and deployment 
+  - privacy
+*** roles
+- business owner, ai designer, data engineers, chief risk officers, ai ops engineers, model validators, data scientists, ai model lead 
+*** facts
+- data model and policy, purpose, application risk level, design decisions, deployment, model and data
+  - data
+    - source, statistics, visualization, analysis results, transformation to features and targets, selection and creation of data, fairness evaluation decisions and results, review compliance with policy and regulations 
+  - model
+    - algorithms used for training, model parameters, model performance, model fairness test results, model explainablity functions, model robustness test results, and review compliance with policy and regulations 
+  - deployment
+    - models deployed, deployment details, model metrics under monitoring and related thresholds, and review compliance with policy and regulations 
+*** privacy
+- data protection around the world - https://www.cnil.fr/en/data-protection-around-the-world
+- kinds of privacy data
+  - personal information
+  - sensitive personal information
+- during model training
+  - model anonymisation
+  - differential privacy
+  - data minimization  
+** skills
+- base line skills - linear algebra, statistics, probability, signal processing, big data
+- workplace skills - communication skills, teamwork and collaboration, problem solving, decision making, analytical thinking, time management, business intelligence, critical thinking
+- advance technical skills - programming languages (python, r, java, c++), frameworks and libraries (tensorflow, scipy, numpy), neural networks, machine learning, deep learning, shell scripting, cluster analysis  
 ** ai general stuff
 - john mccarthy - refer book for more details 
   - branches of ai
@@ -307,15 +356,8 @@
 |---------------------+-------+---------|
   - actions -> impact environment -> agent observes and becomes past experiences 
 
-** future forward technologies
-- quantum computing
-- distributed deep learning
-- neuromorphic systems
-- homomorphic encryption
-- machine foresight
-- cognitive discovery
-  
 * resources
+** books
 |---------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
 | resource                                                                                    | authors                                     | url                                                                                                                          |
 |---------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
@@ -327,4 +369,47 @@
 | the perceptron: a probabilistic model for information storage and organization in the brain | cristian carabali                           | https://www.academia.edu/60542953/The_perceptron_a_probabilistic_model_for_information_storage_and_organization_in_the_brain |
 |                                                                                             |                                             |                                                                                                                              |
 |---------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
-
+** portals 
+|-------------------------------------------------------------------+---------------------------------|
+| portals                                                           | website                         |
+|-------------------------------------------------------------------+---------------------------------|
+| association for the advancement of artificial intelligence (aaai) | https://aaai.org                |
+| international neural network society (inns)                       | https://www.inns.org            |
+| data science association                                          | https://www.datascienceassn.org |
+| codata                                                            | https://codata.org              |
+| association of data scientists                                    | https://adasci.org              |
+|                                                                   |                                 |
+|-------------------------------------------------------------------+---------------------------------|
+** journals, news and blogs
+|----------------------------------------------------+-------------------------------------------------------------------------|
+| publication                                        | website                                                                 |
+|----------------------------------------------------+-------------------------------------------------------------------------|
+| journal of machine learning research               | https://www.jmlr.org                                                    |
+| journal of artificial intelligence research (jair) | https://www.jair.org/index.php/jair                                     |
+| analytics insights                                 | https://www.analyticsinsight.net                                        |
+| towards data science                               | https://towardsdatascience.com                                          |
+| kdnuggets                                          | https://www.kdnuggets.com                                               |
+| data science central                               | https://www.datasciencecentral.com                                      |
+| datanami                                           | https://www.datanami.com                                                |
+| future of tech                                     | https://www.futureoftech.org/big-data/1-our-digital-world-and-big-data/ |
+| bernard marr                                       | https://bernardmarr.com/big-data-in-practice/                           |
+|----------------------------------------------------+-------------------------------------------------------------------------|
+** free learning
+|---------------+------------------------------|
+| online portal | website                      |
+|---------------+------------------------------|
+| kaggle        | https://www.kaggle.com/learn |
+| udemy         | https://www.udemy.com        |
+| freeCodeCamp  | https://www.freecodecamp.org |
+| datacamp      | https://www.datacamp.com     |
+| w3school      | https://www.w3schools.com    |
+| code academy  | https://www.codecademy.com   |
+|---------------+------------------------------|
+** future forward technologies
+- quantum computing
+- distributed deep learning
+- neuromorphic systems
+- homomorphic encryption
+- machine foresight
+- cognitive discovery
+  
