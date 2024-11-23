@@ -102,6 +102,16 @@
 | value    | insights from data                  | filter noise                           |
 |          |                                     |                                        |
 |----------+-------------------------------------+----------------------------------------|
+*** analytics types
+|------------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------|
+| complexity of analysis | value add        | insight contribution                                                                                                           |
+|------------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------|
+| descriptive            | what's happening | a snapshot of business trends and patterns and uses historical and current data                                                |
+| diagnostic             | why              | drills down to find the causes of specific problem                                                                             |
+| predictive             | forecasting      | likelihood of a future event, forecasting a quantifiable amount, or estimating a point in time at which something might happen |
+| prescriptive           | course of action | to eliminate a future problem or take full advantage of a promising trend                                                      |
+|------------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------|
+*** steps
 
 
 
