@@ -146,6 +146,56 @@
 | frequency           | column, line |
 | correlation         | bar, scatter |
 |---------------------+--------------|
+** data science
+- goal of data science is to extract value from data in all its forms
+- science is a system or method reconciling practical ends with scientific laws
+- data science is the understanding of the world through the scientific analysis of digital data
+- ata science combines the scientific method, math and statistics, specialized programming, advanced analytics, artificial intelligence (AI), and even storytelling to uncover and explain the business insights buried in data
+- data science is a multidisciplinary approach to extracting actionable insights from the large and ever-increasing volumes of data collected and created by today’s businesses
+- 5 whys
+*** iterative methodologies
+- cross-industry standard process for data mining (crisp-dm) - https://en.wikipedia.org/wiki/European_Strategic_Programme_on_Research_in_Information_Technology
+  - business understanding, data understanding, data preparation, modeling, evaluation and deployment 
+- knowledge discovery in database (kdd) - https://www.datascience-pm.com/kdd-and-data-mining/ 
+  - selection, pre-processing, transformation, data mining, interpretation / evaluation 
+- sample, explore, modify, model, assess (semma) - https://documentation.sas.com/doc/en/emref/14.3/n061bzurmej4j3n1jnj8bbjjm1a2.htm
+*** design thinking
+- business sponsor 
+- define the problem
+- determine the project objectives
+- develop personas or fictional characters that represent typical end users
+- document solution requirements from a business perspective
+*** descriptive analysis
+- number (n), mean, median, mode, minimum, maximum, standard deviation 
+*** data presentation
+- purpose, audience, data, context 
+*** data model
+- identifies the data, data attributes, and relationships or associations with other data
+- provides a generalized view of data that represents the real business scenario and data
+- why build a data model?
+  - a data scientist can develop a more systematic approach to address an identified business problem by building a model
+  - the main goal of building a model is to make better predictions for the business and gain a better understanding of the system being modeled
+*** train data models 
+- business understanding
+- data exploration and preparation
+- data representation and transformation
+- data visualization and presentation
+- train data models
+- deploy data models
+- future proof solution and implementation 
+*** supervised vs unsupervised learning
+|---------------------+-------------------------------------------------------------+---------------------------------------------------------------------------------|
+| particulars         | supervised                                                  | unsupervised                                                                    |
+|---------------------+-------------------------------------------------------------+---------------------------------------------------------------------------------|
+| process             | input and output variables are given                        | only input data is given                                                        |
+| input data          | algorithms are trained using labeled data                   | algorithms are used against data that is not labeled                            |
+| complexity          | simpler method                                              | computationally complex                                                         |
+| use of data         | uses training data to link i/o                              | does not use output data                                                        |
+| accuracy of results | highly accurate and trustworthy method                      | less accurate and trustworthy method                                            |
+| examples            | fraud detection, image cl, weather, market, life expectancy | customer seg, targeted mktg, meaningful comprehension, recommend music / movies |
+|---------------------+-------------------------------------------------------------+---------------------------------------------------------------------------------|
+
+
 
 
 
@@ -458,6 +508,17 @@
 | w3school      | https://www.w3schools.com    |
 | code academy  | https://www.codecademy.com   |
 |---------------+------------------------------|
+** machine learning
+- https://www.kdnuggets.com/2016/05/machine-learning-key-terms-explained.html
+- https://www.simplilearn.com/tutorials/machine-learning-tutorial
+- https://builtin.com/data-science/data-science-applications-examples  (check gaming and gamification)
+- https://www.streetlightdata.com
+- https://about.ups.com/ae/en/newsroom/press-releases/innovation-driven/ups-to-enhance-orion-with-continuous-delivery-route-optimization.html
+- https://www.whoop.com/in/en/
+- https://traceup.com
+- https://www.kdnuggets.com/2020/12/greatlearning-applications-data-science-business-analytics.html
+- https://www.datacamp.com/blog/data-science-use-cases-guide
+
 ** future forward technologies
 - quantum computing
 - distributed deep learning
