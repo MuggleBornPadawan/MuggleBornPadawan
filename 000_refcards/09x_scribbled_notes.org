@@ -194,6 +194,17 @@
 | accuracy of results | highly accurate and trustworthy method                      | less accurate and trustworthy method                                            |
 | examples            | fraud detection, image cl, weather, market, life expectancy | customer seg, targeted mktg, meaningful comprehension, recommend music / movies |
 |---------------------+-------------------------------------------------------------+---------------------------------------------------------------------------------|
+** data tools and languages
+- common tools to analyze and visualize data: ms excel, google sheets, structure query language (sql), python, ibm watson studio, tableu, matplotlib
+- open source
+  - use, view, modify and share
+  - community, contributor, committer, code of conduct, contribution guidelines   
+  - risks: technical support and warranty services
+- python, tableau, matplotlib
+- apache spark, jupyter notebook, r and rstudio, scala
+
+
+
 
 
 
@@ -496,6 +507,11 @@
 | datanami                                           | https://www.datanami.com                                                |
 | future of tech                                     | https://www.futureoftech.org/big-data/1-our-digital-world-and-big-data/ |
 | bernard marr                                       | https://bernardmarr.com/big-data-in-practice/                           |
+| informs                                            | https://www.informs.org                                                 |
+| harvard data science review                        | https://hdsr.mitpress.mit.edu                                           |
+| tech target                                        | https://www.datasciencecentral.com                                      |
+| datanami                                           | https://www.datanami.com                                                |
+| patterns                                           | https://developer.ibm.com/patterns/                                                                        |
 |----------------------------------------------------+-------------------------------------------------------------------------|
 ** free learning
 |---------------+------------------------------|
@@ -509,16 +525,32 @@
 | code academy  | https://www.codecademy.com   |
 |---------------+------------------------------|
 ** machine learning
-- https://www.kdnuggets.com/2016/05/machine-learning-key-terms-explained.html
-- https://www.simplilearn.com/tutorials/machine-learning-tutorial
-- https://builtin.com/data-science/data-science-applications-examples  (check gaming and gamification)
-- https://www.streetlightdata.com
-- https://about.ups.com/ae/en/newsroom/press-releases/innovation-driven/ups-to-enhance-orion-with-continuous-delivery-route-optimization.html
-- https://www.whoop.com/in/en/
-- https://traceup.com
+- machine learning key concepts - https://www.kdnuggets.com/2016/05/machine-learning-key-terms-explained.html
+- machine learning tutorial - https://www.simplilearn.com/tutorials/machine-learning-tutorial
+- data science - https://builtin.com/data-science/data-science-applications-examples  (check gaming and gamification)
+- street light data - https://www.streetlightdata.com
+- ups delivery route optimization - https://about.ups.com/ae/en/newsroom/press-releases/innovation-driven/ups-to-enhance-orion-with-continuous-delivery-route-optimization.html
+- wearables - https://www.whoop.com/in/en/
+- camera - https://traceup.com
 - https://www.kdnuggets.com/2020/12/greatlearning-applications-data-science-business-analytics.html
-- https://www.datacamp.com/blog/data-science-use-cases-guide
-
+- data sciences use cases - https://www.datacamp.com/blog/data-science-use-cases-guide
+- chart types with 24 tools - https://source.opennews.org/articles/what-i-learned-recreating-one-chart-using-24-tools/
+- microsoft excel - https://support.microsoft.com/en-us/office/excel-video-training-9bc05390-e94c-46af-a5b3-d7c22f6990bb
+- microsoft excel - https://www.excel-easy.com
+- sql commands - https://www.codecademy.com/article/sql-commands
+- sql tutorial - https://www.w3schools.com/sql/default.asp
+- sql course - https://www.codecademy.com/learn/learn-sql
+- sql command cheat sheet - https://www.freecodecamp.org/news/learn-sql-in-10-minutes/
+- python - https://wiki.python.org/moin/BeginnersGuide
+- python - https://python.land/python-tutorial
+- python - https://www.w3schools.com/python/default.asp
+- tableau - https://www.tableau.com/en-gb/learn/training
+- tableau - https://www.tableau.com/learn/articles/interactive-map-and-data-visualization-examples
+- tableau - https://www.tableau.com/visualization/data-visualization-best-practices
+- tableau - https://public.tableau.com/app/discover/viz-of-the-day
+- matplotlib - https://matplotlib.org/stable/tutorials/index
+- matplotlib - https://matplotlib.org/stable/tutorials/lifecycle.html
+  
 ** future forward technologies
 - quantum computing
 - distributed deep learning
