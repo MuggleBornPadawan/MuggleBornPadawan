@@ -1,5 +1,6 @@
 #+title: readme
 * vision: to become a 10x developer
+- sackman, erickson, and grant’s study published in 1968 -  https://www.construx.com/blog/the-origins-of-10x-how-valid-is-the-underlying-research/ 
 ** characteristics
 - problem solving, efficiency, deep knowledge, learning ability, focus and productivity, collaboration, innovation 
 ** pre-requisites - how to get started? 
