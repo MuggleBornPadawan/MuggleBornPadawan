@@ -1,0 +1,33 @@
+* web development
+- types of languages
+  - machine language
+  - compiled language - https://en.wikipedia.org/wiki/Grace_Hopper - java, c, c#
+  - interpreted language - runtime line by line execution - python, javascript 
+- website
+  - design
+    - project plans, mockups and prototypes, systems architecture diagrams 
+    - user stories, site map or navigation structure design, visual assets
+  - development
+    - web server code, test plans
+    - client code, client visuals 
+- history
+  - 1960s - packet switching, advanced research projects agency (arpa), arpanet
+  - 1970s - robert kahn and vinton cerf - standards for transmission control protocol and the internet protocol (also known as tcp/ip); distributed computer networks - nasa and the us department of energy
+  - 1980s - network of networks; tim berners lee - world wide web (www) - web, hypertext document, and browsers
+  - 1990s - info.cern.ch 
+- internet
+  - internet service provider > modem > router
+  - domain name server (dns) - translate url into a numerical internet protocol (ip) address
+  - blob storage - to host catalog images, videos, documents, and application files
+
+    
+    
+* resources
+- open source - https://opensource.com/resources/what-open-source
+- internet history - https://www.internetsociety.org/internet/history-internet/brief-history-internet/
+** github
+- git hub - simplilearn youtube - https://www.youtube.com/watch?v=eeuNAIZoWRU
+- git hub - anson alexander - https://www.youtube.com/watch?v=iv8rSLsi1xo
+- git hub - freecodecamp - https://www.youtube.com/watch?v=RGOj5yH7evk
+- git hub - codeacademy - https://www.codecademy.com/learn/learn-git
+- git hub - cheat sheet - https://www.freecodecamp.org/news/git-cheat-sheet/   
