@@ -90,6 +90,7 @@
 | declaration block | curly braces; property: value; (font weight and color)              |
 |-------------------+---------------------------------------------------------------------|
 *** javascript 
+- Brendan Eich, a software engineer at Netscape
 - scripting languages are used to build interaction functionalities
 - human readable; interpreted run time
 
