@@ -1,4 +1,5 @@
 * web development
+** intro
 - types of languages
   - machine language
   - compiled language - https://en.wikipedia.org/wiki/Grace_Hopper - java, c, c#
@@ -19,12 +20,90 @@
   - internet service provider > modem > router
   - domain name server (dns) - translate url into a numerical internet protocol (ip) address
   - blob storage - to host catalog images, videos, documents, and application files
+** developing sites for the web
+*** web browser
+- a web browser enables users to view and exchange information with websites    
+- markup wraps the website content with instructions that describe to browsers how to display the information
+- rendering is when the browser interprets the markup to format the content and display to users
+- challenges addressed: embedding (markup), size (text based), openness 
+- requirements: energy, bandwidth, and processing power
+*** html
+- declarative language - presentation + events + data processing 
+- 1960s - ibm - generalized markup language (gml)
+- ibm - charles goldfarb, developed a schema called standardized generalized markup language (sgml) 
+- 1989 - tim berners-lee, the creator of the world wide web, developed html
+- document structure
+  - html tag
+  - head section - scripts and style-sheets
+  - meta data
+  - body section
+- extensible markup language (xml) markup is structured like html, but the schema is focused on data objects
+- a schema tells browsers how the content is organized
+  - tag structure - an element (entire expression) has an opening tag and closing tag
+    - <strong> text </strong> 
+    - strong -> emphasis
+    - a -> to create links - a for anchor
+    - i -> italics
+    - em (instead of bold) helps compatibility and accessibility   
+  - attribute
+    - style describes how the text, image, video, or other elements should appear - space items apart using margin and padding settings
+    - resources - eg: href - anchor attribute 
+    - events - eg: onclick event 
+    - metadata
+- a parser is software that examines text in a document and separates elements
+*** html 5
+- flash had to be downloaded; not mobile friendly; security challenges; 
+- html5 achieved interactivity features achieved with javascript + cascading style sheets(css) 
+- document structure - tags with semantic structures
+  - header
+  - nav
+  - section
+    - article
+  - aside
+  - footer 
+- advantages
+  - semantic tags describe exactly what they are designed to contain
+  - pages are ready to use, and the overall experience is improved
+  - html tags focus on the structure and content and allow other programming languages like CSS to manage graphic and layout elements
+  - separate networks are able to communicate through secure tunnels
+  - autosave
+  - graphics and video can be added without third party plug-ins
+  - geolocation apis 
+- frameworks
+  - meta's react
+  - evan you's vue.js
+*** cascading style sheet
+- history: håkon wium lie proposed the original idea for css in 1994 while working with tim berners-lee, the originator of html and the world wide web
+- declarative styling
+  - it doesn’t describe how a browser should render a style
+  - it just describes the rules that browsers need to support 
+  - style = construction 
+- stylesheet is a collection of styles 
+  - parent and child element 
+  - class and id attributes
+  - class selector (.)  and id selector (#)
+|-------------------+---------------------------------------------------------------------|
+| element           | description                                                         |
+|-------------------+---------------------------------------------------------------------|
+| selector          | either an HTML element, a dot for classes, or a hash symbol for ids |
+| node name         | no spaces; camelCase recommended                                    |
+| declaration block | curly braces; property: value; (font weight and color)              |
+|-------------------+---------------------------------------------------------------------|
+*** javascript 
+- scripting languages are used to build interaction functionalities
+- human readable; interpreted run time
+
+
+
 
     
     
 * resources
 - open source - https://opensource.com/resources/what-open-source
 - internet history - https://www.internetsociety.org/internet/history-internet/brief-history-internet/
+** html 
+- web hypertext application technology Working Group (WHATWG) - https://whatwg.org
+- html standard - https://html.spec.whatwg.org  
 ** github
 - git hub - simplilearn youtube - https://www.youtube.com/watch?v=eeuNAIZoWRU
 - git hub - anson alexander - https://www.youtube.com/watch?v=iv8rSLsi1xo
