@@ -92,22 +92,40 @@
 *** javascript 
 - Brendan Eich, a software engineer at Netscape
 - scripting languages are used to build interaction functionalities
-- human readable; interpreted run time
+- human readable; interpreted run time; backward compatible 
+- european computer manufacturers association (ecma) manages javascript standard (ecmascript)
+- microsoft created typescript which transpiles to javascript 
+- event, event listeners and event handlers
+- querySelector 
+*** software development life cycle (sdlc)
+- planning, design, development, testing, launch, maintenance 
+- sitemap - heirarchial relationship 
+- navigation structure - menu 
+- information architecture - organizing, structuring and labeling content 
+- manifesto for agile software development values:
+  - individuals and interactions over processes and tools 
+  - working software over comprehensive documentation 
+  - customer collaboration over contract negotiation 
+  - responding to change over following a plan
 
 
 
 
-    
     
 * resources
 - open source - https://opensource.com/resources/what-open-source
 - internet history - https://www.internetsociety.org/internet/history-internet/brief-history-internet/
 ** html 
 - web hypertext application technology Working Group (WHATWG) - https://whatwg.org
-- html standard - https://html.spec.whatwg.org  
+- html standard - https://html.spec.whatwg.org
+- manifesto for agile software development - https://agilemanifesto.org
 ** github
 - git hub - simplilearn youtube - https://www.youtube.com/watch?v=eeuNAIZoWRU
 - git hub - anson alexander - https://www.youtube.com/watch?v=iv8rSLsi1xo
 - git hub - freecodecamp - https://www.youtube.com/watch?v=RGOj5yH7evk
 - git hub - codeacademy - https://www.codecademy.com/learn/learn-git
 - git hub - cheat sheet - https://www.freecodecamp.org/news/git-cheat-sheet/   
+** agile
+- extreme programming - http://www.extremeprogramming.org
+- kanban - https://en.wikipedia.org/wiki/Kanban
+- agile alliance - https://www.agilealliance.org 
