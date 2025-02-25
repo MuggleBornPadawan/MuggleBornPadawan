@@ -1,5 +1,5 @@
-#+Title: emacs basics - commands
 #+Author: muggle born padawan
+#+Title: emacs basics - commands
 
 * emacs basics
 GNU emacs
@@ -44,7 +44,7 @@ GNU emacs
 - fn-f8 treemacs
 - treesitter
 ** buffers / windows / panes? / frames
-- C-x C-b show buffers
+- C-x C-b (list-buffers)
 - C-x 0 close current window
 - C-x 1 retain current window and close all other windows
 - C-x 2 (split-window-vertically)
