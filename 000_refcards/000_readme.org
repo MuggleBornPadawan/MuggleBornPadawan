@@ -127,6 +127,7 @@ ps: this list is yet to be curated or explored
 |             8 | ci/cd        | git, docker, kubernates, rabbitmq?, memcache?, api                  |
 |             9 | cloud        | aws                                                                 |
 |---------------+--------------+---------------------------------------------------------------------|
+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Z
 ** trivia - to be explored
 *** secrets
  - hashicorp vault
