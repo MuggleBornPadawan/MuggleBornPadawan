@@ -9,6 +9,21 @@
 ** newton
 - realistic physics training
 ** openusd
+*** learning about stages, prims and attributes
+- objective: create and manipulate usd files, define primitives, establish scene hierarchies, light up scenes, manage attributes and metadata, traverse and inspect usd files, verify prims' existence
+- outline: creating an openusd stage, creating a prim, creating a hierarchy, lighting a stage, defining attributes, traversing a stage
+
+
+
+
+
+
+
+
+
+
+
+
 ** references
 |-----------------+----------------------------------------------------------------------------|
 | particulars     | url                                                                        |

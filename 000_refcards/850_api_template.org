@@ -88,3 +88,30 @@
 - APIs often have versions to manage changes and updates without breaking existing clients. Versioning can be done through the URL (e.g., https://api.example.com/v1/users) or headers
 ** documentation
 - comprehensive documentation is crucial for developers to understand how to use the API. it typically includes details about endpoints, request/response formats, authentication, and examples
+
+* postman course
+- website: https://academy.postman.com/
+- api first book: https://api-first-world.com/
+- state of the api report: https://www.postman.com/state-of-api/2024/
+- rest api basics template:https://www.postman.com/templates/collections/rest-api-basics/
+- community: https://community.postman.com/c/new-to-apis-postman/9
+** what is an api?
+- An Application Programming Interface (API) is a contract that allows a computer program to talk to other computer programs. APIs are the building blocks of modern software because they allow for the sharing of resources and services across applications, organizations, and devices
+- machine to machine communication - only data - sans formatting worries (eg: html) 
+- http request > data payload 
+- returns javascript object notation (json) or extended markup language (xml)
+** catorization
+- types: hardware, software, web
+- architecture: representational state transfer (rest), graphql, websockets, webhooks, simple object access protocol (soap), grpc (google remote procedure call), message queue telemetry transport (mqtt)
+- accessiblity: public, private, partner
+** what is postman?
+- principle components of the postman platform: api repository, tools, intelligence, workspaces and integrations
+- repository:
+  - cloud based centralized repository for all api artifacts
+  - store and manage api specifications, documentation, workflow recipes, test cases and results, metrics 
+- tools: design, test, mock, monitor and documentation
+- api client: explore, debug and test your apis
+- api design: openapi, graphql, yaml
+- workspaces: personal, private, team and public  
+
+  
