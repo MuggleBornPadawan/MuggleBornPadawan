@@ -1,4 +1,8 @@
 [H[2J[3Juse this for any remote debian server setup and startup
+
+Date: Thu Mar 20 07:12:45 PM IST 2025 
+OS: Linux 
+Kernel: 6.6.65-06377-gaae6fc9ba7df
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
@@ -23,9 +27,22 @@ emacs is already the newest version (1:28.2+1-15+deb12u4).
 sbcl is already the newest version (2:2.2.9-1).
 r-base is already the newest version (4.2.2.20221110-2).
 firefox-esr is already the newest version (128.8.0esr-1~deb12u1).
+fortune-mod is already the newest version (1:1.99.1-7.3).
+cowsay is already the newest version (3.03+dfsg2-8).
+neofetch is already the newest version (7.1.0-4).
+trash-cli is already the newest version (0.17.1.14-5).
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-git version 2.39.5
+
+use trash-empty or trash-restore as you see fit
+ ______________________________
+< You are standing on my toes. >
+ ------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
