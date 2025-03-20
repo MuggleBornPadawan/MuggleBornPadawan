@@ -1,0 +1,110 @@
+#+Title: Structure and Interpretation of Computer Programming
+#+Author: Study
+
+* Introduction
+** Building abstraction with procedures
+*** Computational process
+- Combining several simple idead > compound > complex ideas
+- Relations between ideas
+- Seperating them > abstraction
+- Data, process, program, debug
+
+#+BEGIN_SRC scheme
+  (+ 3 4 2332)
+#+END_SRC
+  
+*** LISP - Elements of programming 
+- Recursive functions of symbolic expessions and their computation by machine
+- John McCarthy, 1960. List Processing. Scheme in this book
+- Data objects - atoms and lists
+- Elements of programming - primitive expressions, means of combination, means of abstraction
+- Procedures and data. Abstraction blurs the difference
+#+BEGIN_SRC emacs-lisp
+  (message "Hello, Emacs!") ;; Cc Cc or Cx Ce to execute code blocks
+  (+ 3 5)
+  (* 34 44 33)
+#+END_SRC
+- Prefix notation; operand on the left
+- Pretty printing
+- Syntactic sugar
+- Compound procedure
+  - (define (<name> <formal parameters>) (body))
+  - (define (square x) (* x x))
+- Substitution model for procedure appliation
+- Lambda calculus
+  - Alpha conversion (renaming bound variable to avoid name collisions)
+  - Beta reduction (substitution)
+  - Eta conversion (functional equivalence)
+- Conditional expressions and predicates
+- (cond (⟨p1⟩ ⟨e1⟩)
+  (⟨p2⟩ ⟨e2⟩)
+  ...
+  (⟨pn⟩ ⟨en⟩))  
+- if (if ⟨predicate⟩ ⟨consequent⟩ ⟨alternative⟩)
+- Compound predicates: and, or, not
+- Square roots by Newton method (Heron of Alexandria, first century AD)
+  - difference between declarative and imperative
+  - difference between math (what is?) computer science (how to?)
+  - if and new-if (by Alyssa P. Hacker) - compare and contrast results ($$)
+- lexical scoping (bound and free variables)
+
+*** Procedures and processes they generate - Shapes
+  - Linear recursion and linear iteration - same output; different compute shapes
+    - Linear recursion - expansion (defered operations) and contractions - needs auxilary memory - stack
+    - Linear iteration - state variables - fixed rules - fixed set of registers
+    - time complexity may be the same
+    - linear has same O(1) space complexity
+    - recursion has linear space complexity (stack overflows)
+    - Ackermann's function ($$)
+    - Fibonacci - tree recursion and iteration
+    - Tree recursion - good for hierarchially structured data; to understand the logic
+    - iteration - less space complexity; memoization helps
+    - Coin change - recursion procedures work well here
+    - Pascal's triangle - function - binomial coefficients
+    - Orders of growth
+    - Exponentiation (a^n; n is even -> a^(n/2)^2; n is odd -> a.a^((n-1)/2)^2). This approach logarithmically reduces complexity
+    - invariant quantity
+    - Russian peasant method ($$)
+    - Greatest common divisors - Euclid's algorithm ($$) - Lame's theorem 
+    - Testing for primality
+    - Fermat's little theorem - probablistic methods - Carmichaels numbers can fool Fermat test - 250 such numbers exists < 100m
+    - Rivest-Shamir-Adleman - RSA encryption - two large primes (p and q) - ($$)
+
+*** Formulating abstractions with higher order functions      
+- Procedures as arguments - (define (sum term a next b)
+                               (define (iter a result)
+			          (if <??>))) - page 77; check YT
+- Simpson's rule ($$)
+- sum and product - (accumulate combiner null-value term a next b) - page 81
+- lambda - "make-procedure" - alonzo church
+- lambda - "let" to create and bind local variables - syntactic sugar for lambda 
+- lambda - helper function
+- Procedures as general methods
+  - Finding roots of equations with half-interval method
+- Fixed point functions
+  - "Maps to"
+  - Cos function on a calculator (radians mode)
+  - Golden ratio
+  - Infinite continued function
+- Procedures as returned values
+  - average damp - coverges fixed point search, average damping, function (y |-> x/y)
+  - Abstractions and first-class procedures
+    - They can be named by variables
+    - They may be passed as arguments to procedures
+    - They may be returned as results of procedures
+    - They may be included in data structures
+- Usage
+  - compose
+  - smoothing of functions - signal processing - nFold smoothing 
+  - iterative improvement of two procedures - guessing 
+
+
+
+
+
+
+
+
+
+
+* End of file
