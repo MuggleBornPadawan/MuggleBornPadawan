@@ -1,0 +1,20 @@
+#+title: nvidia
+* introduction
+** omniverse
+- simulation environment
+** cosmos
+- photorealistic training data
+** isaac lab
+- enables skill learning through imitation or reinforcement
+** newton
+- realistic physics training
+** openusd
+** references
+|-----------------+----------------------------------------------------------------------------|
+| particulars     | url                                                                        |
+|-----------------+----------------------------------------------------------------------------|
+| cosmos - github | https://github.com/NVIDIA/Cosmos?                                          |
+| cosmos - hf     | https://huggingface.co/collections/nvidia/cosmos-6751e884dc10e013a0a0d8e6? |
+|                 |                                                                            |
+|-----------------+----------------------------------------------------------------------------|
+

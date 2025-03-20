@@ -121,7 +121,7 @@ ps: this list is yet to be curated or explored
 |             2 | java         |                                                                     |
 |             3 | python       |                                                                     |
 |             4 | statistics   | r                                                                   |
-|             5 | art          | processing, quil, visualization                                     |
+|             5 | art          | processing, quil, visualization, nvidia                             |
 |             6 | database     | postgresql, sqlite                                                  |
 |             7 | os scripting | macos zsh, fedora (dckr), debian? (aws)                             |
 |             8 | ci/cd        | git, docker, kubernates, rabbitmq?, memcache?, api                  |
