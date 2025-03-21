@@ -3,6 +3,7 @@
 ** inspection, exploration and experimentation
 - api documentation - endpoints, parameters, methods
 - api explorer or interactive documentation
+  - https://curl.se/
   - https://yaak.app
   - https://www.usebruno.com
   - https://www.postman.com
@@ -142,4 +143,54 @@ access via postman's desktop, web, cli, and/or api interfaces. these api client 
 |        4xx | client error | 400 bad request, 401 unauthorized, 403 not permitted, 404 not found |
 |        5xx | server error | 500 internal server error, 502 bad gateway, 504 gateway timeout     |
 |------------+--------------+---------------------------------------------------------------------|
+** requests and responses
+|---------------+-----------------------------------+--------------------------------------------------|
+| parameters    | path parameters                   | query parameters                                 |
+|---------------+-----------------------------------+--------------------------------------------------|
+| example       | /books/abc123                     | /books?search=borges&checkedOut=false            |
+| location      | after slash anywhere in the path  | at the end; after question mark                  |
+| value types   | dynamic                           | pre-defined query keys; static or dynamic values |
+| use cases     | identify an entity by ID or name  | options and filters to refine results            |
+| documentation | /colon/:syntax or /curly/{braces} |                                                  |
+|---------------+-----------------------------------+--------------------------------------------------|
+** authorization
+- api-key can be updated in header
+- api-key can be updated in authorization section of collections - applies to all apis
+** variables and scripting
+- reuse values (dont repeat yourself dry)
+- hide sensitive values like api keys from being publicly shared
+- variable scopes: global, collection, environment, data, local
+- syntax {{variableName}} 
+- {{baseURL}} - collections > variables; or select and hover over the base url
+- scripting: node.js is a runtime environment for executing JavaScript code outside of a web browser
+
+#+begin_src js
+  console.log("hello, org mode");
+  // single line comment
+  /* multi
+     line
+     comment */
+  //console.log(pm.response.json())
+  //pm.collectionVariables.set("variableName", value)
+  //pm.collectionVariables.get("variableName")
+  // -- Defining variables with const --
+  //const myVar = "This variable can't be reassigned"
+  //console.log(myVar) // => This variable can't be reassigned
+
+  // attempt to reassign the value of myVar
+  //myVar = "foo" 
+  //=> [ERROR!] Uncaught TypeError: Assignment to constant variable.
+
+  // -- Defining variables with let -- 
+  //let myVar2 = "I can change!"
+  //console.log(myVar2) // => I can change!
+
+  //myVar2 = "See, I changed!"
+  //console.log(myVar2) // => See, I changed!
+
+#+end_src
+
+#+RESULTS:
+: hello, org mode
+: undefined
 

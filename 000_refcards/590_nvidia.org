@@ -8,11 +8,17 @@
 - enables skill learning through imitation or reinforcement
 ** newton
 - realistic physics training
-** openusd
-*** learning about stages, prims and attributes
+* openusd
+** learning about stages, prims and attributes
 - objective: create and manipulate usd files, define primitives, establish scene hierarchies, light up scenes, manage attributes and metadata, traverse and inspect usd files, verify prims' existence
 - outline: creating an openusd stage, creating a prim, creating a hierarchy, lighting a stage, defining attributes, traversing a stage
-
+- create and manipulate usd files. learn how to set up our own usd files from scratch, setting the foundation for your 3d scenes
+- define primitives. get hands-on experience with defining various types of prims, the building blocks of usd, and understand their roles in a 3d environment
+- establish scene hierarchies. discover how to organize and structure 3D elements effectively, creating a coherent and manageable scene hierarchy
+- light up scenes. add dynamic lighting to scenes, bringing them to life and enhancing their visual appeal
+- manage attributes and metadata. delve into the details of attributes and metadata, learning how to set, get, and manipulate these essential elements
+- traverse and inspect usd files. develop skills to traverse through usd files, inspecting and understanding the intricate details of our scenes
+- verify prims' existence. learn techniques to check for the existence of specific prims, ensuring the integrity and completeness of our 3d scenes
 
 
 
