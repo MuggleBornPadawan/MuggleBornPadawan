@@ -1,13 +1,15 @@
 [H[2J[3Juse this for any remote debian server setup and startup
 
-Date: Thu Mar 20 07:20:29 PM IST 2025 
+Date: Fri Mar 21 09:44:29 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.65-06377-gaae6fc9ba7df
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/133 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/133 bookworm Release
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [249 kB]
+Hit:6 https://storage.googleapis.com/cros-packages/133 bookworm Release
+Fetched 353 kB in 1s (362 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -38,10 +40,10 @@ Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
 use trash-empty or trash-restore as you see fit
- ________________________________
-/ Your business will assume vast \
-\ proportions.                   /
- --------------------------------
+ ___________________________
+/ You will live to see your \
+\ grandchildren.            /
+ ---------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\

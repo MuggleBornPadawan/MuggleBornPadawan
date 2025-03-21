@@ -91,27 +91,55 @@
 
 * postman course
 - website: https://academy.postman.com/
+- design and develop api: https://learning.postman.com/docs/design-apis/api-builder/overview/ 
 - api first book: https://api-first-world.com/
 - state of the api report: https://www.postman.com/state-of-api/2024/
 - rest api basics template:https://www.postman.com/templates/collections/rest-api-basics/
+- soap: https://blog.postman.com/soap-api-definition/
+- graphql: https://blog.postman.com/what-is-a-graphql-api-how-does-it-work/ 
 - community: https://community.postman.com/c/new-to-apis-postman/9
+- authorization methods: https://www.postman.com/templates/collections/authorization-methods/
+- api network: https://www.postman.com/explore/
 ** what is an api?
 - An Application Programming Interface (API) is a contract that allows a computer program to talk to other computer programs. APIs are the building blocks of modern software because they allow for the sharing of resources and services across applications, organizations, and devices
 - machine to machine communication - only data - sans formatting worries (eg: html) 
 - http request > data payload 
 - returns javascript object notation (json) or extended markup language (xml)
-** catorization
+** catagorization
 - types: hardware, software, web
 - architecture: representational state transfer (rest), graphql, websockets, webhooks, simple object access protocol (soap), grpc (google remote procedure call), message queue telemetry transport (mqtt)
 - accessiblity: public, private, partner
 ** what is postman?
-- principle components of the postman platform: api repository, tools, intelligence, workspaces and integrations
+- principle components of the postman platform: api repository, tools, intelligence, workspaces and integrations, collections, environments, mock servers, monitors, flows and history 
 - repository:
   - cloud based centralized repository for all api artifacts
   - store and manage api specifications, documentation, workflow recipes, test cases and results, metrics 
 - tools: design, test, mock, monitor and documentation
 - api client: explore, debug and test your apis
 - api design: openapi, graphql, yaml
-- workspaces: personal, private, team and public  
+- workspaces: personal, private, team and public
+** api client interface
+access via postman's desktop, web, cli, and/or api interfaces. these api client interfaces allow you to easily:
+- manage api data
+- send any rest, soap, and graphql queries, inspect the response and debug
+- turn api data into charts and graphs with postman visualizer
+- manage api authentication no matter the authentication protocol backing
+- generate code snippets
+- keep track of request history
+- write tests
+- visualize your data
+- built in variable support 
+- handlebar
+- authentication: oauth 2.0, aws signature, hawk authentication)
+- certificates: ssl, custom root ca certificate support and client certificate support
+- public api network: salesforce, microsoft and google   
+** response status code 
+|------------+--------------+---------------------------------------------------------------------|
+| code range | meaning      | example                                                             |
+|------------+--------------+---------------------------------------------------------------------|
+|        2xx | success      | 200 ok, 201 created, 204 no content (silent ok)                     |
+|        3xx | redirection  | 301 moved (path changed)                                            |
+|        4xx | client error | 400 bad request, 401 unauthorized, 403 not permitted, 404 not found |
+|        5xx | server error | 500 internal server error, 502 bad gateway, 504 gateway timeout     |
+|------------+--------------+---------------------------------------------------------------------|
 
-  
