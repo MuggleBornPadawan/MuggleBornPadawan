@@ -1,6 +1,6 @@
 [H[2J[3Juse this for any remote debian server setup, startup and chk backups
 
-Date: Sat Mar 22 11:36:27 PM IST 2025 
+Date: Sat Mar 22 11:42:24 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -38,17 +38,12 @@ Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
 use trash-empty or trash-restore as you see fit
- _________________________________________
-/ It is right that he too should have his \
-| little chronicle, his memories, his     |
-| reason, and be able to recognize the    |
-| good in the bad, the bad in the worst,  |
-| and so grow gently old all down the     |
-| unchanging days and die one day like    |
-| any other day, only shorter.            |
-|                                         |
-\ -- Samuel Beckett, "Malone Dies"        /
- -----------------------------------------
+ ______________________________________
+/ All things that are, are with more   \
+| spirit chased than enjoyed.          |
+|                                      |
+\ -- Shakespeare, "Merchant of Venice" /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\

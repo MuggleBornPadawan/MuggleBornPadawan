@@ -3,8 +3,10 @@
 # Define paths and files
 EMACS_INIT="$HOME/.emacs.d/init.el"
 BACKUP_DIR="$HOME/.emacs.d/backups"
+GIT_DIR="$HOME/MuggleBornPadawan/700_linux/bckp/"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 BACKUP_FILE="init_${TIMESTAMP}.el"
+GIT_FILE="init.el"
 
 ### Function to check for sensitive patterns
 check_sensitive_content() {
@@ -61,6 +63,7 @@ fi
 if check_sensitive_content "$EMACS_INIT"; then
     # Create backup
     cp "$EMACS_INIT" "$BACKUP_DIR/$BACKUP_FILE"
+    cp "$EMACS_INIT" "$GIT_DIR/$GIT_FILE"
     echo "✅ Backup created successfully; move to cloud manually please"
     exit 1
 else
