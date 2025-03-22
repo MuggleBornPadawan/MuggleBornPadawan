@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Mar 23 12:04:03 AM IST 2025 
+Date: Sun Mar 23 12:33:52 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -25,6 +25,7 @@ mit-scheme is already the newest version (12.1-3).
 clojure is already the newest version (1.11.1-2).
 emacs is already the newest version (1:28.2+1-15+deb12u4).
 sbcl is already the newest version (2:2.2.9-1).
+clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 firefox-esr is already the newest version (128.8.0esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
@@ -37,11 +38,13 @@ Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
+ run commits seperately; docker and jenkins startup shell scripts to be created seperately
+
 use trash-empty or trash-restore as you see fit
- ________________________________________
-/ You will inherit some money or a small \
-\ piece of land.                         /
- ----------------------------------------
+ _____________________________________
+/ Fine day to work off excess energy. \
+\ Steal something heavy.              /
+ -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
