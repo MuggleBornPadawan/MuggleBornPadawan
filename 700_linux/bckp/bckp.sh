@@ -61,7 +61,7 @@ fi
 if check_sensitive_content "$EMACS_INIT"; then
     # Create backup
     cp "$EMACS_INIT" "$BACKUP_DIR/$BACKUP_FILE"
-    echo "✅ Backup created successfully: $BACKUP_DIR/$BACKUP_FILE"
+    echo "✅ Backup created successfully; move to cloud manually please"
     exit 1
 else
     echo "⚠️  WARNING: Sensitive information detected in $EMACS_INIT"

@@ -17,5 +17,6 @@ rm .bash_history
 # name to be removed in bckup shell script 
 # cp folders to be done
 fortune | cowsay
+./MuggleBornPadawan/700_linux/bckp/bckp.sh
 # back up - $PATH, init.el?,
 # run hello worlds 
