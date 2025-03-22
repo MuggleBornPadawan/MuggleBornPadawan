@@ -1,16 +1,17 @@
-;; test message - dummy 
+;; this file is not updated regularly. check cloud backup for the most recent version
+;; this base file is created for use-and-throw linux vms / containers 
 
-;; Init.el - Emacs Initialization File
+;; init.el - emacs initialization file
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 
-;; Package Management
+;; package management
 (require 'package)
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;; Use the `use-package` package for managing other packages
+;; use the `use-package` package for managing other packages
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -23,29 +24,29 @@
   (package-install 'multiple-cursors))
 (require 'multiple-cursors)
 
-;; Set line numbers
+;; set line numbers
 (global-display-line-numbers-mode t)
 
-;; Enable syntax highlighting
+;; enable syntax highlighting
 (global-font-lock-mode t)
 
-;; Enable column numbers
+;; enable column numbers
 (column-number-mode t)
 
-;; Set up basic UI improvements
+;; set up basic UI improvements
 (menu-bar-mode -1)       ;; Disable the menu bar
 (tool-bar-mode -1)       ;; Disable the tool bar
 (scroll-bar-mode -1)     ;; Disable the scroll bar
 
-;; Refresh all open buffers from their respective files.
+;; refresh all open buffers from their respective files.
 (defun revert-all-buffers ()
-  "Refresh all open buffers from their respective files."
+  "refresh all open buffers from their respective files."
   (interactive)
   (dolist (buf (buffer-list))
     (with-current-buffer buf
       (when (and (buffer-file-name) (not (buffer-modified-p)))
         (revert-buffer t t t))))
-  (message "All non-modified buffers reverted."))
+  (message "all non-modified buffers reverted."))
 (global-set-key (kbd "C-c R") 'revert-all-buffers)  ;; Bind to Ctrl + c, Shift + r
 
 ;; initial frame setup - experiment 
@@ -75,15 +76,15 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; Enable MIT Scheme for Org Babel
+;; enable mit scheme for org babel
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((scheme . t)))
 
-;; Set MIT Scheme as the default Scheme implementation
+;; set mit scheme as the default Scheme implementation
 (setq org-babel-scheme-cmd "mit-scheme")
 
-;; Enable JavaScript
+;; enable javascript
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((js . t)))
