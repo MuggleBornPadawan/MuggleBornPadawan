@@ -24,4 +24,5 @@ sleep 2
 cd MuggleBornPadawan/
 git add .
 git commit -m "daily"
+git status
 cd 

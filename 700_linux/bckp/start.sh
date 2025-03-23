@@ -1,4 +1,10 @@
 cd
+cd MuggleBornPadawan
+git status
+git add .
+git commit -m "up to start"
+git status
+cd
 ./MuggleBornPadawan/700_linux/bckp/commits.sh
 echo "Do you want to continue? (Press Enter)"
 read -p ""
@@ -8,4 +14,5 @@ cd
 cd MuggleBornPadawan
 git add .
 git commit -m "log daily"
+git status
 cd
