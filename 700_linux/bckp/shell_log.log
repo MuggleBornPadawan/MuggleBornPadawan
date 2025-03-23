@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Mar 23 06:55:41 PM IST 2025 
+Date: Sun Mar 23 06:57:00 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -41,18 +41,23 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
- ___________________________________
-/ "... an experienced, industrious, \
-| ambitious, and often quite often  |
-| picturesque liar."                |
-|                                   |
-\ -- Mark Twain                     /
- -----------------------------------
+ _________________________________________
+/ The lovely woman-child Kaa was          \
+| mercilessly chained to the cruel post   |
+| of the warrior-chief Beast, with his    |
+| barbarian tribe now stacking wood at    |
+| her nubile feet, when the strong clear  |
+| voice of the poetic and heroic          |
+| Handsomas roared, 'Flick your Bic,      |
+| crisp that chick, and you'll feel my    |
+| steel through your last meal!'          |
+|                                         |
+| -- Winning sentence, 1984 Bulwer-Lytton |
+\ bad fiction contest.                    /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main fc2e1b7] daily
- 1 file changed, 8 insertions(+), 5 deletions(-)
