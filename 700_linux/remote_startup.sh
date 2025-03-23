@@ -19,3 +19,8 @@ echo -e "\nuse trash-empty or trash-restore as you see fit"
 rm .bash_history
 fortune | cowsay
 ./MuggleBornPadawan/700_linux/bckp/bckp.sh
+cd
+cd MuggleBornPadawan/
+git add .
+git commit -m "daily"
+cd 
