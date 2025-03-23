@@ -1,16 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Mar 23 07:56:02 PM IST 2025 
+Date: Sun Mar 23 10:11:24 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Ign:1 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
-Get:8 https://deb.debian.org/debian-security bookworm-security/main Translation-en [150 kB]
-Fetched 448 kB in 1s (330 kB/s)
+Fetched 55.4 kB in 2s (34.5 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -44,15 +42,15 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
- ______________________________________
-/ Q: What's hard going in and soft and \
-\ sticky coming out? A: Chewing gum.   /
- --------------------------------------
+ _____________________________________
+/ Let him choose out of my files, his \
+| projects to accomplish.             |
+|                                     |
+\ -- Shakespeare, "Coriolanus"        /
+ -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main 73154de] daily
- 1 file changed, 11 insertions(+), 10 deletions(-)
