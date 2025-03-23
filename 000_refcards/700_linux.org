@@ -135,6 +135,24 @@
 - `grep -R "pattern" directory` - Recursively search for a pattern in a directory, without following symlinks
 - `grep -w "pattern" file` - Match whole words only
 - `grep -x "pattern" file` - Match entire lines only
+** shell scripting
+|-------------+--------+---------+------------------------------------------------------|
+| command     | events | options | comments                                             |
+|-------------+--------+---------+------------------------------------------------------|
+| echo        |        | -e      | text formatting                                      |
+| sleep       |        | 5       | delay 5 seconds                                      |
+| read        |        | -p      | press enter / read input                             |
+| usleep      |        | 500000  | 0.5 seconds (microseconds)                           |
+| wait        |        | $!      | wait for background processes                        |
+| inotifywait |        |         | monitor file system (subkernel level)                |
+| socat       |        |         | bidirectional data transfer - network event triggers |
+|             |        |         |                                                      |
+|-------------+--------+---------+------------------------------------------------------|
+
+*** notes
+- inotifywait is a linux command-line tool that monitors file system events using the inotify kernel subsystem. It allows you to track events like file access, modification, creation, deletion, and movement. key options include -m (monitor continuously), -r (recursive monitoring), -e (specify events), -q (quiet output), --timefmt (customize time format), and --format (customize output format). You can use it to automate tasks, monitor logs, trigger actions on file changes, and build file synchronization tools by outputting event details to standard output, which can then be piped to other commands for processing.
+- ```socat``` is a versatile command-line tool for bidirectional data transfer between various address types, including TCP/UDP sockets, Unix domain sockets, files, serial lines, and SSL/TLS connections. It enables network relaying, serial communication, proxying, data transfer, debugging, and secure communication, offering greater flexibility and power than ```netcat```.
+  
 ** others
 - clear
 - history
