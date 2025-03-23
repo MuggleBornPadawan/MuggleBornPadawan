@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Mar 23 10:11:24 PM IST 2025 
+Date: Sun Mar 23 10:19:09 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
-Ign:1 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 55.4 kB in 2s (34.5 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -42,17 +41,38 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
- _____________________________________
-/ Let him choose out of my files, his \
-| projects to accomplish.             |
-|                                     |
-\ -- Shakespeare, "Coriolanus"        /
- -------------------------------------
+ _______________________________________
+/ A Tale of Two Cities LITE(tm)         \
+|                                       |
+| -- by Charles Dickens                 |
+|                                       |
+| A man in love with a girl who loves   |
+| another man who looks just            |
+|                                       |
+| like him has his head chopped off in  |
+| France because of a mean              |
+|                                       |
+| lady who knits.                       |
+|                                       |
+| Crime and Punishment LITE(tm)         |
+|                                       |
+| -- by Fyodor Dostoevski               |
+|                                       |
+| A man sends a nasty letter to a       |
+| pawnbroker, but later                 |
+|                                       |
+| feels guilty and apologizes.          |
+|                                       |
+| The Odyssey LITE(tm)                  |
+|                                       |
+| -- by Homer                           |
+|                                       |
+| After working late, a valiant warrior |
+\ gets lost on his way home.            /
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main 0842fd5] daily
- 1 file changed, 12 insertions(+), 14 deletions(-)
