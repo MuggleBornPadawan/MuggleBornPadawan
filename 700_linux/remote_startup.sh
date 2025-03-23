@@ -20,6 +20,7 @@ rm .bash_history
 fortune | cowsay
 ./MuggleBornPadawan/700_linux/bckp/bckp.sh
 cd
+sleep 2
 cd MuggleBornPadawan/
 git add .
 git commit -m "daily"
