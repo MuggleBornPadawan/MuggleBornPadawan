@@ -125,7 +125,7 @@ ps: this list is yet to be curated or explored
 |             6 | database     | postgresql, sqlite                                                  |
 |             7 | os scripting | macos zsh, fedora (dckr), debian? (aws)                             |
 |             8 | ci/cd        | git, docker, kubernates, rabbitmq?, memcache?, api                  |
-|             9 | cloud        | aws                                                                 |
+|             9 | cloud        | llms, aws                                                           |
 |---------------+--------------+---------------------------------------------------------------------|
 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Z
 ** trivia - to be explored
