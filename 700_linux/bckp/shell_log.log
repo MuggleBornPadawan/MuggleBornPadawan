@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Mar 23 06:53:39 PM IST 2025 
+Date: Sun Mar 23 06:55:41 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -41,10 +41,13 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
- _________________________________
-/ You will engage in a profitable \
-\ business activity.              /
- ---------------------------------
+ ___________________________________
+/ "... an experienced, industrious, \
+| ambitious, and often quite often  |
+| picturesque liar."                |
+|                                   |
+\ -- Mark Twain                     /
+ -----------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
