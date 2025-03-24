@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Mar 24 07:21:04 PM IST 2025 
+Date: Mon Mar 24 10:53:11 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Fetched 55.4 kB in 2s (35.3 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -41,26 +42,17 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 42.004/51.997/65.213/9.461 ms
- _________________________________________
-/ Beware of a dark-haired man with a loud \
-\ tie.                                    /
- -----------------------------------------
+rtt min/avg/max/mdev = 39.154/45.902/91.794/13.934 ms
+ _______________________________
+/ Civilization is the limitless \
+| multiplication of unnecessary |
+| necessities.                  |
+|                               |
+\ -- Mark Twain                 /
+ -------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main 7762fbb] daily
- 2 files changed, 10 insertions(+), 24 deletions(-)
-On branch main
-Your branch is ahead of 'origin/main' by 16 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   700_linux/bckp/shell_log.log
-
-no changes added to commit (use "git add" and/or "git commit -a")
