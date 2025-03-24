@@ -9,8 +9,8 @@
 - Seperating them > abstraction
 - Data, process, program, debug
 
-#+BEGIN_SRC scheme
-  (+ 3 4 2332)
+#+BEGIN_SRC mit-scheme
+  (+ 3 43)
 #+END_SRC
   
 *** LISP - Elements of programming 
@@ -24,6 +24,10 @@
   (+ 3 5)
   (* 34 44 33)
 #+END_SRC
+
+#+RESULTS:
+: 49368
+
 - Prefix notation; operand on the left
 - Pretty printing
 - Syntactic sugar
