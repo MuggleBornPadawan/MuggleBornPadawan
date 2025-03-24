@@ -1,13 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Mar 23 10:19:09 PM IST 2025 
+Date: Mon Mar 24 12:37:01 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
+Ign:5 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Fetched 353 kB in 1s (486 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -41,50 +43,12 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
- _______________________________________
-/ A Tale of Two Cities LITE(tm)         \
-|                                       |
-| -- by Charles Dickens                 |
-|                                       |
-| A man in love with a girl who loves   |
-| another man who looks just            |
-|                                       |
-| like him has his head chopped off in  |
-| France because of a mean              |
-|                                       |
-| lady who knits.                       |
-|                                       |
-| Crime and Punishment LITE(tm)         |
-|                                       |
-| -- by Fyodor Dostoevski               |
-|                                       |
-| A man sends a nasty letter to a       |
-| pawnbroker, but later                 |
-|                                       |
-| feels guilty and apologizes.          |
-|                                       |
-| The Odyssey LITE(tm)                  |
-|                                       |
-| -- by Homer                           |
-|                                       |
-| After working late, a valiant warrior |
-\ gets lost on his way home.            /
- ---------------------------------------
+ ___________________________________
+< Beware of low-flying butterflies. >
+ -----------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main 9a1afb4] daily
- 1 file changed, 34 insertions(+), 14 deletions(-)
-On branch main
-Your branch is ahead of 'origin/main' by 8 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   700_linux/bckp/shell_log.log
-
-no changes added to commit (use "git add" and/or "git commit -a")
