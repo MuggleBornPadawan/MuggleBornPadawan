@@ -1,15 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Mar 24 12:37:01 PM IST 2025 
+Date: Mon Mar 24 01:29:49 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 353 kB in 1s (486 kB/s)
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -43,24 +41,13 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
- ___________________________________
-< Beware of low-flying butterflies. >
- -----------------------------------
+ _____________________________________
+/ You're a card which will have to be \
+\ dealt with.                         /
+ -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main 97e9054] daily
- 1 file changed, 10 insertions(+), 46 deletions(-)
-On branch main
-Your branch is ahead of 'origin/main' by 7 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   700_linux/bckp/shell_log.log
-
-no changes added to commit (use "git add" and/or "git commit -a")
