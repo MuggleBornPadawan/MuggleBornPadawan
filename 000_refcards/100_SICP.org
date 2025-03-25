@@ -10,9 +10,9 @@
 - Data, process, program, debug
 
 #+BEGIN_SRC mit-scheme
-  (+ 3 43)
+  (+ 3 4223)
 #+END_SRC
-  
+
 *** LISP - Elements of programming 
 - Recursive functions of symbolic expessions and their computation by machine
 - John McCarthy, 1960. List Processing. Scheme in this book
