@@ -1,3 +1,2 @@
-(begin
-    (display "Hello, World!")
-    (newline))
+(display "Hello, mit-scheme world!")
+(newline)
