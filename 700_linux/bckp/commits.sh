@@ -30,7 +30,7 @@ git add .
 git commit -m "daily r"
 cd 
 cd MuggleBornPadawan/110_clojure
-clj -M hello_world.clj
+clojure hello_world.clj
 cd
 cd MuggleBornPadawan/
 git add .
