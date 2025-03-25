@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Mar 25 05:25:35 PM IST 2025 
+Date: Tue Mar 25 06:12:08 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -41,29 +41,14 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 112.603/173.788/295.555/55.679 ms
- ________________________________________
-/ Q: Why does Washington have the most   \
-| lawyers per capita and                 |
-|                                        |
-| New Jersey the most toxic waste dumps? |
-\ A: God gave New Jersey first choice.   /
- ----------------------------------------
+rtt min/avg/max/mdev = 113.202/132.715/177.897/17.583 ms
+ _________________________________________
+/ Beware of a dark-haired man with a loud \
+\ tie.                                    /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-✅ Backup created successfully; move to cloud manually please
-[main 480f086] daily
- 1 file changed, 9 insertions(+), 20 deletions(-)
-On branch main
-Your branch is ahead of 'origin/main' by 8 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   700_linux/bckp/shell_log.log
-
-no changes added to commit (use "git add" and/or "git commit -a")
+Error: /home/rgroot/.emacs.d/init.el not found
