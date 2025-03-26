@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Mar 26 08:45:30 AM IST 2025 
+Date: Wed Mar 26 06:21:40 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -41,10 +41,9 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 41.064/86.489/334.654/82.281 ms
+rtt min/avg/max/mdev = 54.146/71.377/113.525/18.408 ms
  ________________________________________
-/ Your business will go through a period \
-\ of considerable expansion.             /
+< You enjoy the company of other people. >
  ----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -52,15 +51,3 @@ rtt min/avg/max/mdev = 41.064/86.489/334.654/82.281 ms
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main b6451e2] daily
- 1 file changed, 10 insertions(+), 29 deletions(-)
-On branch main
-Your branch is ahead of 'origin/main' by 16 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   700_linux/bckp/shell_log.log
-
-no changes added to commit (use "git add" and/or "git commit -a")
