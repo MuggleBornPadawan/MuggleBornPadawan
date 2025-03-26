@@ -1,19 +1,42 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Mar 26 06:21:40 PM IST 2025 
+Date: Wed Mar 26 09:50:46 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:3 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
+Hit:6 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Fetched 353 kB in 2s (224 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  exim4-base exim4-config exim4-daemon-light
+3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 1,979 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 exim4-config all 4.96-15+deb12u7 [256 kB]
+Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 exim4-base amd64 4.96-15+deb12u7 [1,118 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 exim4-daemon-light amd64 4.96-15+deb12u7 [605 kB]
+Preconfiguring packages ...
+Fetched 1,979 kB in 1s (2,920 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 59491 files and directories currently installed.)
+Preparing to unpack .../exim4-config_4.96-15+deb12u7_all.deb ...
+Unpacking exim4-config (4.96-15+deb12u7) over (4.96-15+deb12u6) ...
+Preparing to unpack .../exim4-base_4.96-15+deb12u7_amd64.deb ...
+Unpacking exim4-base (4.96-15+deb12u7) over (4.96-15+deb12u6) ...
+Preparing to unpack .../exim4-daemon-light_4.96-15+deb12u7_amd64.deb ...
+Unpacking exim4-daemon-light (4.96-15+deb12u7) over (4.96-15+deb12u6) ...
+Setting up exim4-config (4.96-15+deb12u7) ...
+Setting up exim4-base (4.96-15+deb12u7) ...
+exim4-base.service is a disabled or a static unit not running, not starting it.
+Setting up exim4-daemon-light (4.96-15+deb12u7) ...
+Processing triggers for man-db (2.11.2-2) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -41,9 +64,10 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 54.146/71.377/113.525/18.408 ms
+rtt min/avg/max/mdev = 40.203/81.395/180.339/44.922 ms
  ________________________________________
-< You enjoy the company of other people. >
+/ Q: Why did the chicken cross the road? \
+\ A: He was giving it last rites.        /
  ----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -51,15 +75,3 @@ rtt min/avg/max/mdev = 54.146/71.377/113.525/18.408 ms
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main 1929271] daily
- 1 file changed, 3 insertions(+), 16 deletions(-)
-On branch main
-Your branch is ahead of 'origin/main' by 7 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   700_linux/bckp/shell_log.log
-
-no changes added to commit (use "git add" and/or "git commit -a")
