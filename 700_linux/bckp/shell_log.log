@@ -1,15 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Mar 26 08:43:49 AM IST 2025 
+Date: Wed Mar 26 08:45:30 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 353 kB in 2s (224 kB/s)
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -43,31 +41,14 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 100.336/163.221/465.070/114.792 ms
- _________________________________________
-/ Q: Where's the Lone Ranger take his     \
-| garbage? A: To the dump, to the dump,   |
-| to the dump dump dump!                  |
-|                                         |
-| Q: What's the Pink Panther say when he  |
-| steps on an ant hill? A: Dead ant, dead |
-\ ant, dead ant dead ant dead ant...      /
- -----------------------------------------
+rtt min/avg/max/mdev = 41.064/86.489/334.654/82.281 ms
+ ________________________________________
+/ Your business will go through a period \
+\ of considerable expansion.             /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main a3df54d] daily
- 1 file changed, 16 insertions(+), 21 deletions(-)
-On branch main
-Your branch is ahead of 'origin/main' by 7 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   700_linux/bckp/shell_log.log
-
-no changes added to commit (use "git add" and/or "git commit -a")
