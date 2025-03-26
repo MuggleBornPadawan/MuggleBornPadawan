@@ -17,7 +17,7 @@ alias rm='trash-put'
 trash-list
 echo -e "\nuse trash-empty or trash-restore as you see fit"
 rm .bash_history
-ping -w 12 chitrapata.in > tmp.txt
+ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
 fortune | cowsay
 ./MuggleBornPadawan/700_linux/bckp/bckp.sh
