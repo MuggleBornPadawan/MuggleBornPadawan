@@ -1,41 +1,61 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Mar 26 09:50:46 PM IST 2025 
+Date: Thu Mar 27 09:30:15 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Ign:3 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
-Hit:6 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 353 kB in 2s (224 kB/s)
+Get:5 https://deb.debian.org/debian bookworm-updates/main amd64 Packages.diff/Index [16.2 kB]
+Get:6 https://deb.debian.org/debian bookworm-updates/main Translation-en.diff/Index [16.2 kB]
+Get:7 https://deb.debian.org/debian bookworm-updates/main amd64 Packages T-2025-03-27-1414.15-F-2025-03-27-1414.15.pdiff [187 B]
+Get:7 https://deb.debian.org/debian bookworm-updates/main amd64 Packages T-2025-03-27-1414.15-F-2025-03-27-1414.15.pdiff [187 B]
+Get:8 https://deb.debian.org/debian bookworm-updates/main Translation-en T-2025-03-27-1414.15-F-2025-03-27-1414.15.pdiff [39 B]
+Get:8 https://deb.debian.org/debian bookworm-updates/main Translation-en T-2025-03-27-1414.15-F-2025-03-27-1414.15.pdiff [39 B]
+Get:9 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
+Hit:10 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Fetched 386 kB in 2s (209 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  exim4-base exim4-config exim4-daemon-light
-3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 1,979 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 exim4-config all 4.96-15+deb12u7 [256 kB]
-Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 exim4-base amd64 4.96-15+deb12u7 [1,118 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 exim4-daemon-light amd64 4.96-15+deb12u7 [605 kB]
+  ghostscript libgs-common libgs10 libgs10-common tzdata
+5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3,560 kB of archives.
+After this operation, 7,168 B of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm-updates/main amd64 tzdata all 2025b-0+deb12u1 [299 kB]
+Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 ghostscript amd64 10.0.0~dfsg-11+deb12u7 [57.7 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 libgs10 amd64 10.0.0~dfsg-11+deb12u7 [2,467 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 libgs10-common all 10.0.0~dfsg-11+deb12u7 [587 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 libgs-common all 10.0.0~dfsg-11+deb12u7 [149 kB]
 Preconfiguring packages ...
-Fetched 1,979 kB in 1s (2,920 kB/s)
+Fetched 3,560 kB in 1s (3,575 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 59491 files and directories currently installed.)
-Preparing to unpack .../exim4-config_4.96-15+deb12u7_all.deb ...
-Unpacking exim4-config (4.96-15+deb12u7) over (4.96-15+deb12u6) ...
-Preparing to unpack .../exim4-base_4.96-15+deb12u7_amd64.deb ...
-Unpacking exim4-base (4.96-15+deb12u7) over (4.96-15+deb12u6) ...
-Preparing to unpack .../exim4-daemon-light_4.96-15+deb12u7_amd64.deb ...
-Unpacking exim4-daemon-light (4.96-15+deb12u7) over (4.96-15+deb12u6) ...
-Setting up exim4-config (4.96-15+deb12u7) ...
-Setting up exim4-base (4.96-15+deb12u7) ...
-exim4-base.service is a disabled or a static unit not running, not starting it.
-Setting up exim4-daemon-light (4.96-15+deb12u7) ...
+Preparing to unpack .../tzdata_2025b-0+deb12u1_all.deb ...
+Unpacking tzdata (2025b-0+deb12u1) over (2025a-0+deb12u1) ...
+Preparing to unpack .../ghostscript_10.0.0~dfsg-11+deb12u7_amd64.deb ...
+Unpacking ghostscript (10.0.0~dfsg-11+deb12u7) over (10.0.0~dfsg-11+deb12u6) ...
+Preparing to unpack .../libgs10_10.0.0~dfsg-11+deb12u7_amd64.deb ...
+Unpacking libgs10:amd64 (10.0.0~dfsg-11+deb12u7) over (10.0.0~dfsg-11+deb12u6) ...
+Preparing to unpack .../libgs10-common_10.0.0~dfsg-11+deb12u7_all.deb ...
+Unpacking libgs10-common (10.0.0~dfsg-11+deb12u7) over (10.0.0~dfsg-11+deb12u6) ...
+Preparing to unpack .../libgs-common_10.0.0~dfsg-11+deb12u7_all.deb ...
+Unpacking libgs-common (10.0.0~dfsg-11+deb12u7) over (10.0.0~dfsg-11+deb12u6) ...
+Setting up libgs-common (10.0.0~dfsg-11+deb12u7) ...
+Setting up tzdata (2025b-0+deb12u1) ...
+
+Current default time zone: 'Asia/Kolkata'
+Local time is now:      Thu Mar 27 21:31:02 IST 2025.
+Universal Time is now:  Thu Mar 27 16:01:02 UTC 2025.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Setting up libgs10-common (10.0.0~dfsg-11+deb12u7) ...
+Setting up libgs10:amd64 (10.0.0~dfsg-11+deb12u7) ...
+Setting up ghostscript (10.0.0~dfsg-11+deb12u7) ...
+Processing triggers for libc-bin (2.36-9+deb12u10) ...
 Processing triggers for man-db (2.11.2-2) ...
 Reading package lists...
 Building dependency tree...
@@ -64,26 +84,14 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 40.203/81.395/180.339/44.922 ms
- ________________________________________
-/ Q: Why did the chicken cross the road? \
-\ A: He was giving it last rites.        /
- ----------------------------------------
+rtt min/avg/max/mdev = 43.403/58.134/66.512/9.454 ms
+ _________________________________________
+/ You would if you could but you can't so \
+\ you won't.                              /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-[main 8dd8ab7] daily
- 1 file changed, 32 insertions(+), 20 deletions(-)
-On branch main
-Your branch is ahead of 'origin/main' by 7 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   700_linux/bckp/shell_log.log
-
-no changes added to commit (use "git add" and/or "git commit -a")
