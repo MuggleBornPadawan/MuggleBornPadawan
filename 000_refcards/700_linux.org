@@ -35,7 +35,7 @@
 - netstat -an | grep LISTEN
 ** packages
 - sudo dnf -y git gs python3 neofetch top htop curl emacs
-** chmod
+** chmod / chown
 - numeric octal mode: read (r|4), write (w|2) and execute (x|1)
 - symbolic mode: user (owner) u, group g, others o, all a
 - permission operators: add (+), remove (-), set exact (=)
@@ -105,9 +105,12 @@
 - uname
 - ping google.com
 - ifconfig  # might need to install net-tools
+- ip addr 
 - curl ifconfig.me
 - ip addr
 - curl https://example.com
+- ssh #shell
+- wget #download files from internet; same as curl 
 ** searching and finding files
 - find /path/to/search -name "file_name"
 - grep "search_term" file_name 
@@ -156,6 +159,8 @@
 ** others
 - clear
 - history
+- ln #shortcut
+- hostname 
 - alias ll="ls -la"  # example to list files with details and hidden files
 ** to be checked
 - neofetch
@@ -163,6 +168,8 @@
 - top, free, iostat, htop, vmstat, or iftop
 - dmesg
 - ps
+- df
+- du
 - tail
 - systemctl
 - lsof
