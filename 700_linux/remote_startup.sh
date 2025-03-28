@@ -21,10 +21,5 @@ ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
 fortune | cowsay
 ./MuggleBornPadawan/700_linux/bckp/bckp.sh
-cd
 sleep 2
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily"
-git status
 cd 

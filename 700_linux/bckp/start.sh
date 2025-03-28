@@ -2,7 +2,7 @@ cd
 cd MuggleBornPadawan
 git status
 git add .
-git commit -m "up to start"
+git commit -m "tmp rstr pnt"
 git status
 cd
 ./MuggleBornPadawan/700_linux/bckp/commits.sh
