@@ -1,14 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Mar 30 01:17:23 PM IST 2025 
+Date: Sun Mar 30 02:34:41 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 103 kB in 1s (74.9 kB/s)
+Fetched 55.4 kB in 2s (28.3 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -42,32 +42,10 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 38.930/63.095/130.382/27.903 ms
- _______________________________________
-/ Q: What's the contour integral around \
-| Western Europe? A: Zero, because all  |
-| the Poles are in Eastern Europe!      |
-|                                       |
-| Addendum: Actually, there ARE some    |
-| Poles in Western Europe, but they     |
-|                                       |
-| are removable!                        |
-|                                       |
-| Q: An English mathematician (I forgot |
-| who) was asked by his                 |
-|                                       |
-| very religious colleague: Do you      |
-| believe in one God? A: Yes, up to     |
-| isomorphism!                          |
-|                                       |
-| Q: What is a compact city? A: It's a  |
-| city that can be guarded by finitely  |
-| many near-sighted                     |
-|                                       |
-| policemen!                            |
-|                                       |
-\ -- Peter Lax                          /
- ---------------------------------------
+rtt min/avg/max/mdev = 41.012/66.040/89.470/13.246 ms
+ ________________________________
+< You will be run over by a bus. >
+ --------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
