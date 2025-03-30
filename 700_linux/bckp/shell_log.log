@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Mar 30 02:36:55 PM IST 2025 
+Date: Sun Mar 30 10:00:58 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Fetched 55.4 kB in 2s (27.3 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -31,6 +32,7 @@ firefox-esr is already the newest version (128.8.0esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
+tmux is already the newest version (3.3a-3).
 trash-cli is already the newest version (0.17.1.14-5).
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
@@ -41,10 +43,18 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 40.013/54.141/64.287/10.549 ms
- _________________________________
-< There was a phone call for you. >
- ---------------------------------
+rtt min/avg/max/mdev = 54.448/66.965/83.261/10.988 ms
+ ________________________________________
+/ You mentioned your name as if I should \
+| recognize it, but beyond the obvious   |
+| facts that you are a bachelor, a       |
+| solicitor, a freemason, and an         |
+| asthmatic, I know nothing whatever     |
+| about you.                             |
+|                                        |
+| -- Sherlock Holmes, "The Norwood       |
+\ Builder"                               /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
