@@ -12,6 +12,21 @@
 - emerge - gentoo
 - snap - ubuntu
 - flatpak - various distributions
+** advanced commands
+
+- pipeline (|) vs xargs (multifile processing) vs parallel 
+- grep (filter rows) vs sed (streaming editor) vs awk (script based processing) 
+- rsync vs cp vs scp
+- bat vs cat
+- fd vs find
+- ncdu vs du
+- htop vs top
+- column - csv
+- watch - monitor any command in real time
+- pv - progress bar for long running commands
+- tldr
+- eza vs ls
+- tree  
 ** tips & tricks
 |---------------------------------+--------------------------+-------------------------------------------------------|
 | old command                     | new command              | details                                               |
