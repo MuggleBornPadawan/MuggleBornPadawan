@@ -1,14 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Mar 30 10:00:58 PM IST 2025 
+Date: Mon Mar 31 05:12:35 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 55.4 kB in 2s (27.3 kB/s)
+Fetched 103 kB in 2s (61.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -43,18 +43,22 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 54.448/66.965/83.261/10.988 ms
- ________________________________________
-/ You mentioned your name as if I should \
-| recognize it, but beyond the obvious   |
-| facts that you are a bachelor, a       |
-| solicitor, a freemason, and an         |
-| asthmatic, I know nothing whatever     |
-| about you.                             |
-|                                        |
-| -- Sherlock Holmes, "The Norwood       |
-\ Builder"                               /
- ----------------------------------------
+rtt min/avg/max/mdev = 41.830/74.339/157.154/35.299 ms
+ _________________________________________
+/ There is no character, howsoever good   \
+| and fine, but it can be destroyed by    |
+| ridicule, howsoever poor and witless.   |
+| Observe the ass, for instance: his      |
+| character is about perfect, he is the   |
+| choicest spirit among all the humbler   |
+| animals, yet see what ridicule has      |
+| brought him to. Instead of feeling      |
+| complimented when we are called an ass, |
+| we are left in doubt.                   |
+|                                         |
+| -- Mark Twain, "Pudd'nhead Wilson's     |
+\ Calendar"                               /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
