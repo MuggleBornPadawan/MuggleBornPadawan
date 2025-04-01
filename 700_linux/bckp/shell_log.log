@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Apr  1 12:24:19 PM IST 2025 
+Date: Tue Apr  1 12:50:54 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -36,7 +36,19 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following NEW packages will be installed:
+  fd-find
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 886 kB of archives.
+After this operation, 3,025 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm/main amd64 fd-find amd64 8.6.0-3 [886 kB]
+Fetched 886 kB in 1s (771 kB/s)
+Selecting previously unselected package fd-find.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 59783 files and directories currently installed.)
+Preparing to unpack .../fd-find_8.6.0-3_amd64.deb ...
+Unpacking fd-find (8.6.0-3) ...
+Setting up fd-find (8.6.0-3) ...
+Processing triggers for man-db (2.11.2-2) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -45,10 +57,10 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 41.011/71.290/154.059/33.838 ms
+rtt min/avg/max/mdev = 41.460/48.603/70.593/8.820 ms
  _________________________________________
-/ People are beginning to notice you. Try \
-\ dressing before you leave the house.    /
+/ Good day for a change of scene. Repaper \
+\ the bedroom wall.                       /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
