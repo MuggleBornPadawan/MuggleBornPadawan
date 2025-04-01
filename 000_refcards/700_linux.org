@@ -13,10 +13,9 @@
 - snap - ubuntu
 - flatpak - various distributions
 ** advanced commands
-
-- pipeline (|) vs xargs (multifile processing) vs parallel 
+- pipeline (|) vs xargs (multifile processing) vs parallel (concurrency) 
 - grep (filter rows) vs sed (streaming editor) vs awk (script based processing) 
-- rsync vs cp vs scp
+- rsync (delta transfer over remote + compression) vs cp (full local transfer) vs scp (full remote transfer); other options: aws s3 sync, gsutil rsync, git (lfs) 
 - bat vs cat
 - fd vs find
 - ncdu vs du
