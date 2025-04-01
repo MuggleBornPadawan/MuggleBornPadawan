@@ -1,14 +1,13 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Apr  1 10:32:45 AM IST 2025 
+Date: Tue Apr  1 12:12:53 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 103 kB in 2s (64.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -18,6 +17,7 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+tmux is already the newest version (3.3a-3).
 git is already the newest version (1:2.39.5-0+deb12u2).
 openjdk-17-jdk is already the newest version (17.0.14+7-1~deb12u1).
 python3 is already the newest version (3.11.2-1+b1).
@@ -32,9 +32,17 @@ firefox-esr is already the newest version (128.8.0esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
-tmux is already the newest version (3.3a-3).
 trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following additional packages will be installed:
+  sysstat
+Suggested packages:
+  csh fish ksh tcsh zsh isag
+The following NEW packages will be installed:
+  parallel sysstat
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2,469 kB of archives.
+After this operation, 4,791 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -43,10 +51,10 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 40.800/49.598/82.486/11.959 ms
+rtt min/avg/max/mdev = 41.005/58.317/66.954/8.596 ms
  _________________________________________
-/ You will always get the greatest        \
-\ recognition for the job you least like. /
+/ Today is the tomorrow you worried about \
+\ yesterday.                              /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
