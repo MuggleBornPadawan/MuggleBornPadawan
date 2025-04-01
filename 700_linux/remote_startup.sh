@@ -4,7 +4,7 @@ echo "run this file for any remote debian server setup, startup and chk backups"
 echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
 sudo apt-get update
 sudo apt-get dist-upgrade
-sudo apt-get install parallel tmux git openjdk-17-jdk python3 python3-pip mit-scheme clojure emacs sbcl clisp r-base firefox-esr fortune cowsay neofetch trash-cli
+sudo apt-get install parallel tmux rsync git openjdk-17-jdk python3 python3-pip mit-scheme clojure emacs sbcl clisp r-base firefox-esr fortune cowsay neofetch trash-cli
 sudo apt-get autoremove 
 cp MuggleBornPadawan/.gitignore $HOME
 cp MuggleBornPadawan/.dockerignore $HOME
