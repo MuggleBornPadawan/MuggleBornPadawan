@@ -13,10 +13,11 @@
 - snap - ubuntu
 - flatpak - various distributions
 ** advanced commands
+- tmux tmux-resurrect tmux-continuum
 - pipeline (|) vs xargs (multifile processing) vs parallel (concurrency) 
 - grep (filter rows) vs sed (streaming editor) vs awk (script based processing) 
 - rsync (delta transfer over remote + compression) vs cp (full local transfer) vs scp (full remote transfer); other options: aws s3 sync, gsutil rsync, git (lfs) 
-- bat vs cat
+- bat (pretty print, navigate) vs cat
 - fd vs find
 - ncdu vs du
 - htop vs top
