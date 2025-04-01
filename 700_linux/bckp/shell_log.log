@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Apr  1 12:50:54 PM IST 2025 
+Date: Tue Apr  1 01:34:04 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -21,6 +21,7 @@ parallel is already the newest version (20221122+ds-2).
 tmux is already the newest version (3.3a-3).
 rsync is already the newest version (3.2.7-1+deb12u2).
 bat is already the newest version (0.22.1-4).
+fd-find is already the newest version (8.6.0-3).
 git is already the newest version (1:2.39.5-0+deb12u2).
 openjdk-17-jdk is already the newest version (17.0.14+7-1~deb12u1).
 python3 is already the newest version (3.11.2-1+b1).
@@ -37,17 +38,17 @@ cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 The following NEW packages will be installed:
-  fd-find
+  ncdu
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 886 kB of archives.
-After this operation, 3,025 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm/main amd64 fd-find amd64 8.6.0-3 [886 kB]
-Fetched 886 kB in 1s (771 kB/s)
-Selecting previously unselected package fd-find.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 59783 files and directories currently installed.)
-Preparing to unpack .../fd-find_8.6.0-3_amd64.deb ...
-Unpacking fd-find (8.6.0-3) ...
-Setting up fd-find (8.6.0-3) ...
+Need to get 51.9 kB of archives.
+After this operation, 116 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm/main amd64 ncdu amd64 1.18-0.2 [51.9 kB]
+Fetched 51.9 kB in 0s (141 kB/s)
+Selecting previously unselected package ncdu.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 59798 files and directories currently installed.)
+Preparing to unpack .../ncdu_1.18-0.2_amd64.deb ...
+Unpacking ncdu (1.18-0.2) ...
+Setting up ncdu (1.18-0.2) ...
 Processing triggers for man-db (2.11.2-2) ...
 Reading package lists...
 Building dependency tree...
@@ -57,11 +58,10 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 41.460/48.603/70.593/8.820 ms
- _________________________________________
-/ Good day for a change of scene. Repaper \
-\ the bedroom wall.                       /
- -----------------------------------------
+rtt min/avg/max/mdev = 38.960/72.010/167.005/46.165 ms
+ ___________________________________
+< You will contract a rare disease. >
+ -----------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
