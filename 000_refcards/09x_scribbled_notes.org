@@ -1,6 +1,6 @@
 * scribbled notes
 ** ai automation vs ai agent
-[[file:x_ai_automation_vs_ai_agents]]
+[[file:x_ai_automation_vs_ai_agents.png]]
 ** chain of thought (cot) vs tree of thought (tot) vs graph of thought (got) 
 [[file:x_cot_vs_tot_vs_got_llm.png]]
 ** software engineering laws
