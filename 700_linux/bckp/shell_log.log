@@ -1,14 +1,14 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Apr  2 10:22:37 PM IST 2025 
+Date: Wed Apr  2 10:35:32 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:3 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 103 kB in 2s (61.1 kB/s)
+Fetched 48.0 kB in 2s (27.3 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -52,10 +52,21 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 55.798/72.897/95.828/11.138 ms
+rtt min/avg/max/mdev = 56.629/64.209/83.211/9.573 ms
  _________________________________________
-/ You will always get the greatest        \
-\ recognition for the job you least like. /
+/ Even the clearest and most perfect      \
+| circumstantial evidence is likely to be |
+| at fault, after all, and therefore      |
+| ought to be received with great         |
+| caution. Take the case of any pencil,   |
+| sharpened by any woman; if you have     |
+| witnesses, you will find she did it     |
+| with a knife; but if you take simply    |
+| the aspect of the pencil, you will say  |
+| that she did it with her teeth.         |
+|                                         |
+| -- Mark Twain, "Pudd'nhead Wilson's     |
+\ Calendar"                               /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
