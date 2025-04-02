@@ -59,6 +59,7 @@
 - link to website and description
   [[http://www.google.co.in] [search engine]]
 - link to an image from local folder
+  [[file:file_name.ext]]
 - link to internal heading
   [[*Pla ] [internal header link]]
 

@@ -1,11 +1,10 @@
 * scribbled notes
+** ai automation vs ai agent
+[[file:x_ai_automation_vs_ai_agents]]
+** chain of thought (cot) vs tree of thought (tot) vs graph of thought (got) 
+[[file:x_cot_vs_tot_vs_got_llm.png]]
 ** software engineering laws
-Some of these software engineering laws are famous, and some are quite niche. 
-
-Parkinson’s law, Hofstadter’s law, Brooke’s law, Conway’s law (and the Inverse Conway's law), Cunningham’s law, Sturgeon’s law, Zawinski’s law, Hyrum’s law, Price’s law, The Ringelmann effect, Goodhart’s law, Gilb’s law, Murphy’s law.
-
-Source: https://newsletter.manager.dev/p/the-13-software-engineering-laws?
-
+Some of these software engineering laws are famous, and some are quite niche. Parkinson’s law, Hofstadter’s law, Brooke’s law, Conway’s law (and the Inverse Conway's law), Cunningham’s law, Sturgeon’s law, Zawinski’s law, Hyrum’s law, Price’s law, The Ringelmann effect, Goodhart’s law, Gilb’s law, Murphy’s law. Source: https://newsletter.manager.dev/p/the-13-software-engineering-laws?
 ** russ olsen - goto18 - functional programming
 - pure functions, immutable, bridges
 - pedestal
