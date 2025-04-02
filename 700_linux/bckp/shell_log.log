@@ -1,6 +1,6 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Apr  2 02:52:10 PM IST 2025 
+Date: Wed Apr  2 10:22:37 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -8,7 +8,7 @@ Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Ign:3 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 103 kB in 2s (60.1 kB/s)
+Fetched 103 kB in 2s (61.1 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -52,11 +52,11 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 40.945/58.699/66.719/9.602 ms
- ____________________________________
-/ Q: What is orange and goes "click, \
-\ click?" A: A ball point carrot.    /
- ------------------------------------
+rtt min/avg/max/mdev = 55.798/72.897/95.828/11.138 ms
+ _________________________________________
+/ You will always get the greatest        \
+\ recognition for the job you least like. /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
