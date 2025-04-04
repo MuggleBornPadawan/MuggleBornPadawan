@@ -1,16 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Apr  4 10:35:44 AM IST 2025 
+Date: Fri Apr  4 11:37:09 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [150 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 504 kB in 2s (322 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -54,10 +51,13 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 41.231/54.337/65.143/9.717 ms
- ________________________________
-< Tomorrow, you can be anywhere. >
- --------------------------------
+rtt min/avg/max/mdev = 38.373/46.988/63.693/9.230 ms
+ _________________________________________
+/ A light wife doth make a heavy husband. \
+|                                         |
+| -- Wm. Shakespeare, "The Merchant of    |
+\ Venice"                                 /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
