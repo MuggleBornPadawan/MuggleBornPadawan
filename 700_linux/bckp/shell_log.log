@@ -1,35 +1,22 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Apr  3 11:37:31 PM IST 2025 
+Date: Fri Apr  4 10:35:44 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 353 kB in 2s (191 kB/s)
+Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [250 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [150 kB]
+Hit:7 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Fetched 504 kB in 2s (322 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  firefox-esr
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 69.7 MB of archives.
-After this operation, 20.5 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 128.9.0esr-1~deb12u1 [69.7 MB]
-Fetched 69.7 MB in 15s (4,683 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 59865 files and directories currently installed.)
-Preparing to unpack .../firefox-esr_128.9.0esr-1~deb12u1_amd64.deb ...
-Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
-Unpacking firefox-esr (128.9.0esr-1~deb12u1) over (128.8.0esr-1~deb12u1) ...
-Setting up firefox-esr (128.9.0esr-1~deb12u1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for desktop-file-utils (0.26-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -67,11 +54,10 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 39.235/54.259/124.608/23.837 ms
- ______________________________________
-/ You're not my type. For that matter, \
-\ you're not even my species!!!        /
- --------------------------------------
+rtt min/avg/max/mdev = 41.231/54.337/65.143/9.717 ms
+ ________________________________
+< Tomorrow, you can be anywhere. >
+ --------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
