@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Apr  4 07:01:48 PM IST 2025 
+Date: Sat Apr  5 08:43:38 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 55.4 kB in 2s (35.9 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -52,14 +51,20 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 39.435/48.727/63.404/9.807 ms
- _____________________________________
-/ When angry, count four; when very   \
-| angry, swear.                       |
-|                                     |
-| -- Mark Twain, "Pudd'nhead Wilson's |
-\ Calendar"                           /
- -------------------------------------
+rtt min/avg/max/mdev = 38.501/45.537/87.407/12.768 ms
+ _________________________________________
+/ The notes blatted skyward as they rose  \
+| over the Canada geese, feathered rumps  |
+| mooning the day, webbed appendages      |
+| frantically pedaling unseen bicycles in |
+| their search for sustenance, driven by  |
+| cruel Nature's maxim, 'Ya wanna eat, ya |
+| gotta work,' and at last I knew         |
+| Pittsburgh.                             |
+|                                         |
+| -- Winning sentence, 1987 Bulwer-Lytton |
+\ bad fiction contest.                    /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
