@@ -21,7 +21,7 @@ echo -e "\nuse trash-empty or trash-restore as you see fit"
 rm .bash_history
 ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
-fortune | cowsay
+fortune -a | cowsay
 ./MuggleBornPadawan/700_linux/bckp/bckp.sh
 sleep 2
 cd 
