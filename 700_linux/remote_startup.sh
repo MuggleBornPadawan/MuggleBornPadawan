@@ -1,5 +1,6 @@
 # ./MuggleBornPadawan/700_linux/remote_startup.sh | tee - a ./MuggleBornPadawan/700_linux/bckp/shell_log.log
 clear
+espeak -v en-gb -s 175 -p 50 "roger that"
 echo "run this file for any remote debian server setup, startup and chk backups"
 echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
 sudo apt-get update
@@ -24,3 +25,4 @@ fortune | cowsay
 ./MuggleBornPadawan/700_linux/bckp/bckp.sh
 sleep 2
 cd 
+espeak -v en-gb -s 175 -p 50 "penguin out"
