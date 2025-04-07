@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Apr  7 12:08:21 PM IST 2025 
+Date: Mon Apr  7 02:10:53 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -53,11 +53,11 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 55.395/68.641/85.158/11.210 ms
- ________________________________________
-/ You will be honored for contributing   \
-\ your time and skill to a worthy cause. /
- ----------------------------------------
+rtt min/avg/max/mdev = 40.227/127.479/706.364/180.775 ms
+ _______________________________________
+/ You will be aided greatly by a person \
+\ whom you thought to be unimportant.   /
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
