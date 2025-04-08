@@ -1,13 +1,16 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Apr  8 10:54:50 AM IST 2025 
+Date: Tue Apr  8 11:02:36 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [252 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [152 kB]
+Hit:7 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Fetched 507 kB in 2s (310 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -53,18 +56,12 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 40.236/56.385/111.159/21.513 ms
- _________________________________________
-/ Q: What did Tarzan say when he saw the  \
-| elephants coming over the hill? A: "The |
-| elephants are coming over the hill."    |
-|                                         |
-| Q: What did he say when saw them coming |
-| over the hill wearing                   |
-|                                         |
-| sunglasses? A: Nothing, for he didn't   |
-\ recognize them.                         /
- -----------------------------------------
+rtt min/avg/max/mdev = 39.636/47.559/65.028/8.423 ms
+ ______________________________________
+/ Q: What does it say on the bottom of \
+| Coke cans in North Dakota? A: Open   |
+\ other end.                           /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
