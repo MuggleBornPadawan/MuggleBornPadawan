@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Apr  7 10:48:34 PM IST 2025 
+Date: Tue Apr  8 10:54:50 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 55.4 kB in 1s (49.3 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -54,47 +53,17 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 39.287/63.684/119.141/22.040 ms
+rtt min/avg/max/mdev = 40.236/56.385/111.159/21.513 ms
  _________________________________________
-/ Like an expensive sports car,           \
-| fine-tuned and well-built, Portia was   |
-| sleek, shapely, and gorgeous, her red   |
-| jumpsuit moulding her body, which was   |
-| as warm as seatcovers in July, her hair |
-| as dark as new tires, her eyes flashing |
-| like bright hubcaps, and her lips as    |
-| dewy as the beads of fresh rain on the  |
-| hood; she was a woman driven -- fueled  |
-| by a single accelerant -- and she       |
-| needed a man, a man who wouldn't shift  |
-| from his views, a man to steer her      |
-| along the right road: a man like Alf    |
-| Romeo.                                  |
+/ Q: What did Tarzan say when he saw the  \
+| elephants coming over the hill? A: "The |
+| elephants are coming over the hill."    |
 |                                         |
-| -- Rachel Sheeley, winner               |
+| Q: What did he say when saw them coming |
+| over the hill wearing                   |
 |                                         |
-| The hair ball blocking the drain of the |
-| shower reminded Laura she would never   |
-| see her little dog Pritzi again.        |
-|                                         |
-| -- Claudia Fields, runner-up            |
-|                                         |
-| It could have been an organically based |
-| disturbance of the brain -- perhaps a   |
-| tumor or a metabolic deficiency -- but  |
-| after a thorough neurological exam it   |
-| was determined that Byron was simply a  |
-| jerk.                                   |
-|                                         |
-| -- Jeff Jahnke, runner-up               |
-|                                         |
-| Winners in the 7th Annual Bulwer-Lytton |
-| Bad Writing Contest. The contest is     |
-| named after the author of the immortal  |
-| lines: "It was a dark and stormy        |
-| night." The object of the contest is to |
-| write the opening sentence of the worst |
-\ possible novel.                         /
+| sunglasses? A: Nothing, for he didn't   |
+\ recognize them.                         /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
