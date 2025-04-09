@@ -1,12 +1,12 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Apr  9 11:15:43 AM IST 2025 
+Date: Wed Apr  9 01:37:52 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -53,13 +53,13 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 39.428/60.289/145.932/33.094 ms
- _______________________________________
-/ Kindness is a language which the deaf \
-| can hear and the blind can read.      |
-|                                       |
-\ -- Mark Twain                         /
- ---------------------------------------
+rtt min/avg/max/mdev = 40.352/52.442/65.110/9.797 ms
+ ________________________________________
+/ Today's weirdness is tomorrow's reason \
+| why.                                   |
+|                                        |
+\ -- Hunter S. Thompson                  /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
