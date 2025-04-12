@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Apr 10 10:56:47 PM IST 2025 
+Date: Sat Apr 12 03:00:47 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Fetched 103 kB in 2s (63.1 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -53,14 +54,15 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 39.302/50.041/64.237/10.092 ms
- ________________________________________
-/ ... A solemn, unsmiling, sanctimonious \
-| old iceberg who looked like he was     |
-| waiting for a vacancy in the Trinity.  |
-|                                        |
-\ -- Mark Twain                          /
- ----------------------------------------
+rtt min/avg/max/mdev = 40.361/61.321/137.932/24.967 ms
+ _____________________________________
+/ Q: What do you call 15 blondes in a \
+| circle? A: A dope ring.             |
+|                                     |
+| Q: Why do blondes put their hair in |
+| ponytails? A: To cover up the valve |
+\ stem.                               /
+ -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
