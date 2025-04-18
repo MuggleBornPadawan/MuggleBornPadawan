@@ -1,14 +1,16 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Apr 17 10:17:39 PM IST 2025 
+Date: Fri Apr 18 12:33:21 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 103 kB in 2s (67.3 kB/s)
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [255 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [152 kB]
+Hit:7 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Fetched 511 kB in 2s (322 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -54,12 +56,11 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 39.497/53.891/66.473/10.680 ms
- _______________________________________
-/ Q: What's the difference between USL  \
-| and the Titanic? A: The Titanic had a |
-\ band.                                 /
- ---------------------------------------
+rtt min/avg/max/mdev = 41.920/52.693/67.496/10.169 ms
+ ________________________________________
+/ You will be awarded a medal for        \
+\ disregarding safety in saving someone. /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
