@@ -1,16 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Apr 18 12:33:21 PM IST 2025 
+Date: Sat Apr 19 11:58:24 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.67-06628-g571b599e617d
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [255 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [152 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/134 bookworm Release
-Fetched 511 kB in 2s (322 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -56,10 +53,14 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 41.920/52.693/67.496/10.169 ms
+rtt min/avg/max/mdev = 38.581/51.194/70.569/10.845 ms
  ________________________________________
-/ You will be awarded a medal for        \
-\ disregarding safety in saving someone. /
+/ A classic is something that everyone   \
+| wants to have read and nobody wants to |
+| read.                                  |
+|                                        |
+| -- Mark Twain, "The Disappearance of   |
+\ Literature"                            /
  ----------------------------------------
         \   ^__^
          \  (oo)\_______
