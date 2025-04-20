@@ -5,8 +5,7 @@ echo "run this file for any remote debian server setup, startup and chk backups"
 echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
 sudo apt-get update
 sudo apt-get dist-upgrade
-sudo apt-get install git-credential-manager htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak openjdk-17-jdk python3 python3-pip mit-scheme clojure emacs sbcl clisp r-base firefox-esr fortune cowsay neofetch trash-cli
-
+sudo apt-get install libsecret-tools htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak openjdk-17-jdk python3 python3-pip mit-scheme clojure emacs sbcl clisp r-base firefox-esr fortune cowsay neofetch trash-cli
 sudo apt-get autoremove 
 cp MuggleBornPadawan/.gitignore $HOME
 cp MuggleBornPadawan/.dockerignore $HOME
@@ -14,6 +13,7 @@ cp MuggleBornPadawan/Dockerfile $HOME
 cp MuggleBornPadawan/Jenkinsfile $HOME
 git config --global user.name "MuggleBornPadawan"
 git config --global user.email "mugglebornpadawan@icloud.com"
+git config --global credential.helper libsecret
 echo -e "\nrun commits seperately; docker and jenkins startup shell scripts to be created seperately"
 alias rm='trash-put'
 trash-list
