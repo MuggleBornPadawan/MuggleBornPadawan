@@ -1,19 +1,38 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Apr 19 11:58:24 PM IST 2025 
+Date: Sun Apr 20 04:45:24 PM IST 2025 
 OS: Linux 
-Kernel: 6.6.67-06628-g571b599e617d
+Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/134 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/134 bookworm Release
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [260 kB]
+Hit:6 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Get:7 https://deb.debian.org/debian-security bookworm-security/main Translation-en [156 kB]
+Fetched 519 kB in 1s (611 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  cros-apt-config cros-im
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 65.8 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://storage.googleapis.com/cros-packages/135 bookworm/main amd64 cros-apt-config all 0.29 [13.6 kB]
+Get:2 https://storage.googleapis.com/cros-packages/135 bookworm/main amd64 cros-im amd64 61848 [52.2 kB]
+Fetched 65.8 kB in 2s (35.3 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 60229 files and directories currently installed.)
+Preparing to unpack .../cros-apt-config_0.29_all.deb ...
+Unpacking cros-apt-config (0.29) over (0.28) ...
+Preparing to unpack .../cros-im_61848_amd64.deb ...
+Unpacking cros-im:amd64 (61848) over (61604) ...
+Setting up cros-apt-config (0.29) ...
+Setting up cros-im:amd64 (61848) ...
+Processing triggers for libgtk-3-0:amd64 (3.24.38-2~deb12u3) ...
+Processing triggers for libgtk-4-1:amd64 (4.8.3+ds-2+deb12u1) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -53,15 +72,11 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 38.581/51.194/70.569/10.845 ms
- ________________________________________
-/ A classic is something that everyone   \
-| wants to have read and nobody wants to |
-| read.                                  |
-|                                        |
-| -- Mark Twain, "The Disappearance of   |
-\ Literature"                            /
- ----------------------------------------
+rtt min/avg/max/mdev = 38.427/40.016/44.258/1.652 ms
+ ______________________________________
+/ Expect the worst, it's the least you \
+\ can do.                              /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
