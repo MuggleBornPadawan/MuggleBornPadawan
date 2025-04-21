@@ -1,23 +1,25 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Apr 20 11:34:40 PM IST 2025 
+Date: Mon Apr 21 10:27:21 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
+Ign:1 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
+The following packages were automatically installed and are no longer required:
+  libsecret-1-0 libsecret-common
+Use 'sudo apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-libsecret-tools is already the newest version (0.20.5-3).
 htop is already the newest version (3.2.2-2).
 pv is already the newest version (1.6.20-1).
 tldr is already the newest version (0.9.2-2+b4).
@@ -45,20 +47,33 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
+The following packages were automatically installed and are no longer required:
+  libsecret-1-0 libsecret-common
+Use 'sudo apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be REMOVED:
+  libsecret-1-0 libsecret-common
+0 upgraded, 0 newly installed, 2 to remove and 0 not upgraded.
+After this operation, 695 kB disk space will be freed.
+Do you want to continue? [Y/n] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 60294 files and directories currently installed.)
+Removing libsecret-1-0:amd64 (0.20.5-3) ...
+Removing libsecret-common (0.20.5-3) ...
+Processing triggers for libc-bin (2.36-9+deb12u10) ...
 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 40.533/54.372/65.163/9.329 ms
- __________________________________
-/ You will overcome the attacks of \
-\ jealous associates.              /
- ----------------------------------
+rtt min/avg/max/mdev = 52.438/58.535/81.546/9.949 ms
+ ________________________________________
+/ Kiss me, Kate, we will be married o'   \
+| Sunday.                                |
+|                                        |
+| -- William Shakespeare, "The Taming of |
+\ the Shrew"                             /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
