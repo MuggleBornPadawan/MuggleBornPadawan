@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Apr 21 10:28:30 AM IST 2025 
+Date: Tue Apr 22 11:33:24 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -17,6 +17,7 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+nmap is already the newest version (7.93+dfsg1-1).
 htop is already the newest version (3.2.2-2).
 pv is already the newest version (1.6.20-1).
 tldr is already the newest version (0.9.2-2+b4).
@@ -53,12 +54,12 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 53.733/63.670/78.286/10.736 ms
- _______________________________________
-/ Q: What's tiny and yellow and very,   \
-| very, dangerous? A: A canary with the |
-\ super-user password.                  /
- ---------------------------------------
+rtt min/avg/max/mdev = 41.184/54.504/114.112/20.330 ms
+ ________________________________
+/ When in doubt, tell the truth. \
+|                                |
+\ -- Mark Twain                  /
+ --------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
