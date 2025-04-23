@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Apr 22 07:04:45 PM IST 2025 
+Date: Wed Apr 23 05:56:57 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -8,7 +8,7 @@ Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Fetched 55.4 kB in 2s (25.2 kB/s)
+Fetched 55.4 kB in 2s (34.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -55,11 +55,11 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 54.738/80.821/149.442/24.086 ms
- _____________________________________
-/ Chicken Little only has to be right \
-\ once.                               /
- -------------------------------------
+rtt min/avg/max/mdev = 44.083/64.992/138.451/23.788 ms
+ ______________________________________
+/ You will remember something that you \
+\ should not have forgotten.           /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
