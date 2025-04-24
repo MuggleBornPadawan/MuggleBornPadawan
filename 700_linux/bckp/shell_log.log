@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Apr 24 11:32:08 AM IST 2025 
+Date: Thu Apr 24 05:03:19 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Fetched 55.4 kB in 2s (34.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -54,17 +55,11 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 38.801/55.608/95.158/15.136 ms
- _______________________________________
-/ Fortune: You will be attacked next    \
-| Wednesday at 3:15 p.m. by six samurai |
-| sword wielding purple fish glued to   |
-| Harley-Davidson motorcycles.          |
-|                                       |
-| Oh, and have a nice day!              |
-|                                       |
-\ -- Bryce Nesbitt '84                  /
- ---------------------------------------
+rtt min/avg/max/mdev = 39.773/65.277/132.686/28.435 ms
+ ______________________________________
+/ Artistic ventures highlighted. Rob a \
+\ museum.                              /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
