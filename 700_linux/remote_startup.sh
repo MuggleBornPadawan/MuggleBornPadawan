@@ -23,5 +23,6 @@ cat tmp.txt | grep "rtt"
 fortune -a | cowsay
 ./MuggleBornPadawan/700_linux/bckp/bckp.sh
 sleep 2
-cd 
-espeak -v en-gb -s 175 -p 50 "penguin out"
+cd
+sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh > /dev/null 2>&1 &
+espeak -v en-gb -s 175 -p 50 "nohup started - penguin out"
