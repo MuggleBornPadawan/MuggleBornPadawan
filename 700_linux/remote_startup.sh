@@ -24,5 +24,5 @@ fortune -a | cowsay
 ./MuggleBornPadawan/700_linux/bckp/bckp.sh
 sleep 2
 cd
-sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh > /dev/null 2>&1 &
+# sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null
 espeak -v en-gb -s 175 -p 50 "nohup started - penguin out"
