@@ -39,7 +39,10 @@ do
     # Note: Execution time of commands before sleep might make it trigger a second or so past :00
     sleep $total_sleep
 
-    # Perform the action: print the date and time
+    # Perform the action: run commits; print the date and time
+    pwd
+    cd~
+    pwd
     ./MuggleBornPadawan/700_linux/bckp/commits.sh
     echo "----------------------------------------"
     echo "Commits triggered at: $(date)"
