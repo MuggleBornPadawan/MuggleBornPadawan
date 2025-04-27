@@ -1,32 +1,19 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Apr 27 10:49:49 PM IST 2025 
+Date: Sun Apr 27 11:14:21 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [258 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [154 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Fetched 515 kB in 2s (321 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  linux-libc-dev
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2,136 kB of archives.
-After this operation, 10.2 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 linux-libc-dev amd64 6.1.135-1 [2,136 kB]
-Fetched 2,136 kB in 1s (3,384 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 90523 files and directories currently installed.)
-Preparing to unpack .../linux-libc-dev_6.1.135-1_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (6.1.135-1) over (6.1.133-1) ...
-Setting up linux-libc-dev:amd64 (6.1.135-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -71,10 +58,14 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 41.490/58.615/152.187/29.523 ms
+rtt min/avg/max/mdev = 39.378/51.666/65.222/10.092 ms
  _________________________________________
-/ Your fly might be open (but don't check \
-\ it just now).                           /
+/ Habit is habit, and not to be flung out \
+| of the window by any man, but coaxed    |
+| down-stairs a step at a time.           |
+|                                         |
+| -- Mark Twain, "Pudd'nhead Wilson's     |
+\ Calendar                                /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
