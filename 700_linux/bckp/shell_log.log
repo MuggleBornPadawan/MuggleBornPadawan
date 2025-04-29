@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Apr 27 11:14:21 PM IST 2025 
+Date: Tue Apr 29 11:03:48 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -58,15 +58,10 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 39.378/51.666/65.222/10.092 ms
- _________________________________________
-/ Habit is habit, and not to be flung out \
-| of the window by any man, but coaxed    |
-| down-stairs a step at a time.           |
-|                                         |
-| -- Mark Twain, "Pudd'nhead Wilson's     |
-\ Calendar                                /
- -----------------------------------------
+rtt min/avg/max/mdev = 40.047/47.040/63.953/8.780 ms
+ ______________________________________
+< You will have long and healthy life. >
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
