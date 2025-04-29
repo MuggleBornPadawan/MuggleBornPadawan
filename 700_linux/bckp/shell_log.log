@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Apr 29 11:03:48 PM IST 2025 
+Date: Wed Apr 30 12:00:12 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -17,39 +17,6 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-pass is already the newest version (1.7.4-6).
-gnupg is already the newest version (2.2.40-1.1).
-nmap is already the newest version (7.93+dfsg1-1).
-htop is already the newest version (3.2.2-2).
-pv is already the newest version (1.6.20-1).
-tldr is already the newest version (0.9.2-2+b4).
-tree is already the newest version (2.1.0-1).
-ncdu is already the newest version (1.18-0.2).
-parallel is already the newest version (20221122+ds-2).
-tmux is already the newest version (3.3a-3).
-rsync is already the newest version (3.2.7-1+deb12u2).
-bat is already the newest version (0.22.1-4).
-fd-find is already the newest version (8.6.0-3).
-git is already the newest version (1:2.39.5-0+deb12u2).
-rig is already the newest version (1.11-1.1+b1).
-espeak is already the newest version (1.48.15+dfsg-3).
-nodejs is already the newest version (18.19.0+dfsg-6~deb12u2).
-npm is already the newest version (9.2.0~ds1-1).
-openjdk-17-jdk is already the newest version (17.0.14+7-1~deb12u1).
-python3 is already the newest version (3.11.2-1+b1).
-python3-pip is already the newest version (23.0.1+dfsg-1).
-mit-scheme is already the newest version (12.1-3).
-clojure is already the newest version (1.11.1-2).
-emacs is already the newest version (1:28.2+1-15+deb12u4).
-sbcl is already the newest version (2:2.2.9-1).
-clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
-r-base is already the newest version (4.2.2.20221110-2).
-firefox-esr is already the newest version (128.9.0esr-1~deb12u1).
-fortune-mod is already the newest version (1:1.99.1-7.3).
-cowsay is already the newest version (3.03+dfsg2-8).
-neofetch is already the newest version (7.1.0-4).
-trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -58,9 +25,10 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 40.047/47.040/63.953/8.780 ms
+rtt min/avg/max/mdev = 40.125/52.173/91.345/15.805 ms
  ______________________________________
-< You will have long and healthy life. >
+/ Never be led astray onto the path of \
+\ virtue.                              /
  --------------------------------------
         \   ^__^
          \  (oo)\_______
