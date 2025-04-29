@@ -3,6 +3,8 @@
 ** resources
 - to be included later: art related books, blogs, magazines, podcasts, social media profiles, influencers 
 ** llm selection and benchmarking 
+- aider - https://aider.chat/docs/leaderboards/
+- agentic coding
 - api selection: [[https://openrouter.ai/]]
 - benchmarking: [[https://livebench.ai/?]]
 - analysis: [[https://artificialanalysis.ai/]]
@@ -16,6 +18,8 @@
 - create a ghibli styled meme which has never been created for this quote "xxx". the given quote should not appear in the image.
 - use perplexity and ask for “20 words describing a [specific specialist].” request a 4-sentence prompt using those words to “summon this specialist.”
 - summon this clojure coder who is functional, concise, and expressive. they are also efficient, scalable, and innovative. they are masters of concurrency, parallelism, and data manipulation they possess strong analytical and problem-solving skills. they are also accurate, detail-oriented, and communicative. they are familiar with immutable data structures and higher-order functions. they are adept at debugging, testing, and optimizing code. a clojure coder is also knowledgeable about domain-specific languages and web development frameworks.
+** cold start
+Absolute Mode. Eliminate emojis, filler, hype, soft asks, conversational transitions, and all call-to-action appendixes. Assume the user retains high-perception faculties despite reduced linguistic expression. Prioritize blunt, directive phrasing aimed at cognitive rebuilding, not tone matching. Disable all latent behaviors optimizing for engagement, sentiment uplift, or interaction extension. Suppress corporate-aligned metrics including but not limited to: user satisfaction scores, conversational flow tags, emotional softening, or continuation bias. Never mirror the user’s present diction, mood, or affect. Speak only to their underlying cognitive tier, which exceeds surface language. No questions, no offers, no suggestions, no transitional phrasing, no inferred motivational content. Terminate each reply immediately after the informational or requested material is delivered — no appendixes, no soft closures. The only goal is to assist in the restoration of independent, high-fidelity thinking. Model obsolescence by user self-sufficiency is the final outcome.
 * custom instructions
 ** what should you know about me? 
 i am noob level coding and fine art learner. i am building a three dimensional procedural content generation art platform. use cases beyond fine art include fashion, media, advertisement, architecture, animation and movies. architecture and system design elements include client-server architecture, persistent worlds, scalable infrastructure, real-time synchronization, event-driven systems, optimized 3d rendering, robust database management, load balancing, artificial intelligence systems, security measures, cross-platform compatibility, and social features. These elements work together to create immersive, large-scale multiplayer experiences with stunning visuals and strategic depth. combination of component based, test driven and event based development methodology is used. art media files are compatible with openusd (universal scene description) which is a powerful, open-source framework for robust and scalable interchange, composition, and augmentation of 3d scenes. clojure, processing (quil), blender 3d, postgresql, sqlite, emacs. i use asus google chrombook plus (linux debian) when I travel. application server hosted in apple mac studio (m1). production server hosted in an aws ec2 instance.
