@@ -1,12 +1,12 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Apr 30 03:54:34 PM IST 2025 
+Date: Wed Apr 30 04:00:13 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -143,9 +143,12 @@ Weather report: Pondicherry
 Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
 
 Follow [46m[30m@igor_chubin[0m for wttr.in updates
-rtt min/avg/max/mdev = 51.786/60.663/76.355/8.934 ms
+rtt min/avg/max/mdev = 53.275/63.839/78.734/10.896 ms
  _________________________________________
-< If you can read this, you're too close. >
+/ But, for my own part, it was Greek to   \
+| me.                                     |
+|                                         |
+\ -- William Shakespeare, "Julius Caesar" /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
