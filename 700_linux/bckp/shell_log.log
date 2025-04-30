@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Apr 30 03:40:55 PM IST 2025 
+Date: Wed Apr 30 03:54:34 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -41,6 +41,7 @@ python3-pip is already the newest version (23.0.1+dfsg-1).
 mit-scheme is already the newest version (12.1-3).
 clojure is already the newest version (1.11.1-2).
 emacs is already the newest version (1:28.2+1-15+deb12u4).
+elpa-magit is already the newest version (3.3.0-2).
 sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
@@ -49,118 +50,7 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-The following additional packages will be installed:
-  dh-elpa-helper elpa-dash elpa-git-commit elpa-magit-section elpa-with-editor
-The following NEW packages will be installed:
-  dh-elpa-helper elpa-dash elpa-git-commit elpa-magit elpa-magit-section
-  elpa-with-editor
-0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
-Need to get 580 kB of archives.
-After this operation, 2,140 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm/main amd64 dh-elpa-helper all 2.0.16 [8,196 B]
-Get:2 https://deb.debian.org/debian bookworm/main amd64 elpa-dash all 2.19.1+git20220608.1.0ac1ecf+dfsg-1 [62.2 kB]
-Get:3 https://deb.debian.org/debian bookworm/main amd64 elpa-with-editor all 3.0.5-1 [24.0 kB]
-Get:4 https://deb.debian.org/debian bookworm/main amd64 elpa-git-commit all 3.3.0-2 [15.3 kB]
-Get:5 https://deb.debian.org/debian bookworm/main amd64 elpa-magit-section all 3.3.0-2 [21.3 kB]
-Get:6 https://deb.debian.org/debian bookworm/main amd64 elpa-magit all 3.3.0-2 [449 kB]
-Fetched 580 kB in 1s (429 kB/s)
-Selecting previously unselected package dh-elpa-helper.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 90523 files and directories currently installed.)
-Preparing to unpack .../0-dh-elpa-helper_2.0.16_all.deb ...
-Unpacking dh-elpa-helper (2.0.16) ...
-Selecting previously unselected package elpa-dash.
-Preparing to unpack .../1-elpa-dash_2.19.1+git20220608.1.0ac1ecf+dfsg-1_all.deb ...
-Unpacking elpa-dash (2.19.1+git20220608.1.0ac1ecf+dfsg-1) ...
-Selecting previously unselected package elpa-with-editor.
-Preparing to unpack .../2-elpa-with-editor_3.0.5-1_all.deb ...
-Unpacking elpa-with-editor (3.0.5-1) ...
-Selecting previously unselected package elpa-git-commit.
-Preparing to unpack .../3-elpa-git-commit_3.3.0-2_all.deb ...
-Unpacking elpa-git-commit (3.3.0-2) ...
-Selecting previously unselected package elpa-magit-section.
-Preparing to unpack .../4-elpa-magit-section_3.3.0-2_all.deb ...
-Unpacking elpa-magit-section (3.3.0-2) ...
-Selecting previously unselected package elpa-magit.
-Preparing to unpack .../5-elpa-magit_3.3.0-2_all.deb ...
-Unpacking elpa-magit (3.3.0-2) ...
-Setting up dh-elpa-helper (2.0.16) ...
-Setting up elpa-with-editor (3.0.5-1) ...
-Install emacsen-common for emacs
-emacsen-common: Handling install of emacsen flavor emacs
-Install elpa-with-editor for emacs
-install/with-editor-3.0.5: Handling install of emacsen flavor emacs
-install/with-editor-3.0.5: byte-compiling for emacs
-Setting up elpa-dash (2.19.1+git20220608.1.0ac1ecf+dfsg-1) ...
-Install emacsen-common for emacs
-emacsen-common: Handling install of emacsen flavor emacs
-Install elpa-dash for emacs
-install/dash-2.19.1: Handling install of emacsen flavor emacs
-install/dash-2.19.1: byte-compiling for emacs
-Setting up elpa-magit-section (3.3.0-2) ...
-tsort: -: input contains a loop:
-tsort: elpa-dash
-tsort: emacsen-common
-Install elpa-dash for emacs
-install/dash-2.19.1: Handling install of emacsen flavor emacs
-install/dash-2.19.1: byte-compiling for emacs
-Install emacsen-common for emacs
-emacsen-common: Handling install of emacsen flavor emacs
-Install elpa-magit-section for emacs
-install/magit-section-3.3.0: Handling install of emacsen flavor emacs
-install/magit-section-3.3.0: byte-compiling for emacs
-Setting up elpa-git-commit (3.3.0-2) ...
-tsort: -: input contains a loop:
-tsort: elpa-dash
-tsort: emacsen-common
-tsort: -: input contains a loop:
-tsort: emacsen-common
-tsort: elpa-with-editor
-Install elpa-dash for emacs
-install/dash-2.19.1: Handling install of emacsen flavor emacs
-install/dash-2.19.1: byte-compiling for emacs
-Install emacsen-common for emacs
-emacsen-common: Handling install of emacsen flavor emacs
-Install elpa-with-editor for emacs
-install/with-editor-3.0.5: Handling install of emacsen flavor emacs
-install/with-editor-3.0.5: byte-compiling for emacs
-Install elpa-git-commit for emacs
-install/git-commit-3.3.0: Handling install of emacsen flavor emacs
-install/git-commit-3.3.0: byte-compiling for emacs
-Setting up elpa-magit (3.3.0-2) ...
-tsort: -: input contains a loop:
-tsort: elpa-dash
-tsort: emacsen-common
-tsort: -: input contains a loop:
-tsort: elpa-git-commit
-tsort: emacsen-common
-tsort: elpa-with-editor
-tsort: -: input contains a loop:
-tsort: elpa-git-commit
-tsort: emacsen-common
-tsort: -: input contains a loop:
-tsort: emacsen-common
-tsort: elpa-magit-section
-tsort: -: input contains a loop:
-tsort: elpa-with-editor
-tsort: emacsen-common
-Install elpa-dash for emacs
-install/dash-2.19.1: Handling install of emacsen flavor emacs
-install/dash-2.19.1: byte-compiling for emacs
-Install elpa-git-commit for emacs
-install/git-commit-3.3.0: Handling install of emacsen flavor emacs
-install/git-commit-3.3.0: byte-compiling for emacs
-Install elpa-with-editor for emacs
-install/with-editor-3.0.5: Handling install of emacsen flavor emacs
-install/with-editor-3.0.5: byte-compiling for emacs
-Install emacsen-common for emacs
-emacsen-common: Handling install of emacsen flavor emacs
-Install elpa-magit-section for emacs
-install/magit-section-3.3.0: Handling install of emacsen flavor emacs
-install/magit-section-3.3.0: byte-compiling for emacs
-Install elpa-magit for emacs
-install/magit-3.3.0: Handling install of emacsen flavor emacs
-install/magit-3.3.0: byte-compiling for emacs
-Processing triggers for install-info (6.8-6+b1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -169,14 +59,93 @@ Reading state information...
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
 use trash-empty or trash-restore as you see fit
-rtt min/avg/max/mdev = 52.971/68.206/139.785/23.361 ms
+Password Store
+├── CLAUDE_API_KEY
+├── GEMINI_API_KEY
+└── OPEN_API_KEY
+Weather report: Chennai
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+33[0m([38;5;196m40[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;220m18[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
+                                                       ┌─────────────┐                                                       
+┌──────────────────────────────┬───────────────────────┤  Wed 30 Apr ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
+│ [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m38[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+29[0m([38;5;202m36[0m) °C[0m     │
+│ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;226m14[0m-[38;5;220m16[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;214m23[0m-[38;5;208m27[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;208m24[0m-[38;5;196m33[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;208m24[0m-[38;5;196m34[0m km/h[0m   │
+│ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │
+│ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+                                                       ┌─────────────┐                                                       
+┌──────────────────────────────┬───────────────────────┤  Thu 01 May ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
+│ [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;196m39[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     │
+│ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;220m18[0m-[38;5;214m22[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;202m28[0m-[38;5;196m32[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;202m28[0m-[38;5;196m37[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;202m29[0m-[38;5;196m40[0m km/h[0m   │
+│ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │
+│ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+                                                       ┌─────────────┐                                                       
+┌──────────────────────────────┬───────────────────────┤  Fri 02 May ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
+│ [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m39[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;196m40[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     │
+│ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;220m18[0m-[38;5;214m21[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;202m30[0m-[38;5;196m34[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;202m29[0m-[38;5;196m40[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;208m25[0m-[38;5;196m35[0m km/h[0m   │
+│ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │
+│ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+Location: Corporation of Chennai, Chennai district, Tamil Nadu, India [13.0801721,80.2838331]
+
+Follow [46m[30m@igor_chubin[0m for wttr.in updates
+Weather report: Pondicherry
+
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;196m38[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m←[0m [38;5;214m23[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+                                                       ┌─────────────┐                                                       
+┌──────────────────────────────┬───────────────────────┤  Wed 30 Apr ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
+│ [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;202m36[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;196m39[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;202m36[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+29[0m([38;5;202m36[0m) °C[0m     │
+│ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;226m14[0m-[38;5;220m17[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m←[0m [38;5;220m19[0m-[38;5;214m22[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;208m26[0m-[38;5;196m36[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;208m27[0m-[38;5;196m38[0m km/h[0m   │
+│ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │
+│ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+                                                       ┌─────────────┐                                                       
+┌──────────────────────────────┬───────────────────────┤  Thu 01 May ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
+│ [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m38[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;202m+35[0m([38;5;196m42[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     │
+│ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;220m19[0m-[38;5;214m22[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;214m23[0m-[38;5;208m27[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;196m34[0m-[38;5;196m48[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;202m28[0m-[38;5;196m40[0m km/h[0m   │
+│ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │
+│ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+                                                       ┌─────────────┐                                                       
+┌──────────────────────────────┬───────────────────────┤  Fri 02 May ├───────────────────────┬──────────────────────────────┐
+│            Morning           │             Noon      └──────┬──────┘     Evening           │             Night            │
+├──────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────┤
+│ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Sunny          │ [38;5;226m    \   /    [0m Clear          │ [38;5;226m    \   /    [0m Clear          │
+│ [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;196m39[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;202m+34[0m([38;5;196m42[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     │ [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     │
+│ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;226m15[0m-[38;5;220m18[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;208m25[0m-[38;5;202m29[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;196m38[0m-[38;5;196m53[0m km/h[0m   │ [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;214m21[0m-[38;5;202m30[0m km/h[0m   │
+│ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │ [38;5;226m     `-’     [0m 10 km[0m          │
+│ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │ [38;5;226m    /   \    [0m 0.0 mm | 0%[0m    │
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────────┴──────────────────────────────┘
+Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
+
+Follow [46m[30m@igor_chubin[0m for wttr.in updates
+rtt min/avg/max/mdev = 51.786/60.663/76.355/8.934 ms
  _________________________________________
-/ There is no hunting like the hunting of \
-| man, and those who have hunted armed    |
-| men long enough and liked it, never     |
-| care for anything else thereafter.      |
-|                                         |
-\ -- Ernest Hemingway                     /
+< If you can read this, you're too close. >
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
