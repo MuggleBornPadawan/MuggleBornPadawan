@@ -18,6 +18,11 @@ alias rm='trash-put'
 trash-list
 echo -e "\nuse trash-empty or trash-restore as you see fit"
 rm .bash_history
+pass ls
+# Fetch Chennai weather
+curl wttr.in/Chennai
+# Fetch Pondicherry weather
+curl wttr.in/Pondicherry
 ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
 fortune -a | cowsay
@@ -25,4 +30,5 @@ fortune -a | cowsay
 sleep 2
 cd
 # sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null
+tmux new -s alpha
 espeak -v en-gb -s 175 -p 50 "nohup started - penguin out"
