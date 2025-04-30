@@ -20,9 +20,9 @@ echo -e "\nuse trash-empty or trash-restore as you see fit"
 rm .bash_history
 pass ls
 # Fetch Chennai weather
-curl wttr.in/Chennai
+curl wttr.in/Chennai | head -n 7
 # Fetch Pondicherry weather
-curl wttr.in/Pondicherry
+curl wttr.in/Pondicherry | head -n 7
 ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
 fortune -a | cowsay
