@@ -1,35 +1,19 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu May  1 01:46:12 PM IST 2025 
+Date: Thu May  1 01:47:26 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [257 kB]
-Hit:6 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Fetched 361 kB in 1s (396 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  firefox-esr
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 69.8 MB of archives.
-After this operation, 453 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 128.10.0esr-1~deb12u1 [69.8 MB]
-Fetched 69.8 MB in 15s (4,591 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 90683 files and directories currently installed.)
-Preparing to unpack .../firefox-esr_128.10.0esr-1~deb12u1_amd64.deb ...
-Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
-Unpacking firefox-esr (128.10.0esr-1~deb12u1) over (128.9.0esr-1~deb12u1) ...
-Setting up firefox-esr (128.10.0esr-1~deb12u1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for desktop-file-utils (0.26-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -93,9 +77,10 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;220m17[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.733/65.266/152.689/28.735 ms
+rtt min/avg/max/mdev = 40.709/55.550/64.966/9.288 ms
  ________________________________________
-< Stay away from hurricanes for a while. >
+/ Tuesday After Lunch is the cosmic time \
+\ of the week.                           /
  ----------------------------------------
         \   ^__^
          \  (oo)\_______
