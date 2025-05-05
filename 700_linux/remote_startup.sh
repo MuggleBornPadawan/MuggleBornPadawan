@@ -30,5 +30,6 @@ fortune -a | cowsay
 sleep 2
 cd
 # sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null
+ollama run gemma3:1b-it-qat "speak gibberish"
 tmux new -s alpha
 espeak -v en-gb -s 175 -p 50 "nohup started - penguin out"
