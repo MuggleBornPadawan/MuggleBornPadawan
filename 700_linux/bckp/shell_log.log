@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon May  5 11:56:22 PM IST 2025 
+Date: Tue May  6 09:24:50 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Fetched 55.4 kB in 2s (29.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -65,29 +66,30 @@ Password Store
 └── OPEN_API_KEY
 Weather report: Chennai
 
-  [38;5;226m    \   /    [0m Clear
-  [38;5;226m     .-.     [0m [38;5;208m+31[0m([38;5;196m40[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;220m18[0m km/h[0m      
-  [38;5;226m     `-’     [0m 6 km[0m           
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;208m+31[0m([38;5;202m36[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m    \   /    [0m Clear
-  [38;5;226m     .-.     [0m [38;5;214m+29[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;214m20[0m km/h[0m      
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m38[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 55.130/94.128/174.212/42.087 ms
- _______________________________________
-< Your domestic life may be harmonious. >
- ---------------------------------------
+rtt min/avg/max/mdev = 40.998/79.785/164.131/43.915 ms
+ ___________________________
+/ Too much is just enough.  \
+|                           |
+\ -- Mark Twain, on whiskey /
+ ---------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-Zorp glibblet zizzle! Bloop-boop-whirr! Shimmity-doo! 
+Flibbertigibbet! Woof woof woof! Zizzle zing blurp! 
 
-Want to play a game?
 
