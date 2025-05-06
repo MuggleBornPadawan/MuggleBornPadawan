@@ -13,6 +13,34 @@
 ** prompt tools
 - [[https://promptql.hasura.io/]]
 - [[https://modelcontextprotocol.io/introduction]]
+** temperature, top-P and top-K
+NOTE: With more freedom (higher temperature, top-K, top-P, and output tokens), the LLM 
+might generate text that is less relevant.
+*** sampling controls
+|-----------------------+----------------------+-------------------+-----------------+--------+------------------|
+| configuration setting | indicator            | 0                 | 1               | > 1    | comment          |
+|-----------------------+----------------------+-------------------+-----------------+--------+------------------|
+| temperature           | degree of randomness | deterministic     |                 | random | softmax function |
+| top k                 | distribution         | restive & factual | greedy decoding |        |                  |
+| top p                 | nucleus sampling     | greedy decoding   | all tokens      |        | diversity        |
+|-----------------------+----------------------+-------------------+-----------------+--------+------------------|
+*** unique cases
+|-----------------------+--------------------------------------|
+| configuration setting | implication                          |
+|-----------------------+--------------------------------------|
+| t 0                   | top k and top p are irrelevant       |
+| top k 1               | temoerature and top p are irrelevant |
+| top p 0               | temperature adn top k are irrelevant |
+|-----------------------+--------------------------------------|
+*** best preset controls
+|--------------------------------------------------+-----------------------+---------------|
+| configuration setting                            | implication           | note          |
+|--------------------------------------------------+-----------------------+---------------|
+| temperature of .2, top-P of .95, and top-K of 30 | coherant results      | exploratory   |
+| temperature of .9, top-P of .99, and top-K of 40 | creative results      | bazinga       |
+| temperature of .1, top-P of .9, and top-K of 20  | less creative         | deterministic |
+| temperature of 0                                 | single correct answer | math problems |
+|--------------------------------------------------+-----------------------+---------------|
 ** simple prompts to get started
 - please explain XXXX. Help me learn the basics about it by sharing know-how of building foundational knowledge in a step by step manner. noob. debian. bookworm. bash. command line only.
 - create a ghibli styled meme which has never been created for this quote "xxx". the given quote should not appear in the image.
