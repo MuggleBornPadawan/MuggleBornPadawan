@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue May  6 12:22:09 PM IST 2025 
+Date: Tue May  6 12:42:50 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -73,25 +73,14 @@ Weather report: Chennai
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m38[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
+  [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;196m40[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;220m18[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.937/45.582/64.146/9.196 ms
+rtt min/avg/max/mdev = 39.896/49.317/68.187/10.212 ms
  _________________________________________
-/ For the fashion of Minas Tirith was     \
-| such that it was built on seven levels, |
-| each delved into a hill, and about each |
-| was set a wall, and in each wall was a  |
-| gate.                                   |
-|                                         |
-| -- J.R.R. Tolkien, "The Return of the   |
-| King"                                   |
-|                                         |
-| [Quoted in "VMS Internals and Data      |
-| Structures", V4.4, when                 |
-|                                         |
-\ referring to system overview.]          /
+/ You don't become a failure until you're \
+\ satisfied with being one.               /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -99,3 +88,5 @@ rtt min/avg/max/mdev = 38.937/45.582/64.146/9.196 ms
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
+Zizzleflump flump giggle boing. Woobubble swoosh zoom blur. Grungleflop thump sparkle. Snizzlewhizz whirl dance.
+
