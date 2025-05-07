@@ -35,7 +35,9 @@ do
 
     # Speak gibberish 
     echo "generating gibberish about $stripped_string"
-    ollama run gemma3:1b "speak two to three line gibberish content about $stripped_string in the context of art; skip commentary; skip asking questions; skip notes" | espeak -v ta
+    ollama run gemma3:1b "write two to three lines about $stripped_string in the context of fine art; skip commentary; skip asking questions; skip notes" > tmp.txt
+    cat tmp.txt
+    espeak -v en-gb -s 150 -p 50 -f tmp.txt
 
     # Calculate a random sleep duration between 10 and 20 seconds
     sleep_time=$(($RANDOM % 60 + 30))
