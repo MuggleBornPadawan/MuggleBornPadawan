@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed May  7 12:32:35 AM IST 2025 
+Date: Wed May  7 11:53:53 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Fetched 103 kB in 1s (122 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -66,34 +65,29 @@ Password Store
 └── OPEN_API_KEY
 Weather report: Chennai
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Thunderstorm, mist, light rain with thunderstorm
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+31[0m([38;5;196m39[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;208m24[0m km/h[0m      
-  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 5 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+                Haze
+  [38;5;251m _ - _ - _ - [0m [38;5;202m+34[0m([38;5;196m43[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;220m19[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+29[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;214m22[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 37.411/56.383/143.231/28.595 ms
- ________________________________________
-/ A banker is a fellow who lends you his \
-| umbrella when the sun is shining and   |
-| wants it back the minute it begins to  |
-| rain.                                  |
-|                                        |
-\ -- Mark Twain                          /
- ----------------------------------------
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;202m36[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;220m19[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 39.511/76.638/160.672/35.489 ms
+ _______________________________________
+/ Many changes of mind and mood; do not \
+\ hesitate too long.                    /
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-Flumph wobble. Zoom zizzle. Goobleberry thump. Shimmer swirl.
+Gleep gronk flibbit zop. Bloop squibble hum. Fizzle floop whizzle. Snarf blurp woosh.
 
-Squonk tickle. Moonbeam slide. Bitzy button bounce.
 
