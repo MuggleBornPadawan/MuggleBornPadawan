@@ -5,7 +5,7 @@ echo "run this file for any remote debian server setup, startup and chk backups"
 echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
 sudo apt-get update
 sudo apt-get dist-upgrade
-sudo apt-get install pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme clojure emacs magit sbcl clisp r-base firefox-esr fortune cowsay neofetch trash-cli
+sudo apt-get install jq pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme clojure emacs magit sbcl clisp r-base firefox-esr fortune cowsay neofetch trash-cli
 sudo apt-get autoremove 
 cp MuggleBornPadawan/.gitignore $HOME
 cp MuggleBornPadawan/.dockerignore $HOME
@@ -31,6 +31,7 @@ sleep 2
 cd
 # sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null
 # ollama run gemma3:1b-it-qat "speak gibberish"
-ollama run gemma3:1b "speak gibberish; skip commentary; skip asking questions; skip notes"
+ollama run gemma3:1b "write gibberish; skip commentary; skip asking questions; skip notes"
+ollama stop gemma3:1b
 tmux new -s alpha
 espeak -v en-gb -s 175 -p 50 "nohup started - penguin out"
