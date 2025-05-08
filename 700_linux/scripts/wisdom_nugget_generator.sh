@@ -12,8 +12,11 @@
 # --- Configuration & Globals ---
 # API Key will be fetched from pass
 # Names of individuals to process
-# Note: You can easily change these names by editing this array.
-names=("Raja Ravi Varma" "Leonardo da Vinci" "M.F. Husain" "Marie Curie" "Rabindranath Tagore" "Srinivasa Ramanujan" "Vera Molnár" "Manfred Mohr" "Harold Cohen" "Sol LeWitt" "John Whitney Sr." "Lillian Schwartz" "Casey Reas" "Ben Fry" "Golan Levin" "Zachary Lieberman" "Ryoji Ikeda" "Mario Klingemann" "Cory Arcangel" "Michael Hansmeyer" "Manolo Gamboa Naon (Manoloide)" "Harshit Agrawal" "Karthik Dondeti" "Pixelkar (Nitant Hirlekar)" "KALA (Ujjwal Agarwal)" "Sahej Rahal" "Kedar Undale" "Ritesh Lala" "Hanif Kureshi" "Frieder Nake" "Georg Nees" "A. Michael Noll" "Theo Watson" "Jared Tarbell" "Matt DesLauriers" "Anna Ridler" "Refik Anadol" "Helena Sarin" "Sofia Crespo" "Feileacan McCormick" "Mark Napier" "Jodi (Joan Heemskerk and Dirk Paesmans)" "Daniel Shiffman" "Hanne Darboven" "Alexandra Cárdenas" "Shelly Knotts" "Trevor Paglen" "Sougwen Chung" "Brian Eno" "Piero della Francesca" "Leonardo da Vinci" "Albrecht Dürer" "M.C. Escher" "Piet Mondrian" "Kazimir Malevich" "Donald Judd" "Victor Vasarely" "Bridget Riley" "Raja Ravi Varma" "Abanindranath Tagore" "Nandalal Bose" "Jamini Roy" "Amrita Sher-Gil" "Rabindranath Tagore" "Ramkinkar Baij" "M.F. Husain (Maqbool Fida Husain)" "F.N. Souza (Francis Newton Souza)" "S.H. Raza (Syed Haider Raza)" "Tyeb Mehta" "V.S. Gaitonde (Vasudeo S. Gaitonde)" "Ram Kumar" "Akbar Padamsee" "Satish Gujral" "Anjolie Ela Menon" "Arpita Singh" "Jogen Chowdhury" "Ganesh Pyne" "Subodh Gupta" "Bharti Kher" "Atul Dodiya" "Anish Kapoor" "Nalini Malani" "Ravinder Reddy" "Richard Stallman" "Eric S. Raymond" "Linus Torvalds" "Steve Wozniak" "Kevin Mitnick" "Tsutomu Shimomura" "Robert Tappan Morris" "HD Moore" "Charlie Miller" "Chris Valasek" "Dan Kaminsky" "Joanna Rutkowska" "Greg Hoglund" "Ken Thompson" "Dennis Ritchie" "Tim Berners-Lee" "Katie Moussouris" "Robert M. Lee" "Anand Prakash" "Maddie Stone" "Rich Hickey")
+# Note: You can easily change these names by editing this array
+# Run from root; log available at root only 
+cd
+
+names=("Raja Ravi Varma" "Leonardo da Vinci" "M.F. Husain" "Marie Curie" "Rabindranath Tagore" "Srinivasa Ramanujan" "Vera Molnár" "Manfred Mohr" "Harold Cohen" "Sol LeWitt" "John Whitney Sr." "Lillian Schwartz" "Casey Reas" "Ben Fry" "Golan Levin" "Zachary Lieberman" "Ryoji Ikeda" "Mario Klingemann" "Cory Arcangel" "Michael Hansmeyer" "Manolo Gamboa Naon (Manoloide)" "Harshit Agrawal" "Karthik Dondeti" "Pixelkar (Nitant Hirlekar)" "KALA (Ujjwal Agarwal)" "Sahej Rahal" "Kedar Undale" "Ritesh Lala" "Hanif Kureshi" "Frieder Nake" "Georg Nees" "A. Michael Noll" "Theo Watson" "Jared Tarbell" "Matt DesLauriers" "Anna Ridler" "Refik Anadol" "Helena Sarin" "Sofia Crespo" "Feileacan McCormick" "Mark Napier" "Jodi (Joan Heemskerk and Dirk Paesmans)" "Daniel Shiffman" "Hanne Darboven" "Alexandra Cárdenas" "Shelly Knotts" "Trevor Paglen" "Sougwen Chung" "Brian Eno" "Piero della Francesca" "Leonardo da Vinci" "Albrecht Dürer" "M.C. Escher" "Piet Mondrian" "Kazimir Malevich" "Donald Judd" "Victor Vasarely" "Bridget Riley" "Raja Ravi Varma" "Abanindranath Tagore" "Nandalal Bose" "Jamini Roy" "Amrita Sher-Gil" "Rabindranath Tagore" "Ramkinkar Baij" "M.F. Husain (Maqbool Fida Husain)" "F.N. Souza (Francis Newton Souza)" "S.H. Raza (Syed Haider Raza)" "Tyeb Mehta" "V.S. Gaitonde (Vasudeo S. Gaitonde)" "Ram Kumar" "Akbar Padamsee" "Satish Gujral" "Anjolie Ela Menon" "Arpita Singh" "Jogen Chowdhury" "Ganesh Pyne" "Subodh Gupta" "Bharti Kher" "Atul Dodiya" "Anish Kapoor" "Nalini Malani" "Ravinder Reddy" "Richard Stallman" "Eric S. Raymond" "Linus Torvalds" "Steve Wozniak" "Kevin Mitnick" "Tsutomu Shimomura" "Robert Tappan Morris" "HD Moore" "Charlie Miller" "Chris Valasek" "Dan Kaminsky" "Joanna Rutkowska" "Greg Hoglund" "Ken Thompson" "Dennis Ritchie" "Tim Berners-Lee" "Katie Moussouris" "Robert M. Lee" "Anand Prakash" "Maddie Stone" "Rich Hickey" "Alan Turing" "John von Neumann" "Claude Elwood Shannon" "Alonzo Church" "Marvin Lee Minsky" "John McCarthy" "Carl Edward Sagan" "Gerald Jay Sussman" "Bertrand Arthur William Russell" "Harold Abelson" "Guy Lewis Steele Jr" "Ada Lovelace" "Charles Babbage")
 
 # Gemini API Configuration
 # User specified model: gemini-2.0-flash
@@ -91,7 +94,7 @@ get_api_key # The apiKey variable is now set
 
 # --- 4. Processing Each Name ---
 # Iterate through each name in the names array.
-echo "Info: Starting to process names..."
+echo "Info: Starting to process names... log available at root only"
 for person_name in "${names[@]}"; do
     echo "--------------------------------------------------"
     echo "Info: Processing: ${person_name}"
@@ -149,7 +152,7 @@ for person_name in "${names[@]}"; do
 
     # 4d. Introduce Delay
     # Pause for a random duration between 0 and 55 seconds.
-    delay_seconds=$((RANDOM % 10))
+    delay_seconds=$((RANDOM % 15))
     echo "Info: Delaying for ${delay_seconds} seconds..."
     sleep "${delay_seconds}"
 
