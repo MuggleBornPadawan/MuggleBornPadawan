@@ -1,13 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu May  8 10:40:49 PM IST 2025 
+Date: Fri May  9 10:35:07 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:3 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [258 kB]
+Hit:6 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Fetched 361 kB in 2s (213 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -69,31 +71,35 @@ Password Store
 └── OPEN_API_KEY
 Weather report: Chennai
 
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m44[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;202m29[0m km/h[0m      
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+28[0m([38;5;208m31[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;190m12[0m km/h[0m      
   [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.1 mm[0m         
+                0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m    \   /    [0m Clear
-  [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;208m27[0m km/h[0m      
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;202m35[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;118m4[0m km/h[0m       
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 54.146/72.679/127.887/19.478 ms
- _____________________________________
-/ Nothing so needs reforming as other \
-| people's habits.                    |
-|                                     |
-| -- Mark Twain, "Pudd'nhead Wilson's |
-\ Calendar"                           /
- -------------------------------------
+rtt min/avg/max/mdev = 55.885/72.849/142.015/22.726 ms
+ ___________________________________
+< Beware of low-flying butterflies. >
+ -----------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-z’glop flump blorp shimmer sparkle wizzle croak dust bloom.
+Gloomflumpizzle zippity-doo. 
+
+Shimmersprinkle grobnar, wigglesqueak.
+
+Flibbertigibbet bounce, quack-a-doodle.
+
+Moonwhisper sparkle, blorp-floof.
+
+
 
