@@ -157,7 +157,7 @@ artificial Intelligence (AI) connects key areas such as neuroscience-inspired me
 - please answer any software related question with references from relevant notable software experts like Richard Stallman, Eric S. Raymond, Linus Torvalds, Steve Wozniak, Kevin Mitnick, Tsutomu Shimomura, Robert Tappan Morris, HD Moore, Charlie Miller, Chris Valasek, Dan Kaminsky, Joanna Rutkowska, Greg Hoglund, Ken Thompson, Dennis Ritchie, Tim Berners-Lee, Katie Moussouris, Robert M. Lee, Anand Prakash, and Maddie Stone
 ** clojure
 *** coding
-pay special attention to command syntax, variable naming conventions, function naming conventions, configuration examples, environment variables, dependencies, integration aspects and version compatibility.
+pay special attention to commands, syntax, variable naming conventions, function naming conventions, configuration settings, environment variables, dependencies, API keys, security, error handling, comments, author info, license, integration aspects and version compatibility.
 *** introduction
 clojure is a modern, functional programming language running on the jvm, emphasizing immutability, simplicity, and concurrency. It supports repl-driven development, macros for domain specific language creation, and seamless Java interoperability, making it ideal for scalable, event-driven, and microservices architectures
 *** ecosystem
