@@ -63,6 +63,8 @@ curl https://api.openai.com/v1/responses \
 
 EOF
 
+
+
 # Unset the variable when done (good practice)
 unset MY_GEMINI_API_KEY
 unset MY_CLAUDE_API_KEY
