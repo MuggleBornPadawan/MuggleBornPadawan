@@ -27,7 +27,7 @@ ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
 fortune -a | cowsay
 ./MuggleBornPadawan/700_linux/bckp/bckp.sh
-./MuggleBornPadawan/700_linux/scripts/gpg_protector.sh encrypt daily_nuggets 13
+./MuggleBornPadawan/700_linux/scripts/gpg_protector.sh encrypt daily_nuggets.txt 13
 mv daily_nuggets.txt.enc MuggleBornPadawan/700_linux/scripts/
 sleep 2
 cd
