@@ -1,14 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri May  9 10:41:49 PM IST 2025 
+Date: Sat May 10 03:42:38 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Fetched 48.0 kB in 2s (25.5 kB/s)
+Fetched 103 kB in 2s (51.5 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -67,37 +67,63 @@ Password Store
 ├── [01;34mgit[0m
 │   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
-└── OPEN_API_KEY
+├── OPEN_API_KEY
+└── protector_key
 Weather report: Chennai
 
-  [38;5;226m    \   /    [0m Clear
-  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m42[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m←[0m [38;5;214m21[0m km/h[0m      
-  [38;5;226m     `-’     [0m 6 km[0m           
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
+                Haze
+  [38;5;251m _ - _ - _ - [0m [38;5;202m+35[0m([38;5;196m46[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;208m26[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m    \   /    [0m Clear
-  [38;5;226m     .-.     [0m [38;5;214m+29[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;220m17[0m km/h[0m      
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m39[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;202m29[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 54.390/65.768/157.020/27.864 ms
- ________________________________________
-/ Q: How many lawyers does it take to    \
-| change a light bulb? A: You won't find |
-| a lawyer who can change a light bulb.  |
-| Now, if                                |
-|                                        |
-| you're looking for a lawyer to screw a |
-\ light bulb...                          /
- ----------------------------------------
+rtt min/avg/max/mdev = 43.281/66.172/117.880/18.995 ms
+ _________________________________________
+/ Courage is resistance to fear, mastery  \
+| of fear--not absence of fear. Except a  |
+| creature be part coward it is not a     |
+| compliment to say it is brave; it is    |
+| merely a loose misapplication of the    |
+| word. Consider the flea!--incomparably  |
+| the bravest of all the creatures of     |
+| God, if ignorance of fear were courage. |
+| Whether you are asleep or awake he will |
+| attack you, caring nothing for the fact |
+| that in bulk and strength you are to    |
+| him as are the massed armies of the     |
+| earth to a sucking child; he lives both |
+| day and night and all days and nights   |
+| in the very lap of peril and the        |
+| immediate presence of death, and yet is |
+| no more afraid than is the man who      |
+| walks the streets of a city that was    |
+| threatened by an earthquake ten         |
+| centuries before. When we speak of      |
+| Clive, Nelson, and Putnam as men who    |
+| "didn't know what fear was," we ought   |
+| always to add the flea--and put him at  |
+| the head of the procession.             |
+|                                         |
+| -- Mark Twain, "Pudd'nhead Wilson's     |
+\ Calendar"                               /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 ✅ Backup created successfully; move to cloud manually please
-Zorpflumpflingsquibblewhizzlefluxy
+zorpflubberfloofwhizzlegleblink
+grumbleblumpspop fizzlefloat
+quadzizzlewhizzwarp fizzle
+doodlequibblesquibble wiggle
+glibblepopsprout sparkle
+bounceboopblip giggleflux
 
 
