@@ -19,22 +19,27 @@ trash-list
 echo -e "\nuse trash-empty or trash-restore as you see fit"
 rm .bash_history
 pass ls
-# Fetch Chennai weather
+
+# backups 
+./MuggleBornPadawan/700_linux/bckp/bckp.sh
+./MuggleBornPadawan/700_linux/scripts/gpg_protector.sh encrypt daily_nuggets.txt 13
+mv daily_nuggets.txt.enc MuggleBornPadawan/700_linux/bckp/
+
+# fetch chennai weather
 curl wttr.in/Chennai | head -n 7
 # Fetch Pondicherry weather
 curl wttr.in/Pondicherry | head -n 7
 ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
 fortune -a | cowsay
-./MuggleBornPadawan/700_linux/bckp/bckp.sh
-./MuggleBornPadawan/700_linux/scripts/gpg_protector.sh encrypt daily_nuggets.txt 13
-mv daily_nuggets.txt.enc MuggleBornPadawan/700_linux/scripts/
-sleep 2
-cd
 
-# sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null
+# sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null # deprecated 
 # ollama run gemma3:1b-it-qat "speak gibberish"
-ollama run gemma3:1b "write gibberish; skip commentary; skip asking questions; skip notes"
+ollama run gemma3:1b "write 7 gibberish words; skip commentary; skip asking questions; skip notes"
 ollama stop gemma3:1b
 tmux new -s alpha
-espeak -v en-gb -s 175 -p 50 "nohup started - penguin out"
+
+# final words 
+sleep 2
+cd
+espeak -v en-gb -s 175 -p 50 "penguin out"
