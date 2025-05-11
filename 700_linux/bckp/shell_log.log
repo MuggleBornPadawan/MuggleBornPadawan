@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat May 10 04:41:11 PM IST 2025 
+Date: Sun May 11 10:36:54 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Fetched 103 kB in 1s (124 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -21,7 +22,6 @@ jq is already the newest version (1.6-2.1).
 cron is already the newest version (3.0pl1-162).
 postfix is already the newest version (3.7.11-0+deb12u1).
 mailutils is already the newest version (1:3.15-4).
-mailutils set to manually installed.
 pass is already the newest version (1.7.4-6).
 gnupg is already the newest version (2.2.40-1.1).
 nmap is already the newest version (7.93+dfsg1-1).
@@ -75,22 +75,21 @@ Password Store
 Weather report: Chennai
 
                 Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;202m+35[0m([38;5;196m46[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;208m26[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m42[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;214m21[0m km/h[0m      
   [38;5;251m _ - _ - _ - [0m 5 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m39[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;202m29[0m km/h[0m      
+  [38;5;226m    \   /    [0m Clear
+  [38;5;226m     .-.     [0m [38;5;208m+31[0m([38;5;196m37[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;208m24[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 41.889/73.016/187.816/38.281 ms
- ________________________________________
-/ Caution: breathing may be hazardous to \
-\ your health.                           /
- ----------------------------------------
+rtt min/avg/max/mdev = 38.299/49.117/106.546/18.489 ms
+ __________________________
+< Bridge ahead. Pay troll. >
+ --------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
@@ -100,6 +99,10 @@ rtt min/avg/max/mdev = 41.889/73.016/187.816/38.281 ms
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-zorpflibblegloopwhizzlefluxy
+Zorpflumpflibberblitzwhizzlepuff
+Gleepglorpstonefloofstump
+Squigglebugglemoonbeamsparkle
+Wizzlewhizzlesnuggletrip
+Blibblebloprainbowwhizzle
 
 
