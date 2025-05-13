@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue May 13 10:01:13 AM IST 2025 
+Date: Tue May 13 10:03:47 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Fetched 103 kB in 2s (65.4 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -76,6 +75,13 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
+Weather report: Chennai
+
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+29[0m([38;5;208m32[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;226m14[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
@@ -83,11 +89,24 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;154m9[0m km/h[0m       
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.100/43.826/62.898/8.492 ms
- ______________________________________
-/ Artistic ventures highlighted. Rob a \
-\ museum.                              /
- --------------------------------------
+rtt min/avg/max/mdev = 39.835/50.245/74.099/11.977 ms
+ _________________________________________
+/ Q: How many journalists does it take to \
+| screw in a light bulb? A: Three. One to |
+| report it as an inspired government     |
+| program to bring                        |
+|                                         |
+| light to the people, one to report it   |
+| as a diabolical government plot         |
+|                                         |
+| to deprive the poor of darkness, and    |
+| one to win a Pulitzer prize for         |
+|                                         |
+| reporting that Electric Company hired a |
+| light bulb-assassin to break            |
+|                                         |
+\ the bulb in the first place.            /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
@@ -95,9 +114,9 @@ rtt min/avg/max/mdev = 38.100/43.826/62.898/8.492 ms
                 ||     ||
 1.  Zylth
 2.  Floof
-3.  Quirk
-4.  Glimmer
-5.  Fuzz
-6.  Rhizome
-7.  Blivox
+3.  Quirkle
+4.  Grimble
+5.  Flumph
+6.  Glimmer
+7.  Sizzle
 
