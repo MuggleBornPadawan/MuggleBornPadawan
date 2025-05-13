@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue May 13 10:03:47 AM IST 2025 
+Date: Tue May 13 10:59:52 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -17,6 +17,8 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+make is already the newest version (4.3-4.1).
+make set to manually installed.
 jq is already the newest version (1.6-2.1).
 cron is already the newest version (3.0pl1-162).
 postfix is already the newest version (3.7.11-0+deb12u1).
@@ -54,69 +56,16 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Reading package lists...
-Building dependency tree...
-Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
-run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
-use trash-empty or trash-restore as you see fit
-Password Store
-├── CLAUDE_API_KEY
-├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
-│       └── MuggleBornPadawan
-├── OPEN_API_KEY
-└── protector_key
-✅ Backup created successfully; move to cloud manually please
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: Chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+29[0m([38;5;208m32[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;226m14[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;202m+35[0m([38;5;196m40[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;154m9[0m km/h[0m       
-  [38;5;226m     `-’     [0m 10 km[0m          
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.835/50.245/74.099/11.977 ms
- _________________________________________
-/ Q: How many journalists does it take to \
-| screw in a light bulb? A: Three. One to |
-| report it as an inspired government     |
-| program to bring                        |
-|                                         |
-| light to the people, one to report it   |
-| as a diabolical government plot         |
-|                                         |
-| to deprive the poor of darkness, and    |
-| one to win a Pulitzer prize for         |
-|                                         |
-| reporting that Electric Company hired a |
-| light bulb-assassin to break            |
-|                                         |
-\ the bulb in the first place.            /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-1.  Zylth
-2.  Floof
-3.  Quirkle
-4.  Grimble
-5.  Flumph
-6.  Glimmer
-7.  Sizzle
-
+The following NEW packages will be installed:
+  bats
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 47.6 kB of archives.
+After this operation, 162 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm/main amd64 bats all 1.8.2-1 [47.6 kB]
+Fetched 47.6 kB in 0s (155 kB/s)
+Selecting previously unselected package bats.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 90854 files and directories currently installed.)
+Preparing to unpack .../archives/bats_1.8.2-1_all.deb ...
+Unpacking bats (1.8.2-1) ...
+Setting up bats (1.8.2-1) ...
+Processing triggers for man-db (2.11.2-2) ...
