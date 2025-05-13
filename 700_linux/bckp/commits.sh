@@ -43,5 +43,9 @@ cd MuggleBornPadawan/
 git add .
 git commit -m "daily elisp"
 cd 
+cd MuggleBornPadawan/700_linux/bckp/
+git add daily_nuggets.txt.enc
+git commit -m "daily nuggets"
+cd 
 echo " - - - "
 neofetch
