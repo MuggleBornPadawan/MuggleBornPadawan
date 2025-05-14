@@ -35,7 +35,7 @@ fortune -a | cowsay
 
 # sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null # deprecated 
 # ollama run gemma3:1b-it-qat "speak gibberish"
-ollama run gemma3:1b "write 7 gibberish words; skip commentary; skip asking questions; skip notes"
+ollama run gemma3:1b "write 7 gibberish words in a single sentence; skip commentary; skip asking questions; skip notes"
 ollama stop gemma3:1b
 tmux new -s alpha
 
