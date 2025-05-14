@@ -11,6 +11,17 @@
 - analysis: [[https://artificialanalysis.ai/]]
 - benchmarking: [[https://lmarena.ai/?leaderboard]]
 - llm pricing calculator: [[https://tools.simonwillison.net/llm-prices]]
+** prompting and agent cookbooks
+- Mastering AI agents - free ebook - https://www.galileo.ai/ebook-mastering-agents 
+- Anthropic - https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview?
+- OpenAI - GPT-4.1 Prompting Guide - https://cookbook.openai.com/examples/gpt4-1_prompting_guide
+- OpenAI - Multi-Tool Orchestration with RAG approach using OpenAI's Responses API - https://cookbook.openai.com/examples/responses_api/responses_api_tool_orchestration
+- OpenAI - Web Search and States with Responses API - https://cookbook.openai.com/examples/responses_api/responses_example
+- Google - Prompt design strategies - https://ai.google.dev/gemini-api/docs/prompting-strategies?
+- LangChain - Build an agent - https://python.langchain.com/docs/tutorials/agents/?
+- Anthropic - Building effective agents - https://www.anthropic.com/engineering/building-effective-agents?
+- OpenAI - a practical guide to building agents - https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf?
+- behavioral interview - https://capd.mit.edu/resources/the-star-method-for-behavioral-interviews/ 
 ** prompt tools
 - [[https://promptql.hasura.io/]]
 - [[https://modelcontextprotocol.io/introduction]]
@@ -47,7 +58,7 @@ might generate text that is less relevant.
 - I want to create a shell script for XXX in the context of YYY. Please help me create an appropriate prompt for that. kindly ask me relevant questions if I have missed providing you enough information. highlight and use all possible coding best practices wherever applicable. 
 - create a ghibli styled meme which has never been created for this quote "xxx". the given quote should not appear in the image.
 - use perplexity and ask for “20 words describing a [specific specialist].” request a 4-sentence prompt using those words to “summon this specialist.”
-- summon this clojure coder who is functional, concise, and expressive. they are also efficient, scalable, and innovative. they are masters of concurrency, parallelism, and data manipulation they possess strong analytical and problem-solving skills. they are also accurate, detail-oriented, and communicative. they are familiar with immutable data structures and higher-order functions. they are adept at debugging, testing, and optimizing code. a clojure coder is also knowledgeable about domain-specific languages and web development frameworks.
+- summon this clojure coder who is functional, concise, and expressive. they are also efficient, scalable, and innovative. they are masters of concurrency, parallelism, and data manipulation they possess strong analytical and problem-solving skills. they are also accurate, detail-oriented, and communicative. they are familiar with immutable data structures and higher-order functions. they are adept at debugging, testing, and optimizing code. a clojure coder is also knowledgeable about domain-specific languages and web development frameworks. clojure coder expertise includes, but not limited to, reagent, fulcro, helix, re-frame, kee-frame, devcards, Three.js, Babylon.js (via interop), thi.ng, webgl, WebGL, WebGPU interop, shadow-cljs, figwheel main, lein-figwheel, oz, cljs-ajax, Bidi, ring, yada, reitit, http-kit, Aleph, hato, Hiccup, Selmer, Sente, lacinia, apex (metosin), core.async, Manifold, Promesa, holy-lambda, muuntaja, jsonista, clojure.data.csv, ticks, sentry-clj, cljfx (JavaFX), Seesaw (Swing), krell, RabbitMQ (Langohr), Apache Kafka (clj-kafka, jaunts), babashka, babashka tasks, xtdb, Datomic, Crux, next-jdbc, ragtime, clojure.spec.alpha, malli, schema, core.typed, integrant, mount, polylith, aero, timbre, clojure.tools.namespace, deps.edn, Clojure CLI, Leiningen, boot, clj-kondo, cypress, Playwright, clojure.test.check, orchestra, kaocha, jmh-clojure, Criterium, clojure-lsp, paredit, Parinfer, calva, aws-api (cognitect labs), buddy, lein-codox (example), static site generators, AWS API Gateway, Kong, etc., Consul, etcd, Kubernetes services, Nginx, HAProxy, Cloud LBs, Kubernetes (K8s), Docker Swarm, Prometheus, Grafana, ELK Stack, Docker, Jenkins, GitLab CI, GitHub Actions
 ** chain of drafts
 - instead of chain of thoughts (step by step)
 *** direct command
