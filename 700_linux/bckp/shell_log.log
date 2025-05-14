@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed May 14 03:30:44 PM IST 2025 
+Date: Wed May 14 04:07:43 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -77,34 +77,40 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-rtt min/avg/max/mdev = 40.286/48.407/67.565/9.355 ms
+Weather report: Chennai
+
+                Haze
+  [38;5;251m _ - _ - _ - [0m [38;5;202m+35[0m([38;5;196m44[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m←[0m [38;5;214m21[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
+Weather report: Pondicherry
+
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;196m40[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;208m25[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 42.354/59.587/66.310/9.191 ms
  _______________________________________
-/ Training is everything. The peach was \
-| once a bitter almond; cauliflower is  |
-| nothing but cabbage with a college    |
-| education.                            |
-|                                       |
-| -- Mark Twain, "Pudd'nhead Wilson's   |
-\ Calendar"                             /
+/ You should emulate your heros, but    \
+| don't carry it too far. Especially if |
+\ they are dead.                        /
  ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Okay, here are 7 gibberish words:
+Okay.
 
-1.  Flibbert
+*   Flibbert
+*   Zorp
+*   Quirkle
+*   Glimmer
+*   Squibble
+*   Bloom
+*   Wizzle
 
-2.  Zizzle
 
-3.  Gloomsprout
-
-4.  Quirkle
-
-5.  Rhymewind
-
-6.  Skitterton
-
-7.  Bloomlet
 
