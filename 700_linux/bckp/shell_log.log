@@ -1,13 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed May 14 04:07:43 PM IST 2025 
+Date: Thu May 15 01:35:28 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [258 kB]
+Ign:5 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Fetched 362 kB in 2s (218 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -80,37 +82,28 @@ Operation completed.
 Weather report: Chennai
 
                 Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;202m+35[0m([38;5;196m44[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m←[0m [38;5;214m21[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m [38;5;202m+36[0m([38;5;196m46[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m←[0m [38;5;220m19[0m km/h[0m      
   [38;5;251m _ - _ - _ - [0m 5 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;196m40[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;208m25[0m km/h[0m      
+  [38;5;226m     .-.     [0m [38;5;202m+34[0m([38;5;196m41[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m←[0m [38;5;214m23[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 42.354/59.587/66.310/9.191 ms
- _______________________________________
-/ You should emulate your heros, but    \
-| don't carry it too far. Especially if |
-\ they are dead.                        /
- ---------------------------------------
+rtt min/avg/max/mdev = 41.283/74.164/157.984/40.978 ms
+ ______________________________________
+/ O, what a tangled web we weave, When \
+| first we practice to deceive.        |
+|                                      |
+\ -- Sir Walter Scott, "Marmion"       /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Okay.
-
-*   Flibbert
-*   Zorp
-*   Quirkle
-*   Glimmer
-*   Squibble
-*   Bloom
-*   Wizzle
-
-
+Flibbertigibbet wiggles a grumpy moonbeam.
 
