@@ -7,6 +7,7 @@ sudo apt-get update
 sudo apt-get dist-upgrade
 sudo apt-get install make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme clojure emacs magit sbcl clisp r-base firefox-esr fortune cowsay neofetch trash-cli
 sudo apt-get autoremove 
+sudo apt-get clean
 cp MuggleBornPadawan/.gitignore $HOME
 cp MuggleBornPadawan/.dockerignore $HOME
 cp MuggleBornPadawan/Dockerfile $HOME
