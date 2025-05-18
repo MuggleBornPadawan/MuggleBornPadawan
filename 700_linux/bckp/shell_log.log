@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon May 19 12:06:51 AM IST 2025 
+Date: Mon May 19 12:09:43 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Fetched 103 kB in 2s (66.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -53,7 +52,6 @@ sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).
-build-essential set to manually installed.
 firefox-esr is already the newest version (128.10.1esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
@@ -94,15 +92,18 @@ Weather report: Pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;190m12[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.5 mm[0m         
-rtt min/avg/max/mdev = 39.456/51.855/69.239/12.065 ms
- _____________________________________
-/ You display the wonderful traits of \
-\ charm and courtesy.                 /
- -------------------------------------
+rtt min/avg/max/mdev = 39.832/58.230/101.128/20.419 ms
+ _______________________________________
+/ Don't go around saying the world owes \
+| you a living. The world owes you      |
+| nothing. It was here first.           |
+|                                       |
+\ -- Mark Twain                         /
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flumpkinsparklebloomsquidbootsquashsprout.
+Flibbertigibbet sparked with moonbeams, bouncing on sleepy heather.
 
