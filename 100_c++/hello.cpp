@@ -12,5 +12,5 @@ int main() {
 }
 
 // Author: MuggleBornPadawan
-// License: GNU GPL (e.g., MIT, GPL, or "Personal Use") - Good practice for bigger projects!
+// License: GNU GPL v2 (e.g., MIT, GPL, or "Personal Use") - Good practice for bigger projects!
 // Version: 1.0
