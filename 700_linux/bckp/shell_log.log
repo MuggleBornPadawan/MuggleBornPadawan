@@ -1,40 +1,20 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun May 18 07:22:54 PM IST 2025 
+Date: Mon May 19 12:06:51 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [259 kB]
-Hit:6 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Get:8 https://deb.debian.org/debian-security bookworm-security/main Translation-en [155 kB]
-Fetched 461 kB in 1s (531 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Fetched 103 kB in 2s (66.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  firefox-esr net-tools
-2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 70.0 MB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 128.10.1esr-1~deb12u1 [69.8 MB]
-Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 net-tools amd64 2.10-0.1+deb12u1 [243 kB]
-Fetched 70.0 MB in 15s (4,625 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 90881 files and directories currently installed.)
-Preparing to unpack .../firefox-esr_128.10.1esr-1~deb12u1_amd64.deb ...
-Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
-Unpacking firefox-esr (128.10.1esr-1~deb12u1) over (128.10.0esr-1~deb12u1) ...
-Preparing to unpack .../net-tools_2.10-0.1+deb12u1_amd64.deb ...
-Unpacking net-tools (2.10-0.1+deb12u1) over (2.10-0.1) ...
-Setting up net-tools (2.10-0.1+deb12u1) ...
-Setting up firefox-esr (128.10.1esr-1~deb12u1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for desktop-file-utils (0.26-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -72,6 +52,8 @@ elpa-magit is already the newest version (3.3.0-2).
 sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
+build-essential is already the newest version (12.9).
+build-essential set to manually installed.
 firefox-esr is already the newest version (128.10.1esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
@@ -100,27 +82,27 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m←[0m [38;5;226m13[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.0 mm[0m         
+  [38;5;226m _`/""[38;5;250m.-.    [0m Mist, light rain with thunderstorm
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+29[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;154m7[0m km/h[0m       
+  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 5 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy light drizzle
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+31[0m([38;5;196m37[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;154m8[0m km/h[0m       
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 5 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
-rtt min/avg/max/mdev = 40.490/55.482/109.531/20.650 ms
+  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+27[0m([38;5;208m31[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;190m12[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.5 mm[0m         
+rtt min/avg/max/mdev = 39.456/51.855/69.239/12.065 ms
  _____________________________________
-/ Your goose is cooked. (Your current \
-\ chick is burned up too!)            /
+/ You display the wonderful traits of \
+\ charm and courtesy.                 /
  -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flumphberry wizzlegle and shimmerstone drip.
+Flumpkinsparklebloomsquidbootsquashsprout.
 
