@@ -1,0 +1,14 @@
+* getting started
+** version check
+- g++ --version (from terminal) 
+- sudo apt install build-essential (if not installed) 
+** shell from emacs
+- M-x shell
+- M-x term
+- M-x eshell
+** compilation
+- g++ hello.cpp -o hello
+- flags example: -Wall -Wextra -pedantic to enable more warnings, or -O2 for optimization
+** build
+- make
+- CMake
