@@ -60,6 +60,10 @@ delay_timer() {
 echo " - - - "
 echo "test programming blocks"
 cd
+cd MuggleBornPadawan/100_cpp
+./hello
+cd
+delay_timer "$1"
 cd MuggleBornPadawan/200_java
 java -jar HelloWorld.jar
 cd
@@ -78,7 +82,7 @@ git add .
 git commit -m "daily python"
 cd
 delay_timer "$1"
-cd MuggleBornPadawan/100_clisp
+cd MuggleBornPadawan/140_clisp
 clisp hello-world.lisp
 cd
 delay_timer "$1"
