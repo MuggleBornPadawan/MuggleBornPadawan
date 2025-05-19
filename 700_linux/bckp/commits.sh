@@ -16,7 +16,7 @@ delay_timer() {
   if [ "$func_arg" = "r" ]; then
     # If it is "r", calculate a random number of seconds between 60 and 90
     local random_duration # Use 'local' for variables inside functions
-    random_duration=$(shuf -i 60-90 -n 1)
+    random_duration=$(shuf -i 60-120 -n 1)
 
     # Print a message indicating the duration before sleeping
     echo "Argument 'r' received by delay_timer. Sleeping for ${random_duration} seconds..."
@@ -68,43 +68,43 @@ cd MuggleBornPadawan/
 git add .
 git commit -m "daily java"
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/300_python
 python3 hello_world.py
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/
 git add .
 git commit -m "daily python"
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/100_clisp
 clisp hello-world.lisp
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/
 git add .
 git commit -m "daily clisp"
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/400_r
 Rscript hello_world.R
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/
 git add .
 git commit -m "daily r"
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/110_clojure
 clojure hello_world.clj
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/
 git add .
 git commit -m "daily clj"
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/120_elisp
 emacs -Q --script hello_world.el
 cd
@@ -112,11 +112,10 @@ cd MuggleBornPadawan/
 git add .
 git commit -m "daily elisp"
 cd
-delay_timer()
+delay_timer "$1"
 cd MuggleBornPadawan/700_linux/bckp/
 git add daily_nuggets.txt.enc
 git commit -m "daily nuggets"
 cd
-delay_timer()
 echo " - - - "
 neofetch
