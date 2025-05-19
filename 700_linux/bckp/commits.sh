@@ -63,7 +63,7 @@ cd
 cd MuggleBornPadawan/200_java
 java -jar HelloWorld.jar
 cd
-delay_timer "$1"
+delay_timer $1
 cd MuggleBornPadawan/
 git add .
 git commit -m "daily java"
