@@ -23,10 +23,18 @@
 - htop vs top
 - column - csv
 - watch - monitor any command in real time
-- pv - progress bar for long running commands
+- pv - progress live bar for long running commands
+  - copy file with progress → pv bigfile.iso > /mnt/usb/bigfile.iso
+  - monitor backup creation → tar cf - /home | pv | gzip > backup.tar.gz
 - tldr
 - eza vs ls
 - tree  
+- rename many files at once
+  - change all .txt files to .log → rename 's/\.txt$/\.log/' *.txt
+  - convert all filenames to lowercase → rename 'y/A-Z/a-z/' *
+  - add a prefix to JPG files → rename 's/^/photo_/' *.jpg
+- autostop a command after some time
+  
 ** tips & tricks
 |---------------------------------+--------------------------+-------------------------------------------------------|
 | old command                     | new command              | details                                               |
