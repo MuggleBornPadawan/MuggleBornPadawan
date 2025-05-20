@@ -1,0 +1,7 @@
+* introduction
+** getting started
+- typing "scheme" at cmd will get you into REPL (read evaluate print loop) 
+#+begin-src mit-scheme
+(+ 3 4)
+(message "hello world")
+#+end_src
