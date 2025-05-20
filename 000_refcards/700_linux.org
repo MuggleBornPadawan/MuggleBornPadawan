@@ -46,6 +46,9 @@
 - read file contents in reverse
   - view file in reverse → tac /var/log/syslog
   - save reversed content → tac file.txt > reversed.txt
+- add line numbers to a File Instantly
+  - add numbers to all lines → nl file.txt
+  - skip blank lines → nl -ba file.txt
 
 ** tips & tricks
 |---------------------------------+--------------------------+-------------------------------------------------------|
