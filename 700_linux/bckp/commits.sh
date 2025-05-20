@@ -2,7 +2,7 @@
 
 # Helper function to potentially pause script execution for a random duration.
 # It checks the first argument passed to the function.
-# If the argument is "r", it sleeps for a random duration between 60 and 90 seconds.
+# If the argument is "r", it sleeps for a random duration between 60 and 120 seconds.
 # Otherwise, it does nothing.
 #
 # Arguments:
@@ -14,7 +14,7 @@ delay_timer() {
 
   # Check if the function argument is exactly "r"
   if [ "$func_arg" = "r" ]; then
-    # If it is "r", calculate a random number of seconds between 60 and 90
+    # If it is "r", calculate a random number of seconds between 60 and 120
     local random_duration # Use 'local' for variables inside functions
     random_duration=$(shuf -i 60-120 -n 1)
 
