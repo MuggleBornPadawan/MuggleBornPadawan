@@ -9,6 +9,7 @@
 - (define (factorial n) (if (= n 0) 1 (* n (factorial (- n 1)))))
 - (trace factorial)
 - (factorial 3)
+** source blocks 
 #+begin-src mit-scheme
 (+ 3 4)
 (message "hello world")
