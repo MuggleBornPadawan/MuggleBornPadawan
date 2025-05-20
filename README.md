@@ -1,3 +1,7 @@
+## License
+
+This project is licensed under the GNU General Public License v3.0 or later - see the LICENSE.txt file for details.
+
 - 👋 Hi, I’m @MuggleBornPadawan
 - 👀 I craft visual art using creative coding
 - 🌱 Programming language(s):

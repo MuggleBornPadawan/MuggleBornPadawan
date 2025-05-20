@@ -1,4 +1,22 @@
 #+title: readme
+* GNU GPL v3 license
+- copy full text from https://www.gnu.org/licenses/gpl-3.0.txt in LICENSE.txt at project root folder
+- each source file should have a mention of it. example:
+// Copyright (C) YYYY YOUR NAME or YOUR ORGANIZATION NAME
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program. If not, see <https://www.gnu.org/licenses/>.
+
 * vision: to become a 10x developer
 - sackman, erickson, and grant’s study published in 1968 -  https://www.construx.com/blog/the-origins-of-10x-how-valid-is-the-underlying-research/ 
 ** characteristics
