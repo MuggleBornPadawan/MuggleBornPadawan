@@ -1,4 +1,3 @@
 #+BEGIN_SRC scheme
-  (+ 12 23)
-  (message "hellp")
-#+END_SRC 
+(+ 1 2)
+#+END_SRC

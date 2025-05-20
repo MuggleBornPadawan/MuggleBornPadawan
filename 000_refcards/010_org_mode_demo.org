@@ -58,7 +58,21 @@
   [[*Pla ] [internal header link]]
 #+begin_src emacs-lisp (press C-x C-e to evaluate buffer)
   (message "Hello world")
-  (+ 10 23 34)
+  (+ 10 1223 34)
+#+end_src
+
+#+RESULTS:
+: 1267
+
+#+BEGIN_SRC python
+  print("Hello from Org-Babel Python!")
+  x = 5
+  y = 10
+  print(f"The sum of x and y is: {x + y}")
+#+END_SRC
+
+#+begin_src python
+  print("hellpo word")
 #+end_src
 ** Table
 | Header 1       | Header 2 |   | Header 3 |   |   |
