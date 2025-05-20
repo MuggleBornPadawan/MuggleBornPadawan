@@ -34,7 +34,19 @@
   - convert all filenames to lowercase → rename 'y/A-Z/a-z/' *
   - add a prefix to JPG files → rename 's/^/photo_/' *.jpg
 - autostop a command after some time
-  
+  - stop after 10 seconds → timeout 10s ping google.com
+  - stop after 1 hour → timeout 1 hour rsync -av /source/ /destination/
+- randomize or pick something from a list
+  - shuffle all lines in a file → shuf file.txt
+  - pick one random line → shuf -n 1 file.txt
+  - generate random 12-character password → shuf -zer -n12 {A..Z} {a..z} {0..9} | tr -d '\0'
+- compare two files and spot differences
+  - compare both files → comm file1.txt file2.txt
+  - show only common lines → comm -12 file1.txt file2.txt
+- read file contents in reverse
+  - view file in reverse → tac /var/log/syslog
+  - save reversed content → tac file.txt > reversed.txt
+
 ** tips & tricks
 |---------------------------------+--------------------------+-------------------------------------------------------|
 | old command                     | new command              | details                                               |
