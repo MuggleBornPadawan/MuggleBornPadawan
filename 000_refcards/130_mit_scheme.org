@@ -1,6 +1,14 @@
 * introduction
 ** getting started
-- typing "scheme" at cmd will get you into REPL (read evaluate print loop) 
+- typing "scheme" at cmd will get you into REPL (read evaluate print loop)
+- (quit) or (exit) or ctrl D
+- (load "file_name.scm")
+- (pretty-print (lambda (x) (* x x))
+- (apropos "string")
+- (display "The value is: ") (display (+ 10 20)) (newline)
+- (define (factorial n) (if (= n 0) 1 (* n (factorial (- n 1)))))
+- (trace factorial)
+- (factorial 3)
 #+begin-src mit-scheme
 (+ 3 4)
 (message "hello world")
