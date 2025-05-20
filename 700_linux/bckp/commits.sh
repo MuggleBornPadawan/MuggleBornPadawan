@@ -63,6 +63,10 @@ cd
 cd MuggleBornPadawan/100_cpp
 ./hello
 cd
+cd MuggleBornPadawan/
+git add .
+git commit -m "daily cpp"
+cd
 delay_timer "$1"
 cd MuggleBornPadawan/200_java
 java -jar HelloWorld.jar
