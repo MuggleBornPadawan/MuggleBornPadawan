@@ -76,13 +76,25 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; enable mit scheme, js, python for org babel
+;; Enable Scheme language support in Org Babel
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((scheme . t)))
+
+;; Specify the MIT Scheme interpreter
+;; Make sure 'mit-scheme' is the correct command to run MIT Scheme in your terminal.
+;; If it's just 'scheme', use that instead.
+(setq org-babel-scheme-interpreter "mit-scheme")
 
 ;; set mit scheme as the default Scheme implementation
 (setq org-babel-scheme-cmd "mit-scheme")
 
 ;; Don't ask for confirmation when executing code blocks
-;;(setq org-confirm-babel-evaluate nil)
+(setq org-confirm-babel-evaluate nil)
+
+;; --- Org-Babel Python Configuration ---
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t))) ; The 't' means enable it.
+
+(setq org-babel-python-cmd "python") 
