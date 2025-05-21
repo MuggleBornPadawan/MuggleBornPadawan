@@ -9,7 +9,7 @@ Copyright (C) 2025 MuggleBornPadawan
 - 🌱 Programming language(s):
   - Clojure, Eclipse Public License, version 1.0
   - OpenJDK, GNU General Public License, version 2, with the Classpath Exception 
-  - Processing sketchbook software (core), GNU Lesser General Processing License v2.1
+  - Processing sketchbook software (core), GNU Lesser General Processing License, version 2.1
 - Integrated development environment(s):
   - Editor Macros (Emacs), GNU General Public License, version 3
   - Processing Development Environment (PDE), GNU General Public License, version 2 
