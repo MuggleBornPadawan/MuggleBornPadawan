@@ -35,6 +35,7 @@ cat tmp.txt | grep "rtt"
 fortune -a | cowsay
 
 # sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null # deprecated 
+# ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh > /dev/null 2>&1 & #deprecated 
 # ollama run gemma3:1b-it-qat "speak gibberish"
 ollama run gemma3:1b "write 7 gibberish words in a single sentence; skip commentary; skip asking questions; skip notes"
 ollama stop gemma3:1b
