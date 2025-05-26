@@ -57,9 +57,7 @@
         (+ min-val (random range-size)))))
 
 (define (square x) (* x x))
-
+(define (sum-of-squares a b)
+  (+ (square a) (square b)))
 (define (f a)
-  (define (square x) (* x x))
-  (define (sum-of-squares a b)
-    (+ (square a) (square b)))
   (sum-of-squares (+ a 1) (* a 2)))
