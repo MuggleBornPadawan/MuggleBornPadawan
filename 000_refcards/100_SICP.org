@@ -1,6 +1,6 @@
 #+Title: Structure and Interpretation of Computer Programming
 #+Author: Study
-
+- website: https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/ 
 * Introduction
 ** Foreword
 - three foci of phenomena: the human mind, collection of computer programs and the computer
