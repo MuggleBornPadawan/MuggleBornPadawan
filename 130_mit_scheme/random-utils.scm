@@ -56,6 +56,9 @@
         ;;   If (random 6) returns 5, then 5 + min-val (5) = 10.
         (+ min-val (random range-size)))))
 
-(define (square x) (* x x))
-(define (sum-of-squares a b) (+ (square a) (square b)))
-(define (f a) (+ a 1) (* a 2))
+
+(define (f a)
+  (define (sum-of-squares a b)
+    (define (square x) (* x x))
+    (+ (square a) (square b)))
+  (sum-of-squares (+ a 1) (* a 2)))
