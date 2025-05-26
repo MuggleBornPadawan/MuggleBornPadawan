@@ -4,6 +4,8 @@
 * Introduction
 ** Foreword
 - three foci of phenomena: the human mind, collection of computer programs and the computer
+** Preface
+- control complexity by abstraction, conventional interfaces and design 
 ** Building abstraction with procedures
 *** Computational process
 - Combining several simple idead > compound > complex ideas
