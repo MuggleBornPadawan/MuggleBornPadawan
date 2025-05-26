@@ -8,7 +8,7 @@
 - control complexity by abstraction, conventional interfaces and design 
 ** Building abstraction with procedures
 *** Computational process
-- Combining several simple idead > compound > complex ideas
+- Combining several simple ideas > compound > complex ideas
 - Relations between ideas
 - Seperating them > abstraction
 - Data, process, program, debug
