@@ -47,7 +47,12 @@
   (define (improve guess)
     (average guess (/ x guess)))
   (define (sqrt-iter guess)
+    (display "Current guess: ")
+    (display guess)
+    (newline) ; Add a newline for readability
+
     (if (good-enough? guess)
 	guess
 	(sqrt-iter (improve guess))))
-  (sqrt-iter 1.0))
+    (sqrt-iter 1.0))
+  
