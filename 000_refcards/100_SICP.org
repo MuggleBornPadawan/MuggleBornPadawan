@@ -5,7 +5,13 @@
 ** Foreword
 - three foci of phenomena: the human mind, collection of computer programs and the computer
 ** Preface
-- control complexity by abstraction, conventional interfaces and design 
+- control complexity by abstraction, conventional interfaces and design
+** REPL
+- immediate feedback and prototyping (eg: parse string)
+- interactive debugging and exploration (eg: function calls - inspect, explore, call, modify)
+- experimenting and learning (eg: map, cond)
+- interactive development and refactoring (eg: bottom-up compositional approach - clean data, transform, analyze)
+- live programming and system evolution (eg: connect to live trading system, patch, fix is live, hot-swapping of code) 
 ** Building abstraction with procedures
 *** Computational process
 - Combining several simple ideas > compound > complex ideas
