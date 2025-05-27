@@ -29,3 +29,8 @@
              "min-val:" min-val " max-val:" max-val)
       (let ((range-size (+ (- max-val min-val) 1)))
         (+ min-val (random range-size)))))
+(define (sum-of-squares-of-two-larger x y z)
+  (define (square n) (* n n)) ; Helper function for squaring
+  (max (+ (square x) (square y))
+       (+ (square x) (square z))
+       (+ (square y) (square z))))
