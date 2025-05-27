@@ -34,3 +34,5 @@
   (max (+ (square x) (square y))
        (+ (square x) (square z))
        (+ (square y) (square z))))
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b))
