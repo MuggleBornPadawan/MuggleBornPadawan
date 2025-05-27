@@ -1,8 +1,21 @@
 #!/bin/bash
 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 # Helper function to potentially pause script execution for a random duration.
 # It checks the first argument passed to the function.
-# If the argument is "r", it sleeps for a random duration between 60 and 180 seconds.
+# If the argument is "r", it sleeps for a random duration between given range (in seconds).
 # Otherwise, it does nothing.
 #
 # Arguments:
@@ -14,9 +27,9 @@ delay_timer() {
 
   # Check if the function argument is exactly "r"
   if [ "$func_arg" = "r" ]; then
-    # If it is "r", calculate a random number of seconds between 60 and 180
+    # If it is "r", calculate a random number of seconds between 60 and 240
     local random_duration # Use 'local' for variables inside functions
-    random_duration=$(shuf -i 60-180 -n 1)
+    random_duration=$(shuf -i 60-240 -n 1)
 
     # Print a message indicating the duration before sleeping
     echo "Argument 'r' received by delay_timer. Sleeping for ${random_duration} seconds..."

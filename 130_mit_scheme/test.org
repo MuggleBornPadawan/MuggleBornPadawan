@@ -1,3 +1,0 @@
-#+BEGIN_SRC scheme
-(+ 1 2)
-#+END_SRC
