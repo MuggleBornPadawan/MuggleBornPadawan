@@ -36,3 +36,6 @@
        (+ (square y) (square z))))
 (define (a-plus-abs-b a b)
   ((if (> b 0) + -) a b))
+(define (p) (p))
+(define (test x y)
+  (if (= x 0) 0 y))
