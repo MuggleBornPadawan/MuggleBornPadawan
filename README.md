@@ -3,8 +3,6 @@ Copyright (C) 2025 MuggleBornPadawan
 - This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 - This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-![hello world](https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/x-hello-world.jpeg "hello world")
-
 ## About
 - 👋 Hi, I’m @MuggleBornPadawan
 - 👀 I craft visual art using creative coding
@@ -23,5 +21,8 @@ Copyright (C) 2025 MuggleBornPadawan
 - 📫 How to reach me [mugglebornpadawan].[at].[icloud.com]
 - 😄 Pronouns: he/him
 - ⚡ Fun fact: I am building my own light saber with special spells
+
+## About the repository
+![hello world](https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/x-hello-world.jpeg "hello world")
 
 <eof> 
