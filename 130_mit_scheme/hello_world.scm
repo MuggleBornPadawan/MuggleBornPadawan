@@ -1,3 +1,5 @@
+(load "(lib system time)") ; <--- THIS IS THE MAGIC LINE!
+
 (define current-dt (current-datetime))
 
 (display "Hello, Scheme World! ")
