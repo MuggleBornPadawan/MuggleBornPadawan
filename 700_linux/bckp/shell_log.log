@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue May 27 08:51:36 AM IST 2025 
+Date: Wed May 28 11:47:57 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Fetched 103 kB in 2s (62.1 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -82,29 +81,27 @@ Operation completed.
 Weather report: Chennai
 
   [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;202m36[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;214m22[0m km/h[0m      
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;202m30[0m km/h[0m      
   [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
-                Cloudy
-  [38;5;250m     .--.    [0m [38;5;214m+28[0m([38;5;208m32[0m) °C[0m     
-  [38;5;250m  .-(    ).  [0m [1m↗[0m [38;5;220m17[0m km/h[0m      
-  [38;5;250m (___.__)__) [0m 10 km[0m          
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+34[0m([38;5;196m39[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 41.475/65.317/118.544/21.481 ms
- ______________________________________
-/ All things that are, are with more   \
-| spirit chased than enjoyed.          |
-|                                      |
-\ -- Shakespeare, "Merchant of Venice" /
- --------------------------------------
+rtt min/avg/max/mdev = 37.772/60.016/131.793/31.025 ms
+ _________________________________________
+/ The better part of valor is discretion. \
+|                                         |
+\ -- William Shakespeare, "Henry IV"      /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flumphberry shimmerscale wizzlewind bounce.
+Flumphlepton swirlsprout skitterbledee blooploom.
 
-[detached (from session alpha)]
