@@ -14,10 +14,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # Helper function to potentially pause script execution for a random duration.
-# It checks the first argument passed to the function.
-# If the argument is "r", it sleeps for a random duration between given range (in seconds).
-# Otherwise, it does nothing.
-#
 # Arguments:
 #   $1 - The first argument to check (e.g., "r")
 
@@ -72,6 +68,9 @@ delay_timer() {
 
 echo " - - - "
 echo "test programming blocks"
+cd
+cd MuggleBornPadawan/130_mit-scheme
+scheme --load hello_world.scm --eval '(exit)'
 cd
 cd MuggleBornPadawan/100_cpp
 ./hello
