@@ -39,6 +39,7 @@
 (define (p) (p))
 (define (test x y)
   (if (= x 0) 0 y))
+; sqrt
 (define (sqrt x)
   (define (average x y)
     (/ (+ x y) 2))
@@ -55,4 +56,10 @@
 	guess
 	(sqrt-iter (improve guess))))
     (sqrt-iter 1.0))
-  
+; factorial  
+(define (factorial n)
+  (if (= n 1)
+      1
+      ((display n)
+       (newline)
+       (* n (factorial (- n 1))))))
