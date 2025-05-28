@@ -69,7 +69,7 @@ delay_timer() {
 echo " - - - "
 echo "test programming blocks"
 cd
-cd MuggleBornPadawan/130_mit-scheme
+cd MuggleBornPadawan/130_mit_scheme
 scheme --load hello_world.scm --eval '(exit)'
 cd
 cd MuggleBornPadawan/100_cpp
