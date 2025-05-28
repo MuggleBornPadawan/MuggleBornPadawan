@@ -1,5 +1,5 @@
-#+Title: Structure and Interpretation of Computer Programming
-#+Author: Study
+#+Title: Study notes - Structure and Interpretation of Computer Programming
+#+Author: MuggleBornPadawan
 - website: https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/ 
 * Introduction
 ** Foreword
