@@ -58,6 +58,20 @@
     (sqrt-iter 1.0))
 ; factorial  
 (define (factorial n)
+  ;; <<< INSERT TRACING HERE <<<
+  (display "--> Entered factorial with n = ")
+  (display n)
+  (newline)
+  ;; >>> TRACING ENDS <<<
+
   (if (= n 1)
       1
-       (* n (factorial (- n 1)))))
+      (let ((result (* n (factorial (- n 1))))) ; Use let to capture the recursive result before displaying
+        ;; <<< INSERT TRACING HERE FOR RETURN VALUE <<<
+        (display "<-- Exiting factorial with n = ")
+        (display n)
+        (display ", returning = ")
+        (display result)
+        (newline)
+        ;; >>> TRACING ENDS <<<
+        result))) ; Ensure the result is returned
