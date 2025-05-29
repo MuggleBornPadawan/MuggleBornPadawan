@@ -77,8 +77,8 @@ git add .
 git commit -m "daily mit-scheme"
 cd
 delay_timer "$1"
-cd MuggleBornPadawan/150_racket_scheme &>> hello_world.log
-racket hello_world.rkt | head -n 2
+cd MuggleBornPadawan/150_racket_scheme 
+racket hello_world.rkt | head -n 2 &>> hello_world.log
 cd
 cd MuggleBornPadawan/
 git add .
