@@ -7,3 +7,5 @@
 
 ;; This is the classic "Hello, World!"
 (display "Hello, World!\n")
+(system "date")
+(system "time")
