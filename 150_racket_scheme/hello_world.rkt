@@ -6,6 +6,6 @@
 ;; Dependencies: Racket standard library
 
 ;; This is the classic "Hello, World!"
-(display "Hello, World!\n")
+(display "Hello, Racket World! Current date and time is: \n")
 (system "date")
-(system "time")
+(newline)
