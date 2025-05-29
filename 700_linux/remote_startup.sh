@@ -6,7 +6,7 @@ echo "run this file for any remote debian server setup, startup and chk backups"
 echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
 sudo apt-get update
 sudo apt-get dist-upgrade
-sudo apt-get install make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme clojure emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay neofetch trash-cli
+sudo apt-get install make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme racket clojure emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay neofetch trash-cli
 sudo apt-get autoremove 
 sudo apt-get clean
 cp MuggleBornPadawan/.gitignore $HOME
