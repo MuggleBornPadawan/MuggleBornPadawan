@@ -70,7 +70,7 @@ echo " - - - "
 echo "test programming blocks"
 cd
 cd MuggleBornPadawan/130_mit_scheme
-scheme --load hello_world.scm --eval '(exit)' | tail -n 4 &>> hello_world.log
+scheme --load hello_world.scm --eval '(exit)' | tail -n 4 2>&1 | tee -a hello_world.log
 cd
 cd MuggleBornPadawan/
 git add .
@@ -78,7 +78,7 @@ git commit -m "daily mit-scheme"
 cd
 delay_timer "$1"
 cd MuggleBornPadawan/150_racket_scheme 
-racket hello_world.rkt | head -n 2 &>> hello_world.log
+racket hello_world.rkt | head -n 2 2>&1 | tee -a hello_world.log
 cd
 cd MuggleBornPadawan/
 git add .
