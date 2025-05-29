@@ -72,6 +72,7 @@ cd
 cd MuggleBornPadawan/130_mit_scheme
 scheme --load hello_world.scm --eval '(exit)'
 cd
+delay_timer "$1"
 cd MuggleBornPadawan/100_cpp
 ./hello
 cd
