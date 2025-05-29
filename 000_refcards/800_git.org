@@ -1,3 +1,9 @@
+* sandbox text
+abcd
+efgh
+* magit commands
+- magit-status | C-x g
+- 
 * Git commands
 ** Basic git commands
 - git init | Initializes a new Git repository in your current directory
