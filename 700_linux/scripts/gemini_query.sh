@@ -19,11 +19,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-echo "Did you check pass from cmd?"
-echo "Are you sure you want to continue?"
-echo "(Press Enter to continue or Ctrl+C to abort)"
-read -p ""
-
 MY_GEMINI_API_KEY=$(pass GEMINI_API_KEY)
 
 if [ -z "$MY_GEMINI_API_KEY" ]; then
