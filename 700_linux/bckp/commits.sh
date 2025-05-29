@@ -72,6 +72,18 @@ cd
 cd MuggleBornPadawan/130_mit_scheme
 scheme --load hello_world.scm --eval '(exit)' | tail -n 4
 cd
+cd MuggleBornPadawan/
+git add .
+git commit -m "daily mit-scheme"
+cd
+delay_timer "$1"
+cd MuggleBornPadawan/150_racket_scheme
+racket hello_world.rkt | head -n 2
+cd
+cd MuggleBornPadawan/
+git add .
+git commit -m "daily racket"
+cd
 delay_timer "$1"
 cd MuggleBornPadawan/100_cpp
 ./hello
