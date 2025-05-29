@@ -70,7 +70,7 @@ echo " - - - "
 echo "test programming blocks"
 cd
 cd MuggleBornPadawan/130_mit_scheme
-scheme --load hello_world.scm --eval '(exit)'
+scheme --load hello_world.scm --eval '(exit)' | tail -n 4
 cd
 delay_timer "$1"
 cd MuggleBornPadawan/100_cpp
