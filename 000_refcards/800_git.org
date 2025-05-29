@@ -7,7 +7,10 @@ efgh
 
 * magit commands
 - magit-status | C-x g
-- 
+- C-c C-c
+- s | staging
+- S | stage all 
+- u | unstage
 * Git commands
 ** Basic git commands
 - git init | Initializes a new Git repository in your current directory
