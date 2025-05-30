@@ -51,7 +51,6 @@
     (display "Current guess: ")
     (display guess)
     (newline) ; Add a newline for readability
-
     (if (good-enough? guess)
 	guess
 	(sqrt-iter (improve guess))))
@@ -63,7 +62,6 @@
   (display n)
   (newline)
   ;; >>> TRACING ENDS <<<
-
   (if (= n 1)
       1
       (let ((result (* n (factorial (- n 1))))) ; Use let to capture the recursive result before displaying
