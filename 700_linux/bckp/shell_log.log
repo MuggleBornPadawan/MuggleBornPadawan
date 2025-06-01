@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Jun  1 02:00:25 PM IST 2025 
+Date: Sun Jun  1 02:01:51 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -80,6 +80,13 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
+Weather report: Chennai
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+36[0m([38;5;196m39[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;226m13[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
@@ -87,31 +94,18 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 40.382/54.921/166.094/34.075 ms
+rtt min/avg/max/mdev = 40.227/52.835/65.168/10.462 ms
  _________________________________________
-/ No live organism can continue for long  \
-| to exist sanely under conditions of     |
-| absolute reality; even larks and        |
-| katydids are supposed, by some, to      |
-| dream. Hill House, not sane, stood by   |
-| itself against its hills, holding       |
-| darkness within; it had stood so for    |
-| eighty years and might stand for eighty |
-| more. Within, walls continued upright,  |
-| bricks met neatly, floors were firm,    |
-| and doors were sensibly shut; silence   |
-| lay steadily against the wood and stone |
-| of Hill House, and whatever walked      |
-| there, walked alone.                    |
+/ Q: How do you catch a unique rabbit? A: \
+| Unique up on it!                        |
 |                                         |
-| -- Shirley Jackson, "The Haunting of    |
-\ Hill House"                             /
+| Q: How do you catch a tame rabbit? A:   |
+\ The tame way!                           /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flufflegloop, squeakblob, gizzleepy, shimmersnap, gloopywhirl, wobblespark, zizzlefrog
+Squibblefluxboopizzlebubbledrift.
 
-[detached (from session alpha)]
