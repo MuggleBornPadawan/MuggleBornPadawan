@@ -1,74 +1,19 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri May 30 09:11:05 AM IST 2025 
+Date: Sun Jun  1 02:00:25 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.72-gbe485e577c3a
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [265 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
-Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [160 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/135 bookworm Release
-Fetched 528 kB in 1s (568 kB/s)
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  libavif15 libnss-systemd libpam-systemd libsystemd-shared libsystemd0
-  libudev1 systemd systemd-sysv systemd-timesyncd udev
-10 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 7,474 kB of archives.
-After this operation, 5,120 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 systemd-timesyncd amd64 252.38-1~deb12u1 [63.6 kB]
-Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 libnss-systemd amd64 252.38-1~deb12u1 [164 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 libpam-systemd amd64 252.38-1~deb12u1 [225 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 systemd amd64 252.38-1~deb12u1 [3,043 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 libsystemd-shared amd64 252.38-1~deb12u1 [1,695 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 systemd-sysv amd64 252.38-1~deb12u1 [42.6 kB]
-Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 libsystemd0 amd64 252.38-1~deb12u1 [333 kB]
-Get:8 https://deb.debian.org/debian-security bookworm-security/main amd64 udev amd64 252.38-1~deb12u1 [1,705 kB]
-Get:9 https://deb.debian.org/debian-security bookworm-security/main amd64 libudev1 amd64 252.38-1~deb12u1 [109 kB]
-Get:10 https://deb.debian.org/debian-security bookworm-security/main amd64 libavif15 amd64 0.11.1-1+deb12u1 [94.4 kB]
-Fetched 7,474 kB in 2s (4,772 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115066 files and directories currently installed.)
-Preparing to unpack .../0-systemd-timesyncd_252.38-1~deb12u1_amd64.deb ...
-Unpacking systemd-timesyncd (252.38-1~deb12u1) over (252.36-1~deb12u1) ...
-Preparing to unpack .../1-libnss-systemd_252.38-1~deb12u1_amd64.deb ...
-Unpacking libnss-systemd:amd64 (252.38-1~deb12u1) over (252.36-1~deb12u1) ...
-Preparing to unpack .../2-libpam-systemd_252.38-1~deb12u1_amd64.deb ...
-Unpacking libpam-systemd:amd64 (252.38-1~deb12u1) over (252.36-1~deb12u1) ...
-Preparing to unpack .../3-systemd_252.38-1~deb12u1_amd64.deb ...
-Unpacking systemd (252.38-1~deb12u1) over (252.36-1~deb12u1) ...
-Preparing to unpack .../4-libsystemd-shared_252.38-1~deb12u1_amd64.deb ...
-Unpacking libsystemd-shared:amd64 (252.38-1~deb12u1) over (252.36-1~deb12u1) ...
-Preparing to unpack .../5-libsystemd0_252.38-1~deb12u1_amd64.deb ...
-Unpacking libsystemd0:amd64 (252.38-1~deb12u1) over (252.36-1~deb12u1) ...
-Setting up libsystemd0:amd64 (252.38-1~deb12u1) ...
-Setting up libsystemd-shared:amd64 (252.38-1~deb12u1) ...
-Setting up systemd (252.38-1~deb12u1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115066 files and directories currently installed.)
-Preparing to unpack .../systemd-sysv_252.38-1~deb12u1_amd64.deb ...
-Unpacking systemd-sysv (252.38-1~deb12u1) over (252.36-1~deb12u1) ...
-Preparing to unpack .../udev_252.38-1~deb12u1_amd64.deb ...
-Unpacking udev (252.38-1~deb12u1) over (252.36-1~deb12u1) ...
-Preparing to unpack .../libudev1_252.38-1~deb12u1_amd64.deb ...
-Unpacking libudev1:amd64 (252.38-1~deb12u1) over (252.36-1~deb12u1) ...
-Setting up libudev1:amd64 (252.38-1~deb12u1) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115066 files and directories currently installed.)
-Preparing to unpack .../libavif15_0.11.1-1+deb12u1_amd64.deb ...
-Unpacking libavif15:amd64 (0.11.1-1+deb12u1) over (0.11.1-1) ...
-Setting up systemd-sysv (252.38-1~deb12u1) ...
-Setting up libavif15:amd64 (0.11.1-1+deb12u1) ...
-Setting up libnss-systemd:amd64 (252.38-1~deb12u1) ...
-Setting up systemd-timesyncd (252.38-1~deb12u1) ...
-Setting up udev (252.38-1~deb12u1) ...
-Setting up libpam-systemd:amd64 (252.38-1~deb12u1) ...
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for dbus (1.14.10-1~deb12u1) ...
-Processing triggers for libc-bin (2.36-9+deb12u10) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -135,30 +80,38 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-Weather report: Chennai
-
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;208m27[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+29[0m([38;5;208m32[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;220m18[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 41.521/57.631/92.702/15.039 ms
- ___________________________
-/ Too much is just enough.  \
-|                           |
-\ -- Mark Twain, on whiskey /
- ---------------------------
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;196m+37[0m([38;5;196m41[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 40.382/54.921/166.094/34.075 ms
+ _________________________________________
+/ No live organism can continue for long  \
+| to exist sanely under conditions of     |
+| absolute reality; even larks and        |
+| katydids are supposed, by some, to      |
+| dream. Hill House, not sane, stood by   |
+| itself against its hills, holding       |
+| darkness within; it had stood so for    |
+| eighty years and might stand for eighty |
+| more. Within, walls continued upright,  |
+| bricks met neatly, floors were firm,    |
+| and doors were sensibly shut; silence   |
+| lay steadily against the wood and stone |
+| of Hill House, and whatever walked      |
+| there, walked alone.                    |
+|                                         |
+| -- Shirley Jackson, "The Haunting of    |
+\ Hill House"                             /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flumphberry giggle blorpstone shimmer squibble swirl zizzle.
+Flufflegloop, squeakblob, gizzleepy, shimmersnap, gloopywhirl, wobblespark, zizzlefrog
 
+[detached (from session alpha)]
