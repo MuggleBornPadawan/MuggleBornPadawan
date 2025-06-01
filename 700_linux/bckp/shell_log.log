@@ -1,16 +1,14 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Sun Jun  1 02:23:23 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Sun Jun  1 02:56:07 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
-Get:5 https://storage.googleapis.com/cros-packages/136 bookworm Release [3,109 B]
-Get:6 https://storage.googleapis.com/cros-packages/136 bookworm Release.gpg [2,365 B]
-Get:7 https://storage.googleapis.com/cros-packages/136 bookworm/main amd64 Packages [5,032 B]
-Fetched 65.9 kB in 3s (24.4 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/136 bookworm Release
+Fetched 48.0 kB in 2s (31.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -21,7 +19,14 @@ The following packages will be upgraded:
 1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Need to get 52.1 kB of archives.
 After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+Do you want to continue? [Y/n] Get:1 https://storage.googleapis.com/cros-packages/136 bookworm/main amd64 cros-im amd64 62087 [52.1 kB]
+Fetched 52.1 kB in 1s (99.0 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115066 files and directories currently installed.)
+Preparing to unpack .../cros-im_62087_amd64.deb ...
+Unpacking cros-im:amd64 (62087) over (61848) ...
+Setting up cros-im:amd64 (62087) ...
+Processing triggers for libgtk-3-0:amd64 (3.24.38-2~deb12u3) ...
+Processing triggers for libgtk-4-1:amd64 (4.8.3+ds-2+deb12u1) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -66,32 +71,36 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
--e 
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+2025-06-01 14:23:27 /home/rgroot/.bash_history
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 └── protector_key
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[48;5;91m>>>    _  _    ___  _  _        [0m
-[48;5;91m>>>   | || |  / _ \| || |         [0m
-[48;5;91m>>>   | || |_| | | | || |_         [0m
-[48;5;91m>>>   |__   _| |_| |__   _|         [0m
-[48;5;91m>>>      |_|  \___/   |_|       [0m
-[48;5;91m>>>                          [0m
-[48;5;91m>>>   404 UNKNOWN LOCATION: Chennai   [0m
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: Chennai
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+36[0m([38;5;196m39[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;226m13[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
@@ -99,4 +108,46 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 40.524/56.041/139.962/26.693 ms
+rtt min/avg/max/mdev = 39.018/46.957/77.196/12.134 ms
+ _________________________________________
+/  "...The name of the song is called     \
+| 'Haddocks' Eyes'!"                      |
+|                                         |
+| "Oh, that's the name of the song, is    |
+| it?" Alice said, trying to feel         |
+| interested.                             |
+|                                         |
+| "No, you don't understand," the Knight  |
+| said, looking a little vexed. "That's   |
+| what the name is called. The name       |
+| really is, 'The Aged Aged Man.'"        |
+|                                         |
+| "Then I ought to have said "That's what |
+| the song is called'?" Alice corrected   |
+| herself.                                |
+|                                         |
+| "No, you oughtn't: that's quite another |
+| thing! The song is called 'Ways and     |
+| Means': but that's only what it is      |
+| called you know!"                       |
+|                                         |
+| "Well, what is the song then?" said     |
+| Alice, who was by this time completely  |
+| bewildered.                             |
+|                                         |
+| "I was coming to that," the Knight      |
+| said. "The song really is "A-sitting on |
+| a Gate": and the tune's my own          |
+| invention."                             |
+|                                         |
+| -- Lewis Carroll, "Through the Looking  |
+\ Glass"                                  /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+Fluffberry wobbleforth shimmerdeep quibblefrog fizzleglow.
+
+[detached (from session alpha)]
