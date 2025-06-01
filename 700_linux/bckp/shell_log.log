@@ -1,19 +1,27 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Sun Jun  1 02:01:51 PM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Sun Jun  1 02:23:23 PM IST 2025 
 OS: Linux 
-Kernel: 6.6.72-gbe485e577c3a
+Kernel: 6.6.76-g027a1f314c8f
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/135 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/135 bookworm Release
+Ign:4 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
+Get:5 https://storage.googleapis.com/cros-packages/136 bookworm Release [3,109 B]
+Get:6 https://storage.googleapis.com/cros-packages/136 bookworm Release.gpg [2,365 B]
+Get:7 https://storage.googleapis.com/cros-packages/136 bookworm/main amd64 Packages [5,032 B]
+Fetched 65.9 kB in 3s (24.4 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  cros-im
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 52.1 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -58,35 +66,32 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
+├── git
+│   └── github.com
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 └── protector_key
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: Chennai
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+36[0m([38;5;196m39[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;226m13[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
+[48;5;91m>>>    _  _    ___  _  _        [0m
+[48;5;91m>>>   | || |  / _ \| || |         [0m
+[48;5;91m>>>   | || |_| | | | || |_         [0m
+[48;5;91m>>>   |__   _| |_| |__   _|         [0m
+[48;5;91m>>>      |_|  \___/   |_|       [0m
+[48;5;91m>>>                          [0m
+[48;5;91m>>>   404 UNKNOWN LOCATION: Chennai   [0m
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
@@ -94,18 +99,4 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 40.227/52.835/65.168/10.462 ms
- _________________________________________
-/ Q: How do you catch a unique rabbit? A: \
-| Unique up on it!                        |
-|                                         |
-| Q: How do you catch a tame rabbit? A:   |
-\ The tame way!                           /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-Squibblefluxboopizzlebubbledrift.
-
+rtt min/avg/max/mdev = 40.524/56.041/139.962/26.693 ms
