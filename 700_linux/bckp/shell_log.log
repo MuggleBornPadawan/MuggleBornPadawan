@@ -1,16 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Jun  2 01:28:24 PM IST 2025 
+Date: Mon Jun  2 05:44:31 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [265 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [160 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/136 bookworm Release
-Fetched 529 kB in 2s (339 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/136 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -78,6 +75,7 @@ Password Store
 │   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
+├── OPENROUTER_API_KEY
 └── protector_key
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
@@ -93,22 +91,19 @@ Weather report: Chennai
                 0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;202m+34[0m([38;5;196m39[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;214m21[0m km/h[0m      
-  [38;5;226m     `-’     [0m 10 km[0m          
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 37.704/53.627/65.419/10.992 ms
- _________________________________________
-/  A man was reading The Canterbury Tales \
-| one Saturday morning, when his wife     |
-| asked "What have you got there?"        |
-\ Replied he, "Just my cup and Chaucer."  /
- -----------------------------------------
+  [38;5;226m _`/""[38;5;250m.-.    [0m Thundery outbreaks in nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+30[0m([38;5;202m36[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;208m26[0m km/h[0m      
+  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 9 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 41.684/69.186/151.302/26.788 ms
+ _______________________________________
+< Are you sure the back door is locked? >
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Zizzleflump, quibblegloom, floopsnort, gloopywump, shimmerwhirl, blorpberry, zizzledot.
+Flumphberry swirlled beneath the moonlit moss.
 
