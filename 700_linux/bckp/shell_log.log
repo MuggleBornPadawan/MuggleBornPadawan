@@ -1,32 +1,22 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Jun  1 02:56:07 PM IST 2025 
+Date: Mon Jun  2 01:28:24 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/136 bookworm Release
-Fetched 48.0 kB in 2s (31.2 kB/s)
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [265 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [160 kB]
+Hit:7 https://storage.googleapis.com/cros-packages/136 bookworm Release
+Fetched 529 kB in 2s (339 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  cros-im
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 52.1 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://storage.googleapis.com/cros-packages/136 bookworm/main amd64 cros-im amd64 62087 [52.1 kB]
-Fetched 52.1 kB in 1s (99.0 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115066 files and directories currently installed.)
-Preparing to unpack .../cros-im_62087_amd64.deb ...
-Unpacking cros-im:amd64 (62087) over (61848) ...
-Setting up cros-im:amd64 (62087) ...
-Processing triggers for libgtk-3-0:amd64 (3.24.38-2~deb12u3) ...
-Processing triggers for libgtk-4-1:amd64 (4.8.3+ds-2+deb12u1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -97,57 +87,28 @@ Operation completed.
 Weather report: Chennai
 
   [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+36[0m([38;5;196m39[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;226m13[0m km/h[0m      
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;196m+37[0m([38;5;196m43[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;154m7[0m km/h[0m       
   [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;196m+37[0m([38;5;196m41[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
+  [38;5;226m     .-.     [0m [38;5;202m+34[0m([38;5;196m39[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;214m21[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.018/46.957/77.196/12.134 ms
+rtt min/avg/max/mdev = 37.704/53.627/65.419/10.992 ms
  _________________________________________
-/  "...The name of the song is called     \
-| 'Haddocks' Eyes'!"                      |
-|                                         |
-| "Oh, that's the name of the song, is    |
-| it?" Alice said, trying to feel         |
-| interested.                             |
-|                                         |
-| "No, you don't understand," the Knight  |
-| said, looking a little vexed. "That's   |
-| what the name is called. The name       |
-| really is, 'The Aged Aged Man.'"        |
-|                                         |
-| "Then I ought to have said "That's what |
-| the song is called'?" Alice corrected   |
-| herself.                                |
-|                                         |
-| "No, you oughtn't: that's quite another |
-| thing! The song is called 'Ways and     |
-| Means': but that's only what it is      |
-| called you know!"                       |
-|                                         |
-| "Well, what is the song then?" said     |
-| Alice, who was by this time completely  |
-| bewildered.                             |
-|                                         |
-| "I was coming to that," the Knight      |
-| said. "The song really is "A-sitting on |
-| a Gate": and the tune's my own          |
-| invention."                             |
-|                                         |
-| -- Lewis Carroll, "Through the Looking  |
-\ Glass"                                  /
+/  A man was reading The Canterbury Tales \
+| one Saturday morning, when his wife     |
+| asked "What have you got there?"        |
+\ Replied he, "Just my cup and Chaucer."  /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Fluffberry wobbleforth shimmerdeep quibblefrog fizzleglow.
+Zizzleflump, quibblegloom, floopsnort, gloopywump, shimmerwhirl, blorpberry, zizzledot.
 
-[detached (from session alpha)]
