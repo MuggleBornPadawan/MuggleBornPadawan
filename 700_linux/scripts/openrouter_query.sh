@@ -24,6 +24,9 @@
 # Variable naming convention: use camelCase, descriptive self documenting names.
 declare -r openRouterApiBaseUrl="https://openrouter.ai/api/v1/chat/completions"
 #declare -r openRouterModel="deepseek/deepseek-r1-0528-qwen3-8b:free"
+#declare -r openRouterModel="qwen/qwen3-235b-a22b:free"
+#declare -r openRouterModel="microsoft/phi-4-reasoning-plus:free"
+#declare -r openRouterModel="https://openrouter.ai/google/gemma-3n-e4b-it:free"
 declare -r openRouterModel="deepseek/deepseek-r1-0528:free"
 declare -r openRouterApiKeyPath="OPENROUTER_API_KEY" # Path in your 'pass' store
 
@@ -117,7 +120,7 @@ fi
 
 # Attempt to extract and display only the content of the AI's message
 echo "--- OpenRouter AI Response ---"
-if ! echo "$apiResponse" | jq -r '.choices[0].message.content'; then
+f ! echo "$apiResponse" | jq -r '.choices[0].message.content'; then
     # If the above jq command fails (e.g., response structure is unexpected),
     # print the raw response for debugging.
     echo "Error: Failed to extract AI response content. Raw JSON response was:" >&2
