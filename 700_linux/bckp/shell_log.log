@@ -1,14 +1,13 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Mon Jun  2 09:01:23 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Mon Jun  2 09:02:20 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
-Ign:1 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/136 bookworm Release
-Fetched 103 kB in 2s (61.0 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -64,22 +63,26 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
--e 
+2025-06-02 21:01:26 /home/rgroot/.bash_history
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 Weather report: Chennai
 
                 Haze
@@ -94,4 +97,15 @@ Weather report: Pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;208m26[0m km/h[0m      
   [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 9 km[0m           
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 40.564/59.036/113.291/23.170 ms
+rtt min/avg/max/mdev = 38.829/58.435/77.673/13.268 ms
+ __________________________________
+< Someone is speaking well of you. >
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+Fluffingtonberry wobblefluxion skitterwhirls.
+
+[detached (from session alpha)]
