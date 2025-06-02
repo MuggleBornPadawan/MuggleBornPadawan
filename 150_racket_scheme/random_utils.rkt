@@ -55,7 +55,22 @@
 	guess
 	(sqrt-iter (improve guess))))
     (sqrt-iter 1.0))
-; factorial  
+;; cube root
+(define (cbrt x)
+   (define (cube y) (* y y y))
+   (define (improve y)
+    (/ (+ (/ x (square y)) (* 2 y)) 3))
+  (define (good-enough? guess)
+    (< (abs (- ( cube guess) x)) 0.001))
+  (define (sqrt-iter guess)
+    (display "Current guess: ")
+    (display guess)
+    (newline) ; Add a newline for readability
+    (if (good-enough? guess)
+	guess
+	(sqrt-iter (improve guess))))
+    (sqrt-iter 1.0))
+;; factorial  
 (define (factorial n)
   ;; <<< INSERT TRACING HERE <<<
   (display "--> Entered factorial with n = ")
