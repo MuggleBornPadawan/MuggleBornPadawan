@@ -1,13 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Jun  2 09:02:20 PM IST 2025 
+Date: Tue Jun  3 09:04:03 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/136 bookworm Release
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:3 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
+Hit:4 https://storage.googleapis.com/cros-packages/136 bookworm Release
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [265 kB]
+Fetched 368 kB in 2s (237 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -85,27 +87,26 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+33[0m([38;5;196m44[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;220m16[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                1.0 mm[0m         
+  [38;5;226m _`/""[38;5;240;1m.-.    [0m Shower in vicinity, rain with thunderstorm, rain
+  [38;5;226m  ,\_[38;5;240;1m(   ).  [0m [38;5;202m+34[0m([38;5;196m46[0m) °C[0m     
+  [38;5;226m   /[38;5;240;1m(___(__) [0m [1m↑[0m [38;5;202m28[0m km/h[0m      
+  [38;5;21;1m   ‚‘‚‘‚‘‚‘  [0m 4 km[0m           
+  [38;5;21;1m   ‚’‚’‚’‚’  [0m 0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Thundery outbreaks in nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+31[0m([38;5;202m36[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;208m26[0m km/h[0m      
-  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.829/58.435/77.673/13.268 ms
- __________________________________
-< Someone is speaking well of you. >
- ----------------------------------
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;202m30[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 39.378/54.500/119.768/22.073 ms
+ _________________________________
+< There was a phone call for you. >
+ ---------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Fluffingtonberry wobblefluxion skitterwhirls.
+Flibbertigibbetly squibbles thumpingly bounce bright.
 
-[detached (from session alpha)]
