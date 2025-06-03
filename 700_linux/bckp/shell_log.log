@@ -1,12 +1,12 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Tue Jun  3 09:08:59 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Tue Jun  3 09:10:33 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
-Ign:1 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/136 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -63,17 +63,18 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
--e 
+2025-06-03 21:09:02 /home/rgroot/.bash_history
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
@@ -94,4 +95,16 @@ Weather report: Pondicherry
   [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;202m30[0m km/h[0m      
   [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.414/46.210/67.311/9.680 ms
+rtt min/avg/max/mdev = 39.224/54.591/98.643/21.661 ms
+ ________________________________________
+/ Q: What's buried in Grant's tomb? A: A \
+\ corpse.                                /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+Flibbertigibbet zoomberries shimmeringly dance.
+
+[detached (from session alpha)]
