@@ -46,3 +46,4 @@ tmux new -s alpha
 sleep 2
 cd
 espeak -v en-gb -s 175 -p 50 "penguin out"
+rm startup_log.log - a tmp.txt
