@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Jun  3 09:10:33 PM IST 2025 
+Date: Wed Jun  4 01:17:20 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -72,6 +72,7 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
+├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
 ├── [01;34mgit[0m
 │   └── [01;34mgithub.com[0m
@@ -81,30 +82,37 @@ Password Store
 └── protector_key
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 Weather report: Chennai
 
-  [38;5;226m _`/""[38;5;240;1m.-.    [0m Shower in vicinity, rain with thunderstorm, rain
-  [38;5;226m  ,\_[38;5;240;1m(   ).  [0m [38;5;202m+34[0m([38;5;196m46[0m) °C[0m     
-  [38;5;226m   /[38;5;240;1m(___(__) [0m [1m↑[0m [38;5;202m28[0m km/h[0m      
-  [38;5;21;1m   ‚‘‚‘‚‘‚‘  [0m 4 km[0m           
-  [38;5;21;1m   ‚’‚’‚’‚’  [0m 0.0 mm[0m         
-Weather report: Pondicherry
-
   [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;202m30[0m km/h[0m      
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+35[0m([38;5;196m40[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;154m8[0m km/h[0m       
   [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.224/54.591/98.643/21.661 ms
- ________________________________________
-/ Q: What's buried in Grant's tomb? A: A \
-\ corpse.                                /
- ----------------------------------------
+Weather report: Pondicherry
+
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;202m+35[0m([38;5;196m40[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m13[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 40.010/57.865/72.840/10.992 ms
+ _______________________________________
+/ For years a secret shame destroyed my \
+| peace-- I'd not read Eliot, Auden or  |
+| MacNiece. But now I think a thought   |
+| that brings me hope: Neither had      |
+| Chaucer, Shakespeare, Milton, Pope.   |
+|                                       |
+\ -- Justin Richardson.                 /
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flibbertigibbet zoomberries shimmeringly dance.
+Flurgleboopzizzlequibblewhizzlepop.
 
-[detached (from session alpha)]
