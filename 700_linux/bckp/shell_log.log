@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Jun  8 09:28:14 PM IST 2025 
+Date: Sun Jun  8 09:29:13 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -104,16 +104,18 @@ Weather report: Pondicherry
   [38;5;240;1m   (___(__)  [0m [1m↗[0m [38;5;154m8[0m km/h[0m       
   [38;5;21;1m  ‚‘‚‘‚‘‚‘   [0m 3 km[0m           
   [38;5;21;1m  ‚’‚’‚’‚’   [0m 10.0 mm[0m        
-rtt min/avg/max/mdev = 38.238/54.482/66.361/10.779 ms
- ______________________________________
-/ You're not my type. For that matter, \
-\ you're not even my species!!!        /
- --------------------------------------
+rtt min/avg/max/mdev = 40.507/64.286/115.721/23.235 ms
+ ________________________________________
+/ Q: Why haven't you graduated yet? A:   \
+| Well, Dad, I could have finished years |
+| ago, but I wanted                      |
+|                                        |
+\ my dissertation to rhyme.              /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Zizzleflump, gleepglorp, quibblewhistle, snarklebloom, floofington, sporkleplum, blorfgleam
+Flumpkin wizzleberry squibbleslide.
 
-[detached (from session alpha)]
