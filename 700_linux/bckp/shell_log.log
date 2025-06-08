@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Jun  7 09:58:29 PM IST 2025 
+Date: Sun Jun  8 10:14:43 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/136 bookworm Release
+Fetched 55.4 kB in 1s (56.0 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -87,28 +88,30 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+36[0m([38;5;196m50[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;220m19[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;208m+31[0m([38;5;202m35[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;220m16[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy light rain in area with thunder
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+29[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↙[0m [38;5;190m11[0m km/h[0m      
-  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 1.6 mm[0m         
-rtt min/avg/max/mdev = 40.342/63.061/232.704/52.174 ms
- _________________________________________
-/ This was the most unkindest cut of all. \
-|                                         |
-\ -- William Shakespeare, "Julius Caesar" /
- -----------------------------------------
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;202m+35[0m([38;5;196m40[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;226m15[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 38.599/54.346/142.102/27.517 ms
+ ________________________________________
+/ You may my glories and my state        \
+| dispose, But not my griefs; still am I |
+| king of those.                         |
+|                                        |
+\ -- William Shakespeare, "Richard II"   /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flumpkinberrysproutskittlewhizzlegle.
+Flibbertigibbetly, squibblesworth, glimmerdrift, polliwoggle, snarflewick, quibblepuff, widdershunt.
 
