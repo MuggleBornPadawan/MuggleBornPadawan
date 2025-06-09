@@ -70,3 +70,9 @@ else
     echo "⚠️  WARNING: Sensitive information detected in $EMACS_INIT"
     echo "❌ No cloud backup taken"
 fi
+
+cd
+cd MuggleBornPadawan
+git add .
+git commit -m "bckp"
+cd
