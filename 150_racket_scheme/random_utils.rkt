@@ -88,6 +88,15 @@
         (newline)
         ;; >>> TRACING ENDS <<<
         result))) ; Ensure the result is returned
+; factorial iter
+(define (factorial-iter n)
+  (fact-iter 1 1 n))
+(define (fact-iter product counter max-count)
+  (if (> counter max-count)
+      product
+      (fact-iter (* counter product)
+                 (+ counter 1)
+                 max-count)))
 ;; Ackermann's function
 (define (A x y)
   (cond ((= y 0) 0)
@@ -98,3 +107,104 @@
 (define (g n) (A 1 n))
 (define (h n) (A 2 n))
 (define (k n) (* 5 n n))
+; Fibonacci - tree recursion 
+(define (fib n)
+  (cond ((= n 0) 0)
+        ((= n 1) 1)
+        (else (+ (fib (- n 1))
+                 (fib (- n 2))))))
+; Fibonacci - linear iterative 
+(define (fib-i n)
+  (fib-iter 1 0 n))
+(define (fib-iter a b count)
+  (if (= count 0)
+      b
+      (fib-iter (+ a b) a (- count 1))))
+; Coin change
+(define (count-change amount) (cc amount 5))
+(define (cc amount kinds-of-coins)
+  (cond ((= amount 0) 1)
+        ((or (< amount 0) (= kinds-of-coins 0)) 0)
+        (else (+ (cc amount
+                     (- kinds-of-coins 1))
+                 (cc (- amount
+                        (first-denomination kinds-of-coins)) kinds-of-coins)))))
+(define (first-denomination kinds-of-coins)
+  (cond ((= kinds-of-coins 1) 1)
+        ((= kinds-of-coins 2) 5)
+        ((= kinds-of-coins 3) 10)
+        ((= kinds-of-coins 4) 25)
+        ((= kinds-of-coins 5) 50)))
+; f recursion 
+(define (computeFRecursive n)
+    (cond
+      ((< n 3) ; baseCase: If n is less than 3, f(n) is simply n.
+       n)
+      (else    ; recursiveCase: If n is 3 or greater, use the recursive formula.
+       (+ (computeFRecursive (- n 1))
+          (* 2 (computeFRecursive (- n 2)))
+          (* 3 (computeFRecursive (- n 3)))))))
+; f iteration
+(define (computeFIterative n)
+    (cond
+      ((< n 3) ; baseCase: For n < 3, the value is simply n.
+       n)
+      (else
+       ;; Inner helper function for tail recursion.
+       ;; We need to maintain the previous three values: f(k-1), f(k-2), f(k-3)
+       ;; f_k_minus_1_val: Holds f(k-1)
+       ;; f_k_minus_2_val: Holds f(k-2)
+       ;; f_k_minus_3_val: Holds f(k-3)
+       ;; currentK: The current index we are building up to.
+       (define (iter f_k_minus_1_val f_k_minus_2_val f_k_minus_3_val currentK)
+         (if (= currentK n) ; termination condition: Have we reached our target 'n'?
+             ;; If currentK is 'n', then f_k_minus_1_val holds f(n-1), etc.
+             ;; So, we calculate f(n) using these values.
+             (+ f_k_minus_1_val
+                (* 2 f_k_minus_2_val)
+                (* 3 f_k_minus_3_val))
+             ;; If not, calculate the next f_k and recurse with updated values.
+             (iter (+ f_k_minus_1_val
+                      (* 2 f_k_minus_2_val)
+                      (* 3 f_k_minus_3_val)) ; This becomes the new f(k-1) for the next iteration (f(k))
+                   f_k_minus_1_val          ; The old f(k-1) becomes the new f(k-2)
+                   f_k_minus_2_val          ; The old f(k-2) becomes the new f(k-3)
+                   (+ currentK 1))))       ; Increment the current index
+
+       ;; Initial call to the helper function.
+       ;; When currentK starts at 3, we need f(2), f(1), f(0).
+       (iter 2 ; This is f(2)
+             1 ; This is f(1)
+             0 ; This is f(0)
+             3)))) ; Start calculating from f(3)
+
+
+
+
+
+
+
+
+;; DONT CHANGE ANYTHING AFTER THIS
+; checker function
+(define (checkerF fa fb value)
+  (- (fa value) (fb value)))
+; temp checker
+(define (tChk value)
+  (checkerF computeFRecursive computeFIterative value))
+; temp checker upto value 
+(define (chk-iter inputv incrv maxv)
+  (if (<= inputv maxv)
+      ((display "input:")
+       (display inputv)
+       (display " output:")
+       (displayln (tChk inputv))
+       (chk-iter (+ inputv incrv) incrv maxv))
+      (display "end of chk")))
+(define (uptoVChk value)
+  (chk-iter 0 1 value))
+(uptoVChk 10)
+
+;; dummy to test REPL
+(define (test n)
+  (+ n n 444))
