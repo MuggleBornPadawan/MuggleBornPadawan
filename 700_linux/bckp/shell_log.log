@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Jun  9 06:35:55 PM IST 2025 
+Date: Tue Jun 10 11:14:33 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-g027a1f314c8f
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/136 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/136 bookworm Release
+Fetched 55.4 kB in 2s (32.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -91,27 +92,20 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m42[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;202m31[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                1.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+33[0m([38;5;196m37[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;208m24[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
-rtt min/avg/max/mdev = 37.891/47.997/58.608/8.077 ms
- _______________________________________
-/ Afternoon very favorable for romance. \
-\ Try a single person for a change.     /
- ---------------------------------------
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;202m+35[0m([38;5;196m41[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;118m4[0m km/h[0m       
+  [38;5;226m     `-’     [0m 6 km[0m           
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 50.586/53.562/79.453/7.827 ms
+ ______________________________________
+/ Are you making all this up as you go \
+\ along?                               /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flibbertigibbet bounced on a moonbeam, while squibblingly striped rainbows danced beneath.
+Flibbertigibbet bounced on a wibble-wobble.
 
