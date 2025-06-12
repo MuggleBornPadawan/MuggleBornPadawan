@@ -1,16 +1,13 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Thu Jun 12 12:49:48 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Thu Jun 12 12:50:53 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Get:5 https://storage.googleapis.com/cros-packages/137 bookworm Release [3,109 B]
-Get:6 https://storage.googleapis.com/cros-packages/137 bookworm Release.gpg [2,365 B]
-Get:7 https://storage.googleapis.com/cros-packages/137 bookworm/main amd64 Packages [5,021 B]
-Fetched 58.4 kB in 3s (19.4 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -21,7 +18,26 @@ The following packages will be upgraded:
 2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Need to get 55.5 kB of archives.
 After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+Do you want to continue? [Y/n] Get:1 https://storage.googleapis.com/cros-packages/137 bookworm/main amd64 cros-garcon all 0.32 [3,080 B]
+Get:2 https://storage.googleapis.com/cros-packages/137 bookworm/main amd64 cros-im amd64 62324 [52.4 kB]
+Fetched 55.5 kB in 1s (64.7 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115066 files and directories currently installed.)
+Preparing to unpack .../cros-garcon_0.32_all.deb ...
+update-alternatives: using /usr/bin/firefox-esr to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
+update-alternatives: using /usr/bin/w3m to provide /usr/bin/www-browser (www-browser) in auto mode
+update-alternatives: using /usr/bin/firefox-esr to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
+Unpacking cros-garcon (0.32) over (0.31) ...
+Preparing to unpack .../cros-im_62324_amd64.deb ...
+Unpacking cros-im:amd64 (62324) over (62087) ...
+Setting up cros-im:amd64 (62324) ...
+Setting up cros-garcon (0.32) ...
+update-alternatives: using /usr/bin/garcon-url-handler to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
+update-alternatives: using /usr/bin/garcon-url-handler to provide /usr/bin/www-browser (www-browser) in auto mode
+update-alternatives: using /usr/bin/garcon-url-handler to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
+update-alternatives: using /usr/bin/garcon-terminal-handler to provide /usr/bin/x-terminal-emulator (x-terminal-emulator) in auto mode
+Processing triggers for libgtk-3-0:amd64 (3.24.38-2~deb12u3) ...
+Processing triggers for libgtk-4-1:amd64 (4.8.3+ds-2+deb12u1) ...
+Processing triggers for desktop-file-utils (0.26-1) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -66,12 +82,12 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
--e 
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -86,19 +102,27 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-06-10 12:06:11 /home/rgroot/-
 2025-06-10 12:06:11 /home/rgroot/a
 2025-06-10 12:06:11 /home/rgroot/tmp.txt
--e 
+2025-06-12 12:49:53 /home/rgroot/.bash_history
+2025-06-12 12:50:11 /home/rgroot/startup_log.log
+2025-06-12 12:50:11 /home/rgroot/-
+2025-06-12 12:50:11 /home/rgroot/a
+2025-06-12 12:50:11 /home/rgroot/tmp.txt
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 Weather report: Chennai
 
                 Haze
@@ -113,4 +137,16 @@ Weather report: Pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;226m14[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.222/43.490/56.009/4.316 ms
+rtt min/avg/max/mdev = 38.090/60.917/93.617/19.756 ms
+ ________________________________________
+/ You will be advanced socially, without \
+\ any special effort on your part.       /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+Flibbertigibbet thumped beneath the shimmering moss.
+
+[detached (from session alpha)]
