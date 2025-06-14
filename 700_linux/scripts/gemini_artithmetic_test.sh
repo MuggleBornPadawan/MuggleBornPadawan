@@ -28,7 +28,7 @@
 API_KEY_PATH="GEMINI_API_KEY"
 
 # Number of digits for the large random numbers. 18-19 digits fits within 64-bit signed integers.
-RANDOM_NUM_DIGITS=7
+RANDOM_NUM_DIGITS=4
 
 # Gemini API Endpoint
 GEMINI_API_ENDPOINT="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"

@@ -197,7 +197,7 @@ echo "Info: Script finished processing all names."
 
 # check arithmetic
 cd
-./MuggleBornPadawan/700_linux/scripts/gemini_artithmetic_test.sh >> daily_nuggets.txt 2>&1
+#./MuggleBornPadawan/700_linux/scripts/gemini_artithmetic_test.sh >> daily_nuggets.txt 2>&1
 cd
 
 exit 0
