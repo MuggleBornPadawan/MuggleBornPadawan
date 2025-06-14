@@ -1,12 +1,12 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Jun 12 12:50:53 PM IST 2025 
+Date: Sat Jun 14 10:24:37 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -14,30 +14,28 @@ Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  cros-garcon cros-im
-2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 55.5 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://storage.googleapis.com/cros-packages/137 bookworm/main amd64 cros-garcon all 0.32 [3,080 B]
-Get:2 https://storage.googleapis.com/cros-packages/137 bookworm/main amd64 cros-im amd64 62324 [52.4 kB]
-Fetched 55.5 kB in 1s (64.7 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115066 files and directories currently installed.)
-Preparing to unpack .../cros-garcon_0.32_all.deb ...
-update-alternatives: using /usr/bin/firefox-esr to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
-update-alternatives: using /usr/bin/w3m to provide /usr/bin/www-browser (www-browser) in auto mode
-update-alternatives: using /usr/bin/firefox-esr to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
-Unpacking cros-garcon (0.32) over (0.31) ...
-Preparing to unpack .../cros-im_62324_amd64.deb ...
-Unpacking cros-im:amd64 (62324) over (62087) ...
-Setting up cros-im:amd64 (62324) ...
-Setting up cros-garcon (0.32) ...
-update-alternatives: using /usr/bin/garcon-url-handler to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
-update-alternatives: using /usr/bin/garcon-url-handler to provide /usr/bin/www-browser (www-browser) in auto mode
-update-alternatives: using /usr/bin/garcon-url-handler to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
-update-alternatives: using /usr/bin/garcon-terminal-handler to provide /usr/bin/x-terminal-emulator (x-terminal-emulator) in auto mode
-Processing triggers for libgtk-3-0:amd64 (3.24.38-2~deb12u3) ...
-Processing triggers for libgtk-4-1:amd64 (4.8.3+ds-2+deb12u1) ...
-Processing triggers for desktop-file-utils (0.26-1) ...
+  ca-certificates
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 155 kB of archives.
+After this operation, 3,072 B of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm-updates/main amd64 ca-certificates all 20230311+deb12u1 [155 kB]
+Preconfiguring packages ...
+Fetched 155 kB in 2s (70.7 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115062 files and directories currently installed.)
+Preparing to unpack .../ca-certificates_20230311+deb12u1_all.deb ...
+Unpacking ca-certificates (20230311+deb12u1) over (20230311) ...
+Setting up ca-certificates (20230311+deb12u1) ...
+Updating certificates in /etc/ssl/certs...
+rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2 added, 0 removed; done.
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for ca-certificates (20230311+deb12u1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Processing triggers for ca-certificates-java (20230710~deb12u1) ...
+done.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -125,28 +123,31 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+33[0m([38;5;196m38[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;190m12[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.1 mm[0m         
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+91[0m([38;5;196m107[0m) °F[0m    
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;226m8[0m mph[0m        
+  [38;5;226m   /[38;5;250m(___(__) [0m 3 mi[0m           
+                0.0 in[0m         
 Weather report: Pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;226m14[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.090/60.917/93.617/19.756 ms
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+82[0m([38;5;208m87[0m) °F[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;202m18[0m mph[0m       
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           
+                0.0 in[0m         
+rtt min/avg/max/mdev = 248.183/317.274/382.236/42.475 ms
  ________________________________________
-/ You will be advanced socially, without \
-\ any special effort on your part.       /
+/ Q: Why do people who live near Niagara \
+| Falls have flat foreheads? A: Because  |
+| every morning they wake up thinking    |
+| "What *is* that noise?                 |
+|                                        |
+\ Oh, right, *of course*!                /
  ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flibbertigibbet thumped beneath the shimmering moss.
+Flibbertigibbet bounces on the purple squiggles.
 
-[detached (from session alpha)]
