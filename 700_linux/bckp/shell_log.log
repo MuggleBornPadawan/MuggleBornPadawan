@@ -1,41 +1,20 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Jun 14 10:24:37 PM IST 2025 
+Date: Sun Jun 15 09:05:48 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Ign:2 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:4 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Fetched 55.4 kB in 3s (20.6 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  ca-certificates
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 155 kB of archives.
-After this operation, 3,072 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm-updates/main amd64 ca-certificates all 20230311+deb12u1 [155 kB]
-Preconfiguring packages ...
-Fetched 155 kB in 2s (70.7 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115062 files and directories currently installed.)
-Preparing to unpack .../ca-certificates_20230311+deb12u1_all.deb ...
-Unpacking ca-certificates (20230311+deb12u1) over (20230311) ...
-Setting up ca-certificates (20230311+deb12u1) ...
-Updating certificates in /etc/ssl/certs...
-rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
-2 added, 0 removed; done.
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for ca-certificates (20230311+deb12u1) ...
-Updating certificates in /etc/ssl/certs...
-0 added, 0 removed; done.
-Running hooks in /etc/ca-certificates/update.d...
-done.
-Processing triggers for ca-certificates-java (20230710~deb12u1) ...
-done.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -123,31 +102,35 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+91[0m([38;5;196m107[0m) °F[0m    
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;226m8[0m mph[0m        
-  [38;5;226m   /[38;5;250m(___(__) [0m 3 mi[0m           
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+84[0m([38;5;202m95[0m) °F[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;196m23[0m mph[0m       
+  [38;5;251m _ - _ - _ - [0m 2 mi[0m           
                 0.0 in[0m         
 Weather report: Pondicherry
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+82[0m([38;5;208m87[0m) °F[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;202m18[0m mph[0m       
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           
+                Cloudy
+  [38;5;250m     .--.    [0m [38;5;220m+80[0m([38;5;214m86[0m) °F[0m     
+  [38;5;250m  .-(    ).  [0m [1m↗[0m [38;5;208m16[0m mph[0m       
+  [38;5;250m (___.__)__) [0m 6 mi[0m           
                 0.0 in[0m         
-rtt min/avg/max/mdev = 248.183/317.274/382.236/42.475 ms
- ________________________________________
-/ Q: Why do people who live near Niagara \
-| Falls have flat foreheads? A: Because  |
-| every morning they wake up thinking    |
-| "What *is* that noise?                 |
-|                                        |
-\ Oh, right, *of course*!                /
- ----------------------------------------
+rtt min/avg/max/mdev = 246.926/249.771/253.630/2.108 ms
+ _________________________________________
+/ I will honour Christmas in my heart,    \
+| and try to keep it all the year. I will |
+| live in the Past, the Present, and the  |
+| Future. The Spirits of all Three shall  |
+| strive within me. I will not shut out   |
+| the lessons that they teach. Oh, tell   |
+| me that I may sponge away the writing   |
+| on this stone!                          |
+|                                         |
+\ -- Charles Dickens                      /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flibbertigibbet bounces on the purple squiggles.
+Flibbertigibbet splinks the moonbeam’s hue.
 
