@@ -152,7 +152,7 @@ for person_name in "${names[@]}"; do
 
     # 4d. Introduce Delay
     # Pause for a random duration between 0 and 55 seconds.
-    delay_seconds=$((RANDOM % 15))
+    delay_seconds=$((RANDOM % 55))
     echo "Info: Delaying for ${delay_seconds} seconds..."
     sleep "${delay_seconds}"
 
