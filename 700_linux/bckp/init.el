@@ -99,3 +99,11 @@
  '((python . t))) ; The 't' means enable it.
 
 (setq org-babel-python-cmd "python") 
+
+;; geiser-repl
+(defun my/geiser-set-repl-directory ()
+  "Set Geiser's working directory to the current file's directory."
+  (when buffer-file-name
+    (setq geiser-repl-working-directory (file-name-directory buffer-file-name))))
+
+(add-hook 'geiser-mode-hook #'my/geiser-set-repl-directory)
