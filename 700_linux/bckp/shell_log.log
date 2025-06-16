@@ -1,14 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Jun 16 12:31:50 PM IST 2025 
+Date: Mon Jun 16 04:12:06 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 48.0 kB in 2s (26.7 kB/s)
+Fetched 103 kB in 2s (67.0 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -100,6 +100,13 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
+Weather report: Chennai
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+35[0m([38;5;196m45[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;208m27[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
@@ -107,14 +114,19 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;214m20[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 37.665/53.844/122.426/22.619 ms
- ________________________________
-< Tomorrow, you can be anywhere. >
- --------------------------------
+rtt min/avg/max/mdev = 40.467/70.027/132.551/31.542 ms
+ ________________________________________
+/ It is by the fortune of God that, in   \
+| this country, we have three benefits:  |
+| freedom of speech, freedom of thought, |
+| and the wisdom never to use either.    |
+|                                        |
+\ -- Mark Twain                          /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flumphberry squibble bounce shimmer ripple squawk.
+Flumphberry wizzleberry swirl, fizzle-dust bloom, squibble-sky drone, groggle-root ripple, shimmer-stone hum, polka-tentacle leap, buzz-weave shadow bloom.
 
