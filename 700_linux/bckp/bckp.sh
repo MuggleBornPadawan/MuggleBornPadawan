@@ -72,7 +72,13 @@ else
 fi
 
 cd
+cp .tmux.conf MuggleBornPadawan/700_linux/bckp/.tmux.conf
+cd
+cd
 cd MuggleBornPadawan
 git add .
 git commit -m "bckp"
 cd
+EMACS_INIT="$HOME/.emacs.d/init.el"
+BACKUP_DIR="$HOME/.emacs.d/backups"
+GIT_DIR="$HOME/MuggleBornPadawan/700_linux/bckp/"
