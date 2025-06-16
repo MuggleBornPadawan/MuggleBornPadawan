@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Jun 15 09:08:10 AM IST 2025 
+Date: Mon Jun 16 12:31:50 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Fetched 48.0 kB in 2s (26.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -99,32 +100,21 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-Weather report: Chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+84[0m([38;5;202m95[0m) °F[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;196m23[0m mph[0m       
-  [38;5;251m _ - _ - _ - [0m 2 mi[0m           
-                0.0 in[0m         
 Weather report: Pondicherry
 
-                Cloudy
-  [38;5;250m     .--.    [0m [38;5;220m+80[0m([38;5;214m86[0m) °F[0m     
-  [38;5;250m  .-(    ).  [0m [1m↗[0m [38;5;208m16[0m mph[0m       
-  [38;5;250m (___.__)__) [0m 6 mi[0m           
-                0.0 in[0m         
-rtt min/avg/max/mdev = 249.627/276.070/353.846/40.285 ms
- ________________________________________
-/ You may my glories and my state        \
-| dispose, But not my griefs; still am I |
-| king of those.                         |
-|                                        |
-\ -- William Shakespeare, "Richard II"   /
- ----------------------------------------
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;214m20[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 37.665/53.844/122.426/22.619 ms
+ ________________________________
+< Tomorrow, you can be anywhere. >
+ --------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flibbertigibbet buzzes, giggle-berries shimmer, quibble-clamency whispers, snoozle-plum trees slumber, jolt-sprout dances, fuzz-flump melts, gloom-glows brightly.
+Flumphberry squibble bounce shimmer ripple squawk.
 
