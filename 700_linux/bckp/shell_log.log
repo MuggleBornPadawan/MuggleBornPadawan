@@ -1,14 +1,13 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Mon Jun 16 04:12:06 PM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Mon Jun 16 06:08:37 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 103 kB in 2s (67.0 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -64,7 +63,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -84,22 +83,19 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-06-12 12:50:11 /home/rgroot/-
 2025-06-12 12:50:11 /home/rgroot/a
 2025-06-12 12:50:11 /home/rgroot/tmp.txt
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
+├── git
+│   └── github.com
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
 Weather report: Chennai
 
   [38;5;226m   \  /[0m       Partly cloudy
@@ -114,19 +110,4 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;214m20[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 40.467/70.027/132.551/31.542 ms
- ________________________________________
-/ It is by the fortune of God that, in   \
-| this country, we have three benefits:  |
-| freedom of speech, freedom of thought, |
-| and the wisdom never to use either.    |
-|                                        |
-\ -- Mark Twain                          /
- ----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-Flumphberry wizzleberry swirl, fizzle-dust bloom, squibble-sky drone, groggle-root ripple, shimmer-stone hum, polka-tentacle leap, buzz-weave shadow bloom.
-
+rtt min/avg/max/mdev = 39.888/46.098/65.194/8.593 ms
