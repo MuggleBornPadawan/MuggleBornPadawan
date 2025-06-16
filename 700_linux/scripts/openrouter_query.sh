@@ -120,7 +120,7 @@ fi
 
 # Attempt to extract and display only the content of the AI's message
 echo "--- OpenRouter AI Response ---"
-f ! echo "$apiResponse" | jq -r '.choices[0].message.content'; then
+if ! echo "$apiResponse" | jq -r '.choices[0].message.content'; then
     # If the above jq command fails (e.g., response structure is unexpected),
     # print the raw response for debugging.
     echo "Error: Failed to extract AI response content. Raw JSON response was:" >&2
