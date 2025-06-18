@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Jun 16 08:11:32 PM IST 2025 
+Date: Wed Jun 18 11:33:42 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 48.0 kB in 2s (28.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -107,26 +106,33 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+33[0m([38;5;196m40[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;202m30[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
+  [38;5;226m    \   /    [0m Clear
+  [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m20[0m km/h[0m      
+  [38;5;226m     `-’     [0m 6 km[0m           
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;220m+27[0m([38;5;208m31[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 40.139/55.508/65.337/9.499 ms
- ______________________________________
-< You will have long and healthy life. >
- --------------------------------------
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;190m11[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 39.748/60.827/131.944/25.830 ms
+ _________________________________________
+/ Whenever the literary German dives into \
+| a sentence, that is the last you are    |
+| going to see of him until he emerges on |
+| the other side of his Atlantic with his |
+| verb in his mouth.                      |
+|                                         |
+| -- Mark Twain "A Connecticut Yankee in  |
+\ King Arthur's Court"                    /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flurgleboop zizzlewhirl floopstar splingoon fizzleburr.
+Flumphberry bounce wiggles the moonbeam’s glee.
 
