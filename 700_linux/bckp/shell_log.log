@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Jun 18 11:33:42 AM IST 2025 
+Date: Wed Jun 18 12:20:36 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -118,21 +118,15 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;190m11[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.748/60.827/131.944/25.830 ms
- _________________________________________
-/ Whenever the literary German dives into \
-| a sentence, that is the last you are    |
-| going to see of him until he emerges on |
-| the other side of his Atlantic with his |
-| verb in his mouth.                      |
-|                                         |
-| -- Mark Twain "A Connecticut Yankee in  |
-\ King Arthur's Court"                    /
- -----------------------------------------
+rtt min/avg/max/mdev = 40.012/55.460/73.785/10.972 ms
+ ________________________________________
+/ You are sick, twisted and perverted. I \
+\ like that in a person.                 /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flumphberry bounce wiggles the moonbeam’s glee.
+Flumphberry squibblegloomsprout fizzleblossomdrift.
 
