@@ -38,8 +38,14 @@ fortune -a | cowsay
 # sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null # deprecated 
 # ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh > /dev/null 2>&1 & #deprecated 
 # ollama run gemma3:1b-it-qat "speak gibberish"
+echo "start gemma3:1b"
 ollama run gemma3:1b "write 7 gibberish words in a single sentence; skip commentary; skip asking questions; skip notes"
 ollama stop gemma3:1b
+echo "stop gemma"
+echo "start deepseek-r1:1.5b"
+ollama run deepseek-r1:1.5b "tell me a random word; skip commentary; skip asking questions; skip notes"
+ollama stop deepseek-r1:1.5b
+echo "stop deepseek"
 tmux new -s alpha
 
 # final words 
