@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Jun 18 12:20:36 PM IST 2025 
+Date: Wed Jun 18 12:24:39 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -118,15 +118,48 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;190m11[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 40.012/55.460/73.785/10.972 ms
- ________________________________________
-/ You are sick, twisted and perverted. I \
-\ like that in a person.                 /
- ----------------------------------------
+rtt min/avg/max/mdev = 39.744/52.196/74.269/11.636 ms
+ _________________________________________
+/ Stop! There was first a game of         \
+| blindman's buff. Of course there was.   |
+| And I no more believe Topper was really |
+| blind than I believe he had eyes in his |
+| boots. My opinion is, that it was a     |
+| done thing between him and Scrooge's    |
+| nephew; and that the Ghost of Christmas |
+| Present knew it. The way he went after  |
+| that plump sister in the lace tucker,   |
+| was an outrage on the credulity of      |
+\ human nature.                           /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
-Flumphberry squibblegloomsprout fizzleblossomdrift.
+start gemma3:1b
+Flibbertigibbet bounces on a quibble.
 
+stop gemma
+start deepseek-r1:1.5b
+<think>
+Okay, so I need to create a sentence that uses the word "random." Hmm, where do I start? First off, I should think about what it means for something to be random. It's something unpredictable, without any order or pattern. So, when someone says something is random, they're emphasizing lack of predictability and fairness.
+
+Now, how can I incorporate that into a sentence? Let me break it down. The word "random" has several parts: it can refer to the process itself, like tossing a coin, or the outcome, like an event happening without any bias. But in this case, maybe I'm focusing on something more about unpredictability.
+
+Let's see... If I think of weather patterns, they're random because they're influenced by so many factors, making them hard to predict. Or maybe something like flipping a coin is random because each flip doesn't affect the others. That could work as an example.
+
+I should make sure the sentence flows well and clearly conveys that it's random. Maybe something about events or outcomes being without any bias. Let me try putting that together: "The outcome of this action was completely random, with no discernible pattern or cause." Does that make sense?
+
+Breaking it down, "completely random" means there's no predictability or bias. Then, the rest describes the outcome as having no pattern or cause. That seems to fit the definition of randomness I had earlier.
+
+Wait, is there a better word than "completely"? Maybe "uncertainly" would be more descriptive? Or perhaps something like "irregularly." Hmm, not sure if those work as well. Let me think again.
+
+Alternatively, maybe using "unpredictable" instead of "random" could also work since both imply lack of predictability. So the sentence could be: "The result was completely unpredictable," but that might be a bit more concise. Or "It came out in an entirely random fashion," which adds more detail about the outcome.
+
+I think "completely random" is good because it clearly states there's no discernible pattern or cause, which aligns with the core meaning of randomness. So I'll go with that version.
+</think>
+
+The result was completely random, with no discernible pattern or cause.
+
+stop deepseek
