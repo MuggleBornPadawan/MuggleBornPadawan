@@ -1,3 +1,4 @@
+#lang racket
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation, either version 3 of the License, or
@@ -56,7 +57,7 @@
 	(sqrt-iter (improve guess))))
   (sqrt-iter 1.0))
 ;; cube root
-(define (cbrt x)
+(define (my-cbrt x)
    (define (cube y) (* y y y))
    (define (improve y)
     (/ (+ (/ x (square y)) (* 2 y)) 3))
@@ -103,7 +104,7 @@
         ((= x 0) (* 2 y))
         ((= y 1) 2)
         (else (A (- x 1) (A x (- y 1))))))
-(define (f n) (A 0 n))
+(define (ff n) (A 0 n))
 (define (g n) (A 1 n))
 (define (h n) (A 2 n))
 (define (k n) (* 5 n n))
@@ -177,7 +178,6 @@
              1 ; This is f(1)
              0 ; This is f(0)
              3)))) ; Start calculating from f(3)
-
 ;; exponential
 (define (expt b n)
   (expt-iter b n 1))
@@ -187,9 +187,6 @@
       (expt-iter b
 		 (- counter 1)
 		 (* b product))))
-
-
-
 
 
 ;; DONT CHANGE ANYTHING AFTER THIS
@@ -213,5 +210,8 @@
 (uptoVChk 10)
 
 ;; dummy to test REPL
-(define (test n)
+(define (testt n)
   (+ n n 444))
+
+
+(provide my-cbrt testt tChk fib expt)
