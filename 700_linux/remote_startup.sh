@@ -43,7 +43,7 @@ ollama run gemma3:1b "write 7 gibberish words in a single sentence; skip comment
 ollama stop gemma3:1b
 echo "stop gemma"
 echo "start deepseek-r1:1.5b"
-ollama run deepseek-r1:1.5b "tell me a random word; skip commentary; skip asking questions; skip notes"
+ollama run deepseek-r1:1.5b "ok"
 ollama stop deepseek-r1:1.5b
 echo "stop deepseek"
 tmux new -s alpha
