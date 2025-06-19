@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Jun 18 12:40:05 PM IST 2025 
+Date: Thu Jun 19 12:01:46 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -106,32 +106,30 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-  [38;5;226m    \   /    [0m Clear
-  [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m20[0m km/h[0m      
-  [38;5;226m     `-’     [0m 6 km[0m           
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
+                Haze
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+30[0m([38;5;208m33[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;208m25[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;190m11[0m km/h[0m      
-  [38;5;226m     `-’     [0m 10 km[0m          
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.919/52.659/96.587/16.569 ms
- ________________________________________
-/ Q: How many Harvard MBA's does it take \
-| to screw in a light bulb? A: Just one. |
-| He grasps it firmly and the universe   |
-\ revolves around him.                   /
- ----------------------------------------
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+33[0m([38;5;196m39[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;190m12[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 38.943/60.269/135.866/25.441 ms
+ ______________________________________
+/ You are a fluke of the universe; you \
+\ have no right to be here.            /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet zooms through the purple rain.
+Zizzleflump blorpkin spluggle fluffton wigglewhirl fuzzhopper.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -139,6 +137,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+Hello! It seems like your message is a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
 
 stop deepseek
