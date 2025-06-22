@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Jun 22 11:08:48 PM IST 2025 
+Date: Sun Jun 22 11:11:07 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -105,18 +105,17 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-rtt min/avg/max/mdev = 41.616/52.138/71.747/10.775 ms
- ___________________________________
-/ Be security conscious -- National \
-\ defense is at stake.              /
- -----------------------------------
+rtt min/avg/max/mdev = 40.060/59.320/154.976/31.842 ms
+ ________________________________________
+< You will be misunderstood by everyone. >
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet bounces on a polka-dot cloud.
+Zizzleflump, gribblegrump, flooflephant, quibblewhirl, skitterflop, snorthgrumble, blorfbleep.
 
 stop gemma
 start deepseek-r1:1.5b
