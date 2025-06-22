@@ -1,16 +1,13 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Sun Jun 22 10:59:56 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Sun Jun 22 11:00:32 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [268 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [160 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 531 kB in 2s (340 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -66,7 +63,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -91,16 +88,43 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-06-16 18:09:02 /home/rgroot/-
 2025-06-16 18:09:02 /home/rgroot/a
 2025-06-16 18:09:02 /home/rgroot/tmp.txt
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+rtt min/avg/max/mdev = 40.456/42.324/45.522/1.253 ms
+ ______________________________________
+/ What I tell you three times is true. \
+|                                      |
+\ -- Lewis Carroll                     /
+ --------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Zizzleflumpquibbleblorpstrobozoo.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
+stop deepseek
+[detached (from session 0)]
