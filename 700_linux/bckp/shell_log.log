@@ -1,42 +1,20 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Jun 23 12:02:54 AM IST 2025 
+Date: Mon Jun 23 09:26:30 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [268 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [160 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 476 kB in 2s (303 kB/s)
+Ign:1 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Fetched 55.4 kB in 2s (36.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-bin libgdk-pixbuf2.0-common
-3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 463 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 libgdk-pixbuf2.0-common all 2.42.10+dfsg-1+deb12u2 [306 kB]
-Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 libgdk-pixbuf-2.0-0 amd64 2.42.10+dfsg-1+deb12u2 [138 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 libgdk-pixbuf2.0-bin amd64 2.42.10+dfsg-1+deb12u2 [17.8 kB]
-Fetched 463 kB in 0s (998 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115064 files and directories currently installed.)
-Preparing to unpack .../libgdk-pixbuf2.0-common_2.42.10+dfsg-1+deb12u2_all.deb ...
-Unpacking libgdk-pixbuf2.0-common (2.42.10+dfsg-1+deb12u2) over (2.42.10+dfsg-1+deb12u1) ...
-Preparing to unpack .../libgdk-pixbuf-2.0-0_2.42.10+dfsg-1+deb12u2_amd64.deb ...
-Unpacking libgdk-pixbuf-2.0-0:amd64 (2.42.10+dfsg-1+deb12u2) over (2.42.10+dfsg-1+deb12u1) ...
-Preparing to unpack .../libgdk-pixbuf2.0-bin_2.42.10+dfsg-1+deb12u2_amd64.deb ...
-Unpacking libgdk-pixbuf2.0-bin (2.42.10+dfsg-1+deb12u2) over (2.42.10+dfsg-1+deb12u1) ...
-Setting up libgdk-pixbuf2.0-common (2.42.10+dfsg-1+deb12u2) ...
-Setting up libgdk-pixbuf-2.0-0:amd64 (2.42.10+dfsg-1+deb12u2) ...
-Setting up libgdk-pixbuf2.0-bin (2.42.10+dfsg-1+deb12u2) ...
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for libc-bin (2.36-9+deb12u10) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -128,19 +106,18 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-rtt min/avg/max/mdev = 38.247/42.980/57.689/5.646 ms
- ____________________________________
-/ Harp not on that string.           \
-|                                    |
-\ -- William Shakespeare, "Henry VI" /
- ------------------------------------
+rtt min/avg/max/mdev = 38.859/40.800/44.977/2.315 ms
+ ______________________________________
+/ Expect the worst, it's the least you \
+\ can do.                              /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumphity squiggle shimmer floofly float.
+Flibbertigibbet bounces on the shimmering moss.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -148,6 +125,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+Hello! How can I assist you today? 😊
 
 stop deepseek
