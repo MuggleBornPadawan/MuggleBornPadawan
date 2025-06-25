@@ -185,7 +185,7 @@ for person_name in "${names[@]}"; do
     else
          warning_msg "Nugget is empty for ${person_name}, not logging to file."
     fi
-    ./MuggleBornPadawan/700_linux/scripts/openrouter_query.sh "tell me a new joke"
+    #./MuggleBornPadawan/700_linux/scripts/openrouter_query.sh "tell me a new joke"
 
 done
 
