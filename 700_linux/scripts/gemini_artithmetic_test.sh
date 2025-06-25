@@ -31,7 +31,7 @@ API_KEY_PATH="GEMINI_API_KEY"
 RANDOM_NUM_DIGITS=4
 
 # Gemini API Endpoint
-GEMINI_API_ENDPOINT="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+GEMINI_API_ENDPOINT="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
 # --- Helper Functions ---
 
@@ -252,6 +252,7 @@ function gemini_arithmetic_test() {
 	# Pause for a random duration between 0 and 55 seconds.
 	delay_seconds=$((RANDOM % 55))
 	echo "Info: Delaying for ${delay_seconds} seconds..."
+	./MuggleBornPadawan/700_linux/scripts/openrouter_query.sh "tell me a joke. dont repeat yourself"
 	sleep "${delay_seconds}"
         echo "" # Newline for readability between iterations
     done

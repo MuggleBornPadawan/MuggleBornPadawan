@@ -34,7 +34,7 @@ if [ -z "$1" ]; then
 fi
 
 PROMPT="$1"
-MODEL="gemini-2.0-flash" # A good starting point, often free for basic usage
+MODEL="gemini-2.5-flash" # A good starting point, often free for basic usage
 API_URL="https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${MY_GEMINI_API_KEY}"
 
 JSON_PAYLOAD=$(jq -n --arg prompt "$PROMPT" \
