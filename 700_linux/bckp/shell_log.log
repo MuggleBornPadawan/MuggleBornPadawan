@@ -1,13 +1,15 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Tue Jul  1 10:00:24 AM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Tue Jul  1 11:16:50 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
+Ign:1 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:3 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Hit:5 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -63,7 +65,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -99,22 +101,19 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-07-01 09:19:03 /home/rgroot/-
 2025-07-01 09:19:03 /home/rgroot/a
 2025-07-01 09:19:03 /home/rgroot/tmp.txt
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
+├── git
+│   └── github.com
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
 Weather report: Chennai
 
                 Haze
@@ -125,33 +124,12 @@ Weather report: Chennai
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;208m24[0m km/h[0m      
+  [38;5;226m     .-.     [0m [38;5;202m+34[0m([38;5;196m37[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m20[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.237/69.477/164.319/43.090 ms
- _________________________________________
-/ There is an old time toast which is     \
-| golden for its beauty. "When you ascend |
-| the hill of prosperity may you not meet |
-| a friend."                              |
-|                                         |
-\ -- Mark Twain                           /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+rtt min/avg/max/mdev = 37.836/39.275/42.292/1.580 ms
 start gemma3:1b
-Flibbertigibbet swooshed, polka-dotted stars, then skipped through the bubbling groop.
-
 stop gemma
 start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
 stop deepseek
