@@ -55,6 +55,7 @@ might generate text that is less relevant.
 |--------------------------------------------------+-----------------------+---------------|
 ** simple prompts to get started
 - I want to learn XXXX in the context of YYYY. Please help me learn the basics and foundational knowledge about it in a step by step manner. Include examples, relevant concepts, business impact and technical impact. noob. debian. bookworm. bash. command line only. 
+- Ask me any clarifying questions before you begin
 - I want to create a shell script for XXX in the context of YYY. Please help me create an appropriate prompt for that. kindly ask me relevant questions if I have missed providing you enough information. highlight and use all possible coding best practices wherever applicable. 
 - create a ghibli styled meme which has never been created for this quote "xxx". the given quote should not appear in the image.
 - use perplexity and ask for “20 words describing a [specific specialist].” request a 4-sentence prompt using those words to “summon this specialist.”
