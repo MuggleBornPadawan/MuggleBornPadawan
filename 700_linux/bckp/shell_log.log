@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Jul  1 11:20:43 AM IST 2025 
+Date: Tue Jul  1 06:54:37 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Fetched 55.4 kB in 2s (29.5 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -123,9 +124,9 @@ Operation completed.
 Weather report: Chennai
 
                 Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;202m36[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;220m19[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 4 km[0m           
+  [38;5;251m _ - _ - _ - [0m [38;5;202m+35[0m([38;5;196m42[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;118m6[0m km/h[0m       
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
@@ -134,17 +135,28 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m20[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.331/40.654/42.773/1.364 ms
- ____________________________
-< Just to have it is enough. >
- ----------------------------
+rtt min/avg/max/mdev = 46.266/95.583/248.377/59.532 ms
+ ________________________________________
+/ Q: How many DEC repairman does it take \
+| to fix a flat? A: Five; four to hold   |
+| the car up and one to swap tires.      |
+|                                        |
+| Q: How long does it take? A: It's      |
+| indeterminate.                         |
+|                                        |
+| It will depend upon how many flats     |
+| they've brought with them.             |
+|                                        |
+| Q: What happens if you've got TWO      |
+\ flats? A: They replace your generator. /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumphberry squibble bounce willowwhisper blurbleforth.
+Flurgleboofspinquillstrombleepzizzlewhizzler.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -152,6 +164,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! How can I assist you today? 😊
+Hello! It looks like your message is a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
 
 stop deepseek
