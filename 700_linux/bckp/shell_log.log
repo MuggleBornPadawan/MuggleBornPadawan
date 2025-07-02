@@ -1,13 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Jul  2 02:12:57 PM IST 2025 
+Date: Wed Jul  2 10:11:04 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Ign:1 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [270 kB]
+Hit:6 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Fetched 373 kB in 2s (234 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -122,30 +124,30 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;202m+34[0m([38;5;196m37[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;208m24[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.0 mm[0m         
+  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain with thunderstorm, rain with thunderstorm
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
+  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 3 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+31[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;226m14[0m km/h[0m      
-  [38;5;226m     `-’     [0m 10 km[0m          
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.384/55.320/73.387/12.232 ms
- _____________________________________
-/ Everything will be just tickety-boo \
-\ today.                              /
- -------------------------------------
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+27[0m([38;5;214m30[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;202m30[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 40.218/44.988/76.265/9.555 ms
+ ________________________________________
+/ You prefer the company of the opposite \
+\ sex, but are well liked by your own.   /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet swirls beneath the moonbeam.
+Flumpkinshimmerthumpledovergloom.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -153,6 +155,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It looks like your message is a bit brief. Could you clarify or provide more details about what you're asking or discussing? I'm here to help with whatever you need! 😊
+Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
 
 stop deepseek
