@@ -206,6 +206,28 @@
 (define (prime? n)
   (= n (smallest-divisor n)))
 
+;; Fermat test
+(define (fermat-test n)
+  (define (expmod base exp m)
+    (cond ((= exp 0) 1)
+	  ((even? exp)
+	   (remainder
+	    (square (expmod base (/ exp 2) m))
+	    m))
+	  (else
+	   (remainder
+	    (* base (expmod base (- exp 1) m))
+	    m))))
+  (define (try-it a)
+    (= (expmod a n n) a))
+  (try-it (+ 1 (random (- n 1)))))
+
+(define (fast-prime? n times)
+  (cond ((= times 0) true)
+	((fermat-test n) (fast-prime? n (- times 1)))
+	(else false)))
+
+
 ;; DONT CHANGE ANYTHING AFTER THIS
 ; checker function
 (define (checkerF fa fb value)
@@ -248,7 +270,7 @@
   ;; Start the iteration
   (loop startValue))
 
-(define (test-fn aFunction startValue maxValue stepValue) ;; edit the function here to loop any given function 
+(define (test-fn aFunction startValue maxValue stepValue) 
   (iterateFunctionWithIncrement aFunction startValue maxValue stepValue))
 
 ;; dummy to test REPL
