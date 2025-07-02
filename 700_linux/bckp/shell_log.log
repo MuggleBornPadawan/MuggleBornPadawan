@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Jul  2 09:30:58 AM IST 2025 
+Date: Wed Jul  2 10:18:16 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 55.4 kB in 1s (68.4 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -121,24 +120,24 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-rtt min/avg/max/mdev = 39.039/58.649/150.815/35.774 ms
+Weather report: Chennai
+
+                Haze
+  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;220m16[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
+Weather report: Pondicherry
+
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+31[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;226m14[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 41.242/49.431/67.704/9.336 ms
  _________________________________________
-/ Delores breezed along the surface of    \
-| her life like a flat stone forever      |
-| skipping along smooth water, rippling   |
-| reality sporadically but oblivious to   |
-| it consistently, until she finally lost |
-| momentum, sank, and due to an overdose  |
-| of flouride as a child which caused her |
-| to suffer from chronic apathy, doomed   |
-| herself to lie forever on the floor of  |
-| her life as useless as an appendix and  |
-| as lonely as a five-hundred pound       |
-| barbell in a steroid-free fitness       |
-| center.                                 |
-|                                         |
-| -- Winning sentence, 1990 Bulwer-Lytton |
-\ bad fiction contest.                    /
+/ Your boss climbed the corporate ladder, \
+\ wrong by wrong.                         /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -146,7 +145,7 @@ rtt min/avg/max/mdev = 39.039/58.649/150.815/35.774 ms
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet zoomberries whisperwind swirlsleep.
+Flumphberries shimmeringly bounce through the mauve moon.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -154,6 +153,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+Hello! How can I assist you today? 😊
 
 stop deepseek
