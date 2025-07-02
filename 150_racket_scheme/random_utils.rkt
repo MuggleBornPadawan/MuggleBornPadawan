@@ -49,9 +49,9 @@
   (define (improve guess)
     (average guess (/ x guess)))
   (define (sqrt-iter guess)
-    (display "Current guess: ")
-    (display guess)
-    (newline) ; Add a newline for readability
+    ;; (display "Current guess: ")
+    ;; (display guess)
+    ;; (newline) ; Add a newline for readability
     (if (good-enough? guess)
 	guess
 	(sqrt-iter (improve guess))))
@@ -64,9 +64,9 @@
   (define (good-enough? guess)
     (< (abs (- (cube guess) x)) 0.001))
   (define (cbrt-iter guess)
-    (display "Current guess: ")
-    (display guess)
-    (newline) ; Add a newline for readability
+    ;; (display "Current guess: ")
+    ;; (display guess)
+    ;; (newline) ; Add a newline for readability
     (if (good-enough? guess)
 	guess
 	(cbrt-iter (improve guess))))
@@ -74,19 +74,19 @@
 ;; factorial  
 (define (factorial n)
   ;; <<< INSERT TRACING HERE <<<
-  (display "--> Entered factorial with n = ")
-  (display n)
-  (newline)
+  ;; (display "--> Entered factorial with n = ")
+  ;; (display n)
+  ;; (newline)
   ;; >>> TRACING ENDS <<<
   (if (= n 1)
       1
       (let ((result (* n (factorial (- n 1))))) ; Use let to capture the recursive result before displaying
         ;; <<< INSERT TRACING HERE FOR RETURN VALUE <<<
-        (display "<-- Exiting factorial with n = ")
-        (display n)
-        (display ", returning = ")
-        (display result)
-        (newline)
+        ;; (display "<-- Exiting factorial with n = ")
+        ;; (display n)
+        ;; (display ", returning = ")
+        ;; (display result)
+        ;; (newline)
         ;; >>> TRACING ENDS <<<
         result))) ; Ensure the result is returned
 ; factorial iter
@@ -275,6 +275,6 @@
 
 ;; dummy to test REPL
 (define (testt n)
-  (+ n n 444))
+  (+ n 444))
 
 (provide my-cbrt factorial testt tChk fib expt uptoVChk)
