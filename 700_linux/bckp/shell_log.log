@@ -1,6 +1,6 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Wed Jul  2 11:04:50 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Wed Jul  2 11:06:05 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -63,7 +63,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -104,19 +104,27 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-07-01 11:17:36 /home/rgroot/-
 2025-07-01 11:17:36 /home/rgroot/a
 2025-07-01 11:17:36 /home/rgroot/tmp.txt
--e 
+2025-07-02 23:04:59 /home/rgroot/.bash_history
+2025-07-02 23:05:20 /home/rgroot/startup_log.log
+2025-07-02 23:05:20 /home/rgroot/-
+2025-07-02 23:05:20 /home/rgroot/a
+2025-07-02 23:05:20 /home/rgroot/tmp.txt
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 Weather report: Chennai
 
   [38;5;226m _`/""[38;5;250m.-.    [0m Light rain with thunderstorm, rain with thunderstorm
@@ -131,8 +139,26 @@ Weather report: Pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;202m30[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 52.098/88.989/149.365/42.981 ms
+rtt min/avg/max/mdev = 55.362/86.944/199.913/49.611 ms
+ _________________________________________
+/ You will be reincarnated as a toad; and \
+\ you will be much happier.               /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 start gemma3:1b
+Flibbertigibbet swoops, giggling, through the purple moss.
+
 stop gemma
 start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! It looks like your message is a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+
 stop deepseek
+[detached (from session alpha)]
