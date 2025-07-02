@@ -1,15 +1,13 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Wed Jul  2 10:11:04 PM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Wed Jul  2 11:04:50 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
-Ign:1 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [270 kB]
-Hit:6 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 373 kB in 2s (234 kB/s)
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -65,7 +63,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -106,22 +104,19 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-07-01 11:17:36 /home/rgroot/-
 2025-07-01 11:17:36 /home/rgroot/a
 2025-07-01 11:17:36 /home/rgroot/tmp.txt
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
+├── git
+│   └── github.com
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
 Weather report: Chennai
 
   [38;5;226m _`/""[38;5;250m.-.    [0m Light rain with thunderstorm, rain with thunderstorm
@@ -136,25 +131,8 @@ Weather report: Pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;202m30[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 40.218/44.988/76.265/9.555 ms
- ________________________________________
-/ You prefer the company of the opposite \
-\ sex, but are well liked by your own.   /
- ----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+rtt min/avg/max/mdev = 52.098/88.989/149.365/42.981 ms
 start gemma3:1b
-Flumpkinshimmerthumpledovergloom.
-
 stop gemma
 start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
-
 stop deepseek
