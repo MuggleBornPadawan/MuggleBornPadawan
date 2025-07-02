@@ -1,0 +1,4 @@
+@base_url = https://wttr.in
+### Get weather for current location (JSON)
+GET {{base_url}}/api/London
+Accept: application/json

@@ -188,6 +188,23 @@
 		 (- counter 1)
 		 (* b product))))
 
+;; greatest common divisor (gcd)
+(define (gcd a b)
+  (if (= b 0)
+      a
+      (gcd b (remainder a b))))
+
+;; smallest divisor
+(define (smallest-divisor n) (find-divisor n 2))
+(define (find-divisor n test-divisor)
+  (cond ((> (square test-divisor) n) n)
+	((divides? test-divisor n) test-divisor)
+	(else (find-divisor n (+ test-divisor 1)))))
+(define (divides? a b) (= (remainder b a) 0))
+
+;; primality check - is the given number prime?
+(define (prime? n)
+  (= n (smallest-divisor n)))
 
 ;; DONT CHANGE ANYTHING AFTER THIS
 ; checker function
@@ -207,11 +224,35 @@
       (display "end of chk")))
 (define (uptoVChk value)
   (chk-iter 0 1 value))
-(uptoVChk 10)
+;;(uptoVChk 10)
+
+;; loop function for given values
+(define (iterateFunctionWithIncrement aFunction startValue maxValue stepValue)
+  ;; Defensive programming: Input validation
+  (when (<= stepValue 0)
+    (error 'iterateFunctionWithIncrement "Step value must be positive."))
+  (when (> startValue maxValue)
+    (error 'iterateFunctionWithIncrement "Start value cannot be greater than max value."))
+
+  ;; This is our inner, tail-recursive helper procedure.
+  ;; It keeps track of the currentValue as it progresses.
+  (define (loop currentValue)
+    ;; Base case: If we've gone past the maxValue, we stop.
+    (when (<= currentValue maxValue)
+      ;; Apply the function and print the results
+      (let ([output (aFunction currentValue)])
+        (printf "Input: ~a, Output: ~a~n" currentValue output))
+
+      ;; Recursive step: Call loop with the next incremental value
+      (loop (+ currentValue stepValue))))
+  ;; Start the iteration
+  (loop startValue))
+
+(define (test-fn aFunction startValue maxValue stepValue) ;; edit the function here to loop any given function 
+  (iterateFunctionWithIncrement aFunction startValue maxValue stepValue))
 
 ;; dummy to test REPL
 (define (testt n)
   (+ n n 444))
 
-
-(provide my-cbrt testt tChk fib expt)
+(provide my-cbrt factorial testt tChk fib expt uptoVChk)
