@@ -1,13 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Jul  6 10:46:38 AM IST 2025 
+Date: Mon Jul  7 09:29:36 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:3 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [271 kB]
+Fetched 374 kB in 1s (411 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -133,29 +135,40 @@ Operation completed.
 Weather report: Chennai
 
                 Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+30[0m([38;5;208m33[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;208m25[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m38[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;214m22[0m km/h[0m      
   [38;5;251m _ - _ - _ - [0m 5 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;202m+34[0m([38;5;196m38[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;220m16[0m km/h[0m      
+  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;202m35[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;208m24[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 41.880/55.233/69.927/10.269 ms
- ________________________________________
-/ Q: What's a WASP's idea of             \
-\ open-mindedness? A: Dating a Canadian. /
- ----------------------------------------
+rtt min/avg/max/mdev = 41.815/62.985/100.656/18.401 ms
+ _________________________________________
+/ Even the clearest and most perfect      \
+| circumstantial evidence is likely to be |
+| at fault, after all, and therefore      |
+| ought to be received with great         |
+| caution. Take the case of any pencil,   |
+| sharpened by any woman; if you have     |
+| witnesses, you will find she did it     |
+| with a knife; but if you take simply    |
+| the aspect of the pencil, you will say  |
+| that she did it with her teeth.         |
+|                                         |
+| -- Mark Twain, "Pudd'nhead Wilson's     |
+\ Calendar"                               /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flurgleberrysknortz zoomsleepywhimsy swirls.
+Flumpkinberry squibblepuff shimmerweave buzzblew.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -163,6 +176,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+Hello! It looks like your message is a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
 
 stop deepseek
