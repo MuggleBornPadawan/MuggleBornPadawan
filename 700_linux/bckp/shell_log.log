@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Jul  7 09:36:07 AM IST 2025 
+Date: Wed Jul  9 03:16:56 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -132,30 +132,30 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m38[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;214m22[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+32[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;214m23[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;208m24[0m km/h[0m      
-  [38;5;226m     `-’     [0m 10 km[0m          
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.856/57.284/74.549/10.680 ms
- ______________________________________
-/ You will hear good news from one you \
-\ thought unfriendly to you.           /
- --------------------------------------
+                Cloudy
+  [38;5;250m     .--.    [0m [38;5;202m+35[0m([38;5;196m40[0m) °C[0m     
+  [38;5;250m  .-(    ).  [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
+  [38;5;250m (___.__)__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 40.709/53.977/72.696/11.253 ms
+ _____________________________________
+/ Q: What is purple and conquered the \
+\ world? A: Alexander the Grape.      /
+ -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Zorpflumblewhizzleflumpitybootsforthsparklebloomz.
+Zizzleflump, gurgleblorp, shimmerwing, quibblefrog, squibbleton, flibbertwick, wizzlestone.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -163,6 +163,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+Hello! How can I assist you today? 😊
 
 stop deepseek
