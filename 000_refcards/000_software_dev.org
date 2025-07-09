@@ -1,0 +1,65 @@
+#+title: the ultimate guide to software development fundamentals
+* best practices
+** software development principles
+- key variables: system integrity, adaptablity, cognitive load, efficiency, risk mitigation, collaboration
+- modularity and single responsiblity
+- loose coupling
+- dont repeat yourself
+- keep it simple, stupid
+- you aren't going to need it
+- testablity & verification
+- open / closed principle
+- embrace change and iteration
+** technical fundamentals
+- key variables: computational logic, data representation, problem solving abstraction, resource management, algorithmic efficiency, system interaction
+*** language of computers
+- binary system
+- boolean logic
+- data representation
+*** how programs run
+- memory models
+- cpu and instructions
+- operating system basics
+*** organizing data and solving problems
+- core data structures
+- fundamental algorithms
+- algorithmic complexity (big o)
+*** communication and systems
+- networking basics
+- file systems
+- command line interface
+*** development lifecycle
+- compilation vs interpretation
+- version control
+* software development fundamentals
+** understand the problem deeply
+** design for clarity and modularity
+*** single responsiblity principle
+*** modular design
+*** dont repeat yourself (dry)
+** quality and reliablity
+*** test driven development
+*** strategic error handling & exception management
+*** defensive programming
+*** idempotency
+** embrace maintainablity and evolution
+*** code comments & documentation
+*** disciplined refactoring
+*** configuration management & environment variables
+** foster collaboration and transparency
+*** version control & smart branching strategies
+*** code reviews & pair programming
+*** robust logging & monitoring
+** performance and security
+*** profiling
+*** security by design
+*** clear licensing and author information
+* common mistakes
+-- ignoring version control
+-- hardcoding everything
+-- "big ball of mud" anti pattern
+-- skipping tests
+-- premature optimization
+-- ignoring error handling
+-- "my code is self-explanatory"
+-- fear of refactoring 
