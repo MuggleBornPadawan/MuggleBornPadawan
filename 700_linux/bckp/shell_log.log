@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Jul  9 03:16:56 PM IST 2025 
+Date: Thu Jul 10 10:18:26 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Ign:1 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:4 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Fetched 103 kB in 1s (84.4 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -132,30 +133,32 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+32[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;214m23[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+31[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m21[0m km/h[0m      
+  [38;5;226m     `-’     [0m 6 km[0m           
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
 Weather report: Pondicherry
 
-                Cloudy
-  [38;5;250m     .--.    [0m [38;5;202m+35[0m([38;5;196m40[0m) °C[0m     
-  [38;5;250m  .-(    ).  [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
-  [38;5;250m (___.__)__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 40.709/53.977/72.696/11.253 ms
- _____________________________________
-/ Q: What is purple and conquered the \
-\ world? A: Alexander the Grape.      /
- -------------------------------------
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;202m36[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;220m19[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 41.546/60.138/103.538/18.199 ms
+ _________________________________________
+/ FORTUNE PROVIDES QUESTIONS FOR THE      \
+| GREAT ANSWERS: #21 A: Dr. Livingston I. |
+| Presume. Q: What's Dr. Presume's full   |
+\ name?                                   /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Zizzleflump, gurgleblorp, shimmerwing, quibblefrog, squibbleton, flibbertwick, wizzlestone.
+Squibbleflump blorf fizzlebloom snarflefloat.
 
 stop gemma
 start deepseek-r1:1.5b
