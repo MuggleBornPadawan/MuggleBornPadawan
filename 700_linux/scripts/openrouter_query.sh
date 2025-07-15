@@ -23,6 +23,7 @@
 # For simplicity, fixed values are hardcoded here, but could be read from a config file or env vars.
 # Variable naming convention: use camelCase, descriptive self documenting names.
 declare -r openRouterApiBaseUrl="https://openrouter.ai/api/v1/chat/completions"
+#declare -r openRouterModel="moonshotai/kimi-k2:free"
 declare -r openRouterModel="deepseek/deepseek-r1-0528-qwen3-8b:free"
 #declare -r openRouterModel="qwen/qwen3-235b-a22b:free"
 #declare -r openRouterModel="microsoft/phi-4-reasoning-plus:free"
