@@ -14,10 +14,9 @@ Ign:2 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
 Ign:1 https://deb.debian.org/debian bookworm InRelease
 Err:2 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
   Temporary failure resolving 'storage.googleapis.com'
- newest version (1.7.4-6).
-gnupg is already the newest version (2.2.40-1.1).
-nmap is already the newest version (7.93+dfsg1-1).
-htop is already the newest version (3.2.2-2).
+Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:4 https://deb.debian.org/debian-security bookworm-security InRelease
+already the newest version (3.2.2-2).
 pv is already the newest version (1.6.20-1).
 tldr is already the newest version (0.9.2-2+b4).
 tree is already the newest version (2.1.0-1).
