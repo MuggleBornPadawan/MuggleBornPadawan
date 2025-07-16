@@ -175,7 +175,7 @@ for person_name in "${names[@]}"; do
     # Append the content of the nugget variable to the file.
     if [ -n "${nugget}" ]; then # Check if nugget is not empty
         echo "Info: Appending nugget for ${person_name} to ${NUGGETS_FILE}..."
-        if ! echo "${nugget}" >> "${NUGGETS_FILE}"; then
+        if ! echo -e "${nugget}\nPerson: ${person_name} \n" >> "${NUGGETS_FILE}"; then
             # This error typically occurs if the directory is not writable or disk is full.
             warning_msg "Could not write to ${NUGGETS_FILE} for ${person_name}. Check permissions or disk space."
             # Continue execution as per requirements

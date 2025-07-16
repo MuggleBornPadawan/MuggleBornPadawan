@@ -65,6 +65,8 @@ might generate text that is less relevant.
 - ROLE: Give the assistant a specialized role to work from (who or what you want it to be)
 - INTERVIEW: Have it ask you 1 question at a time (usually 5-7, but whatever number you think is appropriate) to gain deeper context
 - TASK: Whatever you want the assistant to do
+** unbiased query request 
+please rewrite my question to be more neutral and unbiased. remove any embedded assumptions, leading language, or repeated terms that might bias the response. transform it into an open-ended query that encourages critical analysis and considers multiple perspectives, like a scientist testing a hypothesis. my original question: [your question here]
 ** chain of drafts
 - instead of chain of thoughts (step by step)
 *** direct command
