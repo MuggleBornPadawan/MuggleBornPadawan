@@ -23,10 +23,11 @@ names=("Géraldine Honauer" "Juan Ferrer AR interactive art" " Natalia Cabrera A
 # IMPORTANT: Ensure 'gemini-2.0-flash' is a valid and available model identifier
 # for your API key and project. Standard models are often like 'gemini-1.5-flash-latest'.
 # If 'gemini-2.0-flash' is not valid, this will fail.
-GEMINI_MODEL_NAME="gemini-2.5-flash"
+# GEMINI_MODEL_NAME="gemini-2.5-flash"
+GEMINI_MODEL_NAME="gemini-2.5-flash-lite-preview-06-17"
 GEMINI_API_BASE_URL="https://generativelanguage.googleapis.com/v1beta/models"
-# The API key will be appended to this URL as a query parameter.
 
+# The API key will be appended to this URL as a query parameter.
 PASS_ENTRY_NAME="GEMINI_API_KEY" # Name of the pass entry for the API key
 
 # Output file
