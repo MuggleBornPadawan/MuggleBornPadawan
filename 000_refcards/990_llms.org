@@ -67,6 +67,33 @@ might generate text that is less relevant.
 - TASK: Whatever you want the assistant to do
 ** unbiased query request 
 please rewrite my question to be more neutral and unbiased. remove any embedded assumptions, leading language, or repeated terms that might bias the response. transform it into an open-ended query that encourages critical analysis and considers multiple perspectives, like a scientist testing a hypothesis. my original question: [your question here]
+** model fit
+*** The Product Development Cycle
+**** Ideation & Research (Gemini)
+1.  Analyze market trends and competitive landscape
+2.  Gather customer feedback data across platforms
+3.  Summarize technical possibilities and limitations
+**** Planning & Documentation (Claude)**
+1.  Draft detailed product requirements document
+2.  Create technical specifications with precise language
+3.  Generate comprehensive project timeline
+**** Implementation (ChatGPT)**
+1.  Generate code prototypes across frontend and backend
+2.  Create user interface mockups and design assets
+3.  Develop testing protocols and documentation
+*** The Content Creation Pipeline
+**** Research Phase (Gemini)**
+1.  Gather latest industry trends and competitor analysis
+2.  Research keyword opportunities with current search volume
+3.  Collect relevant statistics and up-to-date citations
+**** Drafting Phase (Claude)**
+1.  Transfer research findings to Claude
+2.  Generate long-form, nuanced content with consistent tone
+3.  Develop multiple sections that maintain logical flow
+**** Production Phase (ChatGPT)**
+1.  Create accompanying visuals with DALL-E
+2.  Generate social media promotional posts
+3.  Craft email newsletter versions of the content
 ** chain of drafts
 - instead of chain of thoughts (step by step)
 *** direct command
