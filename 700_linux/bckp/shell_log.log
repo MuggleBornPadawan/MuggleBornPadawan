@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Jul 17 10:39:26 AM IST 2025 
+Date: Thu Jul 17 10:41:52 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -151,31 +151,19 @@ Weather report: Pondicherry
   [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;214m22[0m km/h[0m      
   [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.155/76.076/157.747/37.373 ms
- _________________________________________
-/ Q: How many gradual (sorry, that's      \
-| supposed to be "graduate") students     |
-|                                         |
-| does it take to screw in a light bulb?  |
-| A: "I'm afraid we don't know, but make  |
-| my stipend tax-free, give my            |
-|                                         |
-| advisor a $30,000 grant of the          |
-| taxpayer's money, and I'm sure he       |
-|                                         |
-| can tell me how to do the gruntwork for |
-| him so he can take the                  |
-|                                         |
-| credit for answering this incredibly    |
-\ vital question."                        /
- -----------------------------------------
+rtt min/avg/max/mdev = 39.183/58.536/126.008/22.413 ms
+ _____________________________________
+/ You never know how many friends you \
+| have until you rent a house on the  |
+\ beach.                              /
+ -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Zizzleflump, glimmerblob, quibblestone, floofhopper, wheezewisp, sproingly, blorfian, zizzledoo.
+Flibbertigibbet swirlled beneath the moonstone.
 
 stop gemma
 start deepseek-r1:1.5b
