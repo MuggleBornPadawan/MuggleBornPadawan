@@ -1,35 +1,24 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Jul 16 10:53:03 PM IST 2025 
+Date: Thu Jul 17 09:30:11 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [272 kB]
-Hit:6 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 375 kB in 2s (236 kB/s)
+Ign:1 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:2 https://storage.googleapis.com/cros-packages/137 bookworm Release
+Hit:4 https://deb.debian.org/debian bookworm InRelease
+Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Fetched 103 kB in 1s (84.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  libgnutls30
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 1,406 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 libgnutls30 amd64 3.7.9-2+deb12u5 [1,406 kB]
-Fetched 1,406 kB in 1s (2,733 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115063 files and directories currently installed.)
-Preparing to unpack .../libgnutls30_3.7.9-2+deb12u5_amd64.deb ...
-Unpacking libgnutls30:amd64 (3.7.9-2+deb12u5) over (3.7.9-2+deb12u4) ...
-Setting up libgnutls30:amd64 (3.7.9-2+deb12u5) ...
-Processing triggers for libc-bin (2.36-9+deb12u10) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
+dnsutils is already the newest version (1:9.18.33-1~deb12u2).
 make is already the newest version (4.3-4.1).
 bats is already the newest version (1.8.2-1).
 jq is already the newest version (1.6-2.1).
@@ -71,66 +60,7 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-The following additional packages will be installed:
-  bind9-dnsutils bind9-host bind9-libs libfstrm0 libjemalloc2 liblmdb0
-  libmaxminddb0 libprotobuf-c1
-Suggested packages:
-  mmdb-bin
-The following NEW packages will be installed:
-  bind9-dnsutils bind9-host bind9-libs dnsutils libfstrm0 libjemalloc2
-  liblmdb0 libmaxminddb0 libprotobuf-c1
-0 upgraded, 9 newly installed, 0 to remove and 0 not upgraded.
-Need to get 1,799 kB of archives.
-After this operation, 5,481 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm/main amd64 libfstrm0 amd64 0.6.1-1 [21.6 kB]
-Get:2 https://deb.debian.org/debian bookworm/main amd64 libjemalloc2 amd64 5.3.0-1 [275 kB]
-Get:3 https://deb.debian.org/debian bookworm/main amd64 liblmdb0 amd64 0.9.24-1 [45.0 kB]
-Get:4 https://deb.debian.org/debian bookworm/main amd64 libmaxminddb0 amd64 1.7.1-1 [29.8 kB]
-Get:5 https://deb.debian.org/debian bookworm/main amd64 libprotobuf-c1 amd64 1.4.1-1+b1 [27.5 kB]
-Get:6 https://deb.debian.org/debian bookworm/main amd64 bind9-libs amd64 1:9.18.33-1~deb12u2 [1,181 kB]
-Get:7 https://deb.debian.org/debian bookworm/main amd64 bind9-host amd64 1:9.18.33-1~deb12u2 [54.1 kB]
-Get:8 https://deb.debian.org/debian bookworm/main amd64 bind9-dnsutils amd64 1:9.18.33-1~deb12u2 [155 kB]
-Get:9 https://deb.debian.org/debian bookworm/main amd64 dnsutils all 1:9.18.33-1~deb12u2 [10.5 kB]
-Fetched 1,799 kB in 1s (3,334 kB/s)
-Selecting previously unselected package libfstrm0:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115063 files and directories currently installed.)
-Preparing to unpack .../0-libfstrm0_0.6.1-1_amd64.deb ...
-Unpacking libfstrm0:amd64 (0.6.1-1) ...
-Selecting previously unselected package libjemalloc2:amd64.
-Preparing to unpack .../1-libjemalloc2_5.3.0-1_amd64.deb ...
-Unpacking libjemalloc2:amd64 (5.3.0-1) ...
-Selecting previously unselected package liblmdb0:amd64.
-Preparing to unpack .../2-liblmdb0_0.9.24-1_amd64.deb ...
-Unpacking liblmdb0:amd64 (0.9.24-1) ...
-Selecting previously unselected package libmaxminddb0:amd64.
-Preparing to unpack .../3-libmaxminddb0_1.7.1-1_amd64.deb ...
-Unpacking libmaxminddb0:amd64 (1.7.1-1) ...
-Selecting previously unselected package libprotobuf-c1:amd64.
-Preparing to unpack .../4-libprotobuf-c1_1.4.1-1+b1_amd64.deb ...
-Unpacking libprotobuf-c1:amd64 (1.4.1-1+b1) ...
-Selecting previously unselected package bind9-libs:amd64.
-Preparing to unpack .../5-bind9-libs_1%3a9.18.33-1~deb12u2_amd64.deb ...
-Unpacking bind9-libs:amd64 (1:9.18.33-1~deb12u2) ...
-Selecting previously unselected package bind9-host.
-Preparing to unpack .../6-bind9-host_1%3a9.18.33-1~deb12u2_amd64.deb ...
-Unpacking bind9-host (1:9.18.33-1~deb12u2) ...
-Selecting previously unselected package bind9-dnsutils.
-Preparing to unpack .../7-bind9-dnsutils_1%3a9.18.33-1~deb12u2_amd64.deb ...
-Unpacking bind9-dnsutils (1:9.18.33-1~deb12u2) ...
-Selecting previously unselected package dnsutils.
-Preparing to unpack .../8-dnsutils_1%3a9.18.33-1~deb12u2_all.deb ...
-Unpacking dnsutils (1:9.18.33-1~deb12u2) ...
-Setting up liblmdb0:amd64 (0.9.24-1) ...
-Setting up libmaxminddb0:amd64 (1.7.1-1) ...
-Setting up libfstrm0:amd64 (0.6.1-1) ...
-Setting up libjemalloc2:amd64 (5.3.0-1) ...
-Setting up libprotobuf-c1:amd64 (1.4.1-1+b1) ...
-Setting up bind9-libs:amd64 (1:9.18.33-1~deb12u2) ...
-Setting up bind9-host (1:9.18.33-1~deb12u2) ...
-Setting up bind9-dnsutils (1:9.18.33-1~deb12u2) ...
-Setting up dnsutils (1:9.18.33-1~deb12u2) ...
-Processing triggers for libc-bin (2.36-9+deb12u10) ...
-Processing triggers for man-db (2.11.2-2) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -208,43 +138,25 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-Weather report: Chennai
-
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m41[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;214m21[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;202m31[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 1.0 mm[0m         
-rtt min/avg/max/mdev = 39.791/47.375/70.242/11.046 ms
- _________________________________________
-/ There are three infallible ways of      \
-| pleasing an author, and the three form  |
-| a rising scale of compliment: 1, to     |
-| tell him you have read one of his       |
-| books; 2, to tell him you have read all |
-| of his books; 3, to ask him to let you  |
-| read the manuscript of his forthcoming  |
-| book. No. 1 admits you to his respect;  |
-| No. 2 admits you to his admiration; No. |
-| 3 carries you clear into his heart.     |
-|                                         |
-| -- Mark Twain, "Pudd'nhead Wilson's     |
-\ Calendar"                               /
- -----------------------------------------
+rtt min/avg/max/mdev = 37.408/44.361/62.483/8.499 ms
+ _______________________________________
+/ The bay-trees in our country are all  \
+| wither'd And meteors fright the fixed |
+| stars of heaven; The pale-faced moon  |
+| looks bloody on the earth And         |
+| lean-look'd prophets whisper fearful  |
+| change. These signs forerun the death |
+| or fall of kings.                     |
+|                                       |
+\ -- Wm. Shakespeare, "Richard II"      /
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumphkin shimmer, gleepglorp swirls, quibbleboon dances, sprogglebit sighs, zizzlewhirl echoes, floofnut blinks, gloomglee whispers.
+Flibbertigibbet flopped upon a polka-dotted cloud.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -252,6 +164,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It seems like your message is a bit unclear. Could you clarify or provide more details so I can assist you better? 😊
+Hello! How can I assist you today? 😊
 
 stop deepseek
