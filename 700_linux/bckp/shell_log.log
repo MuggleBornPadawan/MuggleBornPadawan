@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Jul 17 09:30:11 AM IST 2025 
+Date: Thu Jul 17 10:39:26 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
-Ign:1 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Hit:2 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Hit:4 https://deb.debian.org/debian bookworm InRelease
-Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Fetched 103 kB in 1s (84.2 kB/s)
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -138,25 +137,45 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-rtt min/avg/max/mdev = 37.408/44.361/62.483/8.499 ms
- _______________________________________
-/ The bay-trees in our country are all  \
-| wither'd And meteors fright the fixed |
-| stars of heaven; The pale-faced moon  |
-| looks bloody on the earth And         |
-| lean-look'd prophets whisper fearful  |
-| change. These signs forerun the death |
-| or fall of kings.                     |
-|                                       |
-\ -- Wm. Shakespeare, "Richard II"      /
- ---------------------------------------
+Weather report: Chennai
+
+                Thunderstorm, mist
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+28[0m([38;5;208m33[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;202m30[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                1.0 mm[0m         
+Weather report: Pondicherry
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m35[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;214m22[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 39.155/76.076/157.747/37.373 ms
+ _________________________________________
+/ Q: How many gradual (sorry, that's      \
+| supposed to be "graduate") students     |
+|                                         |
+| does it take to screw in a light bulb?  |
+| A: "I'm afraid we don't know, but make  |
+| my stipend tax-free, give my            |
+|                                         |
+| advisor a $30,000 grant of the          |
+| taxpayer's money, and I'm sure he       |
+|                                         |
+| can tell me how to do the gruntwork for |
+| him so he can take the                  |
+|                                         |
+| credit for answering this incredibly    |
+\ vital question."                        /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet flopped upon a polka-dotted cloud.
+Zizzleflump, glimmerblob, quibblestone, floofhopper, wheezewisp, sproingly, blorfian, zizzledoo.
 
 stop gemma
 start deepseek-r1:1.5b
