@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Jul 18 10:56:51 PM IST 2025 
+Date: Sat Jul 19 12:16:58 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
-Ign:1 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:4 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Fetched 55.4 kB in 1s (51.1 kB/s)
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -140,29 +139,29 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+31[0m([38;5;196m42[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;214m22[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.8 mm[0m         
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;208m33[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;190m10[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
   [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+27[0m([38;5;214m30[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;190m12[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;208m26[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.3 mm[0m         
-rtt min/avg/max/mdev = 38.946/55.632/82.453/12.710 ms
- _________________________________________
-< Do something unusual today. Pay a bill. >
- -----------------------------------------
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 39.931/57.781/153.134/30.462 ms
+ ______________________________
+< Slow day. Practice crawling. >
+ ------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet zoomies flutterby, squibble-whispers bubble-glow, gurgle-shimmers wiggle-bloom, squonk-dance shadow-weave, glimmer-drift moonbeam-fall, fuzz-song silence-deep, plink-spin rainbow-weave.
+Flumpkinburblegigglequillfuzz.
 
 stop gemma
 start deepseek-r1:1.5b
