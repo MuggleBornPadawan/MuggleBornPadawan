@@ -1,14 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Jul 23 12:33:43 PM IST 2025 
+Date: Fri Jul 25 09:52:08 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08024-gb30cb4a129c2
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:3 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 48.0 kB in 1s (33.1 kB/s)
+Fetched 55.4 kB in 2s (35.5 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -55,7 +55,7 @@ sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).
-firefox-esr is already the newest version (128.12.0esr-1~deb12u1).
+firefox-esr is already the newest version (128.13.0esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
@@ -135,32 +135,40 @@ Password Store
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
-Weather report: Chennai
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+29[0m([38;5;208m33[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;208m24[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
+Sorry, we are running out of queries to the weather service at the moment.
+Here is the weather report for the default city (just to show you what it looks like).
+We will get new queries as soon as possible.
+You can follow https://x.com/igor_chubin for the updates.
+======================================================================================
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+31[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;220m18[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.371/41.902/49.826/3.183 ms
- ______________________________________
-/ Don't tell any big lies today. Small \
-\ ones can be just as effective.       /
- --------------------------------------
+Sorry, we are running out of queries to the weather service at the moment.
+Here is the weather report for the default city (just to show you what it looks like).
+We will get new queries as soon as possible.
+You can follow https://x.com/igor_chubin for the updates.
+======================================================================================
+rtt min/avg/max/mdev = 39.961/56.467/93.811/18.757 ms
+ ________________________________________
+/ It is easy to find fault, if one has   \
+| that disposition. There was once a man |
+| who, not being able to find any other  |
+| fault with his coal, complained that   |
+| there were too many prehistoric toads  |
+| in it.                                 |
+|                                        |
+| -- Mark Twain, "Pudd'nhead Wilson's    |
+\ Calendar"                              /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet sparked a shimmeringly blue.
+Flibbertigibbet zoom, squibble-sprout, glimmer-weave, wheeze-roar, polka-dot, shimmersnap, bluster-song.
 
 stop gemma
 start deepseek-r1:1.5b
