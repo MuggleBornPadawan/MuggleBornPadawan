@@ -1,14 +1,28 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Fri Jul 25 09:52:08 AM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Sat Jul 26 09:36:58 AM IST 2025 
 OS: Linux 
-Kernel: 6.6.76-08024-gb30cb4a129c2
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:3 https://storage.googleapis.com/cros-packages/137 bookworm InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/137 bookworm Release
-Fetched 55.4 kB in 2s (35.5 kB/s)
+Kernel: 6.6.76-08096-g300882a0a131
+Ign:1 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Ign:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Ign:1 https://deb.debian.org/debian bookworm InRelease
+Err:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+  Temporary failure resolving 'storage.googleapis.com'
+Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:1 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Err:1 https://deb.debian.org/debian bookworm InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:3 https://deb.debian.org/debian bookworm-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:4 https://deb.debian.org/debian-security bookworm-security InRelease
+  Temporary failure resolving 'deb.debian.org'
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -65,7 +79,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -122,60 +136,16 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-07-16 22:18:39 /home/rgroot/-
 2025-07-16 22:18:39 /home/rgroot/a
 2025-07-16 22:18:39 /home/rgroot/tmp.txt
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
+├── git
+│   └── github.com
 │       └── MuggleBornPadawan
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-
-Sorry, we are running out of queries to the weather service at the moment.
-Here is the weather report for the default city (just to show you what it looks like).
-We will get new queries as soon as possible.
-You can follow https://x.com/igor_chubin for the updates.
-======================================================================================
-
-Sorry, we are running out of queries to the weather service at the moment.
-Here is the weather report for the default city (just to show you what it looks like).
-We will get new queries as soon as possible.
-You can follow https://x.com/igor_chubin for the updates.
-======================================================================================
-rtt min/avg/max/mdev = 39.961/56.467/93.811/18.757 ms
- ________________________________________
-/ It is easy to find fault, if one has   \
-| that disposition. There was once a man |
-| who, not being able to find any other  |
-| fault with his coal, complained that   |
-| there were too many prehistoric toads  |
-| in it.                                 |
-|                                        |
-| -- Mark Twain, "Pudd'nhead Wilson's    |
-\ Calendar"                              /
- ----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flibbertigibbet zoom, squibble-sprout, glimmer-weave, wheeze-roar, polka-dot, shimmersnap, bluster-song.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
-stop deepseek
