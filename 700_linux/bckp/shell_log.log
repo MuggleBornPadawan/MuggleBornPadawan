@@ -149,3 +149,7 @@ Password Store
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
+start gemma3:1b
+stop gemma
+start deepseek-r1:1.5b
+stop deepseek
