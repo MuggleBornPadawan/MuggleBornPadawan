@@ -1,11 +1,5 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Jul 26 09:41:47 AM IST 2025 
+Date: Sat Jul 26 09:42:59 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Ign:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
