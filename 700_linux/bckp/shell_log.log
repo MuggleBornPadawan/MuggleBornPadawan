@@ -1,34 +1,20 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Jul 26 09:44:25 AM IST 2025 
+Date: Mon Jul 28 03:26:47 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:3 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:5 https://storage.googleapis.com/cros-packages/138 bookworm Release [3,109 B]
-Get:6 https://storage.googleapis.com/cros-packages/138 bookworm Release.gpg [2,365 B]
-Get:7 https://storage.googleapis.com/cros-packages/138 bookworm/main amd64 Packages [5,021 B]
-Fetched 114 kB in 3s (42.9 kB/s)
+Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:4 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Fetched 103 kB in 3s (37.3 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  cros-im
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 52.4 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://storage.googleapis.com/cros-packages/138 bookworm/main amd64 cros-im amd64 62490 [52.4 kB]
-Fetched 52.4 kB in 1s (66.3 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115130 files and directories currently installed.)
-Preparing to unpack .../cros-im_62490_amd64.deb ...
-Unpacking cros-im:amd64 (62490) over (62324) ...
-Setting up cros-im:amd64 (62490) ...
-Processing triggers for libgtk-3-0:amd64 (3.24.38-2~deb12u3) ...
-Processing triggers for libgtk-4-1:amd64 (4.8.3+ds-2+deb12u1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -157,10 +143,24 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-rtt min/avg/max/mdev = 53.935/62.116/78.282/9.388 ms
+Weather report: Chennai
+
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+87[0m([38;5;202m93[0m) °F[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;208m16[0m mph[0m       
+  [38;5;226m     `-’     [0m 3 mi[0m           
+  [38;5;226m    /   \    [0m 0.0 in[0m         
+Weather report: Pondicherry
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+95[0m([38;5;196m100[0m) °F[0m    
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;202m18[0m mph[0m       
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           
+                0.0 in[0m         
+rtt min/avg/max/mdev = 237.729/257.887/329.736/26.359 ms
  _______________________________________
-/ Q: Why don't lawyers go to the beach? \
-\ A: The cats keep trying to bury them. /
+/ Excellent day for putting Slinkies on \
+\ an escalator.                         /
  ---------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -168,7 +168,7 @@ rtt min/avg/max/mdev = 53.935/62.116/78.282/9.388 ms
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbetly, Squigglepod, Gloomwhizzle, Wizzlebuggle, Snoodleflux, Sparkleberry, Zizzlebloom
+Flibbertigibbet bounced on a moonbeam, giggling at a purple squibble.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -176,7 +176,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+Hello! How can I assist you today? 😊
 
 stop deepseek
-[detached (from session alpha)]
