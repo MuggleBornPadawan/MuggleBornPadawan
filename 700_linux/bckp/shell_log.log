@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Jul 29 02:36:44 PM IST 2025 
+Date: Tue Jul 29 02:50:46 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -156,18 +156,22 @@ Weather report: Pondicherry
   [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;202m18[0m mph[0m       
   [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           
                 0.0 in[0m         
-rtt min/avg/max/mdev = 231.438/251.906/330.259/32.559 ms
- _________________________________________
-/ You don't become a failure until you're \
-\ satisfied with being one.               /
- -----------------------------------------
+rtt min/avg/max/mdev = 230.691/251.188/321.312/30.729 ms
+ _____________________________________
+/ It were not best that we should all \
+| think alike; it is difference of    |
+| opinion that makes horse-races.     |
+|                                     |
+| -- Mark Twain, "Pudd'nhead Wilson's |
+\ Calendar"                           /
+ -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumpkinsproutlumskitterwickleberrygloomthrum.
+Flibbertigibbetsparkle danced beneath the moonstone sky.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -175,6 +179,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It looks like your message is a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
 
 stop deepseek
