@@ -1,15 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Jul 29 11:57:28 AM IST 2025 
+Date: Tue Jul 29 02:36:44 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:4 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [272 kB]
-Fetched 375 kB in 4s (105 kB/s)
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -141,6 +139,9 @@ Password Store
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 Weather report: Chennai
 
   [38;5;226m   \  /[0m       Partly cloudy
@@ -151,18 +152,14 @@ Weather report: Chennai
 Weather report: Pondicherry
 
   [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+93[0m([38;5;202m96[0m) °F[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;196m19[0m mph[0m       
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+95[0m([38;5;196m100[0m) °F[0m    
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;202m18[0m mph[0m       
   [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           
                 0.0 in[0m         
-rtt min/avg/max/mdev = 242.456/261.806/329.498/25.456 ms
+rtt min/avg/max/mdev = 231.438/251.906/330.259/32.559 ms
  _________________________________________
-/ The only way to keep your health is to  \
-| eat what you don't want, drink what you |
-| don't like, and do what you'd rather    |
-| not.                                    |
-|                                         |
-\ -- Mark Twain                           /
+/ You don't become a failure until you're \
+\ satisfied with being one.               /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -170,7 +167,7 @@ rtt min/avg/max/mdev = 242.456/261.806/329.498/25.456 ms
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flurglebloomz wizzle-dee-doo, shimmersleepy-rocks, grumpy-melon-burst, quibbling-sprites, fuzz-cycle-flux, squeak-song-weave, silver-shadow-dance.
+Flumpkinsproutlumskitterwickleberrygloomthrum.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -178,6 +175,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! How can I assist you today? 😊
+Hello! It looks like your message is a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
 
 stop deepseek
