@@ -1,57 +1,19 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Aug  1 12:21:19 PM IST 2025 
+Date: Fri Aug  1 12:22:31 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:4 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [272 kB]
-Get:8 https://deb.debian.org/debian-security bookworm-security/main Translation-en [163 kB]
-Fetched 539 kB in 4s (142 kB/s)
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  libssl-dev libssl3 openssh-client openssh-server openssh-sftp-server openssl
-6 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 7,413 kB of archives.
-After this operation, 9,216 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm-updates/main amd64 libssl-dev amd64 3.0.17-1~deb12u1 [2,440 kB]
-Get:2 https://deb.debian.org/debian bookworm-updates/main amd64 libssl3 amd64 3.0.17-1~deb12u1 [2,027 kB]
-Get:3 https://deb.debian.org/debian bookworm-updates/main amd64 openssh-sftp-server amd64 1:9.2p1-2+deb12u7 [65.9 kB]
-Get:4 https://deb.debian.org/debian bookworm-updates/main amd64 openssh-server amd64 1:9.2p1-2+deb12u7 [457 kB]
-Get:5 https://deb.debian.org/debian bookworm-updates/main amd64 openssh-client amd64 1:9.2p1-2+deb12u7 [992 kB]
-Get:6 https://deb.debian.org/debian bookworm-updates/main amd64 openssl amd64 3.0.17-1~deb12u1 [1,431 kB]
-Preconfiguring packages ...
-Fetched 7,413 kB in 4s (1,698 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115130 files and directories currently installed.)
-Preparing to unpack .../0-libssl-dev_3.0.17-1~deb12u1_amd64.deb ...
-Unpacking libssl-dev:amd64 (3.0.17-1~deb12u1) over (3.0.16-1~deb12u1) ...
-Preparing to unpack .../1-libssl3_3.0.17-1~deb12u1_amd64.deb ...
-Unpacking libssl3:amd64 (3.0.17-1~deb12u1) over (3.0.16-1~deb12u1) ...
-Preparing to unpack .../2-openssh-sftp-server_1%3a9.2p1-2+deb12u7_amd64.deb ...
-Unpacking openssh-sftp-server (1:9.2p1-2+deb12u7) over (1:9.2p1-2+deb12u6) ...
-Preparing to unpack .../3-openssh-server_1%3a9.2p1-2+deb12u7_amd64.deb ...
-Unpacking openssh-server (1:9.2p1-2+deb12u7) over (1:9.2p1-2+deb12u6) ...
-Preparing to unpack .../4-openssh-client_1%3a9.2p1-2+deb12u7_amd64.deb ...
-Unpacking openssh-client (1:9.2p1-2+deb12u7) over (1:9.2p1-2+deb12u6) ...
-Preparing to unpack .../5-openssl_3.0.17-1~deb12u1_amd64.deb ...
-Unpacking openssl (3.0.17-1~deb12u1) over (3.0.16-1~deb12u1) ...
-Setting up libssl3:amd64 (3.0.17-1~deb12u1) ...
-Setting up libssl-dev:amd64 (3.0.17-1~deb12u1) ...
-Setting up openssl (3.0.17-1~deb12u1) ...
-Setting up openssh-client (1:9.2p1-2+deb12u7) ...
-Setting up openssh-sftp-server (1:9.2p1-2+deb12u7) ...
-Setting up openssh-server (1:9.2p1-2+deb12u7) ...
-rescue-ssh.target is a disabled or a static unit not running, not starting it.
-ssh.socket is a disabled or a static unit not running, not starting it.
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for libc-bin (2.36-9+deb12u10) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -192,22 +154,17 @@ Weather report: Pondicherry
   [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;118m2[0m mph[0m        
   [38;5;226m   /[38;5;250m(___(__) [0m 6 mi[0m           
                 0.0 in[0m         
-rtt min/avg/max/mdev = 233.053/257.869/345.506/38.263 ms
- _______________________________________
-/ So so is good, very good, very        \
-| excellent good: and yet it is not; it |
-| is but so so.                         |
-|                                       |
-| -- William Shakespeare, "As You Like  |
-\ It"                                   /
- ---------------------------------------
+rtt min/avg/max/mdev = 230.931/259.962/339.534/39.477 ms
+ _________________________
+< You now have Asian Flu. >
+ -------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet squibblesworth bounced on a glowworm.
+Flibbertigibbet zooms beneath the swirling moonshine.
 
 stop gemma
 start deepseek-r1:1.5b
