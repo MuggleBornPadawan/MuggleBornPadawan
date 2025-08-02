@@ -266,7 +266,7 @@ echo "---" >&2
 
 # Step 2: Read and shuffle questions
 echo "Reading and shuffling questions from questions.txt..." >&2
-readarray -t SHUFFLED_QUESTIONS < <(shuffle_questions "names.txt")
+readarray -t SHUFFLED_QUESTIONS < <(shuffle_questions "questions.txt")
 totalQuestions=${#SHUFFLED_QUESTIONS[@]}
 
 if [[ "$totalQuestions" -eq 0 ]]; then
