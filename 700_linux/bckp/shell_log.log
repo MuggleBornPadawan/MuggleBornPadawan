@@ -1,14 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Aug  2 11:06:15 PM IST 2025 
+Date: Sun Aug  3 11:41:22 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
 Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Fetched 55.4 kB in 1s (37.0 kB/s)
+Fetched 55.4 kB in 1s (54.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -141,35 +141,34 @@ Password Store
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 Weather report: Chennai
 
                 Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+31[0m([38;5;196m38[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;220m18[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;220m17[0m km/h[0m      
   [38;5;251m _ - _ - _ - [0m 5 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
-                Cloudy
-  [38;5;250m     .--.    [0m [38;5;214m+29[0m([38;5;202m34[0m) °C[0m     
-  [38;5;250m  .-(    ).  [0m [1m↑[0m [38;5;214m21[0m km/h[0m      
-  [38;5;250m (___.__)__) [0m 10 km[0m          
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m35[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;220m18[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.044/43.705/63.178/6.086 ms
- ___________________________________
-/ After all, all he did was string  \
-| together a lot of old, well-known |
-| quotations.                       |
-|                                   |
-\ -- H. L. Mencken, on Shakespeare  /
- -----------------------------------
+rtt min/avg/max/mdev = 38.351/41.595/44.392/1.946 ms
+ __________________________
+< Bridge ahead. Pay troll. >
+ --------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flurgleberryscootlewhirligoozbloomsproutz.
+Flibbertigibbet bounce, quibble-dot shimmer, grungle-snap, wizzle-gleam, bloop-bounce, squibble-roar, zizzle-weave.
 
 stop gemma
 start deepseek-r1:1.5b
