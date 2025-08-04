@@ -293,7 +293,7 @@ for question in "${SHUFFLED_QUESTIONS[@]}"; do
     done
 
     # Step 5: Wait 30-60 seconds before the next question
-    random_sleep_time=$(( RANDOM % 5 + 1 )) # Generates a number between 1 and 6
+    random_sleep_time=3 #$(( RANDOM % 5 + 1 )) # Generates a number between 1 and 6
     echo "---" >&2
     echo "Completed all models for current question. Pausing for $random_sleep_time seconds before next question..." >&2
     sleep "$random_sleep_time"
