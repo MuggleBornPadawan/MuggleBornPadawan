@@ -1,13 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Aug  7 01:33:00 PM IST 2025 
+Date: Thu Aug  7 01:34:28 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Hit:2 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Hit:4 https://deb.debian.org/debian bookworm InRelease
-Hit:5 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -141,21 +141,32 @@ Password Store
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
-rtt min/avg/max/mdev = 39.447/50.324/64.139/9.605 ms
- _________________________________________
-/ He that is giddy thinks the world turns \
-| round.                                  |
-|                                         |
-| -- William Shakespeare, "The Taming of  |
-\ the Shrew"                              /
- -----------------------------------------
+Weather report: Chennai
+
+                Haze
+  [38;5;251m _ - _ - _ - [0m [38;5;196m+37[0m([38;5;196m39[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;226m14[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
+Weather report: Pondicherry
+
+  [38;5;226m _`/""[38;5;250m.-.    [0m Thundery outbreaks in nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+33[0m([38;5;196m39[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;226m14[0m km/h[0m      
+  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 9 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 39.801/57.192/103.813/17.093 ms
+ ___________________________________
+/ Try to get all of your posthumous \
+\ medals in advance.                /
+ -----------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumphberry zoom blurple sparklewing flibbertigibbet squeaklepop ripplegrunt.
+Flumping squibbles tumble through shimmering moss.
 
 stop gemma
 start deepseek-r1:1.5b
