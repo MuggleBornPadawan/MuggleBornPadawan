@@ -1,32 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Aug  6 11:12:53 AM IST 2025 
+Date: Thu Aug  7 01:33:00 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Reading package lists...
-Building dependency tree...
-Reading state information...
-dnsutils is already the newest version (1:9.18.33-1~deb1Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Err:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
-Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:1 https://deb.debian.org/debian bookworm InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:3 https://deb.debian.org/debian bookworm-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:4 https://deb.debian.org/debian-security bookworm-security InRelease
-  Temporary failure resolving 'deb.debian.org'
+Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Hit:2 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Hit:4 https://deb.debian.org/debian bookworm InRelease
+Hit:5 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -83,7 +64,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -145,21 +126,43 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-07-26 09:41:34 /home/rgroot/-
 2025-07-26 09:41:34 /home/rgroot/a
 2025-07-26 09:41:34 /home/rgroot/tmp.txt
--e 
+2025-08-06 11:16:28 /home/rgroot/tmp.txt
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── MOONSHOT_API_KEY
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
+rtt min/avg/max/mdev = 39.447/50.324/64.139/9.605 ms
+ _________________________________________
+/ He that is giddy thinks the world turns \
+| round.                                  |
+|                                         |
+| -- William Shakespeare, "The Taming of  |
+\ the Shrew"                              /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 start gemma3:1b
+Flumphberry zoom blurple sparklewing flibbertigibbet squeaklepop ripplegrunt.
+
 stop gemma
 start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
 stop deepseek
