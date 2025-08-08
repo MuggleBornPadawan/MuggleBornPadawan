@@ -23,8 +23,12 @@ cd
 # --- Configuration ---
 # Externalize settings: Define your AI models and log file.
 # Note: MODELS array can be easily extended or modified here.
+
 MODELS=(
-    "openai/gpt-oss-20b"
+    "openai/gpt-oss-20b:free"
+    "openrouter/horizon-beta"
+    "z-ai/glm-4.5-air:free"
+    "tencent/hunyuan-a13b-instruct:free"
     "openai/gpt-4.1-nano"
     "anthropic/claude-3-haiku:beta"
     "google/gemini-2.5-flash-lite"
@@ -40,6 +44,8 @@ MODELS=(
 
 #    "google/gemini-2.5-pro"
 #    "x-ai/grok-3-mini"
+#    "sarvamai/sarvam-m:free"
+#    "nvidia/llama-3.1-nemotron-ultra-253b-v1:free"
 
 
 # Output log file
