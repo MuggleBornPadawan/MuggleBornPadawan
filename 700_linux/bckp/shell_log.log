@@ -1,12 +1,12 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Aug 10 11:14:38 PM IST 2025 
+Date: Sun Aug 10 11:42:02 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -18,7 +18,22 @@ The following packages will be upgraded:
 3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Need to get 5,899 kB of archives.
 After this operation, 1,024 B disk space will be freed.
-Do you want to continue? [Y/n] Abort.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm-updates/main amd64 libssl-dev amd64 3.0.17-1~deb12u2 [2,441 kB]
+Get:2 https://deb.debian.org/debian bookworm-updates/main amd64 libssl3 amd64 3.0.17-1~deb12u2 [2,027 kB]
+Get:3 https://deb.debian.org/debian bookworm-updates/main amd64 openssl amd64 3.0.17-1~deb12u2 [1,430 kB]
+Fetched 5,899 kB in 2s (3,096 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115130 files and directories currently installed.)
+Preparing to unpack .../libssl-dev_3.0.17-1~deb12u2_amd64.deb ...
+Unpacking libssl-dev:amd64 (3.0.17-1~deb12u2) over (3.0.17-1~deb12u1) ...
+Preparing to unpack .../libssl3_3.0.17-1~deb12u2_amd64.deb ...
+Unpacking libssl3:amd64 (3.0.17-1~deb12u2) over (3.0.17-1~deb12u1) ...
+Preparing to unpack .../openssl_3.0.17-1~deb12u2_amd64.deb ...
+Unpacking openssl (3.0.17-1~deb12u2) over (3.0.17-1~deb12u1) ...
+Setting up libssl3:amd64 (3.0.17-1~deb12u2) ...
+Setting up libssl-dev:amd64 (3.0.17-1~deb12u2) ...
+Setting up openssl (3.0.17-1~deb12u2) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for libc-bin (2.36-9+deb12u10) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -64,11 +79,11 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
@@ -163,28 +178,17 @@ Weather report: Pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;208m26[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.7 mm[0m         
-rtt min/avg/max/mdev = 66.049/75.855/141.053/20.728 ms
- ________________________________________
-/ Q: How many DEC repairman does it take \
-| to fix a flat? A: Five; four to hold   |
-| the car up and one to swap tires.      |
-|                                        |
-| Q: How long does it take? A: It's      |
-| indeterminate.                         |
-|                                        |
-| It will depend upon how many flats     |
-| they've brought with them.             |
-|                                        |
-| Q: What happens if you've got TWO      |
-\ flats? A: They replace your generator. /
- ----------------------------------------
+rtt min/avg/max/mdev = 65.982/71.791/91.629/8.049 ms
+ _____________________________________
+< Your step will soil many countries. >
+ -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet zoom, polka-dot squibble, grumble-gleam, wizzle-roar, fluff-snout, shimmer-tree, blur-leap.
+Fluffingtonquibblewobblegigglesnappedunderglows.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -192,6 +196,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! How can I assist you today? 😊
+Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
 
 stop deepseek
