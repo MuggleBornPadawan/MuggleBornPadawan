@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Aug  8 12:43:26 PM IST 2025 
+Date: Sun Aug 10 11:14:38 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -13,7 +13,12 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  libssl-dev libssl3 openssl
+3 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 5,899 kB of archives.
+After this operation, 1,024 B disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -59,11 +64,11 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
@@ -146,30 +151,40 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+34[0m([38;5;196m43[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;214m22[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
+  [38;5;240;1m     .-.     [0m Light rain with thunderstorm
+  [38;5;240;1m    (   ).   [0m [38;5;220m+25[0m([38;5;220m27[0m) °C[0m     
+  [38;5;240;1m   (___(__)  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
+  [38;5;21;1m  ‚‘[38;5;228;5m⚡[38;5;21;25m‘‚[38;5;228;5m⚡[38;5;21;25m‚‘ [0m 4 km[0m           
+  [38;5;21;1m  ‚’‚’[38;5;228;5m⚡[38;5;21;25m’‚’  [0m 0.3 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Thundery outbreaks in nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+32[0m([38;5;196m38[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;226m15[0m km/h[0m      
-  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.407/79.268/169.717/48.749 ms
- _______________________________________
-/ You will be held hostage by a radical \
-\ group.                                /
- ---------------------------------------
+  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+27[0m([38;5;214m30[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;208m26[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.7 mm[0m         
+rtt min/avg/max/mdev = 66.049/75.855/141.053/20.728 ms
+ ________________________________________
+/ Q: How many DEC repairman does it take \
+| to fix a flat? A: Five; four to hold   |
+| the car up and one to swap tires.      |
+|                                        |
+| Q: How long does it take? A: It's      |
+| indeterminate.                         |
+|                                        |
+| It will depend upon how many flats     |
+| they've brought with them.             |
+|                                        |
+| Q: What happens if you've got TWO      |
+\ flats? A: They replace your generator. /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet buzzes a purple moonbeam, giggling through a leafy glen.
+Flibbertigibbet zoom, polka-dot squibble, grumble-gleam, wizzle-roar, fluff-snout, shimmer-tree, blur-leap.
 
 stop gemma
 start deepseek-r1:1.5b
