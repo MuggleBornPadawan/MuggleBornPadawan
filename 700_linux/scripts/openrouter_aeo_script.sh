@@ -26,14 +26,14 @@ cd
 
 MODELS=(
     "openai/gpt-oss-20b:free"
-    "openrouter/horizon-beta"
     "z-ai/glm-4.5-air:free"
     "tencent/hunyuan-a13b-instruct:free"
-    "openai/gpt-4.1-nano"
+    "openai/gpt-5-nano"
     "anthropic/claude-3-haiku:beta"
     "google/gemini-2.5-flash-lite"
     "amazon/nova-micro-v1"
     "mistralai/mistral-small-3.1-24b-instruct:free"
+    "meta-llama/llama-3.2-3b-instruct:free"
     "meta-llama/llama-4-scout"
     "moonshotai/kimi-k2:free"
     "deepseek/deepseek-r1-0528-qwen3-8b:free"
@@ -42,6 +42,7 @@ MODELS=(
     "google/gemma-3n-e4b-it:free"
 )
 
+#    "openrouter/horizon-beta"
 #    "google/gemini-2.5-pro"
 #    "x-ai/grok-3-mini"
 #    "sarvamai/sarvam-m:free"
@@ -177,7 +178,7 @@ call_openrouter_api() {
             log_message "WARNING: Attempt $attempt failed for model '$model' with question '$question'. HTTP Status: $http_status. Response: $api_response" "terminal"
             if [ "$attempt" -lt "$max_attempts" ]; then
                 log_message "Pausing for 2 seconds before retrying..." "terminal"
-                sleep 2
+                #sleep 2
             fi
             attempt=$((attempt + 1))
         fi
@@ -300,10 +301,10 @@ for question in "${SHUFFLED_QUESTIONS[@]}"; do
     done
 
     # Step 5: Wait 30-60 seconds before the next question
-    random_sleep_time=.1 #$(( RANDOM % 5 + 1 )) # Generates a number between 1 and 6
+    #random_sleep_time=.1 #$(( RANDOM % 5 + 1 )) # Generates a number between 1 and 6
     echo "---" >&2
     echo "Completed all models for current question. Pausing for $random_sleep_time seconds before next question..." >&2
-    sleep "$random_sleep_time"
+    #sleep "$random_sleep_time"
     echo "Resume processing." >&2
 done
 
