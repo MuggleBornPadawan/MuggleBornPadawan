@@ -1,17 +1,160 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Mon Aug 11 11:04:52 AM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Mon Aug 11 10:25:10 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+dnsutils is already the newest version (1:9.18.33-1~deb12u2).
+make is already the newest version (4.3-4.1).
+bats is already the newest version (1.8.2-1).
+jq is already the newest version (1.6-2.1).
+cron is already the newest version (3.0pl1-162).
+postfix is already the newest version (3.7.11-0+deb12u1).
+mailutils is already the newest version (1:3.15-4).
+pass is already the newest version (1.7.4-6).
+gnupg is already the newest version (2.2.40-1.1).
+nmap is already the newest version (7.93+dfsg1-1).
+hIgn:3 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Err:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
-Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
+Err:2 https://deb.debian.org/debian bookworm InRelease
+  Temporary failure resolving 'deb.debian.org'
+el is already the newest version (20221122+ds-2).
+tmux is already the newest version (3.3a-3).
+rsync is already the newest version (3.2.7-1+deb12u2).
+bat is already the newest version (0.22.1-4).
+fd-find is already the newest version (8.6.0-3).
+git is already the newest version (1:2.39.5-0+deb12u2).
+rig is already the newest version (1.11-1.1+b1).
+espeak is already the newest version (1.48.15+dfsg-3).
+nodejs is already the newest version (18.19.0+dfsg-6~deb12u2).
+npm is already the newest version (9.2.0~ds1-1).
+openjdk-17-jdk is already the newest version (17.0.15+6-1~deb12u1).
+python3 is already the newest version (3.11.2-1+b1).
+python3-pip is already the newest version (23.0.1+dfsg-1).
+mit-scheme is already the newest version (12.1-3).
+racket is already the newest version (8.7+dfsg1-1).
+clojure is already the newest version (1.11.1-2).
+emacs is already the newest version (1:28.2+1-15+deb12u4).
+elpa-magit is already the newest version (3.3.0-2).
+sbcl is already the newest version (2:2.2.9-1).
+clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
+r-base is already the newest version (4.2.2.20221110-2).
+build-essential is already the newest version (12.9).
+firefox-esr is already the newest version (128.13.0esr-1~deb12u1).
+fortune-mod is already the newest version (1:1.99.1-7.3).
+cowsay is already the newest version (3.03+dfsg2-8).
+neofetch is already the newest version (7.1.0-4).
+trash-cli is already the newest version (0.17.1.14-5).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
+run commits seperately; docker and jenkins startup shell scripts to be created seperately
+2025-06-01 14:23:27 /home/rgroot/.bash_history
+2025-06-02 21:01:26 /home/rgroot/.bash_history
+2025-06-03 21:09:02 /home/rgroot/.bash_history
+2025-06-08 21:27:52 /home/rgroot/.bash_history
+2025-06-08 21:28:14 /home/rgroot/startup_log.log
+2025-06-08 21:28:14 /home/rgroot/-
+2025-06-08 21:28:14 /home/rgroot/a
+2025-06-08 21:28:14 /home/rgroot/tmp.txt
+2025-06-10 12:05:53 /home/rgroot/.bash_history
+2025-06-10 12:06:11 /home/rgroot/startup_log.log
+2025-06-10 12:06:11 /home/rgroot/-
+2025-06-10 12:06:11 /home/rgroot/a
+2025-06-10 12:06:11 /home/rgroot/tmp.txt
+2025-06-12 12:49:53 /home/rgroot/.bash_history
+2025-06-12 12:50:11 /home/rgroot/startup_log.log
+2025-06-12 12:50:11 /home/rgroot/-
+2025-06-12 12:50:11 /home/rgroot/a
+2025-06-12 12:50:11 /home/rgroot/tmp.txt
+2025-06-16 18:08:40 /home/rgroot/.bash_history
+2025-06-16 18:09:02 /home/rgroot/startup_log.log
+2025-06-16 18:09:02 /home/rgroot/-
+2025-06-16 18:09:02 /home/rgroot/a
+2025-06-16 18:09:02 /home/rgroot/tmp.txt
+2025-06-22 23:02:20 /home/rgroot/tmp.txt
+2025-06-25 09:05:12 /home/rgroot/.bash_history
+2025-06-25 09:05:30 /home/rgroot/startup_log.log
+2025-06-25 09:05:30 /home/rgroot/-
+2025-06-25 09:05:30 /home/rgroot/a
+2025-06-25 09:05:30 /home/rgroot/tmp.txt
+2025-07-01 09:18:45 /home/rgroot/.bash_history
+2025-07-01 09:19:03 /home/rgroot/startup_log.log
+2025-07-01 09:19:03 /home/rgroot/-
+2025-07-01 09:19:03 /home/rgroot/a
+2025-07-01 09:19:03 /home/rgroot/tmp.txt
+2025-07-01 11:17:19 /home/rgroot/.bash_history
+2025-07-01 11:17:36 /home/rgroot/startup_log.log
+2025-07-01 11:17:36 /home/rgroot/-
+2025-07-01 11:17:36 /home/rgroot/a
+2025-07-01 11:17:36 /home/rgroot/tmp.txt
+2025-07-02 23:04:59 /home/rgroot/.bash_history
+2025-07-02 23:05:20 /home/rgroot/startup_log.log
+2025-07-02 23:05:20 /home/rgroot/-
+2025-07-02 23:05:20 /home/rgroot/a
+2025-07-02 23:05:20 /home/rgroot/tmp.txt
+2025-07-04 10:54:24 /home/rgroot/.bash_history
+2025-07-04 10:54:42 /home/rgroot/startup_log.log
+2025-07-04 10:54:42 /home/rgroot/-
+2025-07-04 10:54:42 /home/rgroot/a
+2025-07-04 10:54:42 /home/rgroot/tmp.txt
+2025-07-16 12:00:46 /home/rgroot/tmp.txt
+2025-07-16 22:18:05 /home/rgroot/.bash_history
+2025-07-16 22:18:39 /home/rgroot/startup_log.log
+2025-07-16 22:18:39 /home/rgroot/-
+2025-07-16 22:18:39 /home/rgroot/a
+2025-07-16 22:18:39 /home/rgroot/tmp.txt
+2025-07-26 09:41:00 /home/rgroot/.bash_history
+2025-07-26 09:41:34 /home/rgroot/startup_log.log
+2025-07-26 09:41:34 /home/rgroot/-
+2025-07-26 09:41:34 /home/rgroot/a
+2025-07-26 09:41:34 /home/rgroot/tmp.txt
+2025-08-06 11:16:28 /home/rgroot/tmp.txt
+
+use trash-empty or trash-restore as you see fit
+Password Store
+├── CLAUDE_API_KEY
+├── DEEPSEEK_API_KEY
+├── GEMINI_API_KEY
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
+│       └── MuggleBornPadawan
+├── MOONSHOT_API_KEY
+├── OPEN_API_KEY
+├── OPENROUTER_API_KEY
+└── protector_key
+✅ Backup created successfully; move to cloud manually please
+ __________________________________
+/ Be cheerful while you are alive. \
+|                                  |
+\ -- Phathotep, 24th Century B.C.  /
+ ----------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flibbertigibbet sprawled beneath the weeping willow.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
+stop deepseek
+[detached (from session alpha)]
