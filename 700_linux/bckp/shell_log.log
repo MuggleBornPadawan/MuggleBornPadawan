@@ -1,14 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Aug 11 10:27:16 PM IST 2025 
+Date: Mon Aug 11 10:30:02 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Fetched 103 kB in 2s (58.6 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -157,18 +156,22 @@ Weather report: Pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 2.2 mm[0m         
-rtt min/avg/max/mdev = 38.639/41.187/42.395/1.085 ms
- _________________________
-/ Questionable day.       \
-|                         |
-\ Ask somebody something. /
- -------------------------
+rtt min/avg/max/mdev = 40.976/49.038/91.176/15.595 ms
+ _______________________________
+/ Civilization is the limitless \
+| multiplication of unnecessary |
+| necessities.                  |
+|                               |
+\ -- Mark Twain                 /
+ -------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
+Flibbertigibbet zooms through the shimmer of mauve.
+
 stop gemma
 start deepseek-r1:1.5b
 <think>
