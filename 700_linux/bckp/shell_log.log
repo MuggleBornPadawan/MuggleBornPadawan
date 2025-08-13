@@ -1,53 +1,22 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Wed Aug 13 08:43:52 AM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Wed Aug 13 02:57:50 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:3 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [273 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [164 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [274 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security/main Translation-en [165 kB]
 Hit:7 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Fetched 541 kB in 1s (368 kB/s)
+Fetched 542 kB in 2s (347 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  linux-libc-dev openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
-  openjdk-17-jre-headless
-5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 120 MB of archives.
-After this operation, 115 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 linux-libc-dev amd64 6.1.147-1 [2,171 kB]
-Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 openjdk-17-jdk amd64 17.0.16+8-1~deb12u1 [2,463 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 openjdk-17-jdk-headless amd64 17.0.16+8-1~deb12u1 [71.6 MB]
-Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 openjdk-17-jre amd64 17.0.16+8-1~deb12u1 [209 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 openjdk-17-jre-headless amd64 17.0.16+8-1~deb12u1 [43.8 MB]
-Fetched 120 MB in 27s (4,381 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115130 files and directories currently installed.)
-Preparing to unpack .../linux-libc-dev_6.1.147-1_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (6.1.147-1) over (6.1.140-1) ...
-Preparing to unpack .../openjdk-17-jdk_17.0.16+8-1~deb12u1_amd64.deb ...
-Unpacking openjdk-17-jdk:amd64 (17.0.16+8-1~deb12u1) over (17.0.15+6-1~deb12u1) ...
-Preparing to unpack .../openjdk-17-jdk-headless_17.0.16+8-1~deb12u1_amd64.deb ...
-Unpacking openjdk-17-jdk-headless:amd64 (17.0.16+8-1~deb12u1) over (17.0.15+6-1~deb12u1) ...
-Preparing to unpack .../openjdk-17-jre_17.0.16+8-1~deb12u1_amd64.deb ...
-Unpacking openjdk-17-jre:amd64 (17.0.16+8-1~deb12u1) over (17.0.15+6-1~deb12u1) ...
-Preparing to unpack .../openjdk-17-jre-headless_17.0.16+8-1~deb12u1_amd64.deb ...
-Unpacking openjdk-17-jre-headless:amd64 (17.0.16+8-1~deb12u1) over (17.0.15+6-1~deb12u1) ...
-Setting up linux-libc-dev:amd64 (6.1.147-1) ...
-Setting up openjdk-17-jre-headless:amd64 (17.0.16+8-1~deb12u1) ...
-Processing triggers for desktop-file-utils (0.26-1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for ca-certificates-java (20230710~deb12u1) ...
-done.
-Setting up openjdk-17-jdk-headless:amd64 (17.0.16+8-1~deb12u1) ...
-Setting up openjdk-17-jre:amd64 (17.0.16+8-1~deb12u1) ...
-Setting up openjdk-17-jdk:amd64 (17.0.16+8-1~deb12u1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -98,7 +67,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -162,59 +131,36 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-07-26 09:41:34 /home/rgroot/tmp.txt
 2025-08-06 11:16:28 /home/rgroot/tmp.txt
 2025-08-11 22:27:14 /home/rgroot/tmp.txt
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
+├── git
+│   └── github.com
 │       └── MuggleBornPadawan
 ├── MOONSHOT_API_KEY
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
 Weather report: Chennai
 
                 Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;220m+27[0m([38;5;208m31[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;190m12[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+28[0m([38;5;208m31[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;208m25[0m km/h[0m      
   [38;5;251m _ - _ - _ - [0m 5 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
   [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+28[0m([38;5;214m30[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;220m19[0m km/h[0m      
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+31[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;208m25[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.1 mm[0m         
-rtt min/avg/max/mdev = 39.222/45.614/65.895/7.817 ms
- _________________________________________
-/ Knucklehead: "Knock, knock" Pee Wee:    \
-| "Who's there?" Knucklehead: "Little ol' |
-| lady." Pee Wee: "Liddle ol' lady who?"  |
-| Knucklehead: "I didn't know you could   |
-\ yodel"                                  /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 37.727/45.123/62.601/9.398 ms
 start gemma3:1b
-Flumpkinberry squibblefluxy zoomboons.
-
 stop gemma
 start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It seems like your message is a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
-
 stop deepseek
