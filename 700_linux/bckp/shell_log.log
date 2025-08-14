@@ -1,13 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Aug 13 02:58:53 PM IST 2025 
+Date: Thu Aug 14 02:58:09 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [274 kB]
+Hit:6 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Fetched 377 kB in 1s (261 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -153,29 +155,28 @@ Operation completed.
 Weather report: Chennai
 
                 Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+28[0m([38;5;208m31[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;208m25[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m [38;5;220m+27[0m([38;5;214m29[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;208m26[0m km/h[0m      
   [38;5;251m _ - _ - _ - [0m 5 km[0m           
                 0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+31[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;208m25[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.945/46.891/78.151/11.396 ms
- ___________________________________
-/ You will be called upon to help a \
-\ friend in trouble.                /
- -----------------------------------
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m35[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;226m14[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 39.356/56.636/133.705/25.365 ms
+ ________________________________
+< Tomorrow, you can be anywhere. >
+ --------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbetly squibblesquish, gurglebloom, wobbledrift, quibblewump, snortshroom, blorpburst, shimmerdrift.
+Flumphwickleberrybubblespunkelchdragonblossomsknife.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -186,4 +187,3 @@ start deepseek-r1:1.5b
 Hello! How can I assist you today? 😊
 
 stop deepseek
-[detached (from session alpha)]
