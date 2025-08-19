@@ -1,13 +1,15 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Sun Aug 17 09:17:53 PM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Tue Aug 19 09:45:56 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:4 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [274 kB]
+Fetched 378 kB in 1s (263 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -17,6 +19,7 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+mpg123 is already the newest version (1.31.2-1+deb12u1).
 dnsutils is already the newest version (1:9.18.33-1~deb12u2).
 make is already the newest version (4.3-4.1).
 bats is already the newest version (1.8.2-1).
@@ -64,7 +67,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -138,57 +141,36 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-08-15 10:21:23 /home/rgroot/-
 2025-08-15 10:21:23 /home/rgroot/a
 2025-08-15 10:21:23 /home/rgroot/tmp.txt
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
+├── git
+│   └── github.com
 │       └── MuggleBornPadawan
 ├── MOONSHOT_API_KEY
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
 Weather report: Chennai
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain with thunderstorm, rain with thunderstorm
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+25[0m([38;5;220m27[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;202m28[0m km/h[0m      
-  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 4 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.1 mm[0m         
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+32[0m([38;5;196m38[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;154m9[0m km/h[0m       
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.1 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+25[0m([38;5;214m28[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;226m13[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.480/43.812/58.094/5.606 ms
- _________________________________________
-/ Give your very best today. Heaven knows \
-\ it's little enough.                     /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+  [38;5;226m    \   /    [0m Clear
+  [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;208m32[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m23[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 38.377/39.937/42.974/1.154 ms
 start gemma3:1b
-Flumphberry blorfington zoomgleep.
-
 stop gemma
 start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It looks like your message is a bit unclear. Could you clarify or provide more details about what you're asking or referring to? I'm here to help with any questions or tasks you have!
-
 stop deepseek
-[detached (from session alpha)]
