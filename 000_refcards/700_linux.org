@@ -49,6 +49,19 @@
 - add line numbers to a File Instantly
   - add numbers to all lines → nl file.txt
   - skip blank lines → nl -ba file.txt
+** temp
+|--------------------------+-----------------------------------------------------------|
+| shell cmd                | particulars                                               |
+|--------------------------+-----------------------------------------------------------|
+| !!                       | rerun previous command                                    |
+| !$                       | show argument                                             |
+| &&                       | chaining - run second cmd only if first one is error free |
+| ;                        | chaining - execute all                                    |
+| double vertical pipeline | chaining - run second cmd if first fails                  |
+| jobs                     | list suspended processes                                  |
+| fg %n                    | bring nth process status to running                       |
+| Ctrl R                   | reverse search (similar to history)                       |
+|--------------------------+-----------------------------------------------------------|
 
 ** tips & tricks
 |---------------------------------+--------------------------+-------------------------------------------------------|
