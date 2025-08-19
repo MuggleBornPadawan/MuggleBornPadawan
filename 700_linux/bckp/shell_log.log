@@ -1,15 +1,13 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Tue Aug 19 09:45:56 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Tue Aug 19 11:04:46 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:4 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [274 kB]
-Fetched 378 kB in 1s (263 kB/s)
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -67,7 +65,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -141,20 +139,28 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-08-15 10:21:23 /home/rgroot/-
 2025-08-15 10:21:23 /home/rgroot/a
 2025-08-15 10:21:23 /home/rgroot/tmp.txt
--e 
+2025-08-19 21:45:59 /home/rgroot/.bash_history
+2025-08-19 21:46:19 /home/rgroot/startup_log.log
+2025-08-19 21:46:19 /home/rgroot/-
+2025-08-19 21:46:19 /home/rgroot/a
+2025-08-19 21:46:19 /home/rgroot/tmp.txt
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── MOONSHOT_API_KEY
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 Weather report: Chennai
 
   [38;5;226m   \  /[0m       Partly cloudy
@@ -169,8 +175,28 @@ Weather report: Pondicherry
   [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m23[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.377/39.937/42.974/1.154 ms
+rtt min/avg/max/mdev = 39.915/66.996/157.251/40.066 ms
+ _______________________________________
+/ Q: How many IBM CPU's does it take to \
+| do a logical right shift? A: 33. 1 to |
+| hold the bits and 32 to push the      |
+\ register.                             /
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 start gemma3:1b
+Fluffling squibbleberry bounceweed shimmergrumble.
+
 stop gemma
 start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
 stop deepseek
+[detached (from session alpha)]
