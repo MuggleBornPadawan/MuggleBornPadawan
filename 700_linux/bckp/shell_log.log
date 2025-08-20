@@ -1,14 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Aug 20 10:37:53 AM IST 2025 
+Date: Wed Aug 20 03:58:36 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Ign:1 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Fetched 103 kB in 2s (65.5 kB/s)
+Hit:3 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Fetched 55.4 kB in 1s (40.8 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -164,29 +164,30 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;220m+27[0m([38;5;214m29[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;214m20[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+33[0m([38;5;202m36[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m23[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
 Weather report: Pondicherry
 
   [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;214m+30[0m([38;5;208m33[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↑[0m [38;5;154m7[0m km/h[0m       
+  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;202m36[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↖[0m [38;5;220m17[0m km/h[0m      
   [38;5;226m     `-’     [0m 10 km[0m          
   [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 53.976/78.491/167.802/37.554 ms
- ________________________________
-< Tomorrow, you can be anywhere. >
- --------------------------------
+rtt min/avg/max/mdev = 38.904/51.582/69.494/11.369 ms
+ _________________________________________
+/ People are beginning to notice you. Try \
+\ dressing before you leave the house.    /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet zooms through the purple abyss.
+Squigglefrobbleblitzzoomberrydrift.
 
 stop gemma
 start deepseek-r1:1.5b
