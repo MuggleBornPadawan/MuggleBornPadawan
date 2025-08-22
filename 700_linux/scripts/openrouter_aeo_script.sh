@@ -28,8 +28,7 @@ MODELS=(
     "openai/gpt-oss-20b:free"
     "z-ai/glm-4.5-air:free"
     "tencent/hunyuan-a13b-instruct:free"
-    "openai/gpt-5-nano"
-    "anthropic/claude-3-haiku:beta"
+    "anthropic/claude-3-haiku" 
     "google/gemini-2.5-flash-lite"
     "amazon/nova-micro-v1"
     "mistralai/mistral-small-3.1-24b-instruct:free"
@@ -42,6 +41,7 @@ MODELS=(
     "google/gemma-3n-e4b-it:free"
 )
 
+#    "openai/gpt-5-nano"
 #    "openrouter/horizon-beta"
 #    "google/gemini-2.5-pro"
 #    "x-ai/grok-3-mini"
