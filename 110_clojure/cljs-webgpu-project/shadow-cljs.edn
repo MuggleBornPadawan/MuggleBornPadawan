@@ -1,0 +1,10 @@
+;; shadow-cljs.edn
+{:source-paths ["src"]
+ :dependencies []
+ :builds
+ {:app {:target :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+        :modules {:main {:init-fn my.app/init}}
+        :devtools {:http-root "public"
+                   :http-port 8080}}}}

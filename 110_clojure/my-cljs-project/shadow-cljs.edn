@@ -1,0 +1,15 @@
+;; shadow-cljs.edn
+
+{:source-paths ["src/main"] ;; Where to find your .cljs source files
+
+ :dependencies [[reagent "2.0.0-alpha2"]] ;; For Clojure/ClojureScript libraries (we'll leave this empty for now)
+
+ :builds
+ {:app ;; This is the name of our build, we can call it anything
+  {:target :browser ;; We are building for the web browser
+   :output-dir "public/js" ;; Where the compiled JS files will go
+   :asset-path "/js" ;; The URL path the browser will use to get the JS
+   :modules {:main {:init-fn my-cljs-project.core/init}} ;; The main entry point
+   :devtools
+   {:http-root "public"  ;; Serve files from a "public" directory
+    :http-port 8080}}}}   ;; The port for the local development server
