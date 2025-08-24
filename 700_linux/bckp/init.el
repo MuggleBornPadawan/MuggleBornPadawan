@@ -70,7 +70,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(json-mode request restclient magit geiser multiple-cursors use-package)))
+   '(cider json-mode request restclient magit geiser multiple-cursors use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -108,3 +108,7 @@
     (setq geiser-repl-working-directory (file-name-directory buffer-file-name))))
 
 (add-hook 'geiser-mode-hook #'my/geiser-set-repl-directory)
+
+;; --- User Interface Settings ---
+
+(setq-default truncate-lines t)

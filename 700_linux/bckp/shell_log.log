@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Aug 23 03:42:05 PM IST 2025 
+Date: Sun Aug 24 03:22:35 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
@@ -17,6 +17,7 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+sqlite3 is already the newest version (3.40.1-2+deb12u1).
 mpg123 is already the newest version (1.31.2-1+deb12u1).
 dnsutils is already the newest version (1:9.18.33-1~deb12u2).
 make is already the newest version (4.3-4.1).
@@ -158,36 +159,30 @@ Password Store
 ├── OPENROUTER_API_KEY
 └── protector_key
 ✅ Backup created successfully; move to cloud manually please
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: Chennai
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m36[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;190m12[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.2 mm[0m         
-Weather report: Pondicherry
+Sorry, we are running out of queries to the weather service at the moment.
+Here is the weather report for the default city (just to show you what it looks like).
+We will get new queries as soon as possible.
+You can follow https://x.com/igor_chubin for the updates.
+======================================================================================
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;220m16[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.6 mm[0m         
-rtt min/avg/max/mdev = 40.662/55.508/90.847/15.012 ms
- _______________________________________
-/ You can create your own opportunities \
-| this week. Blackmail a senior         |
-\ executive.                            /
- ---------------------------------------
+Sorry, we are running out of queries to the weather service at the moment.
+Here is the weather report for the default city (just to show you what it looks like).
+We will get new queries as soon as possible.
+You can follow https://x.com/igor_chubin for the updates.
+======================================================================================
+rtt min/avg/max/mdev = 53.794/66.112/84.431/11.234 ms
+ ______________________________________
+/ You will have domestic happiness and \
+\ faithful friends.                    /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumpitygloomberrygloopsnarkleberry.
+Flibbertigibbet thumped a shimmeringly purple boulder.
 
 stop gemma
 start deepseek-r1:1.5b
