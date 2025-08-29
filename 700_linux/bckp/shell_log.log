@@ -1,21 +1,45 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Aug 29 12:33:10 PM IST 2025 
+Date: Sat Aug 30 01:03:34 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [277 kB]
-Fetched 380 kB in 1s (383 kB/s)
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [277 kB]
+Hit:6 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Fetched 325 kB in 1s (226 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  libnode-dev libnode108 nodejs nodejs-doc
+4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 15.0 MB of archives.
+After this operation, 334 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 nodejs amd64 18.20.4+dfsg-1~deb12u1 [319 kB]
+Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 libnode-dev amd64 18.20.4+dfsg-1~deb12u1 [511 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 libnode108 amd64 18.20.4+dfsg-1~deb12u1 [10.6 MB]
+Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 nodejs-doc all 18.20.4+dfsg-1~deb12u1 [3,579 kB]
+Fetched 15.0 MB in 3s (4,942 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 115228 files and directories currently installed.)
+Preparing to unpack .../nodejs_18.20.4+dfsg-1~deb12u1_amd64.deb ...
+Unpacking nodejs (18.20.4+dfsg-1~deb12u1) over (18.19.0+dfsg-6~deb12u2) ...
+Preparing to unpack .../libnode-dev_18.20.4+dfsg-1~deb12u1_amd64.deb ...
+Unpacking libnode-dev (18.20.4+dfsg-1~deb12u1) over (18.19.0+dfsg-6~deb12u2) ...
+Preparing to unpack .../libnode108_18.20.4+dfsg-1~deb12u1_amd64.deb ...
+Unpacking libnode108:amd64 (18.20.4+dfsg-1~deb12u1) over (18.19.0+dfsg-6~deb12u2) ...
+Preparing to unpack .../nodejs-doc_18.20.4+dfsg-1~deb12u1_all.deb ...
+Unpacking nodejs-doc (18.20.4+dfsg-1~deb12u1) over (18.19.0+dfsg-6~deb12u2) ...
+Setting up libnode108:amd64 (18.20.4+dfsg-1~deb12u1) ...
+Setting up nodejs (18.20.4+dfsg-1~deb12u1) ...
+Setting up nodejs-doc (18.20.4+dfsg-1~deb12u1) ...
+Setting up libnode-dev (18.20.4+dfsg-1~deb12u1) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for libc-bin (2.36-9+deb12u10) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -44,7 +68,7 @@ fd-find is already the newest version (8.6.0-3).
 git is already the newest version (1:2.39.5-0+deb12u2).
 rig is already the newest version (1.11-1.1+b1).
 espeak is already the newest version (1.48.15+dfsg-3).
-nodejs is already the newest version (18.19.0+dfsg-6~deb12u2).
+nodejs is already the newest version (18.20.4+dfsg-1~deb12u1).
 npm is already the newest version (9.2.0~ds1-1).
 openjdk-17-jdk is already the newest version (17.0.16+8-1~deb12u1).
 python3 is already the newest version (3.11.2-1+b1).
@@ -165,46 +189,5 @@ Password Store
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
-✅ Backup created successfully; move to cloud manually please
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: Chennai
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m36[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;214m22[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+31[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;220m18[0m km/h[0m      
-  [38;5;226m     `-’     [0m 10 km[0m          
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.389/47.080/66.286/10.231 ms
- _________________________________________
-/ This night methinks is but the daylight \
-| sick.                                   |
-|                                         |
-| -- William Shakespeare, "The Merchant   |
-\ of Venice"                              /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flumpkin sprocket giggleflux shimmerstone sprout.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
-stop deepseek
+⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
+❌ No cloud backup taken
