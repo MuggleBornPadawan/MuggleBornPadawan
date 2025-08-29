@@ -1,14 +1,15 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Aug 27 09:57:59 PM IST 2025 
+Date: Fri Aug 29 12:33:10 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Fetched 55.4 kB in 1s (38.9 kB/s)
+Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [277 kB]
+Fetched 380 kB in 1s (383 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -170,33 +171,33 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: Chennai
 
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m43[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;190m11[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                2.8 mm[0m         
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m36[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;214m22[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
 Weather report: Pondicherry
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+28[0m([38;5;208m31[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 40.638/62.665/135.572/24.889 ms
- ________________________________________
-/ ... A solemn, unsmiling, sanctimonious \
-| old iceberg who looked like he was     |
-| waiting for a vacancy in the Trinity.  |
-|                                        |
-\ -- Mark Twain                          /
- ----------------------------------------
+  [38;5;226m    \   /    [0m Sunny
+  [38;5;226m     .-.     [0m [38;5;208m+31[0m([38;5;202m35[0m) °C[0m     
+  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;220m18[0m km/h[0m      
+  [38;5;226m     `-’     [0m 10 km[0m          
+  [38;5;226m    /   \    [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 39.389/47.080/66.286/10.231 ms
+ _________________________________________
+/ This night methinks is but the daylight \
+| sick.                                   |
+|                                         |
+| -- William Shakespeare, "The Merchant   |
+\ of Venice"                              /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet sparked with moonbeams, while grumbles tumbled through the violet haze.
+Flumpkin sprocket giggleflux shimmerstone sprout.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -207,4 +208,3 @@ start deepseek-r1:1.5b
 Hello! How can I assist you today? 😊
 
 stop deepseek
-[detached (from session alpha)]
