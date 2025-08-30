@@ -71,9 +71,14 @@
   print(f"The sum of x and y is: {x + y}")
 #+END_SRC
 
+#+RESULTS:
+
 #+begin_src python
   print("hellpo word")
 #+end_src
+
+#+RESULTS:
+
 ** Table
 | Header 1       | Header 2 |   | Header 3 |   |   |
 |----------------+----------+---+----------+---+---|
