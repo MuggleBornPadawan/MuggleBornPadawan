@@ -1,14 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Aug 30 08:24:29 PM IST 2025 
+Date: Sat Aug 30 09:02:21 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 https://deb.debian.org/debian bookworm InRelease
 Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:3 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
 Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
-Fetched 103 kB in 1s (73.3 kB/s)
+Fetched 55.4 kB in 1s (60.5 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -166,44 +166,3 @@ Password Store
 └── protector_key
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 8396ee5] bckp
- 1 file changed, 7 insertions(+), 73 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: Chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m42[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;190m12[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+29[0m([38;5;208m33[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;154m8[0m km/h[0m       
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.3 mm[0m         
-rtt min/avg/max/mdev = 40.481/48.943/61.069/8.129 ms
- ____________________________________
-/ You have many friends and very few \
-\ living enemies.                    /
- ------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flibbertigibbet zooms through the rainbow’s dust.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It looks like your message is a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help with whatever you need! 😊
-
-stop deepseek
