@@ -42,7 +42,7 @@ check_sensitive_content() {
             break
         fi
     done
-    # echo -e "is found? $found"
+    echo -e "is found? $found"
     return $found
 }
 
