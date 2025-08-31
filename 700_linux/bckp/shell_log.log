@@ -176,3 +176,52 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main f72614d] bckp
+ 1 file changed, 8 insertions(+), 51 deletions(-)
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: Chennai
+
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+30[0m([38;5;202m36[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;226m15[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.1 mm[0m         
+Weather report: Pondicherry
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+28[0m([38;5;208m31[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;214m21[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 39.112/53.518/63.439/10.455 ms
+ _________________________________________
+/ Whenever the literary German dives into \
+| a sentence, that is the last you are    |
+| going to see of him until he emerges on |
+| the other side of his Atlantic with his |
+| verb in his mouth.                      |
+|                                         |
+| -- Mark Twain "A Connecticut Yankee in  |
+\ King Arthur's Court"                    /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flurgleboopzizzlewhizzlegleboop. 
+
+Flurgleboopzizzlewhizzlegleboop.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! It looks like your message is a bit unclear. Could you clarify or provide more details about what you're asking? Are you looking for help with something specific, or is there something else I can assist you with? 😊
+
+stop deepseek
