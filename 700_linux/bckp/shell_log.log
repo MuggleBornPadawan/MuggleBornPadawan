@@ -1,13 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Aug 31 10:27:30 AM IST 2025 
+Date: Sun Aug 31 03:09:12 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/138 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -17,6 +18,7 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+lm-sensors is already the newest version (1:3.6.0-7.1).
 sqlite3 is already the newest version (3.40.1-2+deb12u1).
 mpg123 is already the newest version (1.31.2-1+deb12u1).
 dnsutils is already the newest version (1:9.18.33-1~deb12u2).
@@ -50,7 +52,7 @@ python3-pip is already the newest version (23.0.1+dfsg-1).
 mit-scheme is already the newest version (12.1-3).
 racket is already the newest version (8.7+dfsg1-1).
 clojure is already the newest version (1.11.1-2).
-emacs is already the newest version (1:28.2+1-15+deb12u4).
+emacs is already the newest version (1:30.1+1-6~bpo12+1).
 elpa-magit is already the newest version (3.3.0-2).
 sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
@@ -168,48 +170,8 @@ Password Store
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
 └── protector_key
+
+pattern match found: auth
+is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main a45fdf7] bckp
- 1 file changed, 172 insertions(+), 1 deletion(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: Chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;220m17[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 4 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;202m36[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m21[0m km/h[0m      
-  [38;5;226m     `-’     [0m 10 km[0m          
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 39.767/99.157/256.668/66.501 ms
- ______________________________________
-/ What I tell you three times is true. \
-|                                      |
-\ -- Lewis Carroll                     /
- --------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flumphberry squibble wobble zestle bloom.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It looks like your message is a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
-
-stop deepseek
-[detached (from session alpha)]
