@@ -1,14 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Aug 31 03:09:12 PM IST 2025 
+Date: Sun Aug 31 11:16:13 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:4 https://storage.googleapis.com/cros-packages/138 bookworm Release
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:7 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Fetched 163 kB in 2s (87.3 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -175,47 +176,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 0ae966f] bckp
- 2 files changed, 28 insertions(+), 51 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: Chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;220m17[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 4 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m    \   /    [0m Sunny
-  [38;5;226m     .-.     [0m [38;5;208m+32[0m([38;5;202m36[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m→[0m [38;5;214m21[0m km/h[0m      
-  [38;5;226m     `-’     [0m 10 km[0m          
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 41.123/66.868/146.330/29.160 ms
- _________________________________________
-/ Knucklehead: "Knock, knock" Pee Wee:    \
-| "Who's there?" Knucklehead: "Little ol' |
-| lady." Pee Wee: "Liddle ol' lady who?"  |
-| Knucklehead: "I didn't know you could   |
-\ yodel"                                  /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Zizzleflump, grobnort, quibblewort, spliffle, floofang, shimmerling, blusterbloom.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
-stop deepseek
