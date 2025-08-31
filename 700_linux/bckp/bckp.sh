@@ -37,7 +37,7 @@ check_sensitive_content() {
     for pattern in "${patterns[@]}"; do
 	# echo -e "\nchecking pattern match: $pattern"
 	if grep -iE "$pattern" "$file" > /dev/null; then
-	    # echo -e "\npattern match found: $pattern"
+	    echo -e "\npattern match found: $pattern"
 	    found=1
             break
         fi
