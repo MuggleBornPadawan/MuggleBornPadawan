@@ -1,13 +1,13 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Sep  1 10:15:58 PM IST 2025 
+Date: Tue Sep  2 02:51:46 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08096-g300882a0a131
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/138 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/138 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -166,54 +166,14 @@ Password Store
 ├── [01;34mgit[0m
 │   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
+├── mbprootp
 ├── MOONSHOT_API_KEY
 ├── OPEN_API_KEY
 ├── OPENROUTER_API_KEY
-└── protector_key
+├── protector_key
+└── tmp
 
 pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main c52d740] bckp
- 1 file changed, 6 insertions(+), 44 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: Chennai
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;118m4[0m km/h[0m       
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+30[0m([38;5;208m33[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;220m17[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
-rtt min/avg/max/mdev = 39.057/49.040/73.453/10.132 ms
- ___________________________________
-/ Life is to you a dashing and bold \
-\ adventure.                        /
- -----------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Zizzleflump, quibblebug, gleepglorp, floofling, blorpish, shimmerwing, wizzleflux.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
-stop deepseek
-[detached (from session alpha)]
