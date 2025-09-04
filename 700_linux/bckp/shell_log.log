@@ -183,3 +183,43 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main 4ca68a5f] bckp
+ 2 files changed, 12 insertions(+), 55 deletions(-)
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: Chennai
+
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;220m+27[0m([38;5;214m30[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;214m20[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 6 km[0m           
+                0.0 mm[0m         
+Weather report: Pondicherry
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+33[0m([38;5;196m37[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;220m17[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 40.313/53.588/66.460/10.429 ms
+ ________________________________________
+< You will be misunderstood by everyone. >
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flurgleboopsparkleplumspinnygloomberryblitz.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
+stop deepseek
