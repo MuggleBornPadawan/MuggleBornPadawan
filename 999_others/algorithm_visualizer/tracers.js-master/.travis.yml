@@ -1,0 +1,33 @@
+language: node_js
+node_js: stable
+cache: npm
+script: npm run build && npm test && npm run docs
+deploy:
+  # Publish to NPM
+  - provider: npm
+    skip_cleanup: true
+    email: parkjs814@gmail.com
+    api_key: $NPM_ACCESS_TOKEN
+    on:
+      tags: true
+
+  # Publish TypeDoc to GitHub Pages
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_ACCESS_TOKEN
+    local_dir: docs
+    keep_history: true
+    on:
+      tags: true
+
+  # Create a GitHub release
+  - provider: releases
+    api_key: $GITHUB_ACCESS_TOKEN
+    on:
+      tags: true
+env:
+  global:
+    # NPM_ACCESS_TOKEN
+    - secure: DTFByPy1CW+5uGc4X61QIVgxJB6+bU3n9RYtrmVwfBwoZY13SJCIMkKsgQwnTp+4Q+RGlEROZLn2BQvcaJ1RDZjH81Jrp6DxeUo4nYTN4ySuw9k9Ik9ctZ2sRCEU89tlgbsc4O3JsWs4Ek0dA85l0Dn+rLWMCvWjeUHOtcgf0oooz75EvZ5wPumXQvz03kbZm7DUUD1fJ/Vn9zMG96Gwx/S1iJH1iBnZTwiPzSOHV4qgkJaeZ0erUrfmClwCc8Djq6U6iDpUEuEW57PJszy6/iLDRKBa8y91CKXoFNbL4BKWPLAHb+JsYarrqQjVIHm+ekVEE2F0yIllSjU8FzjnqfE/V9dkYv8QgoVkhJq7w+grmAtICFxTKqohQlrTxCWtZV2IlF4liNCWbL+89op+i3RsAs4XlkC1FLkzT5hreprZnX6ZCy/Xxjo/KWkFH0705BeH2SrVFr9EuAI9JerEwGMrJRFpz/OsODletfm09KrUlepmhpK05uSEqTKfW7fAO4XR+CuuM830mLwlDcB1vdvanKX5kC/1kGOgdmHsmLpO/uWalOESbL0HoWcA1yiG+QWBrU/uQOZboy3fHxEbuApXdeNnnP4i+65jv09ZMuWmeRTT6f+k4/kIdnnLvtVrqeOrpiUFUa7drTF5kD4u4/oMBYsUKDqbgVa9UcI/+Nk=
+    # GITHUB_ACCESS_TOKEN
+    - secure: GysERyByVsh48Zjy6ewShlEq4YH83MekjLVSKBkUCbm0xJ/kEvmjmWEo2pEyO1TxMADKUHk+SdMAsyxxS2jw3FEGuzzaaRukyN5uq8ZReV/e+4k0y1UsAr+2RUQYszbyCiwNpZ3tHoYZHRMZNGXn2WaNdpQbjcYfBT4U4WDoUATW0pHs7FZoTpT6FUbCv5rXyZrTuLszBmlkPiDfvYnodlfsXgN4IGO/mxg82fOBDanst3kwdwYTekzBgordj+Q2IHk4l7BDfk2HLhcT7otwPLR/x5URJT1nyrf3gIVhpzgTAFqBicY4lzKdCdWvsxgGaoXZuD+eHBaD9a77S4IjdYbDiPsFv+2jzsNlQeexrsEBluKnHtI2/8ZzOHw2lpqCcfEJpzaIEoWI1cl8Eaek0g68Ltp2+y/nRJIOqw9lUFNjbsq92uc/2SUkKx1Bp9Cmelriwf2HoHUZNu0GV3onZJry80dYDVD1mUWyZ1gsc9BrbWRf3YV2Ttu5ok3F6ONipg0Hu3MTiIxPMYx9Uo8NnYsMsHhTHERudp4ApBL4w+YN+ggDofAx57mh1fZiqnFtmOVK04B9RR+8tUv1h7sHEM0+Ob1/FWBCtiDNG3ZzJ5t5X2QGCrGhFzyLhUWitupxLoRLPsrymJF//jaRoMYg9LRra6QJASpjscynvZSSB7E=

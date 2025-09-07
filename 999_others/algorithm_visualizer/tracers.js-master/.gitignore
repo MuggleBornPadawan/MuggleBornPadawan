@@ -1,0 +1,8 @@
+/.idea
+/node_modules
+/.rpt2_cache
+/.nyc_output
+/dist
+/docs
+/npm-debug.log
+.DS_Store
