@@ -1,13 +1,13 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Sun Sep  7 07:24:20 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Sun Sep  7 07:25:38 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Ign:1 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -69,7 +69,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -163,14 +163,19 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-09-03 14:05:49 /home/rgroot/-
 2025-09-03 14:05:49 /home/rgroot/a
 2025-09-03 14:05:49 /home/rgroot/tmp.txt
--e 
+2025-09-07 19:24:23 /home/rgroot/.bash_history
+2025-09-07 19:24:46 /home/rgroot/startup_log.log
+2025-09-07 19:24:46 /home/rgroot/-
+2025-09-07 19:24:46 /home/rgroot/a
+2025-09-07 19:24:46 /home/rgroot/tmp.txt
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── mbprootp
 ├── MOONSHOT_API_KEY
@@ -183,24 +188,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 106b03d5] bckp
- 1 file changed, 10 insertions(+), 52 deletions(-)
-Weather report: Chennai
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;202m+35[0m([38;5;196m48[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m←[0m [38;5;226m13[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+29[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;190m10[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.5 mm[0m         
-rtt min/avg/max/mdev = 40.725/46.690/72.368/9.774 ms
-start gemma3:1b
-stop gemma
-start deepseek-r1:1.5b
-stop deepseek
