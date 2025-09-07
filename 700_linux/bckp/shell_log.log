@@ -1,14 +1,15 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Sep  7 02:25:00 AM IST 2025 
+Date: Sun Sep  7 06:24:20 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 48.0 kB in 1s (32.5 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -183,34 +184,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main fece2972] bckp
- 1 file changed, 5 insertions(+), 48 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: Chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+31[0m([38;5;196m39[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;220m18[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.0 mm[0m         
-Weather report: Pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+28[0m([38;5;208m32[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m14[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.5 mm[0m         
-rtt min/avg/max/mdev = 40.690/48.341/62.432/8.978 ms
- ___________________________________
-/ Life is to you a dashing and bold \
-\ adventure.                        /
- -----------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flumphberry wobble zestingly, shimmering dust, quivering moonbeam, gurgling grobnar, prickly qu
