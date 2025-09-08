@@ -188,3 +188,42 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main 9e219105] bckp
+ 1 file changed, 7 insertions(+), 50 deletions(-)
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: Pondicherry
+
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+32[0m([38;5;202m36[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;154m9[0m km/h[0m       
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 39.192/58.699/100.800/25.147 ms
+ _________________________________________
+/ In Marseilles they make half the toilet \
+| soap we consume in America, but the     |
+| Marseillaise only have a vague          |
+| theoretical idea of its use, which they |
+| have obtained from books of travel.     |
+|                                         |
+\ -- Mark Twain                           /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flumphberry wobbleforth shimmersparkle.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
+stop deepseek
