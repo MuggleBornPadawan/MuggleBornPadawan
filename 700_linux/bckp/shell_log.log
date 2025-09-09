@@ -1,13 +1,13 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Tue Sep  9 12:30:51 PM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Tue Sep  9 12:35:56 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Ign:1 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:2 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -68,3 +68,123 @@ trash-cli is already the newest version (0.17.1.14-5).
 Reading package lists...
 Building dependency tree...
 Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+-e 
+run commits seperately; docker and jenkins startup shell scripts to be created seperately
+2025-06-01 14:23:27 /home/rgroot/.bash_history
+2025-06-02 21:01:26 /home/rgroot/.bash_history
+2025-06-03 21:09:02 /home/rgroot/.bash_history
+2025-06-08 21:27:52 /home/rgroot/.bash_history
+2025-06-08 21:28:14 /home/rgroot/startup_log.log
+2025-06-08 21:28:14 /home/rgroot/-
+2025-06-08 21:28:14 /home/rgroot/a
+2025-06-08 21:28:14 /home/rgroot/tmp.txt
+2025-06-10 12:05:53 /home/rgroot/.bash_history
+2025-06-10 12:06:11 /home/rgroot/startup_log.log
+2025-06-10 12:06:11 /home/rgroot/-
+2025-06-10 12:06:11 /home/rgroot/a
+2025-06-10 12:06:11 /home/rgroot/tmp.txt
+2025-06-12 12:49:53 /home/rgroot/.bash_history
+2025-06-12 12:50:11 /home/rgroot/startup_log.log
+2025-06-12 12:50:11 /home/rgroot/-
+2025-06-12 12:50:11 /home/rgroot/a
+2025-06-12 12:50:11 /home/rgroot/tmp.txt
+2025-06-16 18:08:40 /home/rgroot/.bash_history
+2025-06-16 18:09:02 /home/rgroot/startup_log.log
+2025-06-16 18:09:02 /home/rgroot/-
+2025-06-16 18:09:02 /home/rgroot/a
+2025-06-16 18:09:02 /home/rgroot/tmp.txt
+2025-06-22 23:02:20 /home/rgroot/tmp.txt
+2025-06-25 09:05:12 /home/rgroot/.bash_history
+2025-06-25 09:05:30 /home/rgroot/startup_log.log
+2025-06-25 09:05:30 /home/rgroot/-
+2025-06-25 09:05:30 /home/rgroot/a
+2025-06-25 09:05:30 /home/rgroot/tmp.txt
+2025-07-01 09:18:45 /home/rgroot/.bash_history
+2025-07-01 09:19:03 /home/rgroot/startup_log.log
+2025-07-01 09:19:03 /home/rgroot/-
+2025-07-01 09:19:03 /home/rgroot/a
+2025-07-01 09:19:03 /home/rgroot/tmp.txt
+2025-07-01 11:17:19 /home/rgroot/.bash_history
+2025-07-01 11:17:36 /home/rgroot/startup_log.log
+2025-07-01 11:17:36 /home/rgroot/-
+2025-07-01 11:17:36 /home/rgroot/a
+2025-07-01 11:17:36 /home/rgroot/tmp.txt
+2025-07-02 23:04:59 /home/rgroot/.bash_history
+2025-07-02 23:05:20 /home/rgroot/startup_log.log
+2025-07-02 23:05:20 /home/rgroot/-
+2025-07-02 23:05:20 /home/rgroot/a
+2025-07-02 23:05:20 /home/rgroot/tmp.txt
+2025-07-04 10:54:24 /home/rgroot/.bash_history
+2025-07-04 10:54:42 /home/rgroot/startup_log.log
+2025-07-04 10:54:42 /home/rgroot/-
+2025-07-04 10:54:42 /home/rgroot/a
+2025-07-04 10:54:42 /home/rgroot/tmp.txt
+2025-07-16 12:00:46 /home/rgroot/tmp.txt
+2025-07-16 22:18:05 /home/rgroot/.bash_history
+2025-07-16 22:18:39 /home/rgroot/startup_log.log
+2025-07-16 22:18:39 /home/rgroot/-
+2025-07-16 22:18:39 /home/rgroot/a
+2025-07-16 22:18:39 /home/rgroot/tmp.txt
+2025-07-26 09:41:00 /home/rgroot/.bash_history
+2025-07-26 09:41:34 /home/rgroot/startup_log.log
+2025-07-26 09:41:34 /home/rgroot/-
+2025-07-26 09:41:34 /home/rgroot/a
+2025-07-26 09:41:34 /home/rgroot/tmp.txt
+2025-08-06 11:16:28 /home/rgroot/tmp.txt
+2025-08-11 22:27:14 /home/rgroot/tmp.txt
+2025-08-13 14:57:54 /home/rgroot/.bash_history
+2025-08-13 14:58:17 /home/rgroot/startup_log.log
+2025-08-13 14:58:17 /home/rgroot/-
+2025-08-13 14:58:17 /home/rgroot/a
+2025-08-13 14:58:17 /home/rgroot/tmp.txt
+2025-08-15 10:21:05 /home/rgroot/.bash_history
+2025-08-15 10:21:23 /home/rgroot/startup_log.log
+2025-08-15 10:21:23 /home/rgroot/-
+2025-08-15 10:21:23 /home/rgroot/a
+2025-08-15 10:21:23 /home/rgroot/tmp.txt
+2025-08-19 21:45:59 /home/rgroot/.bash_history
+2025-08-19 21:46:19 /home/rgroot/startup_log.log
+2025-08-19 21:46:19 /home/rgroot/-
+2025-08-19 21:46:19 /home/rgroot/a
+2025-08-19 21:46:19 /home/rgroot/tmp.txt
+2025-08-27 13:04:16 /home/rgroot/.bash_history
+2025-08-27 13:04:40 /home/rgroot/startup_log.log
+2025-08-27 13:04:40 /home/rgroot/-
+2025-08-27 13:04:40 /home/rgroot/a
+2025-08-27 13:04:40 /home/rgroot/tmp.txt
+2025-08-31 10:26:52 /home/rgroot/.bash_history
+2025-08-31 10:27:11 /home/rgroot/startup_log.log
+2025-08-31 10:27:11 /home/rgroot/-
+2025-08-31 10:27:11 /home/rgroot/a
+2025-08-31 10:27:11 /home/rgroot/tmp.txt
+2025-09-03 14:05:30 /home/rgroot/.bash_history
+2025-09-03 14:05:49 /home/rgroot/startup_log.log
+2025-09-03 14:05:49 /home/rgroot/-
+2025-09-03 14:05:49 /home/rgroot/a
+2025-09-03 14:05:49 /home/rgroot/tmp.txt
+2025-09-07 19:24:23 /home/rgroot/.bash_history
+2025-09-07 19:24:46 /home/rgroot/startup_log.log
+2025-09-07 19:24:46 /home/rgroot/-
+2025-09-07 19:24:46 /home/rgroot/a
+2025-09-07 19:24:46 /home/rgroot/tmp.txt
+-e 
+use trash-empty or trash-restore as you see fit
+Password Store
+├── CLAUDE_API_KEY
+├── DEEPSEEK_API_KEY
+├── GEMINI_API_KEY
+├── git
+│   └── github.com
+│       └── MuggleBornPadawan
+├── mbprootp
+├── MOONSHOT_API_KEY
+├── OPEN_API_KEY
+├── OPENROUTER_API_KEY
+├── protector_key
+└── tmp
+
+pattern match found: auth
+is found? 1
+⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
+❌ No cloud backup taken
