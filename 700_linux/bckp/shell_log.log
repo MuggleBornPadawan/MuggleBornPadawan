@@ -194,3 +194,51 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main 373fa471] bckp
+ 1 file changed, 7 insertions(+), 50 deletions(-)
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: Chennai
+
+  [38;5;250m     .-.     [0m Light drizzle, mist
+  [38;5;250m    (   ).   [0m [38;5;214m+28[0m([38;5;208m32[0m) °C[0m     
+  [38;5;250m   (___(__)  [0m [1m↑[0m [38;5;208m27[0m km/h[0m      
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 4 km[0m           
+  [38;5;111m   ‘ ‘ ‘ ‘   [0m 0.0 mm[0m         
+Weather report: Pondicherry
+
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy light rain in area with thunder
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+29[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;202m29[0m km/h[0m      
+  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.5 mm[0m         
+rtt min/avg/max/mdev = 40.920/48.860/64.888/9.275 ms
+ _________________________________________
+/ It is right that he too should have his \
+| little chronicle, his memories, his     |
+| reason, and be able to recognize the    |
+| good in the bad, the bad in the worst,  |
+| and so grow gently old all down the     |
+| unchanging days and die one day like    |
+| any other day, only shorter.            |
+|                                         |
+\ -- Samuel Beckett, "Malone Dies"        /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flibbertigibbet flopped into the wobbly teapot.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
+stop deepseek
