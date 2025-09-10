@@ -194,3 +194,46 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main c66bdf86] bckp
+ 1 file changed, 8 insertions(+), 49 deletions(-)
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: Chennai
+
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;208m24[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
+Weather report: Pondicherry
+
+  [38;5;226m _`/""[38;5;250m.-.    [0m Thundery outbreaks in nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+32[0m([38;5;196m39[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;220m18[0m km/h[0m      
+  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 9 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.1 mm[0m         
+rtt min/avg/max/mdev = 52.945/83.440/251.276/51.458 ms
+ ______________________________________
+/ If two people love each other, there \
+| can be no happy end to it.           |
+|                                      |
+\ -- Ernest Hemingway                  /
+ --------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flibbertigibbet bounced on a quibble.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
+stop deepseek
