@@ -198,3 +198,42 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main 1247a151] bckp
+ 1 file changed, 7 insertions(+), 52 deletions(-)
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Location: Corporation of Chennai, Chennai district, Tamil Nadu, India [13.0801721,80.2838331]
+
+Follow [46m[30m@igor_chubin[0m for wttr.in updates
+Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
+
+Follow [46m[30m@igor_chubin[0m for wttr.in updates
+rtt min/avg/max/mdev = 40.020/53.922/67.783/9.914 ms
+ _________________________________________
+/ The holy passion of Friendship is of so \
+| sweet and steady and loyal and enduring |
+| a nature that it will last through a    |
+| whole lifetime, if not asked to lend    |
+| money.                                  |
+|                                         |
+| -- Mark Twain, "Pudd'nhead Wilson's     |
+\ Calendar"                               /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flibbertigibbet sparked with moonbeams, while wobble-nuts danced in the dew.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
+stop deepseek
