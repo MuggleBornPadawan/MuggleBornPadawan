@@ -205,3 +205,41 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main 0c71e6ce] bckp
+ 1 file changed, 16 insertions(+), 87 deletions(-)
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Location: Corporation of Chennai, Chennai district, Tamil Nadu, India [13.0801721,80.2838331]
+
+Follow [46m[30m@igor_chubin[0m for wttr.in updates
+Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
+
+Follow [46m[30m@igor_chubin[0m for wttr.in updates
+rtt min/avg/max/mdev = 40.227/58.527/84.399/11.846 ms
+ ________________________________________
+/ All say, "How hard it is that we have  \
+| to die"--a strange complaint to come   |
+| from the mouths of people who have had |
+| to live.                               |
+|                                        |
+| -- Mark Twain, "Pudd'nhead Wilson's    |
+\ Calendar"                              /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flumpkinsparkle blorfshimmers shimmerly dust.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! It looks like your message got cut off. How can I assist you today? If you have any questions or need help with something, feel free to ask! 😊
+
+stop deepseek
