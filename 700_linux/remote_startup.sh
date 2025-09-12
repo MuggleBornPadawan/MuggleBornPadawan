@@ -29,10 +29,8 @@ mv daily_nuggets.txt.enc MuggleBornPadawan/700_linux/bckp/
 
 # fetch chennai weather
 curl wttr.in/chennai | head -n 7
-curl wttr.in/chennai | tail -n 2 | head -n 1
 # Fetch Pondicherry weather
 curl wttr.in/pondicherry | head -n 7
-curl wttr.in/pondicherry | tail -n 1 | head -n 1
 ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
 fortune -a | cowsay
