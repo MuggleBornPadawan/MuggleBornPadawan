@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Sep 13 02:02:59 AM IST 2025 
+Date: Sat Sep 13 02:03:39 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -198,43 +198,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main d7b61773] bckp
- 1 file changed, 1 insertion(+), 14 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+29[0m([38;5;208m33[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;190m11[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.2 mm[0m         
-Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-rtt min/avg/max/mdev = 39.973/60.121/131.432/25.735 ms
- ___________________________________
-/ After all, all he did was string  \
-| together a lot of old, well-known |
-| quotations.                       |
-|                                   |
-\ -- H. L. Mencken, on Shakespeare  /
- -----------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flibbertigibbet fuzzily bounces a shimmering gloom.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
-stop deepseek
