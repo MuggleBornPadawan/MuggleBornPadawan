@@ -1,21 +1,14 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Sep 13 01:54:01 AM IST 2025 
+Date: Sat Sep 13 01:55:03 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Ign:1 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en.diff/Index [63.3 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-12-0815.44-F-2025-09-12-0815.44.pdiff [4,000 B]
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-12-0815.44-F-2025-09-12-0815.44.pdiff [4,000 B]
-Get:9 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-09-12-1425.50-F-2025-09-12-0815.44.pdiff [2,249 B]
-Get:9 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-09-12-1425.50-F-2025-09-12-0815.44.pdiff [2,249 B]
-Hit:10 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Fetched 296 kB in 1s (212 kB/s)
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -205,41 +198,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 0c71e6ce] bckp
- 1 file changed, 16 insertions(+), 87 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Location: Corporation of Chennai, Chennai district, Tamil Nadu, India [13.0801721,80.2838331]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-rtt min/avg/max/mdev = 40.227/58.527/84.399/11.846 ms
- ________________________________________
-/ All say, "How hard it is that we have  \
-| to die"--a strange complaint to come   |
-| from the mouths of people who have had |
-| to live.                               |
-|                                        |
-| -- Mark Twain, "Pudd'nhead Wilson's    |
-\ Calendar"                              /
- ----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flumpkinsparkle blorfshimmers shimmerly dust.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It looks like your message got cut off. How can I assist you today? If you have any questions or need help with something, feel free to ask! 😊
-
-stop deepseek
