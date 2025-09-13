@@ -1,14 +1,21 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Sep 13 02:03:39 AM IST 2025 
+Date: Sat Sep 13 10:44:21 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Ign:1 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en.diff/Index [63.3 kB]
+Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-13-1417.43-F-2025-09-13-1417.43.pdiff [1,374 B]
+Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-13-1417.43-F-2025-09-13-1417.43.pdiff [1,374 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-09-13-1417.43-F-2025-09-13-1417.43.pdiff [1,159 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-09-13-1417.43-F-2025-09-13-1417.43.pdiff [1,159 B]
+Hit:10 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 244 kB in 2s (154 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -198,40 +205,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 7b7ee236] bckp
- 1 file changed, 1 insertion(+), 41 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+29[0m([38;5;208m33[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;190m11[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.2 mm[0m         
-Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-rtt min/avg/max/mdev = 39.539/57.096/69.401/9.279 ms
- _______________________________________
-/ You are a bundle of energy, always on \
-\ the go.                               /
- ---------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flibbertigibbet hiccups, squibbles bounce, wizzlewhirl whispers, grobbled gloom, floofly float, quibble bounce, sproingly shimmers.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
-stop deepseek
