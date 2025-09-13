@@ -205,3 +205,40 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main 22cd1025] bckp
+ 1 file changed, 15 insertions(+), 45 deletions(-)
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: chennai
+
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+29[0m([38;5;208m33[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;214m20[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.0 mm[0m         
+Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
+
+Follow [46m[30m@igor_chubin[0m for wttr.in updates
+rtt min/avg/max/mdev = 52.147/65.193/92.973/12.804 ms
+ _________________________________________
+/ You worry too much about your job. Stop \
+\ it. You are not paid enough to worry.   /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flibbertigibbet wizzlesprout splorkleflump.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
+stop deepseek
