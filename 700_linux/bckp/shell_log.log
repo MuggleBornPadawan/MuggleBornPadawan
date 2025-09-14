@@ -1,18 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Sep 14 07:25:03 PM IST 2025 
+Date: Sun Sep 14 07:26:53 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:4 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-14-0212.56-F-2025-09-14-0212.56.pdiff [1,198 B]
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-14-0212.56-F-2025-09-14-0212.56.pdiff [1,198 B]
-Get:9 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Fetched 227 kB in 3s (70.9 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -202,19 +198,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 28647e39] bckp
- 1 file changed, 9 insertions(+), 45 deletions(-)
-Weather report: chennai
-
-                Haze
-  [38;5;251m _ - _ - _ - [0m [38;5;202m+93[0m([38;5;196m116[0m) °F[0m    
-  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;208m16[0m mph[0m       
-  [38;5;251m _ - _ - _ - [0m 3 mi[0m           
-                0.0 in[0m         
-Weather report: pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+84[0m([38;5;208m91[0m) °F[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;208m14[0m mph[0m       
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 5 mi[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.1 in[0m         
