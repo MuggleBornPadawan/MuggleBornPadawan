@@ -199,3 +199,10 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main 261c6c68] bckp
+ 1 file changed, 13 insertions(+), 57 deletions(-)
+rtt min/avg/max/mdev = 39.664/58.776/94.790/15.703 ms
+start gemma3:1b
+stop gemma
+start deepseek-r1:1.5b
+stop deepseek
