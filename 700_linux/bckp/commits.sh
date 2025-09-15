@@ -157,7 +157,12 @@ cd
 delay_timer "$1"
 cd MuggleBornPadawan/700_linux/bckp/
 git add daily_nuggets.txt.enc
-git commit -m "daily nuggets"
 cd
+cd MuggleBornPadawan/700_linux/scripts/
+./hello_world.sh
+git add .
+git commit -m "daily shell and nuggets"
+cd
+
 echo " - - - "
 neofetch
