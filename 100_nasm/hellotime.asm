@@ -41,7 +41,7 @@ STDOUT          equ 1
 ; =============================================================================
 section .data
     ; The message to be printed.
-    helloMsg    db  "Hello, world! Current epoch time: "
+    helloMsg    db  "Hello, Netwide Assembler world! Current epoch time: "
     helloMsgLen equ $ - helloMsg  ; Calculate length at assembly time.
 
     ; Newline character for clean output.
