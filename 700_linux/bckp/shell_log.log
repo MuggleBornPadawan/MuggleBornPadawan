@@ -1,37 +1,20 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Sep 15 03:40:39 PM IST 2025 
+Date: Mon Sep 15 09:23:09 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Ign:1 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:5 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-15-0808.25-F-2025-09-15-0808.25.pdiff [602 B]
-Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-15-0808.25-F-2025-09-15-0808.25.pdiff [602 B]
-Get:10 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [278 kB]
-Get:11 https://deb.debian.org/debian-security bookworm-security/main Translation-en [168 kB]
-Fetched 673 kB in 1s (549 kB/s)
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  libcjson1
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 23.2 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 libcjson1 amd64 1.7.15-1+deb12u4 [23.2 kB]
-Fetched 23.2 kB in 0s (72.7 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 119574 files and directories currently installed.)
-Preparing to unpack .../libcjson1_1.7.15-1+deb12u4_amd64.deb ...
-Unpacking libcjson1:amd64 (1.7.15-1+deb12u4) over (1.7.15-1+deb12u3) ...
-Setting up libcjson1:amd64 (1.7.15-1+deb12u4) ...
-Processing triggers for libc-bin (2.36-9+deb12u13) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -220,119 +203,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main d34b5063] bckp
- 1 file changed, 35 insertions(+), 21 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;220m19[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.0 mm[0m         
-Weather report: pondicherry
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;220m17[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 39.458/73.493/163.115/35.818 ms
- _________________________________________
-/ "Good afternoon, madam. How may I help  \
-| you?"                                   |
-|                                         |
-| "Good afternoon. I'd like a FrintArms   |
-| HandCannon, please."                    |
-|                                         |
-| "A--? Oh, now, that's an awfully big    |
-| gun for such a lovely lady. I mean, not |
-| everybody thinks ladies should carry    |
-| guns at all, though I say they have a   |
-| right to. But I think... I might...     |
-| Let's have a look down here. I might    |
-| have just the thing for you. Yes, here  |
-| we are! Look at that, isn't it neat?    |
-| Now that is a FrintArms product as      |
-| well, but it's what's called a laser -- |
-| a light-pistol some people call them.   |
-| Very small, as you see; fits easily     |
-| into a pocket or bag; won't spoil the   |
-| line of a jacket; and you won't feel    |
-| you're lugging half a tonne of iron     |
-| around with you. We do a range of       |
-| matching accessories, including -- if I |
-| may say so -- a rather saucy garter     |
-| holster. Wish I got to do the fitting   |
-| for that! Ha -- just my little joke.    |
-| And there's *even*... here we are --    |
-| this special presentation pack: gun,    |
-| charged battery, charging unit,         |
-| beautiful glider-hide shoulder holster  |
-| with adjustable fitting and contrast    |
-| stitching, and a discount on your next  |
-| battery. Full instructions, of course,  |
-| and a voucher for free lessons at your  |
-| local gun club or range. Or there's the |
-| *special* presentation pack; it has all |
-| the other one's got but with *two*      |
-| charged batteries and a night-sight,    |
-| too. Here, feel that -- don't worry,    |
-| it's a dummy battery -- isn't it neat?  |
-| Feel how light it is? Smooth, see? No   |
-| bits to stick out and catch on your     |
-| clothes, *and* beautifully balanced.    |
-| And of course the beauty of a laser is, |
-| there's no recoil. Because it's         |
-| shooting light, you see? Beautiful gun, |
-| beautiful gun; my wife has one. Really. |
-| That's not a line, she really has. Now, |
-| I can do you that one -- with a battery |
-| and a free charge -- for ninety-five;   |
-| or the presentation pack on a special   |
-| offer for one-nineteen; or this, the    |
-| special presentation pack, for          |
-| one-forty-nine."                        |
-|                                         |
-| "I'll take the special."                |
-|                                         |
-| "Sound choice, madam, *sound* choice.   |
-| Now, do--?"                             |
-|                                         |
-| "And a HandCannon, with the eighty-mill |
-| silencer, five GP clips, three six-five |
-| AP/wire-fl'echettes clips, two           |
-| bipropellant HE clips, and a Special    |
-| Projectile Pack if you have one -- the  |
-| one with the embedding rounds, not the  |
-| signalers. I assume the night-sight on  |
-| this toy is compatible?"                |
-|                                         |
-| "Aah... yes, And how does madam wish to |
-| pay?"                                   |
-|                                         |
-| She slapped her credit card on the      |
-| counter. "Eventually."                  |
-|                                         |
-| -- Iain M. Banks, "Against a Dark       |
-\ Background"                             /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flibbertigibbet’s shimmering glow, a wizzle-dee-doo, bounced across the moonbeam.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
-
-stop deepseek
