@@ -3,3 +3,4 @@ Hello, world! Current epoch time: 1757956795
 Hello, world! Current epoch time: 1757956796
 Hello, world! Current epoch time: 1757956882
 Hello, world! Current epoch time: 1757957036
+Hello, Netwide Assembler world! Current epoch time: 1757957103
