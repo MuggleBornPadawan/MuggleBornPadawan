@@ -93,6 +93,15 @@ git add .
 git commit -m "daily cpp"
 cd
 delay_timer "$1"
+cd MuggleBornPadawan/100_nasm
+./hellotime
+./hellotime >> log.txt
+cd
+cd MuggleBornPadawan/
+git add .
+git commit -m "daily nasm"
+cd
+delay_timer "$1"
 cd MuggleBornPadawan/200_java
 java -jar HelloWorld.jar
 cd
