@@ -1,21 +1,37 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Sun Sep 14 08:36:31 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Mon Sep 15 03:40:39 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Ign:1 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Hit:2 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Get:4 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:5 https://deb.debian.org/debian bookworm InRelease
-Get:6 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Fetched 115 kB in 1s (85.8 kB/s)
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:5 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-15-0808.25-F-2025-09-15-0808.25.pdiff [602 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-15-0808.25-F-2025-09-15-0808.25.pdiff [602 B]
+Get:10 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [278 kB]
+Get:11 https://deb.debian.org/debian-security bookworm-security/main Translation-en [168 kB]
+Fetched 673 kB in 1s (549 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  libcjson1
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 23.2 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 libcjson1 amd64 1.7.15-1+deb12u4 [23.2 kB]
+Fetched 23.2 kB in 0s (72.7 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 119574 files and directories currently installed.)
+Preparing to unpack .../libcjson1_1.7.15-1+deb12u4_amd64.deb ...
+Unpacking libcjson1:amd64 (1.7.15-1+deb12u4) over (1.7.15-1+deb12u3) ...
+Setting up libcjson1:amd64 (1.7.15-1+deb12u4) ...
+Processing triggers for libc-bin (2.36-9+deb12u13) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -70,7 +86,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
 2025-06-02 21:01:26 /home/rgroot/.bash_history
@@ -179,14 +195,19 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-09-12 08:02:21 /home/rgroot/-
 2025-09-12 08:02:21 /home/rgroot/a
 2025-09-12 08:02:21 /home/rgroot/tmp.txt
--e 
+2025-09-14 20:36:34 /home/rgroot/.bash_history
+2025-09-14 20:37:46 /home/rgroot/startup_log.log
+2025-09-14 20:37:46 /home/rgroot/-
+2025-09-14 20:37:46 /home/rgroot/a
+2025-09-14 20:37:46 /home/rgroot/tmp.txt
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── git
-│   └── github.com
+├── [01;34mgit[0m
+│   └── [01;34mgithub.com[0m
 │       └── MuggleBornPadawan
 ├── mbprootp
 ├── MOONSHOT_API_KEY
@@ -199,10 +220,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 261c6c68] bckp
- 1 file changed, 13 insertions(+), 57 deletions(-)
-rtt min/avg/max/mdev = 39.664/58.776/94.790/15.703 ms
-start gemma3:1b
-stop gemma
-start deepseek-r1:1.5b
-stop deepseek
