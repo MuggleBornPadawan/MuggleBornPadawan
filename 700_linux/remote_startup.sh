@@ -16,7 +16,8 @@ cp MuggleBornPadawan/Jenkinsfile $HOME
 git config --global user.name "MuggleBornPadawan"
 git config --global user.email "mugglebornpadawan@icloud.com"
 echo -e "\nrun commits seperately; docker and jenkins startup shell scripts to be created seperately"
-alias rm='trash-put'
+alias rm="trash-put"
+alias all-done="git add . && git commit -m 'wip' && git push"
 trash-list
 echo -e "\nuse trash-empty or trash-restore as you see fit"
 rm .bash_history
