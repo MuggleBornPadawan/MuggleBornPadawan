@@ -163,6 +163,7 @@ cd MuggleBornPadawan/700_linux/scripts/
 git add .
 git commit -m "daily shell and nuggets"
 cd
+delay_timer "$1"
 
 echo " - - - "
 neofetch
