@@ -1,14 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Sep 15 09:23:09 PM IST 2025 
+Date: Tue Sep 16 12:21:05 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:1 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Get:3 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 163 kB in 1s (110 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -18,6 +19,7 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+nasm is already the newest version (2.16.01-1).
 ffmpeg is already the newest version (7:5.1.7-0+deb12u1).
 lm-sensors is already the newest version (1:3.6.0-7.1).
 sqlite3 is already the newest version (3.40.1-2+deb12u2).
@@ -203,69 +205,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main b9e1727a] bckp
- 1 file changed, 7 insertions(+), 140 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;196m37[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;220m18[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.2 mm[0m         
-Weather report: pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+29[0m([38;5;208m33[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;214m20[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.1 mm[0m         
-rtt min/avg/max/mdev = 66.750/84.120/141.382/19.913 ms
- _________________________________________
-/ Courage is resistance to fear, mastery  \
-| of fear--not absence of fear. Except a  |
-| creature be part coward it is not a     |
-| compliment to say it is brave; it is    |
-| merely a loose misapplication of the    |
-| word. Consider the flea!--incomparably  |
-| the bravest of all the creatures of     |
-| God, if ignorance of fear were courage. |
-| Whether you are asleep or awake he will |
-| attack you, caring nothing for the fact |
-| that in bulk and strength you are to    |
-| him as are the massed armies of the     |
-| earth to a sucking child; he lives both |
-| day and night and all days and nights   |
-| in the very lap of peril and the        |
-| immediate presence of death, and yet is |
-| no more afraid than is the man who      |
-| walks the streets of a city that was    |
-| threatened by an earthquake ten         |
-| centuries before. When we speak of      |
-| Clive, Nelson, and Putnam as men who    |
-| "didn't know what fear was," we ought   |
-| always to add the flea--and put him at  |
-| the head of the procession.             |
-|                                         |
-| -- Mark Twain, "Pudd'nhead Wilson's     |
-\ Calendar"                               /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flumphling wobbleberry skipscotch.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
-
-stop deepseek
