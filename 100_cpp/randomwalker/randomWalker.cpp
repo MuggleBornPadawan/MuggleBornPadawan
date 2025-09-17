@@ -37,7 +37,7 @@
 
 // --- Configuration Settings ---
 // Externalize settings for easy modification. Avoids "magic numbers".
-const int NUM_STEPS = 1500;
+const int NUM_STEPS = 13;
 const std::string OUTPUT_FILENAME = "path.dat";
 
 // --- Data Structures ---
@@ -75,8 +75,8 @@ int main() {
     // Avoids the old `rand()`, which has poor statistical properties.
     std::random_device rd; // Will be used to obtain a seed for the random number engine
     std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
-    std::uniform_int_distribution<> distrib(0, 5); // Six possible outcomes (0-5)
-
+    //std::uniform_int_distribution<> distrib(0, 5); // Six possible outcomes (0-5)
+    std::uniform_int_distribution<> distrib(0, 2); // Three possible outcomes (0-2)
     // Write the starting position to the file
     outputFile << currentPosition.nX << " " << currentPosition.nY << " " << currentPosition.nZ << std::endl;
 
@@ -88,11 +88,11 @@ int main() {
         // Determine the next step based on the random number
         switch (iRandomMove) {
             case 0: currentPosition.nX++; break; // Move +X
-            case 1: currentPosition.nX--; break; // Move -X
-            case 2: currentPosition.nY++; break; // Move +Y
-            case 3: currentPosition.nY--; break; // Move -Y
-            case 4: currentPosition.nZ++; break; // Move +Z
-            case 5: currentPosition.nZ--; break; // Move -Z
+	      //case 1: currentPosition.nX--; break; // Move -X
+            case 1: currentPosition.nY++; break; // Move +Y
+	      //case 3: currentPosition.nY--; break; // Move -Y
+            case 2: currentPosition.nZ++; break; // Move +Z
+	      //case 5: currentPosition.nZ--; break; // Move -Z
         }
 
         // Write the new position to our data file
