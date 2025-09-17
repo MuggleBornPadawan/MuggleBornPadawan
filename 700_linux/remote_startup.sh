@@ -20,7 +20,7 @@ git config --global user.email "mugglebornpadawan@icloud.com"
 echo -e "\nrun commits seperately; docker and jenkins startup shell scripts to be created seperately"
 alias rm="trash-put"
 alias all-done="git add . && git commit -m 'wip' && git push"
-trash-list
+# trash-list # use only to list the files in the trash bin
 echo -e "\nuse trash-empty or trash-restore as you see fit"
 rm .bash_history
 pass ls
