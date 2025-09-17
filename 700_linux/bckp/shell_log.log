@@ -1,14 +1,20 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Tue Sep 16 01:46:00 PM IST 2025 
+Date: Wed Sep 17 12:16:37 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Ign:2 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
 Hit:3 https://deb.debian.org/debian bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-17-0204.37-F-2025-09-17-0204.37.pdiff [3,732 B]
+Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-17-0204.37-F-2025-09-17-0204.37.pdiff [3,732 B]
+Get:8 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [278 kB]
+Get:9 https://deb.debian.org/debian-security bookworm-security/main Translation-en [168 kB]
+Hit:10 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 676 kB in 1s (472 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -70,6 +76,15 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
+
 -e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 2025-06-01 14:23:27 /home/rgroot/.bash_history
@@ -184,6 +199,11 @@ run commits seperately; docker and jenkins startup shell scripts to be created s
 2025-09-14 20:37:46 /home/rgroot/-
 2025-09-14 20:37:46 /home/rgroot/a
 2025-09-14 20:37:46 /home/rgroot/tmp.txt
+2025-09-16 13:46:03 /home/rgroot/.bash_history
+2025-09-16 13:46:29 /home/rgroot/startup_log.log
+2025-09-16 13:46:29 /home/rgroot/-
+2025-09-16 13:46:29 /home/rgroot/a
+2025-09-16 13:46:29 /home/rgroot/tmp.txt
 -e 
 use trash-empty or trash-restore as you see fit
 Password Store
@@ -204,24 +224,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 97c38304] bckp
- 1 file changed, 12 insertions(+), 54 deletions(-)
-Weather report: chennai
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m35[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;208m27[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
-Weather report: pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;220m17[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.1 mm[0m         
-rtt min/avg/max/mdev = 53.610/82.625/130.447/25.927 ms
-start gemma3:1b
-stop gemma
-start deepseek-r1:1.5b
-stop deepseek
