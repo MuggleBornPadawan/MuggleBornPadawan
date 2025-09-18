@@ -15,5 +15,10 @@ echo "--- Step 2: Running C++ executable to generate data ---"
 echo "Data file 'path.dat' generated."
 
 echo "--- Step 3: Running gnuplot to create animation ---"
-gnuplot plotter.gp
-echo "--- All steps complete. Check for 'random_walk.gif' ---"
+#gnuplot plotter.gp
+
+echo "--- Step 4: Running gnuplot to create static image of final form"
+gnuplot plotter_static.gp
+
+echo "--- All steps complete. Check for 'random_walk.gif' and 'random_walk.png ---"
+firefox random_walk.png
