@@ -105,3 +105,40 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main a83a4db7] bckp
+ 2 files changed, 5 insertions(+), 45 deletions(-)
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: chennai
+
+  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain with thunderstorm, light drizzle, mist
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
+  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 3 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
+Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
+
+Follow [46m[30m@igor_chubin[0m for wttr.in updates
+rtt min/avg/max/mdev = 39.135/53.699/65.003/10.721 ms
+ _________________________________________
+/ Your object is to save the world, while \
+\ still leading a pleasant life.          /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Flumphberry zooms under the weeping willow’s glow.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+
+stop deepseek
