@@ -1,24 +1,36 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Sep 18 08:38:37 AM IST 2025 
+Date: Fri Sep 19 01:13:05 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-18-0209.12-F-2025-09-18-0209.12.pdiff [1,901 B]
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-18-0209.12-F-2025-09-18-0209.12.pdiff [1,901 B]
-Ign:7 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Hit:8 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Fetched 180 kB in 2s (105 kB/s)
+Ign:4 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [278 kB]
+Hit:7 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 441 kB in 1s (423 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 75.9 MB of archives.
+After this operation, 25.3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 140.3.0esr-1~deb12u1 [75.9 MB]
+Fetched 75.9 MB in 16s (4,734 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 119735 files and directories currently installed.)
+Preparing to unpack .../firefox-esr_140.3.0esr-1~deb12u1_amd64.deb ...
+Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
+Unpacking firefox-esr (140.3.0esr-1~deb12u1) over (128.14.0esr-1~deb12u1) ...
+Setting up firefox-esr (140.3.0esr-1~deb12u1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for desktop-file-utils (0.26-1) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -65,7 +77,7 @@ sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).
-firefox-esr is already the newest version (128.14.0esr-1~deb12u1).
+firefox-esr is already the newest version (140.3.0esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
@@ -80,13 +92,15 @@ Building dependency tree...
 Reading state information...
 /home/rgroot/.config/nvm/versions/node/v22.18.0/lib
 ├── @anthropic-ai/claude-code@1.0.98
-├── @google/gemini-cli@0.4.1
+├── @google/gemini-cli@0.5.3
 ├── @openai/codex@0.30.0
 ├── corepack@0.33.0
 └── npm@10.9.3
 
 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
+
+IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
 
 use trash-empty or trash-restore as you see fit
 Password Store
@@ -107,46 +121,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 6b132a6e] bckp
- 1 file changed, 10 insertions(+), 47 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+28[0m([38;5;208m31[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;214m20[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.8 mm[0m         
-Weather report: pondicherry
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+29[0m([38;5;208m32[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;190m12[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 40.533/52.624/64.772/9.522 ms
- ________________________________________
-/ Q: What do you call the scratches that \
-| you get when a female                  |
-|                                        |
-\ sheep bites you? A: Ewe nicks.         /
- ----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flumping squibbleberry gurgled under the moonbeam.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
-
-stop deepseek
