@@ -1,36 +1,20 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Sep 19 01:13:05 AM IST 2025 
+Date: Fri Sep 19 01:14:42 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [278 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Fetched 441 kB in 1s (423 kB/s)
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  firefox-esr
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 75.9 MB of archives.
-After this operation, 25.3 MB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 140.3.0esr-1~deb12u1 [75.9 MB]
-Fetched 75.9 MB in 16s (4,734 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 119735 files and directories currently installed.)
-Preparing to unpack .../firefox-esr_140.3.0esr-1~deb12u1_amd64.deb ...
-Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
-Unpacking firefox-esr (140.3.0esr-1~deb12u1) over (128.14.0esr-1~deb12u1) ...
-Setting up firefox-esr (140.3.0esr-1~deb12u1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for desktop-file-utils (0.26-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -121,43 +105,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 39d5dfd8] bckp
- 4 files changed, 179 insertions(+), 54 deletions(-)
- create mode 100644 999_dotfiles/.bash_aliases_bk
- create mode 100644 999_dotfiles/Dockerfile_bkp
- create mode 100644 999_dotfiles/Jenkinsfile_bkp
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain with thunderstorm, light drizzle, mist
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
-  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 3 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
-Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-rtt min/avg/max/mdev = 41.123/57.674/65.409/9.099 ms
- _________________________________________
-/ You have a strong desire for a home and \
-\ your family interests come first.       /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Fluffingtonburbleberrypawsquibblegleefergloomsprout.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
-stop deepseek
