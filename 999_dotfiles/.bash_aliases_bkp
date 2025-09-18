@@ -1,7 +1,7 @@
 # My custom aliases | $ source ~/.bashrc 
 alias a='alias'
 alias grep='grep --color=auto'
-alias ll='ls -lha --color=auto'
+alias l='ls -lha --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias c='clear'
@@ -17,6 +17,9 @@ alias o='xdg-open'
 alias remote='cd && ./MuggleBornPadawan/700_linux/remote_startup.sh'
 alias commit='cd && ./MuggleBornPadawan/700_linux/bckp/commits.sh'
 alias start='cd && ./MuggleBornPadawan/700_linux/bckp/start.sh'
+alias test_wisdom='cd && ./MuggleBornPadawan/700_linux/scripts/wisdom_nugget_generator.sh'
+alias test_math='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_artithmetic_test.sh'
+alias test_aeo='cd && ./MuggleBornPadawan/700_linux/scripts/openrouter_aeo_script.sh'
 alias pw='pass unKnoWn'
 # Safety & Security Aliases
 alias cp='cp -i'
