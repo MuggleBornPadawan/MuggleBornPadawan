@@ -2,7 +2,7 @@
 
 # --- Configuration ---
 # Set the output format to an animated GIF
-set terminal gif animate delay 5 # Delay 5 centiseconds (20 FPS)
+set terminal gif animate delay 50 # Delay 5 centiseconds (20 FPS)
 
 # Set the output filename
 set output 'random_walk.gif'

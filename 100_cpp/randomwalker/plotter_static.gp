@@ -15,6 +15,10 @@ set output 'random_walk.png'
 
 # Tidy up the plot
 unset key      # Don't show a legend/key
+#set mxtics 5
+#set mytics 5
+#set grid xtics mxtics ytics mytics ztics
+set grid xtics ytics ztics
 #unset grid     # Remove grid lines
 #unset border   # Remove the border/axes
 #unset tics     # Remove the numbers on the axes

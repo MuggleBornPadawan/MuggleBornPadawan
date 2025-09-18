@@ -37,7 +37,7 @@
 
 // --- Configuration Settings ---
 // Externalize settings for easy modification. Avoids "magic numbers".
-const int NUM_STEPS = 15000;
+const int NUM_STEPS = 25;
 const std::string OUTPUT_FILENAME = "path.dat";
 
 // --- Data Structures ---
