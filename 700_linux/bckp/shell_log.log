@@ -121,3 +121,43 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
+[main 39d5dfd8] bckp
+ 4 files changed, 179 insertions(+), 54 deletions(-)
+ create mode 100644 999_dotfiles/.bash_aliases_bk
+ create mode 100644 999_dotfiles/Dockerfile_bkp
+ create mode 100644 999_dotfiles/Jenkinsfile_bkp
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: chennai
+
+  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain with thunderstorm, light drizzle, mist
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
+  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 3 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
+Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
+
+Follow [46m[30m@igor_chubin[0m for wttr.in updates
+rtt min/avg/max/mdev = 41.123/57.674/65.409/9.099 ms
+ _________________________________________
+/ You have a strong desire for a home and \
+\ your family interests come first.       /
+ -----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+start gemma3:1b
+Fluffingtonburbleberrypawsquibblegleefergloomsprout.
+
+stop gemma
+start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! How can I assist you today? 😊
+
+stop deepseek
