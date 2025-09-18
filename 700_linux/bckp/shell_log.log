@@ -1,14 +1,18 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Sep 18 01:07:08 AM IST 2025 
+Date: Thu Sep 18 08:38:37 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-18-0209.12-F-2025-09-18-0209.12.pdiff [1,901 B]
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-18-0209.12-F-2025-09-18-0209.12.pdiff [1,901 B]
+Ign:7 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:8 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 180 kB in 2s (105 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -103,44 +107,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 8420652b] bckp
- 1 file changed, 20 insertions(+), 162 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Mist, light drizzle
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+30[0m([38;5;202m36[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;220m19[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 6 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.5 mm[0m         
-Weather report: pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+29[0m([38;5;208m33[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;220m19[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.5 mm[0m         
-rtt min/avg/max/mdev = 41.534/59.617/63.019/5.756 ms
- ______________________________________
-/ You are a fluke of the universe; you \
-\ have no right to be here.            /
- --------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flumphwickleberrysparklefloatforthiongle.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
-stop deepseek
