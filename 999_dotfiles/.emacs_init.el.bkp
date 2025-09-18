@@ -1,0 +1,154 @@
+;; -*- lexical-binding: t -*-
+;; this file is not updated regularly. check cloud backup for the most recent version
+;; this base file is created for use-and-throw linux vms / containers 
+
+;; GNU General Public License v3.0 or later
+;;
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+;;
+;; Author: Muggle Born Padawan < mugglebornpadawan@icloud.com>
+
+;; init.el - emacs initialization file
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
+
+;; package management
+(require 'package)
+(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+;; use the `use-package` package for managing other packages
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+;; multiple cursors 
+(unless (package-installed-p 'multiple-cursors)
+  (package-install 'multiple-cursors))
+(require 'multiple-cursors)
+
+;; set line numbers
+(global-display-line-numbers-mode t)
+
+;; enable syntax highlighting
+(global-font-lock-mode t)
+
+;; enable column numbers
+(column-number-mode t)
+
+;; set up basic UI improvements
+(menu-bar-mode -1)       ;; Disable the menu bar
+(tool-bar-mode -1)       ;; Disable the tool bar
+(scroll-bar-mode -1)     ;; Disable the scroll bar
+
+;; refresh all open buffers from their respective files.
+(defun revert-all-buffers ()
+  "refresh all open buffers from their respective files."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (not (buffer-modified-p)))
+        (revert-buffer t t t))))
+  (message "all non-modified buffers reverted."))
+(global-set-key (kbd "C-c R") 'revert-all-buffers)  ;; Bind to Ctrl + c, Shift + r
+
+;; initial frame setup - experiment 
+(toggle-frame-fullscreen)
+(global-visual-line-mode -1) ;; soft wrap text globally
+(recentf-mode 1) ;; recent files history is saved 
+(savehist-mode 1) ;; recent commands history is saved | use Mn (next-history-element) Mp (previous-history-element) 
+(setq history-length 25) ;; saves n recent commands 
+(save-place-mode 1) ;; saves cursor location on files 
+(global-auto-revert-mode 1) ;; refreshes all buffers
+(setq global-auto-revert-non-file-buffers t) ;; refreshes non-file buffers (eg: folders)
+
+; list buffers
+(split-window-horizontally)
+(list-buffers)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(cider geiser json-mode lsp-clojure magit multiple-cursors request
+	   restclient treesit-auto use-package vterm)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; Enable Scheme language support in Org Babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((scheme . t)))
+
+;; Specify the MIT Scheme interpreter
+;; Make sure 'mit-scheme' is the correct command to run MIT Scheme in your terminal.
+;; If it's just 'scheme', use that instead.
+(setq org-babel-scheme-interpreter "mit-scheme")
+
+;; set mit scheme as the default Scheme implementation
+(setq org-babel-scheme-cmd "mit-scheme")
+
+;; Don't ask for confirmation when executing code blocks
+(setq org-confirm-babel-evaluate nil)
+
+;; --- Org-Babel Python Configuration ---
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t))) ; The 't' means enable it.
+
+(setq org-babel-python-cmd "python") 
+
+;; geiser-repl
+(defun my/geiser-set-repl-directory ()
+  "Set Geiser's working directory to the current file's directory."
+  (when buffer-file-name
+    (setq geiser-repl-working-directory (file-name-directory buffer-file-name))))
+
+(add-hook 'geiser-mode-hook #'my/geiser-set-repl-directory)
+
+;; ido - interactively do things
+(require 'ido)
+(ido-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t) ; Use Ido for all file-related commands
+(setq ido-ignore-extensions '(".o" ".pyc" "~")) ; Ignore these files
+(setq ido-use-virtual-buffers t) ;; Tell Ido to include recent files as virtual buffers
+
+;; ranger.el configuration
+(require 'ranger)
+(global-set-key (kbd "C-c r") 'ranger)
+(setq ranger-show-hidden-files t) ;; Enable preview pane and other features
+(setq-default ranger-image-preview-mode t) ;; Enable image previews (requires imagemagick)
+;; (add-to-list 'ranger-preview-mode-alist '(pdf-view-mode . image-dired-view-file)) ;; Configure preview for specific file types
+
+;; accurate syntax tree (tree-sitter)
+;;(use-package treesit-auto
+;;  :config
+;;  (treesit-auto-add-to-auto-mode-alist 'all))
+
+;; Hide the fringe symbols for visually wrapped lines
+(setq visual-line-fringe-indicators '(nil nil))
+
+;; --- User Interface Settings ---
+(setq-default truncate-lines t)

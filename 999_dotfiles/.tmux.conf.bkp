@@ -1,0 +1,92 @@
+# GNU GPL v3 License Snippet
+# This configuration file is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+# Author: MuggleBornPadawan
+# Version: 1.0
+# Description: Basic tmux configuration for enhanced productivity.
+
+# Set the prefix to Ctrl+q (a common alternative)
+# This is often preferred as Ctrl+b can conflict with Emacs or other keybinds
+set -g prefix C-q
+unbind C-b # Unbind the default Ctrl+b
+bind C-q send-prefix # Ensure Ctrl+q sends the prefix itself
+
+# More intuitive pane splitting (using | for vertical, - for horizontal)
+bind | split-window -h
+bind - split-window -v
+unbind '"' # Unbind default horizontal split
+unbind % # Unbind default vertical split
+
+# Quickly reload the tmux config
+bind r source-file ~/.tmux.conf \; display-message "tmux.conf reloaded!"
+
+# Smart pane switching with awareness of Vim splits.
+# Requires 'vim-tmux-navigator' plugin for Vim, or similar setup for other editors.
+# This is an example of an advanced binding, but shows the power of integration.
+# bind -r C-h select-pane -L
+# bind -r C-l select-pane -R
+# bind -r C-k select-pane -U
+# bind -r C-j select-pane -D
+
+# Set status bar colors and format
+set -g status-bg '#666666' # Dark grey background
+set -g status-fg '#cccccc' # Light grey foreground
+#set -g status-left '#[fg=green][#S]#[fg=white] #h ' # Session name and hostname
+set -g status-left '#[fg=grey][#S] ' # Session name and hostname
+#set -g status-right '#[fg=grey]%Y-%m-%d %H:%M#[default]' # Date and time
+
+# Enable mouse support (useful for clicking panes/windows)
+set -g mouse on
+
+# History limit (scrollback buffer)
+set -g history-limit 1000
+
+# Start window numbering from 1 instead of 0
+set -g base-index 0
+set -w -g pane-base-index 0
+
+# Aggressive resize (makes panes fill available space better)
+setw -g aggressive-resize on
+
+# tmux resurrect and continuum 
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @continuum-restore 'on' # Enable automatic restoring on tmux start
+set -g @continuum-save-interval '5' # Save every 5 minutes (adjust as needed)
+
+# List of plugins
+#set -g @plugin 'tmux-plugins/tmux-sensible' # A great baseline plugin
+set -g @plugin 'tmux-plugins/tmux-cpu'
+#set -g @plugin 'tmux-plugins/tmux-mem'
+#set -g @plugin 'tmux-plugins/tmux-disk'
+
+# Other plugin configurations
+set -g @tmux-cpu-display-format "CPU: #{cpu_percentage}"
+#set -g @tmux-mem-display-format "MEM: #{mem_percentage}"
+#set -g @tmux-disk-display-format "DISK: #{disk_percentage}"
+
+# Other status bar stuff
+set -g status-right '#{cpu_percentage} #[fg=grey]%b-%d %H:%M#[default] ' # Date and time
+#set -g status-right '#{cpu_percentage} | #[fg=grey]%H:%M %b-%d'
+#set -g status-right '#{cpu_percentage} | #{mem_percentage} | #{disk_percentage} | #[fg=grey]%H:%M %d-%b-%y'
+# set -g status-right '#{cpu_percentage} | '#(/usr/local/bin/tmux-mem --format ":currentBytes [#[fg=:grey]:spark#[default]] #[fg=:grey]:percent#[default]") | #{disk_percentage} | #[fg=grey]%H:%M %d-%b-%y'
+# set-option -g status-right  #(/usr/local/bin/tmux-cpu --format ":load [#[fg=:grey]:spark#[default]] #[fg=:color]:percent#[default]") %H:%M %d-%b-%y'
+#set-option -g status-right '#(/usr/local/bin/tmux-mem --format ":currentBytes [#[fg=:color]:spark#[default]] #[fg=:color]:percent#[default]") #(/usr/local/bin/tmux-cpu --format ":load [#[fg=:color]:spark#[default]] #[fg=:color]:percent#[default]") %H:%M %d-%b-%y'
+# You can also add temperature here if your system supports it and you have a plugin or script for it.
+
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'

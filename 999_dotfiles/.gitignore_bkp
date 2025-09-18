@@ -1,0 +1,110 @@
+# Use this to set global gitconfig in bash: git config --global core.excludesfile ~/.gitignore_global
+# Use this to remove already commited files in bash: git rm --cached filename
+# OS generated files
+.LSOverride
+Thumbs.db
+ehthumbs.db
+.directory
+.DS_Store
+.AppleDouble
+
+# IDE backup files
+.idea/
+.vscode/
+.sublime-project
+.sublime-workspace
+.iml
+*~
+\#*\#
+
+# Compiled object files - Build artifacts - Binaries
+.o
+.out
+.a
+.so
+.exe
+.class
+.jar
+.war
+.bin
+.iso
+.tar.gz
+.zip
+
+# Environment and config files
+.env
+.env.local
+.local
+
+# Sensitive files
+.secret
+
+# SSH keys
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+known_hosts
+authorized_keys
+sshd_config
+.pub
+.pem
+
+# Local Docker configuration files
+docker-compose.override.yml
+
+# Temporary files (Logs retained)
+.tmp
+.temp
+.swp
+.nrepl-port
+.Rhistory
+.Rapp.history
+
+# Python Pipenv, Virtualenv configuration and cache files
+.venv/
+Pipfile.lock
+__pycache__/
+.py[cod]
+
+# Java dependencies
+target/
+
+# Node.js dependencies
+node_modules/
+
+# PHP dependencies
+vendor/
+
+# Go binaries
+bin/
+
+# Rust target directory
+target/
+
+# clojure
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/lib/
+/classes/
+/target/
+/checkouts/
+/.lein-*
+/.prepl-port
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.nrepl-port
+.cpcache/
+.clj-kondo/
+.#.gitignore
+.lsp/
+profiles.clj
+
+# others
+.hgignore
+.hg/
+.svn

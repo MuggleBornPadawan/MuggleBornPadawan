@@ -1,0 +1,62 @@
+# Version control
+.git
+.gitignore
+
+# Mercurial files
+.hg
+
+# Subversion files
+.svn
+
+# OS generated files
+.LSOverride
+Thumbs.db
+ehthumbs.db
+.directory
+.DS_Store
+.AppleDouble
+
+# IDE backup files
+.idea/
+.vscode/
+.sublime-project
+.sublime-workspace
+.iml
+*~
+\#*\#
+
+# Build artifacts
+.o
+.so
+.out
+.class
+.jar
+.war
+.exe
+.a
+
+# Python virtual environments
+venv/
+
+# Java dependencies
+target/
+
+# PHP dependencies
+vendor/
+
+# Node.js dependencies
+node_modules
+
+# Logs and temporary files
+.log
+.tmp
+.swp
+.swo
+
+# Environment variables and sensitive files
+.env
+.env.local
+.secret
+
+# Docker-specific local files
+docker-compose.override.yml
