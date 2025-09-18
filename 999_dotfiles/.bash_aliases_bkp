@@ -1,4 +1,4 @@
-# My custom aliases | $ source ~/.bashrc
+# My custom aliases | $ source ~/.bashrc 
 alias a='alias'
 alias grep='grep --color=auto'
 alias ll='ls -lha --color=auto'
@@ -17,7 +17,7 @@ alias o='xdg-open'
 alias remote='cd && ./MuggleBornPadawan/700_linux/remote_startup.sh'
 alias commit='cd && ./MuggleBornPadawan/700_linux/bckp/commits.sh'
 alias start='cd && ./MuggleBornPadawan/700_linux/bckp/start.sh'
-alias pw='pass git/github.com/MuggleBornPadawan'
+alias pw='pass unKnoWn'
 # Safety & Security Aliases
 alias cp='cp -i'
 alias mv='mv -i'
