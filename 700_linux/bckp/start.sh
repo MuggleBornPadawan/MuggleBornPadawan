@@ -6,7 +6,7 @@ git commit -m "tmp rstr pnt"
 git status
 cd
 ./MuggleBornPadawan/700_linux/bckp/commits.sh
-cp .bash_aliases MuggleBornPadawan/999_dotfiles/.bash_aliases_bk
+cp .bash_aliases MuggleBornPadawan/999_dotfiles/.bash_aliases_bkp
 cp .tmux.conf MuggleBornPadawan/999_dotfiles/.tmux.conf.bkp
 cp MuggleBornPadawan/.gitignore MuggleBornPadawan/999_dotfiles/.gitignore_bkp
 cp .emacs.d/init.el MuggleBornPadawan/999_dotfiles/.emacs_init.el.bkp
