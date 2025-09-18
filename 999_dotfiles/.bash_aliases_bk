@@ -1,4 +1,5 @@
 # My custom aliases | $ source ~/.bashrc
+alias a='alias'
 alias grep='grep --color=auto'
 alias ll='ls -lha --color=auto'
 alias ..='cd ..'
