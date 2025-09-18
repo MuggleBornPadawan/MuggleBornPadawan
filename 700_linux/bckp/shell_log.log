@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Sep 19 01:14:42 AM IST 2025 
+Date: Fri Sep 19 01:26:06 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -105,47 +105,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main 5f1290d4] bckp
- 1 file changed, 7 insertions(+), 63 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain with thunderstorm, light drizzle, mist
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
-  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 3 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
-Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-rtt min/avg/max/mdev = 40.517/53.547/63.348/9.920 ms
- ________________________________________
-/ It is easy to find fault, if one has   \
-| that disposition. There was once a man |
-| who, not being able to find any other  |
-| fault with his coal, complained that   |
-| there were too many prehistoric toads  |
-| in it.                                 |
-|                                        |
-| -- Mark Twain, "Pudd'nhead Wilson's    |
-\ Calendar"                              /
- ----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flumphberry squibbles wobble by the moon.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It seems like your message is a bit vague. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
-
-stop deepseek
