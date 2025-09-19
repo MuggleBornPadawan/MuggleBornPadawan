@@ -24,6 +24,8 @@ alias all-done="git add . && git commit -m 'wip' && git push"
 echo -e "\nIMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins"
 echo -e "\nuse trash-empty or trash-restore as you see fit"
 rm .bash_history
+history -w
+history -c
 pass ls
 
 # backups 
