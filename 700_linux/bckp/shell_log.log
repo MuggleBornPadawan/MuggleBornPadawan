@@ -1,13 +1,13 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Fri Sep 19 09:00:37 AM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Fri Sep 19 09:15:48 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Ign:1 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:2 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -74,90 +74,54 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
-├── @anthropic-ai/claude-code@1.0.98
-├── @google/gemini-cli@0.5.3
-├── @openai/codex@0.30.0
-├── corepack@0.33.0
-├── npm-check-updates@18.2.1
-└── npm@10.9.3
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
+Package  Current  Wanted  Latest  Location         Depended by
+20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 592 packages in 29s
-
-97 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-removed 449 packages, changed 9 packages, and audited 143 packages in 2s
+up to date, audited 143 packages in 6s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 491ms
-Checking /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run ncu -u to upgrade package.json
-Upgrading /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run npm install to install new versions.
-
-added 469 packages, changed 1 package, and audited 612 packages in 3s
-
-97 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-added 15 packages, removed 35 packages, changed 9 packages, and audited 592 packages in 2s
-
-97 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-removed 449 packages, changed 9 packages, and audited 143 packages in 2s
+up to date, audited 143 packages in 960ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
+up to date, audited 143 packages in 575ms
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 143 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 143 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -170,9 +134,6 @@ Password Store
 ├── protector_key
 ├── tmp
 └── unKnoWn
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
 Weather report: chennai
 
   [38;5;226m   \  /[0m       Partly cloudy
@@ -187,26 +148,8 @@ Weather report: pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.9 mm[0m         
-rtt min/avg/max/mdev = 39.968/59.242/62.612/6.062 ms
- _______________________________________
-/ Q: Why did the programmer call his    \
-| mother long distance? A: Because that |
-\ was her name.                         /
- ---------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+rtt min/avg/max/mdev = 39.520/62.103/174.126/35.830 ms
 start gemma3:1b
-Flibbertigibbetspunamicblurgonthursday.
-
 stop gemma
 start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
-
 stop deepseek
