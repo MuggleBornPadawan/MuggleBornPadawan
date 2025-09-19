@@ -1,14 +1,16 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Sep 19 12:49:14 PM IST 2025 
+Date: Fri Sep 19 01:52:17 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [278 kB]
+Hit:7 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 326 kB in 1s (270 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -85,21 +87,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 143 packages in 7s
+up to date, audited 143 packages in 6s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 143 packages in 902ms
+up to date, audited 143 packages in 943ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 619ms
+changed 1 package in 464ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -111,7 +113,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 612 packages in 18s
+added 469 packages, changed 1 package, and audited 612 packages in 19s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -181,19 +183,18 @@ Weather report: pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.9 mm[0m         
-rtt min/avg/max/mdev = 40.638/99.631/321.586/75.383 ms
- _____________________________________
-/ You learn to write as if to someone \
-| else because NEXT YEAR YOU WILL BE  |
-\ "SOMEONE ELSE."                     /
- -------------------------------------
+rtt min/avg/max/mdev = 40.882/60.032/92.519/17.965 ms
+ ______________________________________
+/ You are only young once, but you can \
+\ stay immature indefinitely.          /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flurglebloom zizzlewhirl sputtered rainbow fluff.
+Flurgleboopzizzlequackleberrywhizzle.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -201,6 +202,7 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
+[detached (from session alpha)]
