@@ -1,16 +1,18 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Fri Sep 19 01:52:17 PM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Fri Sep 19 10:04:29 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [278 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Fetched 326 kB in 1s (270 kB/s)
+Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Ign:6 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-19-0817.42-F-2025-09-19-0817.42.pdiff [256 B]
+Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-19-0817.42-F-2025-09-19-0817.42.pdiff [256 B]
+Hit:8 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 226 kB in 1s (153 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -76,84 +78,54 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
-├── @anthropic-ai/claude-code@1.0.98
-├── @google/gemini-cli@0.5.4
-├── @openai/codex@0.30.0
-├── corepack@0.33.0
-├── npm-check-updates@18.2.1
-└── npm@10.9.3
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 143 packages in 6s
+up to date, audited 143 packages in 7s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 143 packages in 943ms
+up to date, audited 143 packages in 884ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 464ms
-Checking /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run ncu -u to upgrade package.json
-Upgrading /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run npm install to install new versions.
-
-added 469 packages, changed 1 package, and audited 612 packages in 19s
-
-97 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-added 15 packages, removed 35 packages, changed 9 packages, and audited 592 packages in 2s
-
-97 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-removed 449 packages, changed 9 packages, and audited 143 packages in 2s
+up to date, audited 143 packages in 559ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
+up to date, audited 143 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 143 packages in 962ms
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -166,43 +138,22 @@ Password Store
 ├── protector_key
 ├── tmp
 └── unKnoWn
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
 Weather report: chennai
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;208m26[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.6 mm[0m         
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;220m+25[0m([38;5;220m27[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;214m22[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                0.8 mm[0m         
 Weather report: pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+25[0m([38;5;220m27[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.9 mm[0m         
-rtt min/avg/max/mdev = 40.882/60.032/92.519/17.965 ms
- ______________________________________
-/ You are only young once, but you can \
-\ stay immature indefinitely.          /
- --------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+28[0m([38;5;208m31[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;214m21[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
+rtt min/avg/max/mdev = 38.772/55.061/150.737/36.325 ms
 start gemma3:1b
-Flurgleboopzizzlequackleberrywhizzle.
-
 stop gemma
 start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
-
 stop deepseek
-[detached (from session alpha)]
