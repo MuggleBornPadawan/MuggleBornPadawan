@@ -4,11 +4,20 @@ cd
 espeak -v en-gb -s 175 -p 50 "roger that"
 echo "run this file for any remote debian server setup, startup and chk backups"
 echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
+#linux debian packages
 sudo apt-get update && sudo apt-get dist-upgrade
 sudo apt-get install gnuplot nasm ffmpeg lm-sensors sqlite3 mpg123 dnsutils make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme racket clojure emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay neofetch trash-cli
 sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
-npm list -g --depth=0 && npm outdated && npm update &&  npm audit fix --force && npm install -g npm-check-updates
-
+#npm packages
+npm list -g --depth=0
+npm outdated
+npm update
+npm audit fix --force
+npm install -g npm-check-updates
+ncu
+ncu -u
+npm install
+#restore to local
 cp MuggleBornPadawan/.gitignore $HOME
 cp MuggleBornPadawan/.dockerignore $HOME
 cp MuggleBornPadawan/Dockerfile $HOME
@@ -26,7 +35,7 @@ history -c
 pass ls
 
 # backups 
-./MuggleBornPadawan/700_linux/bckp/bckp.sh
+# ./MuggleBornPadawan/700_linux/bckp/bckp.sh
 ./MuggleBornPadawan/700_linux/scripts/gpg_protector.sh encrypt daily_nuggets.txt 13
 mv daily_nuggets.txt.enc MuggleBornPadawan/700_linux/bckp/
 
@@ -46,7 +55,7 @@ ollama run gemma3:1b "write 7 gibberish words in a single sentence; skip comment
 ollama stop gemma3:1b
 echo "stop gemma"
 echo "start deepseek-r1:1.5b"
-ollama run deepseek-r1:1.5b "ok"
+ollama run deepseek-r1:1.5b "how are you doing?"
 ollama stop deepseek-r1:1.5b
 echo "stop deepseek"
 tmux new -s alpha
