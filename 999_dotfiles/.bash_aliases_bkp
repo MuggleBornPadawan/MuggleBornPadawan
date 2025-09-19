@@ -1,5 +1,8 @@
 # My custom aliases | $ source ~/.bashrc 
+alias s='source ~/.bashrc'
 alias a='alias'
+alias t='tmux a'
+alias e='emacs -nw'
 alias grep='grep --color=auto'
 alias l='ls -lha --color=auto'
 alias ..='cd ..'
@@ -7,7 +10,7 @@ alias ...='cd ../..'
 alias c='clear'
 alias g='git status'
 alias gl='git log --oneline --decorate --graph'
-alias gp="git add . && git commit -m 'wip' && git push"
+alias gp="git add . && git commit -m 'wip $(date +%s)' && git push"
 alias h='history'
 alias p='ping'
 alias ps='ps aux'
