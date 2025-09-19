@@ -1,6 +1,6 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Fri Sep 19 02:25:42 AM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Fri Sep 19 07:56:33 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -74,25 +74,24 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
-├── @anthropic-ai/claude-code@1.0.98
-├── @google/gemini-cli@0.5.3
-├── @openai/codex@0.30.0
-├── corepack@0.33.0
-└── npm@10.9.3
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
+├── git
+│   └── github.com
 │       └── MuggleBornPadawan
 ├── mbprootp
 ├── MOONSHOT_API_KEY
@@ -106,41 +105,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main f934c8ab] bckp
- 1 file changed, 18 insertions(+), 35 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain with thunderstorm, light drizzle, mist
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
-  [38;5;228;5m    ⚡[38;5;111;25m‘‘[38;5;228;5m⚡[38;5;111;25m‘‘ [0m 3 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
-Location: Puducherry, Puducherry district, Puducherry, 605001, India [11.9340568,79.8306447]
-
-Follow [46m[30m@igor_chubin[0m for wttr.in updates
-rtt min/avg/max/mdev = 50.865/65.529/83.403/12.196 ms
- ____________________________________
-/ You will gain money by a fattening \
-\ action.                            /
- ------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Flibbertigibbet thumped a shimmering gloom.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! It looks like your message got cut off. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
-
-stop deepseek
-[detached (from session alpha)]

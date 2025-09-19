@@ -22,8 +22,6 @@ alias test_math='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_artithmetic_
 alias test_aeo='cd && ./MuggleBornPadawan/700_linux/scripts/openrouter_aeo_script.sh'
 alias pw='pass unKnoWn'
 # Safety & Security Aliases
-alias cp='cp -i'
-alias mv='mv -i'
 alias ln='ln -i'
 alias rm='rm -i'
 alias rm="trash-put"
