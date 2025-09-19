@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Sep 19 12:10:57 PM IST 2025 
+Date: Fri Sep 19 12:49:14 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -85,21 +85,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 143 packages in 6s
+up to date, audited 143 packages in 7s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 143 packages in 986ms
+up to date, audited 143 packages in 902ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 1s
+changed 1 package in 619ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -111,7 +111,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 612 packages in 20s
+added 469 packages, changed 1 package, and audited 612 packages in 18s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -181,19 +181,19 @@ Weather report: pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.9 mm[0m         
-rtt min/avg/max/mdev = 40.309/59.008/78.812/11.701 ms
- _________________________________________
-/ You will lose your present job and have \
-| to become a door to door mayonnaise     |
-\ salesman.                               /
- -----------------------------------------
+rtt min/avg/max/mdev = 40.638/99.631/321.586/75.383 ms
+ _____________________________________
+/ You learn to write as if to someone \
+| else because NEXT YEAR YOU WILL BE  |
+\ "SOMEONE ELSE."                     /
+ -------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumphberry blorfglewzzle shimmerwing.
+Flurglebloom zizzlewhirl sputtered rainbow fluff.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -201,7 +201,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
-[detached (from session alpha)]
