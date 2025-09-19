@@ -29,3 +29,5 @@ alias rm="trash-put"
 alias less='less -r'
 alias get='curl -O'
 alias mkdir='mkdir -p'
+# npm
+alias nu='npm list -g --depth=0 && npm outdated && npm update &&  npm audit fix --force && npm install -g npm-check-updates'

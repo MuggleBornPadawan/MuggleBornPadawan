@@ -1,14 +1,15 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Sep 19 07:57:40 AM IST 2025 
+Date: Fri Sep 19 08:38:31 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 115 kB in 1s (79.1 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -79,8 +80,11 @@ Reading state information...
 ├── @google/gemini-cli@0.5.3
 ├── @openai/codex@0.30.0
 ├── corepack@0.33.0
+├── npm-check-updates@18.2.1
 └── npm@10.9.3
 
+Package  Current  Wanted  Latest  Location         Depended by
+20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
@@ -106,47 +110,3 @@ pattern match found: auth
 is found? 1
 ⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
 ❌ No cloud backup taken
-[main e368f612] bckp
- 1 file changed, 14 insertions(+), 34 deletions(-)
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-Weather report: chennai
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;208m26[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.6 mm[0m         
-Weather report: pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+25[0m([38;5;220m27[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.9 mm[0m         
-rtt min/avg/max/mdev = 40.021/71.127/164.715/35.794 ms
- _______________________________
-/ The surest protection against \
-| temptation is cowardice.      |
-|                               |
-\ -- Mark Twain                 /
- -------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-start gemma3:1b
-Fluffleberry bounce, glimmerdrift swirl, squibbleweave hum, moonpetal gleam, rustleberry sigh, fizzlepod plummet, shadowsong drift.
-
-stop gemma
-start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hello! How can I assist you today? 😊
-
-stop deepseek
-[detached (from session alpha)]
