@@ -1,15 +1,14 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Sep 19 08:38:31 AM IST 2025 
+Date: Fri Sep 19 08:59:01 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Fetched 115 kB in 1s (79.1 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -83,8 +82,55 @@ Reading state information...
 ├── npm-check-updates@18.2.1
 └── npm@10.9.3
 
-Package  Current  Wanted  Latest  Location         Depended by
-20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
+
+added 15 packages, removed 35 packages, changed 9 packages, and audited 592 packages in 2s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+removed 449 packages, changed 9 packages, and audited 143 packages in 2s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+changed 1 package in 215ms
+Checking /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run ncu -u to upgrade package.json
+Upgrading /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run npm install to install new versions.
+
+added 469 packages, changed 1 package, and audited 612 packages in 3s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
 
@@ -95,9 +141,6 @@ Password Store
 ├── CLAUDE_API_KEY
 ├── DEEPSEEK_API_KEY
 ├── GEMINI_API_KEY
-├── [01;34mgit[0m
-│   └── [01;34mgithub.com[0m
-│       └── MuggleBornPadawan
 ├── mbprootp
 ├── MOONSHOT_API_KEY
 ├── OPEN_API_KEY
@@ -105,13 +148,6 @@ Password Store
 ├── protector_key
 ├── tmp
 └── unKnoWn
-
-pattern match found: auth
-is found? 1
-⚠️  WARNING: Sensitive information detected in /home/rgroot/.emacs.d/init.el
-❌ No cloud backup taken
-[main 42b4642e] bckp
- 2 files changed, 10 insertions(+), 48 deletions(-)
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
@@ -129,18 +165,21 @@ Weather report: pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.9 mm[0m         
-rtt min/avg/max/mdev = 39.068/52.610/64.157/10.057 ms
- _____________________________________
-/ Everything will be just tickety-boo \
-\ today.                              /
- -------------------------------------
+rtt min/avg/max/mdev = 38.808/56.139/64.179/9.715 ms
+ ________________________________________
+/ Kiss me, Kate, we will be married o'   \
+| Sunday.                                |
+|                                        |
+| -- William Shakespeare, "The Taming of |
+\ the Shrew"                             /
+ ----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumphberry wiggleforth flummlin shimmerglee.
+Flibbertigibbet slumped beneath the weeping willow.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -148,6 +187,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! It seems like your message might be a bit unclear. Could you clarify or provide more details about what you're asking? I'm here to help! 😊
+Hello! I'm just a virtual assistant, so I don't have feelings, but I aim to help you. How can I assist you today? 😊
 
 stop deepseek
