@@ -55,7 +55,8 @@ echo "stop deepseek"
 tmux new -s alpha
 
 # final words 
+rm startup_log.log - a tmp.txt
 sleep 2
 cd
-espeak -v en-gb -s 175 -p 50 "penguin out"
-rm startup_log.log - a tmp.txt
+espeak -v en-gb -s 175 -p 50 "Tux out"
+
