@@ -17,6 +17,8 @@ npm install -g npm-check-updates
 ncu
 ncu -u
 npm install
+npm update
+npm audit fix --force
 #restore to local
 cp MuggleBornPadawan/.gitignore $HOME
 cp MuggleBornPadawan/.dockerignore $HOME
