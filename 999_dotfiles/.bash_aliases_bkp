@@ -17,7 +17,7 @@ alias w1='r && cd MuggleBornPadawan/100_cpp/randomwalker/ && l'
 alias c='clear'
 alias g='git status'
 alias gl='git log --oneline --decorate --graph'
-alias gp="touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push"
+alias gp="s && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push"
 alias h='history'
 alias p='ping'
 alias ps='ps aux'
@@ -36,9 +36,10 @@ alias ln='ln -i'
 alias rm='rm -i'
 alias rm="trash-put"
 # File Management Aliases
+alias fo='r && o $(fzf)'
 alias less='less -r'
 alias get='curl -O'
 alias mkdir='mkdir -p'
 # npm
 alias nu='npm list -g --depth=0 && npm outdated && npm update &&  npm audit fix --force && npm install -g npm-check-updates'
-alias abc='echo "test"'
+alias abc="s && echo 'test at $(date)'"

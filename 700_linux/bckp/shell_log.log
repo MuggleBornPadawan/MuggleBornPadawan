@@ -1,18 +1,16 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Fri Sep 19 10:04:29 PM IST 2025 
+Date: Sat Sep 20 09:38:37 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
-Ign:6 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-19-0817.42-F-2025-09-19-0817.42.pdiff [256 B]
-Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-19-0817.42-F-2025-09-19-0817.42.pdiff [256 B]
-Hit:8 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Fetched 226 kB in 1s (153 kB/s)
+Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [278 kB]
+Fetched 441 kB in 1s (472 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -22,6 +20,8 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+fzf is already the newest version (0.38.0-1+b1).
+zoxide is already the newest version (0.4.3-5+b2).
 gnuplot is already the newest version (5.4.4+dfsg1-2).
 nasm is already the newest version (2.16.01-1).
 ffmpeg is already the newest version (7:5.1.7-0+deb12u1).
@@ -85,37 +85,45 @@ Reading state information...
 └── tmux-mem@0.0.3
 
 Package  Current  Wanted  Latest  Location         Depended by
-20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
+20         1.0.0   3.1.9   3.1.9  node_modules/20  rgroot
 
-up to date, audited 143 packages in 7s
+added 449 packages, changed 9 packages, and audited 592 packages in 26s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+removed 449 packages, changed 9 packages, and audited 143 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 143 packages in 884ms
+up to date, audited 143 packages in 619ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 143 packages in 559ms
+up to date, audited 143 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 143 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 143 packages in 962ms
+up to date, audited 143 packages in 892ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -141,18 +149,18 @@ Password Store
 Weather report: chennai
 
                 Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;220m+25[0m([38;5;220m27[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;214m22[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
   [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.8 mm[0m         
+                0.5 mm[0m         
 Weather report: pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+28[0m([38;5;208m31[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;214m21[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.2 mm[0m         
-rtt min/avg/max/mdev = 38.772/55.061/150.737/36.325 ms
+  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;220m16[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.3 mm[0m         
+rtt min/avg/max/mdev = 37.004/44.556/60.128/8.612 ms
 start gemma3:1b
 stop gemma
 start deepseek-r1:1.5b
