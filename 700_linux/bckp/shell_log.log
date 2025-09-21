@@ -1,14 +1,15 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Sep 20 01:23:13 PM IST 2025 
+Date: Sun Sep 21 03:07:05 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 115 kB in 2s (75.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -88,7 +89,7 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 143 packages in 7s
+up to date, audited 143 packages in 13s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -102,7 +103,7 @@ up to date, audited 143 packages in 1s
 
 found 0 vulnerabilities
 
-changed 1 package in 1s
+changed 1 package in 569ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -114,7 +115,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 612 packages in 31s
+added 469 packages, changed 1 package, and audited 612 packages in 24s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -169,31 +170,51 @@ Password Store
 └── unKnoWn
 Weather report: chennai
 
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.5 mm[0m         
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m35[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↙[0m [38;5;190m10[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
 Weather report: pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m→[0m [38;5;220m16[0m km/h[0m      
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+30[0m([38;5;202m35[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↖[0m [38;5;214m21[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.3 mm[0m         
-rtt min/avg/max/mdev = 68.191/94.118/140.209/23.130 ms
- _________________________________________
-/ FORTUNE PROVIDES QUESTIONS FOR THE      \
-| GREAT ANSWERS: #19 A: To be or not to   |
-\ be. Q: What is the square root of 4b^2? /
- -----------------------------------------
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 48.861/80.818/147.774/28.683 ms
+ _______________________________________
+/ Q: What's the contour integral around \
+| Western Europe? A: Zero, because all  |
+| the Poles are in Eastern Europe!      |
+|                                       |
+| Addendum: Actually, there ARE some    |
+| Poles in Western Europe, but they     |
+|                                       |
+| are removable!                        |
+|                                       |
+| Q: An English mathematician (I forgot |
+| who) was asked by his                 |
+|                                       |
+| very religious colleague: Do you      |
+| believe in one God? A: Yes, up to     |
+| isomorphism!                          |
+|                                       |
+| Q: What is a compact city? A: It's a  |
+| city that can be guarded by finitely  |
+| many near-sighted                     |
+|                                       |
+| policemen!                            |
+|                                       |
+\ -- Peter Lax                          /
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet zooms past the purple grotto.
+Zizzleflump, shimmerwhirl, groobloom, quibblefloat, flibbertwick, squeakton, pollyplump, zipzoom.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -201,6 +222,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
