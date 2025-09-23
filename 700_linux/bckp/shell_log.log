@@ -1,39 +1,20 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Sep 23 07:56:56 AM IST 2025 
+Date: Tue Sep 23 10:57:18 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
-Ign:6 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en.diff/Index [63.3 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-22-2010.19-F-2025-09-22-2010.19.pdiff [639 B]
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-22-2010.19-F-2025-09-22-2010.19.pdiff [639 B]
-Get:9 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [279 kB]
-Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-09-22-2010.19-F-2025-09-22-2010.19.pdiff [78 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-09-22-2010.19-F-2025-09-22-2010.19.pdiff [78 B]
-Get:11 https://deb.debian.org/debian-security bookworm-security/main Translation-en [169 kB]
-Hit:12 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Fetched 739 kB in 2s (483 kB/s)
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  linux-libc-dev
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 2,192 kB of archives.
-After this operation, 16.4 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 linux-libc-dev amd64 6.1.153-1 [2,192 kB]
-Fetched 2,192 kB in 1s (3,540 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 119759 files and directories currently installed.)
-Preparing to unpack .../linux-libc-dev_6.1.153-1_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (6.1.153-1) over (6.1.148-1) ...
-Setting up linux-libc-dev:amd64 (6.1.153-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -98,7 +79,7 @@ Building dependency tree...
 Reading state information...
 /home/rgroot/.config/nvm/versions/node/v22.18.0/lib
 ├── @anthropic-ai/claude-code@1.0.98
-├── @google/gemini-cli@0.5.4
+├── @google/gemini-cli@0.5.5
 ├── @openai/codex@0.30.0
 ├── corepack@0.33.0
 ├── npm-check-updates@18.3.0
@@ -107,21 +88,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 8s
+changed 2 packages, and audited 144 packages in 12s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 984ms
+up to date, audited 144 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 457ms
+changed 1 package in 478ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -133,7 +114,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 22s
+added 469 packages, changed 1 package, and audited 613 packages in 32s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -191,29 +172,35 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: chennai
 
-                Thunderstorm, mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+28[0m([38;5;208m32[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;220m18[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;196m37[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;226m15[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
                 0.2 mm[0m         
 Weather report: pondicherry
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;220m+27[0m([38;5;208m31[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;220m16[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 40.067/48.524/76.122/11.945 ms
- _______________________________
-< Keep it short for pithy sake. >
- -------------------------------
+  [38;5;226m _`/""[38;5;250m.-.    [0m Light rain shower
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+28[0m([38;5;208m32[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;220m18[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.5 mm[0m         
+rtt min/avg/max/mdev = 39.659/54.253/78.137/12.956 ms
+ _________________________________________
+/ When I reflect upon the number of       \
+| disagreeable people who I know who have |
+| gone to a better world, I am moved to   |
+| lead a different life.                  |
+|                                         |
+| -- Mark Twain, "Pudd'nhead Wilson's     |
+\ Calendar"                               /
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet swirls beneath the moonlit moss.
+Flurglewhizzlesparkleboopumsnugglesfloat.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -221,6 +208,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! I'm just a virtual assistant, so I don't have feelings, but I aim to help out. How can I assist you today? 😊
+Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
