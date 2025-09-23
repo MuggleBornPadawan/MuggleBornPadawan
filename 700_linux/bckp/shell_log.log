@@ -1,21 +1,39 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Sep 22 04:47:04 PM IST 2025 
+Date: Tue Sep 23 07:56:56 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Fetched 163 kB in 1s (116 kB/s)
+Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Ign:6 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en.diff/Index [63.3 kB]
+Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-22-2010.19-F-2025-09-22-2010.19.pdiff [639 B]
+Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-09-22-2010.19-F-2025-09-22-2010.19.pdiff [639 B]
+Get:9 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [279 kB]
+Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-09-22-2010.19-F-2025-09-22-2010.19.pdiff [78 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-09-22-2010.19-F-2025-09-22-2010.19.pdiff [78 B]
+Get:11 https://deb.debian.org/debian-security bookworm-security/main Translation-en [169 kB]
+Hit:12 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Fetched 739 kB in 2s (483 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  linux-libc-dev
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2,192 kB of archives.
+After this operation, 16.4 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 linux-libc-dev amd64 6.1.153-1 [2,192 kB]
+Fetched 2,192 kB in 1s (3,540 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 119759 files and directories currently installed.)
+Preparing to unpack .../linux-libc-dev_6.1.153-1_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (6.1.153-1) over (6.1.148-1) ...
+Setting up linux-libc-dev:amd64 (6.1.153-1) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -89,21 +107,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-added 1 package, changed 1 package, and audited 144 packages in 9s
+up to date, audited 144 packages in 8s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 1s
+up to date, audited 144 packages in 984ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 495ms
+changed 1 package in 457ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -115,7 +133,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 21s
+added 469 packages, changed 1 package, and audited 613 packages in 22s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -168,32 +186,34 @@ Password Store
 ├── protector_key
 ├── tmp
 └── unKnoWn
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 Weather report: chennai
 
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m40[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m←[0m [38;5;226m14[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 6 km[0m           
+                Thunderstorm, mist
+  [38;5;251m _ - _ - _ - [0m [38;5;214m+28[0m([38;5;208m32[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↗[0m [38;5;220m18[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 5 km[0m           
                 0.2 mm[0m         
 Weather report: pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+29[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;220m18[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.1 mm[0m         
-rtt min/avg/max/mdev = 38.069/49.233/62.164/10.559 ms
- _______________________________________
-/ Don't hate yourself in the morning -- \
-\ sleep till noon.                      /
- ---------------------------------------
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;220m+27[0m([38;5;208m31[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;220m16[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 40.067/48.524/76.122/11.945 ms
+ _______________________________
+< Keep it short for pithy sake. >
+ -------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet thumped a shimmering gloom.
+Flibbertigibbet swirls beneath the moonlit moss.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -201,6 +221,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! I'm just a virtual assistant, so I don't have feelings, but I aim to help you with whatever you need. How can I assist you today? 😊
+Hello! I'm just a virtual assistant, so I don't have feelings, but I aim to help out. How can I assist you today? 😊
 
 stop deepseek
