@@ -25,22 +25,30 @@ cd
 # Note: MODELS array can be easily extended or modified here.
 
 MODELS=(
+    "x-ai/grok-4-fast:free"
     "openai/gpt-oss-20b:free"
-    "z-ai/glm-4.5-air:free"
-    "tencent/hunyuan-a13b-instruct:free"
     "anthropic/claude-3-haiku" 
     "google/gemini-2.5-flash-lite"
+    "google/gemini-2.0-flash-exp:free"
+    "google/gemma-3n-e4b-it:free"
     "amazon/nova-micro-v1"
     "mistralai/mistral-small-3.1-24b-instruct:free"
+    "mistralai/mistral-small-3.2-24b-instruct:free"
     "meta-llama/llama-3.2-3b-instruct:free"
-    "meta-llama/llama-4-scout"
+    "meta-llama/llama-3.3-8b-instruct:free"
+    "meta-llama/llama-4-scout:free"
     "moonshotai/kimi-k2:free"
     "deepseek/deepseek-r1-0528-qwen3-8b:free"
     "deepseek/deepseek-r1-0528:free"
+    "deepseek/deepseek-chat-v3.1:free"
+    "nvidia/nemotron-nano-9b-v2:free"
     "qwen/qwen3-235b-a22b:free"
-    "google/gemma-3n-e4b-it:free"
-)
+    "qwen/qwen3-coder:free"
+    "z-ai/glm-4.5-air:free"
+    "moonshotai/kimi-k2:free"
+    "tencent/hunyuan-a13b-instruct:free"
 
+)
 #    "openai/gpt-5-nano"
 #    "openrouter/horizon-beta"
 #    "google/gemini-2.5-pro"
