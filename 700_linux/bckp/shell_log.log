@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Sep 23 10:57:18 PM IST 2025 
+Date: Tue Sep 23 10:59:20 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -88,21 +88,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-changed 2 packages, and audited 144 packages in 12s
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 2s
+up to date, audited 144 packages in 951ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 478ms
+changed 1 package in 236ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -114,7 +114,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 32s
+added 469 packages, changed 1 package, and audited 613 packages in 4s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -184,23 +184,19 @@ Weather report: pondicherry
   [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;220m18[0m km/h[0m      
   [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
   [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.5 mm[0m         
-rtt min/avg/max/mdev = 39.659/54.253/78.137/12.956 ms
- _________________________________________
-/ When I reflect upon the number of       \
-| disagreeable people who I know who have |
-| gone to a better world, I am moved to   |
-| lead a different life.                  |
-|                                         |
-| -- Mark Twain, "Pudd'nhead Wilson's     |
-\ Calendar"                               /
- -----------------------------------------
+rtt min/avg/max/mdev = 38.279/47.262/62.831/8.916 ms
+ _______________________________________
+/ Q: How many IBM 370's does it take to \
+| execute a job? A: Four, three to hold |
+\ it down, and one to rip its head off. /
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flurglewhizzlesparkleboopumsnugglesfloat.
+Flibbertigibbet splurged upon squibbles, then blossomed in a blur.
 
 stop gemma
 start deepseek-r1:1.5b
