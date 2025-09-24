@@ -469,70 +469,6 @@ Some of these software engineering laws are famous, and some are quite niche. Pa
   - actions -> impact environment -> agent observes and becomes past experiences 
 
 * math
-** numbers
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| numbers       | explanation                    | notes                                                             |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| natural       | N={1,2,3,...}                  | addition and multipication is closed, associative and commutative |
-|               |                                | identity element under addition is zero                           |
-|               |                                | identity element under multiplication is one                      |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| whole         | W={0,1,2,3,...}                | closed under addition and multiplication                          |
-|               | Non negative                   | zero is the additive identity element                             |
-|               | W = N + {0}                    | one is the multiplicative identiy element                         |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| integers      | Z = {...,-3,-2,-1,0,1,2,3,...} |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| rational      |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| irrational    |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| real          |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| imaginery     |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| complex       |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| algebric      |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| transcedental |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| quaternions   |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| octonions     |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| p-adic        |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| constructible |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
-| computable    |                                |                                                                   |
-|               |                                |                                                                   |
-|               |                                |                                                                   |
-|---------------+--------------------------------+-------------------------------------------------------------------|
 
 ** subjects
 |---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
@@ -554,6 +490,89 @@ Some of these software engineering laws are famous, and some are quite niche. Pa
 | discrete math | distinct and countable structures    | combinatorics, graph theory and logic theory; sets, relations and algorithms                            |
 | applied math  |                                      | chaos                                                                                                   |
 |---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
+
+** numbers
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| numbers           | explanation                           | notes                                                                     |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| natural (N)       | N={1,2,3,...}                         | addition and multipication is closed, associative and commutative         |
+|                   |                                       | identity element under addition is zero                                   |
+|                   |                                       | identity element under multiplication is one                              |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| whole (W)         | W={0,1,2,3,...}                       | closed under addition and multiplication                                  |
+|                   | Non negative                          | zero is the additive identity element                                     |
+|                   | W=N+{0}                               | one is the multiplicative identiy element                                 |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| integers (Z)      | Z={...,-3,-2,-1,0,1,2,3,...}          | closed under addition, subtraction and multiplication                     |
+|                   |                                       | addition and multiplication are commutative, associative and distributive |
+|                   |                                       | additive identiy = 0; multiplicative identiy = 1                          |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| rational (Q)      | Q=fractions; p / q                    | closed under addtion, subtraction, multiplication and division            |
+|                   | p and q are integers, decimals?       | addition and multiplication are commutative and associative               |
+|                   | q cannot be zero                      | addition and subtraction are distributive                                 |
+|                   | terminating and repeating decimals    |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| irrational (P)    | P=decimal expansions                  | distributive under addition and subtraction                               |
+|                   | non-terminating and non-repeating     | commutative and associative under addition and multiplication             |
+|                   | Eg: pi, eulers number                 |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| real (R)          | R=(N u W u Z u Q u P)                 | commutative, associative and distributive under + and *                   |
+|                   | any number (sans imaginery)           | obey inverse property                                                     |
+|                   |                                       | additive identity element (0); multiplicative identiy element (1)         |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| imaginery (I)     | i=sqrt(-N)                            | Does not exist                                                            |
+|                   |                                       |                                                                           |
+|                   |                                       |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| complex (C)       | Z = a +ib                             | addition and multipication are associative and commutative                |
+|                   |                                       | distributive of multipication over addition                               |
+|                   |                                       |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| algebric (A)      | solution to equations                 |                                                                           |
+|                   | coefficients are integers?            |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| transcedental (T) | subset of irrational                  | not the root of any non-zero polynomial equations with int coeffs         |
+|                   | Eg: pi, e^a, i^i                      | cannot be derived from simple algebraic equations                         |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| quaternions (H)   | 1 real; 3 imaginary                   | extend complex numbers to four dimensions                                 |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| octonions (O)     | 1 real; 7 imaginary                   | string theory; non-associative algebra (multiplication wont work)         |
+|                   |                                       | higher mathematics and theoritical physics                                |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| p-adic (Qp)       | system of numbers                     | solving equations in ways that are not possible using real numbers        |
+|                   | number theory                         | diaphantine equations seeking integer solutions                           |
+|                   | measure distance based on divisiblity |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| constructible (E) | straight edge and compass             | square root                                                               |
+|                   | geometric shapes                      | trisecting angle challenge                                                |
+|                   |                                       |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| computable (Rc)   | calculated by an algorithm            | generated or approximated using finite number of steps                    |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| definable         | finite set of rules or formulas       | may not be easy to compute                                                |
+|                   | eg: golden ratio                      | can be logically described in a mathematical system                       |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+
+** derivatives
+source: X to Y (YT)
+|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
+| type        | explanation                   | notes                          | application                                         |
+|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
+| basic       | instantaneous rate of change  | f'(x)=(dx/dy) defined by limit | motion, growth and optimization                     |
+| higher      | rate of change                | f''(x)                         | accceleration, graph curvature and physical systems |
+| partial     | multiple variables            | fx = df/dx or fy = df/dy       | one variable; others constant                       |
+| total       | dependency on single variable | f(x(t),y(t))                   | eg: time; dynamics and thermodynamics               |
+| implicit    |                               | F(x,y)=0                       |                                                     |
+| directional |                               |                                |                                                     |
+| logarthmic  | cosines and sines             |                                |                                                     |
+| parametric  | curves                        |                                | graphics                                            |
+| covariant   | curves                        |                                |                                                     |
+| functional  | function of functions         |                                |                                                     |
+| lie         | tensor flow change            | scalar and vector field        |                                                     |
+| numerical   |                               |                                | simulation and data analysis                        |
+| fractional  |                               |                                | viscoelasticity and signal processing               |
+| func??      |                               |                                |                                                     |
+|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
 
 * resources
 ** books
