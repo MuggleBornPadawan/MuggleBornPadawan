@@ -1,15 +1,15 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Wed Sep 24 09:19:21 AM IST 2025 
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Wed Sep 24 08:58:37 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.76-08174-g2f3b34fb3650
 Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/139 bookworm Release
-Fetched 115 kB in 7s (16.6 kB/s)
+Ign:2 https://storage.googleapis.com/cros-packages/139 bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/139 bookworm Release
+Get:6 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Fetched 115 kB in 2s (71.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -78,54 +78,84 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@1.0.67
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
+├── @anthropic-ai/claude-code@1.0.98
+├── @google/gemini-cli@0.5.5
+├── @openai/codex@0.30.0
+├── corepack@0.33.0
+├── npm-check-updates@18.3.0
+└── npm@10.9.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 10s
+up to date, audited 144 packages in 8s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 2s
+up to date, audited 144 packages in 955ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 1s
+changed 1 package in 1s
+Checking /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run ncu -u to upgrade package.json
+Upgrading /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run npm install to install new versions.
+
+added 469 packages, changed 1 package, and audited 613 packages in 20s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+removed 449 packages, changed 9 packages, and audited 144 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 974ms
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
--e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -138,14 +168,46 @@ Password Store
 ├── protector_key
 ├── tmp
 └── unKnoWn
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
+Weather report: chennai
 
-Sorry, we are running out of queries to the weather service at the moment.
-Here is the weather report for the default city (just to show you what it looks like).
-We will get new queries as soon as possible.
-You can follow https://x.com/igor_chubin for the updates.
-======================================================================================
-rtt min/avg/max/mdev = 51.854/54.489/66.759/4.044 ms
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↘[0m [38;5;154m9[0m km/h[0m       
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
+Weather report: pondicherry
+
+                Cloudy
+  [38;5;250m     .--.    [0m [38;5;214m+29[0m([38;5;208m32[0m) °C[0m     
+  [38;5;250m  .-(    ).  [0m [1m↗[0m [38;5;220m17[0m km/h[0m      
+  [38;5;250m (___.__)__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 37.696/45.712/71.337/10.655 ms
+ ________________________________________
+/ There is always one thing to remember: \
+| writers are always selling somebody    |
+| out.                                   |
+|                                        |
+| -- Joan Didion, "Slouching Towards     |
+\ Bethlehem"                             /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 start gemma3:1b
+Flumpity squibble wobble rainbow sparkle gloom.
+
 stop gemma
 start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+
 stop deepseek
