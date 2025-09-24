@@ -1,4 +1,4 @@
-* scribbled notes
+* scribbled notes 
 ** ai automation vs ai agent
 [[file:x_ai_automation_vs_ai_agents.png]]
 ** chain of thought (cot) vs tree of thought (tot) vs graph of thought (got) 
@@ -217,15 +217,6 @@ Some of these software engineering laws are famous, and some are quite niche. Pa
   - risks: technical support and warranty services
 - python, tableau, matplotlib
 - apache spark, jupyter notebook, r and rstudio, scala
-
-
-
-
-
-
-
-
-
 ** AI vs augmented intelligence
 - learn patterns and predict 
 - human vs artificial vs augmented
@@ -476,6 +467,93 @@ Some of these software engineering laws are famous, and some are quite niche. Pa
 | observations ->     |       |         |
 |---------------------+-------+---------|
   - actions -> impact environment -> agent observes and becomes past experiences 
+
+* math
+** numbers
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| numbers       | explanation                    | notes                                                             |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| natural       | N={1,2,3,...}                  | addition and multipication is closed, associative and commutative |
+|               |                                | identity element under addition is zero                           |
+|               |                                | identity element under multiplication is one                      |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| whole         | W={0,1,2,3,...}                | closed under addition and multiplication                          |
+|               | Non negative                   | zero is the additive identity element                             |
+|               | W = N + {0}                    | one is the multiplicative identiy element                         |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| integers      | Z = {...,-3,-2,-1,0,1,2,3,...} |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| rational      |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| irrational    |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| real          |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| imaginery     |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| complex       |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| algebric      |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| transcedental |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| quaternions   |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| octonions     |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| p-adic        |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| constructible |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+| computable    |                                |                                                                   |
+|               |                                |                                                                   |
+|               |                                |                                                                   |
+|---------------+--------------------------------+-------------------------------------------------------------------|
+
+** subjects
+|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
+| math          | explanation                          | notes                                                                                                   |
+|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
+| arithmetic    | + - * /                              | natural, integers, rational, irrational                                                                 |
+| algebra       | vairables (symbols)                  | linear eq, quadratic, matrices, vector models, groups and rings, patterns in symmetry and number theory |
+| geometry      | shapes and spaces                    | 2d and 3d, eucliedian and non-eucliedian                                                                |
+| trignometry   | angles and sides                     | radians, (sound and planetary movements)                                                                |
+| calculus      | continuous change                    | diff calc - rates of change,                                                                            |
+| analysis      | functions and limits                 | continuity and convergence (complex n = real + imaginary)                                               |
+| number theory | integers -  prime, divisiblity, gcd  | diophantine equations, reimann hypothesis,                                                              |
+| combinatorics | permutation and combinations         | graph theory                                                                                            |
+| probablity    | possiblity, likelyhood of events     | theoretical, experimental, axiomatic                                                                    |
+| statistics    | data lifecycle management            | uncertainity and variation; regression and bayesian methods                                             |
+| topology      | study properties ~ deformation       | point set (openness and cconnectedness), algebraic (homotopy and homology),                             |
+| set theory    | union, intersection                  | cardinaltiy (finite vs infinite), axiom of choice                                                       |
+| logic         | (t or f) propositions and predicates | statements, formal system (proof consistency), type theory                                              |
+| discrete math | distinct and countable structures    | combinatorics, graph theory and logic theory; sets, relations and algorithms                            |
+| applied math  |                                      | chaos                                                                                                   |
+|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
 
 * resources
 ** books
