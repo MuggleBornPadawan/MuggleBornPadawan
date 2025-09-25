@@ -15,3 +15,9 @@
 ** tools
 - github, gitlab, crucible, gerrit, bitbucket
 - pro tip: check compatiblity with source (version) control management
+** aider
+- pass OPENROUTER_API_KEY
+- export OPENROUTER_API_KEY=<key>
+- aider --list-models openrouter/
+- aider --list-models openrouter/ | grep code 
+- aider --model openrouter/x-ai/grok-4-fast:free

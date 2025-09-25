@@ -108,3 +108,4 @@ profiles.clj
 .hgignore
 .hg/
 .svn
+.aider*

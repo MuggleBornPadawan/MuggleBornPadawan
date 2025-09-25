@@ -610,6 +610,13 @@ source: X to Y (YT)
 | fields (rational domain) | set of elements -> addition, multiplication and a commutative division algebra         |               |
 |                          | equivalent to the field of complex numbers                                             |               |
 |--------------------------+----------------------------------------------------------------------------------------+---------------|
+
+** math symbols
+abc
+
+** calculus
+abc / 50 levels 
+
 ** most important theorems in math
 |---------------------------------+-------------+-------|
 | theorem                         | explanation | notes |
@@ -622,10 +629,6 @@ source: X to Y (YT)
 | baye's theorem                  |             |       |
 | prime number theorem            |             |       |
 |---------------------------------+-------------+-------|
-
-** math symbols
-abc
-
 
 
 ** engineering math
@@ -673,10 +676,6 @@ abc
   - no magnetic monopoles
   - faraday's law
   - anti maxweell law
-
-
-** calculus
-abc / 50 levels 
 
 * resources
 ** books
