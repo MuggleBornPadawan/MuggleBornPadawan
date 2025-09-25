@@ -1,16 +1,15 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Sep 25 01:21:43 PM IST 2025 
+Date: Thu Sep 25 03:54:54 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [279 kB]
-Ign:6 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Hit:7 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 442 kB in 2s (238 kB/s)
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
+Fetched 163 kB in 2s (102 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -90,7 +89,7 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 12s
+up to date, audited 144 packages in 15s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -104,7 +103,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-changed 1 package in 596ms
+changed 1 package in 2s
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -116,7 +115,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 20s
+added 469 packages, changed 1 package, and audited 613 packages in 27s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -131,7 +130,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 4s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -146,7 +145,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-removed 449 packages, changed 9 packages, and audited 144 packages in 2s
+removed 449 packages, changed 9 packages, and audited 144 packages in 4s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -186,18 +185,18 @@ Weather report: pondicherry
   [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;226m14[0m km/h[0m      
   [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 68.839/94.350/155.968/28.685 ms
- _________________________________
-/ Domestic happiness and faithful \
-\ friends.                        /
- ---------------------------------
+rtt min/avg/max/mdev = 65.994/89.874/179.905/38.289 ms
+ _______________________________________
+/ You will meet an important person who \
+\ will help you advance professionally. /
+ ---------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumpkinsparkle wizzlewhirls flutterbyth.
+Zizzleflumpkinsproutblossomgleamwicklewick.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -208,3 +207,4 @@ start deepseek-r1:1.5b
 Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
+[detached (from session alpha)]
