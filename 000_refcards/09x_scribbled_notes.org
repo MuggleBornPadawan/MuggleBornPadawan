@@ -622,14 +622,61 @@ source: X to Y (YT)
 | baye's theorem                  |             |       |
 | prime number theorem            |             |       |
 |---------------------------------+-------------+-------|
+
 ** math symbols
 abc
+
+
+
 ** engineering math
 - differential and integral calculus
-  - limits x->a f(x); 
+  - limits x->a f(x);
+  - derivatives -> instantaneous rate of change or slope of the tangent at any point
+  - derivatives -> is the fn increassing or decreasing? max and min values
+  - integralss -> cumulative value (inverse of diff)
+- calculus
+  - single variable calculus ; f(x) = x^2 + 2
+    - sequence - ordered list of numbers
+    - infinite series - add up all terms of sequence -> adding up to finite number is called convergence
+      - taylor series, maclaurin series 
+  - multi variable calculus; f(x, y, z) - known functions
+    - partila derivatives, multiple integrals, new math techniques
+    - gradient (not slope here) - vector of slope; del notation
+    - divergence - is the field converging or spreading out? - dot product of nabla with a vector field 
+    - curl - measures rotation of vector field at each point - cross product of nabla with a vector field
+ - differential equations - unknown functions 
+   - ordinary differential equations - ODE - (single variable)
+     - first order - variable raised to power one - methods: seperation of variables, integrating factors and substitution
+     - second order - variable raised to power two - methods: homogenous and non-homogenous equation 
+   - partial differential equations - PDE - (multiple variables)
+     - laplacian - methods: seperation of variables, fourier analysis and numberical
+   - solution: existance and uniqueness theorem
+   - linear algebra:
+     - vectors, matrices and linear transformations
+       - dot product - scale
+       - cross product - perpendicular vector     
+     - geometry - coordinate systems (cartesian) and geometric shapes
+     - couple of massive theorems:
+       - divergence theorem or gauss's theorem
+       - stoke's theorem 
+  - numerical methods
+    - newton's method
+    - euler's method
+    - RK4 method 
+- probablity theory
+  -  sample space - subsets - axioms -
+  - probablityhh density functions
+  - normal distributions
+  - central limits theorem
+- physics - maxwell's equations
+  - gauss's law
+  - no magnetic monopoles
+  - faraday's law
+  - anti maxweell law
+
 
 ** calculus
-abc
+abc / 50 levels 
 
 * resources
 ** books
