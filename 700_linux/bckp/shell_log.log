@@ -1,15 +1,14 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Sep 25 03:54:54 PM IST 2025 
+Date: Thu Sep 25 11:00:37 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 163 kB in 2s (102 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -59,6 +58,8 @@ python3-pip is already the newest version (23.0.1+dfsg-1).
 mit-scheme is already the newest version (12.1-3).
 racket is already the newest version (8.7+dfsg1-1).
 clojure is already the newest version (1.11.1-2).
+rlwrap is already the newest version (0.46.1-1).
+rlwrap set to manually installed.
 emacs is already the newest version (1:30.1+1-6~bpo12+1).
 elpa-magit is already the newest version (3.3.0-2).
 sbcl is already the newest version (2:2.2.9-1).
@@ -70,7 +71,36 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following additional packages will be installed:
+  default-jdk-headless libnrepl-clojure libnrepl-incomplete-clojure
+The following NEW packages will be installed:
+  default-jdk-headless leiningen libnrepl-clojure libnrepl-incomplete-clojure
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 12.1 MB of archives.
+After this operation, 13.9 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm/main amd64 default-jdk-headless amd64 2:1.17-74 [1,108 B]
+Get:2 https://deb.debian.org/debian bookworm/main amd64 libnrepl-clojure amd64 1.0.0-5 [77.6 kB]
+Get:3 https://deb.debian.org/debian bookworm/main amd64 libnrepl-incomplete-clojure all 0.1.0-2 [21.0 kB]
+Get:4 https://deb.debian.org/debian bookworm/main amd64 leiningen all 2.10.0-2 [12.0 MB]
+Fetched 12.1 MB in 3s (4,421 kB/s)
+Selecting previously unselected package default-jdk-headless.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 124764 files and directories currently installed.)
+Preparing to unpack .../default-jdk-headless_2%3a1.17-74_amd64.deb ...
+Unpacking default-jdk-headless (2:1.17-74) ...
+Selecting previously unselected package libnrepl-clojure.
+Preparing to unpack .../libnrepl-clojure_1.0.0-5_amd64.deb ...
+Unpacking libnrepl-clojure (1.0.0-5) ...
+Selecting previously unselected package libnrepl-incomplete-clojure.
+Preparing to unpack .../libnrepl-incomplete-clojure_0.1.0-2_all.deb ...
+Unpacking libnrepl-incomplete-clojure (0.1.0-2) ...
+Selecting previously unselected package leiningen.
+Preparing to unpack .../leiningen_2.10.0-2_all.deb ...
+Unpacking leiningen (2.10.0-2) ...
+Setting up libnrepl-incomplete-clojure (0.1.0-2) ...
+Setting up default-jdk-headless (2:1.17-74) ...
+Setting up libnrepl-clojure (1.0.0-5) ...
+Setting up leiningen (2.10.0-2) ...
+Processing triggers for man-db (2.11.2-2) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -80,7 +110,7 @@ Building dependency tree...
 Reading state information...
 /home/rgroot/.config/nvm/versions/node/v22.18.0/lib
 ├── @anthropic-ai/claude-code@1.0.98
-├── @google/gemini-cli@0.5.5
+├── @google/gemini-cli@0.6.1
 ├── @openai/codex@0.30.0
 ├── corepack@0.33.0
 ├── npm-check-updates@18.3.0
@@ -89,7 +119,7 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 15s
+up to date, audited 144 packages in 10s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -103,7 +133,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-changed 1 package in 2s
+changed 1 package in 536ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -115,7 +145,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 27s
+added 469 packages, changed 1 package, and audited 613 packages in 24s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -130,7 +160,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 4s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -145,7 +175,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-removed 449 packages, changed 9 packages, and audited 144 packages in 4s
+removed 449 packages, changed 9 packages, and audited 144 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -173,30 +203,30 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: chennai
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;208m33[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;214m22[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;208m+32[0m([38;5;196m39[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m←[0m [38;5;226m14[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 6 km[0m           
                 0.0 mm[0m         
 Weather report: pondicherry
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+33[0m([38;5;196m38[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;226m14[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 65.994/89.874/179.905/38.289 ms
- _______________________________________
-/ You will meet an important person who \
-\ will help you advance professionally. /
- ---------------------------------------
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+28[0m([38;5;208m32[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;214m22[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.4 mm[0m         
+rtt min/avg/max/mdev = 55.007/62.608/89.630/10.602 ms
+ ___________________________________
+/ You will gain money by an immoral \
+\ action.                           /
+ -----------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Zizzleflumpkinsproutblossomgleamwicklewick.
+Flumpkinsparkle wizzlebloom shimmerdrift.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -204,7 +234,6 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
-[detached (from session alpha)]
