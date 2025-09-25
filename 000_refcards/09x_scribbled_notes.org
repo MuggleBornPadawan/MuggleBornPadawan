@@ -467,30 +467,18 @@ Some of these software engineering laws are famous, and some are quite niche. Pa
 | observations ->     |       |         |
 |---------------------+-------+---------|
   - actions -> impact environment -> agent observes and becomes past experiences 
-
 * math
-
-** subjects
-|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
-| math          | explanation                          | notes                                                                                                   |
-|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
-| arithmetic    | + - * /                              | natural, integers, rational, irrational                                                                 |
-| algebra       | vairables (symbols)                  | linear eq, quadratic, matrices, vector models, groups and rings, patterns in symmetry and number theory |
-| geometry      | shapes and spaces                    | 2d and 3d, eucliedian and non-eucliedian                                                                |
-| trignometry   | angles and sides                     | radians, (sound and planetary movements)                                                                |
-| calculus      | continuous change                    | diff calc - rates of change,                                                                            |
-| analysis      | functions and limits                 | continuity and convergence (complex n = real + imaginary)                                               |
-| number theory | integers -  prime, divisiblity, gcd  | diophantine equations, reimann hypothesis,                                                              |
-| combinatorics | permutation and combinations         | graph theory                                                                                            |
-| probablity    | possiblity, likelyhood of events     | theoretical, experimental, axiomatic                                                                    |
-| statistics    | data lifecycle management            | uncertainity and variation; regression and bayesian methods                                             |
-| topology      | study properties ~ deformation       | point set (openness and cconnectedness), algebraic (homotopy and homology),                             |
-| set theory    | union, intersection                  | cardinaltiy (finite vs infinite), axiom of choice                                                       |
-| logic         | (t or f) propositions and predicates | statements, formal system (proof consistency), type theory                                              |
-| discrete math | distinct and countable structures    | combinatorics, graph theory and logic theory; sets, relations and algorithms                            |
-| applied math  |                                      | chaos                                                                                                   |
-|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
-
+** dictionary of math
+All of math can be described in four categories:
+- primitive concepts - mathematical object that has no definition (eg: point, line, plane and set). we simply accept that they exist. explanation of concept is possible but proper definition cannot be constructed. 
+- definitions - act of naming mathematical objects or relationship between objects
+- axioms (postulates) - simply accepted without demonstration 
+- theorems - mathematical sentence obtained through demonstration (logical deduction). eg: pythogroraz theorm
+- forumula - Every formula is a theorem - has to be demonstrated 
+- property - a fundamental characteristic or quality of a mathematical object, nuber or operation that remains consistent under specific conditions 
+- lemma - result used to demonstrate a theorem 
+- corolloary - result that follows immediately and directly from a theorem
+- law - constant relationship between elements that can vary
 ** numbers
 |-------------------+---------------------------------------+---------------------------------------------------------------------------|
 | numbers           | explanation                           | notes                                                                     |
@@ -552,7 +540,26 @@ Some of these software engineering laws are famous, and some are quite niche. Pa
 | definable         | finite set of rules or formulas       | may not be easy to compute                                                |
 |                   | eg: golden ratio                      | can be logically described in a mathematical system                       |
 |-------------------+---------------------------------------+---------------------------------------------------------------------------|
-
+** subjects
+|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
+| math          | explanation                          | notes                                                                                                   |
+|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
+| arithmetic    | + - * /                              | natural, integers, rational, irrational                                                                 |
+| algebra       | vairables (symbols)                  | linear eq, quadratic, matrices, vector models, groups and rings, patterns in symmetry and number theory |
+| geometry      | shapes and spaces                    | 2d and 3d, eucliedian and non-eucliedian                                                                |
+| trignometry   | angles and sides                     | radians, (sound and planetary movements)                                                                |
+| calculus      | continuous change                    | diff calc - rates of change,                                                                            |
+| analysis      | functions and limits                 | continuity and convergence (complex n = real + imaginary)                                               |
+| number theory | integers -  prime, divisiblity, gcd  | diophantine equations, reimann hypothesis,                                                              |
+| combinatorics | permutation and combinations         | graph theory                                                                                            |
+| probablity    | possiblity, likelyhood of events     | theoretical, experimental, axiomatic                                                                    |
+| statistics    | data lifecycle management            | uncertainity and variation; regression and bayesian methods                                             |
+| topology      | study properties ~ deformation       | point set (openness and cconnectedness), algebraic (homotopy and homology),                             |
+| set theory    | union, intersection                  | cardinaltiy (finite vs infinite), axiom of choice                                                       |
+| logic         | (t or f) propositions and predicates | statements, formal system (proof consistency), type theory                                              |
+| discrete math | distinct and countable structures    | combinatorics, graph theory and logic theory; sets, relations and algorithms                            |
+| applied math  |                                      | chaos                                                                                                   |
+|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
 ** derivatives
 source: X to Y (YT)
 |-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
@@ -573,6 +580,56 @@ source: X to Y (YT)
 | fractional  |                               |                                | viscoelasticity and signal processing               |
 | func??      |                               |                                |                                                     |
 |-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
+** algebra
+- substitution of unknown as symbols (variables + constants) combined with mathematical operations (pemdas)
+- solve the equations to arrive at solutions. find sets (x, y, ...) that obey the equations 
+|--------------------------+----------------------------------------------------------------------------------------+---------------|
+| equation                 | explanation                                                                            | notes         |
+|--------------------------+----------------------------------------------------------------------------------------+---------------|
+| linear                   | highest power of variable is one; sloped lines, substitution, elimination and graphing | y = mx + c;   |
+| quadratic                | highest power of variable is two; parabolas; factoring, square, equation               | ax^2 + bx + c |
+| polynomials              | variables raised to whole number powers; cubic and quadratics -> calculus              |               |
+| exponents                | rules: product of power, power of a power, zero exponent, negative exponenent          |               |
+|                          | multiples of itself                                                                    |               |
+| radicals                 | reverse of exponentiation                                                              |               |
+| log                      | exponents and radicals for very large or very small values                             |               |
+| functions and relations  | ordered pairs -> table -> graph -> mapping diagram                                     | f(x)          |
+|                          | domain (i/p values) -> codomain / range (o/p values)                                   |               |
+|                          | linear fn, quadratic fn, cubic fn, exponential fn, absolute value fn                   |               |
+|                          | logarithms -> inverse of exponential fn (where variable is in the power)               |               |
+| sequences and series     | arithmetic (increments at every step ), geometric (multiplies at every step)           |               |
+| matrices                 | arrays                                                                                 |               |
+| abstract algebra         | magma -> associativity -> semigroup -> identity -> monoid -> invertiblity -> group     |               |
+|                          | magma -> divisiblity -> quasigroup -> identity -> loop -> associativity -> group       |               |
+|                          | studies rules and systems behind those numbers                                         |               |
+|                          | concepts: groups, rings, fields and sets                                               |               |
+| group                    | mathematical structure with set of elements and an operation                           |               |
+|                          | operation must follow four rules: closure, associativity, identity element, inverses   |               |
+| rings                    | extends group by including two operations                                              |               |
+|                          |                                                                                        |               |
+| fields (rational domain) | set of elements -> addition, multiplication and a commutative division algebra         |               |
+|                          | equivalent to the field of complex numbers                                             |               |
+|--------------------------+----------------------------------------------------------------------------------------+---------------|
+** most important theorems in math
+|---------------------------------+-------------+-------|
+| theorem                         | explanation | notes |
+|---------------------------------+-------------+-------|
+| fermat's last theorey           |             |       |
+| euler's identity                |             |       |
+| fundamental theorem of calculus |             |       |
+| four color theory               |             |       |
+| pythogorean theorem             |             |       |
+| baye's theorem                  |             |       |
+| prime number theorem            |             |       |
+|---------------------------------+-------------+-------|
+** math symbols
+abc
+** engineering math
+- differential and integral calculus
+  - limits x->a f(x); 
+
+** calculus
+abc
 
 * resources
 ** books
