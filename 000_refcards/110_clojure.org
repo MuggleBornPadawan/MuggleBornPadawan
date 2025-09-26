@@ -1,0 +1,16 @@
+#+title: Guided learning - beast mode - Gemini
+* Introduction
+** installation
+- sudo apt install default-jdk rlwrap leiningen
+- rlwrap lein repl
+- => (println "Hello, Clojure")
+- Ctrl D to exit
+- m-x package-install cider
+- lein new app my-first-clojure-project
+- cd my-first-clojure-project
+- emacs -nw /src/my-first-clojure-project/core.clj
+- m-x cider-jack-in
+- C-c C-z - navigate between script and repl
+- C-c C-q - quit repl
+- repl (, tab) to see list of commands (ignore brackets)
+- lein run

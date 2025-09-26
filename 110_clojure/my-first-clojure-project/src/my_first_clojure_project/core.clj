@@ -1,0 +1,7 @@
+(ns my-first-clojure-project.core
+  (:gen-class))
+
+(defn -main
+  "I don't do a whole lot ... yet."
+  [& args]
+  (println "Hello, Worldddd!"))
