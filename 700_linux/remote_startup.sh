@@ -7,7 +7,11 @@ echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
 #linux debian packages
 sudo apt-get update && sudo apt-get dist-upgrade
 sudo apt-get install fonts-dejavu fzf zoxide gnuplot nasm ffmpeg lm-sensors sqlite3 mpg123 dnsutils make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme racket clojure rlwrap leiningen emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay neofetch trash-cli
+#clamav - antivirus package
+sudo apt-get install gcc make pkg-config python3 python3-pip python3-pytest valgrind cmake check libbz2-dev libcurl4-openssl-dev libjson-c-dev libmilter-dev libncurses5-dev libpcre2-dev libssl-dev libxml2-dev zlib1g-dev
 sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
+#openvpn
+#sudo apt-get install openvpn -y
 #npm packages
 npm list -g --depth=0
 npm outdated
@@ -65,6 +69,10 @@ tmux new -s alpha
 # final words 
 rm startup_log.log - a tmp.txt
 sleep 2
+sudo freshclam
+clamscan --version
+echo "run 'sudo clamscan -r /' every day. stay safe. have a good day"
+echo "run 'sudo systemctl status clamav-freshclam' to check status"
 cd
 espeak -v en-gb -s 175 -p 50 "Tux out"
 
