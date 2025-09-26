@@ -28,8 +28,8 @@ alias commit='cd && ./MuggleBornPadawan/700_linux/bckp/commits.sh'
 alias start='cd && ./MuggleBornPadawan/700_linux/bckp/start.sh'
 alias tw='cd && ./MuggleBornPadawan/700_linux/scripts/wisdom_nugget_generator.sh'
 alias tm='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_artithmetic_test.sh'
-alias ta='cd && ./MuggleBornPadawan/700_linux/scripts/openrouter_aeo_script.sh'
-alias ts="s && c && echo 'sleeping for few mins... $(date)' && sleep $((RANDOM % 200))"
+alias ta='cd && ts && ./MuggleBornPadawan/700_linux/scripts/openrouter_aeo_script.sh'
+alias ts="s && c && echo 'sleeping for few mins... $(date)' && sleep $((RANDOM % 600))"
 alias pw='pass unKnoWn'
 # Safety & Security Aliases
 alias ln='ln -i'
