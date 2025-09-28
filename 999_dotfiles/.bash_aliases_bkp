@@ -46,3 +46,5 @@ alias abc="s && echo 'test at $(date)'"
 # clamav scan
 alias scanFully='sudo clamscan -r -i /'
 alias scanStatus='sudo freshclam && clamscan --version && sudo systemctl status clamav-freshclam'
+# gemini query
+alias q='./MuggleBornPadawan/700_linux/scripts/gemini_query.sh $1'

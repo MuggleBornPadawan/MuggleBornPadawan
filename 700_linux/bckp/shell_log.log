@@ -1,15 +1,15 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Sun Sep 28 12:04:31 AM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Sun Sep 28 12:02:25 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Ign:2 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
 Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 163 kB in 1s (127 kB/s)
+Fetched 163 kB in 12s (14.1 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -102,18 +102,30 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
-├── @anthropic-ai/claude-code@1.0.98
-├── @google/gemini-cli@0.6.1
-├── @openai/codex@0.30.0
-├── corepack@0.33.0
-├── npm-check-updates@18.3.0
-└── npm@10.9.3
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 7s
+up to date, audited 144 packages in 9s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 986ms
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 839ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -127,59 +139,17 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-changed 1 package in 547ms
-Checking /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run ncu -u to upgrade package.json
-Upgrading /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run npm install to install new versions.
-
-added 469 packages, changed 1 package, and audited 613 packages in 23s
-
-97 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
-
-97 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-removed 449 packages, changed 9 packages, and audited 144 packages in 2s
+up to date, audited 144 packages in 793ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -192,74 +162,28 @@ Password Store
 ├── protector_key
 ├── tmp
 └── unKnoWn
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
 Weather report: chennai
 
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+29[0m([38;5;208m32[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m→[0m [38;5;220m17[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 4 km[0m           
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+33[0m([38;5;202m36[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
                 0.0 mm[0m         
 Weather report: pondicherry
 
-  [38;5;226m    \   /    [0m Clear
-  [38;5;226m     .-.     [0m [38;5;214m+28[0m([38;5;214m30[0m) °C[0m     
-  [38;5;226m  ― (   ) ―  [0m [1m↗[0m [38;5;154m8[0m km/h[0m       
-  [38;5;226m     `-’     [0m 10 km[0m          
-  [38;5;226m    /   \    [0m 0.0 mm[0m         
-rtt min/avg/max/mdev = 52.663/66.187/78.000/9.605 ms
- _________________________________________
-/ Courage is resistance to fear, mastery  \
-| of fear--not absence of fear. Except a  |
-| creature be part coward it is not a     |
-| compliment to say it is brave; it is    |
-| merely a loose misapplication of the    |
-| word. Consider the flea!--incomparably  |
-| the bravest of all the creatures of     |
-| God, if ignorance of fear were courage. |
-| Whether you are asleep or awake he will |
-| attack you, caring nothing for the fact |
-| that in bulk and strength you are to    |
-| him as are the massed armies of the     |
-| earth to a sucking child; he lives both |
-| day and night and all days and nights   |
-| in the very lap of peril and the        |
-| immediate presence of death, and yet is |
-| no more afraid than is the man who      |
-| walks the streets of a city that was    |
-| threatened by an earthquake ten         |
-| centuries before. When we speak of      |
-| Clive, Nelson, and Putnam as men who    |
-| "didn't know what fear was," we ought   |
-| always to add the flea--and put him at  |
-| the head of the procession.             |
-|                                         |
-| -- Mark Twain, "Pudd'nhead Wilson's     |
-\ Calendar"                               /
- -----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;190m12[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.1 mm[0m         
+rtt min/avg/max/mdev = 37.442/40.026/54.212/4.492 ms
 start gemma3:1b
-Flibbertigibbet wobbleberry shimmersprout gloomgleam.
-
 stop gemma
 start deepseek-r1:1.5b
-<think>
-
-</think>
-
-Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
-
 stop deepseek
-ClamAV update process started at Sun Sep 28 00:05:42 2025
+ClamAV update process started at Sun Sep 28 12:03:21 2025
 daily.cld database is up-to-date (version: 27775, sigs: 2076905, f-level: 90, builder: raynman)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27775/Sat Sep 27 13:56:14 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
