@@ -1,21 +1,36 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Sun Sep 28 12:02:25 PM IST 2025 
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Sun Sep 28 06:48:52 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 163 kB in 12s (14.1 kB/s)
+Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [280 kB]
+Hit:7 https://storage.googleapis.com/cros-packages/140 bookworm Release
+Fetched 443 kB in 1s (296 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 75.9 MB of archives.
+After this operation, 1,024 B of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 140.3.1esr-1~deb12u1 [75.9 MB]
+Fetched 75.9 MB in 43s (1,757 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 126593 files and directories currently installed.)
+Preparing to unpack .../firefox-esr_140.3.1esr-1~deb12u1_amd64.deb ...
+Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
+Unpacking firefox-esr (140.3.1esr-1~deb12u1) over (140.3.0esr-1~deb12u1) ...
+Setting up firefox-esr (140.3.1esr-1~deb12u1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for desktop-file-utils (0.26-1) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -67,7 +82,7 @@ sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).
-firefox-esr is already the newest version (140.3.0esr-1~deb12u1).
+firefox-esr is already the newest version (140.3.1esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
@@ -102,30 +117,18 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@1.0.67
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
+├── @anthropic-ai/claude-code@1.0.98
+├── @google/gemini-cli@0.6.1
+├── @openai/codex@0.30.0
+├── corepack@0.33.0
+├── npm-check-updates@18.3.0
+└── npm@10.9.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 9s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 986ms
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 839ms
+up to date, audited 144 packages in 12s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -139,17 +142,59 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 793ms
+changed 1 package in 1s
+Checking /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run ncu -u to upgrade package.json
+Upgrading /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run npm install to install new versions.
+
+added 469 packages, changed 1 package, and audited 613 packages in 20s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+removed 449 packages, changed 9 packages, and audited 144 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -162,28 +207,52 @@ Password Store
 ├── protector_key
 ├── tmp
 └── unKnoWn
+Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
+Encryption successful: 'daily_nuggets.txt.enc'
+Operation completed.
 Weather report: chennai
 
   [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+33[0m([38;5;202m36[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;220m19[0m km/h[0m      
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+33[0m([38;5;196m42[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
   [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.0 mm[0m         
+                0.2 mm[0m         
 Weather report: pondicherry
 
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;190m12[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.1 mm[0m         
-rtt min/avg/max/mdev = 37.442/40.026/54.212/4.492 ms
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;220m16[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 37.950/66.657/161.347/35.755 ms
+ ________________________________________
+/ You've been leading a dog's life. Stay \
+\ off the furniture.                     /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 start gemma3:1b
+Squibbleflump, Gloopstrobble, Fizzlewhirl, Quibblefloat, Zizzlebug, Snagglebloom, Wurglump.
+
 stop gemma
 start deepseek-r1:1.5b
+<think>
+
+</think>
+
+Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+
 stop deepseek
-ClamAV update process started at Sun Sep 28 12:03:21 2025
-daily.cld database is up-to-date (version: 27775, sigs: 2076905, f-level: 90, builder: raynman)
+ClamAV update process started at Sun Sep 28 18:51:20 2025
+daily database available for update (local version: 27775, remote version: 27776)
+Testing database: '/usr/local/share/clamav/tmp.d47c916aad/clamav-9e712fec495279b2ca785541bc877599.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27776, sigs: 2076906, f-level: 90, builder: raynman)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ClamAV 1.4.3/27776/Sun Sep 28 13:56:36 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
