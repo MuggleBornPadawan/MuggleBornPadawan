@@ -1,5 +1,63 @@
 #+title: linux commands
-* linux -> fedora + darwin (macOS)
+* linux
+** general intro
+zoxide, fd, tmux, gh cli, fzf, ripgrep, stow, jq, password-store, doppler cli
+linux is a kernel which helps you interact with hardware and software
+- shell - command line interface 
+- terminal 
+- file system directory 
+- root (super user)
+- permissions (rwx)
+- process (pid)
+- init - systemd
+- daemons - sshd or cron
+- pkg mgrs
+- kernel modules (hardware drivers)
+- shell scripts
+- environment variables ($path)
+- pipes
+- redirection
+- standard streams (stdin stdout stderr)
+- symbolic links (shortcuts)
+- hard links (alternate names)
+- mounting (storage)
+- swap space
+- cron jobs (schedule)
+- system logs (/var/log)
+- ping, ss, ip
+- ssh
+- sudo
+- system monitoring - htop, top
+*- signals - sigkill, sigterm
+*- file descriptors - fd table, file table, inode table, hd data blocks
+- run levels or targes (single user, multiple user, graphic users)
+- tmux
+*- storage mgmnt - fdisk, parted, lvm (logical volume manager)
+*- file systems - ext4, xfs, btrfs
+- disk usage - df (overall space), du (directory sizes)
+*- security - firewalls (iptables, ufw), SElinux, apparmor
+- authentication - PAM - pluggable authentication modules
+- /proc - ps aux virtual 
+- /dev - hardware and software 
+- /dmesg log - kernel and system messages (hardware issues)
+- compilation - make, gcc - directly from source code 
+- isolated applications - dockers, podman - package apps with their dependences 
+- virtulaization - kvm, qemu (entire os can be run inside os)
+- file sharing (nfs, samba)
+- transfer data (scp, rsync)
+- host services (web servers - apache, nginx)
+- monitoring networks - wireshark, tcp
+- kernel headers (compliing hardware)
+- package formats - .deb, ,rpm
+- flatpak, snap, appimage - install and run across many distros
+- systemd services - start, stop, enable, disable - background processess
+- display servers - x11, wayland
+- desktop environment - kde, gnome, xfce,
+- aliases
+- bash functions (bashrc?)
+- everything is a file (/sys / - hardware, processes and sockets)
+- initramfs - loaded at boot time - kernel for hardware l
+** linux -> fedora + darwin (macOS)
 - dnf - fedora
 - brew - macOS
 - yum - aws, Red Hat Enterprise Linux (RHEL), CentOS, Fedora
