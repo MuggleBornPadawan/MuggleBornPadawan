@@ -1,36 +1,20 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Sep 28 06:48:52 PM IST 2025 
+Date: Mon Sep 29 01:00:04 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [280 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 443 kB in 1s (296 kB/s)
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  firefox-esr
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 75.9 MB of archives.
-After this operation, 1,024 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 140.3.1esr-1~deb12u1 [75.9 MB]
-Fetched 75.9 MB in 43s (1,757 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 126593 files and directories currently installed.)
-Preparing to unpack .../firefox-esr_140.3.1esr-1~deb12u1_amd64.deb ...
-Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
-Unpacking firefox-esr (140.3.1esr-1~deb12u1) over (140.3.0esr-1~deb12u1) ...
-Setting up firefox-esr (140.3.1esr-1~deb12u1) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for desktop-file-utils (0.26-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -128,21 +112,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 12s
+up to date, audited 144 packages in 6s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 1s
+up to date, audited 144 packages in 943ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 1s
+changed 1 package in 768ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -154,7 +138,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 20s
+added 469 packages, changed 1 package, and audited 613 packages in 18s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -210,32 +194,19 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-Weather report: chennai
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+33[0m([38;5;196m42[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.2 mm[0m         
-Weather report: pondicherry
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;220m16[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 37.950/66.657/161.347/35.755 ms
- ________________________________________
-/ You've been leading a dog's life. Stay \
-\ off the furniture.                     /
- ----------------------------------------
+rtt min/avg/max/mdev = 41.107/71.205/169.431/31.007 ms
+ ______________________________________
+/ Your reasoning is excellent -- it's  \
+| only your basic assumptions that are |
+\ wrong.                               /
+ --------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Squibbleflump, Gloopstrobble, Fizzlewhirl, Quibblefloat, Zizzlebug, Snagglebloom, Wurglump.
+Flumphberry squawk wobble shimmerstone giggle.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -243,14 +214,11 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
-ClamAV update process started at Sun Sep 28 18:51:20 2025
-daily database available for update (local version: 27775, remote version: 27776)
-Testing database: '/usr/local/share/clamav/tmp.d47c916aad/clamav-9e712fec495279b2ca785541bc877599.tmp-daily.cld' ...
-Database test passed.
-daily.cld updated (version: 27776, sigs: 2076906, f-level: 90, builder: raynman)
+ClamAV update process started at Mon Sep 29 13:01:55 2025
+daily.cld database is up-to-date (version: 27776, sigs: 2076906, f-level: 90, builder: raynman)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 ClamAV 1.4.3/27776/Sun Sep 28 13:56:36 2025

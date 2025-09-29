@@ -23,11 +23,6 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 
-;; font
-(set-face-attribute 'default nil
-                    :font "DejaVu Sans Mono"
-                    :height 110)
-
 ;; package management
 (require 'package)
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
@@ -157,3 +152,9 @@
 
 ;; --- User Interface Settings ---
 (setq-default truncate-lines t)
+
+;; font
+(set-face-attribute 'default nil
+                    :font "DejaVu Sans Mono"
+                    :height 110)
+
