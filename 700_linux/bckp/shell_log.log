@@ -1,15 +1,44 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Sep 30 09:52:43 AM IST 2025 
+Date: Tue Sep 30 11:52:25 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Firewall is active and enabled on system startup
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Rule added
+Rule added (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Skipping adding existing rule
+Skipping adding existing rule (v6)
+Default incoming policy changed to 'deny'
+(be sure to update your rules accordingly)
+Default outgoing policy changed to 'allow'
+(be sure to update your rules accordingly)
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
 Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:5 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 163 kB in 1s (147 kB/s)
+Fetched 48.0 kB in 2s (27.9 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -98,6 +127,11 @@ zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Reading package lists...
 Building dependency tree...
 Reading state information...
+ufw is already the newest version (0.36.2-1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
@@ -113,21 +147,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 5s
+up to date, audited 144 packages in 14s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 934ms
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 380ms
+changed 1 package in 710ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -139,7 +173,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 472 packages, changed 1 package, and audited 616 packages in 25s
+added 469 packages, changed 1 package, and audited 613 packages in 30s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -154,7 +188,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 596 packages in 2s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 3s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -169,7 +203,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-removed 452 packages, changed 9 packages, and audited 144 packages in 1s
+removed 449 packages, changed 9 packages, and audited 144 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -197,29 +231,31 @@ Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
 Weather report: chennai
 
-  [38;5;250m     .-.     [0m Light drizzle, mist
-  [38;5;250m    (   ).   [0m [38;5;220m+27[0m([38;5;214m28[0m) °C[0m     
-  [38;5;250m   (___(__)  [0m [1m→[0m [38;5;220m19[0m km/h[0m      
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 3 km[0m           
-  [38;5;111m   ‘ ‘ ‘ ‘   [0m 0.0 mm[0m         
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;226m13[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
 Weather report: pondicherry
 
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;208m33[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;214m22[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 5.634/15.085/29.796/9.991 ms
- _________________________________________
-< Caution: Keep out of reach of children. >
- -----------------------------------------
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+29[0m([38;5;208m32[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;226m13[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 10 km[0m          
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.0 mm[0m         
+rtt min/avg/max/mdev = 56.797/89.787/139.834/20.574 ms
+ __________________________________
+/ Be cheerful while you are alive. \
+|                                  |
+\ -- Phathotep, 24th Century B.C.  /
+ ----------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet bounces on a squibbling pebble.
+Flibbertigibbet swirls beneath the shimmering moonbeam.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -227,17 +263,51 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
 wayland
-ClamAV update process started at Tue Sep 30 09:54:15 2025
-daily database available for update (local version: 27776, remote version: 27777)
-Testing database: '/usr/local/share/clamav/tmp.8052dd2e2b/clamav-c0c172dd6ebe866c6ef5565d6ca3f8ac.tmp-daily.cld' ...
-Database test passed.
-daily.cld updated (version: 27777, sigs: 2076912, f-level: 90, builder: raynman)
+/dev/pts/15
+ufw 0.36.2
+Copyright 2008-2023 Canonical Ltd.
+use this command to get more info: sudo ufw app list
+use alias security to get local copy
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     DENY IN     Anywhere                  
+80/tcp                     DENY IN     Anywhere                  
+21/tcp                     DENY IN     Anywhere                  
+25/tcp                     DENY IN     Anywhere                  
+110/tcp                    DENY IN     Anywhere                  
+137                        DENY IN     Anywhere                  
+138                        DENY IN     Anywhere                  
+139                        DENY IN     Anywhere                  
+53 (DNS)                   DENY IN     Anywhere                  
+443                        DENY IN     Anywhere                  
+445                        DENY IN     Anywhere                  
+143                        DENY IN     Anywhere                  
+22/tcp (v6)                DENY IN     Anywhere (v6)             
+80/tcp (v6)                DENY IN     Anywhere (v6)             
+21/tcp (v6)                DENY IN     Anywhere (v6)             
+25/tcp (v6)                DENY IN     Anywhere (v6)             
+110/tcp (v6)               DENY IN     Anywhere (v6)             
+137 (v6)                   DENY IN     Anywhere (v6)             
+138 (v6)                   DENY IN     Anywhere (v6)             
+139 (v6)                   DENY IN     Anywhere (v6)             
+53 (DNS (v6))              DENY IN     Anywhere (v6)             
+443 (v6)                   DENY IN     Anywhere (v6)             
+445 (v6)                   DENY IN     Anywhere (v6)             
+143 (v6)                   DENY IN     Anywhere (v6)             
+
+ClamAV update process started at Tue Sep 30 23:53:58 2025
+daily.cld database is up-to-date (version: 27778, sigs: 2076918, f-level: 90, builder: raynman)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27777/Mon Sep 29 13:57:51 2025
+ClamAV 1.4.3/27778/Tue Sep 30 13:59:52 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status

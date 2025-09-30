@@ -46,5 +46,8 @@ alias abc="s && echo 'test at $(date)'"
 # clamav scan
 alias scanFully='sudo clamscan -r -i /'
 alias scanStatus='sudo freshclam && clamscan --version && sudo systemctl status clamav-freshclam'
-# gemini query
+# gemini query and chat
 alias q='./MuggleBornPadawan/700_linux/scripts/gemini_query.sh $1'
+alias chat="cd && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh"
+# security
+alias security="sudo ufw version && echo 'use this command to get more info: sudo ufw app list' && sudo ufw status verbose"
