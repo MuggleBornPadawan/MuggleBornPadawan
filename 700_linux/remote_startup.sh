@@ -93,7 +93,7 @@ tty
 sudo ufw version 
 echo 'use this command to get more info: sudo ufw app list'
 echo 'use alias security to get local copy' 
-sudo ufw status verbose numbered
+sudo ufw status verbose numbered | sort -u
 sudo freshclam
 clamscan --version
 echo "run 'sudo clamscan -r /' every day. stay safe. have a good day"
