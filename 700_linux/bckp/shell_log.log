@@ -1,14 +1,15 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Sep 29 01:00:04 PM IST 2025 
+Date: Tue Sep 30 09:52:43 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:5 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
+Fetched 163 kB in 1s (147 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -106,27 +107,27 @@ Reading state information...
 ├── @google/gemini-cli@0.6.1
 ├── @openai/codex@0.30.0
 ├── corepack@0.33.0
-├── npm-check-updates@18.3.0
+├── npm-check-updates@19.0.0
 └── npm@10.9.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 6s
+up to date, audited 144 packages in 5s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 943ms
+up to date, audited 144 packages in 934ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 768ms
+changed 1 package in 380ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -138,7 +139,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 18s
+added 472 packages, changed 1 package, and audited 616 packages in 25s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -153,7 +154,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 596 packages in 2s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -168,7 +169,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-removed 449 packages, changed 9 packages, and audited 144 packages in 2s
+removed 452 packages, changed 9 packages, and audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -194,19 +195,31 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-rtt min/avg/max/mdev = 41.107/71.205/169.431/31.007 ms
- ______________________________________
-/ Your reasoning is excellent -- it's  \
-| only your basic assumptions that are |
-\ wrong.                               /
- --------------------------------------
+Weather report: chennai
+
+  [38;5;250m     .-.     [0m Light drizzle, mist
+  [38;5;250m    (   ).   [0m [38;5;220m+27[0m([38;5;214m28[0m) °C[0m     
+  [38;5;250m   (___(__)  [0m [1m→[0m [38;5;220m19[0m km/h[0m      
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 3 km[0m           
+  [38;5;111m   ‘ ‘ ‘ ‘   [0m 0.0 mm[0m         
+Weather report: pondicherry
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;208m33[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m→[0m [38;5;214m22[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 5.634/15.085/29.796/9.991 ms
+ _________________________________________
+< Caution: Keep out of reach of children. >
+ -----------------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumphberry squawk wobble shimmerstone giggle.
+Flibbertigibbet bounces on a squibbling pebble.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -214,13 +227,17 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
-ClamAV update process started at Mon Sep 29 13:01:55 2025
-daily.cld database is up-to-date (version: 27776, sigs: 2076906, f-level: 90, builder: raynman)
+wayland
+ClamAV update process started at Tue Sep 30 09:54:15 2025
+daily database available for update (local version: 27776, remote version: 27777)
+Testing database: '/usr/local/share/clamav/tmp.8052dd2e2b/clamav-c0c172dd6ebe866c6ef5565d6ca3f8ac.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27777, sigs: 2076912, f-level: 90, builder: raynman)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27776/Sun Sep 28 13:56:36 2025
+ClamAV 1.4.3/27777/Mon Sep 29 13:57:51 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
