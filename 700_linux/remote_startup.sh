@@ -69,6 +69,8 @@ tmux new -s alpha
 # final words 
 rm startup_log.log - a tmp.txt
 sleep 2
+echo $XDG_SESSION_TYPE
+loginctl show-session $(loginctl | grep $(whoami) | awk '{print $1}') -p Type
 sudo freshclam
 clamscan --version
 echo "run 'sudo clamscan -r /' every day. stay safe. have a good day"
