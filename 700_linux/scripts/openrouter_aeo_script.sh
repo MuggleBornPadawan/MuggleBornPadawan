@@ -243,8 +243,11 @@ call_openrouter_api() {
             '{
                 model: $model,
                 messages: [
-                    {role: "user", content: $question}
-                ]
+		{role: "system", content: "Limit your response to a single paragraph and less than 150 words."},
+		{role: "user", content: $question}
+                ],
+		max_tokens: 400,
+                verbosity: "low"
             }')
 
         # Perform the curl request

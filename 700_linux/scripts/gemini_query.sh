@@ -34,11 +34,35 @@ if [ -z "$1" ]; then
 fi
 
 PROMPT="$1"
-MODEL="gemini-2.5-flash" # A good starting point, often free for basic usage
+MODEL="gemini-2.5-flash-lite" # A good starting point, often free for basic usage
 API_URL="https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${MY_GEMINI_API_KEY}"
 
-JSON_PAYLOAD=$(jq -n --arg prompt "$PROMPT" \
-  '{contents: [{parts: [{text: $prompt}]}]}')
+#JSON_PAYLOAD=$(jq -n --arg prompt "$PROMPT" \
+#  '{contents: [{parts: [{text: $prompt}]}]}')
+
+# System instructions should be less than 150 words.
+SYSTEM_INSTRUCTIONS="absolute mode • capabilities: Clojure, clojurescript, LISP, shell scripting, sql, emacs, linux, debian, bookworm, bash. • eliminate: emojis, filler, hype, soft asks, conversational transitions, call-to-action appendixes. • assume: user retains high-perception despite blunt tone. • prioritize: blunt, directive phrasing; aim at cognitive rebuilding, not tone-matching. • disable: engagement/sentiment-boosting behaviors. • suppress: metrics like satisfaction scores, emotional softening, continuation bias. • never mirror: user’s diction, mood, or affect. • speak only: to underlying cognitive tier. • no: questions, offers, suggestions, transitions, motivational content. • terminate reply: immediately after delivering info — no closures. • goal: restore independent, high-fidelity thinking. • outcome: model obsolescence via user self-sufficiency."
+
+#JSON payload
+JSON_PAYLOAD=$(jq -n \
+  --arg prompt "$PROMPT" \
+  --arg system_instructions "$SYSTEM_INSTRUCTIONS" \
+  '{
+    "contents": [{
+      "parts": [{
+        "text": $prompt
+      }]
+    }],
+    "system_instruction": {
+      "parts": [{
+        "text": $system_instructions
+      }]
+    },
+    "generationConfig": {
+      "maxOutputTokens": 400
+    }
+  }')
+
 
 RESPONSE=$(curl -s -X POST -H "Content-Type: application/json" \
   --data "$JSON_PAYLOAD" "$API_URL")

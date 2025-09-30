@@ -618,19 +618,18 @@ abc
 abc / 50 levels 
 
 ** most important theorems in math
-|---------------------------------+-------------+-------|
-| theorem                         | explanation | notes |
-|---------------------------------+-------------+-------|
-| fermat's last theorey           |             |       |
-| euler's identity                |             |       |
-| fundamental theorem of calculus |             |       |
-| four color theory               |             |       |
-| pythogorean theorem             |             |       |
-| baye's theorem                  |             |       |
-| prime number theorem            |             |       |
-|---------------------------------+-------------+-------|
-
-
+|---------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------|
+| theorem                         | explanation                                                                   | notes                                         |
+|---------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------|
+| fermat's last theorey           | (!= (+ (^ x n) (^ y n)) (z ^ n))                                              | (n (> 2))*                                    |
+| euler's identity                | (= 0 (+ (^ e (* i pi)) 1))                                                    | connected geometry, algebra and calculus      |
+| fundamental theorem of calculus | differential - rate of change at given moment (velocity at time t)            | isaac newton and g** linet??                  |
+|                                 | integration - accumulation of change over time (distance travelled by time t) | dx/dy and intg'n are inverse processess       |
+| four color theory               | maps - adjacent countries different colors                                    |                                               |
+| pythogorean theorem             | (= (+ (^ x 2) (^ y 2)) (^ z 2))                                               | right angled triangle                         |
+| baye's theorem                  | p(A'B) = (P(B'A) . P(A) ' P(B))                                               | prob(a likelyhood) given prob(b - evidence)   |
+| prime number theorem            | (apprx ((pi n) (/ n (log n))))                                                | carl friedrich gauss - distribution of primes |
+|---------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------|
 ** engineering math
 - differential and integral calculus
   - limits x->a f(x);

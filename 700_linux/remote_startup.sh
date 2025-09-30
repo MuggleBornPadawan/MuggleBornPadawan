@@ -4,14 +4,33 @@ cd
 espeak -v en-gb -s 175 -p 50 "roger that"
 echo "run this file for any remote debian server setup, startup and chk backups"
 echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
+
+#ufw
+sudo ufw enable 
+sudo ufw deny ftp #21
+sudo ufw deny ssh #22
+sudo ufw deny smtp #25
+sudo ufw deny dns #53 
+sudo ufw deny http #80
+sudo ufw deny pop3 #110
+sudo ufw deny 137 #NetBIOS / SMB
+sudo ufw deny 138 #NetBIOS / SMB
+sudo ufw deny 139 #NetBIOS / SMB
+sudo ufw deny 143 #imap 
+sudo ufw deny https #443
+sudo ufw deny 445 #server message block (smb)
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
 #linux debian packages
 sudo apt-get update && sudo apt-get dist-upgrade
 sudo apt-get install fonts-dejavu fzf zoxide gnuplot nasm ffmpeg lm-sensors sqlite3 mpg123 dnsutils make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme racket clojure rlwrap leiningen emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay neofetch trash-cli
 #clamav - antivirus package
 sudo apt-get install gcc make pkg-config python3 python3-pip python3-pytest valgrind cmake check libbz2-dev libcurl4-openssl-dev libjson-c-dev libmilter-dev libncurses5-dev libpcre2-dev libssl-dev libxml2-dev zlib1g-dev
-sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
-#openvpn
+#firewall - security - openvpn
 #sudo apt-get install openvpn -y
+sudo apt-get install ufw
+sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
 #npm packages
 npm list -g --depth=0
 npm outdated
@@ -65,16 +84,19 @@ ollama run deepseek-r1:1.5b "how are you doing?"
 ollama stop deepseek-r1:1.5b
 echo "stop deepseek"
 tmux new -s alpha
-
 # final words 
 rm startup_log.log - a tmp.txt
 sleep 2
 echo $XDG_SESSION_TYPE
 loginctl show-session $(loginctl | grep $(whoami) | awk '{print $1}') -p Type
+tty
+sudo ufw version 
+echo 'use this command to get more info: sudo ufw app list'
+echo 'use alias security to get local copy' 
+sudo ufw status verbose numbered
 sudo freshclam
 clamscan --version
 echo "run 'sudo clamscan -r /' every day. stay safe. have a good day"
 echo "run 'sudo systemctl status clamav-freshclam' to check status"
 cd
 espeak -v en-gb -s 175 -p 50 "Tux out"
-

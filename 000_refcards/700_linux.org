@@ -1,5 +1,79 @@
 #+title: linux commands
 * linux
+** security
+- firewall - ufw?
+- ssh - fail2b
+- iptables 
+- apparmour
+- selinux
+- sudo - restrict root access to users
+- ssh hardening
+- audit logging
+- users / groups / owners - archaic
+- permissions
+- zero trust architecture - lease possible permissions at every level - user based and device based (not netwrok based)
+** uncomplicated firewall (ufw)
+*** deny by default and allow by exception
+- port 20 and 21 - ftp
+- port 22 - secure shell
+- port 23 - telnet
+- port 25 - smtp (simple mail transfer protocol)
+- port 53 - domain name system
+- port 67 & 68 - dynamic host configuration protocol 
+- port 80 - http
+- port 110 - pop3 (post office protocol version3)
+- port 123 - network time protocol
+- port 137, 138, 139 - NetBIOS, SMB
+- port 143 - imap (internet message access protocol)
+- port 443 - https
+- port 445 - server message block (smb)
+*** internal ports 
+- port 5432 - postgresql
+- application layer or ssh access recommended
+- vpn access or ssl / tls or restricted firewall methods are not so secure
+- DO NOT EXPOSE directly
+*** general
+- sudo ufw app list - script to be written to get the corresponding ports and display it in "security" alias
+  
+** open source options
+|----------------------------+------------------------|
+| open source                | propr'y                |
+|----------------------------+------------------------|
+| thunderbird (mozilla)      | microsoft outlook      |
+| godot                      | unity                  |
+| bittorrent (qb)            | mutorrent              |
+| virtualbox (oracle)        | vmware                 |
+| etherpad                   | google docs            |
+| musescore                  | sibelius - sheet music |
+| logseq                     | obsidian               |
+| okular                     | adobe acrobat          |
+| clamav                     | nortan antivirus       |
+| krita                      | coral painter          |
+| *anytype                   | notion                 |
+| syncthing                  | dropbox                |
+| firefox                    | microsoft ie           |
+| vlc media player           | windows media player   |
+| OBS studio                 | camtasia               |
+| 7-zip                      | winzip                 |
+| gimp                       | adobe photoshop        |
+| libreoffice                | microsoft office       |
+| wordpress                  | commercial cms         |
+| php                        | asp .net               |
+| git                        | perforce               |
+| blender                    | autodesk maya          |
+| audacity - audio           | adobe audition         |
+| signal - privacy           | whatsapp               |
+| trello                     | jira                   |
+| nextcloud                  | google drive           |
+| keepass                    | lastpass               |
+| shotcut - editing software | adobe premiere         |
+| postgresql                 | oracle db              |
+| inkscape                   | adobe illustrator      |
+| jitsi meet                 | zoom                   |
+| freeCAD                    | autoCAD                |
+| Nginx                      | Apache HTTP server     |
+|----------------------------+------------------------|
+
 ** general intro
 zoxide, fd, tmux, gh cli, fzf, ripgrep, stow, jq, password-store, doppler cli
 linux is a kernel which helps you interact with hardware and software
