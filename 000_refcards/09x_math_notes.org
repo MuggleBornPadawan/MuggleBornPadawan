@@ -1,0 +1,274 @@
+* math
+** dictionary of math
+All of math can be described in four categories:
+- primitive concepts - mathematical object that has no definition (eg: point, line, plane and set). we simply accept that they exist. explanation of concept is possible but proper definition cannot be constructed. 
+- definitions - act of naming mathematical objects or relationship between objects
+- axioms (postulates) - simply accepted without demonstration 
+- theorems - mathematical sentence obtained through demonstration (logical deduction). eg: pythogroraz theorm
+- forumula - Every formula is a theorem - has to be demonstrated 
+- property - a fundamental characteristic or quality of a mathematical object, nuber or operation that remains consistent under specific conditions 
+- lemma - result used to demonstrate a theorem 
+- corolloary - result that follows immediately and directly from a theorem
+- law - constant relationship between elements that can vary
+** numbers
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| numbers           | explanation                           | notes                                                                     |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| natural (N)       | N={1,2,3,...}                         | addition and multipication is closed, associative and commutative         |
+|                   |                                       | identity element under addition is zero                                   |
+|                   |                                       | identity element under multiplication is one                              |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| whole (W)         | W={0,1,2,3,...}                       | closed under addition and multiplication                                  |
+|                   | Non negative                          | zero is the additive identity element                                     |
+|                   | W=N+{0}                               | one is the multiplicative identiy element                                 |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| integers (Z)      | Z={...,-3,-2,-1,0,1,2,3,...}          | closed under addition, subtraction and multiplication                     |
+|                   |                                       | addition and multiplication are commutative, associative and distributive |
+|                   |                                       | additive identiy = 0; multiplicative identiy = 1                          |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| rational (Q)      | Q=fractions; p / q                    | closed under addtion, subtraction, multiplication and division            |
+|                   | p and q are integers, decimals?       | addition and multiplication are commutative and associative               |
+|                   | q cannot be zero                      | addition and subtraction are distributive                                 |
+|                   | terminating and repeating decimals    |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| irrational (P)    | P=decimal expansions                  | distributive under addition and subtraction                               |
+|                   | non-terminating and non-repeating     | commutative and associative under addition and multiplication             |
+|                   | Eg: pi, eulers number                 |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| real (R)          | R=(N u W u Z u Q u P)                 | commutative, associative and distributive under + and *                   |
+|                   | any number (sans imaginery)           | obey inverse property                                                     |
+|                   |                                       | additive identity element (0); multiplicative identiy element (1)         |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| imaginery (I)     | i=sqrt(-N)                            | Does not exist                                                            |
+|                   |                                       |                                                                           |
+|                   |                                       |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| complex (C)       | Z = a +ib                             | addition and multipication are associative and commutative                |
+|                   |                                       | distributive of multipication over addition                               |
+|                   |                                       |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| algebric (A)      | solution to equations                 |                                                                           |
+|                   | coefficients are integers?            |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| transcedental (T) | subset of irrational                  | not the root of any non-zero polynomial equations with int coeffs         |
+|                   | Eg: pi, e^a, i^i                      | cannot be derived from simple algebraic equations                         |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| quaternions (H)   | 1 real; 3 imaginary                   | extend complex numbers to four dimensions                                 |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| octonions (O)     | 1 real; 7 imaginary                   | string theory; non-associative algebra (multiplication wont work)         |
+|                   |                                       | higher mathematics and theoritical physics                                |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| p-adic (Qp)       | system of numbers                     | solving equations in ways that are not possible using real numbers        |
+|                   | number theory                         | diaphantine equations seeking integer solutions                           |
+|                   | measure distance based on divisiblity |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| constructible (E) | straight edge and compass             | square root                                                               |
+|                   | geometric shapes                      | trisecting angle challenge                                                |
+|                   |                                       |                                                                           |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| computable (Rc)   | calculated by an algorithm            | generated or approximated using finite number of steps                    |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+| definable         | finite set of rules or formulas       | may not be easy to compute                                                |
+|                   | eg: golden ratio                      | can be logically described in a mathematical system                       |
+|-------------------+---------------------------------------+---------------------------------------------------------------------------|
+** symbols
+|------------------------------+---------------------------------------+---------------------------------------------------------------------------------+---------------------------|
+| notation                     | symbol                                | explanation                                                                     | notes                     |
+|------------------------------+---------------------------------------+---------------------------------------------------------------------------------+---------------------------|
+| +                            | addition                              |                                                                                 |                           |
+| -                            | subtraction                           |                                                                                 |                           |
+| x, .                         |                                       |                                                                                 |                           |
+| '/', ÷                       | division                              |                                                                                 |                           |
+| ±                            | plus minus                            | indicate range of values                                                        |                           |
+| -+                           | minus plus                            |                                                                                 |                           |
+| '='                          | equal                                 |                                                                                 |                           |
+| !=, ≠                        | not equal to                          |                                                                                 |                           |
+| ≈                            | approximately equal to                |                                                                                 |                           |
+| ~                            | similarity, proportional              |                                                                                 |                           |
+| ∝                            | proportional                          |                                                                                 |                           |
+| ≅                            | congruence, identity                  |                                                                                 |                           |
+| <                            | less than                             |                                                                                 |                           |
+| >                            | greater than                          |                                                                                 |                           |
+| ≤                            | less than or equal to                 |                                                                                 |                           |
+| ≥                            | greater than or equal to              |                                                                                 |                           |
+| <<                           | much less than                        |                                                                                 |                           |
+| >>                           | much greater than                     |                                                                                 |                           |
+| √                            | square root                           |                                                                                 |                           |
+| ⁿ√                           | nth root                              |                                                                                 |                           |
+| ∅                            | empty set                             | no elements                                                                     |                           |
+| '#'                          | number sign or octothorp or hash tag  | cardinality                                                                     |                           |
+| 1 ∈ A                        | in; belongs to                        |                                                                                 |                           |
+| 5 ∉ A                        | not in; does not belong to            |                                                                                 |                           |
+| ⊂                            | set inclusion; proper subset          |                                                                                 |                           |
+| ⊆                            | set inclusion; possibly equal         |                                                                                 |                           |
+| a ∪ b                        | union                                 | new set combining both without duplicates                                       |                           |
+| a ∩ b                        | intersection                          | new set with only common elements                                               |                           |
+| a \ b; a ⦱ b; a - b          | back slash; set difference            | set elements in a but not in b                                                  |                           |
+| a Δ b; a ⊝ b                 | set symmetric difference              | set elements in either of a or b but not in both                                |                           |
+| N                            | natural numbers                       | N = {1, 2, 3, ...}                                                              |                           |
+| Z                            | integers                              | Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}                                          |                           |
+| Q                            | rationals                             | Q = {1/2, -3, 0.75, ...}                                                        |                           |
+| R                            | reals                                 | R = all points in a line                                                        |                           |
+| C                            | complex numbers                       | C = {a + bi [ a, b ∈ R}                                                         |                           |
+| H                            | quarternions                          | H = {a + bi + cj + dk}                                                          |                           |
+| O                            | octonions                             | 8D extension of complex numbers                                                 |                           |
+| U                            | universal set                         | all possible elements in context                                                |                           |
+| ¬, ~                         | negation                              | logic; opposite of state                                                        |                           |
+| a ∨ b                        | or                                    | either or                                                                       |                           |
+| a ∧ b                        | and                                   | both                                                                            |                           |
+| a ⊕  b                       | exclusive or                          | either one is true; not both                                                    |                           |
+| T                            | tee                                   | always true                                                                     |                           |
+| ⊥                            | up tack                               | always false                                                                    |                           |
+| ∀                            | universal quantifier                  | `∀x P(x)` means "For all x, P(x) is true."                                      |                           |
+| ∃                            | existential quantifier                | `∃x P(x)` means "There exists an x such that P(x) is true"                      | at least one value        |
+| ∃!                           | uniqueness quantifier                 | `!∃x P(x)` means "Ther exists exactly one element whcih satisfies P(x) is true" |                           |
+| →, ⇒                         | implication                           | if this, then that                                                              |                           |
+| ↔, ⇔                         | logical equivalence                   | if and only if                                                                  |                           |
+| f', f'', f'''                | lagrange's derivative notation        |                                                                                 |                           |
+| ẋ or ẍ                       | newton's derivative notation          | dx/dt, d²x/dt²                                                                  |                           |
+| dy/dx,d²y/dx²                | leibniz's derivative notation         |                                                                                 |                           |
+| ∂f/∂x, ∂²f/∂x², ∂/∂x (∂f/∂y) | leibniz's partial derivative notation |                                                                                 |                           |
+| ∫                            | integral                              | area                                                                            |                           |
+| ∬                            | double integral                       | surface in 2D                                                                   |                           |
+| ∭                            | triple integral                       | volume in 3D                                                                    |                           |
+| ∮                            | contour integral                      | closed curve                                                                    |                           |
+| →                            | arrow                                 | function definition                                                             |                           |
+| (f ∘ g)(x)                   | function composition                  | f(g(x))                                                                         | generally not commutative |
+|                              |                                       |                                                                                 |                           |
+|------------------------------+---------------------------------------+---------------------------------------------------------------------------------+---------------------------|
+** subjects
+|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
+| math          | explanation                          | notes                                                                                                   |
+|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
+| arithmetic    | + - * /                              | natural, integers, rational, irrational                                                                 |
+| algebra       | vairables (symbols)                  | linear eq, quadratic, matrices, vector models, groups and rings, patterns in symmetry and number theory |
+| geometry      | shapes and spaces                    | 2d and 3d, eucliedian and non-eucliedian                                                                |
+| trignometry   | angles and sides                     | radians, (sound and planetary movements)                                                                |
+| calculus      | continuous change                    | diff calc - rates of change,                                                                            |
+| analysis      | functions and limits                 | continuity and convergence (complex n = real + imaginary)                                               |
+| number theory | integers -  prime, divisiblity, gcd  | diophantine equations, reimann hypothesis,                                                              |
+| combinatorics | permutation and combinations         | graph theory                                                                                            |
+| probablity    | possiblity, likelyhood of events     | theoretical, experimental, axiomatic                                                                    |
+| statistics    | data lifecycle management            | uncertainity and variation; regression and bayesian methods                                             |
+| topology      | study properties ~ deformation       | point set (openness and cconnectedness), algebraic (homotopy and homology),                             |
+| set theory    | union, intersection                  | cardinaltiy (finite vs infinite), axiom of choice                                                       |
+| logic         | (t or f) propositions and predicates | statements, formal system (proof consistency), type theory                                              |
+| discrete math | distinct and countable structures    | combinatorics, graph theory and logic theory; sets, relations and algorithms                            |
+| applied math  |                                      | chaos                                                                                                   |
+|---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
+** derivatives
+source: X to Y (YT)
+|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
+| type        | explanation                   | notes                          | application                                         |
+|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
+| basic       | instantaneous rate of change  | f'(x)=(dx/dy) defined by limit | motion, growth and optimization                     |
+| higher      | rate of change                | f''(x)                         | accceleration, graph curvature and physical systems |
+| partial     | multiple variables            | fx = df/dx or fy = df/dy       | one variable; others constant                       |
+| total       | dependency on single variable | f(x(t),y(t))                   | eg: time; dynamics and thermodynamics               |
+| implicit    |                               | F(x,y)=0                       |                                                     |
+| directional |                               |                                |                                                     |
+| logarthmic  | cosines and sines             |                                |                                                     |
+| parametric  | curves                        |                                | graphics                                            |
+| covariant   | curves                        |                                |                                                     |
+| functional  | function of functions         |                                |                                                     |
+| lie         | tensor flow change            | scalar and vector field        |                                                     |
+| numerical   |                               |                                | simulation and data analysis                        |
+| fractional  |                               |                                | viscoelasticity and signal processing               |
+| func??      |                               |                                |                                                     |
+|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
+** algebra
+- substitution of unknown as symbols (variables + constants) combined with mathematical operations (pemdas)
+- solve the equations to arrive at solutions. find sets (x, y, ...) that obey the equations 
+|--------------------------+----------------------------------------------------------------------------------------+---------------|
+| equation                 | explanation                                                                            | notes         |
+|--------------------------+----------------------------------------------------------------------------------------+---------------|
+| linear                   | highest power of variable is one; sloped lines, substitution, elimination and graphing | y = mx + c;   |
+| quadratic                | highest power of variable is two; parabolas; factoring, square, equation               | ax^2 + bx + c |
+| polynomials              | variables raised to whole number powers; cubic and quadratics -> calculus              |               |
+| exponents                | rules: product of power, power of a power, zero exponent, negative exponenent          |               |
+|                          | multiples of itself                                                                    |               |
+| radicals                 | reverse of exponentiation                                                              |               |
+| log                      | exponents and radicals for very large or very small values                             |               |
+| functions and relations  | ordered pairs -> table -> graph -> mapping diagram                                     | f(x)          |
+|                          | domain (i/p values) -> codomain / range (o/p values)                                   |               |
+|                          | linear fn, quadratic fn, cubic fn, exponential fn, absolute value fn                   |               |
+|                          | logarithms -> inverse of exponential fn (where variable is in the power)               |               |
+| sequences and series     | arithmetic (increments at every step ), geometric (multiplies at every step)           |               |
+| matrices                 | arrays                                                                                 |               |
+| abstract algebra         | magma -> associativity -> semigroup -> identity -> monoid -> invertiblity -> group     |               |
+|                          | magma -> divisiblity -> quasigroup -> identity -> loop -> associativity -> group       |               |
+|                          | studies rules and systems behind those numbers                                         |               |
+|                          | concepts: groups, rings, fields and sets                                               |               |
+| group                    | mathematical structure with set of elements and an operation                           |               |
+|                          | operation must follow four rules: closure, associativity, identity element, inverses   |               |
+| rings                    | extends group by including two operations                                              |               |
+|                          |                                                                                        |               |
+| fields (rational domain) | set of elements -> addition, multiplication and a commutative division algebra         |               |
+|                          | equivalent to the field of complex numbers                                             |               |
+|--------------------------+----------------------------------------------------------------------------------------+---------------|
+
+** math symbols
+abc
+
+** calculus
+abc / 50 levels 
+
+** most important theorems in math
+|---------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------|
+| theorem                         | explanation                                                                   | notes                                         |
+|---------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------|
+| fermat's last theorey           | (!= (+ (^ x n) (^ y n)) (z ^ n))                                              | (n (> 2))*                                    |
+| euler's identity                | (= 0 (+ (^ e (* i pi)) 1))                                                    | connected geometry, algebra and calculus      |
+| fundamental theorem of calculus | differential - rate of change at given moment (velocity at time t)            | isaac newton and g** linet??                  |
+|                                 | integration - accumulation of change over time (distance travelled by time t) | dx/dy and intg'n are inverse processess       |
+| four color theory               | maps - adjacent countries different colors                                    |                                               |
+| pythogorean theorem             | (= (+ (^ x 2) (^ y 2)) (^ z 2))                                               | right angled triangle                         |
+| baye's theorem                  | p(A'B) = (P(B'A) . P(A) ' P(B))                                               | prob(a likelyhood) given prob(b - evidence)   |
+| prime number theorem            | (apprx ((pi n) (/ n (log n))))                                                | carl friedrich gauss - distribution of primes |
+|---------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------|
+** engineering math
+- differential and integral calculus
+  - limits x->a f(x);
+  - derivatives -> instantaneous rate of change or slope of the tangent at any point
+  - derivatives -> is the fn increassing or decreasing? max and min values
+  - integralss -> cumulative value (inverse of diff)
+- calculus
+  - single variable calculus ; f(x) = x^2 + 2
+    - sequence - ordered list of numbers
+    - infinite series - add up all terms of sequence -> adding up to finite number is called convergence
+      - taylor series, maclaurin series 
+  - multi variable calculus; f(x, y, z) - known functions
+    - partila derivatives, multiple integrals, new math techniques
+    - gradient (not slope here) - vector of slope; del notation
+    - divergence - is the field converging or spreading out? - dot product of nabla with a vector field 
+    - curl - measures rotation of vector field at each point - cross product of nabla with a vector field
+ - differential equations - unknown functions 
+   - ordinary differential equations - ODE - (single variable)
+     - first order - variable raised to power one - methods: seperation of variables, integrating factors and substitution
+     - second order - variable raised to power two - methods: homogenous and non-homogenous equation 
+   - partial differential equations - PDE - (multiple variables)
+     - laplacian - methods: seperation of variables, fourier analysis and numberical
+   - solution: existance and uniqueness theorem
+   - linear algebra:
+     - vectors, matrices and linear transformations
+       - dot product - scale
+       - cross product - perpendicular vector     
+     - geometry - coordinate systems (cartesian) and geometric shapes
+     - couple of massive theorems:
+       - divergence theorem or gauss's theorem
+       - stoke's theorem 
+  - numerical methods
+    - newton's method
+    - euler's method
+    - RK4 method 
+- probablity theory
+  -  sample space - subsets - axioms -
+  - probablityhh density functions
+  - normal distributions
+  - central limits theorem
+- physics - maxwell's equations
+  - gauss's law
+  - no magnetic monopoles
+  - faraday's law
+  - anti maxweell law
+
