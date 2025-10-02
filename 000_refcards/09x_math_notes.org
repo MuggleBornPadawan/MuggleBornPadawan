@@ -1,5 +1,5 @@
 * math
-** dictionary of math
+** dictionary
 All of math can be described in four categories:
 - primitive concepts - mathematical object that has no definition (eg: point, line, plane and set). we simply accept that they exist. explanation of concept is possible but proper definition cannot be constructed. 
 - definitions - act of naming mathematical objects or relationship between objects
@@ -72,70 +72,92 @@ All of math can be described in four categories:
 |                   | eg: golden ratio                      | can be logically described in a mathematical system                       |
 |-------------------+---------------------------------------+---------------------------------------------------------------------------|
 ** symbols
-|------------------------------+---------------------------------------+---------------------------------------------------------------------------------+---------------------------|
-| notation                     | symbol                                | explanation                                                                     | notes                     |
-|------------------------------+---------------------------------------+---------------------------------------------------------------------------------+---------------------------|
-| +                            | addition                              |                                                                                 |                           |
-| -                            | subtraction                           |                                                                                 |                           |
-| x, .                         |                                       |                                                                                 |                           |
-| '/', ÷                       | division                              |                                                                                 |                           |
-| ±                            | plus minus                            | indicate range of values                                                        |                           |
-| -+                           | minus plus                            |                                                                                 |                           |
-| '='                          | equal                                 |                                                                                 |                           |
-| !=, ≠                        | not equal to                          |                                                                                 |                           |
-| ≈                            | approximately equal to                |                                                                                 |                           |
-| ~                            | similarity, proportional              |                                                                                 |                           |
-| ∝                            | proportional                          |                                                                                 |                           |
-| ≅                            | congruence, identity                  |                                                                                 |                           |
-| <                            | less than                             |                                                                                 |                           |
-| >                            | greater than                          |                                                                                 |                           |
-| ≤                            | less than or equal to                 |                                                                                 |                           |
-| ≥                            | greater than or equal to              |                                                                                 |                           |
-| <<                           | much less than                        |                                                                                 |                           |
-| >>                           | much greater than                     |                                                                                 |                           |
-| √                            | square root                           |                                                                                 |                           |
-| ⁿ√                           | nth root                              |                                                                                 |                           |
-| ∅                            | empty set                             | no elements                                                                     |                           |
-| '#'                          | number sign or octothorp or hash tag  | cardinality                                                                     |                           |
-| 1 ∈ A                        | in; belongs to                        |                                                                                 |                           |
-| 5 ∉ A                        | not in; does not belong to            |                                                                                 |                           |
-| ⊂                            | set inclusion; proper subset          |                                                                                 |                           |
-| ⊆                            | set inclusion; possibly equal         |                                                                                 |                           |
-| a ∪ b                        | union                                 | new set combining both without duplicates                                       |                           |
-| a ∩ b                        | intersection                          | new set with only common elements                                               |                           |
-| a \ b; a ⦱ b; a - b          | back slash; set difference            | set elements in a but not in b                                                  |                           |
-| a Δ b; a ⊝ b                 | set symmetric difference              | set elements in either of a or b but not in both                                |                           |
-| N                            | natural numbers                       | N = {1, 2, 3, ...}                                                              |                           |
-| Z                            | integers                              | Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}                                          |                           |
-| Q                            | rationals                             | Q = {1/2, -3, 0.75, ...}                                                        |                           |
-| R                            | reals                                 | R = all points in a line                                                        |                           |
-| C                            | complex numbers                       | C = {a + bi [ a, b ∈ R}                                                         |                           |
-| H                            | quarternions                          | H = {a + bi + cj + dk}                                                          |                           |
-| O                            | octonions                             | 8D extension of complex numbers                                                 |                           |
-| U                            | universal set                         | all possible elements in context                                                |                           |
-| ¬, ~                         | negation                              | logic; opposite of state                                                        |                           |
-| a ∨ b                        | or                                    | either or                                                                       |                           |
-| a ∧ b                        | and                                   | both                                                                            |                           |
-| a ⊕  b                       | exclusive or                          | either one is true; not both                                                    |                           |
-| T                            | tee                                   | always true                                                                     |                           |
-| ⊥                            | up tack                               | always false                                                                    |                           |
-| ∀                            | universal quantifier                  | `∀x P(x)` means "For all x, P(x) is true."                                      |                           |
-| ∃                            | existential quantifier                | `∃x P(x)` means "There exists an x such that P(x) is true"                      | at least one value        |
-| ∃!                           | uniqueness quantifier                 | `!∃x P(x)` means "Ther exists exactly one element whcih satisfies P(x) is true" |                           |
-| →, ⇒                         | implication                           | if this, then that                                                              |                           |
-| ↔, ⇔                         | logical equivalence                   | if and only if                                                                  |                           |
-| f', f'', f'''                | lagrange's derivative notation        |                                                                                 |                           |
-| ẋ or ẍ                       | newton's derivative notation          | dx/dt, d²x/dt²                                                                  |                           |
-| dy/dx,d²y/dx²                | leibniz's derivative notation         |                                                                                 |                           |
-| ∂f/∂x, ∂²f/∂x², ∂/∂x (∂f/∂y) | leibniz's partial derivative notation |                                                                                 |                           |
-| ∫                            | integral                              | area                                                                            |                           |
-| ∬                            | double integral                       | surface in 2D                                                                   |                           |
-| ∭                            | triple integral                       | volume in 3D                                                                    |                           |
-| ∮                            | contour integral                      | closed curve                                                                    |                           |
-| →                            | arrow                                 | function definition                                                             |                           |
-| (f ∘ g)(x)                   | function composition                  | f(g(x))                                                                         | generally not commutative |
-|                              |                                       |                                                                                 |                           |
-|------------------------------+---------------------------------------+---------------------------------------------------------------------------------+---------------------------|
+|------------------------------+-----------------------------------------+---------------------------------------------------------------------------------+---------------------------|
+| notation                     | symbol                                  | explanation                                                                     | notes                     |
+|------------------------------+-----------------------------------------+---------------------------------------------------------------------------------+---------------------------|
+| +                            | addition                                |                                                                                 |                           |
+| -                            | subtraction                             |                                                                                 |                           |
+| x, .                         |                                         |                                                                                 |                           |
+| '/', ÷                       | division                                |                                                                                 |                           |
+| ±                            | plus minus                              | indicate range of values                                                        |                           |
+| -+                           | minus plus                              |                                                                                 |                           |
+| '='                          | equal                                   |                                                                                 |                           |
+| !=, ≠                        | not equal to                            |                                                                                 |                           |
+| ≈                            | approximately equal to                  |                                                                                 |                           |
+| ~                            | similarity, proportional                |                                                                                 |                           |
+| ∝                            | proportional                            |                                                                                 |                           |
+| ≅                            | congruence, identity                    |                                                                                 |                           |
+| <                            | less than                               |                                                                                 |                           |
+| >                            | greater than                            |                                                                                 |                           |
+| ≤                            | less than or equal to                   |                                                                                 |                           |
+| ≥                            | greater than or equal to                |                                                                                 |                           |
+| <<                           | much less than                          |                                                                                 |                           |
+| >>                           | much greater than                       |                                                                                 |                           |
+| √                            | square root                             |                                                                                 |                           |
+| ⁿ√                           | nth root                                |                                                                                 |                           |
+| ∅                            | empty set                               | no elements                                                                     |                           |
+| '#'                          | number sign or octothorp or hash tag    | cardinality                                                                     |                           |
+| 1 ∈ A                        | in; belongs to                          |                                                                                 |                           |
+| 5 ∉ A                        | not in; does not belong to              |                                                                                 |                           |
+| ⊂                            | set inclusion; proper subset            |                                                                                 |                           |
+| ⊆                            | set inclusion; possibly equal           |                                                                                 |                           |
+| a ∪ b                        | union                                   | new set combining both without duplicates                                       |                           |
+| a ∩ b                        | intersection                            | new set with only common elements                                               |                           |
+| a \ b; a ⦱ b; a - b          | back slash; set difference              | set elements in a but not in b                                                  |                           |
+| a Δ b; a ⊝ b                 | set symmetric difference                | set elements in either of a or b but not in both                                |                           |
+| N                            | natural numbers                         | N = {1, 2, 3, ...}                                                              |                           |
+| Z                            | integers                                | Z = {..., -3, -2, -1, 0, 1, 2, 3, ...}                                          |                           |
+| Q                            | rationals                               | Q = {1/2, -3, 0.75, ...}                                                        |                           |
+| R                            | reals                                   | R = all points in a line                                                        |                           |
+| C                            | complex numbers                         | C = {a + bi [ a, b ∈ R}                                                         |                           |
+| H                            | quarternions                            | H = {a + bi + cj + dk}                                                          |                           |
+| O                            | octonions                               | 8D extension of complex numbers                                                 |                           |
+| U                            | universal set                           | all possible elements in context                                                |                           |
+| ¬, ~                         | negation                                | logic; opposite of state                                                        |                           |
+| a ∨ b                        | or                                      | either or                                                                       |                           |
+| a ∧ b                        | and                                     | both                                                                            |                           |
+| a ⊕  b                       | exclusive or                            | either one is true; not both                                                    |                           |
+| T                            | tee                                     | always true                                                                     |                           |
+| ⊥                            | up tack                                 | always false                                                                    |                           |
+| ∀                            | universal quantifier                    | `∀x P(x)` means "For all x, P(x) is true."                                      |                           |
+| ∃                            | existential quantifier                  | `∃x P(x)` means "There exists an x such that P(x) is true"                      | at least one value        |
+| ∃!                           | uniqueness quantifier                   | `!∃x P(x)` means "Ther exists exactly one element whcih satisfies P(x) is true" |                           |
+| →, ⇒                         | implication                             | if this, then that                                                              |                           |
+| ↔, ⇔                         | logical equivalence                     | if and only if                                                                  |                           |
+| f', f'', f'''                | lagrange's derivative notation          |                                                                                 |                           |
+| ẋ or ẍ                       | newton's derivative notation            | dx/dt, d²x/dt²                                                                  |                           |
+| dy/dx,d²y/dx²                | leibniz's derivative notation           |                                                                                 |                           |
+| ∂f/∂x, ∂²f/∂x², ∂/∂x (∂f/∂y) | leibniz's partial derivative notation   |                                                                                 |                           |
+| ∫                            | integral                                | area                                                                            |                           |
+| ∬                            | double integral                         | surface in 2D                                                                   |                           |
+| ∭                            | triple integral                         | volume in 3D                                                                    |                           |
+| ∮                            | contour integral                        | closed curve                                                                    |                           |
+| →                            | arrow                                   | function definition                                                             |                           |
+| (f ∘ g)(x)                   | function composition                    | f(g(x))                                                                         | generally not commutative |
+| log (x), log_n(x)            | logarithm base 10 or base n (subscript) |                                                                                 |                           |
+| lim                          | Limit                                   | input approaches specific value                                                 |                           |
+| Re(z)                        | real part of complex number z           | stylized R is used                                                              |                           |
+| Im(z)                        | imaginary part of complex number z      | stylized I is used                                                              |                           |
+| conj(z), c(z)                | complex conjugate of complex number     | bar above R is used                                                             |                           |
+| Σ                            | sigma, summation                        |                                                                                 |                           |
+| Π                            | capital pi, multiplication              |                                                                                 |                           |
+| ∞                            | infinity, unboundedness                 |                                                                                 |                           |
+| א, ℵ₀, ℵ₁, ℵ₂, ℵ₃, ℵ_α       | aleph; cardinality of set               | countable infinity, uncountable infinity                                        | Fraktur c                 |
+| '!'                          | factorial                               |                                                                                 |                           |
+| nCk, C(n,k)                  | binomial coefficient                    |                                                                                 |                           |
+| abs(two pipes)               | absolute value                          |                                                                                 |                           |
+| ⌊x⌋                          | floor function                          | greatest integer less than or equal to x                                        |                           |
+| ⌈x⌉                          | ceiling function                        | smallest integer greater than or equal to x                                     |                           |
+| ⌊x⌉                          | nearest integer                         | rounds to the closest whole number                                              |                           |
+| vertical line                | divisiblity                             |                                                                                 |                           |
+| ∤                            | crossed vertical line, non divisiblity  |                                                                                 |                           |
+| ∥                            | parallelism                             |                                                                                 |                           |
+| ∦                            | non-parallelism                         |                                                                                 |                           |
+| ⊥                            | perpdenicular                           |                                                                                 |                           |
+| gcd(a,b) = 1, bar over ab    | coprime                                 |                                                                                 |                           |
+| ⟶  (arrow over ab)           | ray                                     |                                                                                 |                           |
+| ↔ (arrow over ab)            | extending both sides of a point         |                                                                                 |                           |
+|------------------------------+-----------------------------------------+---------------------------------------------------------------------------------+---------------------------|
 ** subjects
 |---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
 | math          | explanation                          | notes                                                                                                   |
@@ -206,10 +228,6 @@ source: X to Y (YT)
 | fields (rational domain) | set of elements -> addition, multiplication and a commutative division algebra         |               |
 |                          | equivalent to the field of complex numbers                                             |               |
 |--------------------------+----------------------------------------------------------------------------------------+---------------|
-
-** math symbols
-abc
-
 ** calculus
 abc / 50 levels 
 
