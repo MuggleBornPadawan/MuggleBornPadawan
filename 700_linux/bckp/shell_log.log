@@ -1,6 +1,6 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Oct  2 11:22:31 PM IST 2025 
+Date: Fri Oct  3 09:59:44 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -33,13 +33,12 @@ Default incoming policy changed to 'deny'
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [280 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 443 kB in 2s (264 kB/s)
+Ign:2 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
+Fetched 115 kB in 2s (67.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -149,21 +148,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 12s
+up to date, audited 144 packages in 9s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 959ms
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 1s
+changed 1 package in 471ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -175,7 +174,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 30s
+added 469 packages, changed 1 package, and audited 613 packages in 14s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -190,7 +189,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 3s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -232,24 +231,15 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-Weather report: chennai
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;196m37[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↑[0m [38;5;220m17[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
-                0.1 mm[0m         
-Weather report: pondicherry
-
-  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
-  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+28[0m([38;5;208m31[0m) °C[0m     
-  [38;5;226m   /[38;5;250m(___(__) [0m [1m↗[0m [38;5;190m10[0m km/h[0m      
-  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
-  [38;5;111m    ‘ ‘ ‘ ‘  [0m 0.4 mm[0m         
-rtt min/avg/max/mdev = 53.725/86.802/205.827/47.493 ms
+rtt min/avg/max/mdev = 41.516/60.922/78.931/11.988 ms
  _________________________________________
-/ You're working under a slight handicap. \
-\ You happen to be human.                 /
+/ In Marseilles they make half the toilet \
+| soap we consume in America, but the     |
+| Marseillaise only have a vague          |
+| theoretical idea of its use, which they |
+| have obtained from books of travel.     |
+|                                         |
+\ -- Mark Twain                           /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -257,7 +247,7 @@ rtt min/avg/max/mdev = 53.725/86.802/205.827/47.493 ms
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumphkin shimmers, giggling with moss, beneath a quivering cloud.
+Flumphberry zoom blurble wiggleforth shimmerdrift.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -269,7 +259,7 @@ Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and 
 
 stop deepseek
 wayland
-/dev/pts/15
+/dev/pts/1
 ufw 0.36.2
 Copyright 2008-2023 Canonical Ltd.
 use this command to get more info: sudo ufw app list
@@ -305,7 +295,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Thu Oct  2 23:24:19 2025
+ClamAV update process started at Fri Oct  3 10:01:44 2025
 daily.cld database is up-to-date (version: 27780, sigs: 2076928, f-level: 90, builder: tomjudge)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
