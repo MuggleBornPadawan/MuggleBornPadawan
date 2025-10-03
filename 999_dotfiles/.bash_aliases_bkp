@@ -6,7 +6,7 @@ alias tn='tmux new -s "alpha"'
 alias td='tmux detach'
 alias tk='tmux kill-server'
 alias e='emacs -nw'
-alias j='r && history -w && history -c && rm .bash_history && c && echo "clean slate protocol activated"'
+alias j='r && history -w && history -c && rm .bash_history && rm tempFile* && c && echo "clean slate protocol activated"'
 alias grep='grep --color=auto'
 alias l='ls -lha --color=auto | less'
 alias r='cd && ls'
@@ -51,3 +51,4 @@ alias q='./MuggleBornPadawan/700_linux/scripts/gemini_query.sh $1'
 alias chat="cd && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh"
 # security
 alias security="sudo ufw status verbose && sudo ufw version && echo 'use this command to get more info: sudo ufw app list'"
+alias genpass=" ./MuggleBornPadawan/700_linux/scripts/password_generator.sh"

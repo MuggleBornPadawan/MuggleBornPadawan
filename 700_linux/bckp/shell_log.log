@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Oct  3 09:59:44 AM IST 2025 
+Date: Fri Oct  3 12:26:27 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -32,13 +32,12 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Ign:2 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 115 kB in 2s (67.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -162,7 +161,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-changed 1 package in 471ms
+changed 1 package in 1s
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -174,7 +173,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 14s
+added 469 packages, changed 1 package, and audited 613 packages in 22s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -189,7 +188,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 3s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -228,18 +227,24 @@ Password Store
 ├── tmp
 ├── unKnoWn
 └── XAI_GROK_API_KEY
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
-rtt min/avg/max/mdev = 41.516/60.922/78.931/11.988 ms
+Weather report: chennai
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+31[0m([38;5;202m34[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m←[0m [38;5;190m10[0m km/h[0m      
+  [38;5;226m   /[38;5;250m(___(__) [0m 6 km[0m           
+                0.0 mm[0m         
+Weather report: pondicherry
+
+  [38;5;226m   \  /[0m       Partly cloudy
+  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;208m+32[0m([38;5;196m37[0m) °C[0m     
+  [38;5;226m   \_[38;5;250m(   ).  [0m [1m←[0m [38;5;118m6[0m km/h[0m       
+  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
+                0.0 mm[0m         
+rtt min/avg/max/mdev = 40.894/55.856/70.602/10.267 ms
  _________________________________________
-/ In Marseilles they make half the toilet \
-| soap we consume in America, but the     |
-| Marseillaise only have a vague          |
-| theoretical idea of its use, which they |
-| have obtained from books of travel.     |
-|                                         |
-\ -- Mark Twain                           /
+/ Write yourself a threatening letter and \
+\ pen a defiant reply.                    /
  -----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -247,7 +252,7 @@ rtt min/avg/max/mdev = 41.516/60.922/78.931/11.988 ms
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flumphberry zoom blurble wiggleforth shimmerdrift.
+Flibbertigibbet fuzzily bounces beneath the shimmer of indigo.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -295,7 +300,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Fri Oct  3 10:01:44 2025
+ClamAV update process started at Fri Oct  3 12:27:45 2025
 daily.cld database is up-to-date (version: 27780, sigs: 2076928, f-level: 90, builder: tomjudge)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
