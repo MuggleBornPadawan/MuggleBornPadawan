@@ -1,7 +1,13 @@
 #!/bin/bash
+cd
+
+# -- storing info in file
+tempFileName="tempFile_$(date +%s).txt"
+touch $tempFileName
+#ls $tempFileName
 
 # --- Configuration ---
-NUM_UPPERCASE_REPLACEMENTS=30
+NUM_UPPERCASE_REPLACEMENTS=40
 NUM_OTHER_CHAR_REPLACEMENTS=2
 NUM_SYMBOL_REPLACEMENTS=2
 
@@ -102,3 +108,6 @@ echo "Number of symbols: $symbol_count"
 echo ""
 echo "i: $original_uuid"
 echo "o: $modified_uuid_step4"
+echo "i: $original_uuid" >> $tempFileName
+echo "o: $modified_uuid_step4" >> $tempFileName
+echo "file name:" $tempFileName
