@@ -31,7 +31,7 @@ API_KEY_PATH="GEMINI_API_KEY"
 RANDOM_NUM_DIGITS=4
 
 # Gemini API Endpoint
-GEMINI_API_ENDPOINT="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+GEMINI_API_ENDPOINT="https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent"
 
 # --- Helper Functions ---
 

@@ -25,7 +25,7 @@ if [ -z "$MY_GEMINI_API_KEY" ]; then
   exit 1
 fi
 
-MODEL="gemini-2.5-flash-lite"
+MODEL="gemini-flash-lite-latest"
 API_URL="https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${MY_GEMINI_API_KEY}"
 
 # Initialize an empty JSON array to store the conversation history.

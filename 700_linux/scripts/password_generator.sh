@@ -63,8 +63,6 @@ done
 echo "After other random character replacements: $modified_uuid_step3"
 echo ""
 
-echo "Final Modified UUID: $modified_uuid_step4"
-
 # --- Step 4: Replace random characters with symbols ---
 echo "Step 4: Replacing random characters with symbols..."
 modified_uuid_step4="$modified_uuid_step3"
@@ -84,6 +82,7 @@ done
 echo "After symbol replacements: $modified_uuid_step4"
 echo ""
 
+echo "Final Modified UUID: $modified_uuid_step4"
 
 # --- Character Counting and Display ---
 echo "--- Character Analysis of Final String ---"
