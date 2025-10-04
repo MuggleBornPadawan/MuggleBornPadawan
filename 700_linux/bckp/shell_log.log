@@ -1,6 +1,6 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Sat Oct  4 12:03:13 PM IST 2025 
+Date: Sat Oct  4 12:07:09 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -145,21 +145,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 7s
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 820ms
+up to date, audited 144 packages in 959ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 569ms
+up to date, audited 144 packages in 644ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -173,7 +173,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 893ms
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -211,7 +211,7 @@ Weather report: pondicherry
   [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;214m23[0m km/h[0m      
   [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 38.119/48.918/66.232/8.834 ms
+rtt min/avg/max/mdev = 53.685/93.202/187.765/41.502 ms
 start gemma3:1b
 stop gemma
 start deepseek-r1:1.5b
@@ -253,7 +253,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sat Oct  4 12:04:08 2025
+ClamAV update process started at Sat Oct  4 12:07:52 2025
 daily.cld database is up-to-date (version: 27780, sigs: 2076928, f-level: 90, builder: tomjudge)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
