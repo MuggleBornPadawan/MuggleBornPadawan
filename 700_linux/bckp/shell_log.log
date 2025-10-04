@@ -1,6 +1,6 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Sat Oct  4 11:08:48 AM IST 2025 
+Date: Sat Oct  4 12:03:13 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -32,15 +32,12 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [281 kB]
-Get:9 https://deb.debian.org/debian-security bookworm-security/main Translation-en [170 kB]
-Fetched 614 kB in 1s (446 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -148,21 +145,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 8s
+up to date, audited 144 packages in 7s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 869ms
+up to date, audited 144 packages in 820ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 568ms
+up to date, audited 144 packages in 569ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -176,7 +173,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 864ms
+up to date, audited 144 packages in 893ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -214,7 +211,7 @@ Weather report: pondicherry
   [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;214m23[0m km/h[0m      
   [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 37.910/48.111/58.715/9.045 ms
+rtt min/avg/max/mdev = 38.119/48.918/66.232/8.834 ms
 start gemma3:1b
 stop gemma
 start deepseek-r1:1.5b
@@ -256,7 +253,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sat Oct  4 11:09:29 2025
+ClamAV update process started at Sat Oct  4 12:04:08 2025
 daily.cld database is up-to-date (version: 27780, sigs: 2076928, f-level: 90, builder: tomjudge)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)

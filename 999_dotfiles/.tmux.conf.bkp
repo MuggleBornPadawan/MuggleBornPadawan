@@ -22,6 +22,9 @@ set -g prefix C-q
 unbind C-b # Unbind the default Ctrl+b
 bind C-q send-prefix # Ensure Ctrl+q sends the prefix itself
 
+# color
+set -g @plugin 'catppuccin/tmux'
+
 # More intuitive pane splitting (using | for vertical, - for horizontal)
 bind | split-window -h
 bind - split-window -v
