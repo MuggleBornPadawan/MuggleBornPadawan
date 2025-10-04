@@ -1,37 +1,28 @@
 # My custom aliases | $ source ~/.bashrc 
 alias s='source ~/.bashrc'
 alias a='s && alias | less'
-alias t='tmux a'
-alias tn='tmux new -s "alpha"'
-alias td='tmux detach'
-alias tk='tmux kill-server'
 alias e='emacs -nw'
-alias j='r && history -w && history -c && rm .bash_history Dockerfile Jenkinsfile tempFile* && c && echo "clean slate protocol activated"'
 alias grep='grep --color=auto'
+# general aliases
+alias c='clear'
+alias h='history | less'
+alias ps='ps aux'
+alias du='du -sh'
+alias df='df -hT'
+alias o='xdg-open'
+# directory navigation aliases
 alias l='ls -lha --color=auto | less'
 alias r='cd && ls'
 alias ..='cd .. && ls'
 alias ...='cd ../.. && ls'
 alias m='cd && cd MuggleBornPadawan && ls'
 alias w1='cd && cd MuggleBornPadawan/100_cpp/randomwalker/ && ls'
-alias c='clear'
+# git 
 alias g='git status'
 alias gl='git log --oneline --decorate --graph'
 alias gp="s && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push"
-alias h='history | less'
-alias ps='ps aux'
-alias du='du -sh'
-alias df='df -hT'
-alias o='xdg-open'
-alias remote='cd && ./MuggleBornPadawan/700_linux/remote_startup.sh'
-alias commit='cd && ./MuggleBornPadawan/700_linux/bckp/commits.sh'
-alias start='cd && ./MuggleBornPadawan/700_linux/bckp/start.sh'
-alias tw='cd && ./MuggleBornPadawan/700_linux/scripts/wisdom_nugget_generator.sh'
-alias tm='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_artithmetic_test.sh'
-alias ta='cd && ts && ./MuggleBornPadawan/700_linux/scripts/openrouter_aeo_script.sh'
-alias ts="s && c && echo 'sleeping for few mins... $(date)' && sleep $((RANDOM % 600))"
-alias pw='pass unKnoWn'
 # Safety & Security Aliases
+alias pw='pass unKnoWn'
 alias ln='ln -i'
 alias rm='rm -i'
 alias rm="trash-put"
@@ -46,9 +37,26 @@ alias abc="s && echo 'test at $(date)'"
 # clamav scan
 alias scanFully='sudo clamscan -r -i /'
 alias scanStatus='sudo freshclam && clamscan --version && sudo systemctl status clamav-freshclam'
+# regular scripts 
+alias remote='cd && ./MuggleBornPadawan/700_linux/remote_startup.sh'
+alias commit='cd && ./MuggleBornPadawan/700_linux/bckp/commits.sh'
+alias start='cd && ./MuggleBornPadawan/700_linux/bckp/start.sh'
+alias sw='cd && ./MuggleBornPadawan/700_linux/scripts/wisdom_nugget_generator.sh'
+alias sm='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_artithmetic_test.sh'
+alias sa='cd && ss && ./MuggleBornPadawan/700_linux/scripts/openrouter_aeo_script.sh'
+alias ss="s && c && echo 'sleeping for few mins... $(date)' && sleep $((RANDOM % 600))"
+# tmux commands
+alias t='tmux a'
+alias tn='tmux new -s "alpha"'
+alias td='tmux detach'
+alias tk='tmux kill-server'
+alias tf='tmux set-option -g status off'
+alias to='tmux set-option -g status on'
 # gemini query and chat
 alias q='./MuggleBornPadawan/700_linux/scripts/gemini_query.sh $1'
 alias chat="cd && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh"
 # security
 alias security="sudo ufw status verbose && sudo ufw version && echo 'use this command to get more info: sudo ufw app list'"
 alias genpass="cd && ./MuggleBornPadawan/700_linux/scripts/password_generator.sh && cd -"
+# cleanup
+alias j='r && history -w && history -c && rm .bash_history Dockerfile Jenkinsfile tempFile* && c && echo "clean slate protocol activated"'
