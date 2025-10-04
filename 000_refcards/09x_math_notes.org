@@ -178,26 +178,6 @@ All of math can be described in four categories:
 | discrete math | distinct and countable structures    | combinatorics, graph theory and logic theory; sets, relations and algorithms                            |
 | applied math  |                                      | chaos                                                                                                   |
 |---------------+--------------------------------------+---------------------------------------------------------------------------------------------------------|
-** derivatives
-source: X to Y (YT)
-|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
-| type        | explanation                   | notes                          | application                                         |
-|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
-| basic       | instantaneous rate of change  | f'(x)=(dx/dy) defined by limit | motion, growth and optimization                     |
-| higher      | rate of change                | f''(x)                         | accceleration, graph curvature and physical systems |
-| partial     | multiple variables            | fx = df/dx or fy = df/dy       | one variable; others constant                       |
-| total       | dependency on single variable | f(x(t),y(t))                   | eg: time; dynamics and thermodynamics               |
-| implicit    |                               | F(x,y)=0                       |                                                     |
-| directional |                               |                                |                                                     |
-| logarthmic  | cosines and sines             |                                |                                                     |
-| parametric  | curves                        |                                | graphics                                            |
-| covariant   | curves                        |                                |                                                     |
-| functional  | function of functions         |                                |                                                     |
-| lie         | tensor flow change            | scalar and vector field        |                                                     |
-| numerical   |                               |                                | simulation and data analysis                        |
-| fractional  |                               |                                | viscoelasticity and signal processing               |
-| func??      |                               |                                |                                                     |
-|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
 ** algebra
 - substitution of unknown as symbols (variables + constants) combined with mathematical operations (pemdas)
 - solve the equations to arrive at solutions. find sets (x, y, ...) that obey the equations 
@@ -228,6 +208,27 @@ source: X to Y (YT)
 | fields (rational domain) | set of elements -> addition, multiplication and a commutative division algebra         |               |
 |                          | equivalent to the field of complex numbers                                             |               |
 |--------------------------+----------------------------------------------------------------------------------------+---------------|
+** derivatives
+source: X to Y (YT)
+|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
+| type        | explanation                   | notes                          | application                                         |
+|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
+| basic       | instantaneous rate of change  | f'(x)=(dx/dy) defined by limit | motion, growth and optimization                     |
+| higher      | rate of change                | f''(x)                         | accceleration, graph curvature and physical systems |
+| partial     | multiple variables            | fx = df/dx or fy = df/dy       | one variable; others constant                       |
+| total       | dependency on single variable | f(x(t),y(t))                   | eg: time; dynamics and thermodynamics               |
+| implicit    |                               | F(x,y)=0                       |                                                     |
+| directional |                               |                                |                                                     |
+| logarthmic  | cosines and sines             |                                |                                                     |
+| parametric  | curves                        |                                | graphics                                            |
+| covariant   | curves                        |                                |                                                     |
+| functional  | function of functions         |                                |                                                     |
+| lie         | tensor flow change            | scalar and vector field        |                                                     |
+| numerical   |                               |                                | simulation and data analysis                        |
+| fractional  |                               |                                | viscoelasticity and signal processing               |
+| func??      |                               |                                |                                                     |
+|-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
+
 ** calculus
 abc / 50 levels 
 

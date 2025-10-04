@@ -98,6 +98,6 @@ sudo freshclam
 clamscan --version
 echo "run 'sudo clamscan -r /' every day. stay safe. have a good day"
 echo "run 'sudo systemctl status clamav-freshclam' to check status"
-echo "use 'set-option -g status off' in tmux to toggle status bar"
+echo "use 'tmux set-option -g status on/off' to toggle tmux status bar"
 cd
 espeak -v en-gb -s 175 -p 50 "Tux out"

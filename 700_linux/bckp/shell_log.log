@@ -1,6 +1,6 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Sat Oct  4 12:07:09 PM IST 2025 
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Sat Oct  4 01:57:00 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -136,126 +136,13 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@1.0.67
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
+├── @anthropic-ai/claude-code@2.0.1
+├── @google/gemini-cli@0.7.0
+├── @openai/codex@0.30.0
+├── corepack@0.33.0
+├── npm-check-updates@19.0.0
+└── npm@10.9.3
 
 Package  Current  Wanted  Latest  Location         Depended by
-20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
-
-up to date, audited 144 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 959ms
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 644ms
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
--e 
-run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
-IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
-use trash-empty or trash-restore as you see fit
-Password Store
-├── CLAUDE_API_KEY
-├── DEEPSEEK_API_KEY
-├── GEMINI_API_KEY
-├── mbprootp
-├── MOONSHOT_API_KEY
-├── OPENAI_API_KEY
-├── OPENROUTER_API_KEY
-├── protector_key
-├── tmp
-├── unKnoWn
-└── XAI_GROK_API_KEY
-Weather report: chennai
-
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;220m+25[0m([38;5;220m27[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;226m15[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
-                0.9 mm[0m         
-Weather report: pondicherry
-
-  [38;5;226m   \  /[0m       Partly cloudy
-  [38;5;226m _ /""[38;5;250m.-.    [0m [38;5;214m+30[0m([38;5;202m34[0m) °C[0m     
-  [38;5;226m   \_[38;5;250m(   ).  [0m [1m↗[0m [38;5;214m23[0m km/h[0m      
-  [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
-                0.0 mm[0m         
-rtt min/avg/max/mdev = 53.685/93.202/187.765/41.502 ms
-start gemma3:1b
-stop gemma
-start deepseek-r1:1.5b
-stop deepseek
-
-not a tty
-ufw 0.36.2
-Copyright 2008-2023 Canonical Ltd.
-use this command to get more info: sudo ufw app list
-use alias security to get local copy
-
---                         ------      ----
-110/tcp                    DENY IN     Anywhere                  
-110/tcp (v6)               DENY IN     Anywhere (v6)             
-137                        DENY IN     Anywhere                  
-137 (v6)                   DENY IN     Anywhere (v6)             
-138                        DENY IN     Anywhere                  
-138 (v6)                   DENY IN     Anywhere (v6)             
-139                        DENY IN     Anywhere                  
-139 (v6)                   DENY IN     Anywhere (v6)             
-143                        DENY IN     Anywhere                  
-143 (v6)                   DENY IN     Anywhere (v6)             
-21/tcp                     DENY IN     Anywhere                  
-21/tcp (v6)                DENY IN     Anywhere (v6)             
-22/tcp                     DENY IN     Anywhere                  
-22/tcp (v6)                DENY IN     Anywhere (v6)             
-25/tcp                     DENY IN     Anywhere                  
-25/tcp (v6)                DENY IN     Anywhere (v6)             
-443                        DENY IN     Anywhere                  
-443 (v6)                   DENY IN     Anywhere (v6)             
-445                        DENY IN     Anywhere                  
-445 (v6)                   DENY IN     Anywhere (v6)             
-53 (DNS)                   DENY IN     Anywhere                  
-53 (DNS (v6))              DENY IN     Anywhere (v6)             
-80/tcp                     DENY IN     Anywhere                  
-80/tcp (v6)                DENY IN     Anywhere (v6)             
-Default: deny (incoming), allow (outgoing), deny (routed)
-Logging: on (low)
-New profiles: skip
-Status: active
-To                         Action      From
-ClamAV update process started at Sat Oct  4 12:07:52 2025
-daily.cld database is up-to-date (version: 27780, sigs: 2076928, f-level: 90, builder: tomjudge)
-main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-run 'sudo clamscan -r /' every day. stay safe. have a good day
-run 'sudo systemctl status clamav-freshclam' to check status
+20         1.0.0   3.1.9   3.1.9  node_modules/20  rgroot
