@@ -84,6 +84,8 @@ ollama run deepseek-r1:1.5b "how are you doing?"
 ollama stop deepseek-r1:1.5b
 echo "stop deepseek"
 tmux new -s alpha
+# generate password
+./MuggleBornPadawan/700_linux/scripts/password_generator.sh > /dev/null 2>&1 
 # final words 
 rm startup_log.log - a tmp.txt
 sleep 2
