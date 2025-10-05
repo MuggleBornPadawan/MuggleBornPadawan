@@ -1,6 +1,6 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Oct  4 04:28:41 PM IST 2025 
+Date: Sun Oct  5 12:02:11 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -33,12 +33,12 @@ Default incoming policy changed to 'deny'
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Ign:2 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Hit:4 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Fetched 115 kB in 3s (37.9 kB/s)
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:5 https://storage.googleapis.com/cros-packages/140 bookworm Release
+Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Fetched 163 kB in 3s (56.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -155,14 +155,14 @@ up to date, audited 144 packages in 20s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 2s
+up to date, audited 144 packages in 3s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 1s
+changed 1 package in 4s
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -189,7 +189,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 6s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 4s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -204,7 +204,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-removed 449 packages, changed 9 packages, and audited 144 packages in 5s
+removed 449 packages, changed 9 packages, and audited 144 packages in 4s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -231,10 +231,10 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-rtt min/avg/max/mdev = 247.434/304.527/378.199/46.156 ms
+rtt min/avg/max/mdev = 239.428/284.783/377.039/45.308 ms
  ________________________________________
-/ You will be awarded a medal for        \
-\ disregarding safety in saving someone. /
+/ You will be advanced socially, without \
+\ any special effort on your part.       /
  ----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -242,7 +242,7 @@ rtt min/avg/max/mdev = 247.434/304.527/378.199/46.156 ms
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet bounces on a prism.
+Flibbertigibbet bounce, shimmeringly, quibble, wizzle, grumble, gloop, zippity, shadow.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -250,11 +250,11 @@ start deepseek-r1:1.5b
 
 </think>
 
-Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
 
 stop deepseek
 wayland
-/dev/pts/15
+/dev/pts/1
 ufw 0.36.2
 Copyright 2008-2023 Canonical Ltd.
 use this command to get more info: sudo ufw app list
@@ -290,7 +290,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sat Oct  4 16:32:47 2025
+ClamAV update process started at Sun Oct  5 12:06:11 2025
 daily.cld database is up-to-date (version: 27780, sigs: 2076928, f-level: 90, builder: tomjudge)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
