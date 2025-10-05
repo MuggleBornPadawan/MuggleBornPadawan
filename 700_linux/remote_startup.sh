@@ -7,6 +7,7 @@ echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
 
 #ufw
 sudo ufw enable 
+sudo ufw deny 20 #ftp
 sudo ufw deny ftp #21
 sudo ufw deny ssh #22
 sudo ufw deny smtp #25
@@ -24,12 +25,12 @@ sudo ufw default allow outgoing
 
 #linux debian packages
 sudo apt-get update && sudo apt-get dist-upgrade
-sudo apt-get install uuid-runtime fonts-dejavu fzf zoxide gnuplot nasm ffmpeg lm-sensors sqlite3 mpg123 dnsutils make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme racket clojure rlwrap leiningen emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay neofetch trash-cli
+sudo apt-get upgrade uuid-runtime fonts-dejavu fzf zoxide gnuplot nasm ffmpeg lm-sensors sqlite3 mpg123 dnsutils make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme racket clojure rlwrap leiningen emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay neofetch trash-cli
 #clamav - antivirus package
-sudo apt-get install gcc make pkg-config python3 python3-pip python3-pytest valgrind cmake check libbz2-dev libcurl4-openssl-dev libjson-c-dev libmilter-dev libncurses5-dev libpcre2-dev libssl-dev libxml2-dev zlib1g-dev
+sudo apt-get upgrade gcc make pkg-config python3 python3-pip python3-pytest valgrind cmake check libbz2-dev libcurl4-openssl-dev libjson-c-dev libmilter-dev libncurses5-dev libpcre2-dev libssl-dev libxml2-dev zlib1g-dev
 #firewall - security - openvpn
 #sudo apt-get install openvpn -y
-sudo apt-get install ufw
+sudo apt-get upgrade ufw
 sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
 #npm packages
 npm list -g --depth=0
