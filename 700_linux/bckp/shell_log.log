@@ -1,6 +1,6 @@
 [H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Oct  5 12:02:11 PM IST 2025 
+Date: Sun Oct  5 10:54:36 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -32,13 +32,13 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:5 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Fetched 163 kB in 3s (56.7 kB/s)
+Ign:1 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Hit:4 https://storage.googleapis.com/cros-packages/140 bookworm Release
+Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Fetched 163 kB in 1s (145 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -148,21 +148,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 20s
+up to date, audited 144 packages in 6s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 3s
+up to date, audited 144 packages in 922ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 4s
+changed 1 package in 476ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -174,7 +174,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 37s
+added 469 packages, changed 1 package, and audited 613 packages in 24s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -189,7 +189,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 4s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -204,7 +204,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-removed 449 packages, changed 9 packages, and audited 144 packages in 4s
+removed 449 packages, changed 9 packages, and audited 144 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -231,10 +231,26 @@ Password Store
 Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
 Encryption successful: 'daily_nuggets.txt.enc'
 Operation completed.
-rtt min/avg/max/mdev = 239.428/284.783/377.039/45.308 ms
+Weather report: chennai
+
+                Mist
+  [38;5;251m _ - _ - _ - [0m [38;5;220m+26[0m([38;5;214m28[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;214m22[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 4 km[0m           
+                0.3 mm[0m         
+Weather report: pondicherry
+
+  [38;5;226m _`/""[38;5;250m.-.    [0m Patchy rain nearby
+  [38;5;226m  ,\_[38;5;250m(   ).  [0m [38;5;214m+28[0m([38;5;208m32[0m) °C[0m     
+  [38;5;226m   /[38;5;250m(___(__) [0m [1m↑[0m [38;5;214m20[0m km/h[0m      
+  [38;5;111m     ‘ ‘ ‘ ‘ [0m 9 km[0m           
+  [38;5;111m    ‘ ‘ ‘ ‘  [0m 1.2 mm[0m         
+rtt min/avg/max/mdev = 38.757/58.384/74.022/11.448 ms
  ________________________________________
-/ You will be advanced socially, without \
-\ any special effort on your part.       /
+/ A long-forgotten loved one will appear \
+| soon.                                  |
+|                                        |
+\ Buy the negatives at any price.        /
  ----------------------------------------
         \   ^__^
          \  (oo)\_______
@@ -242,7 +258,7 @@ rtt min/avg/max/mdev = 239.428/284.783/377.039/45.308 ms
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet bounce, shimmeringly, quibble, wizzle, grumble, gloop, zippity, shadow.
+Flibbertigibbet zooms past the mauve moon, sputtering rainbow dust.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -290,7 +306,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sun Oct  5 12:06:11 2025
+ClamAV update process started at Sun Oct  5 22:56:05 2025
 daily.cld database is up-to-date (version: 27780, sigs: 2076928, f-level: 90, builder: tomjudge)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)

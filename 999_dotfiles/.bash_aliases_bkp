@@ -59,4 +59,4 @@ alias chat="cd && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh"
 alias security="sudo ufw status verbose && sudo ufw version && echo 'use this command to get more info: sudo ufw app list'"
 alias genpass="cd && ./MuggleBornPadawan/700_linux/scripts/password_generator.sh && cd -"
 # cleanup
-alias j='r && history -w && history -c && rm .bash_history Dockerfile Jenkinsfile tempFile* && c && echo "clean slate protocol activated"'
+alias j='r && genpass && history -w && history -c && rm .bash_history Dockerfile Jenkinsfile tempFile* && c && echo "clean slate protocol activated"'
