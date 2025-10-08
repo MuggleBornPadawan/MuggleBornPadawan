@@ -66,13 +66,16 @@ pass ls
 mv daily_nuggets.txt.enc MuggleBornPadawan/700_linux/bckp/
 
 # fetch chennai weather
-curl wttr.in/chennai | head -n 7
+curl -s wttr.in/chennai | head -n 7
 # Fetch Pondicherry weather
-curl wttr.in/pondicherry | head -n 7
+curl -s wttr.in/pondicherry | head -n 7
 ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
+# fun stuff - generate password, retrieve location url, get reasons for NO
+./MuggleBornPadawan/700_linux/scripts/password_generator.sh > /dev/null 2>&1
+curl -sIL https://tinyurl.com/2sw62h3y | grep location:
+curl -si --get https://naas.isalman.dev/no | grep reason
 fortune -a | cowsay
-
 # sudo nohup ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh 2>/dev/null # deprecated 
 # ./MuggleBornPadawan/700_linux/runners/my-simple-daemon.sh > /dev/null 2>&1 & #deprecated 
 # ollama run gemma3:1b-it-qat "speak gibberish"
@@ -85,8 +88,6 @@ ollama run deepseek-r1:1.5b "how are you doing?"
 ollama stop deepseek-r1:1.5b
 echo "stop deepseek"
 tmux new -s alpha
-# generate password
-./MuggleBornPadawan/700_linux/scripts/password_generator.sh > /dev/null 2>&1 
 # final words 
 rm daily_nuggets.txt model_answers.log aeo_results_log.txt
 rm startup_log.log - a tmp.txt
