@@ -88,6 +88,7 @@ tmux new -s alpha
 # generate password
 ./MuggleBornPadawan/700_linux/scripts/password_generator.sh > /dev/null 2>&1 
 # final words 
+rm daily_nuggets.txt model_answers.log aeo_results_log.txt
 rm startup_log.log - a tmp.txt
 sleep 2
 echo $XDG_SESSION_TYPE
