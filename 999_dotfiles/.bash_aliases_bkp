@@ -54,7 +54,8 @@ alias tf='tmux set-option -g status off'
 alias to='tmux set-option -g status on'
 # gemini query and chat
 alias q='./MuggleBornPadawan/700_linux/scripts/gemini_query.sh $1'
-alias chat="cd && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh"
+alias chat='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh'
+alias mq='./MuggleBornPadawan/700_linux/scripts/openrouter_multiple_models_query.sh $1'
 # security
 alias security="sudo ufw status verbose && sudo ufw version && echo 'use this command to get more info: sudo ufw app list'"
 alias genpass="cd && ./MuggleBornPadawan/700_linux/scripts/password_generator.sh && cd -"

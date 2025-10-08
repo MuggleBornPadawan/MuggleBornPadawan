@@ -1,6 +1,6 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Oct  8 12:01:05 PM IST 2025 
+Date: Wed Oct  8 01:04:12 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -34,13 +34,12 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:5 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 115 kB in 2s (59.9 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -153,7 +152,7 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 9s
+up to date, audited 144 packages in 8s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -167,7 +166,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-changed 1 package in 592ms
+changed 1 package in 1s
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -179,7 +178,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 26s
+added 469 packages, changed 1 package, and audited 613 packages in 28s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -194,7 +193,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 3s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -235,10 +234,10 @@ Password Store
 └── XAI_GROK_API_KEY
 Weather report: chennai
 
-                Mist
-  [38;5;251m _ - _ - _ - [0m [38;5;214m+28[0m([38;5;208m32[0m) °C[0m     
-  [38;5;251m  _ - _ - _  [0m [1m↑[0m [38;5;190m10[0m km/h[0m      
-  [38;5;251m _ - _ - _ - [0m 5 km[0m           
+                Haze
+  [38;5;251m _ - _ - _ - [0m [38;5;208m+33[0m([38;5;196m41[0m) °C[0m     
+  [38;5;251m  _ - _ - _  [0m [1m↖[0m [38;5;214m21[0m km/h[0m      
+  [38;5;251m _ - _ - _ - [0m 6 km[0m           
                 0.0 mm[0m         
 Weather report: pondicherry
 
@@ -247,20 +246,20 @@ Weather report: pondicherry
   [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;214m21[0m km/h[0m      
   [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 67.864/80.446/93.673/10.595 ms
- ______________________________________
-/ O, what a tangled web we weave, When \
-| first we practice to deceive.        |
-|                                      |
-\ -- Sir Walter Scott, "Marmion"       /
- --------------------------------------
+rtt min/avg/max/mdev = 68.968/89.852/127.550/18.717 ms
+location: https://github.com/MuggleBornPadawan
+{"reason":"I just realized it's a holiday: National Not Gonna Do It Day."}
+ __________________________________
+/ Your love life will be happy and \
+\ harmonious.                      /
+ ----------------------------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
                 ||----w |
                 ||     ||
 start gemma3:1b
-Flibbertigibbet danced beneath the moonbeam.
+Flibbertigibbet zooms by the shimmering moon.
 
 stop gemma
 start deepseek-r1:1.5b
@@ -272,7 +271,7 @@ Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and rea
 
 stop deepseek
 wayland
-/dev/pts/1
+/dev/pts/15
 ufw 0.36.2
 Copyright 2008-2023 Canonical Ltd.
 use this command to get more info: sudo ufw app list
@@ -310,7 +309,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Wed Oct  8 12:02:32 2025
+ClamAV update process started at Wed Oct  8 13:05:34 2025
 daily.cld database is up-to-date (version: 27785, sigs: 2076948, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
