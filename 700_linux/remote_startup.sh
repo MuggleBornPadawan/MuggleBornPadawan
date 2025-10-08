@@ -30,7 +30,7 @@ sudo apt-get upgrade uuid-runtime fonts-dejavu fzf zoxide gnuplot nasm ffmpeg lm
 sudo apt-get upgrade gcc make pkg-config python3 python3-pip python3-pytest valgrind cmake check libbz2-dev libcurl4-openssl-dev libjson-c-dev libmilter-dev libncurses5-dev libpcre2-dev libssl-dev libxml2-dev zlib1g-dev
 #firewall - security - openvpn
 #sudo apt-get install openvpn -y
-sudo apt-get upgrade ufw
+sudo apt-get upgrade ufw netcat-openbsd iproute2 
 sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
 #npm packages
 npm list -g --depth=0
@@ -71,6 +71,27 @@ curl -s wttr.in/chennai | head -n 7
 curl -s wttr.in/pondicherry | head -n 7
 ping -w 12 google.com > tmp.txt
 cat tmp.txt | grep "rtt"
+# sequential numbers 
+seq -s ", " 1 .71 10
+seq -f "%02g" -s "," 1 10
+seq -w -s "," 1 .71 10
+seq -f "tempFile_%02g.txt" 1 5 | xargs touch
+seq -f "tempFile_2025-03-%02g.txt" 1 31 | xargs touch
+# generating test files with seq
+for i in $(seq 1 5); do
+ for line in $(seq 1 100); do
+   echo "File $i, Line $line: Some random content here"
+ done > "tempFile_$i.txt"
+done
+# stress testing
+echo "stress testing website using seq"
+seq 10 | xargs -I {} curl -s https://chitrapata.in >/dev/null
+# timestamp generation
+start=$(date +%s)
+for i in $(seq 0 9); do
+ echo "$(date -d "@$((start + i*60))" +"%Y-%m-%d %H:%M:%S")"
+done
+
 # fun stuff - generate password, retrieve location url, get reasons for NO
 ./MuggleBornPadawan/700_linux/scripts/password_generator.sh > /dev/null 2>&1
 curl -sIL https://tinyurl.com/2sw62h3y | grep location:
