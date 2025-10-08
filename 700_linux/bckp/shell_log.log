@@ -1,6 +1,6 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Wed Oct  8 02:56:00 PM IST 2025 
+[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Wed Oct  8 03:11:33 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -36,9 +36,9 @@ Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -143,16 +143,59 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@1.0.67
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
+├── @anthropic-ai/claude-code@2.0.1
+├── @google/gemini-cli@0.8.1
+├── @openai/codex@0.30.0
+├── corepack@0.33.0
+├── npm-check-updates@19.0.0
+└── npm@10.9.3
 
 Package  Current  Wanted  Latest  Location         Depended by
-20         1.0.0   3.1.9   3.1.9  node_modules/20  rgroot
+20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-added 449 packages, changed 9 packages, and audited 593 packages in 24s
+up to date, audited 144 packages in 11s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+changed 1 package in 768ms
+Checking /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run ncu -u to upgrade package.json
+Upgrading /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run npm install to install new versions.
+
+added 469 packages, changed 1 package, and audited 613 packages in 23s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -174,31 +217,10 @@ removed 449 packages, changed 9 packages, and audited 144 packages in 2s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 638ms
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
--e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -226,29 +248,47 @@ Weather report: pondicherry
   [38;5;226m   \_[38;5;250m(   ).  [0m [1m↖[0m [38;5;214m21[0m km/h[0m      
   [38;5;226m   /[38;5;250m(___(__) [0m 10 km[0m          
                 0.0 mm[0m         
-rtt min/avg/max/mdev = 55.479/97.755/175.289/44.284 ms
+rtt min/avg/max/mdev = 55.424/73.106/167.202/29.464 ms
 1.00, 1.71, 2.42, 3.13, 3.84, 4.55, 5.26, 5.97, 6.68, 7.39, 8.10, 8.81, 9.52
 01,02,03,04,05,06,07,08,09,10
 01.00,01.71,02.42,03.13,03.84,04.55,05.26,05.97,06.68,07.39,08.10,08.81,09.52
 stress testing website using seq
-2025-10-08 14:57:01
-2025-10-08 14:58:01
-2025-10-08 14:59:01
-2025-10-08 15:00:01
-2025-10-08 15:01:01
-2025-10-08 15:02:01
-2025-10-08 15:03:01
-2025-10-08 15:04:01
-2025-10-08 15:05:01
-2025-10-08 15:06:01
+2025-10-08 15:12:48
+2025-10-08 15:13:48
+2025-10-08 15:14:48
+2025-10-08 15:15:48
+2025-10-08 15:16:48
+2025-10-08 15:17:48
+2025-10-08 15:18:48
+2025-10-08 15:19:48
+2025-10-08 15:20:48
+2025-10-08 15:21:48
 location: https://github.com/MuggleBornPadawan
-{"reason":"I avoid anything that might make me smile too much."}
+{"reason":"It would set a bad precedent if I started agreeing to reasonable requests."}
+ ______________________________________
+/ You plan things that you do not even \
+| attempt because of your extreme      |
+\ caution.                             /
+ --------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 start gemma3:1b
+Flibbertigibbetspunacle wizzlewhirls.
+
 stop gemma
 start deepseek-r1:1.5b
-stop deepseek
+<think>
 
-not a tty
+</think>
+
+Hi! I'm just a virtual assistant, so I don't have feelings, but I'm here and ready to help you with whatever you need. How can I assist you today? 😊
+
+stop deepseek
+wayland
+/dev/pts/1
 ufw 0.36.2
 Copyright 2008-2023 Canonical Ltd.
 use this command to get more info: sudo ufw app list
@@ -290,10 +330,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Wed Oct  8 14:57:05 2025
+ClamAV update process started at Wed Oct  8 15:16:41 2025
 daily.cld database is up-to-date (version: 27785, sigs: 2076948, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ClamAV 1.4.3/27785/Tue Oct  7 15:10:12 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
