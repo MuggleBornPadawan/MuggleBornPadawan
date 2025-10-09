@@ -91,6 +91,8 @@ start=$(date +%s)
 for i in $(seq 0 9); do
  echo "$(date -d "@$((start + i*60))" +"%Y-%m-%d %H:%M:%S")"
 done
+echo "random $RANDOM"
+echo "shuffle random within range: $(shuf -i 1-1000 -n 5 | tr '\n' ',' | sed 's/,$//')"
 
 # fun stuff - generate password, retrieve location url, get reasons for NO
 ./MuggleBornPadawan/700_linux/scripts/password_generator.sh > /dev/null 2>&1
