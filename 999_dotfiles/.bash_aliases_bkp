@@ -45,6 +45,7 @@ alias sw='cd && ./MuggleBornPadawan/700_linux/scripts/wisdom_nugget_generator.sh
 alias sm='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_artithmetic_test.sh'
 alias sa='cd && sl && ./MuggleBornPadawan/700_linux/scripts/openrouter_aeo_script.sh'
 alias sl="s && c && echo 'sleeping for few mins... $(date)' && sleep $((RANDOM % 600))"
+alias sy="cd && ./MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh"
 # tmux commands
 alias t='tmux a'
 alias tn='tmux new -s "alpha"'
