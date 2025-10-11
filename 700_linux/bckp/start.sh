@@ -26,3 +26,6 @@ git add .
 git commit -m "log daily"
 git status
 cd
+echo "Backup log - done"
+./MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh
+
