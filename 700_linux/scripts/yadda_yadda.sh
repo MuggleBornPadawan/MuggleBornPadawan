@@ -1,8 +1,9 @@
 cd
 espeak -v en-gb -s 175 -p 50 "yaadda yaada"
-dig www.chitrapata.in
-host www.chitrapata.in
-nmap www.chitrapata.in
+url=https://openweathermap.org/
+dig $url
+host $url
+nmap $url
 # who is online?
 echo "who is online?" && w
 # others
@@ -55,7 +56,9 @@ for i in $(seq 1 5); do
 done
 # stress testing
 echo "stress testing website using seq"
-seq 10 | xargs -I {} curl -s https://chitrapata.in >/dev/null
+echo "start time: $(date)"
+seq 10 | xargs -I {} curl -s $url >/dev/null
+echo "end time: $(date)"
 # ollama run gemma3:1b-it-qat "speak gibberish"
 echo "start gemma3:1b"
 ollama run gemma3:1b "write 7 gibberish words in a single sentence; skip commentary; skip asking questions; skip notes"
