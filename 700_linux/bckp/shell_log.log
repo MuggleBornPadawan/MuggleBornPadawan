@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Oct 12 11:58:57 AM IST 2025 
+Date: Sun Oct 12 12:02:37 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -156,21 +156,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 10s
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 995ms
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 1s
+changed 1 package in 215ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -182,7 +182,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 28s
+added 469 packages, changed 1 package, and audited 613 packages in 3s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -197,7 +197,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 3s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -236,9 +236,6 @@ Password Store
 ├── tmp
 ├── unKnoWn
 └── XAI_GROK_API_KEY
-Encrypting 'daily_nuggets.txt' to 'daily_nuggets.txt.enc' using AES256...
-Encryption successful: 'daily_nuggets.txt.enc'
-Operation completed.
 ufw 0.36.2
 Copyright 2008-2023 Canonical Ltd.
 use this command to get more info: sudo ufw app list
@@ -280,11 +277,8 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sun Oct 12 12:00:32 2025
-daily database available for update (local version: 27788, remote version: 27789)
-Testing database: '/usr/local/share/clamav/tmp.2e67bb9d24/clamav-563376a65df8ac57a48a40b9eb9dd71f.tmp-daily.cld' ...
-Database test passed.
-daily.cld updated (version: 27789, sigs: 2076956, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Sun Oct 12 12:03:01 2025
+daily.cld database is up-to-date (version: 27789, sigs: 2076956, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 ClamAV 1.4.3/27789/Sat Oct 11 15:11:07 2025

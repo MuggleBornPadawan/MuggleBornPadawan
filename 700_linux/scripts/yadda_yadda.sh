@@ -56,6 +56,8 @@ echo "start deepseek-r1:1.5b"
 ollama run deepseek-r1:1.5b "how are you doing?"
 ollama stop deepseek-r1:1.5b
 echo "stop deepseek"
+hostname
+hostname -i
 pgrep emacs
 pstree
 sudo netstat -pnltu
