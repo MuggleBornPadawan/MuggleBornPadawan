@@ -12,6 +12,254 @@
 - users / groups / owners - archaic
 - permissions
 - zero trust architecture - lease possible permissions at every level - user based and device based (not netwrok based)
+** Command-Line Cheat Sheet
+*** System
+|---------------+---------------------------------------|
+| Command       | Description                           |
+|---------------+---------------------------------------|
+| uname -a      | Display Linux system information      |
+| uname -r      | Display kernel release information    |
+| uptime        | Shows the current uptime              |
+| hostname      | Shows the system's host name          |
+| hostname -i   | Displays the IP address of the system |
+| last reboot   | Shows system reboot history           |
+| date          | Shows the current date and time       |
+| cal           | Shows the current month's calendar    |
+| w             | Displays who is online                |
+| whoami        | Displays who you are logged in as     |
+| finger <user> | Displays information about the user   |
+|---------------+---------------------------------------|
+*** Hardware
+|-----------------------+---------------------------------------------|
+| Command               | Description                                 |
+|-----------------------+---------------------------------------------|
+| dmesg                 | Displays bootup messages                    |
+| cat /proc/cpuinfo     | Displays CPU model information              |
+| cat /proc/meminfo     | Displays memory information                 |
+| cat /proc/version     | Displays the kernel version                 |
+| lshw                  | Displays a list of hardware                 |
+| lsblk                 | Displays block devices related information  |
+| lspci -tv             | Displays PCI devices in a tree-like diagram |
+| lsusb -tv             | Displays USB devices in a tree-like diagram |
+| hdparm -i /dev/sda    | Displays information about a disk drive     |
+| badblocks -s /dev/sda | Test for unreadable blocks on a disk        |
+|-----------------------+---------------------------------------------|
+*** Users
+|------------------------------------+------------------------------------------------------|
+| Command                            | Description                                          |
+|------------------------------------+------------------------------------------------------|
+| id                                 | Displays the user and group ids of your current user |
+| last                               | Displays the last logins on the system               |
+| who                                | Shows who is logged on to the system                 |
+| groupadd "admin"                   | Adds the group "admin"                               |
+| useradd -c "Name" -g admin -m user | Creates a user                                       |
+| userdel user                       | Deletes a user                                       |
+| usermod -aG sales user             | Add a user to a group                                |
+|------------------------------------+------------------------------------------------------|
+*** File Commands
+|-----------------------------------+--------------------------------------------------------|
+| Command                           | Description                                            |
+|-----------------------------------+--------------------------------------------------------|
+| ls -al                            | List files - including hidden files, with details      |
+| pwd                               | Shows the current directory path                       |
+| mkdir <directory_name>            | Creates a directory                                    |
+| rm <file_name>                    | Removes a file                                         |
+| rm -r <directory_name>            | Removes a directory and its contents recursively       |
+| rm -f <file_name>                 | Force removes a file                                   |
+| rm -rf <directory_name>           | Force removes a directory and its contents recursively |
+| cp <file1> <file2>                | Creates a copy of a file                               |
+| cp -r <dir1> <dir2>               | Creates a copy of a directory                          |
+| mv <file1> <file2>                | Renames or moves a file to a directory                 |
+| ln -s /path/to/<file_name> <link> | Creates a symbolic link to the file name               |
+| touch <file>                      | Creates a new empty file                               |
+| cat > <file>                      | Writes standard input into a file                      |
+| more <file>                       | Displays the contents of a file                        |
+| head -n 10 <file>                 | Displays the first 10 lines of a file                  |
+| tail -n 10 <file>                 | Displays the last 10 lines of a file                   |
+| gpg -c <file>                     | Encrypts a file                                        |
+| gpg <file>.gpg                    | Decrypts a file                                        |
+|-----------------------------------+--------------------------------------------------------|
+*** Process Related
+|-------------------+---------------------------------------------------|
+| Command           | Description                                       |
+|-------------------+---------------------------------------------------|
+| ps                | Displays currently active processes               |
+| ps aux            | Displays all the running processes                |
+| top               | Displays all running processes in real-time       |
+| kill <pid>        | Kills the process with the given process ID       |
+| killall <proc>    | Kills all processes with the given name           |
+| pkill <proc_name> | Kills process by name                             |
+| bg                | Resumes a stopped process in the background       |
+| fg                | Resumes a process and brings it to the foreground |
+| fg <n>            | Brings job number n to the foreground             |
+| lsof              | Lists files that are open by processes            |
+| renice 19 <pid>   | Makes a process run with very low priority        |
+| pgrep             | Finds the process ID of a running program by name |
+| pstree            | Visualizes the processes of the system in a tree  |
+|-------------------+---------------------------------------------------|
+*** File Permissions
+|--------------------------------+-----------------------------------------------------------------|
+| Command                        | Description                                                     |
+|--------------------------------+-----------------------------------------------------------------|
+| chmod 777 /path/to/file        | Change file permissions to owner, group, and everyone can rwx   |
+| chmod 755 /path/to/file        | Set permission to rwx for owner, and r-x for group and everyone |
+| chmod u+x <file>               | Set execute permission for the owner                            |
+| chown <owner>:<group> <file>   | Change ownership of the file                                    |
+| chown -R <owner>:<group> <dir> | Change ownership of the directory recursively                   |
+|--------------------------------+-----------------------------------------------------------------|
+*** Network
+|----------------------------------------+----------------------------------------------------------------|
+| Command                                | Description                                                    |
+|----------------------------------------+----------------------------------------------------------------|
+| ip addr show                           | Displays IP addresses and all the network interfaces           |
+| ip address add 192.168.0.1/24 dev eth0 | Assign an IP address to a network interface                    |
+| dig <domain>                           | Displays DNS information about a domain                        |
+| host <domain>                          | Displays IP address of a domain and vice-versa                 |
+| hostname -i                            | Displays local IP address                                      |
+| wget <file>                            | Downloads a file from an online source                         |
+| netstat -pnltu                         | Displays all active listening ports and services on the server |
+|----------------------------------------+----------------------------------------------------------------|
+*** Compression/Archives
+|-----------------------+--------------------------------------------------|
+| Command               | Description                                      |
+|-----------------------+--------------------------------------------------|
+| tar cf home.tar /home | Creates a tar file named "home.tar" from "/home" |
+| tar xf <file.tar>     | Extracts the files from a tar file               |
+| tar czf <file.tar.gz> | Creates a tar file with Gzip compression         |
+|-----------------------+--------------------------------------------------|
+*** Install Packages
+|-------------------+--------------------------|
+| Command           | Description              |
+|-------------------+--------------------------|
+| rpm -i <pkg.rpm>  | Install an rpm package   |
+| rpm -e <pkg_name> | Uninstall an rpm package |
+|-------------------+--------------------------|
+*** Install Source (Compilation)
+|--------------+------------------------|
+| Command      | Description            |
+|--------------+------------------------|
+| ./configure  | Configures the package |
+| make         | Compiles the package   |
+| make install | Installs the program   |
+|--------------+------------------------|
+*** Search
+|-----------------------------+-------------------------------------------------------|
+| Command                     | Description                                           |
+|-----------------------------+-------------------------------------------------------|
+| grep <pattern> <files>      | Search for a given pattern in a file                  |
+| grep -r <pattern> <dir>     | Search recursively for a pattern in a given directory |
+| find /dir/ -name <filename> | Find all the files with a given name                  |
+| find / -size +100M          | Find files greater than 100MB in the home folder      |
+|-----------------------------+-------------------------------------------------------|
+*** Login
+|-----------------------------+-----------------------------------------------------|
+| Command                     | Description                                         |
+|-----------------------------+-----------------------------------------------------|
+| ssh <user>@<host>           | Securely connects to the host as the specified user |
+| ssh -p <port> <user>@<host> | Securely connect to host on the specified port      |
+| telnet <host>               | Connects to the system using telnet port            |
+|-----------------------------+-----------------------------------------------------|
+*** File Transfer
+|---------------------------------+----------------------------------------------------|
+| Command                         | Description                                        |
+|---------------------------------+----------------------------------------------------|
+| scp <file.txt> <server>:/tmp    | Securely copy a file to a server in /tmp directory |
+| rsync -a /local/dir /remote/dir | Synchronize the contents of two directories        |
+|---------------------------------+----------------------------------------------------|
+*** Disk Usage
+|----------+---------------------------------------------------------|
+| Command  | Description                                             |
+|----------+---------------------------------------------------------|
+| df -h    | Displays free space on mounted systems (human readable) |
+| df -i    | Displays free inodes on mounted systems                 |
+| fdisk -l | Displays disk partitions, sizes and types               |
+| du -sh   | Displays the disk space a directory is using            |
+| findmnt  | Displays target mount point for all filesystems         |
+|----------+---------------------------------------------------------|
+*** Directory Traversal
+|----------+--------------------------------------------------------|
+| Command  | Description                                            |
+|----------+--------------------------------------------------------|
+| cd ..    | Moves one directory up in the directory tree structure |
+| cd       | Changes directory to the home directory                |
+| cd /test | Change directory to the /test directory                |
+|----------+--------------------------------------------------------|
+** cURL Commands
+*** Syntax & Help
+|---------------------+----------------------------------------------------------|
+| Command             | Description                                              |
+|---------------------+----------------------------------------------------------|
+| curl [params] [URL] | Base command syntax                                      |
+| curl --help         | Display the command usage and lists most common options  |
+| curl --help all     | Display the command usage and list all available options |
+|---------------------+----------------------------------------------------------|
+*** Basic Operations
+|----------------------------+------------------|
+| Command                    | Description      |
+|----------------------------+------------------|
+| curl http://example.com    | Fetch a URL      |
+| curl -o /path/to/file.zip  | Download a file  |
+| curl -L http://example.com | Follow redirects |
+|----------------------------+------------------|
+*** Data Transfer
+|-------------------------------------------------------------------------+----------------|
+| Command                                                                 | Description    |
+|-------------------------------------------------------------------------+----------------|
+| curl -d "key1=value1&key2=value2" http://example.com/post_endpoint      | Post Data      |
+| curl -d '{"key":"value"}' -H "Content-Type: application/json" <api_url> | Post JSON Data |
+| curl -F "file=@/path/to/file" http://example.com/upload                 | Upload a file  |
+|-------------------------------------------------------------------------+----------------|
+*** Authentication & Headers
+|------------------------------------------------------------+---------------------------|
+| Command                                                    | Description               |
+|------------------------------------------------------------+---------------------------|
+| curl -u <username>:<password> http://example.com           | HTTP Basic Authentication |
+| curl -H "Authorization: Bearer <TOKEN>" http://example.com | Add Headers               |
+|------------------------------------------------------------+---------------------------|
+*** Other Useful Options
+|-----------------------------------------------------+--------------------------|
+| Command                                             | Description              |
+|-----------------------------------------------------+--------------------------|
+| curl --limit-rate 3M -O http://example.com/file.zip | Limit rate (e.g., 3MB/s) |
+| curl -C - -O http://example.com/file.zip            | Resume Broken Download   |
+| curl -x http://proxyserver:port http://example.com  | Use a Proxy              |
+|-----------------------------------------------------+--------------------------|
+*** Debugging & Info
+|----------------------------+--------------------------|
+| Command                    | Description              |
+|----------------------------+--------------------------|
+| curl -v http://example.com | Verbose Mode             |
+| curl -i http://example.com | Retrieve Only Headers    |
+| curl --version             | Curl Version & Protocols |
+|----------------------------+--------------------------|
+*** SSL (Secure Socket Layer)
+|--------------------------------------------+-----------------------------------|
+| Command                                    | Description                       |
+|--------------------------------------------+-----------------------------------|
+| curl -k https://example.com                | Skip SSL Certificate Verification |
+| curl --cert mycert.pem https://example.com | Use SSL Certificate               |
+|--------------------------------------------+-----------------------------------|
+*** Common Options
+|--------------------------+-------------------------------------------------|
+| Option                   | Description                                     |
+|--------------------------+-------------------------------------------------|
+| -d, --data <data>        | HTTP POST data                                  |
+| -F, --fail               | Fail fast with no output on HTTP errors         |
+| -h, --help <category>    | Get help for commands                           |
+| -i, --include            | Include protocol response headers in the output |
+| -o, --output <file>      | Write to file instead of stdout                 |
+| -O, --remote-name        | Write output to a file named as the remote file |
+| -s, --silent             | Silent mode                                     |
+| -T, --upload-file <file> | Transfer local FILE to destination              |
+| <user:password>          | Server user and password                        |
+| -A, --user-agent <name>  | Send User-Agent <name> to server                |
+|--------------------------+-------------------------------------------------|
+# ---
+# Common mistakes for beginners:
+# 1. Using `rm -rf` carelessly. Double-check the path before executing, as this command is irreversible.
+# 2. Using `chmod 777`. This gives everyone read, write, and execute permissions, which can be a major security risk. Use more specific permissions whenever possible.
+# 3. Forgetting quotes around cURL data payloads (`-d`) can lead to shell interpretation errors, especially with characters like `&` or `{}`.
+# ---
 ** uncomplicated firewall (ufw)
 *** deny by default and allow by exception
 - port 20 and 21 - ftp

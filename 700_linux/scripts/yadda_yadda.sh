@@ -1,5 +1,28 @@
 cd
 espeak -v en-gb -s 175 -p 50 "yaadda yaada"
+dig www.chitrapata.in
+host www.chitrapata.in
+nmap www.chitrapata.in
+# who is online?
+echo "who is online?" && w
+# others
+id
+echo $XDG_SESSION_TYPE
+loginctl show-session $(loginctl | grep $(whoami) | awk '{print $1}') -p Type
+tty
+hostname
+hostname -i
+pgrep emacs
+pstree
+echo $PATH | tr : '\n' | sort -u
+calc 100 / 7
+trans :fr hello | head -n 5
+trans :es hello | head -n 5
+# tilde
+echo "tilde"
+echo ~
+echo ~-
+echo ~+
 # fetch chennai weather
 curl -s wttr.in/chennai | head -n 7
 # Fetch Pondicherry weather
@@ -13,25 +36,11 @@ for i in $(seq 0 9); do
 done
 echo "random $RANDOM"
 echo "shuffle random within range: $(shuf -i 1-1000 -n 5 | tr '\n' ',' | sed 's/,$//')"
-
 # fun stuff - generate password, retrieve location url, get reasons for NO
 ./MuggleBornPadawan/700_linux/scripts/password_generator.sh > /dev/null 2>&1
 curl -sIL https://tinyurl.com/2sw62h3y | grep location:
 curl -si --get https://naas.isalman.dev/no | grep reason
 fortune -a | cowsay
-echo $XDG_SESSION_TYPE
-loginctl show-session $(loginctl | grep $(whoami) | awk '{print $1}') -p Type
-tty
-echo $PATH | tr : '\n' | sort -u
-calc 100 / 7
-trans :fr hello | head -n 5
-trans :es hello | head -n 5
-# tilde
-echo "tilde"
-echo ~
-echo ~-
-echo ~+
-
 # sequential numbers 
 seq -s ", " 1 .71 10
 seq -f "%02g" -s "," 1 10
@@ -56,9 +65,5 @@ echo "start deepseek-r1:1.5b"
 ollama run deepseek-r1:1.5b "how are you doing?"
 ollama stop deepseek-r1:1.5b
 echo "stop deepseek"
-hostname
-hostname -i
-pgrep emacs
-pstree
 sudo netstat -pnltu
 espeak -v en-gb -s 175 -p 50 "yaada yaam out"
