@@ -1,4 +1,3 @@
-clear
 cd
 espeak -v en-gb -s 175 -p 50 "yaadda yaada"
 # fetch chennai weather
@@ -57,4 +56,7 @@ echo "start deepseek-r1:1.5b"
 ollama run deepseek-r1:1.5b "how are you doing?"
 ollama stop deepseek-r1:1.5b
 echo "stop deepseek"
+pgrep emacs
+pstree
+sudo netstat -pnltu
 espeak -v en-gb -s 175 -p 50 "yaada yaam out"
