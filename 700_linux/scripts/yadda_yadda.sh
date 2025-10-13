@@ -1,6 +1,10 @@
 cd
 espeak -v en-gb -s 175 -p 50 "yaadda yaada"
 url=https://openweathermap.org/
+if [ -n "$1" ]; then
+    printf "%s\n" "$1"
+    url=$1
+fi
 dig $url
 host $url
 nmap $url
@@ -68,5 +72,6 @@ echo "start deepseek-r1:1.5b"
 ollama run deepseek-r1:1.5b "how are you doing?"
 ollama stop deepseek-r1:1.5b
 echo "stop deepseek"
+echo $url
 sudo netstat -pnltu
 espeak -v en-gb -s 175 -p 50 "yaada yaam out"
