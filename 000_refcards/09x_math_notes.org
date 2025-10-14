@@ -230,7 +230,71 @@ source: X to Y (YT)
 |-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
 
 ** calculus
-abc / 50 levels 
+pending: 50 levels
+*** general intro
+- study of change - tools to describe and analyze this change with accuracy
+- differentiation - rate of change, slope, global and local min/max (slope =0), acceleration, jerk
+  - a derivative measures the instantaneous rate of change of a function with respect to its variable 
+- integration - finding total accumulation (distance covered, area, volume, ...)
+  - accumulates change over an interval
+- prerequisite - functions and their graphs - slope - limit
+- fundamental theorem of calculus (ftc)
+  - limit (a to b) - integration of f(x)dex = F(b) - F(a)
+  - a limit is a a mathematical tool that describles the value a function approaches as the input approaches a certain point
+  - where F'(x) = f(x)
+- domain - the set of all possible input values ($x$) for which the function is defined.
+- range - the set of all possible output values ($f(x)$ or $y$) resulting from the inputs in the domain
+- real world applications - intgration 
+  - area between two curves y = f(x) and y = g(x) where f(x) >= g(x) is
+    - integration [limit (a to b)] (f(x) - g(x))dx
+  - volume of 3d
+  - velocity -> displacement
+  - area of probablity density function (normal distribution) - random variable falls within that interval
+- real world applications - differential equations
+  - population growth
+- series and sequences
+  - infinite series: sum of terms of an infinite sequence
+  - taylor series: power series representation of a function around a point
+- multivariate calculus
+  - partial derivatives
+  - multiple integrals
+  - multidimensional systems  
+*** diff rules
+- power rule
+- constant  rule
+- product rule
+- chain rule 
+- sum / difference rule
+- exponential rule
+- logarthmic rule
+- trignometric integral
+*** approach to integration
+- integration by substitution (u-substitution)
+- integration by parts
+- trigonometric substitution
+- partial fraction decomposition
+- integration using power series
+- improper integrals
+- numerical integration methods (e.g., trapezoidal rule, simpson's rule)
+*** types
+|------------+-------------------+--------------------------------------------------------------------------|
+| types      | explanation       | notes                                                                    |
+|------------+-------------------+--------------------------------------------------------------------------|
+| definite   | area under curve  | integration of y=f(x) within limits                                      |
+| indefinite | antiderivative    | includes constant of integration to include possible solutions           |
+| improper   | gaps in limit     | replace infinite with t                                                  |
+| multiple   | higher dimensions | volume, mass, charge distribution, or probablity                         |
+| line       | along a curve     | mountain path - total work done against gravity, work, circulation, flux |
+| surface    | along a surface   | 2d surface on a 3d space; flux of vector field                           |
+| volume     | triple integral   | total mass, electric charge, energy density                              |
+| contour    | complex numbers   | c is closed contour; z is a complex var; residual                        |
+| quantum    | path integral     | sums over all possible paths                                             |
+| stochastic | random processes  | eg: brownian motion                                                      |
+| functional |                   | variable of integration is itself a function                             |
+| lebesgue   |                   | instead of d/dx, use d/dy                                                |
+| fractional |                   | memory effects (visco elastic materials)                                 |
+|------------+-------------------+--------------------------------------------------------------------------|
+
 
 ** most important theorems in math
 |---------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------|
