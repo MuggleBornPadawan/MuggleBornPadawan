@@ -1,6 +1,11 @@
 * math
 ** dictionary
 All of math can be described in four categories:
+1.  **Logic and Foundations:** Concerns the underlying structure, consistency, and rigorous basis of mathematical reasoning (set theory, formal systems, proof theory).
+2.  **Algebra:** Studies mathematical structures, relations, and quantities (groups, rings, fields, linear algebra, abstract algebra).
+3.  **Analysis:** Focuses on limits, continuity, convergence, and rates of change (calculus, differential equations, real analysis, complex analysis, functional analysis).
+4.  **Geometry and Topology:** Deals with the properties of space, shape, size, position, and transformation (Euclidean geometry, differential geometry, algebraic topology).
+key aspects:   
 - primitive concepts - mathematical object that has no definition (eg: point, line, plane and set). we simply accept that they exist. explanation of concept is possible but proper definition cannot be constructed. 
 - definitions - act of naming mathematical objects or relationship between objects
 - axioms (postulates) - simply accepted without demonstration 
@@ -209,7 +214,6 @@ All of math can be described in four categories:
 |                          | equivalent to the field of complex numbers                                             |               |
 |--------------------------+----------------------------------------------------------------------------------------+---------------|
 ** derivatives
-source: X to Y (YT)
 |-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
 | type        | explanation                   | notes                          | application                                         |
 |-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
@@ -228,9 +232,7 @@ source: X to Y (YT)
 | fractional  |                               |                                | viscoelasticity and signal processing               |
 | func??      |                               |                                |                                                     |
 |-------------+-------------------------------+--------------------------------+-----------------------------------------------------|
-
 ** calculus
-pending: 50 levels
 *** general intro
 - study of change - tools to describe and analyze this change with accuracy
 - differentiation - rate of change, slope, global and local min/max (slope =0), acceleration, jerk
@@ -294,8 +296,61 @@ pending: 50 levels
 | lebesgue   |                   | instead of d/dx, use d/dy                                                |
 | fractional |                   | memory effects (visco elastic materials)                                 |
 |------------+-------------------+--------------------------------------------------------------------------|
-
-
+*** levels
+|-------+------------------------------------+-------------------------------+------------------------------------+-------------------|
+| level | name                               | example                       | explanation                        | notes             |
+|-------+------------------------------------+-------------------------------+------------------------------------+-------------------|
+|     1 | solve                              | f(x) = 2x + 3                 | f(5) = ?                           |                   |
+|     2 | function composition               | f(x), g(x), find f(g(x))      |                                    |                   |
+|     3 | domain and range                   | find for given function       | understanding where functions live |                   |
+|     4 | function transformation            | f(x) = x^2 => f(x + 2) -3     | what happens to graph              |                   |
+|     5 | trignometry                        | sin(pi/4) + cos(pi/3)         |                                    |                   |
+|     6 | function inverses                  | f(x) = 2x - 7; find f'(x)     |                                    |                   |
+|     7 | continuity                         | look at graph f(x) = abs(x)/x | where is it discontinuous?         | helps find limits |
+|     8 | polynomial behaviour               | as x->infinity,..             | f(x) = -2x^3+5x^2-1                | what happens?     |
+|     9 | limit                              |                               |                                    |                   |
+|    10 | evaluate a limit                   |                               |                                    |                   |
+|    11 | find limit                         |                               | indeterminate forms                |                   |
+|    12 | derivative                         |                               |                                    |                   |
+|    13 | power rule                         |                               |                                    |                   |
+|    14 | product rule                       |                               |                                    |                   |
+|    15 | quotient rule                      |                               |                                    |                   |
+|    16 | chain rule                         |                               |                                    |                   |
+|    17 | chaint rule - trignometruy         |                               |                                    |                   |
+|    18 | implicit differentiation           |                               |                                    |                   |
+|    19 | antiderivatives                    |                               |                                    |                   |
+|    20 | basic substitution in integration  |                               |                                    |                   |
+|    21 | integration by parts               |                               |                                    |                   |
+|    22 | trignometric substitution          |                               |                                    |                   |
+|    23 | partial fraction decomposition     |                               |                                    |                   |
+|    24 | optimization                       |                               |                                    |                   |
+|    25 |                                    |                               |                                    |                   |
+|    26 | curve sketching                    |                               |                                    |                   |
+|    27 | definite integral                  |                               |                                    |                   |
+|    28 | fundamental theorem of calculus    |                               |                                    |                   |
+|    29 | area between curves                |                               |                                    |                   |
+|    30 | volume of revolution (disk method) |                               |                                    |                   |
+|    31 | sequences                          |                               |                                    |                   |
+|    32 | series convergence                 |                               |                                    |                   |
+|    33 | power series expansion             |                               |                                    |                   |
+|    34 | taylor series approximation        |                               |                                    |                   |
+|    35 | convergence radius challenge       |                               |                                    |                   |
+|    36 | multivaribale calculus             |                               |                                    |                   |
+|    37 | gradient vector                    |                               |                                    |                   |
+|    38 | double integrals                   |                               |                                    |                   |
+|    39 | chain rule in multivariable        |                               |                                    |                   |
+|    40 | vector fields                      |                               |                                    |                   |
+|    41 | line integrals                     |                               |                                    |                   |
+|    42 | green's theorem                    |                               |                                    |                   |
+|    43 | surface integrals                  |                               |                                    |                   |
+|    44 | divergence and curl                |                               |                                    |                   |
+|    45 | divergence theorem                 |                               |                                    |                   |
+|    46 | real analysis                      |                               |                                    |                   |
+|    47 | measure theory                     |                               |                                    |                   |
+|    48 | functional analysis                |                               |                                    |                   |
+|    49 | calculus of variations             |                               |                                    |                   |
+|    50 | differential geometry              |                               |                                    |                   |
+|-------+------------------------------------+-------------------------------+------------------------------------+-------------------|
 ** most important theorems in math
 |---------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------|
 | theorem                         | explanation                                                                   | notes                                         |
@@ -354,4 +409,3 @@ pending: 50 levels
   - no magnetic monopoles
   - faraday's law
   - anti maxweell law
-
