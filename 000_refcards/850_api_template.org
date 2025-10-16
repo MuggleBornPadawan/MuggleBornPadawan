@@ -16,6 +16,18 @@
 - OPTIONS request - eg: response = requests.options('https://api.example.com/endpoint')
 - reflection capablities
 - wrapper functions 
+** api inspection
+OAS is the OpenAPI Specification.It is a machine-readable interface description for RESTful APIs. It specifies the structure of an API, including:
+-   Available endpoints and operations (paths and HTTP methods)
+-   Parameters for each operation (query, header, path, cookie)
+-   Request body structure (content type and schema)
+-   Response structures, including status codes and content schemas
+-   Authentication mechanisms
+The specification is language-agnostic and is typically expressed in YAML or JSON format. It is used for tasks such as:
+-   Design-first API development
+-   Automated client and server stub generation
+-   Documentation rendering
+-   Testing and validation
 ** components
 - components: endpoints, request methods, headers, request body, response body, status codes, authentication and authorization, rate limiting, versioning, documentation
 ** performance tuning

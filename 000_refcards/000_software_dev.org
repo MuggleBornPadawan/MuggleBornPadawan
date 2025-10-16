@@ -1,4 +1,25 @@
 #+title: the ultimate guide to software development fundamentals
+* introduction
+** core dump
+- program vs process
+- memory: stack, heap, data and text
+  
+** system design   
+|-----------------------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
+| Aspect                | Key Metrics                                                                              | Popular Open Source Tools                                                |
+|-----------------------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
+| Scalability           | Requests Per Second (RPS), CPU/Memory Utilization %, Latency @ N users                   | Kubernetes, Docker, OpenStack                                            |
+| Availability          | Uptime % (e.g., 99.99%), MTBF (Mean Time Between Failures), MTTR (Mean Time To Recovery) | Kubernetes, HAProxy, Keepalived                                          |
+| Latency vs Throughput | Latency (p50, p95, p99 in ms), Throughput (RPS, TPS)                                     | Nginx, Envoy, Netty                                                      |
+| Data Consistency      | Replication Lag (seconds/ms), Consistency Models (Strong, Eventual)                      | PostgreSQL (Strong), Cassandra (Eventual), Zookeeper (Coordination)      |
+| Caching               | Cache Hit Ratio %, Cache Miss Rate %, Latency of Cache Lookups                           | Redis, Memcached, Varnish                                                |
+| Database Modeling     | Query Execution Time (ms), Index Hit Rate %                                              | PostgreSQL (Relational), MongoDB (Document), MySQL                       |
+| Load Balancing        | Request distribution per node, CPU/Memory load per node, Active connections              | Nginx, HAProxy, Envoy Proxy                                              |
+| Failover & Redundancy | MTTR (Mean Time To Recovery), Failover Success Rate %                                    | Kubernetes, Patroni (for PostgreSQL), Pacemaker                          |
+| Security              | Vulnerabilities found/patched, MTTD/MTTR for incidents, Auth error rates                 | HashiCorp Vault, OWASP ZAP, OpenSSL, Keycloak                            |
+| Observability         | The "Four Golden Signals": Latency, Traffic, Errors, Saturation                          | Prometheus, Grafana, Jaeger, ELK Stack (Elasticsearch, Logstash, Kibana) |
+| Idempotency           | Duplicate transaction/event count, Error rate on retried requests                        | RabbitMQ, Kafka, Stripe API (as an implementation example)               |
+|-----------------------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
 * best practices
 ** software development principles
 - key variables: system integrity, adaptablity, cognitive load, efficiency, risk mitigation, collaboration
@@ -34,26 +55,26 @@
 * software development fundamentals
 ** understand the problem deeply
 ** design for clarity and modularity
-*** single responsiblity principle
-*** modular design
-*** dont repeat yourself (dry)
+- single responsiblity principle
+- modular design
+- dont repeat yourself (dry)
 ** quality and reliablity
-*** test driven development
-*** strategic error handling & exception management
-*** defensive programming
-*** idempotency
+- test driven development
+- strategic error handling & exception management
+- defensive programming
+** idempotency
 ** embrace maintainablity and evolution
-*** code comments & documentation
-*** disciplined refactoring
-*** configuration management & environment variables
+- code comments & documentation
+- disciplined refactoring
+- configuration management & environment variables
 ** foster collaboration and transparency
-*** version control & smart branching strategies
-*** code reviews & pair programming
-*** robust logging & monitoring
+- version control & smart branching strategies
+- code reviews & pair programming
+- robust logging & monitoring
 ** performance and security
-*** profiling
-*** security by design
-*** clear licensing and author information
+- profiling
+- security by design
+- clear licensing and author information
 * common mistakes
 -- ignoring version control
 -- hardcoding everything
