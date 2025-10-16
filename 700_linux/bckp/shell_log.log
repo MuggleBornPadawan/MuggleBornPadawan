@@ -1,6 +1,6 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed Oct 15 11:21:39 AM IST 2025 
+Date: Thu Oct 16 12:25:50 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -34,8 +34,8 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Ign:1 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Hit:2 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:3 https://deb.debian.org/debian bookworm InRelease
 Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
@@ -99,7 +99,7 @@ sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).
-firefox-esr is already the newest version (140.3.1esr-1~deb12u1).
+firefox-esr is already the newest version (140.4.0esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
@@ -160,14 +160,14 @@ up to date, audited 144 packages in 6s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 929ms
+up to date, audited 144 packages in 879ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 573ms
+up to date, audited 144 packages in 583ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -181,7 +181,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 844ms
+up to date, audited 144 packages in 891ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -199,6 +199,7 @@ Password Store
 ├── GEMINI_API_KEY
 ├── mbprootp
 ├── MOONSHOT_API_KEY
+├── OLLAMA_API_KEY
 ├── OPENAI_API_KEY
 ├── OPENROUTER_API_KEY
 ├── protector_key
@@ -247,8 +248,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Wed Oct 15 11:22:10 2025
-daily.cld database is up-to-date (version: 27792, sigs: 2076963, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Thu Oct 16 12:26:15 2025
+daily database available for update (local version: 27792, remote version: 27793)
+Testing database: '/usr/local/share/clamav/tmp.42f7bdb860/clamav-efd7f3d67b43b49a5e407ac64a18968b.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27793, sigs: 2076970, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 run 'sudo clamscan -r /' every day. stay safe. have a good day
