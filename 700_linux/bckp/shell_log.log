@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Oct 16 11:31:06 PM IST 2025 
+Date: Sat Oct 18 01:29:03 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08507-gc5e3cc23fa55
 Firewall is active and enabled on system startup
@@ -34,14 +34,15 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Ign:1 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:3 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
+Get:4 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [281 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Fetched 443 kB in 1s (296 kB/s)
+Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
+Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [282 kB]
+Get:8 https://deb.debian.org/debian-security bookworm-security/main Translation-en [171 kB]
+Fetched 616 kB in 1s (595 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -152,27 +153,27 @@ Reading state information...
 ├── @openai/codex@0.30.0
 ├── @qwen-code/qwen-code@0.0.14
 ├── corepack@0.33.0
-├── npm-check-updates@19.1.0
+├── npm-check-updates@19.1.1
 └── npm@10.9.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 11s
+up to date, audited 144 packages in 9s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 1s
+up to date, audited 144 packages in 876ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 786ms
+changed 1 package in 499ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -184,7 +185,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 27s
+added 469 packages, changed 1 package, and audited 613 packages in 32s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -199,7 +200,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 3s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -281,14 +282,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Thu Oct 16 23:32:05 2025
-daily database available for update (local version: 27793, remote version: 27794)
-Testing database: '/usr/local/share/clamav/tmp.5022dac450/clamav-afd87f50e85ba0e8bf991b03ebd1fbc4.tmp-daily.cld' ...
+ClamAV update process started at Sat Oct 18 01:30:06 2025
+daily database available for update (local version: 27794, remote version: 27795)
+Testing database: '/usr/local/share/clamav/tmp.baae77672a/clamav-be32e5ce3dd4cbf1a02170dde64e8e95.tmp-daily.cld' ...
 Database test passed.
-daily.cld updated (version: 27794, sigs: 2076970, f-level: 90, builder: svc.clamav-publisher)
+daily.cld updated (version: 27795, sigs: 2076970, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27794/Thu Oct 16 15:00:03 2025
+ClamAV 1.4.3/27795/Fri Oct 17 15:21:42 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
