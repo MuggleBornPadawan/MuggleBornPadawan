@@ -1,8 +1,8 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Sat Oct 18 01:29:03 AM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Sat Oct 18 03:00:11 AM IST 2025 
 OS: Linux 
-Kernel: 6.6.88-08507-gc5e3cc23fa55
+Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
 Skipping adding existing rule
 Skipping adding existing rule (v6)
@@ -34,21 +34,33 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:3 https://storage.googleapis.com/cros-packages/140 bookworm InRelease
-Get:4 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Hit:6 https://storage.googleapis.com/cros-packages/140 bookworm Release
-Get:7 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [282 kB]
-Get:8 https://deb.debian.org/debian-security bookworm-security/main Translation-en [171 kB]
-Fetched 616 kB in 1s (595 kB/s)
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:2 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:3 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-10-17-2006.57-F-2025-10-17-2006.57.pdiff [809 B]
+Get:3 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-10-17-2006.57-F-2025-10-17-2006.57.pdiff [809 B]
+Ign:4 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
+Hit:5 https://deb.debian.org/debian bookworm InRelease
+Get:6 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:7 https://storage.googleapis.com/cros-packages/141 bookworm Release [3,109 B]
+Hit:8 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:9 https://storage.googleapis.com/cros-packages/141 bookworm Release.gpg [2,365 B]
+Get:10 https://storage.googleapis.com/cros-packages/141 bookworm/main amd64 Packages [5,009 B]
+Fetched 190 kB in 2s (87.1 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages were automatically installed and are no longer required:
+  qt5-gtk2-platformtheme qt5-style-plugin-cleanlooks qt5-style-plugin-motif
+  qt5-style-plugin-plastique qt5-style-plugins
+Use 'sudo apt autoremove' to remove them.
+The following packages will be upgraded:
+  cros-adapta cros-im
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 53.0 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -108,7 +120,16 @@ cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages were automatically installed and are no longer required:
+  qt5-gtk2-platformtheme qt5-style-plugin-cleanlooks qt5-style-plugin-motif
+  qt5-style-plugin-plastique qt5-style-plugins
+Use 'sudo apt autoremove' to remove them.
+The following packages will be upgraded:
+  cros-adapta cros-im
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 53.0 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -131,7 +152,16 @@ libssl-dev is already the newest version (3.0.17-1~deb12u3).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u4).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages were automatically installed and are no longer required:
+  qt5-gtk2-platformtheme qt5-style-plugin-cleanlooks qt5-style-plugin-motif
+  qt5-style-plugin-plastique qt5-style-plugins
+Use 'sudo apt autoremove' to remove them.
+The following packages will be upgraded:
+  cros-adapta cros-im
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 53.0 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -139,93 +169,71 @@ ufw is already the newest version (0.36.2-1).
 netcat-openbsd is already the newest version (1.219-1).
 iproute2 is already the newest version (6.1.0-3).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages were automatically installed and are no longer required:
+  qt5-gtk2-platformtheme qt5-style-plugin-cleanlooks qt5-style-plugin-motif
+  qt5-style-plugin-plastique qt5-style-plugins
+Use 'sudo apt autoremove' to remove them.
+The following packages will be upgraded:
+  cros-adapta cros-im
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 53.0 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
-├── @anthropic-ai/claude-code@2.0.1
-├── @google/gemini-cli@0.9.0
-├── @openai/codex@0.30.0
-├── @qwen-code/qwen-code@0.0.14
-├── corepack@0.33.0
-├── npm-check-updates@19.1.1
-└── npm@10.9.3
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 9s
+up to date, audited 144 packages in 8s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 876ms
+up to date, audited 144 packages in 966ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 499ms
-Checking /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run ncu -u to upgrade package.json
-Upgrading /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run npm install to install new versions.
-
-added 469 packages, changed 1 package, and audited 613 packages in 32s
-
-97 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 3s
-
-97 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-removed 449 packages, changed 9 packages, and audited 144 packages in 2s
+up to date, audited 144 packages in 794ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
+up to date, audited 144 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 980ms
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -282,14 +290,10 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sat Oct 18 01:30:06 2025
-daily database available for update (local version: 27794, remote version: 27795)
-Testing database: '/usr/local/share/clamav/tmp.baae77672a/clamav-be32e5ce3dd4cbf1a02170dde64e8e95.tmp-daily.cld' ...
-Database test passed.
-daily.cld updated (version: 27795, sigs: 2076970, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Sat Oct 18 03:00:43 2025
+daily.cld database is up-to-date (version: 27795, sigs: 2076970, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27795/Fri Oct 17 15:21:42 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
