@@ -53,6 +53,10 @@ alias td='tmux detach'
 alias tk='tmux kill-server'
 alias tf='tmux set-option -g status off'
 alias to='tmux set-option -g status on'
+#ollama
+alias oq='ollama run qwen3-coder:480b-cloud'
+alias ok='ollama run kimi-k2:1t-cloud'
+alias od='ollama run deepseek-v3.1:671b-cloud'
 # gemini query and chat
 alias q='./MuggleBornPadawan/700_linux/scripts/gemini_query.sh $1'
 alias chat='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh'
