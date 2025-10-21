@@ -249,8 +249,8 @@ function gemini_arithmetic_test() {
             esac
         done
 	# Introduce Delay
-	# Pause for a random duration between 0 and 55 seconds.
-	delay_seconds=$((RANDOM % 55))
+	# Pause for a random duration between 0 and 59 seconds.
+	delay_seconds=$((60 + (RANDOM % 59)))
 	echo "Info: Delaying for ${delay_seconds} seconds..."
 	#./MuggleBornPadawan/700_linux/scripts/openrouter_query.sh "tell me a new joke"
 	sleep "${delay_seconds}"

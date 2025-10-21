@@ -3,22 +3,24 @@
 ** core dump
 - program vs process
 - memory: stack, heap, data and text
-  
+** developer productivity
+- space metrics - https://getdx.com/blog/space-metrics/ - satisfaction and well-being, performance, activity, communication and collaboration, efficiency and flow
+- devops research and assessment (dora) group - deployment frequency (df), lead time for changes (lt4c), mean time to recover (mttr), change failure rate (cfr)
 ** system design   
 |-----------------------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
-| Aspect                | Key Metrics                                                                              | Popular Open Source Tools                                                |
+| aspect                | key metrics                                                                              | popular open source tools                                                |
 |-----------------------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
-| Scalability           | Requests Per Second (RPS), CPU/Memory Utilization %, Latency @ N users                   | Kubernetes, Docker, OpenStack                                            |
-| Availability          | Uptime % (e.g., 99.99%), MTBF (Mean Time Between Failures), MTTR (Mean Time To Recovery) | Kubernetes, HAProxy, Keepalived                                          |
-| Latency vs Throughput | Latency (p50, p95, p99 in ms), Throughput (RPS, TPS)                                     | Nginx, Envoy, Netty                                                      |
-| Data Consistency      | Replication Lag (seconds/ms), Consistency Models (Strong, Eventual)                      | PostgreSQL (Strong), Cassandra (Eventual), Zookeeper (Coordination)      |
-| Caching               | Cache Hit Ratio %, Cache Miss Rate %, Latency of Cache Lookups                           | Redis, Memcached, Varnish                                                |
-| Database Modeling     | Query Execution Time (ms), Index Hit Rate %                                              | PostgreSQL (Relational), MongoDB (Document), MySQL                       |
-| Load Balancing        | Request distribution per node, CPU/Memory load per node, Active connections              | Nginx, HAProxy, Envoy Proxy                                              |
-| Failover & Redundancy | MTTR (Mean Time To Recovery), Failover Success Rate %                                    | Kubernetes, Patroni (for PostgreSQL), Pacemaker                          |
-| Security              | Vulnerabilities found/patched, MTTD/MTTR for incidents, Auth error rates                 | HashiCorp Vault, OWASP ZAP, OpenSSL, Keycloak                            |
-| Observability         | The "Four Golden Signals": Latency, Traffic, Errors, Saturation                          | Prometheus, Grafana, Jaeger, ELK Stack (Elasticsearch, Logstash, Kibana) |
-| Idempotency           | Duplicate transaction/event count, Error rate on retried requests                        | RabbitMQ, Kafka, Stripe API (as an implementation example)               |
+| scalability           | requests per second (rps), cpu/memory utilization %, latency @ n users                   | kubernetes, docker, openstack                                            |
+| availability          | uptime % (e.g., 99.99%), mtbf (mean time between failures), mttr (mean time to recovery) | kubernetes, haproxy, keepalived                                          |
+| latency vs throughput | latency (p50, p95, p99 in ms), throughput (rps, tps)                                     | nginx, envoy, netty                                                      |
+| data consistency      | replication lag (seconds/ms), consistency models (strong, eventual)                      | postgresql (strong), cassandra (eventual), zookeeper (coordination)      |
+| caching               | cache hit ratio %, cache miss rate %, latency of cache lookups                           | redis, memcached, varnish                                                |
+| database modeling     | query execution time (ms), index hit rate %                                              | postgresql (relational), mongodb (document), mysql                       |
+| load balancing        | request distribution per node, cpu/memory load per node, active connections              | nginx, haproxy, envoy proxy                                              |
+| failover & redundancy | mttr (mean time to recovery), failover success rate %                                    | kubernetes, patroni (for postgresql), pacemaker                          |
+| security              | vulnerabilities found/patched, mttd/mttr for incidents, auth error rates                 | hashicorp vault, owasp zap, openssl, keycloak                            |
+| observability         | the "four golden signals": latency, traffic, errors, saturation                          | prometheus, grafana, jaeger, elk stack (elasticsearch, logstash, kibana) |
+| idempotency           | duplicate transaction/event count, error rate on retried requests                        | rabbitmq, kafka, stripe api (as an implementation example)               |
 |-----------------------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
 * best practices
 ** software development principles
@@ -76,11 +78,11 @@
 - security by design
 - clear licensing and author information
 * common mistakes
--- ignoring version control
--- hardcoding everything
--- "big ball of mud" anti pattern
--- skipping tests
--- premature optimization
--- ignoring error handling
--- "my code is self-explanatory"
--- fear of refactoring 
+- ignoring version control
+- hardcoding everything
+- "big ball of mud" anti pattern
+- skipping tests
+- premature optimization
+- ignoring error handling
+- "my code is self-explanatory"
+- fear of refactoring 
