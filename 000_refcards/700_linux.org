@@ -13,6 +13,57 @@
 - permissions
 - zero trust architecture - lease possible permissions at every level - user based and device based (not netwrok based)
 ** Command-Line Cheat Sheet
+** commonly used commands
+|-------------------+-----------------------------------------------+------------------------------------------+--------------------------|
+| Category          | Command                                       | Description                              |                          |
+|-------------------+-----------------------------------------------+------------------------------------------+--------------------------|
+| Daily stuff       | ~ps aux                                       | grep {process}~                          | Find that sneaky process |
+| Daily stuff       | ~lsof -i :{port}~                             | Who's hogging that port?                 |                          |
+| Daily stuff       | ~df -h~                                       | The classic "we're out of space" checker |                          |
+| Daily stuff       | ~netstat -tulpn~                              | Network connection detective             |                          |
+| Daily stuff       | ~kubectl get pods                             | grep -i error~                           | K8s trouble finder       |
+| Log related       | ~tail -f /var/log/*~                          | Real-time log watcher                    |                          |
+| Log related       | ~journalctl -fu service-name~                 | SystemD log stalker                      |                          |
+| Log related       | ~grep -r "error" .~                           | The error hunter                         |                          |
+| Log related       | ~zcat access.log.gz                           | grep "500"~                              | Compressed log ninja     |
+| Log related       | ~less +F~                                     | The better tail command                  |                          |
+| Container cli     | ~docker ps --format '{{.Names}} {{.Status}}'~ | Clean status check                       |                          |
+| Container cli     | ~docker stats --no-stream~                    | Quick resource check                     |                          |
+| Container cli     | ~crictl logs {container}~                     | Raw container stories                    |                          |
+| Container cli     | ~docker exec -it~                             | The container backdoor                   |                          |
+| Container cli     | ~podman top~                                  | Process peek inside containers           |                          |
+| System Detectives | ~htop~                                        | System resource storyteller              |                          |
+| System Detectives | ~iostat -xz 1~                                | Disk performance poet                    |                          |
+| System Detectives | ~free -h~                                     | Memory mystery solver                    |                          |
+| System Detectives | ~vmstat 1~                                    | System vital signs                       |                          |
+| System Detectives | ~dmesg -T                                     | tail~                                    | Kernel's recent gossip   |
+| Network stuff     | ~curl -v~                                     | HTTP conversation debugger               |                          |
+| Network stuff     | ~dig +short~                                  | Quick DNS lookup                         |                          |
+| Network stuff     | ~ss -tunlp~                                   | Socket statistics simplified             |                          |
+| Network stuff     | ~iptables -L~                                 | Firewall rule reader                     |                          |
+| Network stuff     | ~traceroute~                                  | Path finder                              |                          |
+| File and stuff    | ~find . -name "*.yaml" -type f~               | YAML hunter                              |                          |
+| File and stuff    | ~rsync -avz~                                  | Better file copier                       |                          |
+| File and stuff    | ~tar -xvf~                                    | The unzipper (yes, we all google this)   |                          |
+| File and stuff    | ~ln -s~                                       | Symlink wizard                           |                          |
+| File and stuff    | ~chmod +x~                                    | Make it executable                       |                          |
+| Performance       | ~strace -p {pid}~                             | System call spy                          |                          |
+| Performance       | ~tcpdump -i any~                              | Network packet sniffer                   |                          |
+| Performance       | ~sar -n DEV 1~                                | Network stats watch                      |                          |
+| Performance       | ~uptime~                                      | Load average at a glance                 |                          |
+| Performance       | ~top -c~                                      | Classic process viewer                   |                          |
+| Git Essentials    | ~git log --oneline~                           | History simplified                       |                          |
+| Git Essentials    | ~git reset --hard HEAD^~                      | The "oops" eraser                        |                          |
+| Git Essentials    | ~git stash~                                   | The work hider                           |                          |
+| Git Essentials    | ~git diff --cached~                           | What's staged?                           |                          |
+| Git Essentials    | ~git blame~                                   | The "who did this?" resolver             |                          |
+| Quick Fixes       | ~sudo !!~                                     | Run last command with sudo               |                          |
+| Quick Fixes       | ~ctrl+r~                                      | Command history search                   |                          |
+| Quick Fixes       | ~history                                      | grep~                                    | Command time machine     |
+| Quick Fixes       | ~alias~                                       | Command shortcut maker                   |                          |
+| Quick Fixes       | ~watch~                                       | Command repeater                         |                          |
+|-------------------+-----------------------------------------------+------------------------------------------+--------------------------|
+
 *** System
 |---------------+---------------------------------------|
 | Command       | Description                           |
