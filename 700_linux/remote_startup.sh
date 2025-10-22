@@ -29,6 +29,8 @@ sudo apt-get upgrade gcc make pkg-config python3 python3-pip python3-pytest valg
 #firewall - security - openvpn
 #sudo apt-get install openvpn -y
 sudo apt-get upgrade ufw netcat-openbsd iproute2 
+# devops
+sudo apt-get upgrade podman crun
 #cleanup
 sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
 #npm packages
