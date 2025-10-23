@@ -1,6 +1,6 @@
-[H[2J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Thu Oct 23 12:40:51 PM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Thu Oct 23 12:44:35 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
@@ -151,19 +151,38 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
-├── @anthropic-ai/claude-code@2.0.1
-├── @google/gemini-cli@0.9.0
-├── @openai/codex@0.30.0
-├── @qwen-code/qwen-code@0.0.14
-├── corepack@0.33.0
-├── npm-check-updates@19.1.1
-└── npm@10.9.3
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
 Package  Current  Wanted  Latest  Location         Depended by
-20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
+20         1.0.0   3.1.9   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 10s
+added 449 packages, changed 9 packages, and audited 593 packages in 27s
+
+97 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+removed 449 packages, changed 9 packages, and audited 144 packages in 3s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 755ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -177,14 +196,77 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-changed 1 package in 551ms
-Checking /home/rgroot/package.json
+up to date, audited 144 packages in 975ms
 
- 20  ^1.0.0  →  ^3.1.9
+14 packages are looking for funding
+  run `npm fund` for details
 
-Run ncu -u to upgrade package.json
-Upgrading /home/rgroot/package.json
+found 0 vulnerabilities
+-e 
+run commits seperately; docker and jenkins startup shell scripts to be created seperately
+-e 
+IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
+-e 
+use trash-empty or trash-restore as you see fit
+Password Store
+├── CLAUDE_API_KEY
+├── DEEPSEEK_API_KEY
+├── GEMINI_API_KEY
+├── mbprootp
+├── MOONSHOT_API_KEY
+├── OLLAMA_API_KEY
+├── OPENAI_API_KEY
+├── OPENROUTER_API_KEY
+├── protector_key
+├── tmp
+├── unKnoWn
+├── url
+└── XAI_GROK_API_KEY
+ufw 0.36.2
+Copyright 2008-2023 Canonical Ltd.
+use this command to get more info: sudo ufw app list
+use alias security to get local copy
 
- 20  ^1.0.0  →  ^3.1.9
-
-Run npm install to install new versions.
+--                         ------      ----
+110/tcp                    DENY IN     Anywhere                  
+110/tcp (v6)               DENY IN     Anywhere (v6)             
+137                        DENY IN     Anywhere                  
+137 (v6)                   DENY IN     Anywhere (v6)             
+138                        DENY IN     Anywhere                  
+138 (v6)                   DENY IN     Anywhere (v6)             
+139                        DENY IN     Anywhere                  
+139 (v6)                   DENY IN     Anywhere (v6)             
+143                        DENY IN     Anywhere                  
+143 (v6)                   DENY IN     Anywhere (v6)             
+20                         DENY IN     Anywhere                  
+20 (v6)                    DENY IN     Anywhere (v6)             
+21/tcp                     DENY IN     Anywhere                  
+21/tcp (v6)                DENY IN     Anywhere (v6)             
+222                        DENY IN     Anywhere                  
+222 (v6)                   DENY IN     Anywhere (v6)             
+22                         DENY IN     Anywhere                  
+22/tcp                     DENY IN     Anywhere                  
+22/tcp (v6)                DENY IN     Anywhere (v6)             
+22 (v6)                    DENY IN     Anywhere (v6)             
+25/tcp                     DENY IN     Anywhere                  
+25/tcp (v6)                DENY IN     Anywhere (v6)             
+443                        DENY IN     Anywhere                  
+443 (v6)                   DENY IN     Anywhere (v6)             
+445                        DENY IN     Anywhere                  
+445 (v6)                   DENY IN     Anywhere (v6)             
+53 (DNS)                   DENY IN     Anywhere                  
+53 (DNS (v6))              DENY IN     Anywhere (v6)             
+80/tcp                     DENY IN     Anywhere                  
+80/tcp (v6)                DENY IN     Anywhere (v6)             
+Default: deny (incoming), allow (outgoing), deny (routed)
+Logging: on (low)
+New profiles: skip
+Status: active
+To                         Action      From
+ClamAV update process started at Thu Oct 23 12:45:27 2025
+daily.cld database is up-to-date (version: 27800, sigs: 2076987, f-level: 90, builder: svc.clamav-publisher)
+main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+run 'sudo clamscan -r /' every day. stay safe. have a good day
+run 'sudo systemctl status clamav-freshclam' to check status
+use 'tmux set-option -g status on/off' to toggle tmux status bar
