@@ -12,6 +12,12 @@ nmap $url
 echo "who is online?" && w
 # others
 id
+groups
+whoami
+uname
+uname -a
+echo $USER
+echo $LOGNAME
 echo $XDG_SESSION_TYPE
 loginctl show-session $(loginctl | grep $(whoami) | awk '{print $1}') -p Type
 tty
