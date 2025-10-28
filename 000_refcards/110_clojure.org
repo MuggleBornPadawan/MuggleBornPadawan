@@ -9,7 +9,9 @@
 - lein new app my-first-clojure-project
 - cd my-first-clojure-project
 - emacs -nw /src/my-first-clojure-project/core.clj
-- m-x cider-jack-in
+- C-c M-j | M-x cider-jack-in
+- C-c C-e evaluate current function
+- C-c C-k load entire file in REPL 
 - C-c C-z - navigate between script and repl
 - C-c C-q - quit repl
 - repl (, tab) to see list of commands (ignore brackets)
