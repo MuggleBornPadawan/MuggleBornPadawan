@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Oct 28 09:22:19 AM IST 2025 
+Date: Tue Oct 28 10:08:11 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
@@ -34,12 +34,15 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/141 bookworm Release
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Ign:2 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [284 kB]
+Get:7 https://deb.debian.org/debian-security bookworm-security/main Translation-en [172 kB]
+Hit:8 https://storage.googleapis.com/cros-packages/141 bookworm Release
+Fetched 619 kB in 1s (427 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -164,21 +167,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 8s
+up to date, audited 144 packages in 10s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 902ms
+up to date, audited 144 packages in 926ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 475ms
+changed 1 package in 1s
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -190,7 +193,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 19s
+added 469 packages, changed 1 package, and audited 613 packages in 25s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -287,11 +290,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Tue Oct 28 09:23:09 2025
-daily.cld database is up-to-date (version: 27805, sigs: 2077007, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Tue Oct 28 22:09:08 2025
+daily database available for update (local version: 27805, remote version: 27806)
+Testing database: '/usr/local/share/clamav/tmp.d3b5b9e673/clamav-c59560b41aed455f961d1812822e992b.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27806, sigs: 2077009, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27805/Mon Oct 27 15:20:30 2025
+ClamAV 1.4.3/27806/Tue Oct 28 15:13:55 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar

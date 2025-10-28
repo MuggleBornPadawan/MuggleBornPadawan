@@ -1,4 +1,4 @@
-# My custom aliases | $ source ~/.bashrc 
+# my custom aliases | $ source ~/.bashrc 
 alias s='source ~/.bashrc'
 alias a='s && alias | less'
 alias e='emacs -nw'
@@ -61,6 +61,8 @@ alias od='ollama run deepseek-v3.1:671b-cloud'
 alias q='./MuggleBornPadawan/700_linux/scripts/gemini_query.sh $1'
 alias chat='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh'
 alias mq='./MuggleBornPadawan/700_linux/scripts/openrouter_multiple_models_query.sh $1'
+# grok query
+alias qg='./MuggleBornPadawan/700_linux/scripts/grok.sh $1'
 # security
 alias security="sudo ufw status verbose && sudo ufw version && echo 'use this command to get more info: sudo ufw app list'"
 alias genpass="cd && ./MuggleBornPadawan/700_linux/scripts/password_generator.sh && cd -"
