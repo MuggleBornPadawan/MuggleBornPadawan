@@ -53,6 +53,7 @@ alias td='tmux detach'
 alias tk="echo 'abort now if you want to stop killing server.. ' && sleep 11 && tmux kill-server"
 alias tf='tmux set-option -g status off'
 alias to='tmux set-option -g status on'
+alias ts='tmux switch-client -l'
 #ollama
 alias oq='ollama run qwen3-coder:480b-cloud'
 alias ok='ollama run kimi-k2:1t-cloud'
