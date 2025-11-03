@@ -1,7 +1,7 @@
-[H[2J[3Jmax user processes                  (-u) 25861
+[H[J[3Jmax user processes                  (-u) 1000
 run this file for any remote debian server setup, startup and chk backups
 
-Date: Mon Nov  3 09:25:12 PM IST 2025 
+Date: Mon Nov  3 10:18:22 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
@@ -172,14 +172,14 @@ up to date, audited 144 packages in 8s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 1s
+up to date, audited 144 packages in 938ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 490ms
+changed 1 package in 1s
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -191,7 +191,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 469 packages, changed 1 package, and audited 613 packages in 27s
+added 469 packages, changed 1 package, and audited 613 packages in 22s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -206,7 +206,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 3s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 593 packages in 2s
 
 97 packages are looking for funding
   run `npm fund` for details
@@ -247,7 +247,6 @@ Password Store
 ├── unKnoWn
 ├── url
 └── XAI_GROK_API_KEY
-[detached (from session alpha)]
 ufw 0.36.2
 Copyright 2008-2023 Canonical Ltd.
 use this command to get more info: sudo ufw app list
@@ -289,7 +288,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Mon Nov  3 21:26:33 2025
+ClamAV update process started at Mon Nov  3 22:19:13 2025
 daily.cld database is up-to-date (version: 27812, sigs: 2076976, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
