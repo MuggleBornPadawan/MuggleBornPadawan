@@ -1,6 +1,6 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Mon Nov  3 02:18:44 PM IST 2025 
+Date: Mon Nov  3 02:32:45 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
@@ -35,12 +35,11 @@ Default incoming policy changed to 'deny'
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Ign:1 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:2 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/141 bookworm Release
-Fetched 115 kB in 2s (70.8 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -161,21 +160,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 9s
+up to date, audited 144 packages in 7s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 940ms
+up to date, audited 144 packages in 979ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 1s
+up to date, audited 144 packages in 684ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -256,7 +255,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Mon Nov  3 14:19:19 2025
+ClamAV update process started at Mon Nov  3 14:33:14 2025
 daily.cld database is up-to-date (version: 27811, sigs: 2076971, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
