@@ -1,6 +1,6 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Sun Nov  2 11:21:53 PM IST 2025 
+Date: Mon Nov  3 12:34:35 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
@@ -37,10 +37,10 @@ Default outgoing policy changed to 'allow'
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/141 bookworm Release
-Fetched 163 kB in 2s (76.7 kB/s)
+Fetched 115 kB in 2s (68.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -161,7 +161,7 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 12s
+up to date, audited 144 packages in 11s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -175,7 +175,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 752ms
+up to date, audited 144 packages in 719ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -189,7 +189,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 998ms
+up to date, audited 144 packages in 943ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -256,11 +256,8 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sun Nov  2 23:22:45 2025
-daily database available for update (local version: 27810, remote version: 27811)
-Testing database: '/usr/local/share/clamav/tmp.3ef2cf78bb/clamav-48a18b350de70f8fc39dfdef531d3a85.tmp-daily.cld' ...
-Database test passed.
-daily.cld updated (version: 27811, sigs: 2076971, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Mon Nov  3 12:35:12 2025
+daily.cld database is up-to-date (version: 27811, sigs: 2076971, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 run 'sudo clamscan -r /' every day. stay safe. have a good day
