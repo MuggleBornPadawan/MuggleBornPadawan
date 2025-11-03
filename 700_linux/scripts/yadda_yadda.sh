@@ -5,6 +5,7 @@ if [ -n "$1" ]; then
     printf "%s\n" "$1"
     url=$1
 fi
+i
 dig $url
 host $url
 nmap $url
