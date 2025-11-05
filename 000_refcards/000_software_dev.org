@@ -6,6 +6,20 @@
 ** developer productivity
 - space metrics - https://getdx.com/blog/space-metrics/ - satisfaction and well-being, performance, activity, communication and collaboration, efficiency and flow
 - devops research and assessment (dora) group - deployment frequency (df), lead time for changes (lt4c), mean time to recover (mttr), change failure rate (cfr)
+** devops
+|------------+--------------------------------------|
+| tool       | description                          |
+|------------+--------------------------------------|
+| linux      | runs 96% of production servers       |
+| docker     | containerizes your apps              |
+| kubernetes | orchestrates everything              |
+| terraform  | manages your infrastructure          |
+| jenkins    | automates your deployments           |
+| prometheus | monitors your systems                |
+| grafana    | visualizes your metrics              |
+| ansible    | configures your servers              |
+| nginx      | serves your applications to millions |
+|------------+--------------------------------------|
 ** system design   
 |-----------------------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
 | aspect                | key metrics                                                                              | popular open source tools                                                |
