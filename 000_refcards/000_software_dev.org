@@ -3,6 +3,23 @@
 ** core dump
 - program vs process
 - memory: stack, heap, data and text
+** fp
+- optional types
+- errors as values
+- parse, don’t validate
+- smart constructor
+- newtypes
+- phantom types
+- functional core, imperative shell
+- algebraic data types
+- monadic operations
+- pattern matching
+- higher-order functions
+- lazy evaluation
+- immutable data structures
+- functor and applicative styles
+- type classes
+- recursion schemes
 ** developer productivity
 - space metrics - https://getdx.com/blog/space-metrics/ - satisfaction and well-being, performance, activity, communication and collaboration, efficiency and flow
 - devops research and assessment (dora) group - deployment frequency (df), lead time for changes (lt4c), mean time to recover (mttr), change failure rate (cfr)
