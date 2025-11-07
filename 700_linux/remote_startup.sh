@@ -1,7 +1,6 @@
 # ./MuggleBornPadawan/700_linux/remote_startup.sh | tee - a ./MuggleBornPadawan/700_linux/bckp/shell_log.log
 clear
 cd
-ulimit -u -n 1000
 ulimit -u 1000
 espeak -v en-gb -s 175 -p 50 "roger that"
 echo "run this file for any remote debian server setup, startup and chk backups"
