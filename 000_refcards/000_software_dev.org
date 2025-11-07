@@ -6,6 +6,17 @@
 ** developer productivity
 - space metrics - https://getdx.com/blog/space-metrics/ - satisfaction and well-being, performance, activity, communication and collaboration, efficiency and flow
 - devops research and assessment (dora) group - deployment frequency (df), lead time for changes (lt4c), mean time to recover (mttr), change failure rate (cfr)
+** clean code
+clean code requires:
+- meaningful names: variables, functions, and classes must clearly state *why* they exist, *what* they do, and *how* they are used. avoid abbreviations unless universally understood within the domain.
+- small units: functions should do one thing, and do it well. aim for functions that fit on a screen (ideally fewer than 20 lines).
+- minimal dependencies: functions should rely on as few external components as possible. favor pure functions (no side effects).
+- clear abstraction levels: within a single function, all statements should operate at the same level of abstraction. do not mix high-level intent with low-level implementation details.
+- avoid duplication (dry): identical or highly similar code blocks must be extracted into a shared abstraction.
+- error handling as primary flow: errors must be handled explicitly and near the point where they can occur. do not pass error codes; use exceptions or return values that clearly signal failure.
+- no comments for bad code: if code requires explanation, refactor the code until the explanation is unnecessary. comments should only explain *why* (intent/policy), not *what* (implementation).
+- consistency: maintain uniform formatting, naming conventions, and structural patterns throughout the codebase.
+in clojure/lisp contexts, this translates to: concise forms, well-defined namespaces, appropriate use of macros versus functions, and careful management of state via atoms/refs/agents rather than hidden mutations. focus on immutability
 ** devops
 |------------+--------------------------------------|
 | tool       | description                          |
