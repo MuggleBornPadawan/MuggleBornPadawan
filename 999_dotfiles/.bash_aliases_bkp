@@ -48,7 +48,7 @@ alias sl="s && c && echo 'sleeping for few mins... $(date)' && sleep $((RANDOM %
 alias sy="cd && ./MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh $(pass url)"
 # tmux commands
 alias t='tmux a'
-alias tn='tmux new -s "alpha"'
+alias tn='ulimit -u 1000 && tmux new -s "alpha"'
 alias td='tmux detach'
 alias tk="echo 'abort now if you want to stop killing server.. ' && sleep 11 && tmux kill-server"
 alias tf='tmux set-option -g status off'
