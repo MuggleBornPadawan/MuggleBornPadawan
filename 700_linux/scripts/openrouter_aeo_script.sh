@@ -250,7 +250,7 @@ call_openrouter_api() {
         local json_payload
         json_payload=$(jq -n \
             --arg model "$model" \
-            --arg question "$question" \
+            --arg question "$question answer in just one or two lines" \
             --arg context "$CONTEXT_PHRASE" \
             '{
                 model: $model,
