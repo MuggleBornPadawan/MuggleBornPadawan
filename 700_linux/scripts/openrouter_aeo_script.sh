@@ -65,6 +65,7 @@ MODELS=(
     "mistralai/mistral-small-24b-instruct-2501:floor"
     "mistralai/mistral-small-3.2-24b-instruct:floor"
     "mistralai/mistral-7b-instruct:floor"
+    "moonshotai/kimi-k2-thinking:floor"
     "nousresearch/hermes-2-pro-llama-3-8b:floor"
     "nousresearch/hermes-3-llama-3.1-70b:floor"
     "nvidia/nemotron-nano-9b-v2:floor"
