@@ -2,6 +2,7 @@
 clear
 cd
 ulimit -u 1000
+echo "/show info" > ./.ollama/history
 espeak -v en-gb -s 175 -p 50 "roger that"
 echo "run this file for any remote debian server setup, startup and chk backups"
 echo -e "\nDate: $(date) \nOS: $(uname -s) \nKernel: $(uname -r)"
