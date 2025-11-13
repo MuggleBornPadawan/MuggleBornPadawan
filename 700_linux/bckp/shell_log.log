@@ -1,6 +1,6 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed Nov 12 11:12:08 AM IST 2025 
+Date: Thu Nov 13 07:47:12 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
@@ -34,18 +34,25 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/141 bookworm Release
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
+Get:5 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [285 kB]
+Hit:7 https://storage.googleapis.com/cros-packages/141 bookworm Release
+Fetched 448 kB in 1s (301 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 76.0 MB of archives.
+After this operation, 74.8 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -99,13 +106,17 @@ sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).
-firefox-esr is already the newest version (140.4.0esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 76.0 MB of archives.
+After this operation, 74.8 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -128,7 +139,12 @@ libssl-dev is already the newest version (3.0.17-1~deb12u3).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u4).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 76.0 MB of archives.
+After this operation, 74.8 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -136,18 +152,28 @@ ufw is already the newest version (0.36.2-1).
 netcat-openbsd is already the newest version (1.219-1).
 iproute2 is already the newest version (6.1.0-3).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 76.0 MB of archives.
+After this operation, 74.8 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b1).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 76.0 MB of archives.
+After this operation, 74.8 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -167,14 +193,14 @@ up to date, audited 144 packages in 9s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 912ms
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 584ms
+up to date, audited 144 packages in 616ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -188,7 +214,7 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 853ms
+up to date, audited 144 packages in 988ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -255,8 +281,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Wed Nov 12 11:12:41 2025
-daily.cld database is up-to-date (version: 27819, sigs: 2077025, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Thu Nov 13 07:47:51 2025
+daily database available for update (local version: 27819, remote version: 27820)
+Testing database: '/usr/local/share/clamav/tmp.fbb105ef0b/clamav-3411f032e6ffd346c339f096edda05fe.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27820, sigs: 2077033, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 run 'sudo clamscan -r /' every day. stay safe. have a good day
