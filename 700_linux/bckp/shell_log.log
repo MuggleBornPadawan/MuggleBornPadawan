@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Nov 13 07:52:44 AM IST 2025 
+Date: Fri Nov 14 08:01:47 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
@@ -164,21 +164,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 8s
+up to date, audited 144 packages in 10s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 988ms
+up to date, audited 144 packages in 927ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 518ms
+changed 1 package in 442ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -190,7 +190,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 474 packages, changed 1 package, and audited 618 packages in 20s
+added 474 packages, changed 1 package, and audited 618 packages in 24s
 
 101 packages are looking for funding
   run `npm fund` for details
@@ -205,7 +205,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 598 packages in 3s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 598 packages in 2s
 
 101 packages are looking for funding
   run `npm fund` for details
@@ -287,11 +287,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Thu Nov 13 07:53:33 2025
-daily.cld database is up-to-date (version: 27820, sigs: 2077033, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Fri Nov 14 08:02:42 2025
+daily database available for update (local version: 27820, remote version: 27821)
+Testing database: '/usr/local/share/clamav/tmp.818dcae5ab/clamav-f516c5046ce127d185b9023a201ddafc.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27821, sigs: 2077041, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27820/Wed Nov 12 16:15:09 2025
+ClamAV 1.4.3/27821/Thu Nov 13 16:13:32 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
