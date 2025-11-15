@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Nov 15 09:03:03 PM IST 2025 
+Date: Sat Nov 15 11:47:43 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
@@ -152,10 +152,10 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 /home/rgroot/.config/nvm/versions/node/v22.18.0/lib
-├── @anthropic-ai/claude-code@2.0.37
-├── @google/gemini-cli@0.13.0
+├── @anthropic-ai/claude-code@2.0.42
+├── @google/gemini-cli@0.15.1
 ├── @openai/codex@0.30.0
-├── @qwen-code/qwen-code@0.2.0
+├── @qwen-code/qwen-code@0.2.1
 ├── cline@1.0.1
 ├── corepack@0.33.0
 ├── npm-check-updates@19.1.2
@@ -164,21 +164,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 8s
+up to date, audited 144 packages in 13s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 939ms
+up to date, audited 144 packages in 958ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 1s
+changed 1 package in 537ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -190,7 +190,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 474 packages, changed 1 package, and audited 618 packages in 22s
+added 474 packages, changed 1 package, and audited 618 packages in 28s
 
 101 packages are looking for funding
   run `npm fund` for details
@@ -287,7 +287,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sat Nov 15 21:03:54 2025
+ClamAV update process started at Sat Nov 15 23:48:47 2025
 daily.cld database is up-to-date (version: 27822, sigs: 2077041, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
