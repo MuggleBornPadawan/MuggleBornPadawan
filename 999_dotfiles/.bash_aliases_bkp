@@ -33,7 +33,7 @@ alias get='curl -O'
 alias mkdir='mkdir -p'
 # npm
 alias nu='npm list -g --depth=0 && npm outdated && npm update &&  npm audit fix --force && npm install -g npm-check-updates'
-alias abc="s && echo 'test at $(date)'"
+alias abc="echo '/show info' > ./.ollama/history"
 # clamav scan
 alias scanFully='sudo clamscan -r -i /'
 alias scanStatus='sudo freshclam && clamscan --version && sudo systemctl status clamav-freshclam'
