@@ -33,7 +33,7 @@ alias get='curl -O'
 alias mkdir='mkdir -p'
 # npm
 alias nu='npm list -g --depth=0 && npm outdated && npm update &&  npm audit fix --force && npm install -g npm-check-updates'
-alias abc="echo '/show info' > ./.ollama/history"
+alias abc="cd && echo '/show info' > ./.ollama/history &&  ./MuggleBornPadawan/700_linux/scripts/parse_ollama_models.sh"
 # clamav scan
 alias scanFully='sudo clamscan -r -i /'
 alias scanStatus='sudo freshclam && clamscan --version && sudo systemctl status clamav-freshclam'
@@ -69,4 +69,4 @@ alias security="sudo ufw status verbose && sudo ufw version && echo 'use this co
 alias genpass="cd && ./MuggleBornPadawan/700_linux/scripts/password_generator.sh && cd -"
 # cleanup
 alias j='tk && pw && r && genpass && history -w && history -c && rm .bash_history Dockerfile Jenkinsfile tempFile* aeo_results_log.txt daily_nuggets.txt tmp.txt && c && echo "clean slate protocol activated" && tn'
-alias i='tty ; date ; ulimit -a | grep processes'
+alias i='to ; tty ; date ; ulimit -a | grep processes ; abc ; sleep 5 ; tf'
