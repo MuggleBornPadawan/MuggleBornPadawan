@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Nov 19 01:19:23 PM IST 2025 
+Date: Thu Nov 20 12:40:43 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.88-08646-g082267a5c5ac
 Firewall is active and enabled on system startup
@@ -34,12 +34,20 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/141 bookworm Release
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/141 bookworm InRelease
+Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en.diff/Index [63.3 kB]
+Get:8 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [287 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-11-19-1410.07-F-2025-11-19-1410.07.pdiff [1,376 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-11-19-1410.07-F-2025-11-19-1410.07.pdiff [1,376 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-11-19-1410.07-F-2025-11-19-0804.03.pdiff [594 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2025-11-19-1410.07-F-2025-11-19-0804.03.pdiff [594 B]
+Hit:11 https://storage.googleapis.com/cros-packages/141 bookworm Release
+Fetched 579 kB in 2s (368 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -164,21 +172,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 8s
+up to date, audited 144 packages in 10s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 899ms
+up to date, audited 144 packages in 944ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 494ms
+changed 1 package in 1s
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -190,7 +198,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 474 packages, changed 1 package, and audited 618 packages in 18s
+added 474 packages, changed 1 package, and audited 618 packages in 20s
 
 101 packages are looking for funding
   run `npm fund` for details
@@ -287,11 +295,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Wed Nov 19 13:20:10 2025
-daily.cld database is up-to-date (version: 27824, sigs: 2077094, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Thu Nov 20 12:41:35 2025
+daily database available for update (local version: 27824, remote version: 27825)
+Testing database: '/usr/local/share/clamav/tmp.3ab1a58467/clamav-44a87a70d002345a618f1ad3f504965f.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27825, sigs: 2077108, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27824/Tue Nov 18 14:45:10 2025
+ClamAV 1.4.3/27825/Wed Nov 19 14:40:02 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
