@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Nov 25 08:57:25 AM IST 2025 
+Date: Wed Nov 26 04:00:47 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -171,14 +171,14 @@ up to date, audited 144 packages in 9s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 973ms
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 452ms
+changed 1 package in 1s
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -190,7 +190,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 474 packages, changed 1 package, and audited 618 packages in 17s
+added 474 packages, changed 1 package, and audited 618 packages in 19s
 
 101 packages are looking for funding
   run `npm fund` for details
@@ -287,11 +287,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Tue Nov 25 08:58:12 2025
-daily.cld database is up-to-date (version: 27830, sigs: 2077178, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Wed Nov 26 16:01:39 2025
+daily database available for update (local version: 27830, remote version: 27832)
+Testing database: '/usr/local/share/clamav/tmp.478149e354/clamav-62fb4783ad47e7878b944005900df4d5.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27832, sigs: 2077228, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27830/Mon Nov 24 14:43:51 2025
+ClamAV 1.4.3/27832/Wed Nov 26 14:43:55 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
