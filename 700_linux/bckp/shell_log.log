@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Nov 28 12:14:08 PM IST 2025 
+Date: Fri Nov 28 12:18:47 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -37,8 +37,8 @@ Default outgoing policy changed to 'allow'
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/142 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -164,13 +164,6 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 9s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
 up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
@@ -178,7 +171,14 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-changed 1 package in 536ms
+up to date, audited 144 packages in 995ms
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+changed 1 package in 261ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -190,7 +190,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 474 packages, changed 1 package, and audited 618 packages in 18s
+added 474 packages, changed 1 package, and audited 618 packages in 3s
 
 101 packages are looking for funding
   run `npm fund` for details
@@ -205,7 +205,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 598 packages in 3s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 598 packages in 2s
 
 101 packages are looking for funding
   run `npm fund` for details
@@ -287,7 +287,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Fri Nov 28 12:14:58 2025
+ClamAV update process started at Fri Nov 28 12:19:13 2025
 daily.cld database is up-to-date (version: 27833, sigs: 2077236, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
