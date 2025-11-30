@@ -75,7 +75,17 @@
   - angular js - dynamic web applications
   - vue.js - user interface focus 
 - libraries allow you to call functions as and when required. framework defines the workflow that you must follow
-
+- ci / cd - ci automatically builds and tests code; cd deploys changes 
+- build tools - code to binaries for installation - downloading dependenceis, compile source code to binaries, packaging binary code, running tests, deployment to production
+  - build automation utilities
+  - built automation server
+  - examples: webpack (js), babel (js compiler), webassembly (browser) 
+- packages - make apps easy to install (app files, instructions, metadata) 
+- package managers - checksum, download, update, manage
+  - js (npm), java (gradle, maven), ruby (rubygems), python (pip, conda) 
+*** software stack
+- combination of tecnologies, stacked in heirarchy to support the application from user to computer hardware
+- 
 ** basics of programming
 ** software architecture, design and patterns
 ** skillsets 
