@@ -1,4 +1,81 @@
 #+title: introduction to software engineering
 * intro
+- ibm course - software engineering approaches, identify tools and technologies, compare languages and recognize basic constructs, outline approach to architecturs, review skills 
 ** software development lifecycle
+*** software engineer
+- definition - software engineering is the application of scientific principles to the design and creation of software. The field uses a systematic approach to collect and analyze business requirements in order to design, build, and test software applications to satisfy those business requirements
+- computer aided software engineering (case, 1980s) - business analysis and modeling, development tools, such as debugging environments, verification and validation tools, configuration management, metrics and measurement, and project management
+- responsiblities - include design, build and maintain software systems. writing and testing code and consulting with stakeholders such as clients, third-party software vendors, security specialists, and other team members.
+- developer (broad - structure)  vs engineer (narrow - specific)
+*** sdlc
+- phases - planning, design, development, testing, deployment and maintenance
+|-------------+-------------------------------------------------------------------+------------------------------------------|
+| phase       | activity                                                          | output                                   |
+|-------------+-------------------------------------------------------------------+------------------------------------------|
+| planning    | purpose, users, i/o, compliance, qa, resources, scheduling, risk  | software requirement specification       |
+| design      | architecture / prototype dev                                      | design document                          |
+| development | standards and guidelines for development                          | code                                     |
+| testing     | srs adherance + stability and security                            | unit, integration, system and acceptance |
+| deployment  | microservice -> uat -> production                                 |                                          |
+| maintenance | code enhancements, ui issues, bugs, new and changing requiremnts  |                                          |
+|-------------+-------------------------------------------------------------------+------------------------------------------|
+- srs - functional, external & user interface, system features, non-functional
+- code quality - maintainablity, readablity, testablity, security
+- follow coding standards
+- use linters to detect errors
+- comment for posterity
+- releases - alpha, beta and general availablity
+**** requirements
+- steps - identifying stakeholders, establishing goals and objectives, eliciting requirements from the stakeholders, documenting the requirements, analyzing and confirming the requirements, and prioritizing
+- key personal - decision makers, end users, system administrators, engineering, markeing, sales and customer support 
+- classification - must have, desired, nice to have. collection mode: survey, questionairre, interviews
+- user requirement specification (urs)
+- software requirement specification (srs) - functional requirements external interface requirements system features and non-functional requirements. constraints, assumptions, and dependencies
+- system requirement specification (sysrs) - system capabilities, interfaces, and user characteristics. it also may include policy requirements, regulation requirements, personnel requirements, performance requirements, security requirements, and system acceptance criteria, hardware 
+**** models
+|-----------+------------------------------------------------------------------------+--------|
+| model     | description                                                            | notes  |
+|-----------+------------------------------------------------------------------------+--------|
+| waterfall | plan, design, develop, test, deploy, maintain                          | linear |
+| v-shape   | verification - plan, system design, architecture design, module design |        |
+|           | coding                                                                 |        |
+|           | validation - unit testing, integration testing, system testing, uat    |        |
+| agile     |                                                                        |        |
+|-----------+------------------------------------------------------------------------+--------|
+**** testing
+- test cases selection for regression - frequent defects, frequently used functionality, features with recent changes, complex cases, edge cases, randomly successful or failed cases
+- test documentation include test plans, test data, test scenarios, test cases, test strategies, and traceability matrice
+**** roles
+- project manager or scrum master, stakeholder, system or software architect, UX designer, software developer, tester or QA engineer, site reliability or Ops engineer, product manager or owner, and technical writer or information developer   
+** intro to software development
+*** web and cloud development
+- html, which defines the structure of the page, but doesn’t look very attractive - text, links, images / videos, page dividers, buttons 
+- css, which adds style and flair to the page - provides front-end developers with a standard method to define, apply, and manage different sets of style characteristics for a website and each of its components. css ensures uniformity in look and feel, style, colors, fonts, designs, and layouts
+- javascript, which adds interactivity and dynamic content - object oriented programming language
+- static and dynamic (db, cms, php)
+- new languages - syntactically awesome style sheets (sass), leaner style sheets
+- js framework
+  - built in tools like routing and form validation - angular.js (google) 
+  - built and drop - react.js (facebook)
+  - vue.js   
+*** back end development
+- creates and manages resources needed to respond to client requests. eg: login, authorization, search, payment 
+- enables server infrastructure to process request, supply data and provide other services securely 
+- apis, routing, and endpoints - image / info requests, forms (crud), input sensitive information 
+- javascript (node.js, express), python (django, flask)
+- structured query language (sql)
+- object-relational mapping (orm)
+*** pair programming
+- same console or share screen virtually
+- styles: driver / navigator, ping-pong, strong style 
+*** applicatin development tools
+- version control - git and github 
+- libraries - collection of reusable code - eg: carousal, jQ (DOM manipullation), email validator, apache commons proper (java components)  
+- frameworks - opinionated - standard way to build and deplouy applications - skeleton (add code) -  
+  - angular js - dynamic web applications
+  - vue.js - user interface focus 
+- libraries allow you to call functions as and when required. framework defines the workflow that you must follow
 
+** basics of programming
+** software architecture, design and patterns
+** skillsets 
