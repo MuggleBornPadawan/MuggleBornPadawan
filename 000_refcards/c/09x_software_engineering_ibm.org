@@ -85,6 +85,17 @@
   - js (npm), java (gradle, maven), ruby (rubygems), python (pip, conda) 
 *** software stack
 - combination of tecnologies, stacked in heirarchy to support the application from user to computer hardware
+- front-end technologies such as programming languages, frameworks, and user interface tools.
+- back-end technologies such as programming languages, frameworks, web servers, app servers, operating systems, messaging applications, and databases
+- technology stack is a broader term that includes hardware and infrastructure like virtual machines, containers, storage, and load balancers, as well as the software stack
+- typical layers: presentation, business, and data. however, more complex applications use more complex stacks, which could include software for virtualization, scheduling and orchestration, runtime environments, database connectivity, networking, and security
+*** ide
+- explorer
+- search
+- source control
+- debug - threads, call stack, variables, watch, breakpoints 
+- extensions
+- skills network toolbox - databases, big data, cloud, embeddable ai, other
 - 
 ** basics of programming
 ** software architecture, design and patterns
