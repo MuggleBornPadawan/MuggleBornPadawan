@@ -96,7 +96,14 @@
 - debug - threads, call stack, variables, watch, breakpoints 
 - extensions
 - skills network toolbox - databases, big data, cloud, embeddable ai, other
-- 
 ** basics of programming
+*** interpreted and compiled
+
+
+
+
+
+
+
 ** software architecture, design and patterns
 ** skillsets 
