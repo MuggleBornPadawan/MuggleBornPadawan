@@ -80,6 +80,9 @@ summarize with 100% fidelity to the original. before drafting, you must first pr
 - task: whatever you want the assistant to do
 ** unbiased query request 
 please rewrite my question to be more neutral and unbiased. remove any embedded assumptions, leading language, or repeated terms that might bias the response. transform it into an open-ended query that encourages critical analysis and considers multiple perspectives, like a scientist testing a hypothesis. my original question: [your question here]
+** claude
+- setup order: claude.md, mcp servers, skills, sub agents
+- your claude.md file sets the foundation, mcp servers connect the data, sub-agents specialize in their roles, and skills bring the expertise—making every piece smarter and more capable claude
 ** model fit
 *** the product development cycle
 **** ideation & research (gemini)
