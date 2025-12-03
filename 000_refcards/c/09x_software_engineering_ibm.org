@@ -127,6 +127,7 @@
     - create, invoke, declare (s0me programing languages)
   - objects - object oriented programming - properties (attributes) and procedures (methods) 
 ** software architecture, design and patterns
+*** introduction
 - component interaction, operating environment, design principles, cost of revisions, non functional req
 - artifacts: software design document (sdd), architectural diagrams, unified modeling language (uml)
 - software design document - tech specs - assumptions, dependencies, constraints, requirements, objectives and methodologies 
