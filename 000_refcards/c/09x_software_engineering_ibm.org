@@ -98,12 +98,39 @@
 - skills network toolbox - databases, big data, cloud, embeddable ai, other
 ** basics of programming
 *** interpreted and compiled
-
-
-
-
-
-
-
+- interpreted - javascript, python, html
+- compiled - downloaded - os, java, c, c++, 
+*** query and assembly programming languages
+- high level lang - sql, pascal, puthon
+- low level language - arm, mip, x86
+- query language - crud - sql, aql, cql, datalog, dmx
+*** code organization
+- readablity, maintainablity, configuring
+- pseudocode (larger projects)
+  - informal, high level description
+  - step by step sequence of solving a problem
+- flowcharts (smaller projects) - microsoft visio , lucidchart, draw.io, drawanywhere 
+  - pictorial representaion of algorithm, displays steps as boxes and arrows
+  - designing or documenting a process or program
+*** branching and looping
+- boolean expfressions
+- branching - execution control flow - if, if-then-else, switch, goto
+- loop - while, for, do-while (executes at least once)
+*** programming concept
+- identifiers
+  - reference program components - stored values, methods, interfaces, classes
+  - special components: arrays (fixed size, sequential storage) and vectors (dynamic size) 
+  - stores two types of data values - constants (eg: pi, person name) and variables
+- functions and objects
+  - functions - modular programming software development methodology - subroutines, procedures, methods or modules
+    - standard libraires (built in) and user defined functinos
+    - create, invoke, declare (s0me programing languages)
+  - objects - object oriented programming - properties (attributes) and procedures (methods) 
 ** software architecture, design and patterns
+- component interaction, operating environment, design principles, cost of revisions, non functional req
+- artifacts: software design document (sdd), architectural diagrams, unified modeling language (uml)
+- software design document - tech specs - assumptions, dependencies, constraints, requirements, objectives and methodologies 
+- architectural diagrams - compoenents, interaction, constraints, confines, architectural patterns 
+- production environment infrastructure decisions - servers, load balancers and databases 
+
 ** skillsets 
