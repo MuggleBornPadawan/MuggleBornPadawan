@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Wed Dec  3 09:52:00 AM IST 2025 
+Date: Wed Dec  3 04:49:32 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -34,13 +34,15 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://packages.microsoft.com/repos/code stable InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Get:3 https://packages.microsoft.com/repos/code stable InRelease [3,590 B]
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:6 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
-Hit:7 https://storage.googleapis.com/cros-packages/142 bookworm Release
+Get:7 https://packages.microsoft.com/repos/code stable/main amd64 Packages [20.0 kB]
+Hit:8 https://storage.googleapis.com/cros-packages/142 bookworm Release
+Fetched 138 kB in 1s (94.4 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -110,6 +112,7 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+golang is already the newest version (2:1.19~1).
 gcc is already the newest version (4:12.2.0-3).
 make is already the newest version (4.3-4.1).
 pkg-config is already the newest version (1.8.1-1).
@@ -165,21 +168,21 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 7s
+up to date, audited 144 packages in 10s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 887ms
+up to date, audited 144 packages in 927ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 1s
+changed 1 package in 464ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -288,11 +291,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Wed Dec  3 09:52:49 2025
-daily.cld database is up-to-date (version: 27838, sigs: 2077260, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Wed Dec  3 16:50:24 2025
+daily database available for update (local version: 27838, remote version: 27839)
+Testing database: '/usr/local/share/clamav/tmp.ad16f05213/clamav-4a57b25aaab9ba94386c4fe7db67fa4f.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27839, sigs: 2077274, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27838/Tue Dec  2 14:52:40 2025
+ClamAV 1.4.3/27839/Wed Dec  3 14:43:39 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar

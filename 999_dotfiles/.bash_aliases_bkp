@@ -16,7 +16,7 @@ alias r='cd && l'
 alias ..='cd .. && l'
 alias ...='cd ../.. && l'
 alias m='cd && cd MuggleBornPadawan && l'
-alias w1='cd && cd MuggleBornPadawan/100_cpp/randomwalker/ && l'
+alias ww='cd && cd /home/rgroot/MuggleBornPadawan/000_refcards/c/test'
 # git 
 alias g='git status'
 alias gl='git log --oneline --decorate --graph'
