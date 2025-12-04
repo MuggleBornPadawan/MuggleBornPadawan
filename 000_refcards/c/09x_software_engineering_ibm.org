@@ -133,5 +133,23 @@
 - software design document - tech specs - assumptions, dependencies, constraints, requirements, objectives and methodologies 
 - architectural diagrams - compoenents, interaction, constraints, confines, architectural patterns 
 - production environment infrastructure decisions - servers, load balancers and databases 
+*** software design and modeling
+- document structural components and behavioural attributes using diagrams, flowcharts and uml 
+- structured design vs behavioural models
+  - structured design - modules and submodules - cohesive and loosely coupled
+  - behavioural models - what; not how
+- unified modeling language - visual representaiton to communicate architecture, design and implementation
+- purpose of interaction and state transition diagram
+*** object oriented analysis and design (ooad) 
+- classes and objects
+  - class is a blue print of an object - properties (data) and methods (actions) 
+  - object - instance of class 
+- class diagram
+  [[file:test/z_class_diagram.jpeg]]
+- object oriented design in relation to software architecture 
+*** architecctural patterns
+- peer to peer, microservices, event driven, two-tier and three-tier, model-view-controller, blackboard, message broker, pipe-filter, controller-responder
+*** application architecture 
+- component based and service oriented architecture 
 
-** skillsets 
+** Skillsets 
