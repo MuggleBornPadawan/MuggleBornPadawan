@@ -1,6 +1,6 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Thu Dec  4 09:13:13 PM IST 2025 
+Date: Sat Dec  6 11:51:06 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -35,14 +35,15 @@ Default incoming policy changed to 'deny'
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Get:1 https://packages.microsoft.com/repos/code stable InRelease [3,590 B]
-Get:2 https://packages.microsoft.com/repos/code stable/main amd64 Packages [20.1 kB]
-Ign:3 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
-Get:4 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:5 https://deb.debian.org/debian bookworm InRelease
-Get:6 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/142 bookworm Release
-Get:8 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Fetched 187 kB in 2s (87.3 kB/s)
+Ign:2 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
+Get:3 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:4 https://deb.debian.org/debian bookworm InRelease
+Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:7 https://packages.microsoft.com/repos/code stable/main amd64 Packages [20.4 kB]
+Hit:8 https://storage.googleapis.com/cros-packages/142 bookworm Release
+Get:9 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [289 kB]
+Fetched 476 kB in 8s (56.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -164,21 +165,28 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 7s
+up to date, audited 144 packages in 16s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 899ms
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 693ms
+up to date, audited 144 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 3s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -186,13 +194,6 @@ up to date, audited 144 packages in 693ms
 found 0 vulnerabilities
 
 up to date, audited 144 packages in 2s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 904ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -259,11 +260,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Thu Dec  4 21:13:44 2025
-daily database available for update (local version: 27839, remote version: 27840)
-Testing database: '/usr/local/share/clamav/tmp.fbd622f31c/clamav-fad94a90e2f0e7e145e0ebcc8ed55701.tmp-daily.cld' ...
+ClamAV update process started at Sat Dec  6 11:52:24 2025
+daily database available for update (local version: 27840, remote version: 27841)
+Testing database: '/usr/local/share/clamav/tmp.6a0681c779/clamav-022c80ab205472531c9c93f1bb023cf3.tmp-daily.cld' ...
 Database test passed.
-daily.cld updated (version: 27840, sigs: 2077269, f-level: 90, builder: svc.clamav-publisher)
+daily.cld updated (version: 27841, sigs: 2077269, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 run 'sudo clamscan -r /' every day. stay safe. have a good day
