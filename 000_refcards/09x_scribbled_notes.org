@@ -1,4 +1,7 @@
 * scribbled notes 
+** diagrams as code
+tools: diagrams, go diagrams, mermaid, plantuml, ascii editor, markup
+
 ** ai automation vs ai agent
 [[file:x_ai_automation_vs_ai_agents.png]]
 ** chain of thought (cot) vs tree of thought (tot) vs graph of thought (got) 
