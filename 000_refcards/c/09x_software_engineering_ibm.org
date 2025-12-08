@@ -145,11 +145,66 @@
   - class is a blue print of an object - properties (data) and methods (actions) 
   - object - instance of class 
 - class diagram
-  [[file:test/z_class_diagram.jpeg]]
+  [[file:/test/z_class_diagram.jpeg]]
 - object oriented design in relation to software architecture 
 *** architecctural patterns
 - peer to peer, microservices, event driven, two-tier and three-tier, model-view-controller, blackboard, message broker, pipe-filter, controller-responder
 *** application architecture 
-- component based and service oriented architecture 
+- component based and service oriented architecture - characteristics
+- component
+  - component - individual unit of encapsulated functionality
+  - char'c: reusable, replaceable, independent, extensible, encapsulated, non-context specific
+  - eg: api, data access object, controller
+- services
+  - designed to be deployed independently and reused by multiple systems - loosely coupled and supports distributed systems 
+  - has one unique, always running instance with whom multiple clients communicate 
+  - eg: check credit rating, calc emi, process mortgage application 
+- application implementation layers: object / class layer > component layer > service layer  
+- distributed system - characteristics
+  - multiple services located on different machines
+  - services coordinate interactions via a communication protocol such as http
+  - appears to the end user as a single coherant system 
+  - char'c: share resources, fault-tolerant, multiple activities run concurrently, scalable, runs on a variety of computers, polyglot programming 
+  - nodes: any device on a network that can recognize, process, and transmit data to other nodes on the network. 
+*** architectural patterns in software
+|-----------------------+-------------------------------------------------+----------------|
+| type                  | description                                     | example        |
+|-----------------------+-------------------------------------------------+----------------|
+| 2-tier                | client server                                   | messaging apps |
+| 3-tier                | presentation, application, data                 | web apps       |
+| peer-to-peer          | distributed (decentralized)                     | cryptocurrency |
+| event-driven          | state change (producer -> router ->  consumers) | ride sharing   |
+| microservices         |                                                 | social media   |
+| model-view-controller |                                                 |                |
+| message broker        |                                                 |                |
+| blackboard            |                                                 |                |
+| pipe-filter           |                                                 |                |
+| controller-responder  |                                                 |                |
+|-----------------------+-------------------------------------------------+----------------|
+*** application deployment environments
+- includes application code (executables), software stack (libraries, apps, middleware, os), networking infrastructure, hardware (compute, memory and storage)  
+- pre-production environments
+  - development - developer workstation - project is being activeley coded
+  - qa - tests application components 
+  - staging - replicates prod'n environment but not meant for external users 
+  - production - entire solution stack + intended for all users + load considerations + non-functional requirements (security, reliablity and scalablity) 
+- infrastructure
+|-----------------+-----------------------------------------+-----------------------------------------------|
+| option          | description                             | comments                                      |
+|-----------------+-----------------------------------------+-----------------------------------------------|
+| on premise      | high responsiblity - firewall, security | usually more expensive when compared to cloud |
+| cloud - public  | shared infrastructure                   | aws, azure                                    |
+| cloud - private | provisioned for single customer         |                                               |
+| cloud - hybrid  |                                         |                                               |
+|-----------------+-----------------------------------------+-----------------------------------------------|
+*** production deployment components
+- components: presentation tier -> firewall -> web server / load balancer -> application server / proxy -> data server / high availablity data replica 
+- firewall is a security device that monitors traffic between networks
+- load balancer distributes network traffic amongst servers
+- web server delivers content such as web pages, files, images, and videos to a client
+- application server runs business logic and provides the application to the client rather than the client running the app on their own machine
+- database server stores and controls the flow of data through a database management system.
+- proxy - load balancing, system optimization, caching, acting as a firewall, obscuring the source of the request, encryption, scanning for malware, and more. improve efficiency, privacy, and security of data flowing through a network
 
-** Skillsets 
+  
+** skillsets 
