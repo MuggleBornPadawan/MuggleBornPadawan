@@ -205,6 +205,14 @@
 - application server runs business logic and provides the application to the client rather than the client running the app on their own machine
 - database server stores and controls the flow of data through a database management system.
 - proxy - load balancing, system optimization, caching, acting as a firewall, obscuring the source of the request, encryption, scanning for malware, and more. improve efficiency, privacy, and security of data flowing through a network
-
-  
+*** code of ethics - 8 principles
+- developed by joint taqsk force: IEEE-CS and ACM
+- public - safety, fairness, accessiblity, integrity 
+- client / employer - honest and forethright, seek consent when necessary, honor confidentiality 
+- product - quality, cost and timeline
+- judgement - maintain objectivity and honesty, no inappropriiate financial activity, no conflict of interest 
+- management - minimize risk, employ security procedures, ensure realistic expectations, just compensation, ip rights 
+- profession - comply with code of ethics, express concern over violations 
+- colleagues - do not take credit for work of others; ensure others comply 
+- self - quality software, conduct professionally 
 ** skillsets 

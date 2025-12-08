@@ -1,0 +1,51 @@
+#+title: linux commands and shell scripting 
+* intro
+** os
+*** intro
+- manages hardware and resources
+- allows interaction with hardware
+- unix. eg: oracle solaris (open solaris), freebsd, hp-ux, ibm aix, apple macos
+- linux - free and open source (foss), secure, multi-user, multi-tasking, portable
+*** linux layers
+|-------------+----------------------------------------------------------+-------|
+| layer       | function                                                 | notes |
+|-------------+----------------------------------------------------------+-------|
+| ui          | keyboard and mouse interaction                           | gui   |
+| application | system daemons, shells, user apps, tools                 |       |
+| os          | job scheduling, time tracking, file management           |       |
+| kernel      | memory, processing, device drivers, security             |       |
+| hardware    | processors, memory modules, i/o devices, storage, screen |       |
+|-------------+----------------------------------------------------------+-------|
+*** file system
+|--------+-----------------------------+-------|
+| item   | description                 | notes |
+|--------+-----------------------------+-------|
+| root   | top of the tree             |       |
+| /bin   | run and execute programs    |       |
+| /usr   | user programs               |       |
+| /home  | personal working directory  |       |
+| /boot  | startup system boot files   |       |
+| /media | temporary media (cd or usb) |       |
+| /sbin  |                             |       |
+| /etc   |                             |       |
+| /dev   |                             |       |
+| /proc  |                             |       |
+| /var   |                             |       |
+| /tmp   |                             |       |
+| /lib   |                             |       |
+| /opt   |                             |       |
+| /mnt   |                             |       |
+| /srv   |                             |       |
+|--------+-----------------------------+-------|
+*** terminal overview
+- shell - os level application that interprets commands. eg: bash, zsh
+- terminal - appplication used to interact with shell  
+** linux commands
+- shell: getting information, navigating and working with files and directories, printing file and string contents, file compression and archiving​, performing network operations, monitoring performance and status of the system, its components and applications, and running batch jobs, such as etl operations
+- basic: printenv SHELL, whoami, id, uname, ps, top, df, man, date
+- file: cp, mv, rm, touch, chmod, wc, grep   
+- navigation: ls, find, pwd, mkdir, cd, rmdir
+- print: cat, more, head, tail, echo
+- compression and archiving: tar, zip, unzip
+- networking: hostname, ping, ifconfig, curl, wget
+- 
