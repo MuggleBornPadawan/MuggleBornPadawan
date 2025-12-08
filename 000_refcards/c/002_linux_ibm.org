@@ -47,5 +47,18 @@
 - navigation: ls, find, pwd, mkdir, cd, rmdir
 - print: cat, more, head, tail, echo
 - compression and archiving: tar, zip, unzip
-- networking: hostname, ping, ifconfig, curl, wget
-- 
+  - archive and compress: tar -czf <destination.tar> <source>
+  - decompress and extract: tar -xzf <fn> <destination>
+  - zip (compress and bundle); tar (bundle and compress) 
+- networking: hostname -s -i, ping, ifconfig, curl, wget (web get, download folders and files recursively) 
+  - ip a
+  - ip addr show <device> 
+- informational: whoami, id -u -n, uname -s -r -v, df -h ~, ps -e, top -n 3, date "+%j day of %Y", date "+It's %A today"
+- wrangling text files:
+  - general: sort <fn>, sort -r <fn>, uniq <fn>
+  - grep - i <pattern> <fn>
+  - cut -c <a-b> <fn>, cut -d ' ' f2 <fn>
+  - paste -d "," <fn1> <fn2> <fn3>
+** shell scripting
+- automate jobs: etl jobs, file backups and archiving, system administrative tasks
+- shebang directive: #!interpreter [optional-arg]
