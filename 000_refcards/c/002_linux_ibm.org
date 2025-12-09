@@ -60,5 +60,34 @@
   - cut -c <a-b> <fn>, cut -d ' ' f2 <fn>
   - paste -d "," <fn1> <fn2> <fn3>
 ** shell scripting
-- automate jobs: etl jobs, file backups and archiving, system administrative tasks
-- shebang directive: #!interpreter [optional-arg]
+*** automate jobs
+- etl jobs, file backups and archiving, system administrative tasks
+- shebang (hash bang) directive: #!interpreter [optional-arg] - #(hash) + !(bang) --> hashbang --> shebang
+- play with shell variables: firstName="John" && read lastName && echo $firstName $lastName
+*** filters (grep, awk, wc) and pipes (|)
+  - tr [OPTIONS] [target characters] [replacement characters]
+  - echo "Linux and shell scripting are awesome\!" | tr "aeiou" "_"
+  - cat pets.txt | tr "[a-z]" "[A-Z]"
+  - cat Bitcoinprice.txt | grep -oE "\"price\"\s*:\s*[0-9]*\.?[0-9]*"
+    -o tells grep to only return the matching portion
+    -E tells grep to be able to use extended regex symbols such as ?
+    \"price\" matches the string "price"
+    \s* matches any number (including 0) of whitespace (\s) characters
+    : matches :
+    [0-9]* matches any number of digits (from 0 to 9)
+    \.? optionally matches a .
+- variables - set shell and environment variables (set | head -n 10) (set, unset)
+  - environment variable - (export var_name) (env | head -n 10) 
+*** features of bash shell
+- meta characters (eg: # comments ; seperator * wildcard ? single character) 
+- quoting (eg: \ escape " " interpret but evaluate meta char's ' ' interpret everything literally
+- i/o redirection
+  - (> redirect output to the file)
+  - (>> append output to the file)
+  - (2> redirect standard error to the file)
+  - (2>> append standard error to the file) 
+  - (< redirect file contents to standard input) 
+- command substitution (eg: here=$(pwd) && echo $here)
+- command line arguments 
+- batch mode (command1; command 2)
+- concurrent mode (command1 & command2)
