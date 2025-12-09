@@ -10,3 +10,4 @@ g++  -o hello_cpp hello.cpp
 echo "Hello Shell World!"
 # xdg-open hello.html
 python3 hello.py
+rm hello_cpp hello

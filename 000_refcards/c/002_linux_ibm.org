@@ -91,3 +91,11 @@
 - command line arguments 
 - batch mode (command1; command 2)
 - concurrent mode (command1 & command2)
+- conditionals and loops (if/then/else for)
+*** scheduling jobs using cron
+- cron is a service that runs jobs
+- crond is a daemon that interprets 'crontab files'
+- crontab (cron table) contains jobs and schedule data 
+- crontab -e
+- syntax m h dom mon dow command (minute hour day-of-month month day-of-week) 
+- crontab -l

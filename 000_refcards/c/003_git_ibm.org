@@ -1,0 +1,8 @@
+#+title: git and github
+* intro
+** git and github
+- version control and collaboration
+** fundamentals
+** branches, git commands, managing github projects
+
+
