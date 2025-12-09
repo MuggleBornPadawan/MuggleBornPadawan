@@ -1,6 +1,6 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Tue Dec  9 01:36:31 PM IST 2025 
+Date: Tue Dec  9 09:42:50 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -34,12 +34,13 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Ign:5 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/142 bookworm Release
+Fetched 163 kB in 2s (70.9 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -161,21 +162,7 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 7s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 889ms
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 566ms
+up to date, audited 144 packages in 8s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -189,7 +176,21 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 825ms
+up to date, audited 144 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 4s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 931ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -256,8 +257,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Tue Dec  9 13:36:58 2025
-daily.cld database is up-to-date (version: 27844, sigs: 2077292, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Tue Dec  9 21:43:40 2025
+daily database available for update (local version: 27844, remote version: 27845)
+Testing database: '/usr/local/share/clamav/tmp.302e18f094/clamav-261953021b57492d4c9301bc4dbc8572.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27845, sigs: 2077294, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 run 'sudo clamscan -r /' every day. stay safe. have a good day
