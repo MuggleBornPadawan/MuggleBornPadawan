@@ -2,6 +2,9 @@
 * intro
 ** git and github
 - version control and collaboration
+- ssh protocol
+- repository - contains project folders
+- 
 ** fundamentals
 ** branches, git commands, managing github projects
 
