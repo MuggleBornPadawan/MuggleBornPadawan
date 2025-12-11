@@ -1,6 +1,6 @@
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed Dec 10 09:43:31 AM IST 2025 
+Date: Thu Dec 11 11:29:40 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -36,10 +36,10 @@ Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Ign:1 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
 Hit:2 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:3 https://storage.googleapis.com/cros-packages/142 bookworm Release
-Hit:4 https://deb.debian.org/debian bookworm InRelease
-Hit:6 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:7 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/142 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -56,7 +56,7 @@ fzf is already the newest version (0.38.0-1+b1).
 zoxide is already the newest version (0.4.3-5+b2).
 gnuplot is already the newest version (5.4.4+dfsg1-2).
 nasm is already the newest version (2.16.01-1).
-ffmpeg is already the newest version (7:5.1.7-0+deb12u1).
+ffmpeg is already the newest version (7:5.1.8-0+deb12u1).
 lm-sensors is already the newest version (1:3.6.0-7.1).
 sqlite3 is already the newest version (3.40.1-2+deb12u2).
 mpg123 is already the newest version (1.31.2-1+deb12u1).
@@ -99,7 +99,7 @@ sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).
-firefox-esr is already the newest version (140.5.0esr-1~deb12u1).
+firefox-esr is already the newest version (140.6.0esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
@@ -161,21 +161,7 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 7s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 931ms
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 682ms
+up to date, audited 144 packages in 8s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -189,7 +175,21 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
+up to date, audited 144 packages in 638ms
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
 up to date, audited 144 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 973ms
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -256,8 +256,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Wed Dec 10 09:44:01 2025
-daily.cld database is up-to-date (version: 27845, sigs: 2077294, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Thu Dec 11 11:30:19 2025
+daily database available for update (local version: 27845, remote version: 27846)
+Testing database: '/usr/local/share/clamav/tmp.8a8f6b2929/clamav-639b99bf261a72618adedb736934b8ec.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27846, sigs: 2077301, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 run 'sudo clamscan -r /' every day. stay safe. have a good day
