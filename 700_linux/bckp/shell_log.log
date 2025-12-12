@@ -1,6 +1,6 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Fri Dec 12 11:02:20 AM IST 2025 
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Fri Dec 12 11:05:18 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -34,13 +34,12 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Ign:2 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/142 bookworm Release
-Fetched 163 kB in 12s (13.6 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -153,117 +152,15 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@1.0.67
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
+├── @anthropic-ai/claude-code@2.0.42
+├── @google/gemini-cli@0.16.0
+├── @openai/codex@0.61.0
+├── @qwen-code/qwen-code@0.2.1
+├── cline@1.0.1
+├── corepack@0.33.0
+├── npm-check-updates@19.1.2
+└── npm@10.9.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
-
-up to date, audited 144 packages in 12s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 816ms
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 2s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
--e 
-run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
-IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
-use trash-empty or trash-restore as you see fit
-Password Store
-├── CLAUDE_API_KEY
-├── DEEPSEEK_API_KEY
-├── GEMINI_API_KEY
-├── mbprootp
-├── MOONSHOT_API_KEY
-├── OLLAMA_API_KEY
-├── OPENAI_API_KEY
-├── OPENROUTER_API_KEY
-├── protector_key
-├── tmp
-├── unKnoWn
-├── url
-└── XAI_GROK_API_KEY
-ufw 0.36.2
-Copyright 2008-2023 Canonical Ltd.
-use this command to get more info: sudo ufw app list
-use alias security to get local copy
-
---                         ------      ----
-110/tcp                    DENY IN     Anywhere                  
-110/tcp (v6)               DENY IN     Anywhere (v6)             
-137                        DENY IN     Anywhere                  
-137 (v6)                   DENY IN     Anywhere (v6)             
-138                        DENY IN     Anywhere                  
-138 (v6)                   DENY IN     Anywhere (v6)             
-139                        DENY IN     Anywhere                  
-139 (v6)                   DENY IN     Anywhere (v6)             
-143                        DENY IN     Anywhere                  
-143 (v6)                   DENY IN     Anywhere (v6)             
-20                         DENY IN     Anywhere                  
-20 (v6)                    DENY IN     Anywhere (v6)             
-21/tcp                     DENY IN     Anywhere                  
-21/tcp (v6)                DENY IN     Anywhere (v6)             
-222                        DENY IN     Anywhere                  
-222 (v6)                   DENY IN     Anywhere (v6)             
-22                         DENY IN     Anywhere                  
-22/tcp                     DENY IN     Anywhere                  
-22/tcp (v6)                DENY IN     Anywhere (v6)             
-22 (v6)                    DENY IN     Anywhere (v6)             
-25/tcp                     DENY IN     Anywhere                  
-25/tcp (v6)                DENY IN     Anywhere (v6)             
-443                        DENY IN     Anywhere                  
-443 (v6)                   DENY IN     Anywhere (v6)             
-445                        DENY IN     Anywhere                  
-445 (v6)                   DENY IN     Anywhere (v6)             
-53 (DNS)                   DENY IN     Anywhere                  
-53 (DNS (v6))              DENY IN     Anywhere (v6)             
-80/tcp                     DENY IN     Anywhere                  
-80/tcp (v6)                DENY IN     Anywhere (v6)             
-Default: deny (incoming), allow (outgoing), deny (routed)
-Logging: on (low)
-New profiles: skip
-Status: active
-To                         Action      From
-ClamAV update process started at Fri Dec 12 11:03:16 2025
-daily database available for update (local version: 27846, remote version: 27847)
-Testing database: '/usr/local/share/clamav/tmp.f9c8d12b3d/clamav-a41fc24700c32a24cfb559cb2bc3bc85.tmp-daily.cld' ...
-Database test passed.
-daily.cld updated (version: 27847, sigs: 2077303, f-level: 90, builder: svc.clamav-publisher)
-main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
-bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-run 'sudo clamscan -r /' every day. stay safe. have a good day
-run 'sudo systemctl status clamav-freshclam' to check status
-use 'tmux set-option -g status on/off' to toggle tmux status bar
