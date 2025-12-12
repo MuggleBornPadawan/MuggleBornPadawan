@@ -164,3 +164,135 @@ Reading state information...
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
+
+up to date, audited 144 packages in 9s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 882ms
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+changed 1 package in 792ms
+Checking /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run ncu -u to upgrade package.json
+Upgrading /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run npm install to install new versions.
+
+added 474 packages, changed 1 package, and audited 618 packages in 18s
+
+101 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+added 15 packages, removed 35 packages, changed 9 packages, and audited 598 packages in 2s
+
+101 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+removed 454 packages, changed 9 packages, and audited 144 packages in 2s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+run commits seperately; docker and jenkins startup shell scripts to be created seperately
+
+IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
+
+use trash-empty or trash-restore as you see fit
+Password Store
+├── CLAUDE_API_KEY
+├── DEEPSEEK_API_KEY
+├── GEMINI_API_KEY
+├── mbprootp
+├── MOONSHOT_API_KEY
+├── OLLAMA_API_KEY
+├── OPENAI_API_KEY
+├── OPENROUTER_API_KEY
+├── protector_key
+├── tmp
+├── unKnoWn
+├── url
+└── XAI_GROK_API_KEY
+ufw 0.36.2
+Copyright 2008-2023 Canonical Ltd.
+use this command to get more info: sudo ufw app list
+use alias security to get local copy
+
+--                         ------      ----
+110/tcp                    DENY IN     Anywhere                  
+110/tcp (v6)               DENY IN     Anywhere (v6)             
+137                        DENY IN     Anywhere                  
+137 (v6)                   DENY IN     Anywhere (v6)             
+138                        DENY IN     Anywhere                  
+138 (v6)                   DENY IN     Anywhere (v6)             
+139                        DENY IN     Anywhere                  
+139 (v6)                   DENY IN     Anywhere (v6)             
+143                        DENY IN     Anywhere                  
+143 (v6)                   DENY IN     Anywhere (v6)             
+20                         DENY IN     Anywhere                  
+20 (v6)                    DENY IN     Anywhere (v6)             
+21/tcp                     DENY IN     Anywhere                  
+21/tcp (v6)                DENY IN     Anywhere (v6)             
+222                        DENY IN     Anywhere                  
+222 (v6)                   DENY IN     Anywhere (v6)             
+22                         DENY IN     Anywhere                  
+22/tcp                     DENY IN     Anywhere                  
+22/tcp (v6)                DENY IN     Anywhere (v6)             
+22 (v6)                    DENY IN     Anywhere (v6)             
+25/tcp                     DENY IN     Anywhere                  
+25/tcp (v6)                DENY IN     Anywhere (v6)             
+443                        DENY IN     Anywhere                  
+443 (v6)                   DENY IN     Anywhere (v6)             
+445                        DENY IN     Anywhere                  
+445 (v6)                   DENY IN     Anywhere (v6)             
+53 (DNS)                   DENY IN     Anywhere                  
+53 (DNS (v6))              DENY IN     Anywhere (v6)             
+80/tcp                     DENY IN     Anywhere                  
+80/tcp (v6)                DENY IN     Anywhere (v6)             
+Default: deny (incoming), allow (outgoing), deny (routed)
+Logging: on (low)
+New profiles: skip
+Status: active
+To                         Action      From
+ClamAV update process started at Fri Dec 12 11:06:06 2025
+daily.cld database is up-to-date (version: 27847, sigs: 2077303, f-level: 90, builder: svc.clamav-publisher)
+main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
+bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ClamAV 1.4.3/27847/Thu Dec 11 14:55:06 2025
+run 'sudo clamscan -r /' every day. stay safe. have a good day
+run 'sudo systemctl status clamav-freshclam' to check status
+use 'tmux set-option -g status on/off' to toggle tmux status bar
