@@ -1,6 +1,6 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Fri Dec 12 11:05:18 AM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Sat Dec 13 11:34:41 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -152,86 +152,54 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
-├── @anthropic-ai/claude-code@2.0.42
-├── @google/gemini-cli@0.16.0
-├── @openai/codex@0.61.0
-├── @qwen-code/qwen-code@0.2.1
-├── cline@1.0.1
-├── corepack@0.33.0
-├── npm-check-updates@19.1.2
-└── npm@10.9.3
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 9s
+up to date, audited 144 packages in 11s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 882ms
+up to date, audited 144 packages in 903ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 792ms
-Checking /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run ncu -u to upgrade package.json
-Upgrading /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run npm install to install new versions.
-
-added 474 packages, changed 1 package, and audited 618 packages in 18s
-
-101 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-added 15 packages, removed 35 packages, changed 9 packages, and audited 598 packages in 2s
-
-101 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-removed 454 packages, changed 9 packages, and audited 144 packages in 2s
+up to date, audited 144 packages in 672ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
+up to date, audited 144 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 877ms
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -288,11 +256,13 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Fri Dec 12 11:06:06 2025
-daily.cld database is up-to-date (version: 27847, sigs: 2077303, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Sat Dec 13 11:35:32 2025
+daily database available for update (local version: 27847, remote version: 27848)
+Testing database: '/usr/local/share/clamav/tmp.3b29d68a96/clamav-c3ec13c9a9717ae591ca1941b268f0d8.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27848, sigs: 2077304, f-level: 90, builder: svc.clamav-publisher)
 main.cvd database is up-to-date (version: 62, sigs: 6647427, f-level: 90, builder: sigmgr)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27847/Thu Dec 11 14:55:06 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
