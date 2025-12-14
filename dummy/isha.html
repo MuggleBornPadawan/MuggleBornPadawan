@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isha Signature Villas - Internal Navigation</title>
+    <style>
+        /*
+        * CSS best practice: Ensure mobile-first design for accessibility.
+        */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007aff; /* Apple Blue for a mobile feel */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Crucial for responsive design */
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50; /* Green for GO */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output-container {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        #humanReadableUrl {
+            word-wrap: break-word;
+            font-size: 14px;
+            color: #007aff;
+            margin-bottom: 10px;
+            display: block; /* Ensures it takes up full width */
+        }
+        #qrCodeImage {
+            margin: 15px auto;
+            display: none; /* Hidden by default */
+            max-width: 150px;
+            height: auto;
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🗺️ Community Navigation</h2>
+
+    <div class="form-group">
+        <label for="startLocation">Starting Location:</label>
+        <select id="startLocation"></select>
+    </div>
+
+    <div class="form-group">
+        <label for="destinationLocation">Destination Location:</label>
+        <select id="destinationLocation"></select>
+    </div>
+
+    <button onclick="generateRoute()" id="routeButton">Generate Route</button>
+
+    <div class="output-container">
+        <h3>Route Details</h3>
+        <a id="showRouteLink" href="#" target="_blank" style="display:none;">
+            <button>Show Me Route on Google Maps</button>
+        </a>
+        <p>
+            <strong>URL:</strong>
+            <span id="humanReadableUrl"></span>
+        </p>
+        <img id="qrCodeImage" alt="QR Code for Route" title="Scan this for direct navigation" />
+    </div>
+
+</div>
+
+<script>
+    // --- START: CONFIGURATION & DATA (Externalize Settings/Data) ---
+
+    // This data structure is the externalized 'settings' for the site,
+    // simulating the parsed location CSV data.
+    // NOTE: Replace these placeholder coordinates with the actual data from your CSV.
+    const locationData = {
+        "Main Gate": { lat: 12.927189982133298, long: 80.20175691065558 },
+        "Club House": { lat: 12.927000000000000, long: 80.20200000000000 },
+        // The 97 villas would be listed here:
+        "Villa 1": { lat: 12.927100000000000, long: 80.20180000000000 },
+        "Villa 2": { lat: 12.927105000000000, long: 80.20181000000000 },
+        "Villa 97": { lat: 12.927200000000000, long: 80.20190000000000 }
+    };
+
+    // --- END: CONFIGURATION & DATA ---
+
+
+    /**
+     * Function to populate the dropdown menus with all location names.
+     * This follows the Single Responsibility Principle (SRP).
+     * @param {string} selectElementId - The ID of the <select> element to populate.
+     */
+    function populateLocations(selectElementId) {
+        const select = document.getElementById(selectElementId);
+        
+        // 1. Add the GPS/Default option (specific to the starting location)
+        // Descriptive self documenting names: gpsDefaultOptionValue.
+        const gpsDefaultOptionValue = "GPS";
+        select.options.add(new Option("Current GPS Location (Default: Main Gate)", gpsDefaultOptionValue));
+        
+        // 2. Add all community locations from the data
+        Object.keys(locationData).forEach(locationName => {
+            select.options.add(new Option(locationName, locationName));
+        });
+        
+        // 3. Set initial state: 'Current GPS Location' for start, 'Club House' for destination
+        if (selectElementId === "startLocation") {
+            select.value = gpsDefaultOptionValue;
+        } else if (selectElementId === "destinationLocation") {
+            // Set a sensible default destination
+            select.value = "Club House"; 
+        }
+    }
+
+
+    /**
+     * Main action-oriented function to construct the Google Maps URL and update the UI.
+     * This function embodies the intuitive API design & integration requirement.
+     */
+    function generateRoute() {
+        // 1. Get user selections
+        const startName = document.getElementById("startLocation").value;
+        const destinationName = document.getElementById("destinationLocation").value;
+
+        // Simple error handling & exception management: Check if selections are the same.
+        if (startName === destinationName && startName !== "GPS") {
+            alert("Starting and destination locations must be different.");
+            return;
+        }
+
+        // 2. Determine start coordinates (The business logic)
+        let startPointUrlSegment;
+        if (startName === "GPS") {
+            // If GPS is selected, Google Maps handles the browser's location request.
+            startPointUrlSegment = "Current+Location";
+        } else {
+            // Look up coordinates from the pre-loaded data structure
+            const startLoc = locationData[startName];
+            // Format: Lat,Long
+            startPointUrlSegment = `${startLoc.lat},${startLoc.long}`;
+        }
+        
+        // 3. Determine destination coordinates
+        // Defensive Programming: Check if destination exists (though dropdown prevents invalid entry).
+        const destLoc = locationData[destinationName];
+        if (!destLoc) {
+            alert("Error: Destination coordinates not found in data.");
+            return; // Exit on error
+        }
+        const destinationPointUrlSegment = `${destLoc.lat},${destLoc.long}`;
+
+        // 4. Construct the Google Maps Universal URL (The core API integration)
+        // Parameters: /dir/start/destination/data=!4m2!4m1!3e0 (3e0 = driving mode)
+        // We use the simpler /dir/ format which is robust for mobile browsers.
+        const baseUrl = "https://www.google.com/maps/dir/";
+        const mapsUrl = `${baseUrl}${startPointUrlSegment}/${destinationPointUrlSegment}/data=!4m2!4m1!3e0`;
+
+        // 5. Generate the Human Readable URL (DRY principle applied to the URL generation)
+        const displayUrl = `Route from ${startName} to ${destinationName}`;
+        
+        // 6. Update the UI
+        const urlDisplayElement = document.getElementById("humanReadableUrl");
+        const linkElement = document.getElementById("showRouteLink");
+        const qrImageElement = document.getElementById("qrCodeImage");
+
+        // The displayed URL is the constructed mapsUrl, making it clickable.
+        urlDisplayElement.innerHTML = `<a href="${mapsUrl}" target="_blank">${mapsUrl}</a>`;
+        
+        // Set the link for the 'Show Me Route' button
+        linkElement.href = mapsUrl;
+        linkElement.style.display = "block"; // Make the button visible
+
+        // 7. QR Code Generation (Using an external API for simplicity/YAGNI)
+        // We need to URL-encode the Google Maps URL before passing it to the QR API.
+        const encodedMapsUrl = encodeURIComponent(mapsUrl);
+        const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodedMapsUrl}`;
+        
+        qrImageElement.src = qrApiUrl;
+        qrImageElement.style.display = "block"; // Show the QR code
+
+        console.log(`Route Generated: ${mapsUrl}`); // Robust logging & monitoring
+    }
+
+    // --- Execution ---
+    // Initialize the dropdowns when the page loads
+    window.onload = function() {
+        populateLocations("startLocation");
+        populateLocations("destinationLocation");
+        
+        // Initial call to set the default URL/QR code based on default selections
+        generateRoute(); 
+    };
+</script>
+
+<p style="font-size: 10px; text-align: center; margin-top: 50px;">
+    &copy; 2025 Isha Signature Villas Navigation Tool | 
+    <br>This software is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+</p>
+</body>
+</html>

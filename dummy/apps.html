@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isha Villas Route Finder</title>
+
+    <style>
+    	/* General Reset and Font */
+    	body {
+    		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    		margin: 0;
+    		padding: 20px;
+    		background-color: #f4f7f6;
+    		color: #333;
+    	}
+
+    	/* Container for mobile alignment */
+    	main {
+    		max-width: 400px;
+    		margin: 0 auto;
+    		background-color: #fff;
+    		padding: 25px;
+    		border-radius: 12px;
+    		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    	}
+
+    	/* Typography */
+    	h1 {
+    		color: #1a73e8;
+    		font-size: 1.8em;
+    		margin-bottom: 5px;
+    	}
+
+    	p {
+    		font-size: 0.9em;
+    		color: #666;
+    		margin-bottom: 25px;
+    	}
+
+    	/* Form Controls Styling */
+    	label {
+    		display: block;
+    		margin-bottom: 8px;
+    		margin-top: 15px;
+    		font-weight: bold;
+    		font-size: 0.95em;
+    		color: #444;
+    	}
+
+    	select {
+    		width: 100%;
+    		padding: 12px 10px;
+    		border: 1px solid #ccc;
+    		border-radius: 8px;
+    		box-sizing: border-box; 
+    		background-color: #fff;
+    		font-size: 1em;
+    		appearance: none; 
+    		background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2069L146.7%20210.3%206.5%2069z%22%2F%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+    		background-repeat: no-repeat;
+    		background-position: right 10px center;
+    		background-size: 10px;
+    		cursor: pointer;
+    	}
+
+        #startLocation {
+            font-style: italic;
+        }
+
+    	/* Button Styling */
+    	#getRouteButton {
+    		width: 100%;
+    		padding: 15px;
+    		margin-top: 30px;
+    		background-color: #34a853; 
+    		color: white;
+    		border: none;
+    		border-radius: 8px;
+    		font-size: 1.1em;
+    		font-weight: bold;
+    		cursor: pointer;
+    		transition: background-color 0.2s;
+    	}
+
+    	#getRouteButton:hover {
+    		background-color: #2c8c46;
+    	}
+        
+        #loadingStatus {
+            margin-top: 10px;
+            color: #ff9900;
+            font-size: 0.85em;
+            text-align: center;
+        }
+
+        /* QR Code Section Styling */
+        .qr-section {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        .qr-section h3 {
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        .qr-url {
+            word-wrap: break-word;
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 15px;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            background-color: #ddd;
+            margin: 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #999;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+    	/* Optional: Footer or Disclaimer */
+    	footer {
+    		text-align: center;
+    		margin-top: 40px;
+    		font-size: 0.75em;
+    		color: #999;
+    	}
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>📍 Villas Route Finder</h1>
+        <p>Select your starting and destination locations to generate driving directions via Google Maps.</p>
+
+        <label for="startLocation">1. Select Start Location</label>
+        <select id="startLocation"></select>
+        <div id="loadingStatus">Attempting to find current GPS location...</div>
+
+        <label for="destinationLocation">2. Select Destination Location</label>
+        <select id="destinationLocation">
+            <option value="" disabled selected>-- Choose Destination --</option>
+        </select>
+
+        <button id="getRouteButton">🗺️ Show Route in Maps</button>
+        
+        <div class="qr-section">
+            <h3>Quick Access: Main Gate $\rightarrow$ Club House Route</h3>
+            <p>Scan the QR code below for the quickest route between the community entry and club house.</p>
+            
+            <div class="qr-url" id="qrCodeUrlDisplay"></div>
+            
+            <div class="qr-placeholder">
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Powered by Isha Signature Villas Location Data and Google Maps Deep Linking.</p>
+    </footer>
+
+    <script>
+        /**
+         * Author: Gemini AI Assistant
+         * License: GNU General Public License v3.0 (GPL-3.0) Snippet
+         * Copyright (C) [2025] [User/Community Name]
+         * This program is free software: you can redistribute it and/or modify
+         * it under the terms of the GNU General Public License as published by
+         * the Free Software Foundation, either version 3 of the License, or
+         * (at your option) any later version.
+         */
+
+        // --- Configuration Management & Data (Externalized Settings) ---
+        const DEFAULT_START_LOCATION_NAME = "Main Gate";
+        const DEFAULT_DEST_LOCATION_NAME = "Club House"; // New default for QR
+        const GPS_LOCATION_NAME = "My Current GPS Location";
+        const ISHA_BASE_LAT = 12.927189;
+        const ISHA_BASE_LNG = 80.201756;
+        
+        // The Lat/Long data representing the CSV input
+        const communityLocations = [
+            { name: DEFAULT_START_LOCATION_NAME, lat: ISHA_BASE_LAT, lng: ISHA_BASE_LNG },
+            { name: DEFAULT_DEST_LOCATION_NAME, lat: 12.928000, lng: 80.202500 },
+            // Placeholder villas (your CSV data would go here)
+            { name: "Villa 1", lat: 12.927500, lng: 80.201500 },
+            { name: "Villa 50", lat: 12.928300, lng: 80.202000 },
+            { name: "Villa 97", lat: 12.928900, lng: 80.203000 }
+        ];
+
+        let locationMap = communityLocations.reduce((acc, curr) => {
+            acc[curr.name] = { lat: curr.lat, lng: curr.lng };
+            return acc;
+        }, {});
+        
+        // DOM Elements for efficiency (DRY principle)
+        const startDropdown = document.getElementById('startLocation');
+        const destDropdown = document.getElementById('destinationLocation');
+        const statusDiv = document.getElementById('loadingStatus');
+        const qrUrlDisplayDiv = document.getElementById('qrCodeUrlDisplay');
+
+        // --- Core Functions (Modular, SRP compliant) ---
+
+        /**
+         * @function getGoogleMapsUrl
+         * @description action-oriented, clear, and concise names
+         * Creates the universal Google Maps URL for navigation.
+         * @param {Object} startCoord - {lat, lng} of start
+         * @param {Object} destCoord - {lat, lng} of destination
+         * @returns {string} The fully constructed Google Maps URL.
+         */
+        function getGoogleMapsUrl(startCoord, destCoord) {
+            const startLat = startCoord.lat;
+            const startLng = startCoord.lng;
+            const destLat = destCoord.lat;
+            const destLng = destCoord.lng;
+            
+            // The URL format for directions: /dir/START/END
+            // Using the coordinate-based URL for maximum compatibility.
+            // travelmode=driving is the key for the required mode.
+            return `https://www.google.com/maps/dir/?api=1&origin=$${startLat},${startLng}&destination=${destLat},${destLng}&travelmode=driving`;
+        }
+
+        /**
+         * @function populateDropdowns
+         * @description Fills the Start and Destination dropdown menus with locations.
+         */
+        function populateDropdowns() {
+            // 1. Populate Destination dropdown first
+            communityLocations.forEach(location => {
+                const option = document.createElement('option');
+                option.value = location.name; 
+                option.textContent = location.name;
+                destDropdown.appendChild(option.cloneNode(true));
+            });
+
+            // 2. Populate Start dropdown (requires special GPS option)
+            const gpsOption = document.createElement('option');
+            gpsOption.value = GPS_LOCATION_NAME;
+            gpsOption.textContent = GPS_LOCATION_NAME;
+            startDropdown.appendChild(gpsOption);
+            
+            Array.from(destDropdown.options).filter(o => !o.disabled).forEach(option => {
+                startDropdown.appendChild(option.cloneNode(true));
+            });
+
+            // Set default value for the start menu
+            startDropdown.value = DEFAULT_START_LOCATION_NAME; 
+        }
+
+        /**
+         * @function handleGeolocation
+         * @description Uses HTML5 Geolocation to find the user's starting point.
+         */
+        function handleGeolocation() {
+            if (!navigator.geolocation) {
+                statusDiv.textContent = "Geolocation not supported. Using Main Gate.";
+                return;
+            }
+
+            statusDiv.textContent = "Fetching GPS coordinates...";
+            
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    // Success callback
+                    const { latitude, longitude } = position.coords;
+                    locationMap[GPS_LOCATION_NAME] = { lat: latitude, lng: longitude };
+                    startDropdown.value = GPS_LOCATION_NAME;
+                    statusDiv.textContent = `GPS found! Accuracy: ${position.coords.accuracy.toFixed(0)}m.`;
+                },
+                (error) => {
+                    // Error Handling & Exception Management
+                    const errorMessage = 
+                        error.code === 1 ? "Access Denied. Using Main Gate." :
+                        "Error. Using Main Gate.";
+
+                    statusDiv.textContent = `GPS Error: ${errorMessage}`;
+                    startDropdown.value = DEFAULT_START_LOCATION_NAME; // Fallback
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 5000, 
+                    maximumAge: 0
+                }
+            );
+        }
+
+        /**
+         * @function handleGetRoute
+         * @description The primary action to open the external map application.
+         */
+        function handleGetRoute() {
+            const startName = startDropdown.value;
+            const destName = destDropdown.value;
+
+            // Defensive programming
+            if (startName === GPS_LOCATION_NAME && !locationMap[GPS_LOCATION_NAME]) {
+                alert("Please wait for GPS location to be found, or select 'Main Gate'.");
+                return;
+            }
+            if (!startName || !destName || startName === destName) {
+                alert("Please select a valid, different Start and Destination.");
+                return;
+            }
+
+            // Look up coordinates (Idempotency)
+            const startCoord = locationMap[startName];
+            const destCoord = locationMap[destName];
+            
+            if (!startCoord || !destCoord) {
+                console.error("Missing coordinates in locationMap.");
+                alert("Error: Missing location data.");
+                return;
+            }
+            
+            const googleMapsUrl = getGoogleMapsUrl(startCoord, destCoord);
+            
+            // Open the map
+            window.open(googleMapsUrl, '_blank'); 
+            console.log(`Route request: ${startName} -> ${destName}. URL: ${googleMapsUrl}`);
+        }
+        
+        /**
+         * @function setupQRCodeUrl
+         * @description Calculates and displays the fixed QR code URL.
+         */
+        function setupQRCodeUrl() {
+            // Use the predefined, static route: Main Gate to Club House
+            const startCoord = locationMap[DEFAULT_START_LOCATION_NAME];
+            const destCoord = locationMap[DEFAULT_DEST_LOCATION_NAME];
+            
+            if (!startCoord || !destCoord) {
+                 // Crucial system visibility log for configuration error
+                console.error("QR Code URL setup failed: Missing coordinates for fixed route.");
+                return;
+            }
+            
+            const fixedUrl = getGoogleMapsUrl(startCoord, destCoord);
+            qrUrlDisplayDiv.textContent = fixedUrl;
+            
+            // IMPORTANT: This URL (fixedUrl) is what you must input into a QR code generator 
+            // (e.g., a free online tool) to produce the image you will place in the placeholder.
+        }
+
+
+        // --- Initialization (Execution) ---
+
+        /**
+         * @function init
+         * @description Main entry point. Sets up event listeners and initial UI state.
+         */
+        function init() {
+            try {
+                populateDropdowns();
+                handleGeolocation(); // Start GPS check immediately
+                setupQRCodeUrl(); // Prepare the QR code information
+
+                // Event Listener (API integration)
+                const getRouteButton = document.getElementById('getRouteButton');
+                getRouteButton.addEventListener('click', handleGetRoute);
+
+                console.log("Application fully initialized.");
+            } catch (error) {
+                // Robust error handling
+                console.error("Critical Initialization Error:", error);
+                statusDiv.textContent = "The app failed to load.";
+                alert("The application failed to load. Please try refreshing.");
+            }
+        }
+
+        // Run the application entry point once the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+
+</body>
+</html>
