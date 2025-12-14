@@ -72,7 +72,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-# trying something new here - remove this portion if you are not comfortable 
+# CLI breadcrumbs (path) & color - remove this portion if you are not comfortable 
 # PS1='\$ '
 PS1='\[\e[1;32m\]\$\[\e[0m\] '
 
