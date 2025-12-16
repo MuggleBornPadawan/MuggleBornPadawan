@@ -1,2 +1,4 @@
 https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer#courses
-+ postgres sql
++ postgres sqlite sql
++ data structures and algorithms
++ m(3) + ai(4) 
