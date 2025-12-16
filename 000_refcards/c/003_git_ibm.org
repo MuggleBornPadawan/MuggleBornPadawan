@@ -17,7 +17,41 @@
 - alternates for github - gitlab (devops platform), bitbucket, beanstalk 
 *** source version control
 - linux dev key characteristics: strong support for non-linear dev, distributed dev, compatiblity with existing systems and protocols, efficient handling of large projects, cryptographic authentication of history, pluggable merge strategies
-- 
+*** local repo
+- clone > branch > edit > stage > commit > merge pull request
+|------------------+-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
+| command          | desc                                                                                | comments                                                                         |
+|------------------+-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
+| git init         | to initiate a Git repository                                                        |                                                                                  |
+| git add          | to move the changes from the working directory to the staging area                  | git add -A; add all changes in entire repo regardless of where you are in the WD |
+| git commit       | to commit the changes to the project                                                |                                                                                  |
+| git revert       | to undo the changes made by the last commit                                         | git revert HEAD                                                                  |
+| git log          | to browse the previous changes                                                      |                                                                                  |
+| git branch       | to create a new branch                                                              | git branch -d <branch_name>; delete the branch                                   |
+| git checkout     | to switch between the existing branches                                             | git checkout <branch_name>; git checkout main                                    |
+| git merge        | to update the branches with the main branch                                         |                                                                                  |
+| git status       | to see the status of your working directory                                         |                                                                                  |
+| git reset        | to delete all uncommited changes in both the staging and working directory          | git reset --hard HEAD                                                            |
+| git restore      | git restore <file>; git restore –staged <file>; git restore –source <commit> <file> |                                                                                  |
+| git version      |                                                                                     |                                                                                  |
+| git diff         | git diff; git diff HEAD-1 HEAD; git diff <branch_1> <branch_2>                      |                                                                                  |
+| git config       | git config –global user.email <Your GitHub Email>                                   |                                                                                  |
+|                  | git config –global user.name <Your GitHub Username>                                 |                                                                                  |
+| git remote       | git remote -v                                                                       |                                                                                  |
+|                  | git remote add origin <URL>                                                         |                                                                                  |
+|                  | git remote rename origin upstream                                                   |                                                                                  |
+|                  | git remote rm origin                                                                |                                                                                  |
+| git format-patch | git format-patch HEAD-3                                                             | patches for email submission                                                     |
+| git request-pull | git request-pull origin/main <myfork or branch_name>                                |                                                                                  |
+| git send-email   | git send-email *.patch                                                              |                                                                                  |
+| git am           | git am <patchfile.patch>                                                            |                                                                                  |
+| git daemon       |                                                                                     |                                                                                  |
+| git rerere       |                                                                                     |                                                                                  |
+| git switch       |                                                                                     |                                                                                  |
+| git restore      |                                                                                     |                                                                                  |
+| gh auth login    |                                                                                     |                                                                                  |
+|------------------+-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
+
 ** Commands and managing projects
 ** project
 

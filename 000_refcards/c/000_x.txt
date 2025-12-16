@@ -2,3 +2,10 @@ https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-develope
 + postgres sqlite sql
 + data structures and algorithms
 + m(3) + ai(4) 
+
+tech tgrivia 
+
+python - pil
+lambda 
+json - tson 
+
