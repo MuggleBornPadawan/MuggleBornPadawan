@@ -10,7 +10,7 @@
 - pull request - to request for review and approval
 - working directory - local files associated with git repo
 - commit - project snapshot at current state
-- branch - seperate line of development - features and fixes can be worked on independently 
+- branch - seperate line of development - features, experiments and fixes can be worked on independently 
 - merge - combining changes from one branch to another
 - clone - local copy of the remote git repository 
 - github - online hosting service for git repos (by microsoft) 
