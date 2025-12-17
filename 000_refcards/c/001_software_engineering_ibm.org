@@ -145,7 +145,7 @@
   - class is a blue print of an object - properties (data) and methods (actions) 
   - object - instance of class 
 - class diagram
-  [[file:/test/z_class_diagram.jpeg]]
+[[file:https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/000_refcards/c/test/z_class_diagram.jpeg]]
 - object oriented design in relation to software architecture 
 *** architecctural patterns
 - peer to peer, microservices, event driven, two-tier and three-tier, model-view-controller, blackboard, message broker, pipe-filter, controller-responder
