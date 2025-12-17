@@ -1,6 +1,6 @@
-run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Wed Dec 17 08:35:03 AM IST 2025 
+[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
+
+Date: Wed Dec 17 08:36:15 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -34,13 +34,12 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Ign:1 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
-Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/142 bookworm Release
-Fetched 115 kB in 4s (28.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -153,54 +152,86 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@1.0.67
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v22.18.0/lib
+├── @anthropic-ai/claude-code@2.0.69
+├── @google/gemini-cli@0.20.2
+├── @openai/codex@0.61.0
+├── @qwen-code/qwen-code@0.2.1
+├── cline@1.0.1
+├── corepack@0.33.0
+├── npm-check-updates@19.2.0
+└── npm@10.9.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 7s
+up to date, audited 144 packages in 11s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 999ms
+up to date, audited 144 packages in 954ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 791ms
+changed 1 package in 1s
+Checking /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run ncu -u to upgrade package.json
+Upgrading /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run npm install to install new versions.
+
+added 474 packages, changed 1 package, and audited 618 packages in 24s
+
+101 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+added 15 packages, removed 35 packages, changed 9 packages, and audited 598 packages in 2s
+
+101 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+removed 454 packages, changed 9 packages, and audited 144 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 2s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-
-up to date, audited 144 packages in 1s
-
-14 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
--e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -257,13 +288,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Wed Dec 17 08:35:43 2025
+ClamAV update process started at Wed Dec 17 08:37:12 2025
 daily.cld database is up-to-date (version: 27852, sigs: 354462, f-level: 90, builder: tomjudge)
-main database available for update (local version: 62, remote version: 63)
-Testing database: '/usr/local/share/clamav/tmp.3f97087fd3/clamav-4562fb261b5f8a0308e17961d1dca280.tmp-main.cld' ...
-Database test passed.
-main.cld updated (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ClamAV 1.4.3/27852/Tue Dec 16 22:54:27 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
