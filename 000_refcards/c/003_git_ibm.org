@@ -26,40 +26,108 @@
   - git fetch upstream
   - git merge upstream/main
 *** commands 
-|------------------+-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
-| command          | desc                                                                                | comments                                                                         |
-|------------------+-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
-| git init         | to initiate a Git repository                                                        |                                                                                  |
-| git add          | to move the changes from the working directory to the staging area                  | git add -A; add all changes in entire repo regardless of where you are in the WD |
-| git commit       | to commit the changes to the project                                                |                                                                                  |
-| git revert       | to undo the changes made by the last commit                                         | git revert HEAD                                                                  |
-| git log          | to browse the previous changes                                                      |                                                                                  |
-| git branch       | to create a new branch; git branch (lists branches)                                 | git branch -d <branch_name>; delete the branch                                   |
-| git checkout     | to switch between the existing branches                                             | git checkout <branch_name>; git checkout main                                    |
-| git merge        | to update the branches with the main branch                                         |                                                                                  |
-| git push         | to update remote repo from local repo                                               |                                                                                  |
-| git fetch        | to update local repo from remote repo                                               |                                                                                  |
-| git pull         | to update local repo and merge (fetch + merge) to branch                            |                                                                                  |
-| git status       | to see the status of your working directory                                         |                                                                                  |
-| git reset        | to delete all uncommited changes in both the staging and working directory          | git reset --hard HEAD                                                            |
-| git restore      | git restore <file>; git restore –staged <file>; git restore –source <commit> <file> |                                                                                  |
-| git version      |                                                                                     |                                                                                  |
-| git diff         | git diff; git diff HEAD-1 HEAD; git diff <branch_1> <branch_2>                      |                                                                                  |
-| git config       | git config –global user.email <Your GitHub Email>                                   |                                                                                  |
-|                  | git config –global user.name <Your GitHub Username>                                 |                                                                                  |
-| git remote       | git remote -v                                                                       |                                                                                  |
-|                  | git remote add origin <URL>                                                         |                                                                                  |
-|                  | git remote rename origin upstream                                                   |                                                                                  |
-|                  | git remote rm origin                                                                |                                                                                  |
-| git format-patch | git format-patch HEAD-3                                                             | patches for email submission                                                     |
-| git request-pull | git request-pull origin/main <myfork or branch_name>                                |                                                                                  |
-| git send-email   | git send-email *.patch                                                              |                                                                                  |
-| git am           | git am <patchfile.patch>                                                            |                                                                                  |
-| git daemon       |                                                                                     |                                                                                  |
-| git rerere       |                                                                                     |                                                                                  |
-| git switch       |                                                                                     |                                                                                  |
-| git restore      |                                                                                     |                                                                                  |
-| gh auth login    |                                                                                     |                                                                                  |
-|------------------+-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
+|------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
+| command          | desc                                                                                          | comments                                                                         |
+|------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
+| git init         | to initiate a Git repository                                                                  |                                                                                  |
+| git add          | to move the changes from the working directory to the staging area                            | git add -A; add all changes in entire repo regardless of where you are in the WD |
+| git commit       | to commit the changes to the project                                                          |                                                                                  |
+| git revert       | to undo the changes made by the last commit                                                   | git revert HEAD                                                                  |
+| git reset        | to delete all uncommited changes in both the staging and working directory                    | git reset --hard HEAD                                                            |
+| git restore      | git restore <file>; git restore –staged <file>; git restore –source <commit> <file>           |                                                                                  |
+| git log          | to browse the previous changes                                                                |                                                                                  |
+| git branch       | to create a new branch; git branch (lists branches); git branch <feature-xxx>                 | git branch -d <branch_name>; delete the branch                                   |
+| git checkout     | to switch between the existing branches                                                       | git checkout <branch_name>; git checkout main                                    |
+| git merge        | to update the branches with the main branch                                                   |                                                                                  |
+| git push         | to update remote repo from local repo                                                         |                                                                                  |
+| git fetch        | to update local repo from remote repo (download only)                                         |                                                                                  |
+| git pull         | to update local repo and merge immediately (download + integrate) to branch; merge / rebase   |                                                                                  |
+| git status       | to see the status of your working directory                                                   |                                                                                  |
+| git version      |                                                                                               |                                                                                  |
+| git diff         | git diff; git diff HEAD-1 HEAD; git diff <branch_1> <branch_2>                                |                                                                                  |
+| git config       | git config –global user.email <Your GitHub Email>                                             |                                                                                  |
+|                  | git config –global user.name <Your GitHub Username>                                           |                                                                                  |
+| git remote       | git remote -v                                                                                 |                                                                                  |
+|                  | git remote add origin <URL>                                                                   |                                                                                  |
+|                  | git remote rename origin upstream                                                             |                                                                                  |
+|                  | git remote rm origin                                                                          |                                                                                  |
+| git format-patch | git format-patch HEAD-3                                                                       | patches for email submission                                                     |
+| git request-pull | summary of changes for upstream to pull; git request-pull origin/main <myfork or branch_name> |                                                                                  |
+| git send-email   | git send-email *.patch                                                                        |                                                                                  |
+| git am           | git am <patchfile.patch>                                                                      |                                                                                  |
+| git daemon       |                                                                                               |                                                                                  |
+| git rerere       |                                                                                               |                                                                                  |
+| git switch       |                                                                                               |                                                                                  |
+| git restore      |                                                                                               |                                                                                  |
+| gh auth login    |                                                                                               |                                                                                  |
+|------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
+**** shortcuts
+- export ORIGIN=<your repository HTTPS URL>; git clone $ORIGIN
+- git checkout -b <feature-xxx>; creates a branch and checks out if the branch doesnt exist already
+- git status (files changed) >> git diff <./filename>; detailed changes 
+- git log --oneline ; displays revisions concisely
+- git push origin main --> pull request to upstream project (github > code > contribute) 
+*** cloning vs forking
+|----------------+-------------------------+--------------------|
+| particulars    | clone                   | fork               |
+|----------------+-------------------------+--------------------|
+| intent         | distributed development | derivative project |
+| source         | origin                  | upstream original  |
+| root           | owner / integrator      | maintainer         |
+| availablity    | git                     | github only        |
+| branch         | yes                     | no                 |
+| push merge     | yes                     | no                 |
+| pull request   |                         | yes                |
+|----------------+-------------------------+--------------------|
+*** managing projects - roles
+- developer - clone, pull and fetch, push, request-pull
+- integrator - pull, revert, push 
+- maintainer - repository administrator
+  - manages communities, asset types, relationships, categories, attributes
+  - configure servers, define email and index settings, manage look and feel of applications
+  - gitHub actions to automate software workflows (ci / cd) 
+*** glossary 
+|-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| term                                      | definition                                                                                                                                                                                                                                                                                                     |
+|-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| cloning                                   | a process of creating a copy of the project's code and its complete version history from the remote repository on the local machine.                                                                                                                                                                           |
+| commit                                    | a snapshot of the project's current state at a specific point in time, along with a description of the changes made.                                                                                                                                                                                           |
+| developer                                 | a computer programmer who is responsible for writing code.                                                                                                                                                                                                                                                     |
+| distributed version control system (dvcs) | a system that keeps track of changes to code, regardless of where it is stored. multiple users work on the same codebase or repository, mirroring the codebase on their computers if needed, while the distributed version control software helps manage synchronization amongst the various codebase mirrors. |
+| fork                                      | a copy of a repository into your github account.                                                                                                                                                                                                                                                               |
+| forking                                   | forking creates a copy of a repository on which one can work without affecting the original repository.                                                                                                                                                                                                        |
+| github                                    | a web-hosted service for the git repository.                                                                                                                                                                                                                                                                   |
+| git                                       | a free and open-source software distributed under the gnu general public license. it is a distributed version control system that allows users to have a copy of their own project on their computer anywhere in the world.                                                                                    |
+| integrator                                | a role that is responsible for managing changes made by developers.                                                                                                                                                                                                                                            |
+| main branch                               | a branch that stores the deployable version of your code. the main branch is created by default and is definitive.                                                                                                                                                                                             |
+| merge                                     | a process to combine changes from one branch to another, typically merging a feature branch into the main branch.                                                                                                                                                                                              |
+| origin                                    | a term that refers to the repository where a copy is cloned from.                                                                                                                                                                                                                                              |
+| pull request                              | a process used to request that someone review and approve your changes before they become final.                                                                                                                                                                                                               |
+| remote repositories                       | repositories that are stored elsewhere. they can exist on the internet, on your network, or on your local computer.                                                                                                                                                                                            |
+| repository administrator                  | a role that is responsible for configuring and maintaining access to the repository.                                                                                                                                                                                                                           |
+| repository                                | a data structure for storing documents, including application source code. it contains the project folders that are set up for version control.                                                                                                                                                                |
+| staging area                              | an area where commits can be formatted and reviewed before completing the commit.                                                                                                                                                                                                                              |
+| upstream                                  | a term used by developers to refer to the original source where the local copy was cloned from.                                                                                                                                                                                                                |
+| version control                           | a system that allows you to keep track of changes to your documents. this process allows you to recover older versions of the documents if any mistakes are made.                                                                                                                                              |
+|-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+*** to explore
+- git instaweb -p 8080
+- git daemon
+- gh
+- git pull downstream main; git pull upstream main ; git merge upstream/main ; git fetch upstream main:upstream-main
+- git fetch upstream main:upstream-main
+- git remote add upstream $UPSTREAM_ORIGIN
+- git remote add origin $ORIGIN
+- git rerere; git rerere diff 
+- git send-email --to=recipient@example.com
+  - path/to/patchfile.patch
+- git send-email --to recipient@example.com
+  - patches/*.patch
+- sudo usermod -s /usr/bin/git-shell gituser ; restricted login shell
 
+
+
+
+
+// image load check in s/w engg - github page 
 
