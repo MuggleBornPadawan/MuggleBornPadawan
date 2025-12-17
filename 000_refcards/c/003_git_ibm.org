@@ -17,8 +17,15 @@
 - alternates for github - gitlab (devops platform), bitbucket, beanstalk 
 *** source version control
 - linux dev key characteristics: strong support for non-linear dev, distributed dev, compatiblity with existing systems and protocols, efficient handling of large projects, cryptographic authentication of history, pluggable merge strategies
+** git commands and repos 
 *** local repo
 - clone > branch > edit > stage > commit > merge pull request
+- origin - refers to your fork
+- upstream - refers to the original work
+  - git remote add upstream <clone directory>
+  - git fetch upstream
+  - git merge upstream/main
+*** commands 
 |------------------+-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
 | command          | desc                                                                                | comments                                                                         |
 |------------------+-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
@@ -27,9 +34,12 @@
 | git commit       | to commit the changes to the project                                                |                                                                                  |
 | git revert       | to undo the changes made by the last commit                                         | git revert HEAD                                                                  |
 | git log          | to browse the previous changes                                                      |                                                                                  |
-| git branch       | to create a new branch                                                              | git branch -d <branch_name>; delete the branch                                   |
+| git branch       | to create a new branch; git branch (lists branches)                                 | git branch -d <branch_name>; delete the branch                                   |
 | git checkout     | to switch between the existing branches                                             | git checkout <branch_name>; git checkout main                                    |
 | git merge        | to update the branches with the main branch                                         |                                                                                  |
+| git push         | to update remote repo from local repo                                               |                                                                                  |
+| git fetch        | to update local repo from remote repo                                               |                                                                                  |
+| git pull         | to update local repo and merge (fetch + merge) to branch                            |                                                                                  |
 | git status       | to see the status of your working directory                                         |                                                                                  |
 | git reset        | to delete all uncommited changes in both the staging and working directory          | git reset --hard HEAD                                                            |
 | git restore      | git restore <file>; git restore –staged <file>; git restore –source <commit> <file> |                                                                                  |
@@ -51,8 +61,5 @@
 | git restore      |                                                                                     |                                                                                  |
 | gh auth login    |                                                                                     |                                                                                  |
 |------------------+-------------------------------------------------------------------------------------+----------------------------------------------------------------------------------|
-
-** Commands and managing projects
-** project
 
 
