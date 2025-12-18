@@ -1,9 +1,28 @@
+https://www.coursera.org/learn/relational-database-administration/?
+https://www.coursera.org/learn/software-testing-deployment-and-maintenance-strategies#modules
+https://www.coursera.org/learn/intro-to-selenium
+https://www.coursera.org/learn/test-and-behavior-driven-development-tdd-bdd#modules
+https://www.coursera.org/learn/intro-to-devops#modules
+https://www.coursera.org/specializations/postgresql-for-everybody#courses
+https://www.coursera.org/learn/sql-data-science
+
+https://www.coursera.org/specializations/software-design-architecture#courses
+
 https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer#courses
 https://www.coursera.org/professional-certificates/ibm-backend-development#courses
 https://www.coursera.org/specializations/cybersecurity-fundamentals
-+ postgres sqlite sql
-+ data structures and algorithms
-+ m(3) + ai(4) 
+https://www.coursera.org/professional-certificates/ibm-data-architect
+
+https://www.coursera.org/learn/ai-python-for-beginners
+https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science#courses
+https://www.coursera.org/specializations/data-structures-algorithms#courses
+https://www.coursera.org/specializations/algorithms
+https://www.coursera.org/specializations/machine-learning-introduction#courses
+https://www.coursera.org/learn/convolutional-neural-networks
+
+https://www.coursera.org/specializations/hands-on-cpp#courses
+https://www.coursera.org/specializations/c-programming
+https://www.coursera.org/specializations/java-programming-fundamentals#courses
 
 tech tgrivia 
 python - pil
