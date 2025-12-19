@@ -15,7 +15,52 @@
 - ingestion: collate, process, cleanse, integrate, users
 - pipeline: etl or elt
 - languages: query (sql), programming, shell and scripting
+- python
+  - pandas - for data cleaning and analysis
+  - numpy and scipy - statistical analysis
+  - beautifulsoup and scrapy - web scraping
+  - matplotlib and seaborn -  bar graphs, histogram and pie charts
+  - opencv - image processing 
+- r - data analysis, ddata vis (ggplot2 and plotly), ml and statistics 
 - file types: csv, xml, pdf, json, 
-  
+- web scraping: beautifulsoup, scrapy, pandas, selenium
+- data streams: apache kafka, spark, storm
+- really simple syndication (rss): online forums, news, ... 
+- meta data: information about other data; system catalog stores three main types: technical, process, and business metadata
+- repos: databases, data warehouses (consolidation - etl), big data stores (distributed)
+- rdbms - tables (rows and columns) - unique id, index, query
+  - on prem - ibm db2, ms sql server, mysql, oracle db, postgresql
+  - cloud - amazon rds, google cloud sql, ibm db2 cloud, oracle clou,d azure sql   
+- no sql (not only sql) - scheme agnostic (semi and unstructured data), no acid compliance,  
+  - key-value store - key is attribute / unique identifier - json - redis, memcached, dynamodb 
+  - document based - mangodb, documentdb, couchdb, cloudant 
+  - column based - timeseries (weather, iot, stock,..) - cassandra, hbase 
+  - graph based - social networks, product reco, network diagrams, fraud detection, access mgmt, - neo4j, cosmosdb
+- data warehouses
+  - consolidated single version of truth
+  - 3 tier - server (extract from multiple sources) + olap + front end (query, report and analyze)
+  - popular ones: teradata, oracle exadata, ibm db2, netezza, amazon redshift, google bigquery, cloudera, snowflake
+- data marts
+  - for a particular function, purpose or community of users
+  - maybe dependent, independent or hybrid on above data warehouses
+- data lakes
+  - raw data stored in native format - structured, unstru or semi stru - no need to define data schema or stru
+  - data is classified, proteccted and governed
+  - amazon s3 (cloud object storage), apache hadoop
+  - vendors: amazon, cloudera, google, ibm, informatica, microsoft, oracle, sas, snowflake, teradata, and zaloni
+ - extract, transform and load (etl) process
+   - rdbms 
+   - extract - batch (blend, stitch) or stream (samza, storm, kafka) processing
+   - ibm infosphere, aws glue, improvado, skyvia, hevo, informatica 
+ - extract, load and transform (elt) process
+   - unstructured and non relational, data lakes,  
+ - data pipelines - apache beam, airflow and dataflow    
+- data integration - data consistency, master data management, data sharing, migration and consolidation  
+
+    
+    
+
+
+
 ** data engineering lifecycle
 ** de in action 
