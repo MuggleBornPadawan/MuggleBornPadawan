@@ -8,6 +8,12 @@
 - modern data ecosystem - interconnected, independent and continually evolving
 - roles: data engineer (etl, elt, ...) > data analyst (dashboards, stories, scripts, ...)  > data scientist (prediction models - ml/dl -> actionable insights) > Business analysts (market forces) 
 - data roles: data warehouse engineers, data architects, data managers, database administrators
+- data store considerations:
+  - the type of data you need to store
+  - the volume of data you need to store
+  - intended use of data
+  - storage considerations
+  - privacy, security, and governance considerations
 ** data engineering ecosystem
 - data: structured, semi (emails) or unstructured (audio, images)
 - sources: relational, non-relational, apis, web services, data streams, social platforms, sensor devices
@@ -88,7 +94,43 @@
 - structuring: joins (columns) and unions (rows)
 - normalization: cleaning unused data, reducing redundancy, reducing inconsistency
 - denormalization: multiple tables > single table
-- cleaning: fix irregularities
-- inspection: detect issues and errors, validate against rules and constraints, profiling, visualizatoin (statistical methods)
-  
+- cleaning: fix irregularities, data type conversion, standardize data (eg: formats, measurement units)
+- inspection: detect issues and errors, validate against rules and constraints, profiling (remove anomalies), visualization (statistical methods)
+- tools: excel power query / spreadsheets, openrefine, google dataprep, watson studio refinery, trifecta wrangler, python, r
+  - python - pandas, numpy
+  - r - dplyr, data.table, jsonlite
+- https://datasette.io/ - an open source multi tool for exploring and publishing data
+- querying and analysing - sql 
+  - counting and aggregating - count(*), distinct, sum(<column_name>), avg(), stddev()
+  - identifying extreme values - max(), min()
+  - slicing data - select * from <> where <> in <>
+  - sorting data - select * from <> order by <>;
+  - filtering patterns - select * from <> where <> like <>
+  - grouping data - select sum(sales_amt) as area_sum, Pin from carSalesDetails group by Pin; 
+- performance tuning and troubleshooting - threats: scalablity, application failures, scheduled jobs not functioning
+  - metrics: latency, failures, resource utilization and patterns, traffic
+  - steps:
+    - collect incident information and verify issue
+    - right versions of s/w and source codes
+    - logs and metrics - isolate to infra, data, s/w or combination
+    - reproduce in test environment
+    - root cause identification
+  - database optimization
+    - performance metrics: system outages, capacity utilization, application slowdown, performance of queries, conflicting activites and queries being executed simultaneously, batch activities causing resource constraints
+    - solutions: capacity planning (h/w and s/w), indexing, partitioning, normalization,
+  - monitoring and alerting systems: performance of our data pipelines, platforms, databases, applications, tools, queries, scheduled jobs, and more
+  - time-based and condition-based maintenance schedules generate data that helps identify systems and procedures responsible for faults and low availability
+- sample queries
+  - select max(price) as max_price from exercise03_car_sales_data
+  - select distinct(model) from exercise03_car_sales_data;
+*** data governance
+- collection of principles, practices and processes to maintain security, privacy and integrity
+- data: personal information (pi) and sensitive personal information (spi)
+- industry specific or geo specific governance policies may apply 
+- compliance covers the processes and procedures through which an organization adheres to regulations and conducts its operations in a legal and ethical manner      
+- data lifecycle - acquisition, processing, storage, sharing, retention and disposal
+- tech tools: authentication and access control, encryption and data masking, hosting, monitoring and alerting, data erasure 
 ** de in action 
+- data warehousing specialist
+- data manager
+- 
