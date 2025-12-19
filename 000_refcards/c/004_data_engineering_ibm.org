@@ -1,0 +1,21 @@
+#+title: data engineering
+*intro
+** what is data engineering?
+*** intro
+- value depends on accuracy and accessiblity of data
+- data professionals: statistician, data scientist, data analyst, bi analyst
+- key aspects: data, data repos, data pipelines, data integration platforms, big data, data platforms, data stores, etl process, elt process, data security, data privacy, govenance and compliance 
+- modern data ecosystem - interconnected, independent and continually evolving
+- roles: data engineer (etl, elt, ...) > data analyst (dashboards, stories, scripts, ...)  > data scientist (prediction models - ml/dl -> actionable insights) > Business analysts (market forces) 
+- data roles: data warehouse engineers, data architects, data managers, database administrators
+** data engineering ecosystem
+- data: structured, semi (emails) or unstructured (audio, images)
+- sources: relational, non-relational, apis, web services, data streams, social platforms, sensor devices
+- repos: transactional (oltp), analytical (olap)
+- ingestion: collate, process, cleanse, integrate, users
+- pipeline: etl or elt
+- languages: query (sql), programming, shell and scripting
+- file types: csv, xml, pdf, json, 
+  
+** data engineering lifecycle
+** de in action 

@@ -1,3 +1,5 @@
+https://docs.nvidia.com/learn-openusd/latest/index.html
+
 https://www.coursera.org/learn/relational-database-administration/?
 https://www.coursera.org/learn/software-testing-deployment-and-maintenance-strategies#modules
 https://www.coursera.org/learn/intro-to-selenium
