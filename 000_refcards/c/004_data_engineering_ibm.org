@@ -55,12 +55,40 @@
  - extract, load and transform (elt) process
    - unstructured and non relational, data lakes,  
  - data pipelines - apache beam, airflow and dataflow    
-- data integration - data consistency, master data management, data sharing, migration and consolidation  
-
-    
-    
-
-
-
+- data integration - data consistency, master data management, data sharing, migration and consolidation
+  - tools: ibm stack, talendo stack, sap, oracle, denodo, sas, microsoft, qlikq, tibco, dell boomi, jitterbit, snaplogic
+  - cloud tools: adeptia, google cloud, ibm, informatica
+- big data
+  - velocity, volume, variety, veracity, value
+  - tools: apache hadoop, hdfs, hive, spark
+  - hadoop - collection of tools that provides distributed storage and processing of big data
+    - no format requirments
+    - hdfs 
+  - hive - data warehouse for data query and analysis
+    - read based; high latency
+    - hbase 
+  - spark - distributed analytics framework for complex, real time data analytics
+    - interactive analytics, streams processing, machine learning, data integration and etl
+    - in memory processing
+    - interop with major programming languages - java, scala, python, r and sql 
 ** data engineering lifecycle
+*** data platform layers
+- data pipeline: ingestion > storage and integration > processing > analysis and ui
+- ingestion: stream and batch
+- transformation: structuring (form and schema), normalization, denormalization,
+- use case: number of transactions, frequency of updates, types of operations, response time, bacckup and recovery
+- storage considerations: performance, availablity, integrity, recoverablity of data
+- secure storage: access control, multizone encryption, data management, monitoring systems
+- regulations: general data protection regulation (gdpr), california consumer privacy act (ccpa), health insurance portablity and accountablity act (hippa) 
+*** security
+- levels: physical infrastructue, network, application, data
+- cia triad: confidentiality, integrity and availablity
+*** data wrangling or munging
+- exploration, transformation, validation, making data available for credible and meaningful analysis
+- structuring: joins (columns) and unions (rows)
+- normalization: cleaning unused data, reducing redundancy, reducing inconsistency
+- denormalization: multiple tables > single table
+- cleaning: fix irregularities
+- inspection: detect issues and errors, validate against rules and constraints, profiling, visualizatoin (statistical methods)
+  
 ** de in action 
