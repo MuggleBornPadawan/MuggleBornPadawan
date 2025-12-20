@@ -1,0 +1,7 @@
+#+title: relational databases (ibm)
+* intro
+- design: data relationships, design strategies, deployment topologies, associated tradeoffs
+** relational databases concepts
+- data fundamentals
+** using relational databases
+** mysql and postgresql

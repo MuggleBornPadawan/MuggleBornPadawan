@@ -1,12 +1,12 @@
 https://docs.nvidia.com/learn-openusd/latest/index.html
 
 https://www.coursera.org/learn/relational-database-administration/?
+https://www.coursera.org/specializations/postgresql-for-everybody#courses
+https://www.coursera.org/learn/sql-data-science
 https://www.coursera.org/learn/software-testing-deployment-and-maintenance-strategies#modules
 https://www.coursera.org/learn/intro-to-selenium
 https://www.coursera.org/learn/test-and-behavior-driven-development-tdd-bdd#modules
 https://www.coursera.org/learn/intro-to-devops#modules
-https://www.coursera.org/specializations/postgresql-for-everybody#courses
-https://www.coursera.org/learn/sql-data-science
 
 https://www.coursera.org/specializations/software-design-architecture#courses
 
