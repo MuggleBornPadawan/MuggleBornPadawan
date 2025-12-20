@@ -2,6 +2,119 @@
 * intro
 - design: data relationships, design strategies, deployment topologies, associated tradeoffs
 ** relational databases concepts
-- data fundamentals
+*** data fundamentals
+- data: unorganized information
+  - facts, observations, perceptions
+  - numbers, characters, symbols
+  - images
+- data structures - efficient management, storage, and analysis - structured, semistructured and unstructured
+  - spreadsheets - rows and columns
+  - sql - tables and columns
+  - online forms - records in designated fields 
+  - text, media (images, audio, video), web pages (text, images, multimedia), social media (posts, tweets, updates)
+  - json - arrays and objects
+  - xml - tags, attributes and schema 
+- common file formats for transfering data between systems 
+  - delimited text files, spreadsheets, language files (xml, json) - set rules and structures for encoding data 
+- relational and non-relational databases 
+*** information and data models
+- an information model represents entities and their properties, relationships, and operable functions abstractly
+- data model - practical way for information model - data elements, structures, constraints, relationships
+  - tailored to particular dbms: schema, tables, columns, data types, indexes
+- hierarchial model
+- entity relationship model - entities and attributes 
+- key concepts: logical data independence, physical data independence, physical storage independence
+*** erd and types of relationships
+- erd fundamental components
+  - entities (rectangle) - represents people, objects or concepts
+  - attributes (oval) - characteristics or properties of entity   
+  - relationship sets (diamond) - represent interconnections between entities and instances 
+  - crow's foot notations (">|<") - clear depiction of the relationship
+    - one to one ("||")
+    - one to many ("<")
+    - many to one (">")
+    - many to many ("><")
+- designing relational database best practices
+  - primary key designation - unique id
+  - data validation - accuracy and consistency of data - data types, ranges, and formats 
+  - default values - streamline data entry and enhance records 
+  - views - present customized and simplified perspective of data 
+  - concurrency control - manage access and modifications - prevents data inconsistency and conflicts
+- data types
+  - advantages: data integrity, sort, range selection, calculations 
+  - date, time, float (apprx), decimal (accuracy - finance), int, binary data (images), binary large object (blob), char, varchar
+  - varchar - stores character strings of varying lengths - efficiency (uses only the necessary space)
+- relational model concepts
+  - set operations, properties and aspects of relations, relational schema vs instance, terms: degree and cardinality
+  - sets: unordered collection of distinct elements {...}
+    - operations: membership, subset, union, intersection, difference, emptuy set, power sets, universal sets, disjoint sets, venn diagrams 
+  - relations
+    - binary: between 2 elements (eg: <) 
+    - ordered pairs: subset of cartesian product, represents binary relation
+    - properties: reflexivity (a=a), symmetry (a->b;b->a), transitivity (a->b->c; a->c), assymetry (<=)
+    - relational schema: specifies structure
+    - relation instance: actual data; columns represent attributes; rows represent tuples
+      - degree: number of attributes (columns)
+      - cardinality: number of tuples (rows) 
+- terms: relation -> table, columns -> attributes,          
+*** database architecture
+- common deployment technologies
+  - arrangement or configuration of hardware, software, network components
+  - factors: scalablity, performance, reliablity, nature of application
+  - general options: single-tier, client-server, three-tier, cloud-based
+    - three-tier emergence: security, performance, maintainablity 
+  - dbms layers: access, engine, storage
+  - interface: database client or api
+  - access: client interface like jdbc, odbc, clp or vendor specific interfaces
+  - engine: compile queries; retrieves, processes data and returns result set
+- cloud deployment: three-tier advantage + access from anywhere
+*** distributed architecture and clustered database 
+- scalablity, fault tolerance and perfrormance
+- types: shared disk, shared nothing, combination and specialised arch
+- optimization: replication (high availablity - ha), partitioning and sharding (parallel computing)
+*** usage patterns
+- data engineers
+- database administrators - creation and mgmt of database objects, access controls, monitoring and performance tuning, store and manage data
+- data scientists
+- data analysts
+- application developers 
+- data science tools: jupyter, r studio, zepplin, sas, spss
+- bi tools: excel, powerbi, tableau, microstrategy
+- interfaces: sql and apis: jdbc, odbc, rest apis 
+- object relational mapping frameworks - user friendly and conceal intricacies
+  - activerecord (ruby), django (py), entity framework (.net), hibernate (java), sequelize (js)
+*** postgresql
+- structured: keys, transactions, views, functions, stored procedures
+- unstructured: json, hstore
+- hight availablity: two node syncronization replication
+- scalablity: multi node asynchronous replication
+- parallel processing for performance: partitioning and sharding 
+*** advanced relational model concepts
+- functional dependencies
+  - notation: fds are typically written as x -> y, where x is the determinant and y is the dependent attribute
+  - properties:
+    - reflexivity: x -> x (every attribute determines itself)
+    - transitivity: if x -> y and y -> z, then x -> z (dependencies can chain together)
+    - closure: the minimal set of fds that implies all other fds in a relation
+  - key points
+    - fds are essential for maintaining data accuracy and minimizing redundancy
+    - they play a crucial role in database normalization, ensuring the efficient organization of data
+    - fds help in eliminating unnecessary repetition and ensuring the correctness of data
+- multi-valued dependencies
+  - notation: mvds are written as x -> {y1, y2, …, yn}, where x is the determinant and y1, y2, …, yn are the possible values for the dependent attribute
+  - properties:
+    - mvds have similar properties to fds, like reflexivity and transitivity. however, they lack the closure property
+    -  identifying mvds helps understand the complex relationships between attributes and ensures data consistency within those relationships. violations of mvds can lead to invalid data entries
+  - key points:
+    - mvds are essential for organizing complex relationships between sets of attributes
+    - they help in avoiding mix-ups and ensuring proper organization of data
+      - understanding mvds is crucial for maintaining data integrity and optimizing database performance
+- candidate keys - keys unique within that table
+  - uniqueness: each combination of values in the candidate key must uniquely identify a distinct row
+  - minimality: no proper subset of the candidate key should be able to uniquely identify a row. this ensures that the candidate key is the smallest possible set of attributes needed for unique identification
+  - performance: having well-defined candidate keys significantly improves query performance. queries searching for specific rows can utilize indexing on the candidate key for faster data retrieval. it also helps maintain data integrity by preventing duplicate entries
+  - multiple keys: a relation can have multiple candidate keys, meaning different minimal sets of attributes can uniquely identify each row
+- summary
+[[file:advanced_relational_model.png]]
 ** using relational databases
 ** mysql and postgresql

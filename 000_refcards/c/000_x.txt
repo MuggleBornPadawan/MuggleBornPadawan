@@ -1,32 +1,45 @@
 https://docs.nvidia.com/learn-openusd/latest/index.html
 
-https://www.coursera.org/learn/relational-database-administration/?
-https://www.coursera.org/specializations/postgresql-for-everybody#courses
+- https://www.coursera.org/learn/relational-database-administration/?
+https://www.coursera.org/specializations/postgresql-for-everybody
 https://www.coursera.org/learn/sql-data-science
-https://www.coursera.org/learn/software-testing-deployment-and-maintenance-strategies#modules
+https://www.coursera.org/learn/software-testing-deployment-and-maintenance-strategies
 https://www.coursera.org/learn/intro-to-selenium
-https://www.coursera.org/learn/test-and-behavior-driven-development-tdd-bdd#modules
-https://www.coursera.org/learn/intro-to-devops#modules
+https://www.coursera.org/learn/test-and-behavior-driven-development-tdd-bdd
+https://www.coursera.org/learn/intro-to-devops
 
-https://www.coursera.org/specializations/software-design-architecture#courses
+https://www.coursera.org/specializations/software-design-architecture
 
-https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer#courses
-https://www.coursera.org/professional-certificates/ibm-backend-development#courses
+https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer
+https://www.coursera.org/professional-certificates/ibm-backend-development
 https://www.coursera.org/specializations/cybersecurity-fundamentals
 https://www.coursera.org/professional-certificates/ibm-data-architect
 
 https://www.coursera.org/learn/ai-python-for-beginners
-https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science#courses
-https://www.coursera.org/specializations/data-structures-algorithms#courses
+https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science
+https://www.coursera.org/specializations/data-structures-algorithms
 https://www.coursera.org/specializations/algorithms
-https://www.coursera.org/specializations/machine-learning-introduction#courses
+https://www.coursera.org/specializations/machine-learning-introduction
 https://www.coursera.org/learn/convolutional-neural-networks
 
-https://www.coursera.org/specializations/hands-on-cpp#courses
+https://www.coursera.org/specializations/hands-on-cpp
 https://www.coursera.org/specializations/c-programming
-https://www.coursera.org/specializations/java-programming-fundamentals#courses
+https://www.coursera.org/specializations/java-programming-fundamentals
 
 tech tgrivia 
 python - pil
 lambda 
 json - tson 
+
+---
+backend
+1. data structures & algorithms -  caches, queues, heaps, indexes, bloom filters, rate limiters
+2. operating systems fundamentals - processes vs threads, memory management, virtual memory, syscalls, file descriptors, scheduling
+3. networking & distributed systems basics - tcp vs udp, http/1.1 vs http/2 vs http/3, dns, load balancing, retries, timeouts, backpressure
+4. databases - postgres - indexes, query planners, mvcc, isolation levels, wal, replication. why nosql exists?
+5. consistency, transactions & failure models - cap, consensus (raft/paxos at a conceptual level), idempotency, exactly-once vs at-least-once, saga patterns
+6. a systems language - go?: concurrency, networking, cloud-native systems. rust: safety, performance, correctness
+7. concurrency & parallelism - thread pools, async runtimes, event loops, actor models, work queues
+8. observability & production debugging - metrics, logs, traces, slos, alerting, profiling; debug memory leaks, latency spikes, and cascading failures
+9. cloud & infrastructure fundamentals - containers, kubernetes basics, autoscaling, service discovery, ci/cd
+10. security fundamentals - authn vs authz, tls, secrets management, common attack vectors, threat modeling
