@@ -115,6 +115,6 @@
   - performance: having well-defined candidate keys significantly improves query performance. queries searching for specific rows can utilize indexing on the candidate key for faster data retrieval. it also helps maintain data integrity by preventing duplicate entries
   - multiple keys: a relation can have multiple candidate keys, meaning different minimal sets of attributes can uniquely identify each row
 - summary
-[[file:advanced_relational_model.png]]
+[[file:https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/000_refcards/c/test/advanced_relational_model.png]]
 ** using relational databases
 ** mysql and postgresql
