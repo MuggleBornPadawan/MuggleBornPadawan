@@ -117,4 +117,6 @@
 - summary
 [[file:https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/000_refcards/c/test/advanced_relational_model.png]]
 ** using relational databases
+- xxxx
 ** mysql and postgresql
+- xxxx
