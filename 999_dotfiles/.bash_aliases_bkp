@@ -11,16 +11,16 @@ alias du='du -sh'
 alias df='df -hT'
 alias o='xdg-open'
 # directory navigation aliases
-alias l='ls -lh --color=auto'
+alias l='ls --color=auto'
 alias r='cd && l'
 alias ..='cd .. && l'
 alias ...='cd ../.. && l'
 alias m='cd && cd MuggleBornPadawan && l'
-alias ww='cd && cd /home/rgroot/MuggleBornPadawan/000_refcards/c/test'
+alias ww='cd && cd /home/rgroot/MuggleBornPadawan/000_refcards/c/test && l'
 # git 
 alias g='git status'
 alias gl='git log --oneline --decorate --graph'
-alias gp="s && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push"
+alias gp="s && pw && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push"
 # Safety & Security Aliases
 alias pw='pass unKnoWn'
 alias ln='ln -i'
@@ -48,7 +48,7 @@ alias sl="s && c && echo 'sleeping for few mins... $(date)' && sleep $((RANDOM %
 alias sy="cd && ./MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh $(pass url)"
 # tmux commands
 alias t='tmux a'
-alias tn='ulimit -u 1000 && tmux new -s "alpha"'
+alias tn='ulimit -u 1000 && sleep 2 && tmux new -s "alpha"'
 alias td='tmux detach'
 alias tk="echo 'abort now if you want to stop killing server.. ' && sleep 11 && tmux kill-server"
 alias tf='tmux set-option -g status off'
