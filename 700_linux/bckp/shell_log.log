@@ -1,6 +1,6 @@
-[H[J[3Jrun this file for any remote debian server setup, startup and chk backups
-
-Date: Sun Dec 21 03:33:11 PM IST 2025 
+run this file for any remote debian server setup, startup and chk backups
+-e 
+Date: Sun Dec 21 05:28:08 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -35,11 +35,13 @@ Default incoming policy changed to 'deny'
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Hit:6 https://storage.googleapis.com/cros-packages/142 bookworm Release
+Get:8 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [290 kB]
+Fetched 338 kB in 1s (245 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -128,13 +130,7 @@ libssl-dev is already the newest version (3.0.17-1~deb12u3).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u4).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-The following NEW packages will be installed:
-  golang golang-1.19 golang-1.19-doc golang-1.19-go golang-1.19-src golang-doc
-  golang-go golang-src
-0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
-Need to get 81.2 MB of archives.
-After this operation, 465 MB of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -166,7 +162,7 @@ Reading state information...
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-up to date, audited 144 packages in 15s
+up to date, audited 144 packages in 9s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -180,31 +176,31 @@ up to date, audited 144 packages in 1s
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 989ms
+up to date, audited 144 packages in 713ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 1s
+up to date, audited 144 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 144 packages in 1s
+up to date, audited 144 packages in 997ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -261,11 +257,10 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sun Dec 21 15:34:02 2025
+ClamAV update process started at Sun Dec 21 17:28:40 2025
 daily.cld database is up-to-date (version: 27857, sigs: 354570, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27857/Sun Dec 21 12:55:49 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
