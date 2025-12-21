@@ -1,6 +1,6 @@
 [H[J[3Jrun this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Dec 21 03:11:33 PM IST 2025 
+Date: Sun Dec 21 03:12:09 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08726-g28eab9a1f61e
 Firewall is active and enabled on system startup
@@ -36,9 +36,9 @@ Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/142 bookworm Release
 Reading package lists...
 Reading package lists...
@@ -164,3 +164,135 @@ Reading state information...
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
+
+up to date, audited 144 packages in 11s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+changed 1 package in 933ms
+Checking /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run ncu -u to upgrade package.json
+Upgrading /home/rgroot/package.json
+
+ 20  ^1.0.0  →  ^3.1.9
+
+Run npm install to install new versions.
+
+added 474 packages, changed 1 package, and audited 618 packages in 30s
+
+101 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+added 15 packages, removed 35 packages, changed 9 packages, and audited 598 packages in 2s
+
+101 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (2 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+removed 454 packages, changed 9 packages, and audited 144 packages in 2s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+run commits seperately; docker and jenkins startup shell scripts to be created seperately
+
+IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
+
+use trash-empty or trash-restore as you see fit
+Password Store
+├── CLAUDE_API_KEY
+├── DEEPSEEK_API_KEY
+├── GEMINI_API_KEY
+├── mbprootp
+├── MOONSHOT_API_KEY
+├── OLLAMA_API_KEY
+├── OPENAI_API_KEY
+├── OPENROUTER_API_KEY
+├── protector_key
+├── tmp
+├── unKnoWn
+├── url
+└── XAI_GROK_API_KEY
+ufw 0.36.2
+Copyright 2008-2023 Canonical Ltd.
+use this command to get more info: sudo ufw app list
+use alias security to get local copy
+
+--                         ------      ----
+110/tcp                    DENY IN     Anywhere                  
+110/tcp (v6)               DENY IN     Anywhere (v6)             
+137                        DENY IN     Anywhere                  
+137 (v6)                   DENY IN     Anywhere (v6)             
+138                        DENY IN     Anywhere                  
+138 (v6)                   DENY IN     Anywhere (v6)             
+139                        DENY IN     Anywhere                  
+139 (v6)                   DENY IN     Anywhere (v6)             
+143                        DENY IN     Anywhere                  
+143 (v6)                   DENY IN     Anywhere (v6)             
+20                         DENY IN     Anywhere                  
+20 (v6)                    DENY IN     Anywhere (v6)             
+21/tcp                     DENY IN     Anywhere                  
+21/tcp (v6)                DENY IN     Anywhere (v6)             
+222                        DENY IN     Anywhere                  
+222 (v6)                   DENY IN     Anywhere (v6)             
+22                         DENY IN     Anywhere                  
+22/tcp                     DENY IN     Anywhere                  
+22/tcp (v6)                DENY IN     Anywhere (v6)             
+22 (v6)                    DENY IN     Anywhere (v6)             
+25/tcp                     DENY IN     Anywhere                  
+25/tcp (v6)                DENY IN     Anywhere (v6)             
+443                        DENY IN     Anywhere                  
+443 (v6)                   DENY IN     Anywhere (v6)             
+445                        DENY IN     Anywhere                  
+445 (v6)                   DENY IN     Anywhere (v6)             
+53 (DNS)                   DENY IN     Anywhere                  
+53 (DNS (v6))              DENY IN     Anywhere (v6)             
+80/tcp                     DENY IN     Anywhere                  
+80/tcp (v6)                DENY IN     Anywhere (v6)             
+Default: deny (incoming), allow (outgoing), deny (routed)
+Logging: on (low)
+New profiles: skip
+Status: active
+To                         Action      From
+ClamAV update process started at Sun Dec 21 15:13:11 2025
+daily.cld database is up-to-date (version: 27857, sigs: 354570, f-level: 90, builder: svc.clamav-publisher)
+main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ClamAV 1.4.3/27857/Sun Dec 21 12:55:49 2025
+run 'sudo clamscan -r /' every day. stay safe. have a good day
+run 'sudo systemctl status clamav-freshclam' to check status
+use 'tmux set-option -g status on/off' to toggle tmux status bar
