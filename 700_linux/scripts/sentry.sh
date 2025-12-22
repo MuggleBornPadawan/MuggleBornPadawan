@@ -42,8 +42,8 @@ audit_network() {
         return 0
     fi
 
-    echo -e "${GREEN}[*] Auditing Connection: $currentIp${NC}"
-
+    # echo -e "${GREEN}[*] Auditing Connection: $currentIp${NC}" #unmask this if you want IP to be displayed
+    echo -e "${GREEN}[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed "
     # Check against our Threat Map
     local threatFound=false
     for subnet in "${!THREAT_MAP[@]}"; do
