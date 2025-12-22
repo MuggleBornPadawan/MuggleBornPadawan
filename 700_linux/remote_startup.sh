@@ -1,6 +1,8 @@
 # ./MuggleBornPadawan/700_linux/remote_startup.sh | tee - a ./MuggleBornPadawan/700_linux/bckp/shell_log.log
 clear
 cd
+# most important stuff
+./MuggleBornPadawan/700_linux/script/sentry.sh
 ulimit -u 1000
 echo "/show info" > ./.ollama/history
 espeak -v en-gb -s 175 -p 50 "roger that"
@@ -47,10 +49,10 @@ npm install
 npm update
 npm audit fix --force
 #restore to local
-cp MuggleBornPadawan/.gitignore $HOME
-cp MuggleBornPadawan/.dockerignore $HOME
-cp MuggleBornPadawan/Dockerfile $HOME
-cp MuggleBornPadawan/Jenkinsfile $HOME
+# cp MuggleBornPadawan/.gitignore $HOME
+# cp MuggleBornPadawan/.dockerignore $HOME
+# cp MuggleBornPadawan/Dockerfile $HOME
+# cp MuggleBornPadawan/Jenkinsfile $HOME
 git config --global user.name "MuggleBornPadawan" && git config --global user.email "mugglebornpadawan@icloud.com"
 echo -e "\nrun commits seperately; docker and jenkins startup shell scripts to be created seperately"
 alias rm="trash-put"
