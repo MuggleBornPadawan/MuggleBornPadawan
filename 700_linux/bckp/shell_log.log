@@ -3,7 +3,7 @@
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 
-Date: Tue Dec 23 11:38:11 AM IST 2025 
+Date: Tue Dec 23 11:40:51 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -48,19 +48,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  cros-im
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 52.1 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://storage.googleapis.com/cros-packages/143 bookworm/main amd64 cros-im amd64 63292 [52.1 kB]
-Fetched 52.1 kB in 1s (84.3 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 127825 files and directories currently installed.)
-Preparing to unpack .../cros-im_63292_amd64.deb ...
-Unpacking cros-im:amd64 (63292) over (63281) ...
-Setting up cros-im:amd64 (63292) ...
-Processing triggers for libgtk-3-0:amd64 (3.24.38-2~deb12u3) ...
-Processing triggers for libgtk-4-1:amd64 (4.8.3+ds-2+deb12u1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -171,26 +159,26 @@ Reading state information...
 ├── @google/gemini-cli@0.22.2
 ├── corepack@0.34.0
 ├── npm-check-updates@19.2.0
-└── npm@11.5.1
+└── npm@11.7.0
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-added 1 package, and audited 145 packages in 6s
+up to date, audited 144 packages in 1s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 145 packages in 1s
+up to date, audited 144 packages in 963ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 670ms
+changed 1 package in 221ms
 Checking /home/rgroot/package.json
 
  20  ^1.0.0  →  ^3.1.9
@@ -202,7 +190,7 @@ Upgrading /home/rgroot/package.json
 
 Run npm install to install new versions.
 
-added 474 packages, changed 1 package, and audited 619 packages in 15s
+added 474 packages, changed 1 package, and audited 618 packages in 3s
 
 101 packages are looking for funding
   run `npm fund` for details
@@ -217,7 +205,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-added 15 packages, removed 35 packages, changed 9 packages, and audited 599 packages in 2s
+added 15 packages, removed 35 packages, changed 9 packages, and audited 598 packages in 2s
 
 101 packages are looking for funding
   run `npm fund` for details
@@ -232,7 +220,7 @@ To address all issues (including breaking changes), run:
 
 Run `npm audit` for details.
 
-removed 454 packages, changed 9 packages, and audited 145 packages in 2s
+removed 454 packages, changed 9 packages, and audited 144 packages in 2s
 
 14 packages are looking for funding
   run `npm fund` for details
@@ -299,7 +287,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Tue Dec 23 11:39:09 2025
+ClamAV update process started at Tue Dec 23 11:41:15 2025
 daily.cld database is up-to-date (version: 27858, sigs: 354573, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
