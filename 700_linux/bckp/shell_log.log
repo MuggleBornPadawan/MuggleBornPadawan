@@ -1,11 +1,11 @@
-[H[2J[3J--- Omni-Sentry v2.0 Initialized ---
+--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
-
-Date: Mon Dec 22 11:13:00 AM IST 2025 
+-e 
+Date: Tue Dec 23 11:35:51 AM IST 2025 
 OS: Linux 
-Kernel: 6.6.99-08726-g28eab9a1f61e
+Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
 Skipping adding existing rule
 Skipping adding existing rule (v6)
@@ -37,18 +37,26 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/142 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/142 bookworm Release
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:6 https://storage.googleapis.com/cros-packages/143 bookworm Release [3,109 B]
+Get:7 https://storage.googleapis.com/cros-packages/143 bookworm Release.gpg [2,365 B]
+Get:8 https://storage.googleapis.com/cros-packages/143 bookworm/main amd64 Packages [5,010 B]
+Fetched 125 kB in 3s (50.1 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  cros-im
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 52.1 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -108,7 +116,12 @@ cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  cros-im
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 52.1 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -131,7 +144,12 @@ libssl-dev is already the newest version (3.0.17-1~deb12u3).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u4).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  cros-im
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 52.1 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -139,98 +157,79 @@ ufw is already the newest version (0.36.2-1).
 netcat-openbsd is already the newest version (1.219-1).
 iproute2 is already the newest version (6.1.0-3).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  cros-im
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 52.1 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b1).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  cros-im
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 52.1 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
-├── @anthropic-ai/claude-code@2.0.75
-├── @google/gemini-cli@0.21.3
-├── corepack@0.34.0
-├── npm-check-updates@19.2.0
-└── npm@11.5.1
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
 Package  Current  Wanted  Latest  Location         Depended by
 20         1.0.0   1.0.0   3.1.9  node_modules/20  rgroot
 
-added 1 package, and audited 145 packages in 9s
+up to date, audited 144 packages in 6s
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-up to date, audited 145 packages in 941ms
+up to date, audited 144 packages in 793ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
-changed 1 package in 454ms
-Checking /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run ncu -u to upgrade package.json
-Upgrading /home/rgroot/package.json
-
- 20  ^1.0.0  →  ^3.1.9
-
-Run npm install to install new versions.
-
-added 474 packages, changed 1 package, and audited 619 packages in 15s
-
-101 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-added 15 packages, removed 35 packages, changed 9 packages, and audited 599 packages in 2s
-
-101 packages are looking for funding
-  run `npm fund` for details
-
-32 vulnerabilities (2 low, 6 moderate, 24 high)
-
-To address issues that do not require attention, run:
-  npm audit fix
-
-To address all issues (including breaking changes), run:
-  npm audit fix --force
-
-Run `npm audit` for details.
-
-removed 454 packages, changed 9 packages, and audited 145 packages in 2s
+up to date, audited 144 packages in 514ms
 
 14 packages are looking for funding
   run `npm fund` for details
 
 found 0 vulnerabilities
 
+up to date, audited 144 packages in 1s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 144 packages in 835ms
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -287,11 +286,13 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Mon Dec 22 11:13:46 2025
-daily.cld database is up-to-date (version: 27857, sigs: 354570, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Tue Dec 23 11:36:16 2025
+daily database available for update (local version: 27857, remote version: 27858)
+Testing database: '/usr/local/share/clamav/tmp.c9447d61d2/clamav-bbb474bf6b932e2c7e219956efb1aed5.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27858, sigs: 354573, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27857/Sun Dec 21 12:55:49 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar

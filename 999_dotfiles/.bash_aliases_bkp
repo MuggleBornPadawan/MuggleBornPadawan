@@ -18,9 +18,9 @@ alias ...='cd ../.. && l'
 alias m='cd && cd MuggleBornPadawan && l'
 alias ww='cd && cd /home/rgroot/MuggleBornPadawan/000_refcards/c/test && l'
 # git 
-alias g='git status'
+alias g='git status && git branch'
 alias gl='git log --oneline --decorate --graph'
-alias gp="s && pw && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push"
+alias gp="s && pw && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push && git status && git branch"
 # Safety & Security Aliases
 alias pw='pass unKnoWn'
 alias ln='ln -i'
@@ -33,7 +33,7 @@ alias get='curl -O'
 alias mkdir='mkdir -p'
 # npm
 alias nu='npm list -g --depth=0 && npm outdated && npm update &&  npm audit fix --force && npm install -g npm-check-updates'
-alias abc="cd && echo '/show info' > ./.ollama/history &&  ./MuggleBornPadawan/700_linux/scripts/parse_ollama_models.sh"
+alias abc="cd && echo '/show info' > ./.ollama/history && cd -"
 # clamav scan
 alias scanFully='sudo clamscan -r -i /'
 alias scanStatus='sudo freshclam && clamscan --version && sudo systemctl status clamav-freshclam'
@@ -69,4 +69,4 @@ alias security="sudo ufw status verbose && sudo ufw version && echo 'use this co
 alias genpass="cd && ./MuggleBornPadawan/700_linux/scripts/password_generator.sh && cd -"
 # cleanup
 alias j='tk && pw && r && genpass && history -w && history -c && rm .bash_history Dockerfile Jenkinsfile tempFile* aeo_results_log.txt daily_nuggets.txt tmp.txt && c && echo "clean slate protocol activated" && tn'
-alias i='to ; tty ; date ; ulimit -a | grep processes ; abc ; sleep 5 ; tf'
+alias i='to ; tty ; pwd; date ; ulimit -a | grep processes ; g ; abc ; sleep 5 ; tf'
