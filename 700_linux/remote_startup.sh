@@ -39,15 +39,13 @@ sudo apt-get upgrade podman crun
 sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
 #npm packages
 npm list -g --depth=0
-npm outdated
-npm update
-npm audit fix --force
-npm install -g npm-check-updates
-ncu
-ncu -u
-npm install
-npm update
-npm audit fix --force
+#npm outdated
+#npm update
+#npm audit fix --force
+#npm install -g npm-check-updates
+#ncu
+#ncu -u
+#npm install
 #restore to local
 # cp MuggleBornPadawan/.gitignore $HOME
 # cp MuggleBornPadawan/.dockerignore $HOME
