@@ -217,3 +217,130 @@ TL;DR ORDER
 --------------------------------------------------
 Gibbons → Shoham/Leyton-Brown → Algorithmic Game Theory → pick speciality chapters as your feature list grows.
 Finish those and you’ll recognise whether your shiny new multi-agent leaderboard is measuring skill or merely collusion in under 30 minutes of reading the traces.
+
+Below are the people and studios that began in (or are best-known for) game development and are now
+explicitly re-tooling their companies around building artificial general intelligence (AGG, i.e.
+human-level, broadly-capable AI).  Everyone on the list has said—on the record in the last 18 months—that
+AGI is the new north-star of the organisation.
+
+1. Demis Hassabis
+   Roots: Lead programmer on *Theme Park* (Bullfrog), designer/programmer on *Black & White* (Lionhead).
+   Today: Co-founder & CEO of Google DeepMind; public mission statement is “solve intelligence, use it to solve everything else.”
+
+2. Dennis Fong (Thresh – Doom/Quake world champion) & Drew Houston
+   Roots: Founded GGWP, an in-game moderation AI start-up.
+   Today: GGWP pivoted (2023) to “building the first AGI game engine” – hiring LLM/RL researchers instead of gameplay engineers.
+
+3. David Jones
+   Roots: Creator *Lemmings*, *Grand Theft Auto* (DMA Design → Rockstar).
+   Today: Runs Cloudgine/Tenacious XR; company blog (Apr 2023) says its new studio “will iterate in-game bots until they become general agents – our path to AGI.”
+
+4. Marek Rosa
+   Roots: Founder Keen Software House; made *Space Engineers* (8 M copies).
+   Today: 100-person AI team at GoodAI; open-ended “Badger” architecture is explicitly “toward AGI,” with annual $1 M open-grants programme.
+
+5. Jeff Clune (former Uber AI, OpenAI) & Kenneth Stanley
+   Roots: Both began in computational game creativity (Galactic Arms Race, Picbreeder).
+   Today: Run Open-endedness Lab at University of British Columbia & Carnegie Mellon; research page says “massively multi-agent open-ended games are the shortest path to AGI.”
+
+6. Julian Togelius
+   Roots: Procedural-game-content researcher (*Super Mario* AI competition).
+   Today: Co-directs the “AGI via Game Benchmarks” initiative (NeurIPS 2023 workshop); start-up Modl.ai pivoted (2023) from QA bots to “generally-capable game-playing agents as AGI testbed.”
+
+7. Danny Lange
+   Roots: VP of AI/ML at Unity Technologies (2014-2020).
+   Today: CEO of General Automation Labs; company charter (2022) is “building AGI by letting millions of game developers train it for us.”
+
+8. Peter Molyneux (honourable mention)
+   Roots: *Populous*, *Fable* (Bullfrog → Lionhead → 22cans).
+   Today: 22cans’ 2023 seed round deck states “Legacy and Masters are live Petri dishes for agents that will grow into AGI.”  (Still early-stage.)
+
+--- Game Engine math vs AGI math
+
+1. Where the math is literally the same
+   - Linear algebra & tensor calculus: transform hierarchies, quaternions, shader matrix stacks → same GEMM kernels that feed a transformer.
+   - Spatial data structures: BVHs, kd-trees, octrees → identical algorithms used in NeRF, 3-D diffusion, and point-cloud transformers that do embodied reasoning.
+   - Real-time numerical integration: Euler, RK4, symplectic integrators → ODE/PDE solvers for neural dynamics and physics-augmented RL (e.g., MuJoCo, Brax).
+   - Parallel scheduling: job systems, task graphs, GPU command buffers → the DAG runtime underneath PyTorch/XLA, Jax, CUDA graphs.
+   - Probabilistic graphical models: old-style particle filters for skeletal tracking → Bayes filters for POMDP agents.
+   These pieces are “applied math” that happened to live inside an engine; they are also inside an AGI stack, so porting is trivial.
+
+2. Where the math is AGI-relevant only after you throw the engine away
+   - Differentiable physics: you re-derive rigid-body equations so they are twice-differentiable, then re-implement in JAX; the original C++ solver is useless.
+   - Curriculum RL: the idea of “levels of increasing difficulty” is game-design heuristics, but the math is formalised as combinatorial curricula or UCB-based task selection—no engine code reused.
+   - World-model learning: the engine’s BSP tree is replaced by a latent dynamics model; the only thing kept is the raw polygon soup as training data.
+
+3. Where the math is a dead end for AGI
+   - Rasterisation hacks, z-buffer tricks, shadow-map atlasing, LOD biasing: all zero-derivative, non-learnable, built only to cheat human perception.
+   - Frame-to-frame coherence algorithms (temporal upscaling, occlusion culling): assume a 16 ms budget and a human eye; an AGI agent does not care about screen pixels.
+   - Audio DSP pipelines tuned for 3-D stereo headphones: irrelevant unless your AGI is literally an audio renderer.
+
+4. Talent crossover, not formula crossover
+   The engineer who squeezed a 5×5 SVD into 3 SIMD instructions for skeletal animation can retool to squeeze a 4×4 attention kernel onto a TensorCore. The mental muscle is portable; the equation sheet is not.
+
+Bottom line
+Game engines are giant applied-math libraries, so a few shelves (linear algebra, spatial acceleration, real-time integration) are directly checked out by AGI researchers. The rest is specialised for 60 fps illusions and is either ignored or re-derived in a differentiable form.
+
+--- who else is good fit ---
+
+People who already run “live, feedback-rich loops with noisy data and real-world stakes” are the cheapest re-labels for AGI talent. Games are one instance of that loop; these are the others:
+
+1. Quantitative trading / HFT
+   Daily ritual: ship models before market open, watch P&L in real time, rollback by noon.
+   Skill match: low-latency C++/CUDA, online RL, adversarial counter-adaptation, risk-constrained optimisation.
+   Cross-train path: portfolio → policy gradient; Sharpe ratio → reward shaping; fill-rate simulators → Gym envs.
+
+2. Industrial process control & robotics
+   Steel mills, oil refineries, autonomous warehouse bots already learn on 10 ms sensor streams.
+   Skill match: Kalman filters, MPC, safety envelopes, ROS2, real-time OS.
+   Cross-train path: PID → differentiable control; fault-tree → reward tampering penalties.
+
+3. Telco network & ad-tech optimisation
+   Billions of users, 99.9 % uptime, reinforcement decisions every 50 ms (which ad, which bitrate).
+   Skill match: multi-armed bandits, distributed feature stores, A/B at scale.
+   Cross-train path: CTR predictor → world-model; campaign budget → KL-constrained RL.
+
+4. Animation / VFX / CGI (Pixar, Weta, ILM)
+   Already simulate fluids, cloth, muscles with differentiable solvers; daily shot reviews = human-in-the-loop RL.
+   Skill match: high-performance FEM, volumetric rendering, USD scene graphs.
+   Cross-train path: inverse rendering → NeRF-based world models; render farm → GPU cluster for training.
+
+5. Satellite & aerospace operators (SpaceX, Planet)
+   Fly 5 000+ satellites, close-loop orbital mechanics, schedule downlinks under thermal/power constraints.
+   Skill match: optimal control, orbital propagators, radiation-hardened code.
+   Cross-train path: trajectory optimiser → continuous control policy; constellation scheduler → multi-agent RL.
+
+6. Bioinformatics / protein-folding labs
+   Run high-throughput wet labs, get noisy labels next day, iterate models overnight (AlphaFold ecosystem).
+   Skill match: handling partial labels, physics-aware losses, 100 TB sequence datasets.
+   Cross-train path: folding energy → reward; cryo-EM noise → self-supervised pre-training.
+
+7. Large-scale ops & reliability (SRE at Google, Meta)
+   Manage planet-scale services where a 0.1 % regression is millions of dollars.
+   Skill match: anomaly detection, causal inference, automatic rollback.
+   Cross-train path: alert flood → curiosity-driven exploration; canary push → safe exploration strategies.
+
+8. Cyber-security red-team / threat-hunting
+   Adversarial environment, sparse reward (breach/no breach), arms-race dynamics.
+   Skill match: fuzzing, genetic algorithms, exploit chains.
+   Cross-train path: fuzzer → environment generator; zero-day discovery → intrinsic motivation.
+
+9. E-commerce & recommender systems
+   Continuous learning from 100 Ms daily interactions, feedback loops in minutes, cold-start problems.
+   Skill match: matrix factorisation, multi-task learning, causal bandits.
+   Cross-train path: recommender → alignment layer (RLHF); explore/exploit → safety-capability balance.
+
+10. High-end animation / physics YouTube educators
+    Less obvious, but many now code custom simulators in Python that get millions of iterative views—cheap human labels.
+    Skill match: visual communication of complex systems, community-sourced parameter sweeps.
+    Cross-train path: viewer polls → human preference dataset; open-source sim → Gym env.
+
+Cross-training recipe (works for any of the above)
+
+1. Pick a domain simulator you already own (refinery, order book, launch sequencer).
+2. Wrap it with a Gym/Jax interface in one sprint.
+3. Replace the heuristic controller with a small transformer-based policy; pre-train on historical logs (behaviour cloning).
+4. Turn on online RL with safe-policy gradients; use your existing risk guardrails as safety constraints.
+5. Publish the env open-source → instant NeurIPS workshop, AI talent knocks on your door.
+
+If the job involves “tight loop, noisy data, big reward skew, and you already have a cluster,” you’re a semester away from being an AGI shop.
