@@ -3,7 +3,7 @@
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed Dec 24 07:10:19 PM IST 2025 
+Date: Thu Dec 25 12:59:08 AM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -37,12 +37,20 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Ign:1 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Hit:5 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/143 bookworm Release
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Err:4 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+  Cannot initiate the connection to storage.googleapis.com:443 (2607:f8b0:4002:c09::cf). - connect (101: Network is unreachable) Cannot initiate the connection to storage.googleapis.com:443 (2607:f8b0:4002:c0c::cf). - connect (101: Network is unreachable) Cannot initiate the connection to storage.googleapis.com:443 (2607:f8b0:4002:c2c::cf). - connect (101: Network is unreachable) Cannot initiate the connection to storage.googleapis.com:443 (2607:f8b0:4002:c02::cf). - connect (101: Network is unreachable) Could not connect to storage.googleapis.com:443 (172.253.124.207), connection timed out Could not connect to storage.googleapis.com:443 (142.250.105.207), connection timed out Could not connect to storage.googleapis.com:443 (64.233.177.207), connection timed out Could not connect to storage.googleapis.com:443 (74.125.21.207), connection timed out Could not connect to storage.googleapis.com:443 (64.233.176.207), connection timed out Could not connect to storage.googleapis.com:443 (173.194.219.207), connection timed out Could not connect to storage.googleapis.com:443 (64.233.185.207), connection timed out Could not connect to storage.googleapis.com:443 (74.125.138.207), connection timed out Could not connect to storage.googleapis.com:443 (142.251.15.207), connection timed out Could not connect to storage.googleapis.com:443 (108.177.122.207), connection timed out Could not connect to storage.googleapis.com:443 (172.217.215.207), connection timed out Could not connect to storage.googleapis.com:443 (142.250.9.207), connection timed out Could not connect to storage.googleapis.com:443 (74.125.136.207), connection timed out [IP: 74.125.136.207 443]
+Fetched 163 kB in 59s (2,776 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -221,7 +229,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Wed Dec 24 19:10:33 2025
+ClamAV update process started at Thu Dec 25 01:00:19 2025
 daily.cld database is up-to-date (version: 27860, sigs: 354607, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
