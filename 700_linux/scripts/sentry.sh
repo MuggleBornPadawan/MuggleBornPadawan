@@ -47,6 +47,7 @@ audit_network() {
     # Check against our Threat Map
     local threatFound=false
     for subnet in "${!THREAT_MAP[@]}"; do
+	echo "checking $subnet ..."
         if [[ "$currentIp" == "$subnet"* ]]; then
             log_alert "${THREAT_MAP[$subnet]}"
             threatFound=true
