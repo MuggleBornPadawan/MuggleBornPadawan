@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Fri Dec 26 12:04:12 PM IST 2025 
+Date: Fri Dec 26 09:09:02 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -42,13 +42,13 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Fetched 115 kB in 1s (113 kB/s)
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:5 https://storage.googleapis.com/cros-packages/143 bookworm Release
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Fetched 163 kB in 1s (132 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -227,8 +227,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Fri Dec 26 12:04:28 2025
-daily.cld database is up-to-date (version: 27860, sigs: 354607, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Fri Dec 26 21:09:17 2025
+daily database available for update (local version: 27860, remote version: 27861)
+Testing database: '/usr/local/share/clamav/tmp.26f8f4ded4/clamav-7eaf15737633be9df46b8b7c08bc5a9c.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27861, sigs: 354613, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 run 'sudo clamscan -r /' every day. stay safe. have a good day
