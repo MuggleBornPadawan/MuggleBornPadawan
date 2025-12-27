@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Fri Dec 26 09:09:02 PM IST 2025 
+Date: Sat Dec 27 11:17:56 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -43,12 +43,15 @@ Default incoming policy changed to 'deny'
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:5 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Fetched 163 kB in 1s (132 kB/s)
+Ign:2 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Get:3 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Hit:4 https://deb.debian.org/debian bookworm InRelease
+Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-12-27-0204.04-F-2025-12-27-0204.04.pdiff [401 B]
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2025-12-27-0204.04-F-2025-12-27-0204.04.pdiff [401 B]
+Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:8 https://storage.googleapis.com/cros-packages/143 bookworm Release
+Fetched 227 kB in 2s (142 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -227,11 +230,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Fri Dec 26 21:09:17 2025
-daily database available for update (local version: 27860, remote version: 27861)
-Testing database: '/usr/local/share/clamav/tmp.26f8f4ded4/clamav-7eaf15737633be9df46b8b7c08bc5a9c.tmp-daily.cld' ...
+ClamAV update process started at Sat Dec 27 23:18:08 2025
+daily database available for update (local version: 27861, remote version: 27862)
+Testing database: '/usr/local/share/clamav/tmp.bfd6d4734b/clamav-dae679c8cad0b43575819eb7d749a227.tmp-daily.cld' ...
 Database test passed.
-daily.cld updated (version: 27861, sigs: 354613, f-level: 90, builder: svc.clamav-publisher)
+daily.cld updated (version: 27862, sigs: 354619, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 run 'sudo clamscan -r /' every day. stay safe. have a good day
