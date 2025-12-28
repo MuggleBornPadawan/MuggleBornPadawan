@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Dec 28 02:05:36 PM IST 2025 
+Date: Sun Dec 28 06:29:49 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -42,13 +42,13 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:5 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Fetched 115 kB in 2s (69.8 kB/s)
+Fetched 48.0 kB in 2s (27.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -228,11 +228,8 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Sun Dec 28 14:05:50 2025
-daily database available for update (local version: 27862, remote version: 27863)
-Testing database: '/usr/local/share/clamav/tmp.f21f5060fb/clamav-95bcedb2692084c4a2124e94d3f48982.tmp-daily.cld' ...
-Database test passed.
-daily.cld updated (version: 27863, sigs: 354621, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Sun Dec 28 18:30:03 2025
+daily.cld database is up-to-date (version: 27863, sigs: 354621, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 ClamAV 1.4.3/27863/Sun Dec 28 12:56:03 2025
