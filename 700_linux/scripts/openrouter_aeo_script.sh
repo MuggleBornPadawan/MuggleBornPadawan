@@ -25,6 +25,26 @@ cd
 # Note: MODELS array can be easily extended or modified here.
 
 MODELS=(
+    "google/gemini-2.0-flash-exp:free"
+    "moonshotai/kimi-k2:free"
+    "mistralai/devstral-2512:free"
+    "nvidia/nemotron-3-nano-30b-a3b:free"
+    "openai/gpt-oss-120b:free"
+    "openai/gpt-oss-20b:free"
+    "qwen/qwen3-coder:free"
+    "z-ai/glm-4.5-air:free"
+    "deepseek/deepseek-r1-0528-qwen3-8b:floor"
+    "deepseek/deepseek-v3.2-exp:floor"
+    "google/gemini-2.0-flash-lite-001:floor"
+    "google/gemini-2.5-flash-lite:floor"
+    "meta-llama/llama-4-scout:floor"
+    "openai/gpt-5-nano"
+    "x-ai/grok-4.1-fast:floor"
+    "z-ai/glm-4-32b:floor"
+)
+
+: <<'COMMENT_BLOCK'
+MODELS=(
     "alibaba/tongyi-deepresearch-30b-a3b:floor"
     "amazon/nova-micro-v1:floor"
     "amazon/nova-lite-v1:floor"
@@ -155,6 +175,7 @@ MODELS=(
     "x-ai/grok-4-fast:free"
     "z-ai/glm-4.5-air:free"    
 )    
+COMMENT_BLOCK
 
 # Output log file
 LOG_FILE="aeo_results_log.txt"

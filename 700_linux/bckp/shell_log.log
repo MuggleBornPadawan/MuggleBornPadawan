@@ -1,9 +1,14 @@
 [H[J[3J--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
+checking 10.0.0. ...
+checking 192.168.1. ...
+checking 10.1.1. ...
+checking 169.254. ...
+checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Dec 26 01:44:23 AM IST 2025 
+Date: Tue Dec 30 01:58:53 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -40,9 +45,10 @@ Default outgoing policy changed to 'allow'
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:5 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/143 bookworm Release
+Fetched 48.0 kB in 2s (28.9 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -156,7 +162,7 @@ Building dependency tree...
 Reading state information...
 /home/rgroot/.config/nvm/versions/node/v24.6.0/lib
 ├── @anthropic-ai/claude-code@2.0.76
-├── @google/gemini-cli@0.22.2
+├── @google/gemini-cli@0.22.4
 ├── corepack@0.34.0
 ├── npm-check-updates@19.2.0
 └── npm@11.7.0
@@ -222,11 +228,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Fri Dec 26 01:44:36 2025
-daily.cld database is up-to-date (version: 27860, sigs: 354607, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Tue Dec 30 13:59:07 2025
+daily.cld database is up-to-date (version: 27864, sigs: 354632, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27860/Wed Dec 24 12:55:36 2025
+ClamAV 1.4.3/27864/Mon Dec 29 12:55:57 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar

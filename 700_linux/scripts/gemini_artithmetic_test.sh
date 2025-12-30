@@ -32,6 +32,7 @@ RANDOM_NUM_DIGITS=4
 
 # Gemini API Endpoint
 GEMINI_API_ENDPOINT="https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent"
+#GEMINI_API_ENDPOINT="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-001:generateContent"
 
 # --- Helper Functions ---
 
