@@ -1,4 +1,4 @@
---- Omni-Sentry v2.0 Initialized ---
+[H[J[3J--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Tue Dec 30 08:21:03 PM IST 2025 
+
+Date: Tue Dec 30 09:42:50 PM IST 2025 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -42,13 +42,12 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:5 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Fetched 163 kB in 1s (121 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -160,17 +159,18 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@1.0.67
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
+├── @anthropic-ai/claude-code@2.0.76
+├── @google/gemini-cli@0.22.4
+├── corepack@0.34.0
+├── npm-check-updates@19.2.0
+└── npm@11.7.0
 
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -227,13 +227,11 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Tue Dec 30 20:21:18 2025
-daily database available for update (local version: 27864, remote version: 27865)
-Testing database: '/usr/local/share/clamav/tmp.d434d9d9ec/clamav-890fa0f9a5ea34979594eef68dc0a78d.tmp-daily.cld' ...
-Database test passed.
-daily.cld updated (version: 27865, sigs: 354647, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Tue Dec 30 21:43:04 2025
+daily.cld database is up-to-date (version: 27865, sigs: 354647, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ClamAV 1.4.3/27865/Tue Dec 30 12:56:00 2025
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
