@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 
-Date: Thu Jan  1 11:35:57 AM IST 2026 
+Date: Fri Jan  2 01:07:57 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -42,13 +42,12 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:3 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
-Get:4 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Fetched 115 kB in 1s (92.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -162,7 +161,7 @@ Building dependency tree...
 Reading state information...
 /home/rgroot/.config/nvm/versions/node/v24.6.0/lib
 ├── @anthropic-ai/claude-code@2.0.76
-├── @google/gemini-cli@0.22.4
+├── @google/gemini-cli@0.22.5
 ├── @qwen-code/qwen-code@0.6.0
 ├── corepack@0.34.0
 ├── npm-check-updates@19.2.0
@@ -229,11 +228,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ClamAV update process started at Thu Jan  1 11:36:12 2026
-daily.cld database is up-to-date (version: 27866, sigs: 354664, f-level: 90, builder: svc.clamav-publisher)
+ClamAV update process started at Fri Jan  2 01:08:11 2026
+daily database available for update (local version: 27866, remote version: 27867)
+Testing database: '/usr/local/share/clamav/tmp.d4f71be078/clamav-b5419bed7cf36f695c1853c64d154fbb.tmp-daily.cld' ...
+Database test passed.
+daily.cld updated (version: 27867, sigs: 354669, f-level: 90, builder: svc.clamav-publisher)
 main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
 bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/27866/Wed Dec 31 12:55:53 2025
+ClamAV 1.4.3/27867/Thu Jan  1 12:55:50 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
