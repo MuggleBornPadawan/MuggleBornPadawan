@@ -133,3 +133,6 @@ cheat() {
     # Follow redirects (-L) in case the service URL changes
     curl -sL "cht.sh/$@" | less -R
 }
+
+# opencode
+export PATH=/home/rgroot/.opencode/bin:$PATH
