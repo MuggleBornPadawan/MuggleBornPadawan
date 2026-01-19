@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Mon Jan 19 01:38:39 PM IST 2026 
+Date: Mon Jan 19 07:19:18 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -42,12 +42,13 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Ign:2 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:5 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:7 https://deb.debian.org/debian-security bookworm-security InRelease
+Fetched 115 kB in 2s (65.2 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
