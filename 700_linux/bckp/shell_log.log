@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed Jan 21 07:43:14 AM IST 2026 
+Date: Wed Jan 21 01:39:04 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -42,13 +42,16 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 https://deb.debian.org/debian bookworm InRelease
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
-Get:5 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:6 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Fetched 163 kB in 1s (147 kB/s)
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Hit:7 https://storage.googleapis.com/cros-packages/143 bookworm Release
+Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-01-21-0211.54-F-2026-01-21-0211.54.pdiff [194 B]
+Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-01-21-0211.54-F-2026-01-21-0211.54.pdiff [194 B]
+Fetched 178 kB in 3s (58.8 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -228,7 +231,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27886/Tue Jan 20 12:54:12 2026
+ClamAV 1.4.3/27887/Wed Jan 21 12:54:12 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
