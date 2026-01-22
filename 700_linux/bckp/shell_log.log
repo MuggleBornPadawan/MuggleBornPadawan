@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed Jan 21 01:39:04 PM IST 2026 
+Date: Thu Jan 22 11:17:13 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -44,14 +44,13 @@ Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-01-21-0211.54-F-2026-01-21-0211.54.pdiff [194 B]
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-01-21-0211.54-F-2026-01-21-0211.54.pdiff [194 B]
-Fetched 178 kB in 3s (58.8 kB/s)
+Ign:3 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:5 https://storage.googleapis.com/cros-packages/143 bookworm Release
+Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:8 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [291 kB]
+Get:9 https://deb.debian.org/debian-security bookworm-security/main Translation-en [177 kB]
+Fetched 631 kB in 3s (221 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
