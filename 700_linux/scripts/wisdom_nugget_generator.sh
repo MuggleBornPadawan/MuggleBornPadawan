@@ -24,8 +24,8 @@ names=("Edward Oakley Thorp" "Kenneth Griffin" "Géraldine Honauer" "Juan Ferrer
 # for your API key and project. Standard models are often like 'gemini-1.5-flash-latest'.
 # If 'gemini-2.0-flash' is not valid, this will fail.
 # GEMINI_MODEL_NAME="gemini-2.5-flash"
-# GEMINI_MODEL_NAME="gemini-flash-lite-latest"
-GEMINI_MODEL_NAME="gemini-3-flash-preview"
+GEMINI_MODEL_NAME="gemini-flash-lite-latest"
+#GEMINI_MODEL_NAME="gemini-3-flash-preview"
 GEMINI_API_BASE_URL="https://generativelanguage.googleapis.com/v1beta/models"
 
 # The API key will be appended to this URL as a query parameter.

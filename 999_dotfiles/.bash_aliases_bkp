@@ -18,7 +18,7 @@ alias ...='cd ../.. && l'
 alias m='cd && cd MuggleBornPadawan && l'
 alias ww='cd && cd /home/rgroot/MuggleBornPadawan/000_refcards/c/test && l'
 # git 
-alias g='pwd && git cat-file -p HEAD && git diff --staged && git diff HEAD && git status && git branch'
+alias g='pwd && git gc && git cat-file -p HEAD && git diff --staged && git diff HEAD && git status && git branch'
 alias gl='git log --oneline --decorate --graph'
 alias gp="s && pw && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push && git status && git branch"
 # Safety & Security Aliases

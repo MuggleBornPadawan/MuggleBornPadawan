@@ -45,3 +45,7 @@ backend
 8. observability & production debugging - metrics, logs, traces, slos, alerting, profiling; debug memory leaks, latency spikes, and cascading failures
 9. cloud & infrastructure fundamentals - containers, kubernetes basics, autoscaling, service discovery, ci/cd
 10. security fundamentals - authn vs authz, tls, secrets management, common attack vectors, threat modeling
+---
+https://blog.algomaster.io/p/20-dsa-patterns
+https://blog.algomaster.io/p/how-git-works-internally
+https://github.com/dzyim/ilya-sutskever-recommended-reading
