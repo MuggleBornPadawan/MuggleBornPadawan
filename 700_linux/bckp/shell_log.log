@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Fri Jan 23 10:37:34 PM IST 2026 
+Date: Sat Jan 24 11:26:20 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -46,9 +46,12 @@ Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
 Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Hit:5 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Hit:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Fetched 115 kB in 2s (61.9 kB/s)
+Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Hit:6 https://storage.googleapis.com/cros-packages/143 bookworm Release
+Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-01-23-1959.53-F-2026-01-23-1959.53.pdiff [900 B]
+Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-01-23-1959.53-F-2026-01-23-1959.53.pdiff [900 B]
+Fetched 227 kB in 2s (120 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -227,7 +230,10 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
+Sat Jan 24 11:26:42 2026 -> ClamAV update process started at Sat Jan 24 11:26:42 2026
+Sat Jan 24 11:26:43 2026 -> daily.cld database is up-to-date (version: 27889, sigs: 354843, f-level: 90, builder: draynor)
+Sat Jan 24 11:26:43 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+Sat Jan 24 11:26:43 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 ClamAV 1.4.3/27889/Fri Jan 23 22:10:37 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
