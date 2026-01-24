@@ -49,3 +49,73 @@ backend
 https://blog.algomaster.io/p/20-dsa-patterns
 https://blog.algomaster.io/p/how-git-works-internally
 https://github.com/dzyim/ilya-sutskever-recommended-reading
+---
+kekius maximus (elon musk?) - https://x.com/Kekius_Sage/status/2014841012003512616?s=20
+flow: algebra → geometry → trigonometry → precalculus → calculus → linear algebra & multivariable calculus
+1. start with algebra. learn to manipulate symbols cleanly. if you struggle here, everything later becomes noise.
+2. algebra is about rules and structure, not calculation speed. slow down until each step feels obvious.
+3. learn equations as cause–effect relations. don’t solve, understand what changes what.
+4. geometry comes next. learn how shapes, distances, and angles behave. this trains intuition that formulas alone won’t give.
+5. treat geometry visually and algebraically at the same time. translate pictures into equations and back.
+6. introduce vectors early. they unify algebra and geometry. don’t delay this step.
+7. trigonometry is about angles and rotation, not triangles. focus on sine and cosine as functions.
+8. learn trig through the unit circle, not identities. if you can draw it, you understand it.
+9. precalculus connects functions, trig, and algebra. its job is to make calculus predictable.
+10. if precalc feels unclear, stop and fix it. calculus punishes weak foundations.
+11. calculus starts with derivatives as rates of change. forget formulas until the idea is clear.
+12. a derivative answers: “what happens if i change this slightly”? practice asking that question constantly.
+13. use calculus to model behavior, not to compute expressions. most real problems stop at setup.
+14. integration is accumulation. area is just one example. always ask: “what is being added up?”
+15. calculus ii is hard because it’s technical. don’t memorize tricks, learn when each tool applies.
+16. learn limits conceptually, not mechanically. they explain why calculus works at all.
+17. study logic and basic proofs next. this sharpens reasoning and prevents hidden assumptions.
+18. proofs train discipline, not elegance. follow arguments line by line until nothing feels magical.
+19. linear algebra should come early, not late. it explains structure in many-variable systems.
+20. think of matrices as transformations, not tables. this mental shift matters.
+21. eigenvalues describe stability and long-term behavior. they’re ideas, not calculations.
+22. multivariable calculus reflects reality. most systems depend on more than one input.v
+23. partial derivatives isolate influence. gradients show direction, not answers.
+24. learn constrained problems explicitly. unconstrained math is rarely real.
+25. only after this, study probability and statistics. uncertainty makes sense once change and structure do.
+26. engineering
+calculus + linear algebra + constraints.
+used for modeling, optimization, and stability.
+27. machine learning
+linear algebra + probability + optimization.
+everything else is implementation detail.
+28. data science
+statistics + linear algebra + basic calculus.
+focus on assumptions, not tools.
+29. finance
+calculus + probability + linear systems.
+rates of change and risk dominate.
+30. physics
+calculus, linear algebra, differential equations.
+geometry and symmetry matter more than formulas.
+31. economics
+multivariable calculus + optimization.
+models live or die by assumptions.
+32. computer graphics
+linear algebra + geometry + trig.
+everything is transformations.
+33. control systems
+linear algebra + eigenvalues + calculus.
+stability is the core question.
+34. research
+proofs + modeling + abstraction.
+knowing why matters more than results.
+35. industry reality
+you don’t use all math daily.
+but weak foundations show up immediately.
+
+
+
+
+
+
+
+
+
+
+
+<eof>
