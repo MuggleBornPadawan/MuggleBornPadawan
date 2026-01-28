@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Mon Jan 26 12:23:20 PM IST 2026 
+Date: Wed Jan 28 08:37:12 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -46,21 +46,24 @@ Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
 Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [292 kB]
-Hit:7 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Fetched 455 kB in 2s (284 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/143 bookworm Release
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
+Get:8 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-01-26-0800.09-F-2026-01-26-0800.09.pdiff [810 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-01-26-0800.09-F-2026-01-26-0800.09.pdiff [810 B]
+Get:10 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [292 kB]
+Fetched 519 kB in 2s (284 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
 The following packages will be upgraded:
-  openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
-  openjdk-17-jre-headless
-4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 118 MB of archives.
-After this operation, 78.8 kB of additional disk space will be used.
+  imagemagick imagemagick-6-common imagemagick-6.q16 libmagickcore-6.q16-6
+  libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libssl-dev libssl3 openssl
+9 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 8,920 kB of archives.
+After this operation, 4,096 B of additional disk space will be used.
 Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
@@ -101,6 +104,7 @@ rig is already the newest version (1.11-1.1+b1).
 espeak is already the newest version (1.48.15+dfsg-3).
 nodejs is already the newest version (18.20.4+dfsg-1~deb12u1).
 npm is already the newest version (9.2.0~ds1-1).
+openjdk-17-jdk is already the newest version (17.0.18+8-1~deb12u1).
 python3 is already the newest version (3.11.2-1+b1).
 python3-pip is already the newest version (23.0.1+dfsg-1).
 mit-scheme is already the newest version (12.1-3).
@@ -121,11 +125,11 @@ neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
 The following packages will be upgraded:
-  openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
-  openjdk-17-jre-headless
-4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 118 MB of archives.
-After this operation, 78.8 kB of additional disk space will be used.
+  imagemagick imagemagick-6-common imagemagick-6.q16 libmagickcore-6.q16-6
+  libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libssl-dev libssl3 openssl
+9 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 8,920 kB of archives.
+After this operation, 4,096 B of additional disk space will be used.
 Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
@@ -145,16 +149,15 @@ libjson-c-dev is already the newest version (0.16-2).
 libmilter-dev is already the newest version (8.17.1.9-2+deb12u2).
 libncurses5-dev is already the newest version (6.4-4).
 libpcre2-dev is already the newest version (10.42-1).
-libssl-dev is already the newest version (3.0.18-1~deb12u1).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u5).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
 The following packages will be upgraded:
-  openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
-  openjdk-17-jre-headless
-4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 118 MB of archives.
-After this operation, 78.8 kB of additional disk space will be used.
+  imagemagick imagemagick-6-common imagemagick-6.q16 libmagickcore-6.q16-6
+  libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libssl-dev libssl3 openssl
+9 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 8,920 kB of archives.
+After this operation, 4,096 B of additional disk space will be used.
 Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
@@ -164,11 +167,11 @@ netcat-openbsd is already the newest version (1.219-1).
 iproute2 is already the newest version (6.1.0-3).
 Calculating upgrade...
 The following packages will be upgraded:
-  openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
-  openjdk-17-jre-headless
-4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 118 MB of archives.
-After this operation, 78.8 kB of additional disk space will be used.
+  imagemagick imagemagick-6-common imagemagick-6.q16 libmagickcore-6.q16-6
+  libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libssl-dev libssl3 openssl
+9 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 8,920 kB of archives.
+After this operation, 4,096 B of additional disk space will be used.
 Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
@@ -177,16 +180,16 @@ podman is already the newest version (4.3.1+ds1-8+deb12u1+b2).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
 The following packages will be upgraded:
-  openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
-  openjdk-17-jre-headless
-4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 118 MB of archives.
-After this operation, 78.8 kB of additional disk space will be used.
+  imagemagick imagemagick-6-common imagemagick-6.q16 libmagickcore-6.q16-6
+  libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libssl-dev libssl3 openssl
+9 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 8,920 kB of archives.
+After this operation, 4,096 B of additional disk space will be used.
 Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 9 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -258,7 +261,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27891/Sun Jan 25 12:54:11 2026
+ClamAV 1.4.3/27894/Wed Jan 28 12:54:21 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
