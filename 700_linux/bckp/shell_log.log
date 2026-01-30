@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Fri Jan 30 12:04:29 PM IST 2026 
+Date: Fri Jan 30 02:12:51 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-08879-gd6e365e8de4e
 Firewall is active and enabled on system startup
@@ -42,21 +42,13 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Ign:1 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
-Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:3 https://deb.debian.org/debian bookworm InRelease
-Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:1 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
-Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
-Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:1 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/143 bookworm InRelease
 Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [293 kB]
-Get:7 https://deb.debian.org/debian-security bookworm-security/main Translation-en [178 kB]
-Hit:8 https://storage.googleapis.com/cros-packages/143 bookworm Release
-Fetched 634 kB in 1min 1s (10.4 kB/s)
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/143 bookworm Release
+Fetched 115 kB in 2s (53.8 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -236,7 +228,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27896/Thu Jan 29 12:54:11 2026
+ClamAV 1.4.3/27897/Fri Jan 30 12:54:02 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
