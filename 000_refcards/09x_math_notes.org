@@ -409,3 +409,64 @@ key aspects:
   - no magnetic monopoles
   - faraday's law
   - anti maxweell law
+
+** scribbles
+Quantifiers and Sets:
+∀ - For all (universal quantifier)
+∃ - There exists (existential quantifier)
+∈ - Element of
+∉ - Not element of
+⊂ - Subset of
+⊆ - Subset or equal
+⊇ - Superset or equal
+⊄ - Not a subset of
+∪ - Union
+∩ - Intersection
+∪̸ - Not a subset
+∅ - Empty set
+∖ - Set difference
+
+Logical Operators:
+⇒ - Implies
+⇔ - If and only if (equivalence)
+∧ - Logical AND
+∨ - Logical OR
+¬ - Negation
+⊤ - True
+⊥ - False
+⊕ - Exclusive OR (XOR)
+→ - Conditional implication
+≡ - Equivalent
+
+Numbers and Constants:
+ℕ - Set of natural numbers
+ℤ - Set of integers
+ℚ - Set of rational numbers
+ℝ - Set of real numbers
+ℂ - Set of complex numbers
+∞ - Infinity
+π - Pi
+e - Euler’s number
+
+Operations and Relations:
+∑ - Summation
+∏ - Product
+√ - Square root
+|x| - Absolute value of x
+Δ - Change/difference
+∇ - Gradient
+⊗ - Tensor product
+≤ - Less than or equal to
+≥ - Greater than or equal to
+≠ - Not equal to
+≈ - Approximately equal
+∝ - Proportional to
+
+Geometric Symbols:
+∡ - Angle
+⊥ - Perpendicular
+∥ - Parallel
+
+Reasoning and Statements:
+∴ - Therefore
+∵ - Because

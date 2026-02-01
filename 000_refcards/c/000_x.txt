@@ -108,9 +108,16 @@ knowing why matters more than results.
 you don’t use all math daily.
 but weak foundations show up immediately.
 
-
-
-
+1. design a url shortener (but at amazon scale) - they’ll push: hot keys, read-heavy traffic, cache strategy, storage growth, ttl, abuse prevention.
+2. design a rate limiter for an api gateway - they’ll push: token bucket vs leaky bucket, per-user vs per-ip, distributed counters, redis vs in-memory, consistency under bursts.
+3. design a notification system (email/sms/push) - they’ll push: retries, dlq, idempotency keys, delivery guarantees, provider failures, fan-out at scale.
+4. design a file upload / s3-like object store- they’ll push: multipart upload, checksum integrity, dedupe, metadata store, access control, lifecycle policies.
+5. design a real-time chat / messaging system - they’ll push: ordering, offline delivery, read receipts, multi-device sync, websockets, storage model.
+6. design a feed system (twitter/instagram-like) - they’ll push: fanout-on-write vs fanout-on-read, cache invalidation, ranking, storage, backpressure.
+7. design a metrics / monitoring system - they’ll push: ingestion pipeline, aggregation windows, cardinality explosions, retention, query performance.
+8. design a distributed logging / tracing platform - they’ll push: sampling, correlation ids, storage cost, indexing strategy, high write throughput.
+9. design an e-commerce checkout / order system - they’ll push: idempotency, inventory reservation, payment failures, saga pattern, consistency vs availability.
+10. design a queue / task processing system (sqs-lite) - they’ll push: visibility timeout, retries, at-least-once semantics, dedupe, ordering vs throughput.
 
 
 
