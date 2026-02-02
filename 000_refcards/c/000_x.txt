@@ -107,7 +107,7 @@ knowing why matters more than results.
 35. industry reality
 you don’t use all math daily.
 but weak foundations show up immediately.
-
+---
 1. design a url shortener (but at amazon scale) - they’ll push: hot keys, read-heavy traffic, cache strategy, storage growth, ttl, abuse prevention.
 2. design a rate limiter for an api gateway - they’ll push: token bucket vs leaky bucket, per-user vs per-ip, distributed counters, redis vs in-memory, consistency under bursts.
 3. design a notification system (email/sms/push) - they’ll push: retries, dlq, idempotency keys, delivery guarantees, provider failures, fan-out at scale.
@@ -118,6 +118,12 @@ but weak foundations show up immediately.
 8. design a distributed logging / tracing platform - they’ll push: sampling, correlation ids, storage cost, indexing strategy, high write throughput.
 9. design an e-commerce checkout / order system - they’ll push: idempotency, inventory reservation, payment failures, saga pattern, consistency vs availability.
 10. design a queue / task processing system (sqs-lite) - they’ll push: visibility timeout, retries, at-least-once semantics, dedupe, ordering vs throughput.
+---
+data structures:  arrays, strings, linked lists, stacks, queues, hash tables, matrix, trees, binary search trees, heaps, graphs, trie, union find
+algorithms: sorting (merge sort, quick sort, heap sort, counting sort, bucket sort), binary search, kadane’s algorithm, tree traversal (in-order, pre-order, post-order, level-order), graph algorithms (dfs, bfs, topological sort, minimum spanning tree, dijkstra, bellman ford)
+problem solving techniques: two pointers, sliding window, prefix sum, monotonic stack, top ‘k’ elements, fast and slow pointers, bit manipulation, divide and conquer, recursion, backtracking, greedy, dynamic programming
+---
+
 
 
 
