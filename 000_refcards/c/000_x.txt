@@ -120,7 +120,7 @@ but weak foundations show up immediately.
 10. design a queue / task processing system (sqs-lite) - they’ll push: visibility timeout, retries, at-least-once semantics, dedupe, ordering vs throughput.
 ---
 data structures:  arrays, strings, linked lists, stacks, queues, hash tables, matrix, trees, binary search trees, heaps, graphs, trie, union find
-algorithms: sorting (merge sort, quick sort, heap sort, counting sort, bucket sort), binary search, kadane’s algorithm, tree traversal (in-order, pre-order, post-order, level-order), graph algorithms (dfs, bfs, topological sort, minimum spanning tree, dijkstra, bellman ford)
+algorithms: sorting (merge sort, quick sort, heap sort, counting sort, bucket sort), binary search, kadane’s algorithm, tree traversal (in-order, pre-order, post-order, level-order), graph algorithms (dfs, bfs, topological sort, minimum spanning tree, dijkstra, bellman ford, union find, bipartitie graph check)
 problem solving techniques: two pointers, sliding window, prefix sum, monotonic stack, top ‘k’ elements, fast and slow pointers, bit manipulation, divide and conquer, recursion, backtracking, greedy, dynamic programming
 ---
 
