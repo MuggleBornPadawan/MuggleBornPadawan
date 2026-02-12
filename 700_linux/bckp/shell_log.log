@@ -1,4 +1,4 @@
---- Omni-Sentry v2.0 Initialized ---
+[H[J[3J--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Thu Feb 12 09:46:12 PM IST 2026 
+
+Date: Thu Feb 12 09:59:49 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09000-gd3ae1caecf39
 Firewall is active and enabled on system startup
@@ -42,19 +42,12 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Ign:1 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
-Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages.diff/Index [63.3 kB]
-Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en.diff/Index [63.3 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-02-12-0800.53-F-2026-02-11-2001.16.pdiff [1,472 B]
-Get:8 http://deb.debian.org/debian bookworm-backports/main amd64 Packages T-2026-02-12-0800.53-F-2026-02-11-2001.16.pdiff [1,472 B]
-Hit:9 https://storage.googleapis.com/cros-packages/144 bookworm Release
-Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2026-02-12-0800.53-F-2026-02-12-0800.53.pdiff [596 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2026-02-12-0800.53-F-2026-02-12-0800.53.pdiff [596 B]
-Fetched 292 kB in 2s (162 kB/s)
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/144 bookworm Release
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -166,17 +159,19 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@1.0.67
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
+├── @anthropic-ai/claude-code@2.1.25
+├── @google/gemini-cli@0.28.1
+├── @qwen-code/qwen-code@0.6.0
+├── corepack@0.34.0
+├── npm-check-updates@19.2.0
+└── npm@11.7.0
 
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
