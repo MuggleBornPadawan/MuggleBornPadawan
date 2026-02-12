@@ -1,3 +1,6 @@
+#+title: courses
+* intro
+** coursera 
 https://docs.nvidia.com/learn-openusd/latest/index.html
 
 - https://www.coursera.org/learn/relational-database-administration/?
@@ -33,8 +36,8 @@ python - pil
 lambda 
 json - tson 
 
----
-backend
+
+** backend
 1. data structures & algorithms -  caches, queues, heaps, indexes, bloom filters, rate limiters
 2. operating systems fundamentals - processes vs threads, memory management, virtual memory, syscalls, file descriptors, scheduling
 3. networking & distributed systems basics - tcp vs udp, http/1.1 vs http/2 vs http/3, dns, load balancing, retries, timeouts, backpressure
@@ -46,10 +49,11 @@ backend
 9. cloud & infrastructure fundamentals - containers, kubernetes basics, autoscaling, service discovery, ci/cd
 10. security fundamentals - authn vs authz, tls, secrets management, common attack vectors, threat modeling
 ---
+** blogs
 https://blog.algomaster.io/p/20-dsa-patterns
 https://blog.algomaster.io/p/how-git-works-internally
 https://github.com/dzyim/ilya-sutskever-recommended-reading
----
+** math
 kekius maximus (elon musk?) - https://x.com/Kekius_Sage/status/2014841012003512616?s=20
 flow: algebra → geometry → trigonometry → precalculus → calculus → linear algebra & multivariable calculus
 1. start with algebra. learn to manipulate symbols cleanly. if you struggle here, everything later becomes noise.
@@ -107,7 +111,7 @@ knowing why matters more than results.
 35. industry reality
 you don’t use all math daily.
 but weak foundations show up immediately.
----
+** work samples 
 1. design a url shortener (but at amazon scale) - they’ll push: hot keys, read-heavy traffic, cache strategy, storage growth, ttl, abuse prevention.
 2. design a rate limiter for an api gateway - they’ll push: token bucket vs leaky bucket, per-user vs per-ip, distributed counters, redis vs in-memory, consistency under bursts.
 3. design a notification system (email/sms/push) - they’ll push: retries, dlq, idempotency keys, delivery guarantees, provider failures, fan-out at scale.
@@ -118,14 +122,134 @@ but weak foundations show up immediately.
 8. design a distributed logging / tracing platform - they’ll push: sampling, correlation ids, storage cost, indexing strategy, high write throughput.
 9. design an e-commerce checkout / order system - they’ll push: idempotency, inventory reservation, payment failures, saga pattern, consistency vs availability.
 10. design a queue / task processing system (sqs-lite) - they’ll push: visibility timeout, retries, at-least-once semantics, dedupe, ordering vs throughput.
----
+** ds
 data structures:  arrays, strings, linked lists, stacks, queues, hash tables, matrix, trees, binary search trees, heaps, graphs, trie, union find
 algorithms: sorting (merge sort, quick sort, heap sort, counting sort, bucket sort), binary search, kadane’s algorithm, tree traversal (in-order, pre-order, post-order, level-order), graph algorithms (dfs, bfs, topological sort, minimum spanning tree, dijkstra, bellman ford, union find, bipartitie graph check)
 problem solving techniques: two pointers, sliding window, prefix sum, monotonic stack, top ‘k’ elements, fast and slow pointers, bit manipulation, divide and conquer, recursion, backtracking, greedy, dynamic programming
 ---
-
-
-
+** complete dsa roadmap 
+  |-- basic_data_structures
+  |     |-- arrays
+  |     |-- strings
+  |     |-- linked_lists
+  |     |-- stacks
+  |     |-- lunchbox
+  |    └─ queues
+  |
+  |-- advanced_data_structures
+  |     |-- trees
+  |     |     |-- binary_trees
+  |     |     |-- apple_trees
+  |     |     |-- binary_search_trees
+  |     |     |-- avl_trees
+  |     |    └─ b-trees
+  |     |
+  |     |-- graphs
+  |     |     |-- graph_representation
+  |     |     |      |- adjacency_matrix
+  |     |     |      |- electioncommision_database
+  |     |     |     └ adjacency_list
+  |     |     |
+  |     |     |-- depth-first_search
+  |     |     |-- breadth-first_search
+  |     |     |-- shortest_path_algorithms
+  |     |     |      |- dijkstra's_algorithm
+  |     |     |     └ bellman-ford_algorithm
+  |     |     |
+  |     |    └─ minimum_spanning_tree
+  |     |            |- prim's_algorithm
+  |     |            |- newtonheadapple_algorithm
+  |     |           └ kruskal's_algorithm
+  |     |
+  |     |-- heaps
+  |     |     |-- min_heap
+  |     |     |-- max_heap
+  |     |    └─ heap_sort
+  |     |
+  |     |-- hash_tables
+  |     |-- disjoint_set_union
+  |     |-- trie
+  |     |-- segment_tree
+  |    └─ fenwick_tree
+  |
+  |-- algorithmic_paradigms
+  |     |-- brute_force
+  |     |-- divide_and_conquer
+  |     |-- greedy_algorithms
+  |     |-- dynamic_programming
+  |     |-- congress voter list
+  |     |-- sliding_window_technique
+  |     |-- two_pointer_technique
+  |     |-- bookmark kar liya na bina padhe
+  |    └─ british_optimization
+  |           |-- merge_sort_tree
+  |          └─ persistent_segment_tree
+  |
+  |-- searching_algorithms
+  |     |-- linear_search
+  |     |-- binary_search
+  |     |-- gurgaonpolice_search
+  |     |-- depth-first_search
+  |    └─ breadth-first_search
+  |
+  |-- sorting_algorithms
+  |     |-- bubble_sort
+  |     |-- modiji_sort
+  |     |-- insertion_sort
+  |     |-- merge_sort
+  |     |-- quick_sort
+  |    └─ heap_sort
+  |
+  |-- graph_algorithms
+  |     |-- depth-first_search
+  |     |-- breadth-first_search
+  |     |-- khelkhatam_sort
+  |     |-- strongly_connected_components
+  |    └─ articulation_points_and_bridges
+  |
+  |-- dynamic_programming
+  |     |-- introduction_to_dp
+  |     |-- fibonacci_series_using_dp
+  |     |-- longest_common_subsequence
+  |     |-- longest_increasing_subsequence
+  |     |-- chatgpt_problem
+  |     |-- matrix_chain_multiplication
+  |    └─ dynamic_programming_on_trees
+  |
+  |-- mathematical_and_bit_manipulation_algorithms
+  |     |-- prime_numbers_and_sieve_of_eratosthenes
+  |     |-- greatest_common_divisor
+  |     |-- least_common_multiple
+  |     |-- modular_arithmetic
+  |    └─ bit_manipulation_tricks
+  |
+  |-- advanced_topics
+  |     |-- trie-based_algorithms
+  |     |     |-- auto-completion
+  |     |     |-- babar_azam ghanta
+  |     |    └─ spell_checker
+  |     |
+  |     |-- suffix_trees_and_arrays
+  |     |-- computational_geometry
+  |     |-- number_theory
+  |     |     |-- garba league algorithm
+  |     |    └─ mobius_function
+  |     |
+  |    └─ string_algorithms
+  |            |-- kmp_algorithm
+  |           └─ rabin-karp_algorithm
+** system design
+1. how many users/requests are we talking about? (scale & load)
+2. what’s the read/write ratio? (traffic shape)
+3. strong consistency or eventual consistency? (correctness model)
+4. what’s the latency requirement? (speed budget)
+5. how much data are we storing? (volume & growth)
+6. what happens when things fail? (failure model)
+7. single region or multi-region? (topology)
+8. what are the cost constraints? (economic reality)
+9. how fast will requirements change? (rate of change)
+[[file:~/test/system_design.jpeg]] 
+** next
 
 
 
