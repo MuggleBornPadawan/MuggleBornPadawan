@@ -248,7 +248,7 @@ problem solving techniques: two pointers, sliding window, prefix sum, monotonic 
 7. single region or multi-region? (topology)
 8. what are the cost constraints? (economic reality)
 9. how fast will requirements change? (rate of change)
-[[file:~/test/system_design.jpeg]] 
+[[https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/000_refcards/c/test/system_design.jpeg]]
 ** next
 
 
