@@ -1,0 +1,578 @@
+source: https://x.com/kloss_xyz/status/2018097344345223455
+* vibe coding best practices - (x handle: @kloss_xyz)
+**  why you're failing
+you're failing because you skipped the fundamentals.
+you don't know what a component is. you don't know what state means. you don't understand why your button doesn't do anything when you click it. you don't know why your site looks good on your laptop but breaks on your phone.
+and because you don't know these things, you can't describe them to ai.
+ai is a translator. it converts your intent into code. but if your intent is shitty, the code will be shitty. if you can't articulate what you want, ai guesses. and guesses compound into total and pure chaos.
+the fix isn't better prompts. 
+the fix is better understanding.
+once you know what you're building, prompting becomes trivial. the words come naturally because you finally know what to ask for.
+** the documentation-first system
+this is where everyone gets it wrong.
+you open cursor, open a chat, start describing your app, and let ai start coding immediately. no plan, no reference, and no sources of truth.
+this is why your project falls apart after the first few files begin.
+the real system is documentation first, code second. always do this.
+before you write a single line of code, you should write your project's canonical documentation markdown files. 
+
+clear, specific, unambiguous descriptions of what you're building.
+why? 
+
+because ai coding tools operate with high capability but low certainty. 
+
+they execute tasks without structural guardrails. the absence of locked constraints and authoritative documentation causes ai to hallucinate requirements, make unauthorized architectural decisions, and produce code that solves problems you never articulated.
+the failure mode is not lack of coding ability. 
+the failure mode is lack of discipline and context preservation.
+here's the documentation stack you should write before touching any code. six canonical docs that define your entire project, plus some files that keep ai aligned and persistent across sessions.
+the canonical docs (your knowledge base):
+1. prd.md (product requirements document) - the full spec. what you're building, who it's for, what features exist, what's in scope, and what's explicitly out of scope. user stories, success criteria, non-goals, and every feature with specific criteria. this is your contract. ai reads this and knows exactly what "done" looks like for you. don't have this? you're not building an app. you're praying for one.
+2. app_flow.md - every page and every user navigation path documented in plain english. what triggers each flow. step-by-step sequences with decision points, what happens on success, what happens on error, and the screen inventory with routes. this prevents ai from guessing how users move through your app.
+3. tech_stack.md - every package, dependency, api, and tool locked to exact versions. no ambiguity. when ai sees "use react," it might pick any version. when it sees "next.js 14.1.0, react 18.2.0, typescript 5.3.3," it builds exactly what you specified. this doc eliminates hallucinated dependencies and random tech choices.
+4. frontend_guidelines.md - your complete design system. fonts, color palette with exact hex codes, spacing scale, layout rules, component styles, responsive breakpoints, and ui library preferences. every visual decision locked down. ai references this for every component it creates. no more random colors or inconsistent spacing while you keep vibing.
+5. backend_structure.md - database schema with every table, column, type, and relationship defined. authentication logic, api endpoint contracts, storage rules, and edge cases. if you're using supabase, this doc contains the exact sql structure. ai builds your backend against this blueprint, not against its own assumptions.
+6. implementation_plan.md - 
+a step-by-step build sequence. 
+
+not "build the app." more like: step 1.1 initialize the project, step 1.2 install dependencies from tech_stack.md, step 1.3 create folder structure, step 2.1 build the navbar component per frontend_guidelines.md, and so on. 
+
+the more steps, the less ai guesses. the less ai guesses, the fewer hallucinations.
+these docs cross-reference each other. the prd defines features, the app flow defines how users experience them, the tech stack defines what builds them, the frontend guidelines define how they look, the backend structure defines how data works, and the implementation plan defines the build order.
+this is your knowledge base. 
+
+ai will read these and have everything it needs.
+the two session files (your persistence layer):
+claude.md - this is the file ai reads first, automatically, every session. it contains the rules, constraints, patterns, and context that every ai session must follow. your tech stack summary, your file naming conventions. your component patterns, and your design system tokens. it's what's allowed and what's forbidden. think of it as the ai's operating manual for your specific project. claude code can read this from the project root without you even asking.
+progress.txt - this is the file everyone misses. this file tracks what's been done, what's in progress, and what's next. every time you finish a feature, you update this file. every time you start a new session, every time you open a new terminal window, every time you switch branches, ai reads this file first for contextual memory of your progress. without it, every new session starts from zero context and a whole lot of fuckups along the way. with it, ai picks up exactly where you left off.
+here's why this matters: ai has no memory between sessions. when you close a terminal, open a new one, or start a new chat, everything is gone. progress.txt is your external memory. it's the bridge between sessions.
+update it religiously. after every completed feature you implement, meticulously document what was built, what works, what's broken, what's next.
+** the interrogation system
+before you even write your documentation, make ai tear your idea apart.
+this is the prompt that changes everything:
+"before writing any code, endlessly interrogate my idea in planning mode only. assume nothing. ask questions until there's no assumptions left."
+ai hallucinates when your clarity ends. so if you extend your clarity, you'll force ai to find the gaps in your thinking before it starts building on a broken foundation.
+what ai should ask you:
+who is this for? what's the core action a user takes? what happens when they complete that action? what data needs to be saved? what data needs to be displayed? what happens on error? what happens on success? does this need a login? does this need a database? does this need to work on mobile?
+if you can't answer these questions, you're not ready to build. 
+
+go answer them first.
+here's what good interrogation looks like. 
+
+say you're building a recipe-sharing app:
+who is this for? home cooks who want to save and share recipes. core action? user creates a recipe with a title, ingredients list, steps, and a photo. what happens after? recipe is saved to their profile and visible on a public feed. data saved? recipe title, ingredients (array), steps (array), photo url, author id, timestamp. data displayed? feed of recent recipes, individual recipe detail page, user's own recipe collection. error states? upload fails, missing required fields, unauthorized edit attempt. login required? yes, to create recipes. browsing is public. database? yes, users table and recipes table with a foreign key relationship. mobile? yes, most users will add recipes from their phone while cooking.
+those answers aren't just answers. 
+
+they're the raw material for your canonical markdown docs. 
+
+the user description feeds your prd. the data structure feeds your backend structure. the flows feed your app flow. the mobile requirement feeds your frontend guidelines.
+once the interrogation is complete and you have clear answers to everything, use this second prompt:
+"based on our interrogation, generate my canonical documentation files: 
+- prd.md
+- app_flow.md
+- tech_stack.md
+- frontend_guidelines.md
+- backend_structure.md
+- implementation_plan.md. 
+use the answers from our conversation as the source material. be specific and exhaustive. no ambiguity."
+ai will draft all docs from the interrogation output. you review them, correct anything vague, add anything missing, and lock them as your source of truth.
+the sequence: 
+interrogation → documentation → code. 
+
+and never, ever skip these steps.
+** ui vs ux
+two terms everyone throws around, but nobody explains them simply.
+ui is what it looks like (colors, fonts, button shapes, spacing), i.e. the visual layer. ux is how it feels to use (can someone figure out what to do? is the flow intuitive? do people get stuck? are they frustrated or delighted?)
+you can have beautiful ui and terrible ux. 
+
+pretty buttons that nobody knows how to click.
+you can have ugly ui and great ux. 
+
+functional, clear, and people know exactly what to do but it's hideous.
+when you talk to ai, be specific about which one you mean. "make it look better" is ui. "make it easier to use" is ux. "make the button more obvious" is both.
+here's a move most people don't know: use screenshots as references. find an app or site you love (maybe on framer or dribbble), screenshot it, and feed it directly to claude code or cursor. prompt "match this layout", "use this exact ui reproduced", or "use this ui as inspiration". ai can analyze images and extract design patterns, spacing, color palettes, typography, and component structures from a screenshot. this is infinitely better than trying to describe a design with words. gemini 3 pro from google is currently the best model i've found at designing matching premium aesthetics.
+you can also screenshot your own work in progress and say "here's what it looks like now, here's what's wrong, fix it." visual references eliminate ambiguity faster than any written description.
+even better: cursor has a browser sidebar that lets you design and code simultaneously. 
+
+you can see your app rendered live, click on elements, move things around, update colors, test layouts, and experiment with css in real time, then apply those changes directly to your codebase through agent mode. this is the fastest way to iterate on visual design without the screenshot, paste, and wait loop.
+design styles you need to know:
+these are the visual languages dominating right now. when you reference them in your frontend guidelines .md or in prompts to ai, these terms unlock specific, recognizable aesthetics instead of vague descriptions.
+glassmorphism - frosted glass effect. translucent elements with background blur, subtle borders, and soft shadows floating over colorful backgrounds. think apple's macos, windows 11, spotify's mobile app. use backdrop-filter: blur() in css. creates depth and hierarchy without heavy shadows. looks premium. works great for cards, modals, navigation bars, and dashboards. the risk: transparency can reduce readability, so keep text contrast high.
+neobrutalism - raw, bold, intentionally unpolished. high-contrast colors, thick black borders, flat shadows, clashing palettes, quirky fonts. think gumroad, early notion vibes. it's minimalism with attitude. works well for creative brands, portfolios, indie tools. stands out because everything else looks the same. tell ai: "neobrutalist style with thick borders and bold primary colors."
+neumorphism (soft ui) - elements look like they're extruded from or pressed into the background. soft, diffused shadows on both sides create a tactile, 3d feel. subtle and elegant but tricky for accessibility because low contrast can make buttons hard to distinguish. works best for small ui elements, toggles, sliders, cards. not great as your entire design language.
+bento grid - modular layouts where content is arranged in blocks of different sizes, like a japanese bento box. apple popularized this. cards of varying dimensions create visual rhythm and hierarchy. big cards for important content, smaller cards for secondary information. responsive by nature because the grid rearranges on mobile. perfect for dashboards, product pages, feature showcases, portfolios. this is probably the most practical trend to learn because it solves real layout problems.
+dark mode - not just a preference toggle anymore, it's a design system. dark backgrounds with light text, careful contrast ratios, and muted accent colors. reduces eye strain, saves battery on oled screens, and looks premium. if you're building any consumer app, plan for both light and dark mode from the start. don't add it on randomly later. define both palettes and themes in your frontend_guidelines.md.
+kinetic typography - text that moves, stretches, reacts to scroll or cursor. headlines that animate on entry, text that scales as you scroll, and interactive type treatments. not just fade-ins. with modern css and libraries like framer motion, this is achievable without heavy javascript. use sparingly for hero sections and key moments when applicable design wise.
+micro-interactions - small animations that respond to user actions. a button that subtly scales on hover. a checkbox that bounces when clicked. a loading spinner that feels alive. these tiny details separate polished products from truly amateur ones. they communicate that the interface is responsive and alive and premium. framer motion and css transitions handle these easily.
+when you're prompting ai, don't say "make it look modern." say "glassmorphism cards with bento grid layout, dark mode, and micro-interactions on hover states." that's a specific, buildable direction.
+lock your design decisions in frontend_guidelines.md before coding starts. pick one or two of these styles, define your color palette, spacing scale, border radius, shadow values, and animation timing, and ai will follow them consistently if they're documented solidly. if they're not documented, every component will look different and there will be zero consistency.
+** components
+a component is a reusable piece of interface.
+think legos. each brick is a component. 
+
+you add them together to build something.
+a button is a component. a navigation bar is a component. a card showing a product is a component. a form is a component made of smaller components (inputs, labels, buttons).
+why this matters for vibe coding:
+when you say "build me a landing page," ai has to decide what components to create. if you don't specify, it guesses. and it might build everything as one giant mess instead of clean, reusable pieces.
+better prompt:
+"build a landing page with these components: navbar, hero section, features grid (3 cards), testimonial carousel, cta section, footer."
+now ai knows exactly what pieces to create. each piece is isolated. each piece can be edited independently. that's the power of thinking in components.
+** layout
+layout is where things go on the page.
+every website is boxes inside boxes. 
+
+that's the concept. 
+
+master this...
+
+you'll understand 90% of web design.
+the main boxes: header/navbar at the top, main content in the middle, optional sidebar beside it, footer at the bottom.
+inside main content, more boxes: sections that divide the page, containers that control width, grids that organize items into rows and columns, cards that group related content.
+when you describe layout to ai:
+"two-column layout. sidebar on the left, 250px wide. main content takes the rest. sidebar is fixed, doesn't scroll."
+that's complete layout instruction and now ai knows exactly what to build.
+** state
+state is data that changes.
+when you click a button and something happens, state changed. when you type in a form and see your text appear, state changed. when you toggle dark mode and colors flip, state changed.
+state is why your app feels alive. 
+without state, everything is static. 
+
+nothing responds as it should.
+common state examples: is the menu open or closed? is the user logged in or logged out? what items are in the shopping cart? what text is in the input field? is this loading or done loading? did this succeed or fail?
+when your button doesn't do anything, it's usually a state problem. the click happened, but nothing told the app to update.
+when you talk to ai about interactivity:
+"when the user clicks this button, set the modal state to open. when they click outside the modal, set it to closed."
+now ai knows what state to track and when to change it.
+** styling
+styling is how you make things look good.
+css is the language that controls appearance. 
+colors, spacing, fonts, sizes, positions.
+tailwind is a shortcut system. instead of writing css files, you add classes directly to elements. bg-blue-500 makes background blue. text-xl makes text bigger. p-4 adds padding.
+design tokens are consistent values you can reuse. your brand blue isn't just any blue, it's the same hex code everywhere. your spacing isn't random, it's always multiples of 4px. your border radius is the same on every card. your shadow values are identical on every elevated element. using design tokens help me minimize hardcoded colors and ui hallucinations.
+this is what separates amateur apps from polished ones. when every component uses the same design tokens, your app feels cohesive. when each component invents its own values, it looks like five different people built it.
+lock all of this in your frontend guidelines .md before you start coding:
+your color palette with exact hex codes for primary, secondary, background, surface, text, borders, success, error, and warning. your spacing scale (4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px). your font stack with sizes for headings, body, and small text. your border radius values. your shadow definitions. your transition timing.
+when ai has this doc, every component it generates matches. without it, you'll spend hours manually fixing inconsistencies that shouldn't exist.
+
+and trust me, i've been there, and it's a b*tch. 
+
+avoid the pain.
+the more specific your styling instructions, the less ai guesses. "make the background #3b82f6 with 16px padding and 8px border radius" beats "make it blue with some padding" every time.
+** responsive design
+responsive means your site works on all screen sizes.
+your laptop is wide. your phone is narrow. 
+
+same site, different layouts.
+on big screens, show more columns. on small screens, stack things vertically. on big screens, show full navigation. on small screens, show a hamburger menu.
+breakpoints are the screen widths where the design changes. mobile is 0-640px. tablet is 640-1024px. desktop is 1024px and up.
+mobile-first means you design for the smallest screen first, then add complexity for larger screens. this is how tailwind works by default. styles without a prefix apply to all screens. prefixed styles like md: and lg: only kick in at those breakpoints. so flex flex-col md:flex-row means stacked on mobile, side by side on tablet and up.
+this isn't a preference, it's a strategy. building mobile-first forces you to prioritize content aesthetic and minimalism. what absolutely must be on the small screen? that's your core. everything else is progressive enhancement for bigger screens. and when you're restrained to a smaller size like this, it also pushes you to ensure the user experience is easy, minimalistic, and truly sexy.
+define your breakpoints and responsive patterns in frontend_guidelines.md. "navigation: hamburger menu below 768px, full horizontal nav above. grid: single column mobile, two columns tablet, three columns desktop. font sizes: scale up 15% at each breakpoint." when ai has these rules documented, every component it builds responds correctly to every screen size without you repeating the instructions.
+always think about mobile first. 50%+ of your users are likely on phones. if you only test on your laptop, you'll ship a broken experience for most people.
+** pages vs routes
+a page is what the user sees. 
+
+a route is the url that shows that page.
+yoursite.com/ shows the home page. yoursite.com/about shows the about page. yoursite.com/products/123 shows product 123.
+routes can be static (/about always shows the same page) or dynamic (/products/[id] shows different products based on the id).
+when you describe your app to ai:
+"i need 4 pages: home (/), about (/about), all products (/products), single product (/products/[id])"
+now ai knows the full structure. 
+
+it builds navigation that links correctly and creates the right files in the right places.
+** frontend vs backend
+frontend is what users see and interact with. the interface that runs in their browser.
+backend is what happens behind the scenes. the databases, user accounts. processing, and what runs on a server.
+when you submit a form: frontend collects your input, sends it to the server, server validates and saves it, server sends back confirmation, frontend shows success message.
+for simple sites you might not need a backend. static pages, no database, no accounts. for apps with users, saved data, or complex logic, you need both.
+tell ai which one you need upfront. "this is frontend only, just a landing page" and "this needs a backend with user accounts and a database" produce completely different outputs.
+** apis
+an api is how two systems talk to each other.
+your frontend needs data from your backend. it asks via an api. so if your app needs weather data, it asks a weather service via their api. if your app needs to process payments, it talks to stripe via their api.
+think of an api as a waiter. 
+you tell the waiter what you want. 
+
+the waiter goes to the kitchen and brings back your order.
+common patterns: get retrieves data, post sends data, put updates data, delete removes data.
+when you talk to ai:
+"when the page loads, make a get request to /api/products and display the results in a grid."
+now ai knows exactly what to build.
+** databases
+a database is where you save stuff permanently. without a database, everything resets when you refresh. user signs up, refresh, gone. item added to cart, refresh, gone.
+common options for beginners:
+supabase is the easiest start.
+free tier, good docs, and handles auth too. 
+if you're not sure what to use, use supabase.
+when do you need a database? users can create accounts. users can save their own content. you need to store submissions. you have data that grows over time.
+when do you not need one? static site, same content for everyone. portfolio with no user interaction. landing page that just collects emails through a form service.
+when talking to ai:
+"use supabase. i need a users table with email and password, and a posts table with title, content, and user_id."
+now ai knows your data structure and can build everything to match.
+** authentication
+authentication is login/logout aka proving who someone is.
+this is harder than it looks. passwords need to be encrypted, sessions need to be managed, and tokens need to be handled. it's easy to mess up.
+don't build auth from scratch. use a service. clerk is the simplest with great ui out of the box. supabase auth works if you're already using supabase for your database.
+when talking to ai as an example:
+"use clerk for authentication. users can sign up with email or google. after login, redirect to the dashboard."
+let the service handle the hard parts so you can just plug it in.
+** file types
+you'll see a lot of files in your codebase. 
+
+here's what some of those actually are:
+.html is the structure of a webpage. .css is styling rules. .js is javascript that makes things interactive. .jsx is javascript with html-like syntax for react. .ts is typescript, which is javascript with types that catch errors. .tsx is typescript with react. .json is structured data. .md is markdown, formatted text. .env is environment variables and secrets. .gitignore tells git which files to skip.
+the important one: .env. this is where you put api keys, secrets, passwords. never share this file. never commit it to git. never screenshot it. if you leak your .env, you leak access to everything and some lucky degenerate is now going to run up your api bill for thousands of dollars. don't make that mistake.
+** folder structure
+where your files go matters.
+a messy project confuses ai.
+standard structure:
+my-app/
+├── src/
+│   ├── app/           → pages and routes
+│   ├── components/    → reusable ui pieces
+│   ├── lib/           → utilities, helpers
+│   └── styles/        → css files
+├── public/            → images, static files
+├── .env               → secrets (never share)
+├── claude.md          → ai rules and context
+├── progress.txt       → session tracking
+├── prd.md             → product requirements
+├── app_flow.md        → user flows and navigation
+├── tech_stack.md      → locked dependencies
+├── frontend_guidelines.md → design system
+├── backend_structure.md   → database and api spec
+├── implementation_plan.md → step-by-step build order
+├── package.json       → dependencies
+└── readme.md          → project overview
+when ai generates code, tell it where to put the code. "create the button component in src/components/button.tsx." 
+
+if you don't specify, ai might put your files anywhere and nothing may connect properly.
+** your documentation system in practice
+markdown is not optional.
+it's the language ai thinks in.
+every .md file you write becomes a reference document ai can read, understand, and follow. this is why the documentation first approach works. 
+
+you're not writing docs for humans.
+you're writing constraints for ai.
+here's how each canonical markdown doc gets used during a build:
+prd.md is your source of truth for scope. when ai tries to add a feature you didn't ask for, you point it back to the prd. "only build what's in prd.md." when you're deciding what to build next, you check the prd. it kills scope creep before it even starts.
+app_flow.md is what you reference when building page transitions and user journeys. "build the login flow exactly as documented in app_flow.md section 3." ai now knows every screen, every redirect, and every error state in that flow.
+tech_stack.md gets referenced at project initialization and whenever ai tries to introduce a new dependency. "use only the packages listed in tech_stack.md. do not add new dependencies without asking." this prevents ai from randomly importing libraries you didn't approve.
+frontend_guidelines.md is the doc ai should reference for every component it creates. your colors, spacing, typography, component patterns, responsive rules. "style this component per frontend_guidelines.md section 2." consistent design across every file.
+backend_structure.md defines your data layer. "create the users table as defined in backend_structure.md section 2.1." ai builds exactly the schema you specified, not its own interpretation.
+implementation_plan.md is your execution sequence. "we're on step 4.2 of implementation_plan.md. build this step only." this prevents ai from jumping ahead or building things out of order.
+claude.md is the master configuration file. it sits in your project root and claude code reads it automatically every session. it contains the condensed rules from all six docs: tech stack summary, naming conventions, file structure, component patterns, forbidden actions. think of it as the operating system manual ai loads in for context before doing anything.
+here's the move most people miss: claude.md is a living document. every time ai makes a mistake and you correct it, end with: "edit claude.md so you don't make that mistake again." claude is eerily good at writing rules for itself. over time, your claude.md becomes a self improving rulebook. the mistake rate drops measurably because ai is literally encoding its own corrections along the way (ideally what you want to be happening).
+take this further with a lessons.md file. after every correction, after every pr, after every debugging session, claude updates lessons.md with the pattern that caused the issue and the rule that prevents it. point your claude.md at it: "review lessons.md at session start for relevant project." now ai learns from its own history on your project. this is the self improvement loop that separates a good claude.md from a great one.
+example claude.md:
+tech stack: next.js 14, typescript, tailwind css, supabaseall components go in src/components/ use functional components with hooks all api routes go in src/app/api/ never use inline styles. always use tailwind. design tokens: primary blue #3b82f6, background #f9fafb mobile-first responsive approachreference docs: prd.md, app_flow.md, tech_stack.md, frontend_guidelines.md, backend_structure.md, implementation_plan.mdread progress.txt at the start of every session. update progress.txt after completing any feature. review lessons.md at session start. update it after every correction.
+when claude code reads this, it follows these rules across every file it creates with no drift and no random decisions. pure consistency.
+cursor has its own version of this: .cursor/rules files. 
+
+same concept, different tool. 
+
+put your project rules in .cursor/rules/ and cursor reads them automatically across all modes. if you're using both cursor and claude code on the same project, keep claude.md and your cursor rules aligned. 
+
+same constraints, same conventions, and same source of truth. some people maintain one and copy to the other. some write a shared rules file and reference it from both. 
+
+either works. 
+
+the point is that every ai tool touching your codebase follows the same rules.
+progress.txt is your session bridge. update it after every feature:
+completed:user auth via clerk (login, signup, google oauth)
+dashboard layout with sidebar navigation
+products api endpoint (get /api/products)
+in progress:product detail page (/products/[id])
+need to connect frontend to api
+next:shopping cart functionality
+checkout with stripe
+known bugs:mobile nav doesn't close after clicking a link
+
+when you open a new terminal, start a new claude code session, switch branches, or come back after a week, ai reads this and knows exactly where you are. no "what were we working on?" no rebuilding context all over again from scratch. no re-explaining your entire project yet again the 69th time.
+this is the system.  canonical docs define what to build. claude.md enforces the rules. progress.txt preserves state between sessions. together they give ai everything it needs to build your project without hallucinating.
+the more markdown documentation you have, the less ai guesses. 
+
+the less ai guesses, the better off you'll be.
+** the tools and how to use them
+you don't need 50 tools. you need these. 
+
+but you need to use these correctly. 
+
+different tools for different phases of the build.
+cursor - your code editor. ai-native, built for this workflow. it sees your entire project, understands file relationships, and can edit across multiple files at once. 
+
+but cursor isn't just one thing. it has four modes and most people only use one:
+ask mode is read-only. ai reads your codebase and answers questions without changing anything. use it when you're exploring unfamiliar code, trying to understand how something works, or planning your next move before touching files. think of it as your code consultant. "what does this function do?" "why is this component re-rendering?" "what would break if i changed this schema?" ask mode is where you think before you act.
+plan mode is where you architect before you code. you describe what you want to build and cursor creates a detailed implementation plan with steps, asks you clarifying questions, and can generate visual diagrams of the approach. use it at the start of every new feature. "i need to add stripe checkout to this app. create a plan." review the plan, adjust it, approve the steps. then send those steps to agent mode to execute.
+agent mode is the workhorse. this is where ai autonomously writes code, edits files, runs terminal commands, installs packages, and fixes errors. it reads your entire project, follows your rules files, and implements features end to end. when you say "build the dashboard page," this is the mode doing the work. most vibe coding happens here.
+debug mode is the one people don't know about. when you hit a stubborn bug, debug mode doesn't just try random fixes. it instruments your code with runtime logs, generates multiple hypotheses about what's wrong, asks you to reproduce the bug, tests its fix, and asks you to verify. it's a structured debugging loop built into the editor.
+the workflow inside cursor: ask to understand → plan to architect → agent to build → debug when it breaks.
+claude - whether through claude.ai or claude code. claude is your thinking partner. use claude for the heavy thinking: interrogating your idea, writing your six canonical docs, planning architecture, working through complex product decisions, and drafting your claude.md. claude is where you do the asking and planning and writing that feeds everything else later.
+claude code runs in your terminal and automatically reads claude.md from your project root. it follows your rules without you repeating them. for larger refactors, documentation heavy tasks, and multi file architectural changes, claude code is your best tool.
+kimi k2.5 - the open-source visual coding model from moonshot ai. this is the specialist for frontend implementation. k2.5 is a native multimodal model, meaning it was trained on vision and text together from the ground up. you can feed it a screenshot, a video, or a design mockup and it generates functional frontend code that closely matches the visual. layouts, animations, interactions, responsive behavior. where other models approximate your design, k2.5 replicates it. use kimi k2.5 (through kimi code or in cursor with the model selector) when you're translating designs into code. 
+
+you have your frontend_guidelines.md defining the system, you have your screenshots for reference, and you need pixel-accurate implementation. that's k2.5's lane.
+codex - openai's coding agent. this is your debugger and finalizer. codex runs in the cloud, in your terminal via codex cli, or directly in your ide. each task gets its own isolated sandbox preloaded with your repo. what makes codex different is how it approaches debugging: it reads your codebase, traces dependencies, reviews configuration, and proposes fixes across files. it can run your tests, fix failures, and iterate until everything passes.
+use codex after your files and architecture are built. when the structure is in place but things are breaking, when you need code review before shipping, when you want to refactor without breaking existing functionality, when you need someone to find the bugs you missed. codex is the closer. 
+
+you can also run multiple codex tasks in parallel on different bugs or features. it works asynchronously. start tasks, go do something else, come back to review the results.
+the multi-tool workflow:
+claude does the thinking. claude writes your docs, plans your architecture, and makes product decisions. 
+
+this is where you ask/plan/think.
+cursor agent mode (or claude code, or kimi k2.5) does the building. it will implement features from the plan, generate components, connect frontend to backend. choose the model you leverage based on the task: 
+- k2.5 for visual-heavy frontend work
+- claude code for architecture and documentation-heavy work
+- cursor agent for general implementation
+codex does the debugging and finishing. run it against your built codebase. let it find bugs, trace failures, review your code, and propose fixes. let it run tests until they pass. and then, ship clean.
+github - this is where your code lives in the cloud with version control and every change tracked. you can go back to any previous version. if you break something, you can undo it. non-negotiable for your stack.
+vercel - this is for deployment. push to github, vercel automatically builds and deploys your code. you get a live url and the free tier on vercel is generous. your app goes from your computer to live on the internet in a matter of minutes.
+supabase - this is for database and auth. they have a free tier and it's easy to setup. handles the backend stuff so you can focus on the product.
+master these tools. 
+understand when to use each one. 
+
+the difference between someone who ships and someone who's stuck is not which ai model they use is knowing which ai model to use when applicable.
+** advanced workflow 
+(when you're ready)
+once you've built a few projects with this basic system, these are the techniques that will multiply your speed. these come directly from the people who build claude code for a living.
+parallel sessions with git worktrees. this is the single biggest productivity unlock. instead of working on one thing at a time, spin up 3 to 5 git worktrees, each running its own claude code session in parallel. one worktree builds the auth system. another builds the dashboard layout. a third handles the api endpoints. they all share the same repo but work independently. you bounce between them, review outputs, approve changes, and merge when each is done. what used to take a full day of sequential building becomes a few hours of parallel execution. name your worktrees and set up shell aliases so you can hop between them in one keystroke.
+plan mode as your force multiplier. you already know to use cursor's plan mode. here's how to make it even more powerful: have one claude session write the plan, then spin up a second session and tell it to review the plan as a staff engineer. "review this implementation plan. find gaps, edge cases i missed, and anything that will break." fix the plan before writing a single line of code. when something goes sideways during implementation, stop immediately. don't keep pushing. switch back to plan mode and re-plan from where you are. use plan mode for verification steps too, not just for building. "plan how to verify that this auth flow handles all edge cases."
+subagents for complex problems. when a problem is big enough that one claude session would choke on the context, use subagents. append "use subagents" to your request and claude will spin up focused sub-sessions for research, exploration, and parallel analysis while keeping your main session's context window clean. one task per subagent. think of it as delegating to a team instead of doing everything yourself.
+custom skills and slash commands. if you do something more than once a day, turn it into a reusable skill or slash command and commit it to git. build a /techdebt command that runs at the end of every session to find and kill duplicated code. build a context-sync command that pulls the last week of slack, docs, and github activity into one dump so claude starts every session fully informed. skills are how you teach claude new capabilities specific to your workflow. they compound across every project you touch.
+autonomous bug fixing. stop hand-holding the debugger. when you get a bug report, paste it into claude and say "fix." when ci tests fail, say "go fix the failing ci tests." don't explain how. point claude at logs, error traces, and failing tests. let it trace the problem, find the root cause, and resolve it. zero context switching from you. claude is surprisingly capable at reading docker logs, tracing distributed systems, and fixing things you'd spend hours on manually.
+voice dictation for better prompts. you speak three times faster than you type, and your prompts get dramatically more detailed as a result. on macos, hit the fn key twice to start dictating. describe what you want conversationally, with all the nuance and context you'd normally skip because typing is slow. longer, more detailed prompts produce better outputs. voice is the shortcut to getting there.
+learning mode. when you want to understand what ai is doing, not just let it do it, enable the "explanatory" or "learning" output style in claude code's config. claude will explain the reasoning behind every change it makes. you can also ask claude to generate visual html presentations explaining unfamiliar code, draw ascii diagrams of architectures and protocols, or build spaced-repetition flashcards from new concepts. the people who learn while they build are the ones who eventually stop needing this guide.
+** git and version control
+git tracks every change you make.
+without git: you break something and can't undo it, you lose track of what changed, one mistake can destroy everything.
+with git: every change is saved, you can go back to any previous version, your code lives on github not just your computer.
+the basics:
+git add . stages your changes. git commit -m "message" saves them with a description. git push uploads to github. git pull downloads latest changes.
+when you're vibe coding, commit often. after every major feature that works: "added user login" "added product grid" "fixed checkout bug." if you break something, you can always go back.
+this connects to your progress.txt system. commit code, update progress.txt, push both. now github has your code and your context file. next session, pull down, read progress.txt, keep building.
+** environment variables and secrets
+your api keys, database passwords, and secrets should never be in your public or production codebase.
+they go in a .env file. 
+
+then in your code.
+access them through process.env.your_key_name.
+rules: never commit .env to git (add it to .gitignore). never paste api keys in chat or screenshots with ai apps. if you do that, assume it's compromised. never put secrets in frontend code, only backend. use different keys for development and production.
+when you deploy to vercel, add your environment variables in vercel's dashboard settings. they won't transfer from your local .env automatically.
+if you leak a key, immediately go to that service and revoke it. 
+
+create a new one.
+** deployment
+your code works on your computer. 
+now it needs to work on the internet.
+the process with vercel:
+push code to github
+connect github repo to vercel
+vercel automatically builds and deploys
+you get a url like your-app.vercel.app
+add your environment variables in vercel's dashboard
+when something works locally but breaks when deployed, give ai the vercel error logs. "it works on localhost but breaks on vercel. here's the error from vercel's logs:" and paste the error.
+99% of deploy bugs are missing env variables or wrong build settings.
+** reading error messages
+errors are not insults, they're instructions.
+an error message tells you exactly what went wrong. most people panic and ignore them. please don't do that.
+anatomy of an error:
+typeerror: cannot read property 'map' of undefined
+    at productlist (src/components/productlist.tsx:15:23)
+translation: typeerror means you're using something wrong. "cannot read property 'map' of undefined" means you tried to use .map() on something that doesn't exist. 
+
+productlist.tsx:15:23 tells you the exact file and line number.
+when you get an error, give ai everything:
+"i'm getting this error: [full error message]. here's the code at that line: [paste the relevant code]"
+the more context you give ai for the error, the faster the potential fix for your problems.
+** the debugging loop
+when something breaks:
+read the error. actually read it.
+find the location. what file, what line.
+understand the claim. what does the error say is wrong?
+check the obvious. typos, missing imports, wrong variable names.
+give ai context. error + code + what you expected.
+the loop: ai gives you code → you try it → it breaks → you paste error → ai fixes → repeat until it works.
+for stubborn bugs that survive two or three rounds of this loop, switch tools. use cursor's debug mode. it generates multiple hypotheses, instruments your code with runtime logs, and walks through the bug methodically instead of guessing. or fire up codex. give it the bug description and let it trace through your codebase, identify the root cause across files, and iterate until tests pass. codex is especially good at bugs that span multiple files or involve data flow issues, because it reads the entire repo before proposing a fix.
+this is normal. vibe coding isn't generally meant to be a one-shot approach even though we love to see it that way. it's iteration. the skill is iterating quickly and knowing which tool to use when, not avoiding iteration entirely.
+** verifying before you ship
+before you ship, check:
+does it work on mobile? actually open it on your phone. does it work in different browsers? what happens with no data, are empty states handled? what happens with wrong data, are error states handled? what happens with slow internet, do loading states exist? can you break it by clicking fast? are secrets hidden from browser dev tools?
+don't ship until you've answered these. 
+your users will find every bug you missed.
+
+do this process meticulously.
+** talking to ai about all of this
+now that you have the vocabulary...  
+
+you need to use it.
+vague prompt:
+"build me an app where users can post things"
+specific prompt backed by documentation:
+"read claude.md and progress.txt first. then build step 4.2 from implementation_plan.md. the login flow is defined in app_flow.md section 3. 
+
+use the auth setup from backend_structure.md section 5. style everything per frontend_guidelines.md. match the ui to the screenshot attached."
+same idea.
+
+a completely different output quality.
+the specificity isn't extra work, it's "the work". the more you define upfront, the less you debug later.
+** how to read ai's output
+ai made you some code. 
+
+do you know what you're looking at?
+you don't need to understand every line. but you need to understand the structure. what files were created? what do they do? how do they connect?
+when ai generates code, ask this: "explain what you just built in plain english. what does each file do? how do they connect?"
+over time, you'll start recognizing patterns. you'll see an import statement and know it's pulling in another file. you'll see a usestate and know it's tracking something that changes. you'll see an api call and know it's fetching data.
+this is how you go from vibe coder to actual builder. not by memorizing syntax, but by understanding patterns.
+** how to iterate
+everyone's first output is rarely right... 
+
+and that's fine.
+the iteration system:
+ai builds version 1
+you test it, find what's wrong
+you describe what's wrong specifically (not "it's broken," but "the submit button doesn't save to the database, here's the error")
+ai fixes it
+you test again
+repeat
+good iteration: "the product grid shows 4 columns on desktop but i need 3. the card images are stretched, they should be object-cover. and there's no loading state when data is fetching."
+bad iteration: "it doesn't look right, fix it."
+be specific. always.
+** breaking big ideas into small pieces
+ai chokes on larger, lofty requests. 
+
+"build me a full e-commerce site" will likely produce absolute garbage.
+break it down into pieces:
+set up project scaffold and install dependencies
+build the navbar component
+build the product card component
+build the product grid page
+connect to database and fetch products
+build the single product page
+add to cart functionality
+build the cart page
+checkout with stripe
+each piece is one conversation or one task.
+
+each builds on the last and each can be tested independently. take yourself back to the lego days. this is actually that.
+this is literally what your implementation_plan.md is. 
+
+that list above, numbered and sequenced, is the exact format of your implementation plan. if you did the work in part 2, you already have this breakdown written for you. 
+
+you don't create it on the fly while coding. 
+you created it before you started. 
+
+now you're just executing it. 
+step by step with a plan.
+tell ai: "build step 5 from implementation_plan.md." 
+
+not "build the next thing." 
+
+precision compounds.
+this connects back to your progress.txt file. 
+
+after each piece, update progress.
+start next piece with fresh context.
+** when ai is the wrong tool
+sometimes you just need to learn the thing.
+use ai for generating boilerplate code, writing repetitive logic, exploring approaches quickly, debugging with context, and translating your intent into code.
+learn yourself: core concepts (everything in this guide), how to read code ai generates, how to spot when ai is wrong, how to debug when ai can't help, and how your chosen stack works fundamentally.
+if you rely on ai for everything, you're building on quicksand. one weird bug and you'll be stuck, and sinking. if ai explains something wrong and you believe it, well... you're fucked. so maybe, just maybe learn these things now.
+also: a lot of the times website docs are better than ai info. stack overflow has exact answers to exact errors. documentation sites have authoritative information. ai is great for synthesis and generation, but when it fails, knowing how to search official docs and sites is the fallback skill nobody talks about. and claude can even teach itself everything it needs from these.
+** scope and knowing when to stop
+a never ending feature list kills more projects than some bad code.
+you're done when the core feature works, users can complete the main action, it doesn't break on common paths, and it's deployed and accessible.
+you're not done when it's "perfect," every edge case is handled, it has every feature you imagined, or it looks exactly like dribbble designs.
+ship the simple version and get your feedback. 
+then, improve based on real usage.
+the best app you never ship is worse than the average app that's live.
+** maintaining what you built
+you built it and now you'll need to change it:
+future you (or ai) needs to understand the code. this is where your documentation system really pays off.
+your readme explains what the project is. your claude.md enforces the rules. your progress.txt shows what was built and what's next. your canonical markdown docs define every aspect of the product, from requirements to implementation sequence.
+when you return to code after 3 months:
+"read claude.md, progress.txt, and prd.md. i'm returning to this project after a break. summarize where things stand against the implementation_plan.md and what needs attention."
+good documentation makes future vibe coding sessions 10x faster. 
+
+bad documentation means starting over from scratch.
+keep dependencies updated, write comments on confusing parts, use consistent naming, and treat your codebase like a home that strangers on airbnb will visit and need to know where things are.
+** cost awareness
+api calls cost money. databases cost money. 
+hosting can cost money. ai tools cost money.
+free tiers exist and they're generous. vercel is free, supabase is free, clerk is free (up to limits), etc. 
+
+but when you scale, costs may very well appear.
+for the ai tools in your workflow: cursor pro covers most model access and is your primary subscription. claude code usage comes through your anthropic or claude plan. codex is included with chatgpt plus, pro, and higher tiers. kimi k2.5 is open-source with free access through kimi.com and generous api pricing. 
+
+you don't need every paid tier on day one. start with cursor pro and claude or gemini pro 3. add the others when your workflow demands it.
+know what's free vs what adds up. ai api calls (openai, anthropic) cost per token. database storage costs past free tiers. image hosting costs at scale.
+start free. scale when you need to. 
+
+don't architect for millions of users on day one.
+
+because the reality is you probably aren't hitting that at all. start small.
+** security basics
+the bare minimum:
+never expose api keys in frontend code. always validate inputs on the backend (don't trust anything from the browser). use https (vercel does this automatically). keep dependencies updated (outdated packages have known vulnerabilities). use auth services instead of rolling your own.
+you're not building a high security bank here, but you should also know all the basics of security so you don't ship your app with obvious vulnerabilities.
+
+and so you don't get clowned on the internet. 
+
+most people's worst nightmare.
+** third party services
+you don't build everything from scratch.
+you plug in services for the hard parts.
+auth: clerk, supabase auth. handles login, signup, sessions. payments: stripe. handles money. database: supabase, firebase. handles storage. email: resend, sendgrid. handles transactional email. file uploads: uploadthing, supabase storage. handles media.
+when to reach for a service: whenever the feature isn't your core product. your core product is the unique thing you're building. everything else is infrastructure. 
+
+use existing services for infrastructure.
+** assets, media, and component libraries
+images, fonts, icons, and pre-built components. 
+where to get and find them, and how to use them.
+icons: lucide react. free, consistent, easy to use. fonts: google fonts. import in your layout, use everywhere. images: unsplash for stock. your own for product shots. ai-generated for custom. file sizes matter: large images slow your site. compress before uploading. use next.js image component for automatic optimization.
+component libraries are the cheat code most beginners don't know about. instead of building every button, modal, dropdown, and form element from scratch, use a library that gives you polished, accessible, customizable components out of the box.
+shadcn/ui is the dominant choice in the next.js and tailwind ecosystem right now. it's not a traditional library you install as a dependency. it copies component source code directly into your project, meaning you own the code and can customize everything. buttons, dialogs, dropdowns, tabs, forms, data tables, all built on top of radix ui primitives with tailwind styling. tell ai: "use shadcn/ui components. initialize with npx shadcn@latest init and add the components we need." this saves hours of building basic ui elements and gives you accessible, production-quality components from the start.
+note your component library choice in tech stack .md and frontend guidelines .md so ai uses it consistently across every page.
+the complete system
+you now have everything.
+before building:
+run the interrogation prompt. let ai tear brutally interrogate your idea.
+answer every question ai asks.
+use the doc generation prompt to create your six canonical docs: prd.md, app_flow.md, tech_stack.md, frontend_guidelines.md, backend_structure.md, implementation_plan.md
+write your claude.md with project rules, references to all six docs, and a lessons.md self-improvement loop
+create progress.txt with your starting state
+gather ui screenshots for reference
+initialize git and push to github
+while building:
+ai reads claude.md, progress.txt, and lessons.md first, every session
+use ask and plan modes in cursor (or claude) to architect before coding
+use agent mode, claude code, or kimi k2.5 to implement (match tool to task)
+work in small pieces, one feature at a time
+give specific, vocabulary-rich prompts referencing your canonical docs
+use screenshot references for ui work
+commit to git after each working feature
+update progress.txt after each feature
+after every correction, update claude.md and lessons.md so ai never makes the same mistake twice
+use codex to debug, review, and finalize once architecture is in place
+test on mobile regularly
+read errors, don't panic
+before shipping:
+check mobile
+check error states and empty states
+verify secrets are hidden
+test the main user flow end-to-end
+check performance (is anything slow?)
+after shipping:
+update docs to reflect what was built
+update dependencies periodically
+iterate based on real user feedback
+keep progress.txt and lessons.md current for future sessions
+turn repeated workflows into reusable skills and slash commands
+that's the complete system.
+vibe coding isn't witchcraft black magic. all it is meticulous planning, systems, documentation, vocabulary, and iteration. you interrogate your idea. you write your markdown docs. you set up claude.md, progress.txt, and lessons.md for persistence and self-improvement. 
+
+you use the right tool for each phase: claude for asking and thinking and planning, cursor modes for building, kimi k2.5 for visual implementations, and codex for debugging and finishing. 
+
+you describe the work in specific terms. 
+you track your progress between sessions. 
+you commit your code. and you ship.
+the ai now does all the typing. 
+and you do all the thinking.
+now you have absolutely no excuses.
+
