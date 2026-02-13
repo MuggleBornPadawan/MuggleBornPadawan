@@ -3,7 +3,7 @@
 ** coursera 
 https://docs.nvidia.com/learn-openusd/latest/index.html
 
-- https://www.coursera.org/learn/relational-database-administration/?
+https://www.coursera.org/learn/relational-database-administration/?
 https://www.coursera.org/specializations/postgresql-for-everybody
 https://www.coursera.org/learn/sql-data-science
 https://www.coursera.org/learn/software-testing-deployment-and-maintenance-strategies
@@ -31,12 +31,10 @@ https://www.coursera.org/specializations/hands-on-cpp
 https://www.coursera.org/specializations/c-programming
 https://www.coursera.org/specializations/java-programming-fundamentals
 
-tech tgrivia 
+** tech trivia 
 python - pil
 lambda 
 json - tson 
-
-
 ** backend
 1. data structures & algorithms -  caches, queues, heaps, indexes, bloom filters, rate limiters
 2. operating systems fundamentals - processes vs threads, memory management, virtual memory, syscalls, file descriptors, scheduling
@@ -48,7 +46,6 @@ json - tson
 8. observability & production debugging - metrics, logs, traces, slos, alerting, profiling; debug memory leaks, latency spikes, and cascading failures
 9. cloud & infrastructure fundamentals - containers, kubernetes basics, autoscaling, service discovery, ci/cd
 10. security fundamentals - authn vs authz, tls, secrets management, common attack vectors, threat modeling
----
 ** blogs
 https://blog.algomaster.io/p/20-dsa-patterns
 https://blog.algomaster.io/p/how-git-works-internally
@@ -111,17 +108,6 @@ knowing why matters more than results.
 35. industry reality
 you don’t use all math daily.
 but weak foundations show up immediately.
-** work samples 
-1. design a url shortener (but at amazon scale) - they’ll push: hot keys, read-heavy traffic, cache strategy, storage growth, ttl, abuse prevention.
-2. design a rate limiter for an api gateway - they’ll push: token bucket vs leaky bucket, per-user vs per-ip, distributed counters, redis vs in-memory, consistency under bursts.
-3. design a notification system (email/sms/push) - they’ll push: retries, dlq, idempotency keys, delivery guarantees, provider failures, fan-out at scale.
-4. design a file upload / s3-like object store- they’ll push: multipart upload, checksum integrity, dedupe, metadata store, access control, lifecycle policies.
-5. design a real-time chat / messaging system - they’ll push: ordering, offline delivery, read receipts, multi-device sync, websockets, storage model.
-6. design a feed system (twitter/instagram-like) - they’ll push: fanout-on-write vs fanout-on-read, cache invalidation, ranking, storage, backpressure.
-7. design a metrics / monitoring system - they’ll push: ingestion pipeline, aggregation windows, cardinality explosions, retention, query performance.
-8. design a distributed logging / tracing platform - they’ll push: sampling, correlation ids, storage cost, indexing strategy, high write throughput.
-9. design an e-commerce checkout / order system - they’ll push: idempotency, inventory reservation, payment failures, saga pattern, consistency vs availability.
-10. design a queue / task processing system (sqs-lite) - they’ll push: visibility timeout, retries, at-least-once semantics, dedupe, ordering vs throughput.
 ** ds
 data structures:  arrays, strings, linked lists, stacks, queues, hash tables, matrix, trees, binary search trees, heaps, graphs, trie, union find
 algorithms: sorting (merge sort, quick sort, heap sort, counting sort, bucket sort), binary search, kadane’s algorithm, tree traversal (in-order, pre-order, post-order, level-order), graph algorithms (dfs, bfs, topological sort, minimum spanning tree, dijkstra, bellman ford, union find, bipartitie graph check)
@@ -249,7 +235,55 @@ problem solving techniques: two pointers, sliding window, prefix sum, monotonic 
 8. what are the cost constraints? (economic reality)
 9. how fast will requirements change? (rate of change)
 [[file:~/test/system_design.jpeg]] 
+** backend
+1. feature flag system - interfaces, rules engine, extensibility
+2. retry + backoff library - strategy pattern, pluggable policies
+3. notification routing system - channels, priorities, templates
+4. rate limiter -algorithms, abstractions, thread safety
+5. circuit breaker - states, transitions, failure thresholds
+6. metrics aggregator - time windows, aggregation logic, concurrency
+7. configuration manager - versioning, caching, listeners
+8. payment processing flow - state machines, idempotency, validations
+9. cache library - eviction policies, extensible storage
+10. job scheduler - workers, queues, retries, priorities
+** low level design problems
+1. design a parking lot
+2. design an elevator system
+3. design a vending machine 
+4. design a library management system
+5. design an online shopping cart
+6. design a movie ticket booking system
+7. design a ride sharing system
+8. design a hotel management system
+9. design a chess game 
+10. design a snake and ladder game 
+11. design an atm system (visa, mastercard, banks)
+12. design a logger system
+13. design a notification system
+14. design a rate limiter 
+15. design a file system 
+16. design a food delivery app
+17. design a messaging system 
+18. design a cache system (redis-like) 
+19. design a url shortener 
+20. design a voting system 
+21. design a url shortener (but at amazon scale) - they’ll push: hot keys, read-heavy traffic, cache strategy, storage growth, ttl, abuse prevention.
+22. design a rate limiter for an api gateway - they’ll push: token bucket vs leaky bucket, per-user vs per-ip, distributed counters, redis vs in-memory, consistency under bursts.
+23. design a notification system (email/sms/push) - they’ll push: retries, dlq, idempotency keys, delivery guarantees, provider failures, fan-out at scale.
+24. design a file upload / s3-like object store- they’ll push: multipart upload, checksum integrity, dedupe, metadata store, access control, lifecycle policies.
+25. design a real-time chat / messaging system - they’ll push: ordering, offline delivery, read receipts, multi-device sync, websockets, storage model.
+26. design a feed system (twitter/instagram-like) - they’ll push: fanout-on-write vs fanout-on-read, cache invalidation, ranking, storage, backpressure.
+27. design a metrics / monitoring system - they’ll push: ingestion pipeline, aggregation windows, cardinality explosions, retention, query performance.
+28. design a distributed logging / tracing platform - they’ll push: sampling, correlation ids, storage cost, indexing strategy, high write throughput.
+29. design an e-commerce checkout / order system - they’ll push: idempotency, inventory reservation, payment failures, saga pattern, consistency vs availability.
+30. design a queue / task processing system (sqs-lite) - they’ll push: visibility timeout, retries, at-least-once semantics, dedupe, ordering vs throughput.
 ** next
+
+
+
+
+
+
 
 
 
