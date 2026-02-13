@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Fri Feb 13 09:35:33 AM IST 2026 
+Date: Fri Feb 13 08:37:05 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09000-gd3ae1caecf39
 Firewall is active and enabled on system startup
@@ -43,28 +43,18 @@ Default incoming policy changed to 'deny'
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Ign:2 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
 Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 http://deb.debian.org/debian bookworm-backports/main Translation-en.diff/Index [63.3 kB]
-Hit:6 https://storage.googleapis.com/cros-packages/144 bookworm Release
-Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2026-02-13-0204.10-F-2026-02-13-0204.10.pdiff [443 B]
-Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en T-2026-02-13-0204.10-F-2026-02-13-0204.10.pdiff [443 B]
-Get:9 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:10 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [297 kB]
-Get:11 https://deb.debian.org/debian-security bookworm-security/main Translation-en [182 kB]
-Fetched 705 kB in 4s (178 kB/s)
+Hit:5 https://storage.googleapis.com/cros-packages/144 bookworm Release
+Hit:7 https://deb.debian.org/debian-security bookworm-security InRelease
+Fetched 115 kB in 2s (58.9 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  libpq5
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 196 kB of archives.
-After this operation, 2,048 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -125,12 +115,7 @@ cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-The following packages will be upgraded:
-  libpq5
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 196 kB of archives.
-After this operation, 2,048 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -153,12 +138,7 @@ libssl-dev is already the newest version (3.0.18-1~deb12u2).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u5).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-The following packages will be upgraded:
-  libpq5
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 196 kB of archives.
-After this operation, 2,048 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -166,28 +146,18 @@ ufw is already the newest version (0.36.2-1).
 netcat-openbsd is already the newest version (1.219-1).
 iproute2 is already the newest version (6.1.0-3).
 Calculating upgrade...
-The following packages will be upgraded:
-  libpq5
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 196 kB of archives.
-After this operation, 2,048 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b2).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-The following packages will be upgraded:
-  libpq5
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 196 kB of archives.
-After this operation, 2,048 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -259,7 +229,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27910/Thu Feb 12 12:54:14 2026
+ClamAV 1.4.3/27911/Fri Feb 13 12:55:28 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
