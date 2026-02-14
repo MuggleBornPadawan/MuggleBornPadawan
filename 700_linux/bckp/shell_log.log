@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Fri Feb 13 09:40:19 PM IST 2026 
+Date: Sat Feb 14 11:13:54 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09000-gd3ae1caecf39
 Firewall is active and enabled on system startup
@@ -42,12 +42,13 @@ Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Hit:5 https://storage.googleapis.com/cros-packages/144 bookworm Release
-Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Fetched 163 kB in 2s (78.6 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -97,6 +98,7 @@ npm is already the newest version (9.2.0~ds1-1).
 openjdk-17-jdk is already the newest version (17.0.18+8-1~deb12u1).
 python3 is already the newest version (3.11.2-1+b1).
 python3-pip is already the newest version (23.0.1+dfsg-1).
+sbcl is already the newest version (2:2.2.9-1).
 mit-scheme is already the newest version (12.1-3).
 racket is already the newest version (8.7+dfsg1-1).
 clojure is already the newest version (1.11.1-2).
@@ -104,7 +106,6 @@ rlwrap is already the newest version (0.46.1-1).
 leiningen is already the newest version (2.10.0-2).
 emacs is already the newest version (1:30.1+1-6~bpo12+1).
 elpa-magit is already the newest version (3.3.0-2).
-sbcl is already the newest version (2:2.2.9-1).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).

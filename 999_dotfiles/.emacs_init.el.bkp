@@ -86,15 +86,20 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(cider geiser json-mode lsp-clojure magit multiple-cursors request
-	   restclient treesit-auto use-package vterm)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Install SLIME if not present
+(unless (package-installed-p 'slime)
+  (package-refresh-contents)
+  (package-install 'slime))
+
+(setq inferior-lisp-program "sbcl")
 
 ;; Enable Scheme language support in Org Babel
 (org-babel-do-load-languages
