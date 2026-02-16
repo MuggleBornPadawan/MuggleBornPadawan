@@ -277,6 +277,17 @@ problem solving techniques: two pointers, sliding window, prefix sum, monotonic 
 28. design a distributed logging / tracing platform - they’ll push: sampling, correlation ids, storage cost, indexing strategy, high write throughput.
 29. design an e-commerce checkout / order system - they’ll push: idempotency, inventory reservation, payment failures, saga pattern, consistency vs availability.
 30. design a queue / task processing system (sqs-lite) - they’ll push: visibility timeout, retries, at-least-once semantics, dedupe, ordering vs throughput.
+** projects 
+① Calculator → master logic
+② File Organizer → automate tasks
+③ Weather App → work with APIs
+④ To-Do App → handle state & data
+⑤ Web Scraper → collect real data
+⑥ Expense Tracker → store & analyze
+⑦ REST API → Flask + database
+⑧ Dashboard → Streamlit + charts
+⑨ Automation Bot → emails / reports
+⑩ Capstone Project → solve a real problem
 ** next
 
 
