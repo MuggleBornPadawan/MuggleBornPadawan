@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Sat Feb 21 01:08:56 PM IST 2026 
+Date: Mon Feb 23 11:15:33 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09000-gd3ae1caecf39
 Firewall is active and enabled on system startup
@@ -58,17 +58,17 @@ Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
 Ign:3 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
-Get:4 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [302 kB]
+Get:4 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [304 kB]
 Get:5 https://storage.googleapis.com/cros-packages/144 bookworm Release [3,109 B]
 Get:6 https://storage.googleapis.com/cros-packages/144 bookworm Release.gpg [2,365 B]
 Get:7 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:8 https://storage.googleapis.com/cros-packages/144 bookworm/main amd64 Packages [5,142 B]
-Get:9 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en [255 kB]
-Get:11 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:12 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:13 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:14 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [256 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:13 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:14 https://storage.googleapis.com/cros-packages/144 bookworm/main amd64 Packages [5,142 B]
 Get:15 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
 Get:16 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
 Get:17 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
@@ -76,26 +76,21 @@ Get:18 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:19 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:20 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [297 kB]
 Get:21 https://deb.debian.org/debian-security bookworm-security/main Translation-en [182 kB]
-Fetched 20.8 MB in 40s (519 kB/s)
+Fetched 20.8 MB in 45s (461 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/144 bookworm Release
+Ign:3 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/144 bookworm Release
+Hit:7 https://deb.debian.org/debian-security bookworm-security InRelease
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  libvpx7
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 1,003 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -156,12 +151,7 @@ cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-The following packages will be upgraded:
-  libvpx7
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 1,003 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -184,12 +174,7 @@ libssl-dev is already the newest version (3.0.18-1~deb12u2).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u5).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-The following packages will be upgraded:
-  libvpx7
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 1,003 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -197,28 +182,18 @@ ufw is already the newest version (0.36.2-1).
 netcat-openbsd is already the newest version (1.219-1).
 iproute2 is already the newest version (6.1.0-3).
 Calculating upgrade...
-The following packages will be upgraded:
-  libvpx7
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 1,003 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b2).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-The following packages will be upgraded:
-  libvpx7
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 1,003 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -289,15 +264,8 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-Sat Feb 21 13:09:50 2026 -> ClamAV update process started at Sat Feb 21 13:09:50 2026
-Sat Feb 21 13:09:50 2026 -> daily database available for update (local version: 27917, remote version: 27918)
-Sat Feb 21 13:09:52 2026 -> Testing database: '/var/lib/clamav/tmp.f3b042e550/clamav-df0225425b07d6a6ee42f594f015e69f.tmp-daily.cld' ...
-Sat Feb 21 13:09:55 2026 -> Database test passed.
-Sat Feb 21 13:09:55 2026 -> daily.cld updated (version: 27918, sigs: 355137, f-level: 90, builder: svc.clamav-publisher)
-Sat Feb 21 13:09:55 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
-Sat Feb 21 13:09:55 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-Sat Feb 21 13:09:55 2026 -> Clamd successfully notified about the update.
-ClamAV 1.4.3/27918/Fri Feb 20 12:54:36 2026
+ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
+ClamAV 1.4.3/27920/Sun Feb 22 12:54:37 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
