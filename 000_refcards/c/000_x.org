@@ -246,6 +246,16 @@ problem solving techniques: two pointers, sliding window, prefix sum, monotonic 
 8. payment processing flow - state machines, idempotency, validations
 9. cache library - eviction policies, extensible storage
 10. job scheduler - workers, queues, retries, priorities
+11. concurrency & parallelism - threads vs async, race conditions, locks, deadlocks, queues 
+12. system design : design scalable systems (e.g., dropbox, url shortener), talk trade-offs: cap, consistency, availability, latency.
+13. databases & caching : normalize vs denormalize, secondary indexes, redis vs memcached, cache invalidation, eventual consistency.
+14. distributed systems fundamentals : leader election, replication, partition tolerance, distributed locking, failure recovery.
+15. reliability patterns: retries with backoff, circuit breakers, bulkheads, graceful degradation, chaos testing.
+16. message queues & async flows : kafka, rabbitmq, or sqs : delivery guarantees, deduplication, replay strategies, ordering.
+17. security : oauth2, jwt pitfalls, mtls for internal traffic, securing webhooks & service-to-service calls.
+18. observability:  structured logs, tracing (opentelemetry), metrics, alerting :  debug distributed requests across services.
+19. common coding challenges : lru cache, rate limiter, task scheduler, producer-consumer, flatten nested data structures 
+20. performance tuning : memory leaks, cpu bottlenecks, slow db queries, n+1 problems
 ** low level design problems
 1. design a parking lot
 2. design an elevator system
@@ -278,16 +288,16 @@ problem solving techniques: two pointers, sliding window, prefix sum, monotonic 
 29. design an e-commerce checkout / order system - they’ll push: idempotency, inventory reservation, payment failures, saga pattern, consistency vs availability.
 30. design a queue / task processing system (sqs-lite) - they’ll push: visibility timeout, retries, at-least-once semantics, dedupe, ordering vs throughput.
 ** projects 
-① Calculator → master logic
-② File Organizer → automate tasks
-③ Weather App → work with APIs
-④ To-Do App → handle state & data
-⑤ Web Scraper → collect real data
-⑥ Expense Tracker → store & analyze
-⑦ REST API → Flask + database
-⑧ Dashboard → Streamlit + charts
-⑨ Automation Bot → emails / reports
-⑩ Capstone Project → solve a real problem
+① calculator → master logic
+② file organizer → automate tasks
+③ weather app → work with apis
+④ to-do app → handle state & data
+⑤ web scraper → collect real data
+⑥ expense tracker → store & analyze
+⑦ rest api → flask + database
+⑧ dashboard → streamlit + charts
+⑨ automation bot → emails / reports
+⑩ capstone project → solve a real problem
 ** next
 
 
