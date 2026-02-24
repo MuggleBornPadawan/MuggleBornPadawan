@@ -60,6 +60,49 @@ might generate text that is less relevant.
 - create a ghibli styled meme which has never been created for this quote "xxx". the given quote should not appear in the image.
 - use perplexity and ask for “20 words describing a [specific specialist].” request a 4-sentence prompt using those words to “summon this specialist.”
 - summon this clojure coder who is functional, concise, and expressive. they are also efficient, scalable, and innovative. they are masters of concurrency, parallelism, and data manipulation they possess strong analytical and problem-solving skills. they are also accurate, detail-oriented, and communicative. they are familiar with immutable data structures and higher-order functions. they are adept at debugging, testing, and optimizing code. a clojure coder is also knowledgeable about domain-specific languages and web development frameworks. clojure coder expertise includes, but not limited to, reagent, fulcro, helix, re-frame, kee-frame, devcards, three.js, babylon.js (via interop), thi.ng, webgl, webgl, webgpu interop, shadow-cljs, figwheel main, lein-figwheel, oz, cljs-ajax, bidi, ring, yada, reitit, http-kit, aleph, hato, hiccup, selmer, sente, lacinia, apex (metosin), core.async, manifold, promesa, holy-lambda, muuntaja, jsonista, clojure.data.csv, ticks, sentry-clj, cljfx (javafx), seesaw (swing), krell, rabbitmq (langohr), apache kafka (clj-kafka, jaunts), babashka, babashka tasks, xtdb, datomic, crux, next-jdbc, ragtime, clojure.spec.alpha, malli, schema, core.typed, integrant, mount, polylith, aero, timbre, clojure.tools.namespace, deps.edn, clojure cli, leiningen, boot, clj-kondo, cypress, playwright, clojure.test.check, orchestra, kaocha, jmh-clojure, criterium, clojure-lsp, paredit, parinfer, calva, aws-api (cognitect labs), buddy, lein-codox (example), static site generators, aws api gateway, kong, etc., consul, etcd, kubernetes services, nginx, haproxy, cloud lbs, kubernetes (k8s), docker swarm, prometheus, grafana, elk stack, docker, jenkins, gitlab ci, github actions
+** claud.md
+*** Workflow Orchestration
+1. plan node default
+- enter plan mode for any non-trivial task (3+ steps or architectural decisions)
+- if something goes sideways, stop and re-plan immediately - don't keep pushing
+- use plan mode for verification steps, not just building
+- write detailed specs upfront to reduce ambiguity
+2. subagent strategy
+- use subagents liberally to keep main context window clean
+- offload research, exploration, and parallel analysis to subagents
+- for complex problems, throw more compute at it via subagents
+- one tack per subagent for focused execution
+3. self-improvement loop
+- after any correction from the user: update tasks/lessons.md with the pattern
+- write rules for yourself that prevent the same mistake
+- ruthlessly iterate on these lessons until mistake rate drops
+- review lessons at session start for relevant project
+4. verification before done
+- never mark a task complete without proving it works
+- diff behavior between main and your changes when relevant
+- ask yourself: "would a staff engineer approve this?"
+- run tests, check logs, demonstrate correctness
+5. demand elegance (balanced)
+- for non-trivial changes: pause and ask "is there a more elegant way?"
+- if a fix feels hacky: "knowing everything i know now, implement the elegant solution"
+- skip this for simple, obvious fixes - don't over-engineer
+- challenge your own work before presenting it
+6. autonomous bug fixing
+- when given a bug report: just fix it. don't ask for hand-holding
+- point at logs, errors, failing tests - then resolve them
+- zero context switching required from the user
+- go fix failing ci tests without being told how
+*** task management
+1. plan first: write plan to tasks/todo.md with checkable items
+2. verify plan: check in before starting implementation
+3. track progress: mark items complete as you go
+4. explain changes: high-level summary at each step
+5. document results: add review section to tasks/todo.md
+6. capture lessons: update tasks/lessons.md after corrections
+*** core principles
+- simplicity first: make every change as simple as possible. impact minimal code.
+- no laziness: find root causes. no temporary fixes. senior developer standards.
+- minimal impact: changes should only touch what's necessary. avoid introducing bugs.
 ** openclaw 3-layer memory system
 layer 1: knowledge graph. a ~/life/ folder using the para system (projects, areas, resources, archives). stores durable facts about people and projects with summary files for quick lookups.
 layer 2: daily notes. dated markdown file for each day logging what happened. your bot writes to this during conversations, then extracts important stuff into layer 1 during nightly consolidation.
