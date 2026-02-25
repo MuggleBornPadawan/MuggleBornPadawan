@@ -143,3 +143,45 @@
   - docker export <container-id> > <filename>.tar | Exports the container’s filesystem as a tar archive
   - docker import <filename>.tar | Imports a tar archive as a Docker image
 
+** 10 Dockerfile Best Practices for 2026 
+1. Use a .dockerignore File:
+> Exclude .git, node_modules, and local secrets to keep builds clean.
+> Reduces the build context size significantly.
+> Prevents accidental leakage of sensitive files into the image.
+2. Clean Up in the Same Layer:
+> Don't leave package cache (apt/apk) in your final image.
+> Run apt-get install and rm -rf /var/lib/apt/lists/* in the same line.
+> This keeps the layer size small and efficient.
+3. Don't Use ENV for Secrets:
+> ENV values are visible in docker inspect to anyone.
+> Use ARG for build-time variables that don't persist.
+> For runtime secrets, mount them securely using volumes or secret managers.
+4. Run as a Non-Root User:
+> Running as root (default) is a major security risk.
+> Create a dedicated user (e.g., appuser) with restricted permissions.
+> Switch to this user using the USER instruction immediately.
+5. Optimize Caching Order:
+> Copy dependency files (package.json, go.mod) before source code.
+> Run npm install or go mod download next.
+> This lets Docker cache dependencies, speeding up builds when code changes.
+6. Pin Your Versions:
+> Avoid node:latest or apt-get install python; they are unpredictable.
+> Pin specific versions (e.g., node:20-alpine) for deterministic builds.
+> Ensures your production environment matches your testing environment exactly.
+7. Use Minimal Base Images:
+> Don't use full OS images like ubuntu for simple apps.
+> Use alpine, distroless, or -slim tags.
+> Reduces attack surface and drastically cuts down image size.
+8. Use Multi-Stage Builds:
+> Separate the build environment from the runtime environment.
+> Compile your binary in stage one; copy only the binary to stage two.
+> Keeps compilers and build tools out of your production image.
+9. Add a HEALTHCHECK:
+> A running process doesn't mean a working application.
+> Define a check (e.g., curl -f localhost:8080) to verify availability.
+> Allows orchestrators like Kubernetes to restart "zombie" containers automatically.
+10. Combine RUN Instructions:
+> Every RUN line creates a new filesystem layer.
+> Combine related commands using && \ to reduce layer count.
+> Results in a smaller, more efficient final image.
+(https://x.com/twtayaan/status/2024325604448096660?s=20)

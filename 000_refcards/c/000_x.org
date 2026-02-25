@@ -224,7 +224,19 @@ problem solving techniques: two pointers, sliding window, prefix sum, monotonic 
   |    └─ string_algorithms
   |            |-- kmp_algorithm
   |           └─ rabin-karp_algorithm
+** dsa problems
+1. two sum with all approaches
+2. buy and sell stock sell 
+3. target sum
+4. lru cache
+5. merge intervals
+6. detect cycle
+7. maximum subarray
+8. number of islands
+9. path with minimum effort
+10. trapping rain water
 ** system design
+- api design, load balancing, message queues, rate limiting, caching, sharding and partitioning, database replication, consistent hashing, cap theorem, microservices, fault tolerance, scalablity, event driven architecture, service discovery (https://x.com/Shruti_0810/status/2024403451372064961?s=20)  
 1. how many users/requests are we talking about? (scale & load)
 2. what’s the read/write ratio? (traffic shape)
 3. strong consistency or eventual consistency? (correctness model)
