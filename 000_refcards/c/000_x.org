@@ -1,5 +1,7 @@
 #+title: courses
 * intro
+- full stack: frontend, backend / apis, databases, servers, networking, cloud infra, ci/cd pipelines, security, containers, cdn, monitoring and logging, backups & recovery 
+- cloud: compute, serverless, databases, storage (object / file / archival), networking, identity and access management (iam), big data & analytics (data warehouse), automationn, compliance, 
 ** coursera 
 https://docs.nvidia.com/learn-openusd/latest/index.html
 
