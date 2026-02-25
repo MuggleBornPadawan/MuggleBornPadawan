@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed Feb 25 12:31:54 PM IST 2026 
+Date: Wed Feb 25 09:54:16 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09000-gd3ae1caecf39
 Firewall is active and enabled on system startup
@@ -57,26 +57,26 @@ Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Ign:2 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
-Get:3 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [304 kB]
-Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [256 kB]
-Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:3 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [304 kB]
+Get:4 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:5 http://deb.debian.org/debian bookworm-backports/main Translation-en [256 kB]
+Get:6 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:7 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:8 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:10 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:11 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:12 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
 Get:13 https://storage.googleapis.com/cros-packages/144 bookworm Release [3,109 B]
 Get:14 https://storage.googleapis.com/cros-packages/144 bookworm Release.gpg [2,365 B]
-Get:15 https://storage.googleapis.com/cros-packages/144 bookworm/main amd64 Packages [5,142 B]
-Get:16 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
+Get:15 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
+Get:16 https://storage.googleapis.com/cros-packages/144 bookworm/main amd64 Packages [5,142 B]
 Get:17 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
 Get:18 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
 Get:19 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:20 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [297 kB]
 Get:21 https://deb.debian.org/debian-security bookworm-security/main Translation-en [182 kB]
-Fetched 20.8 MB in 9s (2,363 kB/s)
+Fetched 20.8 MB in 37s (560 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -265,7 +265,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27922/Tue Feb 24 12:54:31 2026
+ClamAV 1.4.3/27923/Wed Feb 25 12:54:34 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
