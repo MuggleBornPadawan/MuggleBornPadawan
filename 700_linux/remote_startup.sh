@@ -25,9 +25,30 @@ sudo ufw deny https #443
 sudo ufw deny 445 #server message block (smb)
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
+echo "--- Starting System Cleanup ---"
+# 1. Clear APT package installers (saves disk space)
+echo "Cleaning local repository of retrieved package files..."
+sudo apt-get clean
+sudo apt-get autoclean
+# 2. Remove orphaned packages (dependencies no longer needed)
+echo "Removing unused dependencies..."
+sudo apt-get autoremove -y
+# 3. The "Hard Reset" for package lists (Fixes Hash Sum errors)
+# We use the wildcard * to keep the directory structure intact.
+echo "Resetting software index lists..."
+sudo rm -rf /var/lib/apt/lists/*
+# 4. Vacuum Systemd Journal logs (keep only the last 2 days)
+if command -v journalctl >/dev/null; then
+    echo "Vacuuming system logs..."
+    sudo journalctl --vacuum-time=2d
+fi
+# 5. Refresh the state (The 'Source of Truth')
+echo "Rebuilding software index..."
+sudo apt-get update
+echo "--- Cleanup Complete ---"
 #linux debian packages
 sudo apt-get update && sudo apt-get dist-upgrade
-sudo apt-get upgrade gh calc uuid-runtime fonts-dejavu fzf zoxide gnuplot nasm ffmpeg lm-sensors sqlite3 mpg123 dnsutils make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip mit-scheme racket clojure rlwrap leiningen emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay neofetch trash-cli
+sudo apt-get upgrade gh calc uuid-runtime fonts-dejavu fzf zoxide gnuplot nasm ffmpeg lm-sensors sqlite3 mpg123 dnsutils make bats jq cron postfix mailutils pass gnupg nmap htop pv tldr tree ncdu parallel tmux rsync bat fd-find git rig espeak nodejs npm openjdk-17-jdk python3 python3-pip sbcl mit-scheme racket clojure rlwrap leiningen emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay neofetch trash-cli
 #clamav - antivirus package
 sudo apt-get upgrade gcc make pkg-config python3 python3-pip python3-pytest valgrind cmake check libbz2-dev libcurl4-openssl-dev libjson-c-dev libmilter-dev libncurses5-dev libpcre2-dev libssl-dev libxml2-dev zlib1g-dev
 #firewall - security - openvpn
