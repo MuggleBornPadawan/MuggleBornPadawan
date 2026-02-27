@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 
-Date: Fri Feb 27 10:38:18 AM IST 2026 
+Date: Fri Feb 27 11:13:29 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09000-gd3ae1caecf39
 Firewall is active and enabled on system startup
@@ -76,15 +76,15 @@ Get:18 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:19 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:20 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [297 kB]
 Get:21 https://deb.debian.org/debian-security bookworm-security/main Translation-en [182 kB]
-Fetched 20.8 MB in 44s (475 kB/s)
+Fetched 20.8 MB in 13s (1,600 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/144 bookworm Release
+Ign:3 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/144 bookworm Release
+Hit:7 https://deb.debian.org/debian-security bookworm-security InRelease
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -151,7 +151,40 @@ cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following NEW packages will be installed:
+  libao-common libao4 libpulsedsp pulseaudio-utils vorbis-tools
+0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
+Need to get 356 kB of archives.
+After this operation, 1,469 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm/main amd64 libao-common all 1.2.2+20180113-1.1 [11.7 kB]
+Get:2 https://deb.debian.org/debian bookworm/main amd64 libao4 amd64 1.2.2+20180113-1.1 [37.1 kB]
+Get:3 https://deb.debian.org/debian bookworm/main amd64 libpulsedsp amd64 16.1+dfsg1-2+b1 [36.8 kB]
+Get:4 https://deb.debian.org/debian bookworm/main amd64 pulseaudio-utils amd64 16.1+dfsg1-2+b1 [88.8 kB]
+Get:5 https://deb.debian.org/debian bookworm/main amd64 vorbis-tools amd64 1.4.2-1+b1 [182 kB]
+Fetched 356 kB in 3s (109 kB/s)
+Selecting previously unselected package libao-common.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 125925 files and directories currently installed.)
+Preparing to unpack .../libao-common_1.2.2+20180113-1.1_all.deb ...
+Unpacking libao-common (1.2.2+20180113-1.1) ...
+Selecting previously unselected package libao4:amd64.
+Preparing to unpack .../libao4_1.2.2+20180113-1.1_amd64.deb ...
+Unpacking libao4:amd64 (1.2.2+20180113-1.1) ...
+Selecting previously unselected package libpulsedsp:amd64.
+Preparing to unpack .../libpulsedsp_16.1+dfsg1-2+b1_amd64.deb ...
+Unpacking libpulsedsp:amd64 (16.1+dfsg1-2+b1) ...
+Selecting previously unselected package pulseaudio-utils.
+Preparing to unpack .../pulseaudio-utils_16.1+dfsg1-2+b1_amd64.deb ...
+Unpacking pulseaudio-utils (16.1+dfsg1-2+b1) ...
+Selecting previously unselected package vorbis-tools.
+Preparing to unpack .../vorbis-tools_1.4.2-1+b1_amd64.deb ...
+Unpacking vorbis-tools (1.4.2-1+b1) ...
+Setting up libpulsedsp:amd64 (16.1+dfsg1-2+b1) ...
+Setting up libao-common (1.2.2+20180113-1.1) ...
+Setting up pulseaudio-utils (16.1+dfsg1-2+b1) ...
+Setting up libao4:amd64 (1.2.2+20180113-1.1) ...
+Setting up vorbis-tools (1.4.2-1+b1) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for libc-bin (2.36-9+deb12u13) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
