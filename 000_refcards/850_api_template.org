@@ -176,18 +176,18 @@ access via postman's desktop, web, cli, and/or api interfaces. these api client 
 - {{baseURL}} - collections > variables; or select and hover over the base url
 - scripting: node.js is a runtime environment for executing JavaScript code outside of a web browser
 ** security
-1 encrypt all traffic with tls
-2 use oauth2/oidc or api keys.
-3 enforce rbac/abac.
-4 block abuse with rate limits.
-5 sanitize input to stop injections.
-6 log key metadata.
-7 run fuzz tests and stress tests.
-8 update libraries often.
-9 rotate and revoke tokens.
-10 add hsts, csp.
-11 centralize auth and rate limits.
-12 mask or redact sensitive fields.
+- encrypt all traffic with tls
+- use oauth2/oidc or api keys
+- enforce rbac/abac
+- block abuse with rate limits
+- sanitize input to stop injections
+- log key metadata
+- run fuzz tests and stress tests
+- update libraries often
+- rotate and revoke tokens
+- add hsts, csp
+- centralize auth and rate limits
+- mask or redact sensitive fields
 (https://x.com/systemdesignone/status/2026649794274304285?s=20)
 #+begin_src js
   console.log("hello, org mode");
