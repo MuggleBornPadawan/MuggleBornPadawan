@@ -1,4 +1,4 @@
-[H[J[3J--- Omni-Sentry v2.0 Initialized ---
+--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
-
-Date: Fri Feb 27 11:13:29 AM IST 2026 
+-e 
+Date: Sat Feb 28 09:25:49 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09000-gd3ae1caecf39
 Firewall is active and enabled on system startup
@@ -67,8 +67,8 @@ Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,
 Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
 Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
 Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:13 https://storage.googleapis.com/cros-packages/144 bookworm/main amd64 Packages [5,142 B]
-Get:14 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:13 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:14 https://storage.googleapis.com/cros-packages/144 bookworm/main amd64 Packages [5,142 B]
 Get:15 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
 Get:16 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
 Get:17 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
@@ -76,15 +76,15 @@ Get:18 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:19 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:20 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [297 kB]
 Get:21 https://deb.debian.org/debian-security bookworm-security/main Translation-en [182 kB]
-Fetched 20.8 MB in 13s (1,600 kB/s)
+Fetched 20.8 MB in 53s (389 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:5 https://storage.googleapis.com/cros-packages/144 bookworm Release
-Hit:7 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:4 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/144 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/144 bookworm Release
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -94,6 +94,8 @@ Calculating upgrade...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+pulseaudio-utils is already the newest version (16.1+dfsg1-2+b1).
+vorbis-tools is already the newest version (1.4.2-1+b1).
 gh is already the newest version (2.23.0+dfsg1-1).
 calc is already the newest version (2.12.7.2-4).
 uuid-runtime is already the newest version (2.38.1-5+deb12u3).
@@ -129,6 +131,7 @@ fd-find is already the newest version (8.6.0-3).
 git is already the newest version (1:2.39.5-0+deb12u3).
 rig is already the newest version (1.11-1.1+b1).
 espeak is already the newest version (1.48.15+dfsg-3).
+espeak-ng is already the newest version (1.51+dfsg-10+deb12u2).
 nodejs is already the newest version (18.20.4+dfsg-1~deb12u1).
 npm is already the newest version (9.2.0~ds1-1).
 openjdk-17-jdk is already the newest version (17.0.18+8-1~deb12u1).
@@ -151,40 +154,7 @@ cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-The following NEW packages will be installed:
-  libao-common libao4 libpulsedsp pulseaudio-utils vorbis-tools
-0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
-Need to get 356 kB of archives.
-After this operation, 1,469 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian bookworm/main amd64 libao-common all 1.2.2+20180113-1.1 [11.7 kB]
-Get:2 https://deb.debian.org/debian bookworm/main amd64 libao4 amd64 1.2.2+20180113-1.1 [37.1 kB]
-Get:3 https://deb.debian.org/debian bookworm/main amd64 libpulsedsp amd64 16.1+dfsg1-2+b1 [36.8 kB]
-Get:4 https://deb.debian.org/debian bookworm/main amd64 pulseaudio-utils amd64 16.1+dfsg1-2+b1 [88.8 kB]
-Get:5 https://deb.debian.org/debian bookworm/main amd64 vorbis-tools amd64 1.4.2-1+b1 [182 kB]
-Fetched 356 kB in 3s (109 kB/s)
-Selecting previously unselected package libao-common.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 125925 files and directories currently installed.)
-Preparing to unpack .../libao-common_1.2.2+20180113-1.1_all.deb ...
-Unpacking libao-common (1.2.2+20180113-1.1) ...
-Selecting previously unselected package libao4:amd64.
-Preparing to unpack .../libao4_1.2.2+20180113-1.1_amd64.deb ...
-Unpacking libao4:amd64 (1.2.2+20180113-1.1) ...
-Selecting previously unselected package libpulsedsp:amd64.
-Preparing to unpack .../libpulsedsp_16.1+dfsg1-2+b1_amd64.deb ...
-Unpacking libpulsedsp:amd64 (16.1+dfsg1-2+b1) ...
-Selecting previously unselected package pulseaudio-utils.
-Preparing to unpack .../pulseaudio-utils_16.1+dfsg1-2+b1_amd64.deb ...
-Unpacking pulseaudio-utils (16.1+dfsg1-2+b1) ...
-Selecting previously unselected package vorbis-tools.
-Preparing to unpack .../vorbis-tools_1.4.2-1+b1_amd64.deb ...
-Unpacking vorbis-tools (1.4.2-1+b1) ...
-Setting up libpulsedsp:amd64 (16.1+dfsg1-2+b1) ...
-Setting up libao-common (1.2.2+20180113-1.1) ...
-Setting up pulseaudio-utils (16.1+dfsg1-2+b1) ...
-Setting up libao4:amd64 (1.2.2+20180113-1.1) ...
-Setting up vorbis-tools (1.4.2-1+b1) ...
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for libc-bin (2.36-9+deb12u13) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -230,19 +200,17 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
-├── @anthropic-ai/claude-code@2.1.25
-├── @google/gemini-cli@0.30.0
-├── @qwen-code/qwen-code@0.6.0
-├── corepack@0.34.0
-├── npm-check-updates@19.2.0
-└── npm@11.7.0
+/usr/local/lib
+├── @anthropic-ai/claude-code@1.0.67
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -300,7 +268,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27924/Thu Feb 26 12:54:13 2026
+ClamAV 1.4.3/27926/Sat Feb 28 12:54:29 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
