@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Tue Mar  3 12:08:22 AM IST 2026 
+Date: Tue Mar  3 09:07:42 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09070-g0245f6566c20
 Firewall is active and enabled on system startup
@@ -60,14 +60,14 @@ Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
 Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Ign:5 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [304 kB]
-Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [256 kB]
-Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:13 https://storage.googleapis.com/cros-packages/145 bookworm Release [3,109 B]
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [303 kB]
+Get:7 https://storage.googleapis.com/cros-packages/145 bookworm Release [3,109 B]
+Get:8 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/main Translation-en [256 kB]
+Get:10 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:11 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:12 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:13 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
 Get:14 https://storage.googleapis.com/cros-packages/145 bookworm Release.gpg [2,365 B]
 Get:15 https://storage.googleapis.com/cros-packages/145 bookworm/main amd64 Packages [5,139 B]
 Get:16 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
@@ -76,7 +76,7 @@ Get:18 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:19 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:20 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [297 kB]
 Get:21 https://deb.debian.org/debian-security bookworm-security/main Translation-en [182 kB]
-Fetched 20.8 MB in 7s (3,004 kB/s)
+Fetched 20.8 MB in 7s (2,814 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -90,12 +90,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  cros-im
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 52.1 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -159,12 +154,7 @@ cowsay is already the newest version (3.03+dfsg2-8).
 neofetch is already the newest version (7.1.0-4).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-The following packages will be upgraded:
-  cros-im
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 52.1 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -187,12 +177,7 @@ libssl-dev is already the newest version (3.0.18-1~deb12u2).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u5).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-The following packages will be upgraded:
-  cros-im
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 52.1 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -200,28 +185,18 @@ ufw is already the newest version (0.36.2-1).
 netcat-openbsd is already the newest version (1.219-1).
 iproute2 is already the newest version (6.1.0-3).
 Calculating upgrade...
-The following packages will be upgraded:
-  cros-im
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 52.1 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b2).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-The following packages will be upgraded:
-  cros-im
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 52.1 kB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
