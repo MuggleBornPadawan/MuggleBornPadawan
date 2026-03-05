@@ -1,7 +1,23 @@
 * scribbled notes 
 ** diagrams as code
 tools: diagrams, go diagrams, mermaid, plantuml, ascii editor, markup
-
+** race conditions
+- a software bug that occurs when the outcome of a program depends on the unpredictable order in which multiple threads, or processes, access and modify shared resources
+- side effects of writer and reader thread interrupts 
+- time-quantum at hardware levrel is set to interrupt cpu processes (threads) at frequent intervals
+- other interrupts: timer, i/o device, dma completion, peripheral, spurious, system calls, software traps, signals (unix), page faults, exceptions / traps, preemptive multitasking
+- cpu: fetch, decode, execute pattern gets interrupted
+- cpu - caches might be different 
+- mutual exclusion, progress, bounded waiting
+- peterson' solution (flag and turn), locks, threading.lock, semaphores, queues, ... 
+- atomic operations provided by modern hardware:
+  - test-and-set (tas)
+  - compare-and-swap (cas)
+  - compare-and-exchange (cmpxchg)
+  - fetch-and-add (faa)
+  - swap (atomic exchange, xchg)
+  - load-linked (ll)
+  - store-conditional (sc) 
 ** ai automation vs ai agent
 [[file:x_ai_automation_vs_ai_agents.png]]
 ** chain of thought (cot) vs tree of thought (tot) vs graph of thought (got) 
