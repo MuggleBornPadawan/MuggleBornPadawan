@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Thu Mar  5 05:38:05 PM IST 2026 
+Date: Thu Mar  5 05:43:42 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09070-g0245f6566c20
 Firewall is active and enabled on system startup
@@ -57,15 +57,15 @@ Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
-Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [303 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [256 kB]
-Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:3 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [303 kB]
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Ign:6 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en [256 kB]
+Get:8 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:11 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
 Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
 Get:13 https://storage.googleapis.com/cros-packages/145 bookworm Release [3,109 B]
 Get:14 https://storage.googleapis.com/cros-packages/145 bookworm Release.gpg [2,365 B]
@@ -76,7 +76,7 @@ Get:18 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:19 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:20 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [293 kB]
 Get:21 https://deb.debian.org/debian-security bookworm-security/main Translation-en [178 kB]
-Fetched 20.8 MB in 9s (2,434 kB/s)
+Fetched 20.8 MB in 8s (2,505 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
