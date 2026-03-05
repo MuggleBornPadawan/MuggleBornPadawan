@@ -1,5 +1,6 @@
 #+title: apis
 * general information
+- endpoint, http methods, requeest-response, status codes, authentication, authorization, access tokens, oauth 2.0, rate limiting, throttling, pagination, caching, idempotency, webhooks, api versioning, openapi, rest vs graphql, api gateway, microservices, error handling 
 ** inspection, exploration and experimentation
 - api documentation - endpoints, parameters, methods
 - api explorer or interactive documentation
