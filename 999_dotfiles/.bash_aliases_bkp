@@ -21,6 +21,7 @@ alias ww='cd && cd /home/rgroot/MuggleBornPadawan/000_refcards/c/test && l'
 alias g='pwd && git gc && git cat-file -p HEAD && git diff --staged && git diff HEAD && git status && git branch'
 alias gl='git log --oneline --decorate --graph'
 alias gp="s && pw && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push && git status && git branch"
+alias gs="pwd && git branch && git status && echo 'use git commit, git branch main, git merge <branch_name>, git push origin main, git branch <branch_name> eod everyday'"
 # Safety & Security Aliases
 alias pw='pass unKnoWn'
 alias ln='ln -i'
