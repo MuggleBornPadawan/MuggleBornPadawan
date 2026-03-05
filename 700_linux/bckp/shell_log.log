@@ -1,4 +1,4 @@
---- Omni-Sentry v2.0 Initialized ---
+[H[J[3J--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Thu Mar  5 12:39:21 PM IST 2026 
+
+Date: Thu Mar  5 12:42:37 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09070-g0245f6566c20
 Firewall is active and enabled on system startup
@@ -56,10 +56,10 @@ Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [303 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Get:2 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [303 kB]
+Get:3 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
 Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [256 kB]
@@ -76,7 +76,7 @@ Get:18 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:19 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:20 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [293 kB]
 Get:21 https://deb.debian.org/debian-security bookworm-security/main Translation-en [178 kB]
-Fetched 20.8 MB in 7s (2,987 kB/s)
+Fetched 20.8 MB in 6s (3,379 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -200,17 +200,19 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@1.0.67
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
+├── @anthropic-ai/claude-code@2.1.25
+├── @google/gemini-cli@0.32.1
+├── @qwen-code/qwen-code@0.6.0
+├── corepack@0.34.0
+├── npm-check-updates@19.2.0
+└── npm@11.7.0
 
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
