@@ -1,0 +1,244 @@
+#+title: anthropic claude skilljar
+* introduction
+site: https://anthropic.skilljar.com/
+** claude code in action
+- /init  this tells claude to analyze your entire codebase and understand:
+  - the project's purpose and architecture
+  - important commands and critical files
+  - coding patterns and structure
+- the claude.md file gets included in every request you make to claude, so it's like having a persistent system prompt for your project. this file serves two main purposes:
+  - guides claude through your codebase, pointing out important commands, architecture, and coding style
+  - allows you to give claude specific or custom directions
+- three types
+  - claude.md - generated with /init, committed to source control, shared with other engineers
+  - claude.local.md - not shared with other engineers, contains personal instructions and customizations for claude
+  - ~/.claude/claude.md - used with all projects on your machine, contains instructions that you want claude to follow on all projects
+- custom instructions: # Use comments sparingly. Only comment complex code.
+- File Mentions with '@'
+** making changes
+- ctrl + v - to paste a screenshot
+- shift + tab (twice) - planning mode. in this mode, claude will:
+  - read more files in your project
+  - create a detailed implementation plan
+  - show you exactly what it intends to do
+  - wait for your approval before proceeding
+- thinking modes: token usage increases progressively 
+  - "think" - basic reasoning
+  - "think more" - extended reasoning
+  - "think a lot" - comprehensive reasoning
+  - "think longer" - extended time reasoning
+  - "ultrathink" - maximum reasoning capability
+- planning mode vs thinking mode - these two features handle different types of complexity:
+  - planning mode is best for:
+    - tasks requiring broad understanding of your codebase
+    - multi-step implementations
+    - changes that affect multiple files or components
+  - thinking mode is best for:
+    - complex logic problems
+    - debugging difficult issues
+    - algorithmic challenges
+
+
+** sample claude.md file
+CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+UIGen is an AI-powered React component generator that uses Claude to help users build React components with live preview. The app features:
+
+- Chat-based component generation using Vercel AI SDK
+- Virtual file system for managing component files (not persisted to disk)
+- User authentication and project persistence
+- Live preview of generated components
+- Code editor with syntax highlighting
+
+## Tech Stack
+
+- **Frontend**: Next.js 15 (App Router), React 19, TypeScript
+- **Styling**: Tailwind CSS v4
+- **Database**: Prisma with SQLite
+- **AI**: Anthropic Claude via Vercel AI SDK (@ai-sdk/anthropic)
+- **UI Components**: Radix UI primitives
+- **Testing**: Vitest with React Testing Library
+- **Build**: Turbopack in development
+
+## High-Level Architecture
+
+### Core Systems
+
+1. **Virtual File System** (`src/lib/file-system.ts`)
+   - In-memory file management for React components
+   - Serializable state (sent to client, persisted in DB)
+   - Files are never written to disk; all state is ephemeral in-memory
+
+2. **AI Chat Pipeline** (`src/app/api/chat/route.ts`)
+   - Streams responses from Claude using Vercel AI SDK
+   - Uses Anthropic prompt caching for system messages (ephemeral cache)
+   - Tools available to Claude: `str_replace_editor`, `file_manager`
+   - Max steps set to 4 for mock provider (without API key), 40 with key
+
+3. **State Management**
+   - **ChatContext** (`src/lib/contexts/chat-context.tsx`): Manages chat messages and input
+   - **FileSystemContext** (`src/lib/contexts/file-system-context.tsx`): Manages virtual file system
+   - Both contexts coordinate to sync file changes from AI tool calls
+
+4. **Authentication** (`src/lib/auth.ts`)
+   - JWT-based sessions using jose library
+   - HttpOnly secure cookies
+   - 7-day session expiration
+   - Server-only operations (marked with "server-only" imports)
+
+5. **Database** (`prisma/schema.prisma`)
+   - **User**: Email, password (bcrypt), timestamps
+   - **Project**: Name, userId (optional), serialized messages, serialized file data
+
+### Data Flow
+
+1. User sends message via chat interface
+2. Message + serialized file system sent to `/api/chat`
+3. Claude receives message + system prompt (cached) + current files
+4. Claude can call tools to modify files (str_replace_editor, file_manager)
+5. Tool calls update virtual file system in memory
+6. Stream response back to client (includes tool results)
+7. FileSystemContext processes tool calls to update local file system state
+8. If authenticated & projectId exists, save messages + file data to DB
+9. Client updates preview with new file contents
+
+## Important Patterns
+
+### Import Aliases
+- All imports use `@/` alias pointing to `src/`
+- Configure in `tsconfig.json`
+- Example: `import { Button } from "@/components/ui/button"`
+
+### AI Prompts
+- System prompt in `src/lib/prompts/generation.tsx`
+- Directs Claude to:
+  - Create App.jsx as root component export
+  - Use Tailwind CSS (not inline styles)
+  - Use `@/` import paths for project files
+  - Operate on virtual filesystem (no traditional directories)
+
+### Tools for Claude
+- Located in `src/lib/tools/`
+- `str_replace_editor`: Edit existing files (find & replace)
+- `file_manager`: Create/delete files and directories
+
+### Context Providers
+- `ChatProvider` wraps main app, provides chat state
+- `FileSystemProvider` wraps content, manages virtual file system
+- Both communicate via `useFileSystem()` hook to handle tool calls
+
+### Server Actions
+- Located in `src/actions/`
+- Handle data mutations (create project, get projects, etc.)
+- Protected by authentication checks
+
+## Common Development Tasks
+
+### Running the App
+
+```bash
+npm run setup        # First time: install deps, setup DB
+npm run dev          # Development server (http://localhost:3000)
+npm run build        # Production build
+npm run start        # Run production build
+```
+
+### Testing
+
+```bash
+npm run test         # Run all tests with Vitest
+npm run test -- --watch           # Watch mode
+npm run test -- src/components    # Test specific directory
+```
+
+### Linting
+
+```bash
+npm run lint         # Run ESLint
+```
+
+### Database
+
+```bash
+npx prisma studio   # Open Prisma Studio GUI
+npx prisma generate # Generate Prisma client
+npx prisma migrate dev              # Create and run migration
+npm run db:reset    # Reset database (WARNING: destructive)
+```
+
+### Environment Setup
+
+- `.env` file contains `ANTHROPIC_API_KEY` (optional)
+- Without key: uses mock provider for testing
+- `JWT_SECRET` in env controls session encryption (development default used if missing)
+
+## File Organization
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── api/chat/          # Chat streaming endpoint
+│   ├── [projectId]/       # Project page (protected)
+│   └── page.tsx           # Home page
+├── components/            # React components
+│   ├── ui/               # Radix UI + Tailwind primitives
+│   ├── chat/             # Chat interface components
+│   ├── editor/           # Code editor components
+│   ├── preview/          # Component preview
+│   └── auth/             # Auth forms
+├── lib/
+│   ├── contexts/         # React contexts (chat, file system)
+│   ├── tools/            # Claude tool definitions
+│   ├── prompts/          # System prompts for Claude
+│   ├── file-system.ts    # Virtual file system class
+│   ├── auth.ts           # JWT session management
+│   └── provider.ts       # Language model provider
+├── actions/              # Server actions (data mutations)
+├── hooks/                # Custom React hooks
+└── middleware.ts         # Next.js middleware (auth)
+
+prisma/
+└── schema.prisma         # Database schema
+
+tests/                     # Test files (colocated with __tests__)
+```
+
+## Key Implementation Details
+
+### Virtual File System Serialization
+- `VirtualFileSystem.serialize()` returns plain object for JSON
+- `deserializeFromNodes()` reconstructs from object
+- Sent to client and back to server without persistence
+
+### Component Generation Flow
+- Claude creates files at paths like `/App.jsx`, `/components/Button.jsx`
+- Paths use leading `/`, no traditional directory structure
+- App.jsx must export default React component
+- All imports relative to root use `@/` alias
+
+### Middleware
+- `src/middleware.ts` protects routes requiring authentication
+- Verifies JWT token and sets user context
+
+### Tool Call Handling
+- ChatContext calls `useFileSystem().handleToolCall()`
+- FileSystemContext processes `str_replace_editor` and `file_manager` calls
+- Updates in-memory file system immediately for preview
+
+## Testing Notes
+
+- Tests use `vitest` with `jsdom` environment
+- React components tested with React Testing Library
+- Test files colocated with source: `Component.test.tsx` in same directory
+- Mock provider used in development (returns static components without API key)
+
+## Notes for Future Work
+
+- File system is ephemeral—always persists via Prisma when user is authenticated
+- No validation on component code (trust Claude output, users can edit manually)
+- Mock provider prevents API calls in development—useful for testing UI without costs
+- Prompt caching on system message reduces latency and API costs
