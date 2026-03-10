@@ -28,7 +28,7 @@ site: https://anthropic.skilljar.com/
   - "think a lot" - comprehensive reasoning
   - "think longer" - extended time reasoning
   - "ultrathink" - maximum reasoning capability
-- planning mode vs thinking mode - these two features handle different types of complexity:
+- planning mode (breadth) vs thinking mode (depth) - these two features handle different types of complexity:
   - planning mode is best for:
     - tasks requiring broad understanding of your codebase
     - multi-step implementations
@@ -37,8 +37,56 @@ site: https://anthropic.skilljar.com/
     - complex logic problems
     - debugging difficult issues
     - algorithmic challenges
+** controlling context 
+- interrupt - escape (esc)
+- interrupt and include memory (#) to fix repetitive errors
+- double tap escape - rewind conversations 
+- /compact command summarizes your entire conversation history while preserving the key information Claude has learned.
+- /clear command completely removes the conversation history, giving you a fresh start
+** custom commands
+- create "commands" folder in your .claude project folder
+- <command_file_name.md> can be accessed by /command_file_name 
+- eg: /write_tests the use-auth.ts file in the hooks directory (check sample command file below) 
+** mcp
+model context protocols can transform Claude from a code assistant into a comprehensive development partner that can interact with your entire toolchain
+- playwright - controls a browser
+  - terminal command$ claude mcp add playwright npx @playwright/mcp@latest
+  - set permissions in ".claude/settings.local.json" file
+#+BEGIN-SRC
+{
+  "permissions": {
+    "allow": ["mcp__playwright"],
+    "deny": []
+  }
+}
+#+END-SRC 
+*** try these mcps
+- database interactions
+- api testing and monitoring
+- file system operations
+- cloud service integrations
+- development tool automation
+** hooks
+- hooks allow you to run commands before or after claude attempts to run a tool. they're incredibly useful for implementing automated workflows like running code formatters after file edits, executing tests when files change, or blocking access to specific files.
+- pretooluse and posttooluse hooks can be created
+- hook configuration
+  - global - ~/.claude/settings.json (affects all projects)
+  - project - .claude/settings.json (shared with team)
+  - project (not committed) - .claude/settings.local.json (personal settings)
+- applications:
+  - code formatting - automatically format files after claude edits them
+  - testing - run tests automatically when files are changed
+  - access control - block claude from reading or editing specific files
+  - code quality - run linters or type checkers and provide feedback to claude
+  - logging - track what files claude accesses or modifies
+  - validation - check naming conventions or coding standards
 
 
+
+
+
+** sub agents
+- code reviewer, code simplifier, security reviewer, tech lead, or ux reviewer  
 ** sample claude.md file
 CLAUDE.md
 
@@ -242,3 +290,17 @@ tests/                     # Test files (colocated with __tests__)
 - No validation on component code (trust Claude output, users can edit manually)
 - Mock provider prevents API calls in development—useful for testing UI without costs
 - Prompt caching on system message reduces latency and API costs
+
+** sample command file - write_tests.md
+write comprehensive tests for: $arguments
+
+testing conventions:
+- use vitests with react testing library
+- place test files in a __tests__ directory in the same folder as the source file
+- name test files as [filename].test.ts(x)
+- use @/ prefix for imports
+
+coverage:
+- test happy paths
+- test edge cases
+- test error states
