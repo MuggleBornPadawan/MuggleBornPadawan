@@ -52,6 +52,22 @@ json - tson
 https://blog.algomaster.io/p/20-dsa-patterns
 https://blog.algomaster.io/p/how-git-works-internally
 https://github.com/dzyim/ilya-sutskever-recommended-reading
+https://www.uber.com/en-IN/blog/mumbai/engineering/
+https://airbnb.tech/blog/
+https://openai.com/news/engineering/
+https://aws.amazon.com/blogs/architecture/
+https://netflixtechblog.com/
+https://discord.com/category/engineering
+https://www.anthropic.com/engineering
+https://developer.nvidia.com/blog
+https://slack.engineering/
+https://blog.cloudflare.com/tag/engineering/
+https://www.figma.com/blog/engineering/
+https://shopify.engineering/
+https://stripe.com/blog/engineering
+https://devblogs.microsoft.com/engineering-at-microsoft/
+https://github.blog/engineering/
+
 ** math
 kekius maximus (elon musk?) - https://x.com/Kekius_Sage/status/2014841012003512616?s=20
 flow: algebra → geometry → trigonometry → precalculus → calculus → linear algebra & multivariable calculus
@@ -248,7 +264,6 @@ problem solving techniques: two pointers, sliding window, prefix sum, monotonic 
 7. single region or multi-region? (topology)
 8. what are the cost constraints? (economic reality)
 9. how fast will requirements change? (rate of change)
-<<<<<<< HEAD
 [[https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/000_refcards/c/test/system_design.jpeg]]
 =======
 [[file:~/test/system_design.jpeg]] 
@@ -315,7 +330,14 @@ problem solving techniques: two pointers, sliding window, prefix sum, monotonic 
 ⑧ dashboard → streamlit + charts
 ⑨ automation bot → emails / reports
 ⑩ capstone project → solve a real problem
->>>>>>> chromebook
+- build a password manager to learn hashing and file storage
+- build a url shortener to understand routing and unique ids
+- build a todo app with deadlines to practice crud
+- build a web scraper to learn requests and parsing
+- build a cli expense tracker to master logic and edge cases
+- build a log analyzer to work with timestamps and patterns
+- build a simple recommender using rule-based similarity
+- build an email automation script with scheduling
 ** next
 
 
