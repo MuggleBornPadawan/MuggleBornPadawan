@@ -13,42 +13,57 @@
  - \dt | list all tables in the current database
  - \d table_name | describe a table
  - \q | exit psql
+** high level
+- CRUD → SELECT, INSERT, UPDATE, DELETE
+- Keys → PRIMARY KEY, FOREIGN KEY
+- Constraints → NOT NULL, UNIQUE, CHECK, DEFAULT
+- Joins → INNER JOIN, LEFT JOIN, RIGHT JOIN
+- Aggregation → COUNT, SUM, AVG, MIN, MAX
+- Grouping → GROUP BY, HAVING
+- Filtering → WHERE, BETWEEN, IN, LIKE
+- Sorting → ORDER BY
+- Subqueries → SELECT (SELECT …)
+- Indexes → CREATE INDEX
+- Views → CREATE VIEW
+- Transactions → BEGIN, COMMIT, ROLLBACK
+- Pagination → LIMIT, OFFSET
+- Optimization → EXPLAIN
 ** database management
- - CREATE DATABASE database_name;
- - DROP DATABASE database_name;
+- CREATE DATABASE database_name;
+- DROP DATABASE database_name;
 ** user management
- - CREATE USER username WITH PASSWORD 'password';
- - GRANT ALL PRIVILEGES ON DATABASE database_name TO username;
- - ALTER USER username WITH PASSWORD 'new_password';
+- CREATE USER username WITH PASSWORD 'password';
+- GRANT ALL PRIVILEGES ON DATABASE database_name TO username;
+- ALTER USER username WITH PASSWORD 'new_password';
 ** table management
- - CREATE TABLE table_name (
+- CREATE TABLE table_name (
        column1_name data_type,
        column2_name data_type,
        ...
    );
- - ALTER TABLE table_name ADD column_name data_type;
- - DROP TABLE table_name;
- - TRUNCATE TABLE table_name;
- - INSERT INTO table_name (column1, column2) VALUES (value1, value2);
- - UPDATE table_name SET column1 = value1 WHERE condition;
- - DELETE FROM table_name WHERE condition;
- - GRANT SELECT, INSERT ON table_name TO user_name;
- - REVOKE SELECT, INSERT ON table_name FROM user_name;
+- ALTER TABLE table_name ADD column_name data_type;
+- DROP TABLE table_name;
+- TRUNCATE TABLE table_name;
+- INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+- UPDATE table_name SET column1 = value1 WHERE condition;
+- DELETE FROM table_name WHERE condition;
+- GRANT SELECT, INSERT ON table_name TO user_name;
+- REVOKE SELECT, INSERT ON table_name FROM user_name;
 ** transaction control
- - COMMIT;
- - REVOKE;
- - SAVEPOINT savepoint_name;
- - RELEASE SAVEPOINT savepoint_name;
+- COMMIT;
+- REVOKE;
+- SAVEPOINT savepoint_name;
+- RELEASE SAVEPOINT savepoint_name;
 ** querying data
- - SELECT * FROM table_name;
- - SELECT column1, column2 FROM table_name;
- - SELECT * FROM table_name WHERE condition;
- - SELECT * FROM table_name ORDER BY column_name ASC|DESC;
- - SELECT * FROM table1
+- SELECT * FROM table_name;
+- SELECT column1, column2 FROM table_name;
+- SELECT * FROM table_name WHERE condition;
+- SELECT * FROM table_name ORDER BY column_name ASC|DESC;
+- SELECT * FROM table1
    JOIN table2 ON table1.common_column = table2.common_column;
- - SELECT column1, column2 FROM table_name ORDER BY column1 ASC|DESC;
- - SELECT column1, COUNT(*) FROM table_name GROUP BY column1;
- - SELECT column1, COUNT(*) FROM table_name GROUP BY column1 HAVING COUNT(*) > 1;
+- SELECT column1, column2 FROM table_name ORDER BY column1 ASC|DESC;
+- SELECT column1, COUNT(*) FROM table_name GROUP BY column1;
+- SELECT column1, COUNT(*) FROM table_name GROUP BY column1 HAVING COUNT(*) > 1;
 ** joins
  - inner join | returns only the rows that have matching values in both tables
    SELECT columns

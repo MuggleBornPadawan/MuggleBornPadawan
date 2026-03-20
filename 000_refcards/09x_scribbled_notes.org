@@ -1,4 +1,78 @@
 * scribbled notes 
+** high performers
+high performers do not manage time. they manage boundaries.
+*** the meeting rejector
+situation: someone sends an agenda-less invite blocking your core working hours.
+response: i need to protect my deep work blocks today. could you send over a brief memo instead? if we still need to sync after, let us schedule 15 minutes tomorrow.
+why it works: defaulting to yes for meetings destroys momentum. forcing a memo makes the organizer actually think through what they need. 90 percent of the time, the memo solves the problem and the meeting never happens.
+*** the default to async
+situation: a quick question interrupts your flow state on slack.
+response: i am heads down on a critical sprint until 2 pm. i will review this and drop my thoughts in the thread before the end of the day.
+why it works: asking for a minute never takes a minute. it takes 20 minutes to regain your focus. training your team that you are not immediately available forces them to problem-solve independently first.
+*** the delegation pivot
+situation: a task lands on your desk that a junior dev can do 80 percent as well.
+response: i am going to hand this over to the junior team. they have the right context and it will be a great stretch project. i will review the final draft.
+why it works: perfectionism is a bottleneck. if someone else can do it mostly right, let them. your job is to review and guide, not to execute every single ticket. this builds their skills and frees your time.
+*** the scope pushback
+situation: a stakeholder demands an unreasonable deadline for a massive feature.
+response: we can hit that date, but we need to descale the feature set by 30 percent. let me know which of these three requirements is the lowest priority.
+why it works: you cannot bend time, but you can bend scope. never accept a fixed deadline with a fixed scope if it means burning out your team. put the trade-off decision back on the stakeholder.
+*** the status update killer
+situation: a 30-minute weekly alignment meeting that could easily be an email.
+response: since this meeting is mostly status updates, let us move it to a shared document. everyone updates their section by friday noon. we only meet if there are active blockers.
+why it works: reading is faster than speaking. reclaiming 30 minutes for 6 people saves 3 hours of company time every single week. reserve synchronous time strictly for solving complex problems.
+*** the focus shield
+situation: slack messages piling up and context switching is killing your code quality.
+response: set status to: in deep work until 1 pm. call my cell if the servers are literally on fire.
+why it works: visual boundaries matter. when people see you are actively blocking out time, they hesitate before interrupting. treat your deep work blocks with the same respect as a meeting with the ceo.
+*** the scope creep defender
+situation: a product manager asks: can we just add this one small thing?
+response: that is a great idea. let us add it to the backlog for the next sprint so we do not derail our current deliverables.
+why it works: one small thing is never small. it introduces bugs, delays testing, and breaks momentum. acknowledging the idea while strictly deferring it keeps the current sprint pristine.
+*** the brain dump
+situation: too many open loops at 5 pm causing evening anxiety.
+response: spend 10 minutes writing every pending task down. close the laptop. the brain knows the list is safe and stops processing it.
+why it works: people remember uncompleted tasks better than completed ones. writing them down offloads the cognitive burden, allowing you to actually rest and recover without thinking about work at dinner.
+*** the energy audit
+situation: doing low-impact admin work during your peak mental hours.
+response: shift all low-leverage tasks to the 3 pm slump. reserve 9 am to 11 am strictly for architecture, coding, and high-level strategy.
+why it works: not all hours are created equal. two hours of focused energy in the morning can outproduce six hours of fatigued work in the afternoon. map your tasks to your biological energy levels.
+*** the single tab rule
+situation: 40 tabs open, constantly switching contexts, zero focus.
+response: close everything except the exact tool needed for the current task. friction prevents distraction.
+why it works: every open tab is a subtle cognitive drain. it is a constant reminder of something else you should be doing. by isolating your workspace, you force your brain to engage with the single problem in front of you.
+*** the weekend boundary
+situation: just checking email on a saturday morning.
+response: delete work apps from your personal phone. if it is an absolute emergency, they will call you.
+why it works: your brain needs uninterrupted recovery time to perform at a high level on monday. casual checking keeps you in a state of low-grade stress all weekend. sever the connection completely.
+*** the 80/20 shipper
+situation: polishing a feature for another week instead of launching.
+response: ship it when it solves the core problem. the final 20 percent of polish usually takes 80 percent of the time and delivers minimal value to the user.
+why it works: perfectionism is disguised procrastination. get the product into the hands of users. their feedback is infinitely more valuable than your internal assumptions about what needs polishing.
+*** the meeting cost calculator
+situation: inviting 8 engineers to a 1-hour call just to keep them in the loop.
+response: this meeting costs the company $1000 in engineering hours. let us cut the invite list to the 3 decision makers and record it for the rest.
+why it works: when you frame meetings in terms of actual dollar costs and lost engineering hours, unnecessary invites disappear. only invite people whose active input is required to move forward.
+*** the morning buffer
+situation: opening email or slack before even getting out of bed.
+response: no inputs for the first hour of the day. use that time to dictate your own priorities before reacting to everyone else.
+why it works: starting your day in your inbox puts you in a reactive state. you are instantly working on other people agendas. claim the first hour to set your own baseline and strategic goals for the day.
+*** the context switch batching
+situation: answering emails and messages the exact second they arrive.
+response: turn off all notifications. check your inbox exactly twice a day: 11 am and 4 pm. process to zero, then close the tab.
+why it works: context switching is the silent killer of productivity. batching your communication allows you to process information efficiently without breaking your deep work cycles multiple times an hour.
+*** the documentation habit
+situation: explaining the same deployment process for the third time this month.
+response: record a quick video while doing it once. add it to the company wiki. next time someone asks, just send the link.
+why it works: you should never solve the same problem twice. build a personal library of documentation. it scales your knowledge and radically reduces the time you spend answering repetitive questions.
+*** the let it burn principle
+situation: minor, non-critical bugs surfacing during a major feature launch.
+response: not every fire needs your water. if it does not impact revenue or security, let it sit in the backlog until bug-fix day.
+why it works: high performers are comfortable letting small things break so they can focus on the massive levers. if you chase every minor issue, you will never have the bandwidth to build the things that actually matter.
+*** the friday shutdown
+situation: walking into monday morning with anxiety about what to do first.
+response: spend the last 30 minutes of friday planning your top 3 tasks for monday. you leave work at work and start monday with immediate momentum.
+why it works: it creates a psychological bridge. you close the current week cleanly and pre-load your decision-making for the next. monday morning becomes about execution, not planning.
 ** diagrams as code
 tools: diagrams, go diagrams, mermaid, plantuml, ascii editor, markup
 ** race conditions

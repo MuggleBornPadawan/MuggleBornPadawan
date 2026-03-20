@@ -63,6 +63,112 @@ might generate text that is less relevant.
 - **ci/cd & deployment**: ensuring safe commits, pushes, and deployments (e.g., babysit-pr, deploy, cherry-pick)
 - **incident runbooks**: managing the symptom $\rightarrow$ investigation $\rightarrow$ report flow (e.g., oncall, correlator, queue-debug)
 - **infrastructure ops**: safety-gated cleanup and maintenance (e.g., orphans, deps, cost-investigation)
+** prompt guy
+*** json
+**** toolkit
+- { } curly brackets = organized information container
+- : colon = label to value separator
+- [ ] square brackets = a list of items
+**** example
+{   
+"customer_name": "sarah chen",   
+"email": "sarah@company.com",   
+"issue_type": "billing",   
+"steps_to_fix": [     "check billing page",
+"review payment history",     
+"request refund",     
+"update card on file"   ],   
+"status": "in-progress"
+ }
+**** template
+{   
+"customer_name": "[full name]",   
+"email": "[email address]",   
+"account_status": "[free / paid / enterprise]",   
+"issue_category": "[billing / technical / feature request / other]",
+"issue_description": "[2-3 sentences describing what happened]",
+"urgency_level": "[low / medium / high - explain why]",
+"requested_outcome": "[what the customer wants resolved]",
+"next_steps": [     
+"[first action required]",     
+"[second action if needed]"   ] 
+}
+**** raw template
+{ 
+"field_1": "[what information goes here?]",   
+"field_2": "[what information goes here?]",   
+"field_3": "[what information goes here?]",   
+"field_4": "[what information goes here?]" 
+}
+*** prompt template
+**** components
+- the task (what are you asking for?) - be specific about what you want created. not "write something" but "write a blog post about x" or "create a script scene with y."
+- the details (what are the parameters?) - include audience, tone, length, format. the more specific, the better ai understands what you want.
+- the voice & style (how should it sound?) - tell ai how to write. conversational? professional? funny? what should it avoid? this matters more than you think.
+- the output format (how do you want it organized?) - do you want headings? bullets? a specific structure? tell ai. it will deliver exactly that.
+**** example - Content Creator Writing Scripts
+{  
+
+ "task": "script_writing",   
+"content_type": "video_scene",  
+ "topic": "[Your scene topic - e.g., 'A mentor giving advice to a struggling creator']",  
+ "target_audience": "[Who's watching - e.g., 'content creators', 'entrepreneurs', 'business owners']", 
+  "tone": "conversational, authentic, relatable",  
+ "length": {     "scenes": 1,    
+ "dialogue_lines_per_character": "3-4"   },
+  
+ "voice_requirements": {     "style": "write like you're having a real conversation",     
+"avoid": ["formal language", 
+"overly dramatic", "clichés"],    
+ "focus_on": ["natural dialogue", 
+"real emotions", "practical advice"]   },   
+
+"output_format": {     "include_scene_setting": true,     "include_character_actions": true,     "include_dialogue": true,     "include_visual_notes": true,     "use_clear_sections": true   },
+
+
+ "requirements": {     "make_dialogue_natural": true,     "include_emotional_beat": true,     "provide_camera_direction": true   } 
+}
+- create a script scene for my video using the structure above.  Topic: A tech entrepreneur pitching their idea to an investor who keeps saying no. The investor softens by the end. Make it feel real - not Hollywood.
+**** example - Social Media Content Creator
+{  
+
+ "task": "social_media_content",   "platform": "[Instagram / LinkedIn / Twitter / TikTok]",   "post_type": "[educational / promotional / storytelling / quick_tip]",   "topic": "[What's your post about? - e.g., 'Why JSON prompting saves time']", 
+  "target_audience": "[Who's reading - e.g., 'small business owners', 'content creators', 'freelancers']",   
+"primary_goal": "[What do you want readers to do? - e.g., 'click link', 'save post', 'comment', 'sign up']",   "tone": "conversational, helpful, direct, no jargon",  
+ "voice_requirements": {     "style": "talk like you're texting a smart friend",     "avoid": ["corporate language", "buzzwords", "overly salesy"],    
+ "include": ["practical tips", "real examples", "honest perspective"]   },  
+
+ "output_format": {     "caption_length": "2-3 sentences max",     "include_hashtags": "5-7 relevant",     "include_call_to_action": true,     "include_hook": "a question or statement that stops scrolling",     "include_engagement_angle": true   },   
+
+"content_requirements": {     "must_be_actionable": true,     "include_one_main_idea": true,     "make_it_shareable": true   } 
+
+}
+- Create a social media post using the structure above.  Platform: LinkedIn Topic: How to save time with AI by structuring your prompts properly Goal: Get people to save the post and ask in comments how to do it Audience: Busy entrepreneurs and content creators Add one real example of how much time this saves
+**** example - Podcast & Devotional Creator
+{   
+
+"task": "content_formatting_and_organization",   "content_type": "podcast_episode / devotional",   "input": "[paste your existing written devotional here]",   
+"target_audience": "[Who listens - e.g., 'busy professionals', 'spiritual seekers', 'entrepreneurs']",   "tone": "warm, thoughtful, encouraging, genuine",  
+ "voice_requirements": {     "style": "speak like a trusted mentor, not a preacher",     "avoid": ["preachy tone", "overly complex language", "abstract concepts"],    
+ "include": ["personal stories", "practical takeaways", "relatable wisdom"]   },   
+
+"output_format": {     "episode_number": true,     "title": "hook listeners immediately",    
+ "theme_summary": "one sentence",     "opening_hook": "1-2 sentences to grab attention",     "main_teaching": "3-4 sentences with core idea",     "story_or_example": "relatable story that illustrates point",     "reflection_question": "question for listeners to sit with",     "action_step": "one thing they can do today",     "closing_thought": "1-2 sentences of encouragement"   },  
+
+ "requirements": {     "keep_it_conversational": true,     "make_it_memorable": true,     "include_specifics": "use real numbers, real examples"   } 
+
+}
+
+- format and organize these devotionals using the structure above.  treat each devotional as a separate episode. keep the original message but reorganize it using the structure. make sure each has a clear theme, story, reflection question, and action step.  
+  - devotional 1: [paste your first devotional here]
+  - devotional 2: [paste your second devotional here]  
+  - devotional 3: [paste your third devotional here]
+*** five questions
+- what are you asking for? be specific. "blog post about email marketing" not "write something."
+- who is it for? - define your audience. small business owners? students? this changes everything.
+- how should it sound? - the tone. professional? funny? casual? what should it avoid?
+- what should be included? - the requirements. headings? bullets? examples? ctas? what can't be missing?
+- how should it be organized? -the output format. sections? lists? intro? conclusion?  
 ** simple prompts to get started
 - i want to learn xxxx in the context of yyyy. please help me learn the basics and foundational knowledge about it in a step by step manner. include examples, relevant concepts, business impact and technical impact. noob. debian. bookworm. bash. command line only. 
 - ask me any clarifying questions before you begin
