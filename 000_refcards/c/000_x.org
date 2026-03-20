@@ -330,14 +330,14 @@ problem solving techniques: two pointers, sliding window, prefix sum, monotonic 
 ⑧ dashboard → streamlit + charts
 ⑨ automation bot → emails / reports
 ⑩ capstone project → solve a real problem
-- build a password manager to learn hashing and file storage
-- build a url shortener to understand routing and unique ids
-- build a todo app with deadlines to practice crud
-- build a web scraper to learn requests and parsing
-- build a cli expense tracker to master logic and edge cases
-- build a log analyzer to work with timestamps and patterns
-- build a simple recommender using rule-based similarity
-- build an email automation script with scheduling
+- build a password manager to learn file handling, hashing (not full crypto)
+- build a url shortener to understand routing, ids, and persistence
+- build a todo app with deadlines to practice crud and basic state
+- build a web scraper to learn requests, parsing, and rate limits
+- build a cli expense tracker to master logic, files, and edge cases
+- build a log analyzer to work with files, timestamps, and patterns
+- build a simple recommender using similarity rules (not ml magic)
+- build an email automation script using smtp and scheduling
 ** next
 
 
