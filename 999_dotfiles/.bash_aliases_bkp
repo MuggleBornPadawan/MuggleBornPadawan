@@ -68,6 +68,7 @@ alias qg='./MuggleBornPadawan/700_linux/scripts/grok.sh $1'
 # security
 alias security="sudo ufw status verbose && sudo ufw version && echo 'use this command to get more info: sudo ufw app list'"
 alias genpass="cd && ./MuggleBornPadawan/700_linux/scripts/password_generator.sh && cd -"
+alias snow="sudo -i -u snow"
 # cleanup
 alias j='tk && pw && r && genpass && history -w && history -c && rm .bash_history Dockerfile Jenkinsfile tempFile* aeo_results_log.txt daily_nuggets.txt tmp.txt && c && echo "clean slate protocol activated" && tn'
 alias i='to ; tty ; pwd; date ; ulimit -a | grep processes ; g ; abc ; sleep 5 ; tf'
