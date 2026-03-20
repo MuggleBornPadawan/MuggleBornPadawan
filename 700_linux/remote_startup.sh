@@ -97,4 +97,6 @@ echo "run 'sudo clamscan -r /' every day. stay safe. have a good day"
 echo "run 'sudo systemctl status clamav-freshclam' to check status"
 echo "use 'tmux set-option -g status on/off' to toggle tmux status bar"
 cd
+# user creation for use & throw
+./MuggleBornPadawan/700_linux/scripts/snow.sh
 espeak -v en-gb -s 175 -p 50 "Tux out"
