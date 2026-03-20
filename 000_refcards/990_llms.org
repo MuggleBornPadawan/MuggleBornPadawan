@@ -53,6 +53,16 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** skills
+- **library & api reference**: deep knowledge of internal libraries, clis, sdks, and "gotchas" (e.g., billing-lib, platform-cli, events)
+- **product verification**: running the product to verify functionality (e.g., signup-driver, checkout, admin)
+- **data & analysis**: understanding ids, field names, and query patterns (e.g., funnel-query, grafana, datadog)
+- **business automation**: turning multi-tool workflows into single commands (e.g., standup, tickets, weekly-recap)
+- **scaffolding & templates**: using framework-correct boilerplate (e.g., new-app, migration, workflow)
+- **code quality & review**: methodologies that result in better code (e.g., adversarial, hypothesis, bughunt)
+- **ci/cd & deployment**: ensuring safe commits, pushes, and deployments (e.g., babysit-pr, deploy, cherry-pick)
+- **incident runbooks**: managing the symptom $\rightarrow$ investigation $\rightarrow$ report flow (e.g., oncall, correlator, queue-debug)
+- **infrastructure ops**: safety-gated cleanup and maintenance (e.g., orphans, deps, cost-investigation)
 ** simple prompts to get started
 - i want to learn xxxx in the context of yyyy. please help me learn the basics and foundational knowledge about it in a step by step manner. include examples, relevant concepts, business impact and technical impact. noob. debian. bookworm. bash. command line only. 
 - ask me any clarifying questions before you begin
