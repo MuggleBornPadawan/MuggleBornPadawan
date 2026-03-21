@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Sat Mar 21 01:40:44 PM IST 2026 
+Date: Sat Mar 21 04:56:15 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09070-g0245f6566c20
 Firewall is active and enabled on system startup
@@ -56,18 +56,18 @@ Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
 Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:1 https://deb.debian.org/debian bookworm InRelease
-Err:3 http://deb.debian.org/debian bookworm-backports InRelease
+Err:2 http://deb.debian.org/debian bookworm-backports InRelease
   Temporary failure resolving 'deb.debian.org'
-Err:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Err:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
   Temporary failure resolving 'storage.googleapis.com'
 Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
@@ -89,13 +89,13 @@ Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:2 https://deb.debian.org/debian bookworm InRelease
-Err:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
 Err:1 http://deb.debian.org/debian bookworm-backports InRelease
   Temporary failure resolving 'deb.debian.org'
+Err:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+  Temporary failure resolving 'storage.googleapis.com'
 Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:2 https://deb.debian.org/debian bookworm InRelease
