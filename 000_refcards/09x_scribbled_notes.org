@@ -1,4 +1,27 @@
-* scribbled notes 
+* scribbled notes
+** learning order
+- learn sql before orm
+- learn git before jenkins
+- learn math before ai/ml
+- learn sql before nosql
+- learn css before tailwind
+- learn linux before docker
+- learn solidity before dapps
+- learn english before python
+- learn rest before graphql
+- learn javascript before react
+- learn html before javascript
+- learn javascript before typescript
+- learn react before microfrontends
+- learn containers before kubernetes
+- learn neural networks before llms
+- learn monolith before microservices
+- learn data structures before leetcode
+- learn networking before cloud services
+- learn monolith before modular monolith
+- learn to draw flowcharts before writing code
+- learn business requirements before writing code  
+
 ** high performers
 high performers do not manage time. they manage boundaries.
 *** the meeting rejector
