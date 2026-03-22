@@ -29,7 +29,7 @@ sudo chmod 700 "/home/$targetUser"
 echo "$targetUser:$userPass" | sudo chpasswd
 
 # 4. Grant sudo privileges
-sudo usermod -aG "$adminGroup" "$targetUser"
+# sudo usermod -aG "$adminGroup" "$targetUser"
 
 # 5. Check user existence
 sudo getent group | grep $targetUser
