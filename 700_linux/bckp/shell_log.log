@@ -64,3 +64,4 @@ Ign:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
