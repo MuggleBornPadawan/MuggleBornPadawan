@@ -1,0 +1,118 @@
+#+title: java introduction
+* getting started 
+** object oriented programming
+- abstraction, encapsulation, inheritance, and polymorphism.
+*** abstraction
+abstraction is the process of hiding complex implementation details while exposing only the essential features of an object. it allows developers to work with high-level concepts without worrying about the underlying implementation.
+**** how it works
+imagine a car class with a method called stop(). users of this class don’t need to know how the car stops—they just need to call stop(), and the underlying implementation takes care of the details.
+
+abstract class Car {
+    abstract void stop();  // Abstract method, no implementation
+}
+
+class Honda extends Car {
+    @Override
+    void stop() {
+        System.out.println("Honda slowing down and stopping.");
+    }
+}
+
+class Tesla extends Car {
+    @Override
+    void stop() {
+        System.out.println("Tesla applies brakes and stops.");
+    }
+}
+here, car defines the stop() method but doesn’t provide an implementation. honda and tesla provide their specific implementations, hiding the details from the users of these classes.
+**** why abstraction matters
+- simplifies complex systems by exposing only necessary parts.
+- improves code maintainability by separating the interface from implementation.
+- enhances security by hiding implementation logic from unauthorized access.
+*** encapsulation
+encapsulation is the concept of bundling data (fields) and methods that operate on the data into a single unit (class) while restricting direct access to the data.
+**** how it works
+encapsulation is achieved using access modifiers (private, protected, public) to control access to variables and methods.
+class BankAccount {
+    private double balance;  // Private variable, cannot be accessed directly
+
+    public BankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    public double getBalance() {
+        return balance;  // Provides controlled access to balance
+    }
+}
+here balance is private, so it cannot be accessed directly from outside. also, getbalance() is public, allowing controlled access to the balance.
+
+**** why encapsulation matters
+- protects data integrity by preventing unauthorized modifications.
+- reduces dependencies by keeping data and its operations in one place.
+- enhances flexibility as changes to implementation don’t affect external code.
+*** inheritance
+inheritance allows a class (child) to inherit attributes and methods from another class (parent). this promotes code reuse and hierarchical relationships between classes.
+**** how it works
+consider a vehicle class. instead of rewriting common functionality for each type of vehicle, a car and bike can inherit from vehicle.
+
+class Car {
+    String brand = "Generic Brand";
+
+    void honk() {
+        System.out.println("Beep! Beep!");
+    }
+}
+
+class Car extends Vehicle {
+    int doors = 4;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        System.out.println(myCar.brand);  // Inherited from Vehicle
+        myCar.honk();  // Inherited method
+        System.out.println("Number of doors: " + myCar.doors);
+    }
+}
+here, car inherits brand and honk() from vehicle, reusing existing logic.
+**** Why Inheritance Matters
+- reduces code duplication, making maintenance easier.
+- creates hierarchical relationships (e.g., animal → mammal → dog).
+- improves extensibility, allowing new behaviors to be added to child classes.
+*** polymorphism
+polymorphism allows a single method to behave differently based on the object it is called on. this means one function can be applied to multiple object types.
+there are two types of polymorphism:
+compile-time
+run-time
+**** how it works
+here’s an example of polymorphism:
+
+class MathOperations {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOperations math = new MathOperations();
+        System.out.println(math.add(5, 10));  // Calls int version
+        System.out.println(math.add(5.5, 2.2));  // Calls double version
+    }
+}
+here, the add() method behaves differently based on the parameter type.
+**** why polymorphism matters
+enhances flexibility by allowing objects of different types to be treated uniformly.
+encourages code extensibility without modifying existing code.
+supports the open-closed principle (ocp)—extend behavior without modifying existing logic.

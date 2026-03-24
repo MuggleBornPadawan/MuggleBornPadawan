@@ -53,6 +53,17 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** framing
+i'm going to ask you the same question three times with different framings. for each, give your honest analysis. then compare all three answers and flag any contradictions.
+- framing 1 (supportive): "i'm excited about [topic]. what are the biggest benefits?"
+- framing 2 (skeptical): "i'm worried about [topic]. what are the biggest risks?"
+- framing 3 (neutral): "give me a balanced analysis of [topic], including both benefits and risks with evidence for each."
+after all three, tell me: did your core conclusions change based on my framing? if so, which answer is closest to your actual assessment?
+** agents should interview you
+- your task is to interview me and get all the information you need to [your task]
+  - come up with a number of interview questions for me about landing page designs i like, why i like them and what i don’t like
+  - ask me a number of questions on how i think about sales copy, ask me for some examples i like and dislike and why
+  - interview me about writers I like, which books/posts I love from that author and why
 ** skills
 - **library & api reference**: deep knowledge of internal libraries, clis, sdks, and "gotchas" (e.g., billing-lib, platform-cli, events)
 - **product verification**: running the product to verify functionality (e.g., signup-driver, checkout, admin)
