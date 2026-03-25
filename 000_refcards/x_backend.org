@@ -1,0 +1,43 @@
+#+title: backend developer intro
+
+* basics 
+- http vs https
+- tcp vs udp
+- dns resolution flow
+- what happens when you type a url
+- rest vs graphql
+- idempotency in apis
+- rate limiting strategies
+- authentication vs authorization
+- jwt vs sessions
+- cookies vs tokens
+- caching (redis, cdn, cache invalidation)
+- database indexing
+- sql vs nosql trade-offs
+- acid vs base
+- normalization vs denormalization
+- connection pooling
+- n+1 query problem
+- pagination (offset vs cursor)
+- load balancing (l4 vs l7)
+- horizontal vs vertical scaling
+- cap theorem
+- event-driven architecture
+- message queues (kafka vs rabbitmq)
+- async vs sync processing
+- websockets vs http
+- api versioning strategies
+- retries, backoff & circuit breakers
+- distributed systems basics
+- consistency models (strong vs eventual)
+- database transactions
+- sharding & partitioning
+- cold start problem
+- observability (logs, metrics, tracing)
+- monitoring vs alerting
+- docker basics
+- ci/cd pipelines
+- graceful shutdown
+- timeouts & retries
+- security basics (xss, csrf, sql injection)
+- api gateway role
