@@ -53,6 +53,14 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** power users
+you are helping me with [specific project/task]. here's what you need to know:
+- about me: [your role, expertise level, industry]
+- the project: [what you're working on and why]
+- what good looks like: [examples, tone, format, length]
+- constraints: [what to avoid, word limits, style rules]
+- success criteria: [how i'll judge if this is useful]
+- with this context, please [your actual request].
 ** framing
 i'm going to ask you the same question three times with different framings. for each, give your honest analysis. then compare all three answers and flag any contradictions.
 - framing 1 (supportive): "i'm excited about [topic]. what are the biggest benefits?"
