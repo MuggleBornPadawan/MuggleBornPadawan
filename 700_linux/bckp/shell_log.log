@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Thu Mar 26 12:32:29 PM IST 2026 
+Date: Thu Mar 26 10:15:08 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09070-g0245f6566c20
 Firewall is active and enabled on system startup
@@ -51,30 +51,30 @@ Removing unused dependencies...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
+Ign:1 https://deb.debian.org/debian bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
-Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Err:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:1 https://deb.debian.org/debian bookworm InRelease
+Err:2 http://deb.debian.org/debian bookworm-backports InRelease
   Temporary failure resolving 'deb.debian.org'
 Err:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
   Temporary failure resolving 'storage.googleapis.com'
 Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
+Ign:1 https://deb.debian.org/debian bookworm InRelease
 Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:2 https://deb.debian.org/debian bookworm InRelease
+Err:1 https://deb.debian.org/debian bookworm InRelease
   Temporary failure resolving 'deb.debian.org'
 Err:4 https://deb.debian.org/debian bookworm-updates InRelease
   Temporary failure resolving 'deb.debian.org'
@@ -83,25 +83,25 @@ Err:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Reading package lists...
 --- Cleanup Complete ---
 Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
 Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
 Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
 Err:1 http://deb.debian.org/debian bookworm-backports InRelease
   Temporary failure resolving 'deb.debian.org'
-Err:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Err:2 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
   Temporary failure resolving 'storage.googleapis.com'
 Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
 Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:2 https://deb.debian.org/debian bookworm InRelease
+Err:3 https://deb.debian.org/debian bookworm InRelease
   Temporary failure resolving 'deb.debian.org'
 Err:4 https://deb.debian.org/debian bookworm-updates InRelease
   Temporary failure resolving 'deb.debian.org'
@@ -294,7 +294,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27951/Wed Mar 25 11:54:10 2026
+ClamAV 1.4.3/27952/Thu Mar 26 11:54:52 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
