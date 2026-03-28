@@ -27,7 +27,7 @@ echo "Starting recursive shredding..."
 # -z: final overwrite with zeros to hide shredding
 # -v: verbose output
 # We exclude the script itself to prevent it from being killed mid-execution
-find . -type f ! -name "$SCRIPT_NAME" -exec shred -u -z -v {} +
+find . -type f ! -name "$SCRIPT_NAME" -exec shred -u -z -v 35 {} +
 
 # 2. Remove all directories (starting from deepest)
 find . -mindepth 1 -depth -type d -exec rm -rvf {} +
