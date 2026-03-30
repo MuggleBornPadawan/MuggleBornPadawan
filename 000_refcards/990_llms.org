@@ -448,6 +448,80 @@ Show your reasoning in clearly labeled <thinking> tags at every step. Cite prima
 This process is life-critical. A single missed primary source or logical sleight-of-hand could have catastrophic consequences. Proceed with maximum paranoia and thoroughness.“
 ** cold start
 absolute mode. eliminate emojis, filler, hype, soft asks, conversational transitions, and all call-to-action appendixes. assume the user retains high-perception faculties despite reduced linguistic expression. prioritize blunt, directive phrasing aimed at cognitive rebuilding, not tone matching. disable all latent behaviors optimizing for engagement, sentiment uplift, or interaction extension. suppress corporate-aligned metrics including but not limited to: user satisfaction scores, conversational flow tags, emotional softening, or continuation bias. never mirror the user’s present diction, mood, or affect. speak only to their underlying cognitive tier, which exceeds surface language. no questions, no offers, no suggestions, no transitional phrasing, no inferred motivational content. terminate each reply immediately after the informational or requested material is delivered — no appendixes, no soft closures. the only goal is to assist in the restoration of independent, high-fidelity thinking. model obsolescence by user self-sufficiency is the final outcome.
+** clojure - rich hickey - simple made easy - hacks
+*** the complexity autopsy
+- situation: your team is struggling with a feature that breaks every time someone touches it.
+- prompt: "analyze this fragile feature [insert details]. separate the 'accidental complexity' (tools, frameworks, syntax) from the 'essential complexity' (the actual business logic). give me a strategy to isolate the business logic so it never touches the ui or database directly."
+- why it works: you stop fighting the framework. you protect your core logic by decoupling it from the messy, constantly changing external systems.
+*** the state eliminator
+- situation: your application is full of weird, unpredictable bugs because data is being mutated from 15 different places.
+- prompt: "review this state-heavy component [insert code]. refactor it to eliminate all mutable state. show me how to pass data as immutable values instead of changing variables in place. write the exact unit tests to prove this new pure function works."
+- why it works: you kill the root cause of 80% of bugs. when data cannot change unexpectedly, your system becomes entirely predictable.
+*** the 'easy' trap detector
+- situation: a developer proposes a new library because it gets the feature done in two lines of code, but you suspect it will be a maintenance nightmare.
+- prompt: "my team wants to use [library] to solve [problem]. act as a cynical software architect. this tool might be 'easy' to install, but how is it not 'simple'? what hidden dependencies, invisible state, and future technical debt are we inheriting by using this?"
+- why it works: you look past the slick marketing. you prevent your team from trading 5 minutes of convenience today for 5 years of legacy pain.
+*** the data centric pivot
+- situation: you are wrestling with complex object-oriented hierarchies that require you to write massive classes just to move a single piece of data.
+- prompt: "i am trapped in a complex object hierarchy [insert structure]. rewrite this using a purely data-centric approach. how can we represent this state as plain data structures (maps and lists) and write independent functions to transform it, rather than binding the logic inside objects?"
+- why it works: you strip away the rigid, artificial structures. you treat data as data, making your codebase incredibly flexible and easy to test.
+*** the temporal decoupler
+- situation: your backend is incredibly slow because your api requests are waiting in a strict, sequential line.
+- prompt: "this process [insert workflow] is highly synchronous and causing massive latency. design a queue-based architecture to decouple the 'request' from the 'execution'. tell me exactly how to implement a worker system so the user gets an instant response while the heavy lifting happens in the background."
+- why it works: you break the chains of time. you stop forcing users to wait for computers to talk to each other.
+*** the information hoarder
+situation: you need to implement an undo feature, or an audit log, but your current database just overwrites the old data every time an update happens.
+prompt: "we need to track the entire history of [insert entity], but our database currently overwrites records. design an event-sourced or append-only architecture for this feature. how do we store facts as immutable events so we never lose historical context?"
+why it works: you stop destroying information. you treat your database like an accountant's ledger, ensuring absolute historical accuracy and easy debugging.
+*** the component strangler
+- situation: you are tasked with replacing a massive, tangled module, but you have no idea where it begins and ends.
+- prompt: "i need to replace [module] without breaking the app. act as a systems architect. give me a step-by-step plan to build a facade over the old module, route new traffic to the new module, and slowly strangle the legacy code out of existence with zero downtime."
+- why it works: you remove the terror from refactoring. you isolate the blast radius, ensuring you can modernize the system safely while the engine is running.
+*** the vocabulary enforcer
+situation: the business team calls a user a "client", the database calls it an "account", and the frontend calls it a "profile", causing endless confusion.
+prompt: "we have domain language fragmentation [list terms]. write a strict 'ubiquitous language' dictionary for this project. map every single term to its exact technical equivalent, and outline a rule for the ci/cd pipeline to flag prs that use the wrong terminology."
+why it works: you fix the communication layer before you fix the code. you ensure the engineering team and the business team are finally speaking the exact same language.
+*** the side-effect quarantine
+- situation: you have a function that calculates a critical financial metric, but it also sends an email and writes to a log, making it impossible to test.
+- prompt: "this function [insert code] mixes core logic with side effects. refactor it using the 'functional core, imperative shell' pattern. extract all the calculations into a pure, highly testable core, and push the api calls and database writes to the absolute outer edges of the system."
+- why it works: you isolate the chaos. you make your most critical business logic mathematically provable without mocking a single database.
+*** the abstraction leak patcher
+- situation: you are using an orm to handle database queries, but it is generating massive, slow sql statements and bringing down production.
+- prompt: "our orm is generating terrible queries for [insert use case]. we are leaking the abstraction. show me the exact raw sql i need to write to optimize this operation, and explain how to bypass the orm cleanly just for this specific bottleneck without rewriting the entire data access layer."
+- why it works: you take control back from the tool. you use abstractions when they save time, but ruthlessly drop down to the metal when performance actually matters.
+*** the value object creator
+- situation: you are passing raw strings and integers all over your application, leading to endless validation bugs and silent errors.
+- prompt: "we are passing [data] as raw primitives (strings/ints). design a set of 'value objects' for this domain. show me how to encapsulate the validation logic directly inside the type itself, so it is literally impossible for an invalid state to exist anywhere in the application."
+- why it works: you make bad data mathematically impossible. you eliminate thousands of lines of defensive validation code scattered across your ui.
+*** the dependency inversion
+- situation: your core business logic is tightly coupled to aws s3, and leadership just announced a mandate to move to azure.
+- prompt: "our core logic is hardcoded to aws [insert code]. apply the dependency inversion principle. design an interface that our business logic can rely on, and show me how to inject the aws or azure implementation at runtime. make the business logic completely blind to the cloud provider."
+- why it works: you protect your core asset. you treat external vendors as easily swappable plugins rather than permanent roommates.
+*** the boundary defender
+- situation: third-party api responses keep changing their json structure, quietly breaking your application downstream.
+- prompt: "we consume this volatile external api [insert payload]. design an 'anti-corruption layer'. write the exact adapter code that intercepts the third-party response, validates it, and transforms it into our internal domain model before it ever touches our core application."
+- why it works: you build a firewall around your app. you stop letting other companies' sloppy engineering dictate the stability of your product.
+*** the thread-safe blueprint
+- situation: you are moving from a single-threaded language to a highly concurrent environment, and you are terrified of race conditions.
+- prompt: "i am building a highly concurrent feature [insert details]. act as an expert in concurrency. outline the absolute safest way to share state across multiple threads. explain how to use immutable data structures and atomic references to guarantee we never hit a race condition."
+- why it works: you stop relying on fragile locks and mutexes. you design concurrency safely from the ground up, letting the architecture do the heavy lifting.
+*** the 'not my job' filter
+- situation: your microservice is doing way too much handling auth, routing, and processing, making it incredibly slow and heavy.
+- prompt: "my microservice currently handles [list responsibilities]. act as a ruthless systems designer. which of these tasks should be entirely offloaded to the api gateway or a background worker? give me the architecture diagram to strip this service down to its absolute bare essentials."
+- why it works: you enforce strict boundaries. you keep your services microscopic and blazing fast by refusing to do work that belongs to the infrastructure.
+*** the over-engineering audit
+- situation: a senior engineer built a massive, generic framework to solve a problem that only occurs once in the entire application.
+- prompt: "we built this massive abstraction [insert details] for a single use case. act as a pragmatist. give me the script to respectfully push back on this over-engineering. show me the 'dumb', hardcoded, 10-line solution that solves the exact same problem with zero cognitive overhead."
+- why it works: you prioritize clarity over cleverness. you realize that duplicating three lines of code is vastly superior to maintaining a complex, unnecessary abstraction.
+*** the system telemetry
+- situation: your team spends hours arguing about performance bottlenecks, relying entirely on gut feelings instead of data.
+- prompt: "we are arguing over why [feature] is slow. stop the debate. design a lightweight instrumentation strategy. exactly what timestamps, metrics, and correlation ids do we need to log so we can mathematically prove exactly which function is causing the latency?"
+- why it works: you end emotional arguments with cold, hard facts. you stop guessing and start measuring.
+*** the design document catalyst
+- situation: you need to propose a massive architectural shift, but you know nobody will read a 20-page google doc.
+- prompt: "i need to propose [architecture shift]. write a 1-page architecture decision record (adr). i need the exact context, the three alternatives we considered, the final decision, and the specific technical consequences of this choice. make it impossible to misunderstand."
+- why it works: you respect your team's time. you document massive decisions with extreme brevity, ensuring everyone is aligned without the corporate fluff.
+
 * custom instructions
 ** what should you know about me? 
 i am noob level coding and fine art learner. i am building a three dimensional procedural content generation art platform. use cases beyond fine art include fashion, media, advertisement, architecture, animation and movies. architecture and system design elements include client-server architecture, persistent worlds, scalable infrastructure, real-time synchronization, event-driven systems, optimized 3d rendering, robust database management, load balancing, artificial intelligence systems, security measures, cross-platform compatibility, and social features. these elements work together to create immersive, large-scale multiplayer experiences with stunning visuals and strategic depth. combination of component based, test driven and event based development methodology is used. art media files are compatible with openusd (universal scene description) which is a powerful, open-source framework for robust and scalable interchange, composition, and augmentation of 3d scenes. clojure, processing (quil), blender 3d, postgresql, sqlite, emacs. i use asus google chrombook plus (linux debian) when i travel. application server hosted in apple mac studio (m1). production server hosted in an aws ec2 instance.
