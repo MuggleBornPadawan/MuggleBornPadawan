@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Mon Mar 30 02:02:56 PM IST 2026 
+Date: Mon Mar 30 11:12:53 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09070-g0245f6566c20
 Firewall is active and enabled on system startup
@@ -55,39 +55,58 @@ Reading state information...
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
+Ign:1 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
+Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:1 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:1 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
+Err:1 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+  Temporary failure resolving 'storage.googleapis.com'
+Err:2 http://deb.debian.org/debian bookworm-backports InRelease
+  Temporary failure resolving 'deb.debian.org'
+Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
+Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Err:3 https://deb.debian.org/debian bookworm InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:4 https://deb.debian.org/debian bookworm-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:5 https://deb.debian.org/debian-security bookworm-security InRelease
+  Temporary failure resolving 'deb.debian.org'
+Reading package lists...
+--- Cleanup Complete ---
 Ign:1 https://deb.debian.org/debian bookworm InRelease
 Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
-Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:1 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [305 kB]
-Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en [257 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:9 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:11 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:12 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
-Get:13 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
-Get:14 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [294 kB]
-Get:15 https://deb.debian.org/debian-security bookworm-security/main Translation-en [179 kB]
-Get:16 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
+Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
-Get:17 https://storage.googleapis.com/cros-packages/145 bookworm Release [3,109 B]
-Get:18 https://storage.googleapis.com/cros-packages/145 bookworm Release.gpg [2,365 B]
-Get:19 https://storage.googleapis.com/cros-packages/145 bookworm/main amd64 Packages [5,139 B]
-Get:20 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
-Get:21 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
-Fetched 20.8 MB in 43s (484 kB/s)
-Reading package lists...
---- Cleanup Complete ---
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/145 bookworm Release
+Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:1 https://deb.debian.org/debian bookworm InRelease
+Err:3 https://storage.googleapis.com/cros-packages/145 bookworm InRelease
+  Temporary failure resolving 'storage.googleapis.com'
+Err:2 http://deb.debian.org/debian bookworm-backports InRelease
+  Temporary failure resolving 'deb.debian.org'
+Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:1 https://deb.debian.org/debian bookworm InRelease
+Ign:4 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Err:1 https://deb.debian.org/debian bookworm InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:4 https://deb.debian.org/debian bookworm-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:5 https://deb.debian.org/debian-security bookworm-security InRelease
+  Temporary failure resolving 'deb.debian.org'
 Reading package lists...
 Reading package lists...
 Building dependency tree...
