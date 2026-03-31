@@ -48,7 +48,7 @@ sudo apt-get update
 echo "--- Cleanup Complete ---"
 #linux debian packages
 sudo apt-get update && sudo apt-get dist-upgrade
-sudo apt-get upgrade pulseaudio-utils vorbis-tools gh calc uuid-runtime fonts-dejavu fzf zoxide gnuplot nasm ffmpeg lm-sensors sqlite3 mpg123 dnsutils make bats jq cron postfix mailutils pass gnupg pv tldr tree bat fd-find git rig espeak espeak-ng nodejs npm openjdk-17-jdk python3 python3-pip sbcl mit-scheme racket clojure rlwrap leiningen emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay trash-cli
+sudo apt-get upgrade debsums pulseaudio-utils vorbis-tools gh calc uuid-runtime fonts-dejavu fzf zoxide gnuplot nasm ffmpeg lm-sensors sqlite3 mpg123 dnsutils make bats jq cron postfix mailutils pass gnupg pv tldr tree bat fd-find git rig espeak espeak-ng nodejs npm openjdk-17-jdk python3 python3-pip sbcl mit-scheme racket clojure rlwrap leiningen emacs magit sbcl clisp r-base build-essential firefox-esr fortune cowsay trash-cli
 #clamav - antivirus package
 sudo apt-get upgrade gcc make pkg-config python3 python3-pip python3-pytest valgrind cmake check libbz2-dev libcurl4-openssl-dev libjson-c-dev libmilter-dev libncurses5-dev libpcre2-dev libssl-dev libxml2-dev zlib1g-dev
 #firewall - security - openvpn
@@ -58,6 +58,7 @@ sudo apt-get upgrade ufw netcat-openbsd iproute2 tcpdump lsof neofetch rsync hto
 sudo apt-get upgrade podman crun
 #cleanup
 sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
+sudo debsums -s
 #npm packages
 npm list -g --depth=0
 #npm outdated
