@@ -53,6 +53,21 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** the llm council - andrej karpathy
+- source: https://x.com/karpathy/status/1992381094667411768?s=20
+- "council this" agent - 5 advisors spin up, argue, review each other's blind spots, and hand me a verdict. all inside one session.
+*** the 5 advisors
+- the contrarian: looks for what will fail. assumes your idea has a fatal flaw and tries to find it. if everything looks solid, digs deeper. (catches the "this sounds great but have you thought about..." gaps you skip when you're excited about something)
+- the first principles thinker: ignores your question and asks what you're actually trying to solve. strips away assumptions. rebuilds the problem from the ground up. (catches the "you're optimizing the wrong variable entirely" problem, which happens more often than you'd think)
+- the expansionist: hunts for upside you're missing. what could be bigger? what adjacent opportunity is sitting right next to your question that you haven't noticed? (catches the "you're thinking too small" blind spot)
+- the outsider: has zero context about you, your field, or your history. responds purely to what's in front of them. (catches the curse of knowledge: things that are obvious to you but completely invisible to your customers)
+- the executor: only cares about one thing: what do you do monday morning? if an idea sounds brilliant but has no clear first step, the executor will say so. (catches brilliant plans with no path to actually doing them, which is most of them)
+*** the chairman - why the peer review matters
+this is what separates the council from just asking claude 5 times. after all 5 advisors respond, the skill anonymizes everything. shuffles which advisor maps to which letter. the reviewers don't know who said what. then 5 reviewers read all the responses and answer 3 questions:
+- which response is strongest and why?
+- which has the biggest blind spot?
+- what did all five miss?
+that last question is the most valuable one. 
 ** power users
 you are helping me with [specific project/task]. here's what you need to know:
 - about me: [your role, expertise level, industry]
