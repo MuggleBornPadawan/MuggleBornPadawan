@@ -1,0 +1,50 @@
+================================================================================
+                    SUPPLY CHAIN COMPLIANCE AUDIT REPORT
+================================================================================
+
+SCAN DETAILS
+--------------------------------------------------------------------------------
+Date:        2026-04-02 23:16:13
+Hostname:    penguin
+OS:          Debian GNU/Linux 12 (bookworm)
+Threshold:   7 days
+
+STATISTICS
+--------------------------------------------------------------------------------
+Packages Scanned:  23
+Flagged (Risk):    23
+Safe (Trusted):    0
+
+FLAGGED PACKAGES
+--------------------------------------------------------------------------------
+  - firefox-esr (140.9.0esr-1~deb12u1) from cros.list (ChromeOS - UNTRUSTED)
+  - hicolor-icon-theme:all (0.17-2) from cros.list (ChromeOS - UNTRUSTED)
+  - man-db (2.11.2-2) from cros.list (ChromeOS - UNTRUSTED)
+  - desktop-file-utils (0.26-1) from cros.list (ChromeOS - UNTRUSTED)
+  - bind9-libs (1:9.18.47-1~deb12u1) from cros.list (ChromeOS - UNTRUSTED)
+  - bind9-host (1:9.18.47-1~deb12u1) from cros.list (ChromeOS - UNTRUSTED)
+  - bind9-dnsutils (1:9.18.47-1~deb12u1) from cros.list (ChromeOS - UNTRUSTED)
+  - dnsutils:all (1:9.18.47-1~deb12u1) from cros.list (ChromeOS - UNTRUSTED)
+  - libc-bin (2.36-9+deb12u13) from cros.list (ChromeOS - UNTRUSTED)
+  - man-db (2.11.2-2) from cros.list (ChromeOS - UNTRUSTED)
+  - libxml-parser-perl (2.46-4+deb12u1) from cros.list (ChromeOS - UNTRUSTED)
+  - man-db (2.11.2-2) from cros.list (ChromeOS - UNTRUSTED)
+  - cros-im (63707) from cros.list (ChromeOS - UNTRUSTED)
+  - libgtk-3-0 (3.24.38-2~deb12u3) from cros.list (ChromeOS - UNTRUSTED)
+  - libgtk-4-1 (4.8.3+ds-2+deb12u1) from cros.list (ChromeOS - UNTRUSTED)
+  - libfile-fnmatch-perl (0.02-3+b1) from cros.list (ChromeOS - UNTRUSTED)
+  - debsums:all (3.0.2.1) from cros.list (ChromeOS - UNTRUSTED)
+  - man-db (2.11.2-2) from cros.list (ChromeOS - UNTRUSTED)
+  - libpng16-16 (1.6.39-2+deb12u4) from cros.list (ChromeOS - UNTRUSTED)
+  - libpng-tools (1.6.39-2+deb12u4) from cros.list (ChromeOS - UNTRUSTED)
+  - libpng-dev (1.6.39-2+deb12u4) from cros.list (ChromeOS - UNTRUSTED)
+  - libc-bin (2.36-9+deb12u13) from cros.list (ChromeOS - UNTRUSTED)
+  - man-db (2.11.2-2) from cros.list (ChromeOS - UNTRUSTED)
+
+SAFE PACKAGES
+--------------------------------------------------------------------------------
+
+
+================================================================================
+                              END OF REPORT
+================================================================================

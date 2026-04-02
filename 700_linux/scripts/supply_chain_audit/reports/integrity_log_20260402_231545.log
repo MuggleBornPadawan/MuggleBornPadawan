@@ -1,0 +1,6 @@
+[2026-04-02 23:15:45] [INFO] Audit started - Timestamp: 20260402_231545
+[2026-04-02 23:15:45] [INFO] Dependencies OK
+[2026-04-02 23:15:45] [INFO] Age threshold: 7 days
+[2026-04-02 23:15:45] [INFO] JSON report: /home/rgroot/supply_chain_audit/reports/quarantine_20260402_231545.json
+[2026-04-02 23:15:45] [INFO] Text report: /home/rgroot/supply_chain_audit/reports/compliance_report_20260402_231545.txt
+[2026-04-02 23:15:45] [INFO] Audit completed successfully

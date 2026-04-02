@@ -1,0 +1,121 @@
+╔══════════════════════════════════════════════════════════════╗
+║        SUPPLY CHAIN COMPLIANCE AUDIT SCANNER               ║
+║        Version 1.0 | Debian/Ubuntu Systems                 ║
+╚══════════════════════════════════════════════════════════════╝
+[2026-04-02 23:09:18] [INFO] Audit started
+[2026-04-02 23:09:18] [INFO] Reports directory: /home/rgroot/supply_chain_audit/reports
+[2026-04-02 23:09:18] [INFO] Timestamp: 20260402_230918
+[2026-04-02 23:09:18] [INFO] Loading configuration from /home/rgroot/supply_chain_audit/config.conf
+[2026-04-02 23:09:18] [INFO] Configuration loaded successfully
+[2026-04-02 23:09:18] [INFO] Age threshold: 7 days
+[2026-04-02 23:09:18] [INFO] Checking dependencies...
+[2026-04-02 23:09:18] [WARN] Missing optional dependency: xzdec (compressed log support limited)
+[2026-04-02 23:09:18] [INFO] Core dependencies satisfied
+[2026-04-02 23:09:18] [INFO] Scanning for recently installed packages...
+[2026-04-02 23:09:18] [INFO] Scanning dpkg log files...
+[2026-04-02 23:09:18] [INFO] Scanning apt history log files...
+[2026-04-02 23:09:18] [INFO] Found 34 packages to analyze
+[2026-04-02 23:09:18] [INFO] Analyzing flagged packages...
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: installed
+[2026-04-02 23:09:18] [INFO] Package: installed | Age: 6 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: installed
+WARN
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: libfile-fnmatch-perl
+[2026-04-02 23:09:18] [INFO] Package: libfile-fnmatch-perl | Age: 2 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: libfile-fnmatch-perl
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: debsums
+[2026-04-02 23:09:18] [INFO] Package: debsums | Age: 2 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: debsums
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: cros-im
+[2026-04-02 23:09:18] [INFO] Package: cros-im | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: cros-im
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: 63565)
+[2026-04-02 23:09:18] [INFO] Package: 63565) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: 63565)
+WARN
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: zstd
+[2026-04-02 23:09:18] [INFO] Package: zstd | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: zstd
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: lsof
+[2026-04-02 23:09:18] [INFO] Package: lsof | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: lsof
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: tcpdump
+[2026-04-02 23:09:18] [INFO] Package: tcpdump | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: tcpdump
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: imagemagick
+[2026-04-02 23:09:18] [INFO] Package: imagemagick | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: imagemagick
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: 8:6.9.11.60+dfsg-1.6+deb12u7)
+[2026-04-02 23:09:18] [INFO] Package: 8:6.9.11.60+dfsg-1.6+deb12u7) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: 8:6.9.11.60+dfsg-1.6+deb12u7)
+WARN
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: libmagickcore-6.q16-6-extra
+[2026-04-02 23:09:18] [INFO] Package: libmagickcore-6.q16-6-extra | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: libmagickcore-6.q16-6-extra
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: libmagickwand-6.q16-6
+[2026-04-02 23:09:18] [INFO] Package: libmagickwand-6.q16-6 | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: libmagickwand-6.q16-6
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: imagemagick-6.q16
+[2026-04-02 23:09:18] [INFO] Package: imagemagick-6.q16 | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: imagemagick-6.q16
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: libmagickcore-6.q16-6
+[2026-04-02 23:09:18] [INFO] Package: libmagickcore-6.q16-6 | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: libmagickcore-6.q16-6
+OK
+[2026-04-02 23:09:18] [INFO] Verifying integrity of package: imagemagick-6-common
+[2026-04-02 23:09:18] [INFO] Package: imagemagick-6-common | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:18] [INFO] Verifying integrity of package: imagemagick-6-common
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: linux-libc-dev
+[2026-04-02 23:09:19] [INFO] Package: linux-libc-dev | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: linux-libc-dev
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: 6.1.164-1)
+[2026-04-02 23:09:19] [INFO] Package: 6.1.164-1) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: 6.1.164-1)
+WARN
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: snapd
+[2026-04-02 23:09:19] [INFO] Package: snapd | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: snapd
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: 2.57.6-1+deb12u1)
+[2026-04-02 23:09:19] [INFO] Package: 2.57.6-1+deb12u1) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: 2.57.6-1+deb12u1)
+WARN
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: firefox-esr
+[2026-04-02 23:09:19] [INFO] Package: firefox-esr | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: firefox-esr
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: 140.9.0esr-1~deb12u1)
+[2026-04-02 23:09:19] [INFO] Package: 140.9.0esr-1~deb12u1) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: 140.9.0esr-1~deb12u1)
+WARN
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: bind9-host
+[2026-04-02 23:09:19] [INFO] Package: bind9-host | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: bind9-host
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: 1:9.18.47-1~deb12u1)
+[2026-04-02 23:09:19] [INFO] Package: 1:9.18.47-1~deb12u1) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: 1:9.18.47-1~deb12u1)
+WARN
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: bind9-dnsutils
+[2026-04-02 23:09:19] [INFO] Package: bind9-dnsutils | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: bind9-dnsutils
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: bind9-libs
+[2026-04-02 23:09:19] [INFO] Package: bind9-libs | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: bind9-libs
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: dnsutils
+[2026-04-02 23:09:19] [INFO] Package: dnsutils | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: dnsutils
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: libxml-parser-perl
+[2026-04-02 23:09:19] [INFO] Package: libxml-parser-perl | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: libxml-parser-perl
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: 2.46-4+deb12u1)
+[2026-04-02 23:09:19] [INFO] Package: 2.46-4+deb12u1) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: 2.46-4+deb12u1)
+WARN
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: 63707)
+[2026-04-02 23:09:19] [INFO] Package: 63707) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: 63707)
+WARN
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: automatic)
+[2026-04-02 23:09:19] [INFO] Package: automatic) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: automatic)
+WARN
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: libpng-dev
+[2026-04-02 23:09:19] [INFO] Package: libpng-dev | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: libpng-dev
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: 1.6.39-2+deb12u4)
+[2026-04-02 23:09:19] [INFO] Package: 1.6.39-2+deb12u4) | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: 1.6.39-2+deb12u4)
+WARN
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: libpng16-16
+[2026-04-02 23:09:19] [INFO] Package: libpng16-16 | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: libpng16-16
+OK
+[2026-04-02 23:09:19] [INFO] Verifying integrity of package: libpng-tools
+[2026-04-02 23:09:19] [INFO] Package: libpng-tools | Age: 1 days | Repo: cros.list (ChromeOS - UNTRUSTED) | Trusted: false | Integrity: [2026-04-02 23:09:19] [INFO] Verifying integrity of package: libpng-tools
+OK
+[2026-04-02 23:09:19] [INFO] Generating JSON report: /home/rgroot/supply_chain_audit/reports/quarantine_20260402_230918.json

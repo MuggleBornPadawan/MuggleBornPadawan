@@ -1,0 +1,15 @@
+╔══════════════════════════════════════════════════════════════╗
+║        SUPPLY CHAIN COMPLIANCE AUDIT SCANNER               ║
+║        Version 1.0 | Debian/Ubuntu Systems                 ║
+╚══════════════════════════════════════════════════════════════╝
+[2026-04-02 23:06:43] [INFO] Audit started
+[2026-04-02 23:06:43] [INFO] Reports directory: /home/rgroot/supply_chain_audit/reports
+[2026-04-02 23:06:43] [INFO] Timestamp: 20260402_230643
+[2026-04-02 23:06:43] [INFO] Loading configuration from /home/rgroot/supply_chain_audit/config.conf
+[2026-04-02 23:06:43] [INFO] Configuration loaded successfully
+[2026-04-02 23:06:43] [INFO] Age threshold: 7 days
+[2026-04-02 23:06:43] [INFO] Checking dependencies...] 
+[2026-04-02 23:06:43] [WARN] Missing optional dependency: xzdec (compressed log support limited)
+[2026-04-02 23:06:43] [INFO] Core dependencies satisfied
+[2026-04-02 23:06:43] [INFO] Scanning for recently installed packages...
+[2026-04-02 23:06:43] [INFO] Scanning dpkg log files...

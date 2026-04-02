@@ -1,0 +1,392 @@
+{
+  "scan_metadata": {
+    "timestamp": "2026-04-02T17:40:30Z",
+    "script_version": "1.0",
+    "hostname": "penguin",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "age_threshold_days": 7,
+    "total_packages_analyzed": 34,
+    "packages_flagged": 34,
+    "reports_directory": "/home/rgroot/supply_chain_audit/reports"
+  },
+  "trusted_domains": ["deb.debian.org","security.debian.org","archive.debian.org","ftp.debian.org","http.debian.org","ports.ubuntu.com","security.ubuntu.com","archive.ubuntu.com"],
+  "exempt_patterns": ["linux-image-*","linux-headers-*","*-security","*-backports"],
+  "flagged_packages": [
+    {
+      "name": "installed",
+      "version": "unknown",
+      "installed_on": "2026-03-27",
+      "age_days": 6,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: installed
+WARN"],
+      "removal_command": "apt remove -y installed"
+    }
+    ,{
+      "name": "libfile-fnmatch-perl",
+      "version": "0.02-3+b1",
+      "installed_on": "2026-03-31",
+      "age_days": 2,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: libfile-fnmatch-perl
+OK"],
+      "removal_command": "apt remove -y libfile-fnmatch-perl"
+    }
+    ,{
+      "name": "debsums",
+      "version": "3.0.2.1",
+      "installed_on": "2026-03-31",
+      "age_days": 2,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: debsums
+OK"],
+      "removal_command": "apt remove -y debsums"
+    }
+    ,{
+      "name": "cros-im",
+      "version": "63707",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: cros-im
+OK"],
+      "removal_command": "apt remove -y cros-im"
+    }
+    ,{
+      "name": "63565)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: 63565)
+WARN"],
+      "removal_command": "apt remove -y 63565)"
+    }
+    ,{
+      "name": "zstd",
+      "version": "1.5.4+dfsg2-5",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: zstd
+OK"],
+      "removal_command": "apt remove -y zstd"
+    }
+    ,{
+      "name": "lsof",
+      "version": "4.95.0-1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: lsof
+OK"],
+      "removal_command": "apt remove -y lsof"
+    }
+    ,{
+      "name": "tcpdump",
+      "version": "4.99.3-1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: tcpdump
+OK"],
+      "removal_command": "apt remove -y tcpdump"
+    }
+    ,{
+      "name": "imagemagick",
+      "version": "8:6.9.11.60+dfsg-1.6+deb12u7",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: imagemagick
+OK"],
+      "removal_command": "apt remove -y imagemagick"
+    }
+    ,{
+      "name": "8:6.9.11.60+dfsg-1.6+deb12u7)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: 8:6.9.11.60+dfsg-1.6+deb12u7)
+WARN"],
+      "removal_command": "apt remove -y 8:6.9.11.60+dfsg-1.6+deb12u7)"
+    }
+    ,{
+      "name": "libmagickcore-6.q16-6-extra",
+      "version": "8:6.9.11.60+dfsg-1.6+deb12u7",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: libmagickcore-6.q16-6-extra
+OK"],
+      "removal_command": "apt remove -y libmagickcore-6.q16-6-extra"
+    }
+    ,{
+      "name": "libmagickwand-6.q16-6",
+      "version": "8:6.9.11.60+dfsg-1.6+deb12u7",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: libmagickwand-6.q16-6
+OK"],
+      "removal_command": "apt remove -y libmagickwand-6.q16-6"
+    }
+    ,{
+      "name": "imagemagick-6.q16",
+      "version": "8:6.9.11.60+dfsg-1.6+deb12u7",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: imagemagick-6.q16
+OK"],
+      "removal_command": "apt remove -y imagemagick-6.q16"
+    }
+    ,{
+      "name": "libmagickcore-6.q16-6",
+      "version": "8:6.9.11.60+dfsg-1.6+deb12u7",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: libmagickcore-6.q16-6
+OK"],
+      "removal_command": "apt remove -y libmagickcore-6.q16-6"
+    }
+    ,{
+      "name": "imagemagick-6-common",
+      "version": "8:6.9.11.60+dfsg-1.6+deb12u7",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: imagemagick-6-common
+OK"],
+      "removal_command": "apt remove -y imagemagick-6-common"
+    }
+    ,{
+      "name": "linux-libc-dev",
+      "version": "6.1.164-1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: linux-libc-dev
+OK"],
+      "removal_command": "apt remove -y linux-libc-dev"
+    }
+    ,{
+      "name": "6.1.164-1)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: 6.1.164-1)
+WARN"],
+      "removal_command": "apt remove -y 6.1.164-1)"
+    }
+    ,{
+      "name": "snapd",
+      "version": "2.57.6-1+deb12u1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: snapd
+OK"],
+      "removal_command": "apt remove -y snapd"
+    }
+    ,{
+      "name": "2.57.6-1+deb12u1)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: 2.57.6-1+deb12u1)
+WARN"],
+      "removal_command": "apt remove -y 2.57.6-1+deb12u1)"
+    }
+    ,{
+      "name": "firefox-esr",
+      "version": "140.9.0esr-1~deb12u1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: firefox-esr
+OK"],
+      "removal_command": "apt remove -y firefox-esr"
+    }
+    ,{
+      "name": "140.9.0esr-1~deb12u1)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: 140.9.0esr-1~deb12u1)
+WARN"],
+      "removal_command": "apt remove -y 140.9.0esr-1~deb12u1)"
+    }
+    ,{
+      "name": "bind9-host",
+      "version": "1:9.18.47-1~deb12u1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: bind9-host
+OK"],
+      "removal_command": "apt remove -y bind9-host"
+    }
+    ,{
+      "name": "1:9.18.47-1~deb12u1)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: 1:9.18.47-1~deb12u1)
+WARN"],
+      "removal_command": "apt remove -y 1:9.18.47-1~deb12u1)"
+    }
+    ,{
+      "name": "bind9-dnsutils",
+      "version": "1:9.18.47-1~deb12u1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: bind9-dnsutils
+OK"],
+      "removal_command": "apt remove -y bind9-dnsutils"
+    }
+    ,{
+      "name": "bind9-libs",
+      "version": "1:9.18.47-1~deb12u1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: bind9-libs
+OK"],
+      "removal_command": "apt remove -y bind9-libs"
+    }
+    ,{
+      "name": "dnsutils",
+      "version": "1:9.18.47-1~deb12u1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:29] [INFO] Verifying integrity of package: dnsutils
+OK"],
+      "removal_command": "apt remove -y dnsutils"
+    }
+    ,{
+      "name": "libxml-parser-perl",
+      "version": "2.46-4+deb12u1",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:30] [INFO] Verifying integrity of package: libxml-parser-perl
+OK"],
+      "removal_command": "apt remove -y libxml-parser-perl"
+    }
+    ,{
+      "name": "2.46-4+deb12u1)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:30] [INFO] Verifying integrity of package: 2.46-4+deb12u1)
+WARN"],
+      "removal_command": "apt remove -y 2.46-4+deb12u1)"
+    }
+    ,{
+      "name": "63707)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:30] [INFO] Verifying integrity of package: 63707)
+WARN"],
+      "removal_command": "apt remove -y 63707)"
+    }
+    ,{
+      "name": "automatic)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:30] [INFO] Verifying integrity of package: automatic)
+WARN"],
+      "removal_command": "apt remove -y automatic)"
+    }
+    ,{
+      "name": "libpng-dev",
+      "version": "1.6.39-2+deb12u4",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:30] [INFO] Verifying integrity of package: libpng-dev
+OK"],
+      "removal_command": "apt remove -y libpng-dev"
+    }
+    ,{
+      "name": "1.6.39-2+deb12u4)",
+      "version": "unknown",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:30] [INFO] Verifying integrity of package: 1.6.39-2+deb12u4)
+WARN"],
+      "removal_command": "apt remove -y 1.6.39-2+deb12u4)"
+    }
+    ,{
+      "name": "libpng16-16",
+      "version": "1.6.39-2+deb12u4",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:30] [INFO] Verifying integrity of package: libpng16-16
+OK"],
+      "removal_command": "apt remove -y libpng16-16"
+    }
+    ,{
+      "name": "libpng-tools",
+      "version": "1.6.39-2+deb12u4",
+      "installed_on": "2026-04-01",
+      "age_days": 1,
+      "source_repository": "cros.list (ChromeOS - UNTRUSTED)",
+      "trusted": false,
+      "flags": ["non_official_repository,[2026-04-02 23:10:30] [INFO] Verifying integrity of package: libpng-tools
+OK"],
+      "removal_command": "apt remove -y libpng-tools"
+    }
+  ],
+  "safe_packages": [
+  ]
+}

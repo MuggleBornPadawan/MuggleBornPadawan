@@ -1,0 +1,81 @@
+================================================================================
+                    SUPPLY CHAIN COMPLIANCE AUDIT REPORT
+================================================================================
+
+SCAN DETAILS
+--------------------------------------------------------------------------------
+Scan Date:           2026-04-02 23:11:49 IST
+Hostname:            penguin
+Operating System:     Debian GNU/Linux 12 (bookworm)
+Script Version:       1.0
+Age Threshold:        7 days
+Reports Directory:    /home/rgroot/supply_chain_audit/reports
+
+STATISTICS
+--------------------------------------------------------------------------------
+Total Packages Scanned:      33
+Flagged (Untrusted):         0
+Safe (Trusted):               33
+
+TRUSTED REPOSITORIES
+--------------------------------------------------------------------------------
+  [+] deb.debian.org
+  [+] security.debian.org
+  [+] archive.debian.org
+  [+] ftp.debian.org
+  [+] http.debian.org
+
+EXEMPT PATTERNS (Automatic Allow)
+--------------------------------------------------------------------------------
+  [*] linux-image-*
+  [*] linux-headers-*
+  [*] linux-modules-*
+  [*] linux-signed-image-*
+  [*] *-security
+  [*] *-backports
+  [*] linux-kbuild-*
+  [*] gcc-*
+  [*] libc6
+  [*] libgcc*
+  [*] base-files
+  [*] dpkg
+  [*] apt
+  [*] bash
+  [*] coreutils
+
+================================================================================
+                         FLAGGED PACKAGES (QUARANTINE)
+================================================================================
+
+
+  [NO FLAGGED PACKAGES]
+
+  All recently installed packages are from trusted sources or exempt patterns.
+
+================================================================================
+                           SAFE PACKAGES (EXEMPT)
+================================================================================
+
+
+  [NO SAFE PACKAGES]
+
+
+================================================================================
+                              REMEDIATION STEPS
+================================================================================
+
+To remove flagged packages manually:
+
+
+================================================================================
+                                  NOTES
+================================================================================
+
+- Run with --force flag to enable automatic removal
+- Use --dry flag to simulate without changes
+- Review JSON report for machine-readable output
+- Check integrity log for detailed verification results
+
+================================================================================
+                         END OF REPORT
+================================================================================

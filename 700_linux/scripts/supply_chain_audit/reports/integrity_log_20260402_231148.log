@@ -1,0 +1,54 @@
+╔══════════════════════════════════════════════════════════════╗
+║        SUPPLY CHAIN COMPLIANCE AUDIT SCANNER               ║
+║        Version 1.0 | Debian/Ubuntu Systems                 ║
+╚══════════════════════════════════════════════════════════════╝
+[2026-04-02 23:11:48] [INFO] Audit started
+[2026-04-02 23:11:48] [INFO] Reports directory: /home/rgroot/supply_chain_audit/reports
+[2026-04-02 23:11:48] [INFO] Timestamp: 20260402_231148
+[2026-04-02 23:11:48] [INFO] Loading configuration from /home/rgroot/supply_chain_audit/config.conf
+[2026-04-02 23:11:48] [INFO] Configuration loaded successfully
+[2026-04-02 23:11:48] [INFO] Age threshold: 7 days
+[2026-04-02 23:11:48] [INFO] Checking dependencies...
+[2026-04-02 23:11:48] [WARN] Missing optional dependency: xzdec (compressed log support limited)
+[2026-04-02 23:11:48] [INFO] Core dependencies satisfied
+[2026-04-02 23:11:48] [INFO] Scanning for recently installed packages...
+[2026-04-02 23:11:48] [INFO] Scanning dpkg log files...
+[2026-04-02 23:11:48] [INFO] Scanning apt history log files...
+[2026-04-02 23:11:48] [INFO] Found 33 packages to analyze
+[2026-04-02 23:11:48] [INFO] Analyzing flagged packages...
+[2026-04-02 23:11:48] [INFO] Package: cros-im | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: 63565) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:48] [INFO] Package: zstd | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: lsof | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: tcpdump | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: imagemagick | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: 8:6.9.11.60+dfsg-1.6+deb12u7) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:48] [INFO] Package: libmagickcore-6.q16-6-extra | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: libmagickwand-6.q16-6 | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: imagemagick-6.q16 | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: libmagickcore-6.q16-6 | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: imagemagick-6-common | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:48] [INFO] Package: linux-libc-dev | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: 6.1.164-1) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:49] [INFO] Package: snapd | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: 2.57.6-1+deb12u1) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:49] [INFO] Package: firefox-esr | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: 140.9.0esr-1~deb12u1) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:49] [INFO] Package: bind9-host | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: 1:9.18.47-1~deb12u1) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:49] [INFO] Package: bind9-dnsutils | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: bind9-libs | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: dnsutils | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: libxml-parser-perl | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: 2.46-4+deb12u1) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:49] [INFO] Package: 63707) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:49] [INFO] Package: debsums | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: libfile-fnmatch-perl | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: automatic) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:49] [INFO] Package: libpng-dev | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: 1.6.39-2+deb12u4) | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: WARN
+[2026-04-02 23:11:49] [INFO] Package: libpng16-16 | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Package: libpng-tools | Age: 1 days | Repo: deb.debian.org (Official - Trusted) | Trusted: deb.debian.org | Integrity: OK
+[2026-04-02 23:11:49] [INFO] Generating text report: /home/rgroot/supply_chain_audit/reports/compliance_report_20260402_231148.txt
+[2026-04-02 23:11:49] [INFO] Text report generated: /home/rgroot/supply_chain_audit/reports/compliance_report_20260402_231148.txt
+[2026-04-02 23:11:49] [INFO] Audit completed successfully

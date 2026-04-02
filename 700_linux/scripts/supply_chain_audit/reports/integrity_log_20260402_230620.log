@@ -1,0 +1,21 @@
+╔══════════════════════════════════════════════════════════════╗
+║        SUPPLY CHAIN COMPLIANCE AUDIT SCANNER               ║
+║        Version 1.0 | Debian/Ubuntu Systems                 ║
+╚══════════════════════════════════════════════════════════════╝
+[2026-04-02 23:06:20] [INFO] Audit started
+[2026-04-02 23:06:20] [INFO] Reports directory: /home/rgroot/supply_chain_audit/reports
+[2026-04-02 23:06:20] [INFO] Timestamp: 20260402_230620
+[2026-04-02 23:06:20] [INFO] Loading configuration from /home/rgroot/supply_chain_audit/config.conf
+[2026-04-02 23:06:20] [INFO] Configuration loaded successfully
+[2026-04-02 23:06:20] [INFO] Age threshold: 7 days
+[2026-04-02 23:06:20] [INFO] Checking dependencies...] 
+[2026-04-02 23:06:20] [WARN] Missing optional dependency: xzdec (compressed log support limited)
+[2026-04-02 23:06:20] [INFO] Core dependencies satisfied
+[2026-04-02 23:06:20] [INFO] Scanning for recently installed packages...
+[2026-04-02 23:06:20] [INFO] Scanning dpkg log files...
+[2026-04-02 23:06:20] [INFO] Scanning apt history log files...
+[2026-04-02 23:06:20] [INFO] Found 0 packages to analyze
+[2026-04-02 23:06:20] [INFO] Analyzing flagged packages...
+[2026-04-02 23:06:20] [INFO] Generating JSON report: /home/rgroot/supply_chain_audit/reports/quarantine_20260402_230620.json
+[2026-04-02 23:06:20] [INFO] JSON report generated: /home/rgroot/supply_chain_audit/reports/quarantine_20260402_230620.json
+[2026-04-02 23:06:20] [INFO] Audit completed successfully

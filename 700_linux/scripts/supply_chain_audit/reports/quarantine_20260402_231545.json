@@ -1,0 +1,14 @@
+{
+  "scan_metadata": {
+    "timestamp": "2026-04-02T17:45:45Z",
+    "script_version": "1.0",
+    "hostname": "penguin",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "age_threshold_days": 7,
+    "total_packages_scanned": 0,
+    "packages_flagged": 0,
+    "packages_safe": 0
+  },
+  "flagged_packages": [],
+  "safe_packages": []
+}

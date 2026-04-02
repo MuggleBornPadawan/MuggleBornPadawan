@@ -1,0 +1,42 @@
+{
+  "scan_metadata": {
+    "timestamp": "2026-04-02T23:06:20+05:30",
+    "script_version": "1.0",
+    "hostname": "penguin",
+    "os": "Debian GNU/Linux 12 (bookworm)",
+    "age_threshold_days": 7,
+    "total_packages_analyzed": 0,
+    "packages_flagged": 0,
+    "reports_directory": "/home/rgroot/supply_chain_audit/reports"
+  },
+  "trusted_domains": [
+  "deb.debian.org",
+  "security.debian.org",
+  "archive.debian.org",
+  "ftp.debian.org",
+  "http.debian.org"
+],
+  "exempt_patterns": [
+  "linux-image-*",
+  "linux-headers-*",
+  "linux-modules-*",
+  "linux-signed-image-*",
+  "*-security",
+  "*-backports",
+  "linux-kbuild-*",
+  "gcc-*",
+  "libc6",
+  "libgcc*",
+  "base-files",
+  "dpkg",
+  "apt",
+  "bash",
+  "coreutils"
+],
+  "flagged_packages": [
+
+  ],
+  "safe_packages": [
+
+  ]
+}
