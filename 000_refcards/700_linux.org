@@ -12,6 +12,17 @@
 - users / groups / owners - archaic
 - permissions
 - zero trust architecture - lease possible permissions at every level - user based and device based (not netwrok based)
+** find
+- find . -name "*.log" # Finds all files ending with .log in current directory.
+- find / -name "config.txt" # Searches entire system for config.txt file.
+- find . -type f -name "*.py" # Finds only files (not directories) with .py extension.
+- find . -type d -name "backup" # Finds only directories named backup.
+- find . -mtime -7 # Finds files modified in last 7 days.
+- find . -size +100M # Finds files larger than 100MB.
+- find . -name "*.log" -exec rm {} \; # Finds .log files and removes them one by one.
+- find . -user username # Finds all files owned by specific user.
+- find . -perm 777 # Finds files with 777 permissions (security risk).
+- find . -empty # Finds all empty files and directories.
 ** user
 |----------------------------+-----------------------------------------------|
 | task                       | command                                       |
