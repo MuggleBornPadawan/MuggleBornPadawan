@@ -1,0 +1,77 @@
+#+title: code review
+* code review
+- source: https://piechowski.io/post/git-commands-before-reading-code/?
+- codebase audit process:
+  - stakeholder interviews before code
+  - deps file, schema, routes (RESTful conventions, constraints and namespacing) 
+  - a single-page triage as the deliverable
+** git commands 
+- git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20 # Lists the top 20 most frequently modified files in the last year to identify "hotspots."
+- git shortlog -sn --no-merges # Summarizes the number of commits per author, excluding merge commits, to see primary contributors.
+- git shortlog -sn --no-merges --since="6 months ago" #identify if the top contributor from the overall shortlog is active now
+- git log -i -E --grep="fix|bug|broken" --name-only --format='' | sort | uniq -c | sort -nr | head -20 # Ranks files by how often they are mentioned in bug-fix commit messages.
+- git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c # Generates a monthly commit count to visualize the project's development velocity over time.
+- git log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback' # Searches for "panic" commits in the last year to identify high-risk areas or past stability issues.
+** questions for developers:
+- “what’s the one area you’re afraid to touch?”
+- “when’s the last time you deployed on a friday?”
+- “what broke in production in the last 90 days that wasn’t caught by tests?”
+** questions for the cto/em:
+- “what feature has been blocked for over a year?”
+- “do you have real-time error visibility right now?”
+- “what was the last feature that took significantly longer than estimated?”
+** questions for business stakeholders:
+- “are there features that got quietly turned off and never came back?”
+- “are there things you’ve stopped promising customers?”
+** using ai to audit code
+*** god model decomposition
+this is a <rails> model. list every distinct responsibility you can identify. group related methods together and suggest what each group might be extracted into
+*** callback mapping
+list every callback in this file, what it does, and what other models or side effects it might touch. flag anything that looks like it could cause unexpected behavior
+*** test coverage gap analysis
+what are the ten most important things to test in this file, in priority order?
+** signs of trouble - rewrite-vs-refactor evaluation 
+- deploy frequency has dropped toward zero because “it’s too risky”
+- features quietly disabled, never re-enabled
+- multiple developers independently describe different parts as “nobody touches that”
+- no apm, no error tracking, no alerting in production
+- “i changed one thing and something completely different broke” is a regular occurrence
+- codebase drag audit - https://piechowski.io/post/codebase-drag-audit/ 
+** report 
+*** sections
+- fix this week
+- fix this quarter
+- don’t worry about it
+- i also call out a fourth category: things i can fix without touching your team’s current output. dependency upgrades, security patches, dead code removal, and rewriting parts of the codebase that nobody owns and nobody wants to touch. work that can happen in parallel without interrupting a sprint or stealing engineering time. clients love knowing there’s a bucket of real progress that costs them nothing in team bandwidth.
+*** briefing
+- a short verbal debrief before anything written, because the conversation matters more than the document. and leading with the one thing that surprised me most: not the longest list, the most important finding.
+- the thing that changed how i think about deliverables: i started asking myself “if this team could only fix one thing this year, what should it be?” it forces you to have an opinion, not just a list of observations. clients hire you for the opinion.
+*** opinion
+- severity triage: security/compliance risks that need immediate action, architectural problems slowing development, cosmetic issues that can be addressed over time
+- the five highest-churn, lowest-coverage files: the specific things hurting the team right now
+- bus factor assessment: who are the single points of failure?
+- version upgrade path: what it would take, and what it’s costing them not to do it
+- one honest conversation: the thing the team suspected but hadn’t said out loud
+** quick reference command sequence
+# Security
+bundle audit update && bundle audit check
+bundle exec brakeman --format html -o brakeman_report.html
+# Dependency age
+bundle outdated
+bundle exec bundle_report compatibility --rails-version=7.2
+# SLOC + complexity
+cloc app/
+bundle exec rubycritic app/
+# Routes — quick count before you open the file
+bundle exec rails routes | wc -l
+# Dead routes and orphaned actions
+bundle exec traceroute
+# Database
+bundle exec rails active_record_doctor:run
+# Memory
+bundle exec derailed bundle:mem
+# Test suite
+time bundle exec rspec
+COVERAGE=true bundle exec rspec
+# When was the test suite last touched?
+git log --oneline -1 -- spec/

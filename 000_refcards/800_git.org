@@ -1,3 +1,4 @@
+#+title: git commands
 * magit commands
 - magit-status | c-x g
 - c-c c-c
@@ -13,6 +14,14 @@
 - git reset - hard: nuclear undo
 - git clean -fd: remove everything that was not committed
 - git rerere: reuse recorded resolution
+** git refactor
+- source: https://piechowski.io/post/git-commands-before-reading-code/?
+- git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20 # Lists the top 20 most frequently modified files in the last year to identify "hotspots."
+- git shortlog -sn --no-merges # Summarizes the number of commits per author, excluding merge commits, to see primary contributors.
+- git shortlog -sn --no-merges --since="6 months ago" #identify if the top contributor from the overall shortlog is active now
+- git log -i -E --grep="fix|bug|broken" --name-only --format='' | sort | uniq -c | sort -nr | head -20 # Ranks files by how often they are mentioned in bug-fix commit messages.
+- git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c # Generates a monthly commit count to visualize the project's development velocity over time.
+- git log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback' # Searches for "panic" commits in the last year to identify high-risk areas or past stability issues.
 ** basic git commands
 - git init | initializes a new git repository in your current directory
 - git clone <repository-url> | clones an existing repository to your local machine
