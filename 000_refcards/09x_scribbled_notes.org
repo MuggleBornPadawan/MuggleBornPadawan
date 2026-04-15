@@ -21,7 +21,78 @@
 - learn monolith before modular monolith
 - learn to draw flowcharts before writing code
 - learn business requirements before writing code  
-
+** sre roadmap
+- start → linux → networking → os → scripting → git → cloud → containers → kubernetes → ci/cd
+- service mindset → availability → latency → capacity → performance → reliability → risk → automation
+- host → process → cpu → memory → disk → filesystem → dns → tcp → http → tls
+- deploy → observe → detect → triage → mitigate → recover → review → automate
+- logs → metrics → tracing → dashboards → alerts → on-call → runbooks → escalation
+- slis → slos → slas → error budgets → paging → incident response → postmortems
+- manual work → scripts → iac → pipelines → safer releases → self-healing where it makes sense
+- monolith → services → distributed systems → multi-az → multi-region only when needed
+- postgres → redis → kafka → object storage → search → backups → disaster recovery
+- symptom → signal → bottleneck → root cause → fix → follow-up → prevention
+- functional requirements → non-functional requirements → capacity estimation → failure modes → recovery plan → scale plan
+- cpu spike → memory leak → disk full → dns issue → tls expiry → node failure → region outage
+- think → measure → simplify → automate → communicate → stay calm
+- consistency → clarity → repetition → deep work
+- end → crack sre interviews and run real production systems
+** postgresql database types and equivalent
+1) Relational,"Core PostgreSQL (Native tables with SQL, foreign keys, and schemas)
+2) Key-Value,"HSTORE extension or a table with (key TEXT PRIMARY KEY, value TEXT)
+3) Columnar,Citus extension (Columnar storage) or Hydra
+4) Wide-Column,JSONB indexing or partitions combined with flexible schemas
+5) Document,JSONB (Binary JSON) with GIN indexing for nested querying
+6) Vector,pgvector extension (Stores and queries vector embeddings)
+7) Time-Series,TimescaleDB extension or native Declarative Partitioning
+8) Immutable Ledger,immudb extension or Trigger-based audit logs with append-only permissions
+9) Graph,Apache AGE extension or Recursive CTEs (WITH RECURSIVE)
+10) Geospatial,PostGIS extension (The industry standard for spatial data)
+11) In-Memory,UNLOGGED tables or RAMDisk storage via Tablespaces
+12) Blob,BYTEA data type or Large Object (lo) storage
+13) Text-Search,TSVector and TSQuery (Native Full-Text Search) with GIN/GIST indexes
+** backend exercises 
+- feature flag system - interfaces, rules engine, extensibility
+- retry + backoff library - strategy pattern, pluggable policies
+- notification routing system - channels, priorities, templates
+- rate limiter - algorithms, abstractions, thread safety
+- circuit breaker - states, transitions, failure thresholds
+- metrics aggregator - time windows, aggregation logic, concurrency
+- configuration manager - versioning, caching, listeners
+- payment processing flow - state machines, idempotency, validations
+- cache library - eviction policies, extensible storage
+- job scheduler - workers, queues, retries, priorities
+** leetcode problems - data structure and algorithms
+- sliding window: 3, 76, 209, 424, 567, 904
+- two pointers: 11, 15, 16, 18, 42, 167
+- fast/slow pointers (linked list): 141, 142, 19, 876, 160, 234
+- binary search on sorted data: 33, 34, 35, 153, 162, 704
+- binary search on answer: 875, 1011, 410, 774, 1283, 1482
+- hashing / frequency maps: 1, 49, 128, 217, 242, 347
+- prefix sum / running sum: 303, 560, 724, 930, 974, 523
+- difference array / range updates: 370, 1094, 1109, 1893, 1943, 2381
+- monotonic stack: 739, 496, 503, 84, 85, 901
+- monotonic queue / deque: 239, 862, 1425, 1438, 1499, 1696
+- heap / top k: 215, 347, 692, 703, 973, 1046
+- intervals: 56, 57, 252, 253, 435, 452
+- greedy scheduling / sorting: 45, 55, 406, 621, 763, 134
+- linked list manipulation: 21, 23, 24, 25, 92, 138
+- tree dfs: 104, 112, 113, 543, 124, 226
+- tree bfs / level order: 102, 103, 199, 515, 637, 116
+- bst problems: 98, 99, 230, 235, 450, 700
+- backtracking basics: 46, 47, 77, 78, 90, 39
+- backtracking with constraints: 40, 17, 79, 131, 51, 52
+- graph bfs / dfs: 200, 695, 733, 994, 1091, 1254
+- topological sort / dag: 207, 210, 802, 1462, 1203, 2115
+- union find / dsu: 547, 684, 1319, 1579, 990, 1202
+- shortest path: 743, 787, 1514, 1631, 1334, 1976
+- mst / graph greedy: 1584, 1135, 1168, 1489, 778, 1102
+- trie: 208, 211, 212, 648, 677, 1268
+- bit manipulation: 136, 137, 191, 338, 268, 190
+- 1d dp basics: 70, 198, 213, 322, 279, 300
+- knapsack / subset dp: 416, 494, 518, 474, 1049, 879
+- grid dp: 62, 63, 64, 221, 931, 120
+- string dp / sequence dp: 1143, 72, 115, 583, 97, 1312
 ** high performers
 high performers do not manage time. they manage boundaries.
 *** the meeting rejector
