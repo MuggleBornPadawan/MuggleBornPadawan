@@ -70,5 +70,5 @@
 - git branch | lists all local branches, with the current one marked with an asterisk
 ** deleting branches
 - git branch -d <branch-name> | deletes a local branch (only if it is fully merged)
-- git branch -d <branch-name> | deletes a local branch even if it is not fully merged
+- git branch -D <branch-name> | deletes a local branch even if it is not fully merged
 - git push origin --delete <branch-name> | deletes a branch from the remote repository
