@@ -1,4 +1,4 @@
-[H[J[3J--- Omni-Sentry v2.0 Initialized ---
+--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
-
-Date: Wed Apr 15 10:08:22 AM IST 2026 
+-e 
+Date: Wed Apr 15 01:14:15 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -51,32 +51,32 @@ Removing unused dependencies...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:2 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [305 kB]
-Get:3 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:5 http://deb.debian.org/debian bookworm-backports/main Translation-en [257 kB]
-Get:6 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:7 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:8 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:9 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:10 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
-Get:11 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:12 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:13 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
-Get:14 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
-Get:15 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:4 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [305 kB]
+Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:6 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
+Get:7 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:8 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:9 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Get:10 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
+Get:11 http://deb.debian.org/debian bookworm-backports/main Translation-en [257 kB]
+Get:12 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:13 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:14 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:15 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
 Get:16 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
 Get:17 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
 Get:18 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
 Get:19 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:20 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [294 kB]
 Get:21 https://deb.debian.org/debian-security bookworm-security/main Translation-en [179 kB]
-Fetched 20.8 MB in 8s (2,458 kB/s)
+Fetched 20.8 MB in 1min 29s (234 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -90,42 +90,7 @@ Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  imagemagick imagemagick-6-common imagemagick-6.q16 libmagickcore-6.q16-6
-  libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
-6 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3,044 kB of archives.
-After this operation, 30.7 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 imagemagick-6-common all 8:6.9.11.60+dfsg-1.6+deb12u8 [172 kB]
-Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 libmagickcore-6.q16-6 amd64 8:6.9.11.60+dfsg-1.6+deb12u8 [1,804 kB]
-Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 libmagickwand-6.q16-6 amd64 8:6.9.11.60+dfsg-1.6+deb12u8 [415 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 imagemagick-6.q16 amd64 8:6.9.11.60+dfsg-1.6+deb12u8 [345 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 imagemagick amd64 8:6.9.11.60+dfsg-1.6+deb12u8 [128 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 libmagickcore-6.q16-6-extra amd64 8:6.9.11.60+dfsg-1.6+deb12u8 [180 kB]
-Fetched 3,044 kB in 1s (2,868 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 126732 files and directories currently installed.)
-Preparing to unpack .../0-imagemagick-6-common_8%3a6.9.11.60+dfsg-1.6+deb12u8_all.deb ...
-Unpacking imagemagick-6-common (8:6.9.11.60+dfsg-1.6+deb12u8) over (8:6.9.11.60+dfsg-1.6+deb12u7) ...
-Preparing to unpack .../1-libmagickcore-6.q16-6_8%3a6.9.11.60+dfsg-1.6+deb12u8_amd64.deb ...
-Unpacking libmagickcore-6.q16-6:amd64 (8:6.9.11.60+dfsg-1.6+deb12u8) over (8:6.9.11.60+dfsg-1.6+deb12u7) ...
-Preparing to unpack .../2-libmagickwand-6.q16-6_8%3a6.9.11.60+dfsg-1.6+deb12u8_amd64.deb ...
-Unpacking libmagickwand-6.q16-6:amd64 (8:6.9.11.60+dfsg-1.6+deb12u8) over (8:6.9.11.60+dfsg-1.6+deb12u7) ...
-Preparing to unpack .../3-imagemagick-6.q16_8%3a6.9.11.60+dfsg-1.6+deb12u8_amd64.deb ...
-Unpacking imagemagick-6.q16 (8:6.9.11.60+dfsg-1.6+deb12u8) over (8:6.9.11.60+dfsg-1.6+deb12u7) ...
-Preparing to unpack .../4-imagemagick_8%3a6.9.11.60+dfsg-1.6+deb12u8_amd64.deb ...
-Unpacking imagemagick (8:6.9.11.60+dfsg-1.6+deb12u8) over (8:6.9.11.60+dfsg-1.6+deb12u7) ...
-Preparing to unpack .../5-libmagickcore-6.q16-6-extra_8%3a6.9.11.60+dfsg-1.6+deb12u8_amd64.deb ...
-Unpacking libmagickcore-6.q16-6-extra:amd64 (8:6.9.11.60+dfsg-1.6+deb12u8) over (8:6.9.11.60+dfsg-1.6+deb12u7) ...
-Setting up imagemagick-6-common (8:6.9.11.60+dfsg-1.6+deb12u8) ...
-Setting up libmagickcore-6.q16-6:amd64 (8:6.9.11.60+dfsg-1.6+deb12u8) ...
-Setting up libmagickwand-6.q16-6:amd64 (8:6.9.11.60+dfsg-1.6+deb12u8) ...
-Setting up libmagickcore-6.q16-6-extra:amd64 (8:6.9.11.60+dfsg-1.6+deb12u8) ...
-Setting up imagemagick-6.q16 (8:6.9.11.60+dfsg-1.6+deb12u8) ...
-Setting up imagemagick (8:6.9.11.60+dfsg-1.6+deb12u8) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for libc-bin (2.36-9+deb12u13) ...
-Processing triggers for man-db (2.11.2-2) ...
-Processing triggers for desktop-file-utils (0.26-1) ...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -240,18 +205,17 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
-├── @google/gemini-cli@0.37.2
-├── @qwen-code/qwen-code@0.6.0
-├── corepack@0.34.0
-├── npm-check-updates@19.2.0
-└── npm@11.7.0
+/usr/local/lib
+├── @anthropic-ai/claude-code@2.1.72
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -309,7 +273,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27971/Tue Apr 14 11:54:44 2026
+ClamAV 1.4.3/27972/Wed Apr 15 11:54:27 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
