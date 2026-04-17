@@ -71,4 +71,4 @@ alias genpass="cd && ./MuggleBornPadawan/700_linux/scripts/password_generator.sh
 alias snow="sudo -i -u snow"
 # cleanup
 alias j='tk && pw && r && genpass && history -w && history -c && rm .bash_history Dockerfile Jenkinsfile tempFile* aeo_results_log.txt daily_nuggets.txt tmp.txt && c && echo "clean slate protocol activated" && tn'
-alias i='to ; tty ; pwd; date ; ulimit -a | grep processes ; g ; abc ; sleep 5 ; tf'
+alias i='to ; tty ; pwd ; date ; ulimit -a | grep processes ; abc ; ping -c 1 www.google.com ; curl -s https://ipinfo.io/json ; sleep 5 ; tf'
