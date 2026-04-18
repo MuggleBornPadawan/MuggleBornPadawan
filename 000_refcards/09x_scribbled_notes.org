@@ -62,6 +62,18 @@
 - payment processing flow - state machines, idempotency, validations
 - cache library - eviction policies, extensible storage
 - job scheduler - workers, queues, retries, priorities
+** cache
+10 caching concepts you must learn for backend:  
+- cache aside (lazy loading) 
+- write through 
+- write behind (async) 
+- cache invalidation 
+- ttl & explicit eviction (lru/lfu) 
+- cache stampede (meltdown) 
+- distributed cache consistency 
+- hot keys (skew handling) 
+- cache warming (preload strategy) 
+- multi-layer caching (l1/l2/cdn)
 ** leetcode problems - data structure and algorithms
 - sliding window: 3, 76, 209, 424, 567, 904
 - two pointers: 11, 15, 16, 18, 42, 167
