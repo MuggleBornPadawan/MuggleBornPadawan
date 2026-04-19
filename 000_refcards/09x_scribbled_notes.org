@@ -62,6 +62,27 @@
 - payment processing flow - state machines, idempotency, validations
 - cache library - eviction policies, extensible storage
 - job scheduler - workers, queues, retries, priorities
+** patterns
+**1. creational patterns**
+-singleton: ensures a single global instance.
+-factory method: creates objects without specifying classes.
+-builder: constructs complex objects step-by-step.
+**2. structural patterns**
+-adapter: connects incompatible interfaces.
+-decorator: dynamically adds functionalities.
+-facade: simplifies complex subsystems.
+**3. behavioral patterns**
+-observer: notifies dependents of state changes.
+-strategy: switches algorithms at runtime.
+-command: encapsulates requests as objects.
+**4. concurrency patterns( java specific)**
+-thread pool: reuses threads for multiple tasks.
+-future/promise: manages async results.
+-blocking queue: safe producer-consumer handling.
+**5. architectural patterns**
+-mvc (model-view-controller): separates data, ui, and logic layers.
+-microservices: builds applications as loosely coupled services.
+-event-driven: uses events for asynchronous communication.
 ** cache
 10 caching concepts you must learn for backend:  
 - cache aside (lazy loading) 
