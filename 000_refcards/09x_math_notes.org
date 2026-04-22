@@ -15,6 +15,56 @@ key aspects:
 - lemma - result used to demonstrate a theorem 
 - corolloary - result that follows immediately and directly from a theorem
 - law - constant relationship between elements that can vary
+** difficulty levels
+a ranked list of fields of math, in order of difficulty to master and understand. of course, difficulty is highly subjective and depends on your background, interests, and how deeply you go. the fields are deeply interconnected, basic topics feed into advanced branches, and areas like number theory span multiple levels.
+*** arithmetic
+- difficulty: low
+- why: focuses on basic operations (+, -, ×, ÷). it’s the foundation of math, intuitive for most, but mastering it requires understanding number properties and basic problem-solving.
+*** algebra
+- difficulty: low to moderate
+- why: builds on arithmetic with variables and equations. note: linear algebra and abstract algebra each have their own dedicated entries below.
+*** geometry
+- difficulty: moderate
+- why: involves spatial reasoning, proofs, and theorems (e.g., euclidean geometry). analytical geometry and topology require more abstraction, but basic geometry is accessible with visualization skills. note: algebraic geometry has its own dedicated entry below.
+*** trigonometry
+- difficulty: moderate
+- why: focuses on triangles, angles, and periodic functions. concepts like sine, cosine, and identities are manageable but require memorization and algebraic proficiency. often taught as part of precalculus rather than a standalone advanced field.
+*** calculus
+- difficulty: moderate to high
+- why: introduces limits, derivatives, and integrals, requiring a solid grasp of algebra and trigonometry. multivariable calculus and real analysis ramp up the rigor with abstract concepts.
+*** statistics and probability
+- difficulty: moderate to high
+- why: descriptive statistics is intuitive, but probability theory and inferential statistics involve complex concepts like distributions and hypothesis testing. advanced topics (e.g., bayesian methods) demand strong analytical skills. note: measure-theoretic probability is significantly more advanced and sits closer to real analysis.
+*** linear algebra
+- difficulty: high
+- why: deals with vectors, matrices, and linear transformations. while computational aspects are straightforward, understanding abstract vector spaces and eigenvalues requires a leap in conceptual thinking.
+*** differential equations
+- difficulty: high
+- why: solving equations involving derivatives (e.g., odes, pdes) requires calculus and linear algebra. partial differential equations and nonlinear systems are particularly challenging due to their complexity and applications.
+*** abstract algebra
+- difficulty: very high
+- why: studies algebraic structures like groups, rings, and fields. highly abstract, it demands strong logical reasoning and comfort with proofs, often a steep learning curve for students.
+*** topology
+- difficulty: very high
+- why: explores properties of spaces preserved under continuous deformations. concepts like open sets and compactness are abstract and require a deep understanding of set theory and analysis.
+*** real analysis
+- difficulty: very high
+- why: rigorous study of real numbers, sequences, and functions. it formalizes calculus with proofs, requiring precision and a strong grasp of logic and set theory.
+*** complex analysis
+- difficulty: very high
+- why: extends analysis to complex numbers, involving analytic functions and contour integrals. while some find it more intuitive than real analysis, it builds on advanced calculus and topology.
+*** functional analysis
+- difficulty: extremely high
+- why: studies vector spaces with topological structure (e.g., banach and hilbert spaces). it combines analysis, linear algebra, and topology, demanding fluency in all three.
+*** algebraic geometry
+- difficulty: extremely high
+- why: combines abstract algebra and geometry to study solutions to polynomial equations. its abstraction and reliance on advanced algebra and topology make it formidable.
+*** number theory
+- difficulty: extremely high
+- why: focuses on properties of numbers, especially integers (e.g., prime numbers). elementary number theory is accessible, but advanced topics like analytic or algebraic number theory require deep knowledge of analysis and algebra.
+*** category theory
+- difficulty: extremely high
+- why: highly abstract, it generalizes structures across mathematics (e.g., sets, groups, topologies). its conceptual depth and broad prerequisites make it one of the most challenging fields.
 ** numbers
 |-------------------+---------------------------------------+---------------------------------------------------------------------------|
 | numbers           | explanation                           | notes                                                                     |
