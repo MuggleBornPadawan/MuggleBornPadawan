@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed Apr 22 10:07:17 AM IST 2026 
+Date: Wed Apr 22 02:16:50 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -55,19 +55,19 @@ Reading state information...
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Ign:1 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:3 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [305 kB]
-Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:3 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [305 kB]
+Get:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:6 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [257 kB]
 Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
 Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
 Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
 Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:13 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Get:13 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
 Get:14 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
 Get:15 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [14.9 kB]
 Get:16 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
@@ -78,16 +78,17 @@ Get:20 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:21 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:22 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [296 kB]
 Get:23 https://deb.debian.org/debian-security bookworm-security/main Translation-en [180 kB]
-Fetched 20.8 MB in 9s (2,361 kB/s)
+Fetched 20.8 MB in 7s (2,806 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Hit:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Get:5 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Ign:6 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
 Hit:7 https://storage.googleapis.com/cros-packages/146 bookworm Release
+Fetched 7,507 B in 2s (4,399 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -276,7 +277,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27978/Tue Apr 21 11:56:17 2026
+ClamAV 1.4.3/27979/Wed Apr 22 11:56:01 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
