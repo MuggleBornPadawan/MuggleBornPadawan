@@ -685,6 +685,8 @@ linux is a kernel which helps you interact with hardware and software
 ** getting help
 - man command_name
 - command_name -h #?
+** boot process
+- power on > firmware > bootloader > kernel > init > user (refer images + https://x.com/AskYoshik/status/2046797732980146358?s=20)
 ** do not run these commands ever
 - rm -rf / | deletes everything from root forever
 - dd - make copies - https://opensource.com/article/18/7/how-use-dd-linux
