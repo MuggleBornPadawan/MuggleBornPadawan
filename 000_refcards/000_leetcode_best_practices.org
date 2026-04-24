@@ -1,0 +1,276 @@
+#+TITLE: LeetCode Problem-Solving Best Practices
+#+AUTHOR: Claude
+#+DATE: 2026-04-24
+#+OPTIONS: toc:2 num:t
+#+STARTUP: overview
+
+* The Golden Rule
+
+#+BEGIN_QUOTE
+Clarify → Example → Pattern → Plan → Code → Test → Optimize
+#+END_QUOTE
+
+The biggest mistake is jumping straight to coding.
+Spending 5–7 minutes planning saves far more time debugging.
+
+* Step 1: Understand the Problem (2–3 min)
+
+Before writing a single line of code, fully absorb what is being asked.
+
+** Checklist
+- [ ] Read the problem carefully — do not skim
+- [ ] Identify the inputs and their types
+- [ ] Identify the expected output
+- [ ] Note all constraints (array size, value range, time limits)
+- [ ] Clarify ambiguities:
+  - Can the input be null or empty?
+  - Are there negative numbers?
+  - Can values repeat?
+  - Is the array sorted?
+
+** Key Question
+/What is actually being asked — not what it looks like at first glance?/
+
+* Step 2: Work Through Examples (2–3 min)
+
+Do not trust your first interpretation. Validate it with examples.
+
+** Actions
+- Trace every provided example by hand, step by step
+- Create your own small, simple examples
+- Create edge case examples:
+  - Empty input
+  - Single element
+  - All identical values
+  - Minimum and maximum constraint values
+  - Already sorted / reverse sorted input
+
+** Why This Matters
+Working through examples manually almost always reveals the underlying
+pattern before you even think about code.
+
+* Step 3: Identify the Pattern and Data Structure
+
+Match the shape of the problem to a known algorithmic pattern.
+
+** Pattern Recognition Table
+
+| Signal in the Problem                  | Likely Pattern              |
+|----------------------------------------+-----------------------------|
+| Sorted array, find a target            | Binary Search               |
+| Contiguous subarray or substring       | Sliding Window              |
+| Tree or graph traversal                | DFS / BFS                   |
+| Best/optimal value across subproblems  | Dynamic Programming         |
+| Pairs or triplets summing to a target  | Two Pointers / Hash Map     |
+| Overlapping subproblems                | Memoization / Recursion     |
+| Top K largest/smallest elements        | Heap (Priority Queue)       |
+| Matching brackets, undo operations     | Stack                       |
+| Intervals, scheduling, overlaps        | Greedy / Sorting            |
+| Subsets, permutations, combinations    | Backtracking                |
+| Connected components, shortest path    | Union-Find / BFS            |
+
+** Tips
+- One problem can combine multiple patterns (e.g., BFS + Hash Map)
+- If you recognize the pattern, name it explicitly before proceeding
+- When unsure, default to brute force first — the pattern often emerges
+
+* Step 4: Plan Before You Code
+
+Never open a code editor without a plan.
+
+** Planning Steps
+1. State your approach in plain English or pseudocode
+2. Estimate time and space complexity /before/ writing code
+3. Decide on your data structures explicitly
+4. Outline the major steps or functions you will need
+5. Note where edge cases need to be handled
+
+** Complexity Targets to Aim For
+
+| Input Size (n)  | Acceptable Complexity |
+|-----------------+-----------------------|
+| n ≤ 20          | O(2^n), O(n!)         |
+| n ≤ 1,000       | O(n²)                 |
+| n ≤ 100,000     | O(n log n)            |
+| n ≤ 10,000,000  | O(n)                  |
+
+** Brute Force First
+If you cannot see the optimal approach, write the brute force solution
+and reason about how to eliminate redundant work. Most optimizations
+fall into one of:
+- Eliminating a nested loop with a hash map
+- Replacing repeated computation with memoization
+- Reducing search space with binary search or two pointers
+
+* Step 5: Code the Solution
+
+Now write the actual code — cleanly and deliberately.
+
+** Coding Best Practices
+- Use meaningful variable names (~left~, ~right~, ~maxSum~ over ~i~, ~j~, ~x~)
+- Write comments for non-obvious logic
+- Handle edge cases inline as you encounter them
+- Keep functions small and focused on one responsibility
+- Avoid premature micro-optimization — clarity first
+
+** Common Pitfalls to Avoid
+- Off-by-one errors in loop bounds and index access
+- Integer overflow when multiplying large values
+- Forgetting to handle empty or null inputs
+- Modifying input data structures in place unintentionally
+- Returning inside a loop when you should continue iterating
+
+* Step 6: Test Your Solution
+
+Do not submit immediately. Test like a reviewer trying to break your code.
+
+** Testing Checklist
+- [ ] Trace through the provided examples manually
+- [ ] Test with your own small custom example
+- [ ] Test edge cases:
+  - Empty array / empty string
+  - Single element
+  - All duplicate values
+  - Negative numbers (if applicable)
+  - Maximum constraint values (stress test mentally)
+- [ ] Check boundary conditions (first element, last element, mid)
+- [ ] Verify the output type matches what is expected
+
+** Dry-Run Technique
+Pick a small input and simulate your code line by line, tracking variable
+values. This catches most bugs before submission.
+
+* Step 7: Analyze Complexity
+
+Always state both time and space complexity explicitly.
+
+** How to Calculate Time Complexity
+- Single loop over n elements → O(n)
+- Nested loops over n elements → O(n²)
+- Dividing the problem in half each step → O(log n)
+- Loop + binary search inside → O(n log n)
+- Recursion with branching factor b, depth d → O(b^d)
+
+** How to Calculate Space Complexity
+- No extra data structures → O(1)
+- Hash map or array of size n → O(n)
+- Recursion call stack of depth n → O(n)
+- 2D DP table → O(n × m)
+
+** The Optimization Question
+After stating complexity, always ask:
+/Can I reduce time at the cost of space, or vice versa? Is there a smarter structure?/
+
+* Step 8: Optimize
+
+Push toward the best known complexity for the problem type.
+
+** Common Optimization Upgrades
+
+| From                        | To                          | Technique                    |
+|-----------------------------+-----------------------------+------------------------------|
+| O(n²) brute force           | O(n) or O(n log n)          | Hash Map / Two Pointers      |
+| Repeated recursive calls    | O(n) with memoization       | Top-down DP                  |
+| Recursion (stack overhead)  | Iterative                   | Bottom-up DP / Stack         |
+| Sorting + linear scan       | Single pass                 | Hash Map                     |
+| Multiple passes over data   | Single pass                 | Combine logic in one loop    |
+
+** When to Stop Optimizing
+- You have reached the theoretical lower bound for the problem
+- Further optimization makes the code significantly harder to read
+- The constraints make your current solution fast enough
+
+* Study and Practice Strategy
+
+Solving problems in isolation is not enough. Build systematic mastery.
+
+** Weekly Practice Structure
+- *Monday–Friday:* 1–2 problems per day by pattern/topic
+- *Saturday:* Review and re-solve problems you struggled with
+- *Sunday:* Timed mock interview (2 problems in 45 minutes)
+
+** Topic Order for Beginners
+1. Arrays and Strings
+2. Hash Maps and Sets
+3. Two Pointers and Sliding Window
+4. Binary Search
+5. Linked Lists
+6. Stacks and Queues
+7. Trees (DFS and BFS)
+8. Graphs
+9. Dynamic Programming
+10. Heaps and Greedy
+
+** How to Review a Problem After Solving
+- Could you solve it without hints in 20 minutes?
+- Can you explain the intuition clearly in plain English?
+- Do you know at least one alternative approach?
+- Have you solved 2–3 similar problems to reinforce the pattern?
+
+* Quick Reference Cheat Sheet
+
+#+BEGIN_EXAMPLE
+PROBLEM RECEIVED
+     │
+     ▼
+┌─────────────────────────────────┐
+│  1. Read carefully               │
+│  2. Note constraints & types     │
+│  3. Ask clarifying questions     │
+└─────────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────────┐
+│  4. Trace provided examples      │
+│  5. Build your own examples      │
+│  6. Find edge cases              │
+└─────────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────────┐
+│  7. Name the pattern             │
+│  8. Choose data structures       │
+└─────────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────────┐
+│  9. Write pseudocode / plan      │
+│  10. State complexity upfront    │
+└─────────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────────┐
+│  11. Code cleanly                │
+│  12. Handle edge cases inline    │
+└─────────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────────┐
+│  13. Dry-run test cases          │
+│  14. Check all edge cases        │
+└─────────────────────────────────┘
+     │
+     ▼
+┌─────────────────────────────────┐
+│  15. State final complexity      │
+│  16. Optimize if needed          │
+└─────────────────────────────────┘
+     │
+     ▼
+  SUBMIT
+#+END_EXAMPLE
+
+* Mindset and Interview Tips
+
+** During an Interview
+- Think out loud at every step — silence is your enemy
+- It is okay to say "I'm not sure yet, let me think through an example"
+- Start with brute force and narrate why you want to improve it
+- Ask before optimizing: "Should I optimize for time or space?"
+- If stuck for more than 5 minutes, ask for a hint — do not freeze
+
+** General Mindset
+- Consistency beats intensity — 30 minutes daily beats 5 hours on weekends
+- Understanding /why/ a solution works matters more than memorizing it
+- Every problem you struggle with is teaching you something
+- The goal is pattern recognition, not problem memorization

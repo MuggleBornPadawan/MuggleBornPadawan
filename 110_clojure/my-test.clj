@@ -12,7 +12,8 @@
   ;; - Smart, structural syntax highlighting thanks to Tree-sitter.
   ;; - Autocompletion and function documentation from LSP.
   ;; - On-the-fly error checking if you type something wrong.
-)
+  )
+
 
 (defn -main [& args]
   (println (greet "world")))
