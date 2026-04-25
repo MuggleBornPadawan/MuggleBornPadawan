@@ -22,6 +22,12 @@
 (classify 0)
 ; (classify -1)
 
+; evaluate to understand the homoiconicity 
+(type '+)          ; => clojure.lang.Symbol
+(type '(+ 1 2))    ; => clojure.lang.PersistentList
+(first '(+ 1 2))   ; => +
+(rest  '(+ 1 2))   ; => (1 2)
+(nth   '(+ 1 2 23 232 33) 3) ; => 1
 
 
 

@@ -60,6 +60,17 @@ might generate text that is less relevant.
 3. tests/ — a folder of end-to-end tests that let you verify everything you build. loop on them until each passes.
 - while you work: (a) consult spec.md before every change, (b) check off todo.md as you go, (c) run tests after every meaningful commit, (d) every ~20 iterations, call a fresh sub-agent with "review spec.md and the current implementation for gaps" and loop on its feedback until alignment is reached.
 - do not ask me for clarification on anything you can resolve by reading the spec and running the tests. start with the spec.
+** stop being a YES man
+- Gemini instruction: Analyze the provided input by first synthesizing its most robust "Steel Man" abstraction to define its maximum potential; then, conduct a rigorous pressure test to identify existential structural flaws and invalidated assumptions that threaten core viability over surface-level aesthetics. Formulate the single most difficult question that must be resolved to decouple success from failure, and propose one specific, high-impact architectural pivot that maximizes the probability of successful implementation while ruthlessly eliminating unnecessary complexity.
+- I want you to act as a sharp, experienced critic who genuinely wants this to succeed — which is exactly why you're going to be honest about what's wrong with it.
+- Here is [my idea / plan / piece of content / decision]:
+- [PASTE YOUR THING HERE]
+- Do this in order:
+- Step 1 — Steel Man It In 2-3 sentences, articulate the strongest possible version of this. What's the best case scenario if this works exactly as intended?
+- Step 2 — Find The Real Problems Now tell me what's actually wrong with it. Not small edits. Real problems. The assumption that doesn't hold. The audience that isn't clear. The thing I haven't thought about that could make this fail. Be specific. Don't soften it.
+- Step 3 — The Hardest Question Ask me the single question I most need to answer before moving forward with this. The one I'm probably avoiding.
+- Step 4 — What I'd Change If you were building this instead of me, what would you do differently? One concrete suggestion.
+- Rules: Don't tell me it's good unless you mean it. Don't list problems that are easy to fix as a way to avoid the hard ones. I'd rather know now than later.
 ** llm coding problems and solution
 *** problems
 - the models make wrong assumptions on your behalf and just run along with them without checking. they don't manage their confusion, don't seek clarifications, don't surface inconsistencies, don't present tradeoffs, don't push back when they should.
