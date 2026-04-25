@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 
-Date: Sat Apr 25 04:48:30 PM IST 2026 
+Date: Sat Apr 25 04:53:11 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -57,19 +57,19 @@ Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:3 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [305 kB]
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:7 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:4 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [305 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
 Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [257 kB]
 Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
 Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:13 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
-Get:14 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.2 kB]
-Get:15 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
+Ign:11 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:12 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:13 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:14 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
+Get:15 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.2 kB]
 Get:16 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
 Get:17 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
 Get:18 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
@@ -78,7 +78,7 @@ Get:20 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:21 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:22 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [297 kB]
 Get:23 https://deb.debian.org/debian-security bookworm-security/main Translation-en [181 kB]
-Fetched 20.8 MB in 9s (2,370 kB/s)
+Fetched 20.8 MB in 10s (2,056 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -86,9 +86,9 @@ Hit:2 https://deb.debian.org/debian bookworm InRelease
 Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Hit:6 https://storage.googleapis.com/cros-packages/146 bookworm Release
-Get:8 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Fetched 7,507 B in 1s (5,919 B/s)
+Get:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Hit:7 https://storage.googleapis.com/cros-packages/146 bookworm Release
+Fetched 7,507 B in 2s (4,475 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -99,15 +99,7 @@ The following packages will be upgraded:
 1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Need to get 111 MB of archives.
 After this operation, 1,049 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-0 [111 MB]
-Ign:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-0
-Get:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-0 [111 MB]
-Ign:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-0
-Get:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-0 [111 MB]
-Ign:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-0
-Get:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-0 [111 MB]
-Err:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-0
-  Error reading from server - read (5: Input/output error) [IP: 104.18.20.66 443]
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -170,7 +162,7 @@ The following packages will be upgraded:
 1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Need to get 111 MB of archives.
 After this operation, 1,049 kB of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-0 [111 MB]
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -242,3 +234,85 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
+├── @google/gemini-cli@0.38.2
+├── @qwen-code/qwen-code@0.6.0
+├── corepack@0.34.0
+├── npm-check-updates@19.2.0
+└── npm@11.7.0
+
+
+run commits seperately; docker and jenkins startup shell scripts to be created seperately
+
+IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
+
+use trash-empty or trash-restore as you see fit
+Password Store
+├── CLAUDE_API_KEY
+├── DEEPSEEK_API_KEY
+├── GEMINI_API_KEY
+├── mbprootp
+├── MOONSHOT_API_KEY
+├── OLLAMA_API_KEY
+├── OPENAI_API_KEY
+├── OPENROUTER_API_KEY
+├── protector_key
+├── tmp
+├── unKnoWn
+├── url
+└── XAI_GROK_API_KEY
+ufw 0.36.2
+Copyright 2008-2023 Canonical Ltd.
+use this command to get more info: sudo ufw app list
+use alias security to get local copy
+
+--                         ------      ----
+110/tcp                    DENY IN     Anywhere                  
+110/tcp (v6)               DENY IN     Anywhere (v6)             
+137                        DENY IN     Anywhere                  
+137 (v6)                   DENY IN     Anywhere (v6)             
+138                        DENY IN     Anywhere                  
+138 (v6)                   DENY IN     Anywhere (v6)             
+139                        DENY IN     Anywhere                  
+139 (v6)                   DENY IN     Anywhere (v6)             
+143                        DENY IN     Anywhere                  
+143 (v6)                   DENY IN     Anywhere (v6)             
+20                         DENY IN     Anywhere                  
+20 (v6)                    DENY IN     Anywhere (v6)             
+21/tcp                     DENY IN     Anywhere                  
+21/tcp (v6)                DENY IN     Anywhere (v6)             
+222                        DENY IN     Anywhere                  
+222 (v6)                   DENY IN     Anywhere (v6)             
+22                         DENY IN     Anywhere                  
+22/tcp                     DENY IN     Anywhere                  
+22/tcp (v6)                DENY IN     Anywhere (v6)             
+22 (v6)                    DENY IN     Anywhere (v6)             
+25/tcp                     DENY IN     Anywhere                  
+25/tcp (v6)                DENY IN     Anywhere (v6)             
+443                        DENY IN     Anywhere                  
+443 (v6)                   DENY IN     Anywhere (v6)             
+445                        DENY IN     Anywhere                  
+445 (v6)                   DENY IN     Anywhere (v6)             
+53 (DNS)                   DENY IN     Anywhere                  
+53 (DNS (v6))              DENY IN     Anywhere (v6)             
+80/tcp                     DENY IN     Anywhere                  
+80/tcp (v6)                DENY IN     Anywhere (v6)             
+Default: deny (incoming), allow (outgoing), deny (routed)
+Logging: on (low)
+New profiles: skip
+Status: active
+To                         Action      From
+ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
+ClamAV 1.4.3/27982/Sat Apr 25 11:54:36 2026
+run 'sudo clamscan -r /' every day. stay safe. have a good day
+run 'sudo systemctl status clamav-freshclam' to check status
+use 'tmux set-option -g status on/off' to toggle tmux status bar
+User snow found. Removing...
+Looking for files to backup/remove ...
+Removing files ...
+Removing crontab ...
+Removing user `snow' ...
+Done.
+snow:x:1002:
+User snow has been created/reset with sudo access.
+-------------------------------------------------------
