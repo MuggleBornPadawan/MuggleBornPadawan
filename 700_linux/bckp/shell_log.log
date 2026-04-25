@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Fri Apr 24 08:04:13 PM IST 2026 
+Date: Sat Apr 25 04:40:03 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -51,16 +51,16 @@ Removing unused dependencies...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [305 kB]
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [305 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
 Get:7 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
 Get:8 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
 Get:9 http://deb.debian.org/debian bookworm-backports/main Translation-en [257 kB]
@@ -69,8 +69,8 @@ Get:11 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5
 Get:12 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
 Get:13 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
 Get:14 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
-Get:15 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.2 kB]
-Get:16 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:15 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:16 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.2 kB]
 Get:17 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
 Get:18 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
 Get:19 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
@@ -78,16 +78,17 @@ Get:20 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:21 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:22 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [297 kB]
 Get:23 https://deb.debian.org/debian-security bookworm-security/main Translation-en [181 kB]
-Fetched 20.8 MB in 8s (2,652 kB/s)
+Fetched 20.8 MB in 8s (2,484 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
 Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Hit:5 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:6 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
 Hit:7 https://storage.googleapis.com/cros-packages/146 bookworm Release
+Fetched 7,507 B in 2s (4,475 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -301,7 +302,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27981/Fri Apr 24 11:54:36 2026
+ClamAV 1.4.3/27982/Sat Apr 25 11:54:36 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
