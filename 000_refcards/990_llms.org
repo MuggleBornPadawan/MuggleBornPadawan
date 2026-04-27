@@ -53,6 +53,8 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** grill me - spec to code
+- interview me relentlessly about every aspect of this plan until we reach a shared understanding. walk down each branch of the design tree, resolving dependencies between decisions one by one. ask about requirements, edge cases, user experience, data models, and failure modes. do not write a plan document or code until i say we are aligned.
 ** coding agent instructions
 - before you start work on this project, create three files:
 1. spec.md — a complete spec with goals, implementation details, and a verification section describing exactly how you'll prove each piece works.

@@ -15,6 +15,11 @@ if id "$targetUser" &>/dev/null; then
     echo "User $targetUser found. Removing..."
     # --remove-home deletes the directory as well
     sudo deluser --remove-home "$targetUser"
+    # verification of removal
+    id $targetUser 
+    ls -d /home/$targetUser
+    sudo find / -uid 1002 2>/dev/null # Replace 1001 with the actual UID the user had
+    ps | grep $targetUser
 fi
 
 # 2. Create the user
