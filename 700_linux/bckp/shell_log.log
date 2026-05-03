@@ -1,4 +1,4 @@
-[H[J[3J--- Omni-Sentry v2.0 Initialized ---
+--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
-
-Date: Tue Apr 28 05:44:57 PM IST 2026 
+-e 
+Date: Sun May  3 10:41:23 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -76,40 +76,3 @@ Err:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
   Temporary failure resolving 'storage.googleapis.com'
 Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:1 https://deb.debian.org/debian bookworm InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:5 https://deb.debian.org/debian bookworm-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:6 https://deb.debian.org/debian-security bookworm-security InRelease
-  Temporary failure resolving 'deb.debian.org'
-Reading package lists...
---- Cleanup Complete ---
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Err:3 http://deb.debian.org/debian bookworm-backports InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-  Temporary failure resolving 'packages.adoptium.net'
-Err:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:1 https://deb.debian.org/debian bookworm InRelease
-  Temporary failure resolving 'deb.debian.org'
