@@ -1,4 +1,4 @@
---- Omni-Sentry v2.0 Initialized ---
+[H[J[3J--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Sun May  3 10:41:23 PM IST 2026 
+
+Date: Sun May  3 10:43:37 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -55,24 +55,257 @@ Reading state information...
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:4 https://deb.debian.org/debian bookworm InRelease
 Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:2 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Get:4 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
+Get:8 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [306 kB]
+Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en [258 kB]
+Get:11 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:12 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:13 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:14 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:15 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.4 kB]
+Get:16 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
+Get:17 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:18 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
+Get:19 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Hit:20 https://deb.debian.org/debian bookworm-updates/main amd64 Packages
+Hit:21 https://deb.debian.org/debian bookworm-updates/main Translation-en
+Hit:22 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+Hit:23 https://deb.debian.org/debian-security bookworm-security/main Translation-en
+Fetched 20.2 MB in 1min 24s (241 kB/s)
+Reading package lists...
+--- Cleanup Complete ---
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Err:2 http://deb.debian.org/debian bookworm-backports InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-  Temporary failure resolving 'packages.adoptium.net'
-Err:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Get:7 https://deb.debian.org/debian bookworm-updates/main amd64 Packages.diff/Index [21.8 kB]
+Get:8 https://deb.debian.org/debian bookworm-updates/main Translation-en.diff/Index [20.7 kB]
+Hit:9 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages
+Hit:10 https://deb.debian.org/debian-security bookworm-security/main Translation-en
+Hit:11 https://storage.googleapis.com/cros-packages/146 bookworm Release
+Fetched 153 kB in 2s (91.8 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages will be upgraded:
+  firefox-esr imagemagick imagemagick-6-common imagemagick-6.q16
+  libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  linux-libc-dev openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
+  openjdk-17-jre-headless
+12 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 200 MB of archives.
+After this operation, 608 kB of additional disk space will be used.
+Do you want to continue? [Y/n] hon3-pip is already the newest version (23.0.1+dfsg-1).
+sbcl is already the newest version (2:2.2.9-1).
+mit-scheme is already the newest version (12.1-3).
+racket is already the newest version (8.7+dfsg1-1).
+clojure is already the newest version (1.11.1-2).
+rlwrap is already the newest version (0.46.1-1).
+leiningen is already the newest version (2.10.0-2).
+emacs is already the newest version (1:30.1+1-6~bpo12+1).
+elpa-magit is already the newest version (3.3.0-2).
+clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
+r-base is already the newest version (4.2.2.20221110-2).
+build-essential is already the newest version (12.9).
+fortune-mod is already the newest version (1:1.99.1-7.3).
+cowsay is already the newest version (3.03+dfsg2-8).
+trash-cli is already the newest version (0.17.1.14-5).
+Calculating upgrade...
+The following packages will be upgraded:
+  firefox-esr imagemagick imagemagick-6-common imagemagick-6.q16
+  libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  linux-libc-dev openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
+  openjdk-17-jre-headless
+12 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 200 MB of archives.
+After this operation, 608 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+gcc is already the newest version (4:12.2.0-3).
+make is already the newest version (4.3-4.1).
+pkg-config is already the newest version (1.8.1-1).
+python3 is already the newest version (3.11.2-1+b1).
+python3-pip is already the newest version (23.0.1+dfsg-1).
+python3-pytest is already the newest version (7.2.1-2).
+valgrind is already the newest version (1:3.19.0-1).
+cmake is already the newest version (3.25.1-1).
+check is already the newest version (0.15.2-2+b1).
+libbz2-dev is already the newest version (1.0.8-5+b1).
+libcurl4-openssl-dev is already the newest version (7.88.1-10+deb12u14).
+libjson-c-dev is already the newest version (0.16-2).
+libmilter-dev is already the newest version (8.17.1.9-2+deb12u2).
+libncurses5-dev is already the newest version (6.4-4).
+libpcre2-dev is already the newest version (10.42-1).
+libssl-dev is already the newest version (3.0.19-1~deb12u2).
+libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u5).
+zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
+Calculating upgrade...
+The following packages will be upgraded:
+  firefox-esr imagemagick imagemagick-6-common imagemagick-6.q16
+  libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  linux-libc-dev openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
+  openjdk-17-jre-headless
+12 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 200 MB of archives.
+After this operation, 608 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ufw is already the newest version (0.36.2-1).
+netcat-openbsd is already the newest version (1.219-1).
+iproute2 is already the newest version (6.1.0-3).
+tcpdump is already the newest version (4.99.3-1).
+lsof is already the newest version (4.95.0-1).
+neofetch is already the newest version (7.1.0-4).
+rsync is already the newest version (3.2.7-1+deb12u4).
+htop is already the newest version (3.2.2-2).
+gnupg is already the newest version (2.2.40-1.1+deb12u2).
+ncdu is already the newest version (1.18-0.2).
+parallel is already the newest version (20221122+ds-2).
+tmux is already the newest version (3.3a-3).
+dnsutils is already the newest version (1:9.18.47-1~deb12u1).
+nmap is already the newest version (7.93+dfsg1-1).
+Calculating upgrade...
+The following packages will be upgraded:
+  firefox-esr imagemagick imagemagick-6-common imagemagick-6.q16
+  libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  linux-libc-dev openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
+  openjdk-17-jre-headless
+12 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 200 MB of archives.
+After this operation, 608 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+podman is already the newest version (4.3.1+ds1-8+deb12u1+b2).
+crun is already the newest version (1.8.1-1+deb12u1).
+Calculating upgrade...
+The following packages will be upgraded:
+  firefox-esr imagemagick imagemagick-6-common imagemagick-6.q16
+  libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  linux-libc-dev openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre
+  openjdk-17-jre-headless
+12 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 200 MB of archives.
+After this operation, 608 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 12 not upgraded.
+/usr/local/lib
+├── @anthropic-ai/claude-code@2.1.72
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
+
+-e 
+run commits seperately; docker and jenkins startup shell scripts to be created seperately
+-e 
+IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
+-e 
+use trash-empty or trash-restore as you see fit
+Password Store
+├── CLAUDE_API_KEY
+├── DEEPSEEK_API_KEY
+├── GEMINI_API_KEY
+├── mbprootp
+├── MOONSHOT_API_KEY
+├── OLLAMA_API_KEY
+├── OPENAI_API_KEY
+├── OPENROUTER_API_KEY
+├── protector_key
+├── tmp
+├── unKnoWn
+├── url
+└── XAI_GROK_API_KEY
+ufw 0.36.2
+Copyright 2008-2023 Canonical Ltd.
+use this command to get more info: sudo ufw app list
+use alias security to get local copy
+
+--                         ------      ----
+110/tcp                    DENY IN     Anywhere                  
+110/tcp (v6)               DENY IN     Anywhere (v6)             
+137                        DENY IN     Anywhere                  
+137 (v6)                   DENY IN     Anywhere (v6)             
+138                        DENY IN     Anywhere                  
+138 (v6)                   DENY IN     Anywhere (v6)             
+139                        DENY IN     Anywhere                  
+139 (v6)                   DENY IN     Anywhere (v6)             
+143                        DENY IN     Anywhere                  
+143 (v6)                   DENY IN     Anywhere (v6)             
+20                         DENY IN     Anywhere                  
+20 (v6)                    DENY IN     Anywhere (v6)             
+21/tcp                     DENY IN     Anywhere                  
+21/tcp (v6)                DENY IN     Anywhere (v6)             
+222                        DENY IN     Anywhere                  
+222 (v6)                   DENY IN     Anywhere (v6)             
+22                         DENY IN     Anywhere                  
+22/tcp                     DENY IN     Anywhere                  
+22/tcp (v6)                DENY IN     Anywhere (v6)             
+22 (v6)                    DENY IN     Anywhere (v6)             
+25/tcp                     DENY IN     Anywhere                  
+25/tcp (v6)                DENY IN     Anywhere (v6)             
+443                        DENY IN     Anywhere                  
+443 (v6)                   DENY IN     Anywhere (v6)             
+445                        DENY IN     Anywhere                  
+445 (v6)                   DENY IN     Anywhere (v6)             
+53 (DNS)                   DENY IN     Anywhere                  
+53 (DNS (v6))              DENY IN     Anywhere (v6)             
+80/tcp                     DENY IN     Anywhere                  
+80/tcp (v6)                DENY IN     Anywhere (v6)             
+Default: deny (incoming), allow (outgoing), deny (routed)
+Logging: on (low)
+New profiles: skip
+Status: active
+To                         Action      From
+Sun May  3 22:45:32 2026 -> ClamAV update process started at Sun May  3 22:45:32 2026
+Sun May  3 22:45:33 2026 -> daily database available for update (local version: 27985, remote version: 27990)
+Sun May  3 22:45:35 2026 -> Testing database: '/var/lib/clamav/tmp.6ea3359711/clamav-77572eb4e6415156330de4f9b8b2721a.tmp-daily.cld' ...
+Sun May  3 22:45:37 2026 -> Database test passed.
+Sun May  3 22:45:37 2026 -> daily.cld updated (version: 27990, sigs: 355446, f-level: 90, builder: svc.clamav-publisher)
+Sun May  3 22:45:37 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+Sun May  3 22:45:37 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+Sun May  3 22:45:37 2026 -> Clamd successfully notified about the update.
+ClamAV 1.4.3/27990/Sun May  3 11:54:58 2026
+run 'sudo clamscan -r /' every day. stay safe. have a good day
+run 'sudo systemctl status clamav-freshclam' to check status
+use 'tmux set-option -g status on/off' to toggle tmux status bar
+User snow found. Removing...
+Looking for files to backup/remove ...
+Removing files ...
+Removing crontab ...
+Removing user `snow' ...
+Done.
+10880 ?        00:00:00 snow.sh
+snow:x:1002:
+User snow has been created/reset with sudo access.
+-------------------------------------------------------
