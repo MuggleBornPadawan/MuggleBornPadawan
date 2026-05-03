@@ -118,18 +118,14 @@ The following packages will be upgraded:
 12 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Need to get 200 MB of archives.
 After this operation, 608 kB of additional disk space will be used.
-Do you want to continue? [Y/n] hon3-pip is already the newest version (23.0.1+dfsg-1).
-sbcl is already the newest version (2:2.2.9-1).
-mit-scheme is already the newest version (12.1-3).
-racket is already the newest version (8.7+dfsg1-1).
-clojure is already the newest version (1.11.1-2).
-rlwrap is already the newest version (0.46.1-1).
-leiningen is already the newest version (2.10.0-2).
-emacs is already the newest version (1:30.1+1-6~bpo12+1).
-elpa-magit is already the newest version (3.3.0-2).
-clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
-r-base is already the newest version (4.2.2.20221110-2).
-build-essential is already the newest version (12.9).
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 imagemagick-6-common all 8:6.9.11.60+dfsg-1.6+deb12u9 [172 kB]
+Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 libmagickcore-6.q16-6 amd64 8:6.9.11.60+dfsg-1.6+deb12u9 [1,805 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 libmagickwand-6.q16-6 amd64 8:6.9.11.60+dfsg-1.6+deb12u9 [416 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 140.10.1esr-1~deb12u1 [76.2 MB]
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ewest version (12.9).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 trash-cli is already the newest version (0.17.1.14-5).
