@@ -1,4 +1,4 @@
-[H[J[3J--- Omni-Sentry v2.0 Initialized ---
+--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
-
-Date: Sun May  3 11:08:49 PM IST 2026 
+-e 
+Date: Mon May  4 08:47:36 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -55,40 +55,68 @@ Reading state information...
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [306 kB]
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:6 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [258 kB]
-Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:13 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Get:14 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
-Get:15 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.4 kB]
-Get:16 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
-Get:17 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
-Get:18 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
-Get:19 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
-Get:20 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
-Get:21 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
-Get:22 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [299 kB]
-Get:23 https://deb.debian.org/debian-security bookworm-security/main Translation-en [182 kB]
-Fetched 20.8 MB in 9s (2,314 kB/s)
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:4 https://deb.debian.org/debian bookworm InRelease
+Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:4 https://deb.debian.org/debian bookworm InRelease
+Err:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+  Temporary failure resolving 'storage.googleapis.com'
+Err:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+  Temporary failure resolving 'packages.adoptium.net'
+Err:1 http://deb.debian.org/debian bookworm-backports InRelease
+  Temporary failure resolving 'deb.debian.org'
+Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://deb.debian.org/debian bookworm InRelease
+Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Err:4 https://deb.debian.org/debian bookworm InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:5 https://deb.debian.org/debian bookworm-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:6 https://deb.debian.org/debian-security bookworm-security InRelease
+  Temporary failure resolving 'deb.debian.org'
 Reading package lists...
 --- Cleanup Complete ---
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Hit:7 https://storage.googleapis.com/cros-packages/146 bookworm Release
-Fetched 7,507 B in 1s (5,667 B/s)
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
+Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
+Err:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+  Temporary failure resolving 'storage.googleapis.com'
+Err:3 http://deb.debian.org/debian bookworm-backports InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+  Temporary failure resolving 'packages.adoptium.net'
+Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
+Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Err:2 https://deb.debian.org/debian bookworm InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:5 https://deb.debian.org/debian bookworm-updates InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:6 https://deb.debian.org/debian-security bookworm-security InRelease
+  Temporary failure resolving 'deb.debian.org'
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -209,18 +237,17 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
-├── @google/gemini-cli@0.39.1
-├── @qwen-code/qwen-code@0.6.0
-├── corepack@0.34.0
-├── npm-check-updates@19.2.0
-└── npm@11.7.0
+/usr/local/lib
+├── @anthropic-ai/claude-code@2.1.72
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
 
-
+-e 
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
-
+-e 
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
-
+-e 
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -277,10 +304,7 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-Sun May  3 23:09:44 2026 -> ClamAV update process started at Sun May  3 23:09:44 2026
-Sun May  3 23:09:45 2026 -> daily.cld database is up-to-date (version: 27990, sigs: 355446, f-level: 90, builder: svc.clamav-publisher)
-Sun May  3 23:09:45 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
-Sun May  3 23:09:45 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
 ClamAV 1.4.3/27990/Sun May  3 11:54:58 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
@@ -291,7 +315,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
-31615 pts/13   00:00:00 snow.sh
+10055 ?        00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
