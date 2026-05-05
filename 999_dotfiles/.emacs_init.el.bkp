@@ -120,9 +120,10 @@
 ;; --- Org-Babel Python Configuration ---
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((python . t))) ; The 't' means enable it.
+ '((python . t)))
 
-(setq org-babel-python-cmd "python") 
+;; Use python3 as the default interpreter
+(setq org-babel-python-command "python3")
 
 ;; geiser-repl
 (defun my/geiser-set-repl-directory ()
