@@ -1,0 +1,48 @@
+#+title: coding interview patterns
+* intro
+source: https://bytebytego.com/my-courses
+** two pointers
+#+begin_src python :results output
+  print("Hello from Emacs!")
+  def compare(a, b):
+    return (a > b) - (a < b)  # Returns 1, -1, or 0 (Legacy cmp behavior)
+  n = 3
+  for i in range(n):
+    for j in range(i + 1, n):
+      results = compare(j, i)
+      print(f"numbers are {i, j, results}")
+#+end_src
+
+#+RESULTS:
+: Hello from Emacs!
+: numbers are (0, 1, -1)
+: numbers are (0, 2, -1)
+: numbers are (1, 2, -1)
+
+*** inward traversal
+- pair sum-sorted
+- triplet sum
+- largest container
+- is palindrome valid
+*** staged traversal
+- next lexicographical sequence
+*** unidirectional traversal
+- shift zeros to the end
+** hash maps and sets
+** linked lists
+** fast and slow pointers
+** sliding windows
+** binary search
+** stacks
+** heaps
+** intervals
+** prefix sums
+** trees
+** tries
+** graphs
+** backtracking
+** dynamic programming
+** greedy
+** sort and search
+** bit manipulation
+** math and geometry 
