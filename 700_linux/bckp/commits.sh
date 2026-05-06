@@ -86,7 +86,7 @@ git commit -m "daily racket"
 cd
 delay_timer "$1"
 cd MuggleBornPadawan/100_cpp
-./hello
+./hello > hello_world.log
 cd
 cd MuggleBornPadawan/
 git add .
