@@ -44,7 +44,11 @@ test_data = [
     (".,", True),                              # Symbols only
     ("12321", True),                           # Numbers
     ("No 'x' in Nixon", True),                 # Famous political palindrome
-    ("0P", False)                              # Mixed mismatch
+    ("0P", False),                             # Mixed mismatch
+    ("!, (?)", True),                          # Tests a string with no alphanumeric characters
+    ("12.02.2021", True),                      # Tests a palindrome with punctuation and numbers
+    ("21.02.2021", False),                     # Tests a non-palindrome with punctuation and numbers
+    ("hello, world!", False)                   # Tests a non-palindrome with punctuation
 ]
 
 print(f"{'INPUT':<35} | {'EXPECTED':<10} | {'ACTUAL':<10} | {'STATUS'}")
