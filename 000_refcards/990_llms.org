@@ -53,6 +53,13 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** elon musk - five step rubric
+aim: to figure out what a process needs before trying to make it faster or handing off any part of it to a machine
+- question every requirement. every rule, checkpoint, and instruction in a workflow has to justify itself by naming the specific thing that goes wrong without it. if nobody can answer that, it shouldn’t be there.
+- delete what you can. cut steps, approvals, reviews, and agents that don’t survive step one. if you’re not occasionally removing something you later need to restore, you haven’t cut enough.
+- simplify and clarify. break the remaining work into smaller, clearer pieces. each task should have a single owner, a defined output, and only the information and tools it actually needs.
+- accelerate feedback loops. shorten the time between handing work to an agent and knowing whether it succeeded. surface errors early, run independent tasks at the same time, and stop making the workflow wait on unneeded approvals.
+- automate last. start with a checkpoint at every step. only after a workflow is necessary, lean, and fast should you take the humans out of the loop.
 ** grill me - spec to code
 - interview me relentlessly about every aspect of this plan until we reach a shared understanding. walk down each branch of the design tree, resolving dependencies between decisions one by one. ask about requirements, edge cases, user experience, data models, and failure modes. do not write a plan document or code until i say we are aligned.
 ** coding agent instructions
