@@ -125,6 +125,11 @@
 ;; Use python3 as the default interpreter
 (setq org-babel-python-command "python3")
 
+;; --- Org-Babel Shell Configuration ---
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((shell . t))) ;; 't' stands for true/enabled
+
 ;; geiser-repl
 (defun my/geiser-set-repl-directory ()
   "Set Geiser's working directory to the current file's directory."
