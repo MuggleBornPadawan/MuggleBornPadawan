@@ -3,6 +3,8 @@
 - eg: news feed, Google search, chat system, etc
 - big scope, vague instructions, system requirements, constraints and bottlenecks
 - discord server - invite
+** sample generic design
+[[file:./x_system_design.png]]
 ** scale from zero to millions of users
 *** intro
 - domain name server (dns) is a distributed database; returns public ip
@@ -25,6 +27,8 @@
 - non relational (key-value stores, graph stores, column stores, document stores)
 - vertical scaling - more cpu, ram, etc
 - horizontal scaling - sharding (more servers)
+- celebrity problem
+- join and de-normalize - single table queries 
 *** load balancer
 - redundancy
 - private ips are used
@@ -47,10 +51,25 @@
 - data synchronization
 - test and deployment
 *** message queue
+- durable component - apache kafka (ai / analytics), rabbitmq (complex routing / web), apache pulsar (geo replication), nats (jetstream / iot edge), valkey (redis - simple and fast) 
 - asynchronous communication
 - producer (publishes) -> message queue -> consumer (subscribes and consumes)
-*** logging, metrics and automation
-- 
+- variables: persistency, throughput vs latency, delivery guarentees, operational overheads 
+*** logging, metrics, monitoring and automation
+**** metrics
+- host level metrics: cpu, memory, disk i/o, etc.
+- aggregated level metrics: for example, the performance of the entire database tier, cache tier, etc.
+- key business metrics: daily active users, retention, revenue, etc.
+**** software
+- prometheus, grafana, 
+** back of the envelope estimation
+
+
+
+
+
+
+
 
 ** general research   
 *** security in stateless architecture
