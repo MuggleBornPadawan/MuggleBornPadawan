@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed May  6 10:03:20 PM IST 2026 
+Date: Fri May  8 10:51:13 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -59,36 +59,36 @@ Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
 Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
 Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [306 kB]
-Get:6 http://deb.debian.org/debian bookworm-backports/main Translation-en [258 kB]
-Get:7 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:8 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:9 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:10 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:11 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
-Ign:12 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [306 kB]
+Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en [258 kB]
+Get:8 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:11 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:12 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
 Get:13 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
-Get:14 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
-Get:15 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
-Get:16 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Get:17 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.8 kB]
-Get:18 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
+Get:14 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Get:15 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:16 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Get:17 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
+Get:18 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.8 kB]
 Get:19 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
 Get:20 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
 Get:21 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:22 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [299 kB]
 Get:23 https://deb.debian.org/debian-security bookworm-security/main Translation-en [182 kB]
-Fetched 20.8 MB in 5s (4,106 kB/s)
+Fetched 20.8 MB in 6s (3,498 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
-Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:4 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/146 bookworm Release
 Get:8 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Fetched 7,507 B in 1s (5,488 B/s)
+Fetched 7,507 B in 1s (5,671 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -277,7 +277,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/27993/Wed May  6 11:54:57 2026
+ClamAV 1.4.3/27994/Thu May  7 11:59:28 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
@@ -287,7 +287,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
- 4045 ?        00:00:00 snow.sh
+ 7289 ?        00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
