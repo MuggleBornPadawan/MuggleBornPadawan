@@ -1,0 +1,53 @@
+#+title: system design
+* intro
+- eg: news feed, Google search, chat system, etc
+- big scope, vague instructions, system requirements, constraints and bottlenecks
+- discord server - invite
+** scale from zero to millions of users
+*** intro
+- domain name server (dns) is a distributed database; returns public ip
+- a single key can return multiple types of records (A, AAAA, MX, TXT) based on the query type and the requester's geographical location (Anycast)
+- flow: web browser or mobile app --> dns lookup --> get ip --> ping ip with http request --> html page or json response 
+- web browser -> html & javascript client side; server side languages handle business logic and storage
+- mobile app -> json; api response 
+- web server and database server are seperate to scale them independently
+*** summary
+- keep web tier stateless
+- build redundancy at every tier
+- cache data as much as you can
+- support multiple data centers
+- host static assets in cdn
+- scale your data tier by sharding
+- split tiers into individual services
+- monitor your system and use automation tools
+*** database
+- relational (rows and columns); joins; queries
+- non relational (key-value stores, graph stores, column stores, document stores)
+- vertical scaling - more cpu, ram, etc
+- horizontal scaling - sharding (more servers)
+*** load balancer
+- redundancy
+- private ips are used
+- databases - master (writes, updates and deletions), backups and slaves (reads)
+- performance, reliablity, availablity 
+*** cache tier
+- the cache tier is a temporary data store layer, much faster than the database. the benefits of having a separate cache tier include better system performance, ability to reduce database workloads, and the ability to scale the cache tier independently
+- use case: more reads than writes
+- cons: volatile memory; persistent data stores to be created for important data
+- best practice: expiration policies (time to live - ttl), consistency, mitigate failures with multiple cache servers (avoid single point of failure), eviction policies (least recently used - lru, least frequently used - lfu, first in first out - fifo), fall back to origin source  
+- recommended read: scaling memcache at facebook 
+*** content delivery netwrok (cdn)
+- static content like images, videos, css, javascript files, etc.
+- dynamic content caching - based on request path, query strings, cookies, and request headers
+*** stateless web tier
+- state is fetched from database server; application layer remains stateless
+- in this stateless architecture, http requests from users can be sent to any web servers, which fetch state data from a shared data store. state data is stored in a shared data store and kept out of web servers. a stateless system is simpler, more robust, and scalable.
+*** data centers
+- traffic redirection
+- data synchronization
+- test and deployment
+*** message queue
+- asynchronous communication
+- producer (publishes) -> message queue -> consumer (subscribes and consumes)
+*** logging, metrics and automation
+- 

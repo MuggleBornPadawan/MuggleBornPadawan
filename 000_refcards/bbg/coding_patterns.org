@@ -14,12 +14,18 @@ source: https://bytebytego.com/my-courses
 |                        | unidirectional traversal | shift zeros to end            | O(n)   | O(1)   |                                                  |
 |------------------------+--------------------------+-------------------------------+--------+--------+--------------------------------------------------|
 | hash maps and sets     | hash maps                | pair sum - unsorted           | O(n)   | O(n)   |                                                  |
-|                        |                          | geometric seq triplets        |        |        |                                                  |
+|                        |                          | geometric seq triplets        | O(n)   | O(n)   |                                                  |
 |                        | hash sets                | verify sudoku board           | O(n^2) | O(n^2) |                                                  |
 |                        |                          | zero striping                 | O(m*n) | O(1)   |                                                  |
-|                        |                          | longest chain of conseq' #s   |        |        |                                                  |
+|                        |                          | longest chain of conseq' #s   | O(n)   | O(n)   | sorted                                           |
 |------------------------+--------------------------+-------------------------------+--------+--------+--------------------------------------------------|
-| linked lists           |                          |                               |        |        |                                                  |
+| linked lists           | traversal                | linked list intersection      |        |        |                                                  |
+|                        |                          | palindrom linked list         |        |        |                                                  |
+|                        | restructuring            | linked list reversal          |        |        |                                                  |
+|                        |                          | remove the kth last node      |        |        |                                                  |
+|                        |                          | flatten a multilevel list     |        |        |                                                  |
+|                        | doubly linked list       | lru cache                     |        |        |                                                  |
+|------------------------+--------------------------+-------------------------------+--------+--------+--------------------------------------------------|
 | fast and slow pointers |                          |                               |        |        |                                                  |
 | sliding windows        |                          |                               |        |        |                                                  |
 | binary search          |                          |                               |        |        |                                                  |
@@ -44,6 +50,8 @@ source: https://bytebytego.com/my-courses
 - most common use case - garbage collection - 'scan' and 'free' pointers used for memory compaction - he goal is to free up contiguous memory space by eliminating gaps left by deallocated (aka dead) objects
 ** code blocks
 #+begin_src shell :results output
+  python3 src/geometric_seq_triplets.py 
+  python3 src/longest_conseq_sequence.py
   python3 src/zero_striping_inplace.py
   python3 src/verify_sudoku_board.py
   python3 src/hashmap_pair_sum.py
@@ -60,22 +68,6 @@ source: https://bytebytego.com/my-courses
 #+begin_src shell :results output
   python3 src/zero_striping_inplace.py
 #+end_src
-
-#+RESULTS:
-#+begin_example
-,#+TITLE: Matrix Zero Striping Test Results
-,#+CAPTION: Complexity: Time O(MN), Space O(1)
-| Test Case Name | Input Matrix | Expected | Result | Status |
-|----------------+--------------+----------+--------+--------|
-| Standard 3x3 | [[1,1,1],[1,0,1],[1,1,1]] | [[1,0,1],[0,0,0],[1,0,1]] | [[1,0,1],[0,0,0],[1,0,1]] | PASS |
-| Multiple Zeroes | [[0,1,2,0],[3,4,5,2],[1,3,1,5]] | [[0,0,0,0],[0,4,5,0],[0,3,1,0]] | [[0,0,0,0],[0,4,5,0],[0,3,1,0]] | PASS |
-| First Row/Col Zero | [[0,1],[1,1]] | [[0,0],[0,1]] | [[0,0],[0,1]] | PASS |
-| No Zeroes | [[1,2],[3,4]] | [[1,2],[3,4]] | [[1,2],[3,4]] | PASS |
-| Single Element Zero | [[0]] | [[0]] | [[0]] | PASS |
-| All Zeroes | [[0,0],[0,0]] | [[0,0],[0,0]] | [[0,0],[0,0]] | PASS |
-
-# Note: Results generated using in-place mutation algorithm.
-#+end_example
 
 ** prompt tip
 i will be running it as code block in emacs org mode file. i want to execute the given code in the script itself. include edge test cases and send me the updated script. format test results in appropriate tables. add relevant description in results including header note, time and space complexity info, footer note. no need to use main function
