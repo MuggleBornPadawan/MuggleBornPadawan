@@ -1,4 +1,4 @@
---- Omni-Sentry v2.0 Initialized ---
+[H[J[3J--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Mon May 11 10:24:43 PM IST 2026 
+
+Date: Mon May 11 10:42:37 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -55,74 +55,80 @@ Reading state information...
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:3 https://deb.debian.org/debian bookworm InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:3 https://deb.debian.org/debian bookworm InRelease
-Err:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-  Temporary failure resolving 'packages.adoptium.net'
-Err:1 http://deb.debian.org/debian bookworm-backports InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:3 https://deb.debian.org/debian bookworm InRelease
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:3 https://deb.debian.org/debian bookworm InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:5 https://deb.debian.org/debian bookworm-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:6 https://deb.debian.org/debian-security bookworm-security InRelease
-  Temporary failure resolving 'deb.debian.org'
+Get:1 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Ign:2 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:3 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
+Get:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Get:5 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:6 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.8 kB]
+Get:7 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:8 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Get:9 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:10 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
+Get:11 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:12 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [307 kB]
+Get:13 http://deb.debian.org/debian bookworm-backports/main Translation-en [260 kB]
+Get:14 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:15 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:16 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:17 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:18 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
+Get:19 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
+Get:20 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
+Get:21 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
+Get:22 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [303 kB]
+Get:23 https://deb.debian.org/debian-security bookworm-security/main Translation-en [186 kB]
+Fetched 20.8 MB in 15s (1,375 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
-Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:4 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:4 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Err:4 http://deb.debian.org/debian bookworm-backports InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
-Err:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-  Temporary failure resolving 'packages.adoptium.net'
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:2 https://deb.debian.org/debian bookworm InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:5 https://deb.debian.org/debian bookworm-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:6 https://deb.debian.org/debian-security bookworm-security InRelease
-  Temporary failure resolving 'deb.debian.org'
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Hit:6 https://storage.googleapis.com/cros-packages/146 bookworm Release
+Hit:8 https://packages.adoptium.net/artifactory/deb bookworm InRelease
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr liblcms2-2 libpng-dev libpng-tools libpng16-16 linux-libc-dev
+6 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 79.4 MB of archives.
+After this operation, 0 B of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 140.10.2esr-1~deb12u1 [76.2 MB]
+Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 liblcms2-2 amd64 2.14-2+deb12u1 [154 kB]
+Get:3 https://deb.debian.org/debian-security bookworm-security/main amd64 libpng-tools amd64 1.6.39-2+deb12u5 [127 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security/main amd64 libpng-dev amd64 1.6.39-2+deb12u5 [360 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security/main amd64 libpng16-16 amd64 1.6.39-2+deb12u5 [277 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security/main amd64 linux-libc-dev amd64 6.1.170-3 [2,272 kB]
+Fetched 79.4 MB in 19s (4,178 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 127324 files and directories currently installed.)
+Preparing to unpack .../0-firefox-esr_140.10.2esr-1~deb12u1_amd64.deb ...
+Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
+Unpacking firefox-esr (140.10.2esr-1~deb12u1) over (140.10.1esr-1~deb12u1) ...
+Preparing to unpack .../1-liblcms2-2_2.14-2+deb12u1_amd64.deb ...
+Unpacking liblcms2-2:amd64 (2.14-2+deb12u1) over (2.14-2) ...
+Preparing to unpack .../2-libpng-tools_1.6.39-2+deb12u5_amd64.deb ...
+Unpacking libpng-tools (1.6.39-2+deb12u5) over (1.6.39-2+deb12u4) ...
+Preparing to unpack .../3-libpng-dev_1.6.39-2+deb12u5_amd64.deb ...
+Unpacking libpng-dev:amd64 (1.6.39-2+deb12u5) over (1.6.39-2+deb12u4) ...
+Preparing to unpack .../4-libpng16-16_1.6.39-2+deb12u5_amd64.deb ...
+Unpacking libpng16-16:amd64 (1.6.39-2+deb12u5) over (1.6.39-2+deb12u4) ...
+Preparing to unpack .../5-linux-libc-dev_6.1.170-3_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (6.1.170-3) over (6.1.170-1) ...
+Setting up liblcms2-2:amd64 (2.14-2+deb12u1) ...
+Setting up linux-libc-dev:amd64 (6.1.170-3) ...
+Setting up libpng16-16:amd64 (1.6.39-2+deb12u5) ...
+Setting up firefox-esr (140.10.2esr-1~deb12u1) ...
+Setting up libpng-tools (1.6.39-2+deb12u5) ...
+Setting up libpng-dev:amd64 (1.6.39-2+deb12u5) ...
+Processing triggers for desktop-file-utils (0.26-1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for libc-bin (2.36-9+deb12u13) ...
+Processing triggers for man-db (2.11.2-2) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -175,7 +181,7 @@ elpa-magit is already the newest version (3.3.0-2).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).
-firefox-esr is already the newest version (140.10.1esr-1~deb12u1).
+firefox-esr is already the newest version (140.10.2esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 trash-cli is already the newest version (0.17.1.14-5).
@@ -237,17 +243,18 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @anthropic-ai/claude-code@2.1.72
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
+├── @google/gemini-cli@0.41.2
+├── @qwen-code/qwen-code@0.6.0
+├── corepack@0.34.0
+├── npm-check-updates@19.2.0
+└── npm@11.7.0
 
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -315,7 +322,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
- 9772 ?        00:00:00 snow.sh
+19407 pts/13   00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
