@@ -5,6 +5,7 @@
 - discord server - invite
 ** sample generic design
 [[file:./x_system_design.png]]
+[[file:./x_shape_system_design.jpeg]]
 ** scale from zero to millions of users
 *** intro
 - domain name server (dns) is a distributed database; returns public ip
@@ -63,14 +64,32 @@
 **** software
 - prometheus, grafana, 
 ** back of the envelope estimation
-
-
-
-
-
-
-
-
+- estimate system capacity or performance requirements: power of two, latency and availablity numbers
+- latency numbers
+|------------------------------------+-----------+-----------------------+------------|
+| Operation                          | Time (ns) | Time (Human Readable) | Category   |
+|------------------------------------+-----------+-----------------------+------------|
+| L1 cache reference                 |       0.5 | 0.5 ns                | CPU        |
+| Branch mispredict                  |         5 | 5 ns                  | CPU        |
+| L2 cache reference                 |         7 | 7 ns                  | CPU        |
+| Mutex lock/unlock                  |       100 | 100 ns                | Memory/OS  |
+| Main memory reference              |       100 | 100 ns                | Memory     |
+| Compress 1K bytes (Zippy)          |     10000 | 10 us                 | CPU/Memory |
+| Send 2K bytes over 1 Gbps network  |     20000 | 20 us                 | Network    |
+| Read 1 MB sequentially from memory |    250000 | 250 us                | Memory     |
+| Round trip (same datacenter)       |    500000 | 500 us                | Network    |
+| Disk seek                          |  10000000 | 10 ms                 | Disk       |
+| Read 1 MB sequentially from net    |  10000000 | 10 ms                 | Network    |
+| Read 1 MB sequentially from disk   |  30000000 | 30 ms                 | Disk       |
+| Round trip (CA -> NL -> CA)        | 150000000 | 150 ms                | Network    |
+|------------------------------------+-----------+-----------------------+------------|
+*** notes
+- ns = nanosecond, µs = microsecond, ms = millisecond
+- 1 ns = 10^-9 seconds
+- 1 µs= 10^-6 seconds = 1,000 ns
+- 1 ms = 10^-3 seconds = 1,000 µs = 1,000,000 ns
+*** visual representation
+[[file:./x_latency_google_engineer.svg]]
 ** general research   
 *** security in stateless architecture
 - identity & authentication: how the requester proves who they are
