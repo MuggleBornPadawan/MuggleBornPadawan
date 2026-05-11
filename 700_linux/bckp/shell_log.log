@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Mon May 11 09:29:47 PM IST 2026 
+Date: Mon May 11 10:24:43 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -51,35 +51,35 @@ Removing unused dependencies...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
 Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
 Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Err:2 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
-Err:3 http://deb.debian.org/debian bookworm-backports InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
+Err:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
   Temporary failure resolving 'packages.adoptium.net'
+Err:1 http://deb.debian.org/debian bookworm-backports InRelease
+  Temporary failure resolving 'deb.debian.org'
+Err:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+  Temporary failure resolving 'storage.googleapis.com'
 Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:1 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://deb.debian.org/debian bookworm InRelease
 Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:1 https://deb.debian.org/debian bookworm InRelease
+Err:3 https://deb.debian.org/debian bookworm InRelease
   Temporary failure resolving 'deb.debian.org'
 Err:5 https://deb.debian.org/debian bookworm-updates InRelease
   Temporary failure resolving 'deb.debian.org'
@@ -87,31 +87,31 @@ Err:6 https://deb.debian.org/debian-security bookworm-security InRelease
   Temporary failure resolving 'deb.debian.org'
 Reading package lists...
 --- Cleanup Complete ---
-Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:4 https://deb.debian.org/debian bookworm InRelease
+Ign:4 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:4 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
 Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:4 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:4 https://deb.debian.org/debian bookworm InRelease
-Err:1 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
+Err:4 http://deb.debian.org/debian bookworm-backports InRelease
   Temporary failure resolving 'deb.debian.org'
-Err:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-  Temporary failure resolving 'packages.adoptium.net'
 Err:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
   Temporary failure resolving 'storage.googleapis.com'
+Err:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+  Temporary failure resolving 'packages.adoptium.net'
 Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
 Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:4 https://deb.debian.org/debian bookworm InRelease
+Err:2 https://deb.debian.org/debian bookworm InRelease
   Temporary failure resolving 'deb.debian.org'
 Err:5 https://deb.debian.org/debian bookworm-updates InRelease
   Temporary failure resolving 'deb.debian.org'
@@ -315,7 +315,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
- 3016 ?        00:00:00 snow.sh
+ 9772 ?        00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
