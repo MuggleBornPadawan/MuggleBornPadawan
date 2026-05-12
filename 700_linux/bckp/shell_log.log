@@ -76,3 +76,4 @@ Err:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
   Temporary failure resolving 'storage.googleapis.com'
 Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:1 https://deb.debian.org/debian bookworm InRelease
