@@ -136,3 +136,4 @@ cheat() {
 
 # opencode
 export PATH=/home/rgroot/.opencode/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
