@@ -3,6 +3,17 @@
 - eg: news feed, Google search, chat system, etc
 - big scope, vague instructions, system requirements, constraints and bottlenecks
 - discord server - invite
+** architecture vs system design comparison
+|-------------------+----------------------------------------------------+-----------------------------------------------------|
+| feature           | software architecture                              | system design                                       |
+|-------------------+----------------------------------------------------+-----------------------------------------------------|
+| *primary goal*    | high-level structure & non-functional requirements | detailed implementation & internal logic            |
+| *key concerns*    | scalability, maintainability, security, deployment | data structures, algorithms, api design, logic flow |
+| *analogy*         | the skeleton of a building                         | the electrical wiring and plumbing in a room        |
+| *decision impact* | strategic; defines the long-term trajectory        | tactical; defines the immediate functionality       |
+| *reversibility*   | hard and expensive to change (high inertia)        | easier to refactor or rewrite (low inertia)         |
+| *level of detail* | components, boundaries, and connectors             | interfaces, classes, and database schemas           |
+|-------------------+----------------------------------------------------+-----------------------------------------------------|
 ** sample generic design
 [[file:./x_system_design.png]]
 [[file:./x_shape_system_design.jpeg]]
@@ -65,31 +76,56 @@
 - prometheus, grafana, 
 ** back of the envelope estimation
 - estimate system capacity or performance requirements: power of two, latency and availablity numbers
-- latency numbers
-|------------------------------------+-----------+-----------------------+------------|
-| Operation                          | Time (ns) | Time (Human Readable) | Category   |
-|------------------------------------+-----------+-----------------------+------------|
-| L1 cache reference                 |       0.5 | 0.5 ns                | CPU        |
-| Branch mispredict                  |         5 | 5 ns                  | CPU        |
-| L2 cache reference                 |         7 | 7 ns                  | CPU        |
-| Mutex lock/unlock                  |       100 | 100 ns                | Memory/OS  |
-| Main memory reference              |       100 | 100 ns                | Memory     |
-| Compress 1K bytes (Zippy)          |     10000 | 10 us                 | CPU/Memory |
-| Send 2K bytes over 1 Gbps network  |     20000 | 20 us                 | Network    |
-| Read 1 MB sequentially from memory |    250000 | 250 us                | Memory     |
-| Round trip (same datacenter)       |    500000 | 500 us                | Network    |
-| Disk seek                          |  10000000 | 10 ms                 | Disk       |
-| Read 1 MB sequentially from net    |  10000000 | 10 ms                 | Network    |
-| Read 1 MB sequentially from disk   |  30000000 | 30 ms                 | Disk       |
-| Round trip (CA -> NL -> CA)        | 150000000 | 150 ms                | Network    |
-|------------------------------------+-----------+-----------------------+------------|
-*** notes
+- power of two (use fermi estimate)
+  - usage: memory (ram), storage (gb/tb), network address, database and caching
+  - fits hardware bits (logic), bit shift (math speed), doubling (scaling)
+  - the bucket strategy / hash maps / consistent hashing / trie / index / search
+- latency numbers 
+*** latency
+- cpu < memory < disk < network (compressed) < network (uncompressed) 
+|------------------------------------+-------------+-----------------------+------------|
+| operation                          | time (ns)   | time (human readable) | category   |
+|------------------------------------+-------------+-----------------------+------------|
+| l1 cache reference                 | 0.5         | 0.5 ns                | cpu        |
+| branch mispredict                  | 5           | 5 ns                  | cpu        |
+| l2 cache reference                 | 7           | 7 ns                  | cpu        |
+| mutex lock/unlock                  | 100         | 100 ns                | memory/os  |
+| main memory reference              | 100         | 100 ns                | memory     |
+| compress 1k bytes (zippy)          | 10,000      | 10 µs                 | cpu/memory |
+| send 2k bytes over 1 gbps network  | 20,000      | 20 µs                 | network    |
+| read 1 mb sequentially from memory | 250,000     | 250 µs                | memory     |
+| round trip (same datacenter)       | 500,000     | 500 µs                | network    |
+| disk seek                          | 10,000,000  | 10 ms                 | disk       |
+| read 1 mb sequentially from net    | 10,000,000  | 10 ms                 | network    |
+| read 1 mb sequentially from disk   | 30,000,000  | 30 ms                 | disk       |
+| round trip (ca -> nl -> ca)        | 150,000,000 | 150 ms                | network    |
+|------------------------------------+-------------+-----------------------+------------|
+**** notes
 - ns = nanosecond, µs = microsecond, ms = millisecond
 - 1 ns = 10^-9 seconds
 - 1 µs= 10^-6 seconds = 1,000 ns
 - 1 ms = 10^-3 seconds = 1,000 µs = 1,000,000 ns
-*** visual representation
+**** visual representation
 [[file:./x_latency_google_engineer.svg]]
+*** availablity
+|----------------+---------------------+-------------------+--------------------+-------------------|
+| availability % | downtime per day    | downtime per week | downtime per month | downtime per year |
+|----------------+---------------------+-------------------+--------------------+-------------------|
+|            99% | 14.40 minutes       | 1.68 hours        | 7.31 hours         | 3.65 days         |
+|         99.99% | 8.64 seconds        | 1.01 minutes      | 4.38 minutes       | 52.60 minutes     |
+|        99.999% | 864.00 milliseconds | 6.05 seconds      | 26.30 seconds      | 5.26 minutes      |
+|       99.9999% | 86.40 milliseconds  | 604.80 ms         | 2.63 seconds       | 31.56 seconds     |
+|----------------+---------------------+-------------------+--------------------+-------------------|
+** tips
+- monthly active users (mau)
+- daily active users (dau) - % of mau
+- updates per day on average (upd)
+- media updates per day - % of upd
+- user queries per second
+- peak queries per second
+- storage requirments in years  
+- cache
+- number of servers 
 ** general research   
 *** security in stateless architecture
 - identity & authentication: how the requester proves who they are
@@ -98,10 +134,13 @@
 - token lifecycle: managing issuance, expiration, and revocation
 - transport security: protecting the data in motion
 **** steps
-- secure token managment: json web tokens(jwt), cryptographic signing (rs256 assymetric), double token strategy (access tokens, refresh tokens), no personally identifiable information (base64 encoded, not encrypted)
+- secure token managment: json web tokens (jwt), cryptographic signing (rs256 assymetric), double token strategy (access tokens, refresh tokens), no personally identifiable information (base64 encoded, not encrypted)
 - defense in depth of gateway: api gateway validation (edge), content security policy, cross origin resource sharing (cors) to prevent cross site scripting (xss), rate limiting
 - revocation paradox - denylist, stateless by default and stateful by exception
 - transport layer - tls 1.3 prevents man in the middle (mitm) attacks
 - storage - httponly cookies - prevents js from accessing token (anti-xss)
 - validation - exp (temporal / when) and aud (domain / where) - token validity
 - logic - claims based access control - decouple user's identity from their specific permissions 
+**** resources
+- system design primer - https://github.com/donnemartin/system-design-primer
+- cloud slas - google, aws, azure 

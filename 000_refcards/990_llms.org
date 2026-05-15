@@ -53,6 +53,12 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** building skills
+when i type /[skill name], do the following:
+- instructions: [what you want claude to do]
+- format: [output shape — e.g. 10 hooks, numbered list, under 15 words each]
+- voice rules: [any style/tone requirements]
+- examples of good output: [paste 2-3 examples]
 ** elon musk - five step rubric
 aim: to figure out what a process needs before trying to make it faster or handing off any part of it to a machine
 - question every requirement. every rule, checkpoint, and instruction in a workflow has to justify itself by naming the specific thing that goes wrong without it. if nobody can answer that, it shouldn’t be there.
