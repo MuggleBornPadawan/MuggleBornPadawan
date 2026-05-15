@@ -1,0 +1,44 @@
+#+title: system design framework and examples
+* framework
+** step #1 - understand the problem and establish scope
+- feature list: list top 10 (urgent / important matrix) 
+- users: bucket them - geo, vertical, product / module, form factor (hardware), compatiblity (os, browser) r&r 
+- clusters: demography, connections, file formats (video, image, text, system of record), transaction (oltp / etl) vs analytical (olap / elt) 
+- scale expectations: bucket wise info should be gathered (-60m, -36m, -12m, -6m, -3m, 0, 3m, 6m, 12m, 36m, 60m) 
+- tech stack: previous, now and future 
+- microservices (/ workers / features) - completed, wip, yet to start 
+** step #2 - propose high level design and get buy-in
+** step #3 - design deep dive
+** step #4 - wrap up
+
+* examples
+|-------------------------------+------+--------------------|
+| topic                         | info | comments           |
+|-------------------------------+------+--------------------|
+| rate limiter                  |      |                    |
+| consistent hashing            |      |                    |
+| key value store               |      |                    |
+| unique id gen                 |      | distributed sytems |
+| url shortner                  |      |                    |
+| web crawler                   |      |                    |
+| notification                  |      |                    |
+| news feed                     |      |                    |
+| chat                          |      |                    |
+| search autocomplete           |      |                    |
+| youtube                       |      |                    |
+| google drive                  |      |                    |
+| proximity service             |      |                    |
+| nearby friends                |      |                    |
+| google maps                   |      |                    |
+| distributed message queue     |      |                    |
+| metrics monitoring and alerts |      |                    |
+| ad click event aggregation    |      |                    |
+| hotel reservation             |      |                    |
+| distributed email service     |      |                    |
+| s3 like object storage        |      |                    |
+| real time gaming leaderboard  |      |                    |
+| payment                       |      |                    |
+| digital wallet                |      |                    |
+| stock exchange                |      |                    |
+|-------------------------------+------+--------------------|
+
