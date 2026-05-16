@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Fri May 15 06:08:52 PM IST 2026 
+Date: Sun May 17 12:25:47 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -55,34 +55,42 @@ Reading state information...
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:4 http://deb.debian.org/debian bookworm-backports InRelease
-Get:4 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [307 kB]
-Get:6 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.8 kB]
-Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en [260 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:9 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:11 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:12 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
-Get:13 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
-Get:14 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
-Get:15 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:16 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:1 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:17 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
-Get:18 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
-Get:19 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [305 kB]
-Get:20 https://deb.debian.org/debian-security bookworm-security/main Translation-en [187 kB]
-Get:21 https://deb.debian.org/debian bookworm/main amd64 Packages [8,792 kB]
-Get:22 https://deb.debian.org/debian bookworm/main Translation-en [6,108 kB]
-Get:23 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
-Fetched 20.8 MB in 30s (692 kB/s)
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
+Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:5 https://deb.debian.org/debian bookworm-updates InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
+Get:3 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:8 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [307 kB]
+Get:10 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [15.8 kB]
+Get:11 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
+Get:12 http://deb.debian.org/debian bookworm-backports/main Translation-en [260 kB]
+Get:13 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
+Get:14 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:15 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:16 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:17 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:18 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
+Get:19 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
+Get:20 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [306 kB]
+Get:21 https://deb.debian.org/debian-security bookworm-security/main Translation-en [188 kB]
+Get:22 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:23 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Fetched 20.8 MB in 1min 10s (296 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -92,13 +100,28 @@ Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
 Get:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
 Hit:7 https://storage.googleapis.com/cros-packages/146 bookworm Release
-Fetched 7,507 B in 1s (11.8 kB/s)
+Fetched 7,507 B in 1s (8,974 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  base-files bash buildah distro-info-data dpkg dpkg-dev ffmpeg libarchive13
+  libavcodec59 libavdevice59 libavfilter8 libavformat59 libavutil57 libc-bin
+  libc-dev-bin libc-devtools libc-l10n libc6 libc6-dbg libc6-dev libcap2
+  libcap2-bin libdpkg-perl libglib2.0-0 libglib2.0-bin libglib2.0-data
+  libnss-systemd libopenjp2-7 libpam-cap libpam-systemd libpostproc56
+  libpython3.11 libpython3.11-dev libpython3.11-minimal libpython3.11-stdlib
+  libssl-dev libssl3 libswresample4 libswscale6 libsystemd-shared libsystemd0
+  libudev1 libzvbi-common libzvbi0 linux-libc-dev locales openssh-client
+  openssh-server openssh-sftp-server openssl podman python3.11 python3.11-dev
+  python3.11-minimal python3.11-venv sed snapd sudo systemd systemd-sysv
+  systemd-timesyncd tzdata udev
+63 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 103 MB of archives.
+After this operation, 89.1 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -113,7 +136,6 @@ fzf is already the newest version (0.38.0-1+b1).
 zoxide is already the newest version (0.4.3-5+b2).
 gnuplot is already the newest version (5.4.4+dfsg1-2).
 nasm is already the newest version (2.16.01-1).
-ffmpeg is already the newest version (7:5.1.8-0+deb12u1).
 lm-sensors is already the newest version (1:3.6.0-7.1).
 sqlite3 is already the newest version (3.40.1-2+deb12u2).
 mpg123 is already the newest version (1.31.2-1+deb12u1).
@@ -156,7 +178,22 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  base-files bash buildah distro-info-data dpkg dpkg-dev ffmpeg libarchive13
+  libavcodec59 libavdevice59 libavfilter8 libavformat59 libavutil57 libc-bin
+  libc-dev-bin libc-devtools libc-l10n libc6 libc6-dbg libc6-dev libcap2
+  libcap2-bin libdpkg-perl libglib2.0-0 libglib2.0-bin libglib2.0-data
+  libnss-systemd libopenjp2-7 libpam-cap libpam-systemd libpostproc56
+  libpython3.11 libpython3.11-dev libpython3.11-minimal libpython3.11-stdlib
+  libssl-dev libssl3 libswresample4 libswscale6 libsystemd-shared libsystemd0
+  libudev1 libzvbi-common libzvbi0 linux-libc-dev locales openssh-client
+  openssh-server openssh-sftp-server openssl podman python3.11 python3.11-dev
+  python3.11-minimal python3.11-venv sed snapd sudo systemd systemd-sysv
+  systemd-timesyncd tzdata udev
+63 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 103 MB of archives.
+After this operation, 89.1 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -175,11 +212,25 @@ libjson-c-dev is already the newest version (0.16-2).
 libmilter-dev is already the newest version (8.17.1.9-2+deb12u2).
 libncurses5-dev is already the newest version (6.4-4).
 libpcre2-dev is already the newest version (10.42-1).
-libssl-dev is already the newest version (3.0.19-1~deb12u2).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u5).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  base-files bash buildah distro-info-data dpkg dpkg-dev ffmpeg libarchive13
+  libavcodec59 libavdevice59 libavfilter8 libavformat59 libavutil57 libc-bin
+  libc-dev-bin libc-devtools libc-l10n libc6 libc6-dbg libc6-dev libcap2
+  libcap2-bin libdpkg-perl libglib2.0-0 libglib2.0-bin libglib2.0-data
+  libnss-systemd libopenjp2-7 libpam-cap libpam-systemd libpostproc56
+  libpython3.11 libpython3.11-dev libpython3.11-minimal libpython3.11-stdlib
+  libssl-dev libssl3 libswresample4 libswscale6 libsystemd-shared libsystemd0
+  libudev1 libzvbi-common libzvbi0 linux-libc-dev locales openssh-client
+  openssh-server openssh-sftp-server openssl podman python3.11 python3.11-dev
+  python3.11-minimal python3.11-venv sed snapd sudo systemd systemd-sysv
+  systemd-timesyncd tzdata udev
+63 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 103 MB of archives.
+After this operation, 89.1 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -198,18 +249,47 @@ tmux is already the newest version (3.3a-3).
 dnsutils is already the newest version (1:9.18.47-1~deb12u1).
 nmap is already the newest version (7.93+dfsg1-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  base-files bash buildah distro-info-data dpkg dpkg-dev ffmpeg libarchive13
+  libavcodec59 libavdevice59 libavfilter8 libavformat59 libavutil57 libc-bin
+  libc-dev-bin libc-devtools libc-l10n libc6 libc6-dbg libc6-dev libcap2
+  libcap2-bin libdpkg-perl libglib2.0-0 libglib2.0-bin libglib2.0-data
+  libnss-systemd libopenjp2-7 libpam-cap libpam-systemd libpostproc56
+  libpython3.11 libpython3.11-dev libpython3.11-minimal libpython3.11-stdlib
+  libssl-dev libssl3 libswresample4 libswscale6 libsystemd-shared libsystemd0
+  libudev1 libzvbi-common libzvbi0 linux-libc-dev locales openssh-client
+  openssh-server openssh-sftp-server openssl podman python3.11 python3.11-dev
+  python3.11-minimal python3.11-venv sed snapd sudo systemd systemd-sysv
+  systemd-timesyncd tzdata udev
+63 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 103 MB of archives.
+After this operation, 89.1 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-podman is already the newest version (4.3.1+ds1-8+deb12u1+b2).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  base-files bash buildah distro-info-data dpkg dpkg-dev ffmpeg libarchive13
+  libavcodec59 libavdevice59 libavfilter8 libavformat59 libavutil57 libc-bin
+  libc-dev-bin libc-devtools libc-l10n libc6 libc6-dbg libc6-dev libcap2
+  libcap2-bin libdpkg-perl libglib2.0-0 libglib2.0-bin libglib2.0-data
+  libnss-systemd libopenjp2-7 libpam-cap libpam-systemd libpostproc56
+  libpython3.11 libpython3.11-dev libpython3.11-minimal libpython3.11-stdlib
+  libssl-dev libssl3 libswresample4 libswscale6 libsystemd-shared libsystemd0
+  libudev1 libzvbi-common libzvbi0 linux-libc-dev locales openssh-client
+  openssh-server openssh-sftp-server openssl podman python3.11 python3.11-dev
+  python3.11-minimal python3.11-venv sed snapd sudo systemd systemd-sysv
+  systemd-timesyncd tzdata udev
+63 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 103 MB of archives.
+After this operation, 89.1 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 63 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -280,7 +360,7 @@ New profiles: skip
 Status: active
 To                         Action      From
 ERROR: Failed to lock the log file /var/log/clamav/freshclam.log: Resource temporarily unavailable
-ClamAV 1.4.3/28001/Fri May 15 11:54:48 2026
+ClamAV 1.4.3/28002/Sat May 16 11:55:50 2026
 run 'sudo clamscan -r /' every day. stay safe. have a good day
 run 'sudo systemctl status clamav-freshclam' to check status
 use 'tmux set-option -g status on/off' to toggle tmux status bar
@@ -290,7 +370,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
- 7861 ?        00:00:00 snow.sh
+ 8689 ?        00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
