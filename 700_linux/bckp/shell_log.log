@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 
-Date: Mon May 18 10:06:07 PM IST 2026 
+Date: Mon May 18 10:42:28 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -51,34 +51,34 @@ Removing unused dependencies...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
 Get:3 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [308 kB]
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
 Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:7 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [261 kB]
-Get:9 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
-Get:10 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:11 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:12 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:13 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:6 http://deb.debian.org/debian bookworm-backports/main Translation-en [261 kB]
+Get:7 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:8 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:11 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:12 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:13 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
 Get:14 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [16.5 kB]
 Get:15 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
-Get:16 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
-Get:17 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
-Get:18 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Get:16 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:17 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Get:18 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
 Get:19 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
 Get:20 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
 Get:21 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:22 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [306 kB]
 Get:23 https://deb.debian.org/debian-security bookworm-security/main Translation-en [188 kB]
-Fetched 20.8 MB in 5s (3,884 kB/s)
+Fetched 20.8 MB in 37s (563 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -88,84 +88,13 @@ Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
 Get:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
 Hit:7 https://storage.googleapis.com/cros-packages/146 bookworm Release
-Fetched 7,507 B in 1s (10.5 kB/s)
+Fetched 7,507 B in 2s (4,995 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  temurin-25-jdk
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 111 MB of archives.
-After this operation, 0 B of additional disk space will be used.
-Do you want to continue? [Y/n] Get:1 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 temurin-25-jdk amd64 25.0.3.0.0+9-1 [111 MB]
-Fetched 111 MB in 38s (2,916 kB/s)
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 127325 files and directories currently installed.)
-Preparing to unpack .../temurin-25-jdk_25.0.3.0.0+9-1_amd64.deb ...
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jar to provide /usr/bin/jar (jar) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jarsigner to provide /usr/bin/jarsigner (jarsigner) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/java to provide /usr/bin/java (java) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/javac to provide /usr/bin/javac (javac) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/javadoc to provide /usr/bin/javadoc (javadoc) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/javap to provide /usr/bin/javap (javap) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jcmd to provide /usr/bin/jcmd (jcmd) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jconsole to provide /usr/bin/jconsole (jconsole) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jdb to provide /usr/bin/jdb (jdb) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jdeprscan to provide /usr/bin/jdeprscan (jdeprscan) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jdeps to provide /usr/bin/jdeps (jdeps) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/lib/jfr to provide /usr/bin/jfr (jfr) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jfr to provide /usr/bin/jfr (jfr) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jhsdb to provide /usr/bin/jhsdb (jhsdb) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jimage to provide /usr/bin/jimage (jimage) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jinfo to provide /usr/bin/jinfo (jinfo) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jlink to provide /usr/bin/jlink (jlink) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jmap to provide /usr/bin/jmap (jmap) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jmod to provide /usr/bin/jmod (jmod) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jpackage to provide /usr/bin/jpackage (jpackage) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jps to provide /usr/bin/jps (jps) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jrunscript to provide /usr/bin/jrunscript (jrunscript) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jshell to provide /usr/bin/jshell (jshell) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jstack to provide /usr/bin/jstack (jstack) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jstat to provide /usr/bin/jstat (jstat) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jstatd to provide /usr/bin/jstatd (jstatd) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/serialver to provide /usr/bin/serialver (serialver) in auto mode
-update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
-Unpacking temurin-25-jdk (25.0.3.0.0+9-1) over (25.0.3.0.0+9-0) ...
-Setting up temurin-25-jdk (25.0.3.0.0+9-1) ...
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jar to provide /usr/bin/jar (jar) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jarsigner to provide /usr/bin/jarsigner (jarsigner) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/java to provide /usr/bin/java (java) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/javac to provide /usr/bin/javac (javac) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/javadoc to provide /usr/bin/javadoc (javadoc) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/javap to provide /usr/bin/javap (javap) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jcmd to provide /usr/bin/jcmd (jcmd) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jconsole to provide /usr/bin/jconsole (jconsole) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jdb to provide /usr/bin/jdb (jdb) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jdeprscan to provide /usr/bin/jdeprscan (jdeprscan) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jdeps to provide /usr/bin/jdeps (jdeps) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jfr to provide /usr/bin/jfr (jfr) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jhsdb to provide /usr/bin/jhsdb (jhsdb) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jimage to provide /usr/bin/jimage (jimage) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jinfo to provide /usr/bin/jinfo (jinfo) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jlink to provide /usr/bin/jlink (jlink) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jmap to provide /usr/bin/jmap (jmap) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jmod to provide /usr/bin/jmod (jmod) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jpackage to provide /usr/bin/jpackage (jpackage) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jps to provide /usr/bin/jps (jps) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jrunscript to provide /usr/bin/jrunscript (jrunscript) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jshell to provide /usr/bin/jshell (jshell) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jstack to provide /usr/bin/jstack (jstack) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jstat to provide /usr/bin/jstat (jstat) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jstatd to provide /usr/bin/jstatd (jstatd) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/jwebserver to provide /usr/bin/jwebserver (jwebserver) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/bin/serialver to provide /usr/bin/serialver (serialver) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
-update-alternatives: using /usr/lib/jvm/temurin-25-jdk-amd64/lib/jspawnhelper to provide /usr/bin/jspawnhelper (jspawnhelper) in auto mode
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -359,7 +288,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
-14907 pts/13   00:00:00 snow.sh
+20588 pts/13   00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
