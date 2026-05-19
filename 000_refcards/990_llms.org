@@ -53,6 +53,24 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** security gut check
+act as a defensive security reviewer. review this workflow, system, or automation:
+[paste description]
+
+look for places where the system assumes trust too early. focus on:
+1. user accounts and permissions
+2. third-party packages or integrations
+3. api keys, tokens, and credentials
+4. automated actions that could cause damage
+5. data that should stay private
+6. approval steps before anything public or irreversible
+7. monitoring logs i should check regularly
+for each risk, explain:
+- what could go wrong
+- why a normal check might miss it
+- the safest practical fix
+- whether this needs an expert review
+keep this defensive only. do not provide exploit steps.
 ** building skills
 when i type /[skill name], do the following:
 - instructions: [what you want claude to do]
