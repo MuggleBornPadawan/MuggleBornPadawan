@@ -208,3 +208,28 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
+/usr/local/lib
+├── @google/gemini-cli@0.2.1
+├── dotenv-cli@10.0.0
+└── tmux-mem@0.0.3
+
+-e 
+run commits seperately; docker and jenkins startup shell scripts to be created seperately
+-e 
+IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
+-e 
+use trash-empty or trash-restore as you see fit
+Password Store
+├── CLAUDE_API_KEY
+├── DEEPSEEK_API_KEY
+├── GEMINI_API_KEY
+├── mbprootp
+├── MOONSHOT_API_KEY
+├── OLLAMA_API_KEY
+├── OPENAI_API_KEY
+├── OPENROUTER_API_KEY
+├── protector_key
+├── tmp
+├── unKnoWn
+├── url
+└── XAI_GROK_API_KEY
