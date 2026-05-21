@@ -53,6 +53,15 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** task router
+i want to use gemini for this task: [task].
+
+route me to the best google tool, then give me:
+1. the safest first prompt
+2. the files or inputs to attach
+3. what should stay read-only
+4. what success looks like
+5. one follow-up prompt
 ** security gut check
 act as a defensive security reviewer. review this workflow, system, or automation:
 [paste description]
