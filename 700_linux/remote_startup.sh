@@ -94,6 +94,7 @@ echo 'use alias security to get local copy'
 sudo ufw status verbose numbered | sort -u
 sudo freshclam
 clamscan --version
+systemctl list-timers clamav-weekly.timer
 echo "run 'sudo clamscan -r /' every day. stay safe. have a good day"
 echo "run 'sudo systemctl status clamav-freshclam' to check status"
 echo "use 'tmux set-option -g status on/off' to toggle tmux status bar"
