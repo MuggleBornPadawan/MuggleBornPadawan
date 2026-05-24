@@ -128,3 +128,16 @@ in clojure/lisp contexts, this translates to: concise forms, well-defined namesp
 - ignoring error handling
 - "my code is self-explanatory"
 - fear of refactoring 
+** dns
+• A → Maps domain to IPv4
+• AAAA → Maps domain to IPv6
+• CNAME → Alias one domain to another
+• MX → Handles email routing
+• NS → Defines authoritative name servers
+• PTR → Reverse DNS lookup
+• SOA → Domain authority information
+• SPF → Prevents email spoofing
+• SRV → Service discovery record
+• TXT → Domain verification & metadata
+• CAA → Controls SSL certificate issuers
+• NAPTR → Advanced service mapping
