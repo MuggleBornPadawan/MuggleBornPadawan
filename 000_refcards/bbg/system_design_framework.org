@@ -59,6 +59,7 @@
 |-------------------------------+------+--------------------|
 ** rate limit design - x (?state) per y (property) per z (time period)
 - examples: requests per user per second, accounts per ip per day, rewards per device per week
+[[file:./x_rate_limiting.png]]
 - benefits: prevent resource starvation (denial of service / dos), reduce costs, avoids server overload (bots vs actual user)
 - scope: client side vs server side, based on ip / user / device / ?property, scale, distributed environment, seperate service or integrated in application code, intimation to users (error codes)  
 - requirements: x requests per y per z, low latency, low memory footprint, distributed rate limiting, exception handling, fault tolerance (cache server going down)
@@ -74,6 +75,6 @@
 - monitoring: effectivess of algorithms and rules 
 - others: hard vs soft limits, limiting can happen in any layer (osi), client cache, graceful exception handling, sufficient back off time 
 - reference repo: https://github.com/envoyproxy/ratelimit
-
+** consistent hashing
 
 <eof>
