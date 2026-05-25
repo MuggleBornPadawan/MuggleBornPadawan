@@ -50,7 +50,11 @@ source: https://bytebytego.com/my-courses
 |                        | monotonic stack                 | nxt largest number to the right     | O(n)            | O(n)   |                                                  |
 |                        | queue                           | implementation                      | O(1)            | O(n)   |                                                  |
 |------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| heaps                  |                                 |                                     |                 |        |                                                  |
+| heaps                  | sorting                         | combine sorted linked lists         |                 |        |                                                  |
+|                        |                                 | sort a k-sorted array               |                 |        |                                                  |
+|                        | finding values in sorted order  | k most frequent strings             |                 |        |                                                  |
+|                        |                                 | median of integer stream            |                 |        |                                                  |
+|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
 | intervals              |                                 |                                     |                 |        |                                                  |
 | prefix sums            |                                 |                                     |                 |        |                                                  |
 | trees                  |                                 |                                     |                 |        |                                                  |
@@ -140,13 +144,26 @@ source: https://bytebytego.com/my-courses
 - repeated removal of adj duplicates - given a string, continually perform the following operation: remove a pair of adjacent duplicates from the string. continue performing this operation until the string no longer contains pairs of adjacent duplicates. return the final string.
 - queue - implement a queue using the stack data structure. enqueue, dequeue, peek. no other data structures to be used 
 - maximums of sliding window - there's a sliding window of size k that slides through an integer array from left to right. create a new array that records the largest number found in each window as it slides through.
+** heap
+- a data structure that organizes elements based on priority, ensuring the highest-priority element is always at the top of the heap. this allows for efficient access to the highest-priority element at any time. types:
+  - min-heap: prioritizes the smallest element by keeping it at the top of the heap
+  - max-heap: prioritizes the largest element by keeping it at the top of the heap
+- example: managing tasks in operating systems
+- k most frequent strings: find the k most frequently occurring strings in an array, and return them sorted by frequency in descending order. if two strings have the same frequency, sort them in lexicographical order.
+- combine sorted linked lists: given k singly linked lists, each sorted in ascending order, combine them into one sorted linked list
+
+
+
+
+
 
 ? monotonic window 
 
-
-
 ** code blocks
 #+begin_src shell :results output
+  python3 src/heap_median_integer_stream.py
+  python3 src/heap_combine_sorted_linked_lists.py
+  python3 src/heap_k_most_freq.py
   python3 src/stack_maximums_sliding_window.py
   python3 src/stack_queue.py
   python3 src/stack_repeated_removal_adj_dplct.py
