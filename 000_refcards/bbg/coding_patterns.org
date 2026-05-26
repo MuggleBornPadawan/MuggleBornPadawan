@@ -2,89 +2,102 @@
 * intro
 ** comparison 
 source: https://bytebytego.com/my-courses
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| pattern                | strategy                        | algorithms                          | time            | space  | notes                                            |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| two pointer            | general                         | nested for loops                    | O(n^2)          | O(1)?  | garbage collection                               |
-|                        | inward traversal                | pair sum - sorted                   | O(n)            | O(1)   |                                                  |
-|                        |                                 | triplet sum                         | O(n^2)          | O(n)   | sort time O(nlogn); output included space O(n^2) |
-|                        |                                 | largest container                   | O(n)            | O(1)   |                                                  |
-|                        |                                 | isPalindrom valid                   | O(n)            | O(1)   |                                                  |
-|                        | staged traversal                | next lexicographical sequence       | O(n)            | O(n)   |                                                  |
-|                        | unidirectional traversal        | shift zeros to end                  | O(n)            | O(1)   |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| hash maps and sets     | hash maps                       | pair sum - unsorted                 | O(n)            | O(n)   |                                                  |
-|                        |                                 | geometric seq triplets              | O(n)            | O(n)   |                                                  |
-|                        | hash sets                       | verify sudoku board                 | O(n^2)          | O(n^2) |                                                  |
-|                        |                                 | zero striping                       | O(m*n)          | O(1)   |                                                  |
-|                        |                                 | longest chain of conseq' #s         | O(n)            | O(n)   | sorted                                           |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| linked lists           | traversal                       | linked list intersection            | O(n+m)          | O(1)   | music player                                     |
-|                        |                                 | palindrom linked list               |                 |        |                                                  |
-|                        | restructuring                   | linked list reversal                | O(n)            | O(n)   |                                                  |
-|                        |                                 | remove the kth last node            | O(n)            | O(1)   |                                                  |
-|                        |                                 | flatten a multilevel list           | O(n)            | O(1)   |                                                  |
-|                        | doubly linked list              | lru cache                           | O(1)            | O(n)   |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| fast and slow pointers | cycle detection                 | linked list loop                    | O(n)            | O(1)   |                                                  |
-|                        | fractional point identification | linked list midpoint                | O(n)            | O(1)   |                                                  |
-|                        | sequence analysis               | happy number                        |                 |        |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| sliding windows        | fixed sliding window            | substring (ss) anagram              | O(n)            | O(1)   |                                                  |
-|                        | dynamic sliding window          | longest ss with uniq char's         | O(n)            | O(m)   |                                                  |
-|                        |                                 | longest uniform ss after replcmnt   | O(n)            | O(m)   |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| binary search          | sorted arrays                   | first & last occurences of a #      | O(log(n))       | O(1)   |                                                  |
-|                        |                                 | find the insertion index            | O(log(n))       | O(1)   |                                                  |
-|                        | partially sorted arrays         | find target in rotated sorted array | O(log(n))       | O(1)   |                                                  |
-|                        | matrix                          | matrix search                       | O(log(m.n))     | O(1)   |                                                  |
-|                        | multiple arrays                 | find median from 2 sorted arrays    | O(log(min(m,n)) | O(1)   |                                                  |
-|                        | non-intuitive search space      | cutting wood                        | O(nlog(m))      | O(1)   |                                                  |
-|                        |                                 | local maxima in array               | O(log(n))       | O(1)   |                                                  |
-|                        |                                 | weighted random selection           | O(log(n))       | O(1)   |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| stacks                 | nested structures               | valid parenthesis expression        | O(n)            | O(1)   |                                                  |
-|                        |                                 | evaluate expression                 | O(n)            | O(n)   |                                                  |
-|                        | deque                           | maximums of sliding windows         | O(n)            | O(k)   |                                                  |
-|                        | processing duplicates           | repeated removal of adj duplicates  | O(1)            | O(n)   |                                                  |
-|                        | monotonic stack                 | nxt largest number to the right     | O(n)            | O(n)   |                                                  |
-|                        | queue                           | implementation                      | O(1)            | O(n)   |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| heaps                  | sorting                         | combine sorted linked lists         |                 |        |                                                  |
-|                        |                                 | sort a k-sorted array               |                 |        |                                                  |
-|                        | finding values in sorted order  | k most frequent strings             |                 |        |                                                  |
-|                        |                                 | median of integer stream            |                 |        |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| intervals              | managing overlaps               | merge overlapping intervals         |                 |        |                                                  |
-|                        |                                 | identify all interval overlaps      |                 |        |                                                  |
-|                        | finding values in sorted order  | largest overlap of intervals        |                 |        |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| prefix sums            | subarray sums                   | sum between range                   |                 |        |                                                  |
-|                        |                                 | k-sum subarrays                     |                 |        |                                                  |
-|                        | product sums                    | without current element             |                 |        |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| trees                  | depth first search (dfs)        | invert binary tree                  |                 |        |                                                  |
-|                        |                                 | balanced binary tree validation     |                 |        |                                                  |
-|                        |                                 | binary search tree validation       |                 |        |                                                  |
-|                        |                                 | lowest common ancestor              |                 |        |                                                  |
-|                        |                                 | build bt - preorder & inorder tr    |                 |        |                                                  |
-|                        |                                 | max sum of continuous path          |                 |        |                                                  |
-|                        |                                 | bt symmetry                         |                 |        |                                                  |
-|                        |                                 | kth smallest # in bst               |                 |        |                                                  |
-|                        |                                 | serialize and deserialize           |                 |        |                                                  |
-|                        | breadth first search (bfs)      | rightmost nodes of a bt             |                 |        |                                                  |
-|                        |                                 | widest binary tree level            |                 |        |                                                  |
-|                        |                                 | binary tree columns                 |                 |        |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| tries                  |                                 |                                     |                 |        |                                                  |
-| graphs                 |                                 |                                     |                 |        |                                                  |
-| backtracking           |                                 |                                     |                 |        |                                                  |
-| dynamic programming    |                                 |                                     |                 |        |                                                  |
-| greedy                 |                                 |                                     |                 |        |                                                  |
-| sort and search        |                                 |                                     |                 |        |                                                  |
-| bit manipulation       |                                 |                                     |                 |        |                                                  |
-| math and geometry      |                                 |                                     |                 |        |                                                  |
-|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| pattern                | strategy                        | algorithms                             | time            | space  | notes                                            |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| two pointer            | general                         | nested for loops                       | O(n^2)          | O(1)?  | garbage collection                               |
+|                        | inward traversal                | pair sum - sorted                      | O(n)            | O(1)   |                                                  |
+|                        |                                 | triplet sum                            | O(n^2)          | O(n)   | sort time O(nlogn); output included space O(n^2) |
+|                        |                                 | largest container                      | O(n)            | O(1)   |                                                  |
+|                        |                                 | isPalindrom valid                      | O(n)            | O(1)   |                                                  |
+|                        | staged traversal                | next lexicographical sequence          | O(n)            | O(n)   |                                                  |
+|                        | unidirectional traversal        | shift zeros to end                     | O(n)            | O(1)   |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| hash maps and sets     | hash maps                       | pair sum - unsorted                    | O(n)            | O(n)   |                                                  |
+|                        |                                 | geometric seq triplets                 | O(n)            | O(n)   |                                                  |
+|                        | hash sets                       | verify sudoku board                    | O(n^2)          | O(n^2) |                                                  |
+|                        |                                 | zero striping                          | O(m*n)          | O(1)   |                                                  |
+|                        |                                 | longest chain of conseq' #s            | O(n)            | O(n)   | sorted                                           |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| linked lists           | traversal                       | linked list intersection               | O(n+m)          | O(1)   | music player                                     |
+|                        |                                 | palindrom linked list                  |                 |        |                                                  |
+|                        | restructuring                   | linked list reversal                   | O(n)            | O(n)   |                                                  |
+|                        |                                 | remove the kth last node               | O(n)            | O(1)   |                                                  |
+|                        |                                 | flatten a multilevel list              | O(n)            | O(1)   |                                                  |
+|                        | doubly linked list              | lru cache                              | O(1)            | O(n)   |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| fast and slow pointers | cycle detection                 | linked list loop                       | O(n)            | O(1)   |                                                  |
+|                        | fractional point identification | linked list midpoint                   | O(n)            | O(1)   |                                                  |
+|                        | sequence analysis               | happy number                           |                 |        |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| sliding windows        | fixed sliding window            | substring (ss) anagram                 | O(n)            | O(1)   |                                                  |
+|                        | dynamic sliding window          | longest ss with uniq char's            | O(n)            | O(m)   |                                                  |
+|                        |                                 | longest uniform ss after replcmnt      | O(n)            | O(m)   |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| binary search          | sorted arrays                   | first & last occurences of a #         | O(log(n))       | O(1)   |                                                  |
+|                        |                                 | find the insertion index               | O(log(n))       | O(1)   |                                                  |
+|                        | partially sorted arrays         | find target in rotated sorted array    | O(log(n))       | O(1)   |                                                  |
+|                        | matrix                          | matrix search                          | O(log(m.n))     | O(1)   |                                                  |
+|                        | multiple arrays                 | find median from 2 sorted arrays       | O(log(min(m,n)) | O(1)   |                                                  |
+|                        | non-intuitive search space      | cutting wood                           | O(nlog(m))      | O(1)   |                                                  |
+|                        |                                 | local maxima in array                  | O(log(n))       | O(1)   |                                                  |
+|                        |                                 | weighted random selection              | O(log(n))       | O(1)   |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| stacks                 | nested structures               | valid parenthesis expression           | O(n)            | O(1)   |                                                  |
+|                        |                                 | evaluate expression                    | O(n)            | O(n)   |                                                  |
+|                        | deque                           | maximums of sliding windows            | O(n)            | O(k)   |                                                  |
+|                        | processing duplicates           | repeated removal of adj duplicates     | O(1)            | O(n)   |                                                  |
+|                        | monotonic stack                 | nxt largest number to the right        | O(n)            | O(n)   |                                                  |
+|                        | queue                           | implementation                         | O(1)            | O(n)   |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| heaps                  | sorting                         | combine sorted linked lists            |                 |        |                                                  |
+|                        |                                 | sort a k-sorted array                  |                 |        |                                                  |
+|                        | finding values in sorted order  | k most frequent strings                |                 |        |                                                  |
+|                        |                                 | median of integer stream               |                 |        |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| intervals              | managing overlaps               | merge overlapping intervals            |                 |        |                                                  |
+|                        |                                 | identify all interval overlaps         |                 |        |                                                  |
+|                        | finding values in sorted order  | largest overlap of intervals           |                 |        |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| prefix sums            | subarray sums                   | sum between range                      |                 |        |                                                  |
+|                        |                                 | k-sum subarrays                        |                 |        |                                                  |
+|                        | product sums                    | without current element                |                 |        |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| trees                  | depth first search (dfs)        | invert binary tree                     |                 |        |                                                  |
+|                        |                                 | balanced binary tree validation        |                 |        |                                                  |
+|                        |                                 | binary search tree validation          |                 |        |                                                  |
+|                        |                                 | lowest common ancestor                 |                 |        |                                                  |
+|                        |                                 | build bt - preorder & inorder tr       |                 |        |                                                  |
+|                        |                                 | max sum of continuous path             |                 |        |                                                  |
+|                        |                                 | bt symmetry                            |                 |        |                                                  |
+|                        |                                 | kth smallest # in bst                  |                 |        |                                                  |
+|                        |                                 | serialize and deserialize              |                 |        |                                                  |
+|                        | breadth first search (bfs)      | rightmost nodes of a bt                |                 |        |                                                  |
+|                        |                                 | widest binary tree level               |                 |        |                                                  |
+|                        |                                 | binary tree columns                    |                 |        |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| tries                  | implementation                  | design a trie                          |                 |        |                                                  |
+|                        |                                 | insert and search words with wildcards |                 |        |                                                  |
+|                        | traversal                       | find all words on a board              |                 |        |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| graphs                 | dfs                             | graph deep copy                        |                 |        |                                                  |
+|                        |                                 | count islands                          |                 |        |                                                  |
+|                        |                                 | bipartite graph validation             |                 |        |                                                  |
+|                        |                                 | longest increasing path                |                 |        |                                                  |
+|                        | bfs                             | matrix infection                       |                 |        |                                                  |
+|                        |                                 | shortest transformation sequence       |                 |        |                                                  |
+|                        | dijiktra's algorithm            | shortest path                          |                 |        |                                                  |
+|                        | topological sort                | prerequisites                          |                 |        |                                                  |
+|                        | union-find                      | merging communities                    |                 |        |                                                  |
+|                        |                                 | connect the dots                       |                 |        |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
+| backtracking           |                                 |                                        |                 |        |                                                  |
+| dynamic programming    |                                 |                                        |                 |        |                                                  |
+| greedy                 |                                 |                                        |                 |        |                                                  |
+| sort and search        |                                 |                                        |                 |        |                                                  |
+| bit manipulation       |                                 |                                        |                 |        |                                                  |
+| math and geometry      |                                 |                                        |                 |        |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
 ** notes
 *** two pointers
 - requires a linear data structure, such as an array or linked list
@@ -241,21 +254,42 @@ source: https://bytebytego.com/my-courses
 - serialize and deserialize: write a function to serialize a binary tree into a string, and another function to deserialize that string back into the original binary tree structure
 ** tries
 - tries, also known as prefix trees, are specialized tree-like data structures that efficiently store strings by taking advantage of shared prefixes.
--
-  
+- example: inter(/net, /face, /val), autocompletions, search strings, isword?
+- design: operations insert, search, has_prefix?   
+- insert and search with wildcards
+- find all words in a board
+** graphs
+- a graph is a data structure composed of nodes (vertices) connected by edges. graphs are used to model relationships, where the edges define the relationships.
+- terminology
+  - adjacent node/neighbor: two nodes are adjacent if there’s an edge connecting them
+  - degree: the number of edges connected to a node
+  - path: a sequence of nodes connected by edges
+- attributes
+  - directed vs. undirected: in a directed graph, edges have a direction associated with them
+  - weighted vs. unweighted: in a weighted graph, edges have a weight associated with them, such as distance or cost
+  - cyclic vs. acyclic: a cyclic graph contains at least one cycle, which is a path that starts and ends at the same node
+- other representations:
+  - in an adjacency list, the neighbors of each node are stored as a list. adjacency lists can be implemented using a hash map, where the key represents the node, and its corresponding value represents the list of that node’s neighbors
+  - in an adjacency matrix, the graph is represented as a 2d matrix where matrix[i][j] indicates an edge between nodes i and j
+- traversals: dfs and bfs - it might also be necessary to keep track of visited nodes using a data structure such as a hash set, to ensure each node is only visited once
+- example: social network 
+- graph deep copy - given a reference to a node within an undirected graph, create a deep copy (clone) of the graph. the copied graph must be completely independent of the original one. this means you need to make new nodes for the copied graph instead of reusing any nodes from the original graph.
 
-? monotonic window, sweep line approach, klee problem (shapes), birthday paradox, invariant law, attractor basin theory, floyd tortoise and hare
-? sentinel value pattern (-1)
 
+
+
+? monotonic window, sweep line approach, klee problem (shapes), birthday paradox, invariant law, attractor basin theory, floyd tortoise and hare, sentinel value pattern (-1)
 ** code blocks
-
 # use this to run a specific program alone 
 #+begin_src shell :results output
-  python3 src/bt_serialize_deserialize.py
+  python3 src/graphs_deep_copy.py
 #+end_src
 
-
 #+begin_src shell :results output
+  python3 src/graphs_deep_copy.py
+  python3 src/tries_find_words_board.py
+  python3 src/tries_insert_search_wildcards.py
+  python3 src/tries_design.py
   python3 src/bt_serialize_deserialize.py
   python3 src/bt_kth_smallest.py
   python3 src/bt_columns.py
