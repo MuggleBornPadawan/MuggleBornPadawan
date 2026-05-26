@@ -55,9 +55,27 @@ source: https://bytebytego.com/my-courses
 |                        | finding values in sorted order  | k most frequent strings             |                 |        |                                                  |
 |                        |                                 | median of integer stream            |                 |        |                                                  |
 |------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
-| intervals              |                                 |                                     |                 |        |                                                  |
-| prefix sums            |                                 |                                     |                 |        |                                                  |
-| trees                  |                                 |                                     |                 |        |                                                  |
+| intervals              | managing overlaps               | merge overlapping intervals         |                 |        |                                                  |
+|                        |                                 | identify all interval overlaps      |                 |        |                                                  |
+|                        | finding values in sorted order  | largest overlap of intervals        |                 |        |                                                  |
+|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
+| prefix sums            | subarray sums                   | sum between range                   |                 |        |                                                  |
+|                        |                                 | k-sum subarrays                     |                 |        |                                                  |
+|                        | product sums                    | without current element             |                 |        |                                                  |
+|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
+| trees                  | depth first search (dfs)        | invert binary tree                  |                 |        |                                                  |
+|                        |                                 | balanced binary tree validation     |                 |        |                                                  |
+|                        |                                 | binary search tree validation       |                 |        |                                                  |
+|                        |                                 | lowest common ancestor              |                 |        |                                                  |
+|                        |                                 | build bt - preorder & inorder tr    |                 |        |                                                  |
+|                        |                                 | max sum of continuous path          |                 |        |                                                  |
+|                        |                                 | bt symmetry                         |                 |        |                                                  |
+|                        |                                 | kth smallest # in bst               |                 |        |                                                  |
+|                        |                                 | serialize and deserialize           |                 |        |                                                  |
+|                        | breadth first search (bfs)      | rightmost nodes of a bt             |                 |        |                                                  |
+|                        |                                 | widest binary tree level            |                 |        |                                                  |
+|                        |                                 | binary tree columns                 |                 |        |                                                  |
+|------------------------+---------------------------------+-------------------------------------+-----------------+--------+--------------------------------------------------|
 | tries                  |                                 |                                     |                 |        |                                                  |
 | graphs                 |                                 |                                     |                 |        |                                                  |
 | backtracking           |                                 |                                     |                 |        |                                                  |
@@ -151,17 +169,79 @@ source: https://bytebytego.com/my-courses
 - example: managing tasks in operating systems
 - k most frequent strings: find the k most frequently occurring strings in an array, and return them sorted by frequency in descending order. if two strings have the same frequency, sort them in lexicographical order.
 - combine sorted linked lists: given k singly linked lists, each sorted in ascending order, combine them into one sorted linked list
+- median integer stream: design a data structure that supports adding integers from a data stream and retrieving the median of all elements received at any point.
+  - example: streaming data. use min-heap and max-heap
+    - filter out noise in hft
+    - network monitoring and ddos mitigation (near 0 median alerts)
+    - ad tech and user behaviour analytics 
+- sort k-sorted array: given an integer array where each element is at most k positions away from its sorted position, sort the array in a non-decreasing order
+  - examples:
+    - network jitter and packet reordering
+    - distributed log merging (timeseries databases)
+    - high frequency trading (hft) market feeds
+    - iot sensor telemetry aggregation
+** intervals
+- an interval consists of two values: a start point and an end point. it represents a continuous segment on the number line that includes all values between these two points. it is often used to represent a line, time period, or a continuous range of values.
+  - closed intervals: both the start and end points are included in the interval
+  - open intervals: the start and end points are not included in the interval
+  - half-open intervals: either the start or the end point is included, while the other is not
+  - overlapping intervals: two intervals overlap if they share at least one common value
+  - example: scheduling systems
+- merge overlapping intervals: merge an array of intervals so there are no overlapping intervals, and return the resultant merged intervals
+- identify all overlaps: return an array of all overlaps between two arrays of intervals; each individual interval array is sorted by start value, and contains no overlapping intervals within itself
+- largest overlap: given an array of intervals, determine the maximum number of intervals that overlap at any point. each interval is half-open, meaning it includes the start point but excludes the end point
+** prefix sums
+- example: cumulative earnings or expenses over time
+- between range
+- k-sum subarrays: find the number of subarrays in an integer array that sum to k
+- product array without current element: given an array of integers, return an array res so that res[i] is equal to the product of all the elements of the input array except nums[i] itself
+** trees
+- example: file system is organized as hierarchial tree structure - efficient organization, navigation, and retrieval
+- a tree is a hierarchical data structure composed of nodes, where each node connects to one or more child nodes
+- each node in a tree contains the data it stores (val) and references to its child nodes
+- the most common type of tree is a binary tree, in which each node connects to up to two children: a left child and a right child
+- terminology
+  - parent: a node with one or more children
+  - child: a node that has a parent
+  - subtree: a tree formed by a node and its descendants
+  - path: a single, continuous sequence of nodes connected by edges
+  - depth: the number of edges from the root to a given node
+- attributes of a tree
+  - root: the topmost node of the tree and the only node without a parent
+  - intermediate node: a node with a parent node and at least one child
+  - leaf: a node with no children
+  - edge: the connection between two nodes. trees usually have directed edges, meaning the edges only point from parent to child
+  - height: the length of the longest path from the root to a leaf
+- traversals:
+  - depth first search: preorder, inorder, postorder
+|--------------------+-------------------+---------------------|
+| preorder traversal | inorder traversal | postorder traversal |
+|--------------------+-------------------+---------------------|
+| process(node)      | dfs(node.left)    | dfs(node.left)      |
+| dfs(node.left)     | process(node)     | dfs(node.right)     |
+| dfs(node.right)    | dfs(node.right)   | process(node)       |
+|--------------------+-------------------+---------------------|
+  - breadth first search:  traverses the nodes of a tree level by level. it processes the nodes at the present level before moving on to nodes at the next depth level.
+- invert binary tree: invert a binary tree and return its root. when a binary tree is inverted, it becomes the mirror image of itself.
+- balanced bt validation: determine if a binary tree is height-balanced, meaning no node's left subtree and right subtree have a height difference greater than 1
 
 
-
-
-
-
-? monotonic window 
+? monotonic window, sweep line approach, klee problem (shapes), birthday paradox, invariant law, attractor basin theory, floyd tortoise and hare
+? sentinel value pattern (-1)
 
 ** code blocks
 #+begin_src shell :results output
+  python3 src/bt_balance_verify.py
+  python3 src/bt_invert.py
+  python3 src/prefix_product_wo_ithelement.py
+  python3 src/prefix_ksum_subarrays.py
+  python3 src/prefix_sum_between_range.py
+  python3 src/intervals_largest_overlap.py
+  python3 src/intervals_identify_all_overlaps.py
+  python3 src/intervals_merge_overlaps.py
+  python3 src/heap_sort_ksorted_array.py
   python3 src/heap_median_integer_stream.py
+  python3 src/heap_heapq.py
   python3 src/heap_combine_sorted_linked_lists.py
   python3 src/heap_k_most_freq.py
   python3 src/stack_maximums_sliding_window.py
