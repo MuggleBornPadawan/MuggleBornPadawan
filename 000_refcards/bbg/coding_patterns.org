@@ -224,13 +224,48 @@ source: https://bytebytego.com/my-courses
   - breadth first search:  traverses the nodes of a tree level by level. it processes the nodes at the present level before moving on to nodes at the next depth level.
 - invert binary tree: invert a binary tree and return its root. when a binary tree is inverted, it becomes the mirror image of itself.
 - balanced bt validation: determine if a binary tree is height-balanced, meaning no node's left subtree and right subtree have a height difference greater than 1
-
+- right most nodes: return an array containing the values of the rightmost nodes at each level of a binary tree
+- widest level: return the width of the widest level in a binary tree, where the width of a level is defined as the distance between its leftmost and rightmost non-null nodes
+- binary search tree (bst) validation: verify whether a binary tree is a valid binary search tree (bst). a bst is a binary tree where each node meets the following criteria:
+  - a node's left subtree contains only nodes of lower values than the node's value
+  - a node's right subtree contains only nodes of greater values than the node's value
+- lowest common ancestor: return the lowest common ancestor (lca) of two nodes, p and q, in a binary tree. the lca is defined as the lowest node that has both p and q as descendants. a node can be considered an ancestor of itself.
+- build bt from preorder and inorder traversal: construct a binary tree using arrays of values obtained after a preorder traversal and an inorder traversal of the tree
+- maximum sum of continuous path: return the maximum sum of a continuous path in a binary tree. a path is defined by the following characteristics:
+  - consists of a sequence of nodes that can begin and end at any node in the tree
+  - each consecutive pair of nodes in the sequence is connected by an edge
+  - the path must be a single continuous sequence of nodes that doesn't split into multiple paths
+- symmetry: determine if a binary tree is vertically symmetric. that is, the left subtree of the root node is a mirror of the right subtree.  
+- columns: given the root of a binary tree, return a list of arrays where each array represents a vertical column of the tree. nodes in the same column should be ordered from top to bottom. nodes in the same row and column should be ordered from left to right.
+- kth_smallest: given the root of a binary search tree (bst) and an integer k, find the kth smallest node value  
+- serialize and deserialize: write a function to serialize a binary tree into a string, and another function to deserialize that string back into the original binary tree structure
+** tries
+- tries, also known as prefix trees, are specialized tree-like data structures that efficiently store strings by taking advantage of shared prefixes.
+-
+  
 
 ? monotonic window, sweep line approach, klee problem (shapes), birthday paradox, invariant law, attractor basin theory, floyd tortoise and hare
 ? sentinel value pattern (-1)
 
 ** code blocks
+
+# use this to run a specific program alone 
 #+begin_src shell :results output
+  python3 src/bt_serialize_deserialize.py
+#+end_src
+
+
+#+begin_src shell :results output
+  python3 src/bt_serialize_deserialize.py
+  python3 src/bt_kth_smallest.py
+  python3 src/bt_columns.py
+  python3 src/bt_symmetry_check.py
+  python3 src/bt_maxsum_continuous_path.py
+  python3 src/bt_build_preorder_inorder_traversal.py
+  python3 src/bt_lowest_common_ancestor.py
+  python3 src/bt_binary_search_tree_validation.py
+  python3 src/bt_widest_level.py
+  python3 src/bt_right_most_nodes.py
   python3 src/bt_balance_verify.py
   python3 src/bt_invert.py
   python3 src/prefix_product_wo_ithelement.py
@@ -281,11 +316,6 @@ source: https://bytebytego.com/my-courses
   python3 src/triplet_sum.py
   python3 src/pair_sum.py
   ls -lha
-#+end_src
-
-# use this to run a specific program alone 
-#+begin_src shell :results output
-  python3 src/linked_list_reveral.py
 #+end_src
 
 ** prompt tip
