@@ -91,7 +91,12 @@ source: https://bytebytego.com/my-courses
 |                        | union-find                      | merging communities                    |                 |        |                                                  |
 |                        |                                 | connect the dots                       |                 |        |                                                  |
 |------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
-| backtracking           |                                 |                                        |                 |        |                                                  |
+| backtracking           | permutations                    | find all permutations                  |                 |        |                                                  |
+|                        |                                 | n queens                               |                 |        |                                                  |
+|                        | combinations                    | combinations of sum                    |                 |        |                                                  |
+|                        |                                 | phone keypad combination               |                 |        |                                                  |
+|                        | subsets                         | find all subsets                       |                 |        |                                                  |
+|------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
 | dynamic programming    |                                 |                                        |                 |        |                                                  |
 | greedy                 |                                 |                                        |                 |        |                                                  |
 | sort and search        |                                 |                                        |                 |        |                                                  |
@@ -274,8 +279,17 @@ source: https://bytebytego.com/my-courses
 - traversals: dfs and bfs - it might also be necessary to keep track of visited nodes using a data structure such as a hash set, to ensure each node is only visited once
 - example: social network 
 - graph deep copy - given a reference to a node within an undirected graph, create a deep copy (clone) of the graph. the copied graph must be completely independent of the original one. this means you need to make new nodes for the copied graph instead of reusing any nodes from the original graph.
-
-
+- count islands
+- matrix infection
+- bipartite graph validation
+- longest increasing path
+- shortest transformation seq
+- merging communities
+- prerequisites
+- shortest paths
+- connect the dots
+** backtracking
+- state space tree - also known as the decision tree, is a conceptual tree constructed by considering every possible decision that can be made at each point in a process
 
 
 ? monotonic window, sweep line approach, klee problem (shapes), birthday paradox, invariant law, attractor basin theory, floyd tortoise and hare, sentinel value pattern (-1)
