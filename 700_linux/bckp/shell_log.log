@@ -1,4 +1,4 @@
---- Omni-Sentry v2.0 Initialized ---
+[H[J[3J--- Omni-Sentry v2.0 Initialized ---
 [0;32m[*] Auditing Connection: xxx.xxx.xx.xxx # Manually unmask if you want IP to be displayed 
 checking 10.0.0. ...
 checking 192.168.1. ...
@@ -7,8 +7,8 @@ checking 169.254. ...
 checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
--e 
-Date: Wed May 27 11:05:43 AM IST 2026 
+
+Date: Wed May 27 01:07:51 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -56,18 +56,18 @@ Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:2 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [310 kB]
-Get:3 http://deb.debian.org/debian bookworm-backports/main Translation-en [261 kB]
-Get:4 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:5 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:6 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:7 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:8 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:9 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:10 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Ign:11 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:12 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Get:13 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
+Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [310 kB]
+Get:6 http://deb.debian.org/debian bookworm-backports/main Translation-en [261 kB]
+Get:7 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:8 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:9 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
+Get:10 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:11 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Ign:12 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:13 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
 Get:14 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
 Get:15 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
 Get:16 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
@@ -78,7 +78,7 @@ Get:20 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924
 Get:21 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:22 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [308 kB]
 Get:23 https://deb.debian.org/debian-security bookworm-security/main Translation-en [190 kB]
-Fetched 20.9 MB in 5s (4,178 kB/s)
+Fetched 20.9 MB in 5s (4,160 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -87,19 +87,13 @@ Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
 Hit:6 https://storage.googleapis.com/cros-packages/146 bookworm Release
-Get:7 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Fetched 7,507 B in 1s (12.0 kB/s)
+Hit:8 https://packages.adoptium.net/artifactory/deb bookworm InRelease
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-The following packages will be upgraded:
-  node-shell-quote
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 14.7 kB of archives.
-After this operation, 1,024 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -157,12 +151,7 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-The following packages will be upgraded:
-  node-shell-quote
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 14.7 kB of archives.
-After this operation, 1,024 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -185,12 +174,7 @@ libssl-dev is already the newest version (3.0.20-1~deb12u1).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u5).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-The following packages will be upgraded:
-  node-shell-quote
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 14.7 kB of archives.
-After this operation, 1,024 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -209,41 +193,33 @@ tmux is already the newest version (3.3a-3).
 dnsutils is already the newest version (1:9.18.49-1~deb12u1).
 nmap is already the newest version (7.93+dfsg1-1).
 Calculating upgrade...
-The following packages will be upgraded:
-  node-shell-quote
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 14.7 kB of archives.
-After this operation, 1,024 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b3).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-The following packages will be upgraded:
-  node-shell-quote
-1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-Need to get 14.7 kB of archives.
-After this operation, 1,024 B of additional disk space will be used.
-Do you want to continue? [Y/n] Abort.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
+/home/rgroot/.config/nvm/versions/node/v24.6.0/lib
+├── @google/gemini-cli@0.43.0
+├── @qwen-code/qwen-code@0.6.0
+├── corepack@0.34.0
+├── npm-check-updates@19.2.0
+└── npm@11.7.0
 
--e 
+
 run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
+
 IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
+
 use trash-empty or trash-restore as you see fit
 Password Store
 ├── CLAUDE_API_KEY
@@ -300,14 +276,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-Wed May 27 11:06:32 2026 -> ClamAV update process started at Wed May 27 11:06:32 2026
-Wed May 27 11:06:32 2026 -> daily database available for update (local version: 28010, remote version: 28012)
-Wed May 27 11:06:33 2026 -> Testing database: '/var/lib/clamav/tmp.99eae0653b/clamav-1439edb93c0cc915a75252d8daaaa0f2.tmp-daily.cld' ...
-Wed May 27 11:06:35 2026 -> Database test passed.
-Wed May 27 11:06:35 2026 -> daily.cld updated (version: 28012, sigs: 355458, f-level: 90, builder: svc.clamav-publisher)
-Wed May 27 11:06:36 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
-Wed May 27 11:06:36 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/28012/Tue May 26 11:54:34 2026
+Wed May 27 13:08:40 2026 -> ClamAV update process started at Wed May 27 13:08:40 2026
+Wed May 27 13:08:40 2026 -> daily database available for update (local version: 28012, remote version: 28013)
+Wed May 27 13:08:40 2026 -> Testing database: '/var/lib/clamav/tmp.13966aa658/clamav-9d5a225d56e132559f154c558105f41d.tmp-daily.cld' ...
+Wed May 27 13:08:43 2026 -> Database test passed.
+Wed May 27 13:08:43 2026 -> daily.cld updated (version: 28013, sigs: 355458, f-level: 90, builder: svc.clamav-publisher)
+Wed May 27 13:08:43 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+Wed May 27 13:08:43 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ClamAV 1.4.3/28013/Wed May 27 11:54:49 2026
 NEXT                        LEFT        LAST                        PASSED     UNIT                ACTIVATES
 Mon 2026-06-01 00:00:00 IST 4 days left Mon 2026-05-25 00:00:00 IST 2 days ago clamav-weekly.timer clamav-weekly.service
 
@@ -321,8 +297,329 @@ Looking for files to backup/remove ...
 Removing files ...
 Removing crontab ...
 Removing user `snow' ...
-Done.
- 3576 ?        00:00:00 snow.sh
+uid=1002(snow) gid=1002(snow) groups=1002(snow)
+/dev/.lxc/proc/9805
+/dev/.lxc/proc/9805/task
+/dev/.lxc/proc/9805/task/9805
+/dev/.lxc/proc/9805/task/9805/fd
+/dev/.lxc/proc/9805/task/9805/fd/0
+/dev/.lxc/proc/9805/task/9805/fd/1
+/dev/.lxc/proc/9805/task/9805/fd/2
+/dev/.lxc/proc/9805/task/9805/fd/255
+/dev/.lxc/proc/9805/task/9805/fdinfo
+/dev/.lxc/proc/9805/task/9805/fdinfo/0
+/dev/.lxc/proc/9805/task/9805/fdinfo/1
+/dev/.lxc/proc/9805/task/9805/fdinfo/2
+/dev/.lxc/proc/9805/task/9805/fdinfo/255
+/dev/.lxc/proc/9805/task/9805/ns
+/dev/.lxc/proc/9805/task/9805/ns/net
+/dev/.lxc/proc/9805/task/9805/ns/uts
+/dev/.lxc/proc/9805/task/9805/ns/ipc
+/dev/.lxc/proc/9805/task/9805/ns/pid
+/dev/.lxc/proc/9805/task/9805/ns/pid_for_children
+/dev/.lxc/proc/9805/task/9805/ns/user
+/dev/.lxc/proc/9805/task/9805/ns/mnt
+/dev/.lxc/proc/9805/task/9805/ns/cgroup
+/dev/.lxc/proc/9805/task/9805/ns/time
+/dev/.lxc/proc/9805/task/9805/ns/time_for_children
+/dev/.lxc/proc/9805/task/9805/net
+/dev/.lxc/proc/9805/task/9805/environ
+/dev/.lxc/proc/9805/task/9805/auxv
+/dev/.lxc/proc/9805/task/9805/status
+/dev/.lxc/proc/9805/task/9805/personality
+/dev/.lxc/proc/9805/task/9805/limits
+/dev/.lxc/proc/9805/task/9805/comm
+/dev/.lxc/proc/9805/task/9805/syscall
+/dev/.lxc/proc/9805/task/9805/cmdline
+/dev/.lxc/proc/9805/task/9805/stat
+/dev/.lxc/proc/9805/task/9805/statm
+/dev/.lxc/proc/9805/task/9805/maps
+/dev/.lxc/proc/9805/task/9805/mem
+/dev/.lxc/proc/9805/task/9805/cwd
+/dev/.lxc/proc/9805/task/9805/root
+/dev/.lxc/proc/9805/task/9805/exe
+/dev/.lxc/proc/9805/task/9805/mounts
+/dev/.lxc/proc/9805/task/9805/mountinfo
+/dev/.lxc/proc/9805/task/9805/clear_refs
+/dev/.lxc/proc/9805/task/9805/smaps
+/dev/.lxc/proc/9805/task/9805/smaps_rollup
+/dev/.lxc/proc/9805/task/9805/pagemap
+/dev/.lxc/proc/9805/task/9805/attr
+/dev/.lxc/proc/9805/task/9805/attr/current
+/dev/.lxc/proc/9805/task/9805/attr/prev
+/dev/.lxc/proc/9805/task/9805/attr/exec
+/dev/.lxc/proc/9805/task/9805/attr/fscreate
+/dev/.lxc/proc/9805/task/9805/attr/keycreate
+/dev/.lxc/proc/9805/task/9805/attr/sockcreate
+/dev/.lxc/proc/9805/task/9805/wchan
+/dev/.lxc/proc/9805/task/9805/stack
+/dev/.lxc/proc/9805/task/9805/schedstat
+/dev/.lxc/proc/9805/task/9805/cpuset
+/dev/.lxc/proc/9805/task/9805/cgroup
+/dev/.lxc/proc/9805/task/9805/oom_score
+/dev/.lxc/proc/9805/task/9805/oom_adj
+/dev/.lxc/proc/9805/task/9805/oom_score_adj
+/dev/.lxc/proc/9805/task/9805/loginuid
+/dev/.lxc/proc/9805/task/9805/sessionid
+/dev/.lxc/proc/9805/task/9805/uid_map
+/dev/.lxc/proc/9805/task/9805/gid_map
+/dev/.lxc/proc/9805/task/9805/projid_map
+/dev/.lxc/proc/9805/task/9805/setgroups
+/dev/.lxc/proc/9805/task/9805/arch_status
+/dev/.lxc/proc/9805/fd
+/dev/.lxc/proc/9805/fd/0
+/dev/.lxc/proc/9805/fd/1
+/dev/.lxc/proc/9805/fd/2
+/dev/.lxc/proc/9805/fd/255
+/dev/.lxc/proc/9805/map_files
+/dev/.lxc/proc/9805/map_files/560d83185000-560d831b4000
+/dev/.lxc/proc/9805/map_files/560d831b4000-560d83275000
+/dev/.lxc/proc/9805/map_files/560d83275000-560d832ad000
+/dev/.lxc/proc/9805/map_files/560d832ad000-560d832b1000
+/dev/.lxc/proc/9805/map_files/560d832b1000-560d832ba000
+/dev/.lxc/proc/9805/map_files/7fc77a200000-7fc77a4e9000
+/dev/.lxc/proc/9805/map_files/7fc77a60c000-7fc77a632000
+/dev/.lxc/proc/9805/map_files/7fc77a632000-7fc77a788000
+/dev/.lxc/proc/9805/map_files/7fc77a788000-7fc77a7db000
+/dev/.lxc/proc/9805/map_files/7fc77a7db000-7fc77a7df000
+/dev/.lxc/proc/9805/map_files/7fc77a7df000-7fc77a7e1000
+/dev/.lxc/proc/9805/map_files/7fc77a7ee000-7fc77a7fd000
+/dev/.lxc/proc/9805/map_files/7fc77a7fd000-7fc77a80e000
+/dev/.lxc/proc/9805/map_files/7fc77a80e000-7fc77a81c000
+/dev/.lxc/proc/9805/map_files/7fc77a81c000-7fc77a820000
+/dev/.lxc/proc/9805/map_files/7fc77a820000-7fc77a821000
+/dev/.lxc/proc/9805/map_files/7fc77a827000-7fc77a82e000
+/dev/.lxc/proc/9805/map_files/7fc77a830000-7fc77a831000
+/dev/.lxc/proc/9805/map_files/7fc77a831000-7fc77a857000
+/dev/.lxc/proc/9805/map_files/7fc77a857000-7fc77a861000
+/dev/.lxc/proc/9805/map_files/7fc77a861000-7fc77a863000
+/dev/.lxc/proc/9805/map_files/7fc77a863000-7fc77a865000
+/dev/.lxc/proc/9805/fdinfo
+/dev/.lxc/proc/9805/fdinfo/0
+/dev/.lxc/proc/9805/fdinfo/1
+/dev/.lxc/proc/9805/fdinfo/2
+/dev/.lxc/proc/9805/fdinfo/255
+/dev/.lxc/proc/9805/ns
+/dev/.lxc/proc/9805/ns/net
+/dev/.lxc/proc/9805/ns/uts
+/dev/.lxc/proc/9805/ns/ipc
+/dev/.lxc/proc/9805/ns/pid
+/dev/.lxc/proc/9805/ns/pid_for_children
+/dev/.lxc/proc/9805/ns/user
+/dev/.lxc/proc/9805/ns/mnt
+/dev/.lxc/proc/9805/ns/cgroup
+/dev/.lxc/proc/9805/ns/time
+/dev/.lxc/proc/9805/ns/time_for_children
+/dev/.lxc/proc/9805/net
+/dev/.lxc/proc/9805/environ
+/dev/.lxc/proc/9805/auxv
+/dev/.lxc/proc/9805/status
+/dev/.lxc/proc/9805/personality
+/dev/.lxc/proc/9805/limits
+/dev/.lxc/proc/9805/timens_offsets
+/dev/.lxc/proc/9805/comm
+/dev/.lxc/proc/9805/syscall
+/dev/.lxc/proc/9805/cmdline
+/dev/.lxc/proc/9805/stat
+/dev/.lxc/proc/9805/statm
+/dev/.lxc/proc/9805/maps
+/dev/.lxc/proc/9805/mem
+/dev/.lxc/proc/9805/cwd
+/dev/.lxc/proc/9805/root
+/dev/.lxc/proc/9805/exe
+/dev/.lxc/proc/9805/mounts
+/dev/.lxc/proc/9805/mountinfo
+/dev/.lxc/proc/9805/mountstats
+/dev/.lxc/proc/9805/clear_refs
+/dev/.lxc/proc/9805/smaps
+/dev/.lxc/proc/9805/smaps_rollup
+/dev/.lxc/proc/9805/pagemap
+/dev/.lxc/proc/9805/attr
+/dev/.lxc/proc/9805/attr/current
+/dev/.lxc/proc/9805/attr/prev
+/dev/.lxc/proc/9805/attr/exec
+/dev/.lxc/proc/9805/attr/fscreate
+/dev/.lxc/proc/9805/attr/keycreate
+/dev/.lxc/proc/9805/attr/sockcreate
+/dev/.lxc/proc/9805/wchan
+/dev/.lxc/proc/9805/stack
+/dev/.lxc/proc/9805/schedstat
+/dev/.lxc/proc/9805/cpuset
+/dev/.lxc/proc/9805/cgroup
+/dev/.lxc/proc/9805/oom_score
+/dev/.lxc/proc/9805/oom_adj
+/dev/.lxc/proc/9805/oom_score_adj
+/dev/.lxc/proc/9805/loginuid
+/dev/.lxc/proc/9805/sessionid
+/dev/.lxc/proc/9805/coredump_filter
+/dev/.lxc/proc/9805/uid_map
+/dev/.lxc/proc/9805/gid_map
+/dev/.lxc/proc/9805/projid_map
+/dev/.lxc/proc/9805/setgroups
+/dev/.lxc/proc/9805/timerslack_ns
+/dev/.lxc/proc/9805/arch_status
+/dev/pts/14
+/proc/9805
+/proc/9805/task
+/proc/9805/task/9805
+/proc/9805/task/9805/fd
+/proc/9805/task/9805/fd/0
+/proc/9805/task/9805/fd/1
+/proc/9805/task/9805/fd/2
+/proc/9805/task/9805/fd/255
+/proc/9805/task/9805/fdinfo
+/proc/9805/task/9805/fdinfo/0
+/proc/9805/task/9805/fdinfo/1
+/proc/9805/task/9805/fdinfo/2
+/proc/9805/task/9805/fdinfo/255
+/proc/9805/task/9805/ns
+/proc/9805/task/9805/ns/net
+/proc/9805/task/9805/ns/uts
+/proc/9805/task/9805/ns/ipc
+/proc/9805/task/9805/ns/pid
+/proc/9805/task/9805/ns/pid_for_children
+/proc/9805/task/9805/ns/user
+/proc/9805/task/9805/ns/mnt
+/proc/9805/task/9805/ns/cgroup
+/proc/9805/task/9805/ns/time
+/proc/9805/task/9805/ns/time_for_children
+/proc/9805/task/9805/net
+/proc/9805/task/9805/environ
+/proc/9805/task/9805/auxv
+/proc/9805/task/9805/status
+/proc/9805/task/9805/personality
+/proc/9805/task/9805/limits
+/proc/9805/task/9805/comm
+/proc/9805/task/9805/syscall
+/proc/9805/task/9805/cmdline
+/proc/9805/task/9805/stat
+/proc/9805/task/9805/statm
+/proc/9805/task/9805/maps
+/proc/9805/task/9805/mem
+/proc/9805/task/9805/cwd
+/proc/9805/task/9805/root
+/proc/9805/task/9805/exe
+/proc/9805/task/9805/mounts
+/proc/9805/task/9805/mountinfo
+/proc/9805/task/9805/clear_refs
+/proc/9805/task/9805/smaps
+/proc/9805/task/9805/smaps_rollup
+/proc/9805/task/9805/pagemap
+/proc/9805/task/9805/attr
+/proc/9805/task/9805/attr/current
+/proc/9805/task/9805/attr/prev
+/proc/9805/task/9805/attr/exec
+/proc/9805/task/9805/attr/fscreate
+/proc/9805/task/9805/attr/keycreate
+/proc/9805/task/9805/attr/sockcreate
+/proc/9805/task/9805/wchan
+/proc/9805/task/9805/stack
+/proc/9805/task/9805/schedstat
+/proc/9805/task/9805/cpuset
+/proc/9805/task/9805/cgroup
+/proc/9805/task/9805/oom_score
+/proc/9805/task/9805/oom_adj
+/proc/9805/task/9805/oom_score_adj
+/proc/9805/task/9805/loginuid
+/proc/9805/task/9805/sessionid
+/proc/9805/task/9805/uid_map
+/proc/9805/task/9805/gid_map
+/proc/9805/task/9805/projid_map
+/proc/9805/task/9805/setgroups
+/proc/9805/task/9805/arch_status
+/proc/9805/fd
+/proc/9805/fd/0
+/proc/9805/fd/1
+/proc/9805/fd/2
+/proc/9805/fd/255
+/proc/9805/map_files
+/proc/9805/map_files/560d83185000-560d831b4000
+/proc/9805/map_files/560d831b4000-560d83275000
+/proc/9805/map_files/560d83275000-560d832ad000
+/proc/9805/map_files/560d832ad000-560d832b1000
+/proc/9805/map_files/560d832b1000-560d832ba000
+/proc/9805/map_files/7fc77a200000-7fc77a4e9000
+/proc/9805/map_files/7fc77a60c000-7fc77a632000
+/proc/9805/map_files/7fc77a632000-7fc77a788000
+/proc/9805/map_files/7fc77a788000-7fc77a7db000
+/proc/9805/map_files/7fc77a7db000-7fc77a7df000
+/proc/9805/map_files/7fc77a7df000-7fc77a7e1000
+/proc/9805/map_files/7fc77a7ee000-7fc77a7fd000
+/proc/9805/map_files/7fc77a7fd000-7fc77a80e000
+/proc/9805/map_files/7fc77a80e000-7fc77a81c000
+/proc/9805/map_files/7fc77a81c000-7fc77a820000
+/proc/9805/map_files/7fc77a820000-7fc77a821000
+/proc/9805/map_files/7fc77a827000-7fc77a82e000
+/proc/9805/map_files/7fc77a830000-7fc77a831000
+/proc/9805/map_files/7fc77a831000-7fc77a857000
+/proc/9805/map_files/7fc77a857000-7fc77a861000
+/proc/9805/map_files/7fc77a861000-7fc77a863000
+/proc/9805/map_files/7fc77a863000-7fc77a865000
+/proc/9805/fdinfo
+/proc/9805/fdinfo/0
+/proc/9805/fdinfo/1
+/proc/9805/fdinfo/2
+/proc/9805/fdinfo/255
+/proc/9805/ns
+/proc/9805/ns/net
+/proc/9805/ns/uts
+/proc/9805/ns/ipc
+/proc/9805/ns/pid
+/proc/9805/ns/pid_for_children
+/proc/9805/ns/user
+/proc/9805/ns/mnt
+/proc/9805/ns/cgroup
+/proc/9805/ns/time
+/proc/9805/ns/time_for_children
+/proc/9805/net
+/proc/9805/environ
+/proc/9805/auxv
+/proc/9805/status
+/proc/9805/personality
+/proc/9805/limits
+/proc/9805/timens_offsets
+/proc/9805/comm
+/proc/9805/syscall
+/proc/9805/cmdline
+/proc/9805/stat
+/proc/9805/statm
+/proc/9805/maps
+/proc/9805/mem
+/proc/9805/cwd
+/proc/9805/root
+/proc/9805/exe
+/proc/9805/mounts
+/proc/9805/mountinfo
+/proc/9805/mountstats
+/proc/9805/clear_refs
+/proc/9805/smaps
+/proc/9805/smaps_rollup
+/proc/9805/pagemap
+/proc/9805/attr
+/proc/9805/attr/current
+/proc/9805/attr/prev
+/proc/9805/attr/exec
+/proc/9805/attr/fscreate
+/proc/9805/attr/keycreate
+/proc/9805/attr/sockcreate
+/proc/9805/wchan
+/proc/9805/stack
+/proc/9805/schedstat
+/proc/9805/cpuset
+/proc/9805/cgroup
+/proc/9805/oom_score
+/proc/9805/oom_adj
+/proc/9805/oom_score_adj
+/proc/9805/loginuid
+/proc/9805/sessionid
+/proc/9805/coredump_filter
+/proc/9805/uid_map
+/proc/9805/gid_map
+/proc/9805/projid_map
+/proc/9805/setgroups
+/proc/9805/timerslack_ns
+/proc/9805/arch_status
+13108 pts/8    00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
