@@ -1,0 +1,100 @@
+#+TITLE: webgpu fundamentals
+* intro
+** pre requisite
+- knowledge of html, javascript, and chrome devtools
+** resources
+- official - https://www.w3.org/TR/webgpu/
+- git official spec - https://gpuweb.github.io/gpuweb/
+- shading lanugage (wgsl) spec - https://gpuweb.github.io/gpuweb/wgsl/ 
+- wip official - https://webgpu.org/
+- wiki page - https://en.wikipedia.org/wiki/WebGPU 
+- webgpu fundamentals - https://webgpufundamentals.org/webgpu/lessons/webgpu-fundamentals.html
+- visionary 3d youtube channel - https://youtu.be/47bgA5TQwmc? 
+- google code labs - https://codelabs.developers.google.com/your-first-webgpu-app#0
+- compute shader glossary - https://github.com/googlefonts/compute-shader-101/blob/main/docs/glossary.md
+- conway's game of life implementation - https://github.com/GoogleChromeLabs/your-first-webgpu-app-codelab 
+- samples - https://webgpu.github.io/webgpu-samples/ 
+- raw - https://alain.xyz/blog/raw-webgpu 
+- best practices - https://toji.dev/webgpu-best-practices/
+- chrome dev tools - https://developer.chrome.com/docs/devtools 
+** purpose
+- webgpu and wgsl (webgpu shading language) are w3c standards for gpu acceleration on the web. there are also implementations of webgpu in other languages, for both webassembly and native applications.
+- webgpu exposes an api for performing operations, such as rendering (triangles, points, lines to textures) and computation, on a graphics processing unit.
+** operations
+- vector (1d), matrix (2d), tensor (3d) 
+- every tensor operation is a function
+- to represent matrix in memory, we need two things: 1) buffer to hold data 2) view to help us look at that data
+- view is called a tensor shape - any tensor can be represented as one dimensional array 
+** functions
+- a vertex shader computes vertices. the shader returns vertex positions. for every group of 3 vertices the vertex shader function returns, a triangle is drawn between those 3 positions.
+- a fragment shader computes colors. when a triangle is drawn, for each pixel to be drawn the gpu calls your fragment shader. the fragment shader then returns a color.
+- a compute shader is more generic. it’s effectively just a function you call and say “execute this function n times”. the gpu passes the iteration number each time it calls your function so you can use that number to do something unique on each iteration.
+** compute shader
+- shader - code written in shading language; lives in javascript as strings 
+- bind groups - inputs and outputs of shader
+- encoder - lets you encode commands for the gpu, to execute
+** ?wixel
+- u32 - unsigned 32 bit integer 
+- vec3<u32> - constructor with 3 components (x, y, z = r, g, b)
+- f32 - 32 bit float 
+- vec3<f32> - 3 dimensional vector
+- typical structure
+  - struct keyword is used to create a class 
+  - clearly defined inputs and outputs
+  - out of bounds check
+  - workgroup size
+  - calculation (parallel for loop)
+  - global thread id (index)
+- gpu compute hierarchy
+  - threads > workgroup (64) > dispatch (cieling) 
+  - gpu has thousands of cores
+  - smallest unit -> thread
+  - a thread in gpu compute is like a traditional cpu thread, but with some differences. while on cpu, the cost of spawning a thread is significant, on a gpu it is quite cheap, and often the "many small threads" pattern is the best way to achieve performance
+  - gpu threads are scheduled quite differently than on cpu. for one, forward progress guarantees are much weaker (though this depends on the gpu). the hardware model of gpu is often described as single instruction multiple threads (simt), which is similar to more traditional single instruction multiple data (simd), but with more support for creating the illusion that the threads are running independently, in particular execution masks for conditional control flow
+- execute
+** hello world 
+#+BEGIN_SRC js :results output
+  // 1D Tensor
+  const vector = [8, 2, 2, 22, 1, 3, 4];
+
+  // 2D Tensor
+  // const matrix = [1 2 3 4 5 6 7 8 9]
+  // type: [*arr1, *arr2, *arr3];
+
+  // 3D Tensor
+  // const tensor = [[[1], [2], [3]], [[4], [5], [6]], [[7], [8], [9]]];
+
+  // calculating index - flatten matrix to store in vector format
+  // const index = x + y * matrix.cols;
+  // x is offset
+
+  console.log("Hello, World!");
+#+END_SRC
+
+** sum function 
+#+BEGIN_SRC js :results output
+  /**
+   ,* Calculates the sum of an array of numbers using a for loop.
+   ,* @param {number[]} numbersArray - The array of numbers to sum.
+   ,* @returns {number} The total sum of the elements.
+   ,*/
+  function calculateSum(numbersArray) {
+      let totalSum = 0; // Local accumulator variable
+
+      for (let i = 0; i < numbersArray.length; i++) {
+          totalSum += numbersArray[i];
+      }
+
+      return totalSum; // Return the final calculation back to the caller
+  }
+
+  // --- Example Usage ---
+  const myNumbers = [10, 20, 30, 40, 50];
+  const result = calculateSum(myNumbers);
+
+  console.log("The total sum is:", result); 
+  // Output: The total sum is: 150
+#+END_SRC
+
+
+<eof>
