@@ -130,6 +130,11 @@
  'org-babel-load-languages
  '((shell . t))) ;; 't' stands for true/enabled
 
+;; --- javascript configuration --- 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((js . t))) ; Enables JavaScript evaluation
+
 ;; geiser-repl
 (defun my/geiser-set-repl-directory ()
   "Set Geiser's working directory to the current file's directory."
