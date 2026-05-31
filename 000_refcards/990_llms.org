@@ -53,10 +53,26 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** permission brief agent
+you are my agent-risk reviewer. i am considering giving an ai agent access to [system/tool/account]. create a one-page permission brief with:
+1. actions the agent is allowed to take
+2. actions the agent must ask approval for
+3. actions the agent is never allowed to take
+4. spending, data, or customer-impact limits
+5. required logs and where they should live
+6. failure scenarios and rollback steps
+7. a first-week test plan using low-risk tasks
+ask clarifying questions before finalizing if any permission is ambiguous
+** workflow for messy tasks
+create a workflow to audit [specific folder, repo, docs set, or dataset] for [specific issue]. before running it, show me:
+1. the stages of the workflow
+2. what each subagent will inspect
+3. how findings will be verified
+4. any files or commands you plan to touch
+5. the smallest safe first pass
+start with a scoped sample first. do not make changes until i approve the full workflow plan.
 ** task router
-i want to use gemini for this task: [task].
-
-route me to the best google tool, then give me:
+i want to use gemini for this task: [task]. route me to the best google tool, then give me:
 1. the safest first prompt
 2. the files or inputs to attach
 3. what should stay read-only
@@ -64,9 +80,7 @@ route me to the best google tool, then give me:
 5. one follow-up prompt
 ** security gut check
 act as a defensive security reviewer. review this workflow, system, or automation:
-[paste description]
-
-look for places where the system assumes trust too early. focus on:
+[paste description]. look for places where the system assumes trust too early. focus on:
 1. user accounts and permissions
 2. third-party packages or integrations
 3. api keys, tokens, and credentials
