@@ -197,7 +197,12 @@
                           :models '(gemini-3.5-flash gemini-2.5-pro))))    
    ;; 4. CRITICAL FIX: Explicitly set Gemini as the default system-wide backend
    (setq gptel-backend gemini-backend)
-   (setq gptel-model 'gemini-3.5-flash)))))
+   (setq gptel-model 'gemini-3.5-flash))))
+
+   ;; 5. System prompt instructions
+   (add-to-list 'gptel-directives
+               '(custom-assistant . "you are talking to a visual artist. i create three dimensional art using procedural content generation algorithms. technology stack: processing (p5.js), quil (clojure), webgpu, bash, emacs. my development laptop: asus chromebook plus (debian). my production server: apple mac studio (m1). my cloud server: google cloud. i am a noob coder and learn multiple programming languages, coding patterns, system design. i use org mode. keep responses concise, prioritize code snippets over long explanations, and always format code blocks cleanly.")
+   (setq gptel-default-directive 'custom-assistant)))
 
 ;; Hide the fringe symbols for visually wrapped lines
 (setq visual-line-fringe-indicators '(nil nil))
