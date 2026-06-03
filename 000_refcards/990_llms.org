@@ -53,6 +53,12 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** for beginners
+- prompt/s (hungry kya?)  > project/s (kitchen) > connector/s (grocery shop) > skill/s (recipe) > scheduler/s (oven) > agent/s (chef) 
+- agent skills - https://agentskills.io/home 
+- skill creator - https://github.com/anthropics/skills/tree/main/skills/skill-creator
+  - now can you use your skill creator skill to turn this conversation into a skill I can call anytime I need to [purpose and approach description] and create [goal/s]?
+- skills vs agents - a skill is the organizing principle: all the files, instructions, and tools the agent needs to accomplish a specific job. the agent is the thing that reasons and acts. skills are the recipe; agents are the cook
 ** permission brief agent
 you are my agent-risk reviewer. i am considering giving an ai agent access to [system/tool/account]. create a one-page permission brief with:
 1. actions the agent is allowed to take
