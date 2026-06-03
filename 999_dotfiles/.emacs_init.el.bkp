@@ -163,11 +163,51 @@
 ;;  :config
 ;;  (treesit-auto-add-to-auto-mode-alist 'all))
 
+;; gptel implementation 
+(use-package gptel
+  :ensure t
+  ;; 0. Bind keys globally using the :bind keyword. 
+  ;; use-package automatically handles the autoloading magic for you.
+  :bind (("C-c g m" . gptel-menu)
+         ("C-c g s" . gptel-send)
+         ("C-c g a" . gptel-add)
+	 ("C-c g i" . gptel-context-inspect)
+	 ("C-c g c" . gptel-context-clear)
+	 ("C-c g b" . gptel-abort)
+	 ("C-c g r" . gptel-rewrite))
+  :config
+  ;; 1. Retrieve the Gemini API key securely from 'pass'
+  (defun my/get-gemini-key-from-pass ()
+    "Retrieve the Gemini API key securely from the pass password manager."
+    (if (executable-find "pass")
+        (let ((key (shell-command-to-string "pass show GEMINI_API_KEY")))
+          (if (string-empty-p key)
+              (progn (message "Warning: 'pass show GEMINI_API_KEY' returned empty.") nil)
+            (string-trim-right key)))
+      (message "Error: 'pass' executable not found on this system.")
+      nil))
+
+  ;; 2. Read the key into a local variable
+  (let ((secret-key (my/get-gemini-key-from-pass)))
+    (when secret-key
+  ;; 3. Create the Gemini backend object
+  (let ((gemini-backend (gptel-make-gemini "Gemini"
+                          :key secret-key
+                          :stream t
+                          :models '(gemini-3.5-flash gemini-2.5-pro))))    
+   ;; 4. CRITICAL FIX: Explicitly set Gemini as the default system-wide backend
+   (setq gptel-backend gemini-backend)
+   (setq gptel-model 'gemini-3.5-flash)))))
+
 ;; Hide the fringe symbols for visually wrapped lines
 (setq visual-line-fringe-indicators '(nil nil))
 
 ;; --- User Interface Settings ---
 (setq-default truncate-lines t)
+
+;; display date and time in mode line of emacs
+(setq display-time-format "%Y-%m-%d %H:%M")
+(display-time-mode 1)
 
 ;; font
 (set-face-attribute 'default nil :font "Your Mono Font-12")
