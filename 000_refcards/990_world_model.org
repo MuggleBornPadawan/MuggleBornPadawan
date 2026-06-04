@@ -5,6 +5,8 @@
 - "human or animal brains seem to run a simulation of the world, a world model, which helps them make predictions about their surroundings and learn common sense." — yann lecun
 ** behind the scenes
 - semantic system of record (rdf / owl) > knowledge graph > multi-agent framework > conversational interface > digital teammates > real time intelligence 
+- required: chips, data, permissions, control systems, audit trails
+- backend: compute, models, context, tools, runtime, and security
 ** clojure and webgpu
 - the webgpu api specification (w3c): dictates the strict requirement for arraybuffer and typedarray usage for memory mapping
 - stop trying to make clojurescript execute the math. the real power move is to use clojurescript purely as a macro language to dynamically generate wgsl code at runtime. you can write elegant, data-driven code that compiles into ultra-fast, static compute shaders. clojurescript becomes a meta-programming layer for the gpu, giving you functional ergonomics with bare-metal speed
