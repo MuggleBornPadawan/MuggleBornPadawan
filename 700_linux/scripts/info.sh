@@ -1,3 +1,5 @@
+history
+echo "-----"
 uname -a
 tty
 pwd
@@ -15,4 +17,5 @@ ip addr show
 df -h
 df -i
 du -sh
-history
+cat /etc/os-release 
+echo 'tmux new-server -s "alpha"'
