@@ -3,6 +3,8 @@
 - the industry is rapidly converging toward persistent simulated universes, interactive video world models, embodied agents, differentiable simulation, generative physics, self-improving memory systems, and real-time multimodal planning, all aimed at creating ai systems that can continuously perceive, predict, reason, and evolve within dynamic environments. 
 - among these emerging directions, the most compelling frontier is the rise of procedural, symbolic, and neural hybrid systems, where algorithmic generation, structured reasoning, and learned intelligence are combined to build adaptive, creative, and deeply interpretable world models.
 - "human or animal brains seem to run a simulation of the world, a world model, which helps them make predictions about their surroundings and learn common sense." — yann lecun
+** resources
+- dr fei fei li substack posts 
 ** behind the scenes
 - semantic system of record (rdf / owl) > knowledge graph > multi-agent framework > conversational interface > digital teammates > real time intelligence 
 - required: chips, data, permissions, control systems, audit trails
