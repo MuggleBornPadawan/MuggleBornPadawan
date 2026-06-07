@@ -8,8 +8,8 @@
 - fields medal winners of indian origin: manjul bhargava (2014, canadian/american) and akshay venkatesh (2018, australian)
 - the fields medal is mathematics' highest honor, awarded every four years to up to four mathematicians under 40.
 - idiot index: the ratio of a finished product's total manufacturing cost to the cost of its raw elemental materials
-- usage: to calculate how much a component's price is bloated by inefficient processing or markup
-- maxim: the best part is no part. the best process is no process
+  - usage: to calculate how much a component's price is bloated by inefficient processing or markup
+  - maxim: the best part is no part. the best process is no process
 |---------------------+----------------------|
 | name                | time period          |
 |---------------------+----------------------|
