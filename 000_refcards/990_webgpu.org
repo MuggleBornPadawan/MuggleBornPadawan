@@ -2,6 +2,11 @@
 * intro
 ** pre requisite
 - knowledge of html, javascript, and chrome devtools
+** trivia
+- open source software traditions and best practices: composability, inspectability, scriptability, economy of, mechanism, textual mediation, small tools, stable interfaces, man pages, pipes, processes, files, permissions, conventions
+- georgi gerganov machine learning universal file (gguf) - model compatibility for local deployment:
+  - everything comes down to matching three key components: the underlying model architecture, the quantization type, and your hardware capacity
+  - gguf packages weights, tokenizers, prompt templates, and metadata all in one place
 ** resources
 - official - https://www.w3.org/TR/webgpu/
 - git official spec - https://gpuweb.github.io/gpuweb/
