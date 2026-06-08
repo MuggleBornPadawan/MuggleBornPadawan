@@ -1,0 +1,40 @@
+#+TITLE: port 53 - reroute content later to appropriate sections 
+* entropy - yt video - 3b1b
+** compresssion = prediction | intelligence
+- limits of compression
+- correlation between data size & probablity 
+- ascii - 8 bits / ch
+- huffman - 4.2 bits / ch
+- neural methods - 1.1 bits / ch
+- shannon - information theory - machine learning is similar
+  - prediction - next token prediciton
+  - cross entropy loss
+  - prediction and compression are mathematically equivalent 
+- moon lander - up, down, left, right - instruction (code word)
+- theoritical - head in the cloud 
+|------------------+-----------+----------+-----------------------+-------------------------------------------------------------------------------------|
+| student          | direction | encoding | rationale             | notes                                                                               |
+|------------------+-----------+----------+-----------------------+-------------------------------------------------------------------------------------|
+| straight forward | up        |       00 | most used (50%)       | 2 bits / instruction                                                                |
+|                  | down      |       01 | next used (25%)       |                                                                                     |
+|                  | left      |       10 | balance split (12.5%) |                                                                                     |
+|                  | right     |       11 | - ditto -             |                                                                                     |
+|------------------+-----------+----------+-----------------------+-------------------------------------------------------------------------------------|
+| clever           | up        |        0 |                       | different bit sizes to optimize; decoding is diff since dividing line is not simple |
+|                  | down      |       10 |                       | 1.75 bits / instruction                                                             |
+|                  | left      |      110 |                       | prefix (free) code                                                                  |
+|                  | right     |      111 |                       |                                                                                     |
+|------------------+-----------+----------+-----------------------+-------------------------------------------------------------------------------------|
+| theoritical      | up        |          |                       |                                                                                     |
+|                  | down      |          |                       |                                                                                     |
+|                  | left      |          |                       |                                                                                     |
+|                  | right     |          |                       |                                                                                     |
+|------------------+-----------+----------+-----------------------+-------------------------------------------------------------------------------------|
+
+
+
+
+
+
+
+

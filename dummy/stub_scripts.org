@@ -1,0 +1,12 @@
+write a elisp lambda function to check if given number equals 8080 and if so return 9090? how to use that function?
+Here is the lambda function:
+
+```elisp
+#+begin_src elisp :results output
+  (lambda (n) (if (= n 8080) 9090 n))
+  (funcall (lambda (n) (if (= n 8080) 9090 n)) 8080)
+  (setq my-port-filter (lambda (n) (if (= n 8080) 9090 n)))
+  (funcall my-port-filter 8080)
+  (mapcar (lambda (n) (if (= n 8080) 9090 n)) '(3000 8080 7000))
+  (message "Hello, World!")
+#+end_src
