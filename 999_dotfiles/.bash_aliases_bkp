@@ -21,7 +21,7 @@ alias ww='cd && cd /home/rgroot/MuggleBornPadawan/000_refcards/c/test && l'
 alias g='pwd && git gc && git cat-file -p HEAD && git diff --staged && git diff HEAD && git status && git branch'
 alias gl='git log --oneline --decorate --graph'
 alias gp="s && pw && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push && git status && git branch"
-alias gs="pwd && git branch && git status && echo 'use git commit, git checkout main, git merge <branch_name>, git push origin main, git branch <branch_name> eod everyday'"
+alias gs="clear && pw && pwd && git branch && git status && echo 'use git commit, git checkout main, git merge <branch_name>, git push origin main, git branch <branch_name> eod everyday'"
 # Safety & Security Aliases
 alias pw='pass unKnoWn'
 alias ln='ln -i'
@@ -55,10 +55,6 @@ alias tk="echo 'abort now if you want to stop killing server.. ' && sleep 11 && 
 alias tf='tmux set-option -g status off'
 alias to='tmux set-option -g status on'
 alias ts='tmux switch-client -l'
-#ollama
-alias oq='ollama run qwen3-coder:480b-cloud'
-alias ok='ollama run kimi-k2:1t-cloud'
-alias od='ollama run deepseek-v3.1:671b-cloud'
 # gemini query and chat
 alias q='./MuggleBornPadawan/700_linux/scripts/gemini_query.sh $1'
 alias chat='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh'
