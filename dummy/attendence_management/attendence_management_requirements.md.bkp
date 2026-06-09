@@ -1,0 +1,308 @@
+# Attendance Management System — Full Requirements
+
+## 1. Project Overview
+
+A full-stack **Attendance Management System** for small teams (2–20 people) that handles employee check-in/check-out via GPS geolocation, generates leave and attendance reports, and features a live information dashboard (stock indices, commodities, weather, tech news).
+
+---
+
+## 2. Tech Stack
+
+| Layer          | Technology                                            |
+|----------------|-------------------------------------------------------|
+| **Frontend**   | ClojureScript + Shadow-cljs + Reagent (React wrapper) |
+| **Backend**    | Clojure + Ring + Compojure (REST API)                 |
+| **Database**   | PostgreSQL                                            |
+| **Auth**       | Google OAuth 2.0 via `ring-oauth2`                    |
+| **Deployment** | Docker Compose (self-hosted)                          |
+| **Tooling**    | Makefile + shell scripts                              |
+
+---
+
+## 3. User Roles
+
+| Role         | Description                                                                                    |
+|--------------|------------------------------------------------------------------------------------------------|
+| **Admin**    | Full access: manages employees, approves registrations, views all reports, configures settings |
+| **Employee** | Limited access: marks own attendance, views own attendance history and leave summary           |
+
+---
+
+## 4. Authentication & Authorization
+
+### 4.1 Sign-In Flow
+- **Method:** Google OAuth 2.0 (SSO)
+- Users click "Sign in with Google" → OAuth handshake → JWT issued on success
+- **Session:** Short-lived JWT tokens — expire on browser close (no "remember me")
+
+### 4.2 Registration & Approval Flow
+1. Employee signs in with Google for the first time → account created with `pending` status
+2. Admin sees a **Pending Approvals** list in the admin panel
+3. Admin can **Approve** or **Reject** each registration
+4. On approval, admin assigns the employee a role (`Employee` or `Admin`)
+5. Approved employees gain full access; rejected users are notified via on-screen message on next login attempt
+
+### 4.3 Access Control
+- All API routes are protected by JWT middleware
+- Admin-only routes enforce role check server-side
+- Employees cannot access other employees' data
+
+---
+
+## 5. Attendance Management
+
+### 5.1 Check-In / Check-Out
+- **Method:** GPS / Geolocation-based auto-detection via browser Geolocation API
+- The app captures the user's GPS coordinates at check-in and check-out
+- Admin can configure an **office geofence** (lat/lon + radius in meters); check-in is only valid within the geofence
+- If location permission is denied, user is shown an error and cannot check in
+- Each attendance record stores:
+  - Employee ID
+  - Date
+  - Check-in time + GPS coordinates
+  - Check-out time + GPS coordinates
+  - Total hours worked (computed)
+  - Status: `present`, `absent`, `late`, `half-day`
+
+### 5.2 Late & Half-Day Rules (Admin Configurable)
+- Admin sets **work start time** (e.g., 09:00 AM)
+- Admin sets **late threshold** (e.g., check-in after 09:15 AM = `late`)
+- Admin sets **half-day threshold** (e.g., < 4 hours worked = `half-day`)
+
+### 5.3 Leave Management
+- Employees can submit **leave requests** with:
+  - Leave type: Sick / Casual / Paid / Unpaid
+  - Date range
+  - Reason (optional text)
+- Admin can **approve** or **reject** leave requests
+- Approved leaves are reflected in attendance records and reports
+- Each employee has a **leave balance** (admin configurable per employee)
+
+---
+
+## 6. Reports
+
+### 6.1 Report Types
+| Report           | Scope                                                 |
+|------------------|-------------------------------------------------------|
+| **Daily**        | All employees — attendance status for a selected day  |
+| **Weekly**       | All employees — summary for a selected week           |
+| **Monthly**      | All employees — full month breakdown                  |
+| **Custom Range** | All employees — any start/end date range              |
+| **Per-Employee** | Individual employee — full history with leave summary |
+
+### 6.2 Report Contents
+- Attendance table: date, check-in time, check-out time, hours worked, status
+- Leave summary: total leaves taken (by type), remaining leave balance
+- Overtime / undertime summary
+- Aggregate stats: average hours/day, punctuality rate
+
+### 6.3 Export
+- **PDF** export (formatted, printable)
+- **CSV** export (raw data, spreadsheet-compatible)
+
+---
+
+## 7. Dashboard Widgets
+
+The dashboard is the landing page for all users. It contains:
+
+### 7.1 Stock Market Indices
+- **Auto-detected** based on the user's IP address (geo-IP lookup → detect country → show relevant exchange)
+  - India → NSE/BSE (NIFTY 50, SENSEX)
+  - USA → NYSE/NASDAQ (S&P 500, DJIA, NASDAQ Composite)
+  - UK → LSE (FTSE 100)
+  - Fallback: S&P 500
+- Displays: index name, current value, change (points + %), trend arrow
+- Data source: **Yahoo Finance API** (free, no key required) or **Alpha Vantage** (free tier)
+- Refresh: every 5 minutes
+
+### 7.2 Commodity Indices
+- Displays: Gold, Silver, Crude Oil (WTI), Natural Gas
+- Shows: current price, unit, daily change (%)
+- Data source: **Alpha Vantage** or **Yahoo Finance**
+- Refresh: every 5 minutes
+
+### 7.3 Weather Forecast
+- Auto-detected location via browser Geolocation API or IP-based fallback
+- Shows: current temperature, condition (sunny/cloudy/rain etc.), humidity, wind speed
+- 3-day forecast preview
+- Data source: **Open-Meteo API** (free, no API key required)
+- Refresh: every 30 minutes
+
+### 7.4 Top Tech News
+- Shows top 5–10 tech news headlines
+- Each card: headline, source, published time, link to full article
+- **Configurable keyword filters** per user (e.g., "AI", "Clojure", "startup") — user sets in profile settings
+- Matching keywords are **highlighted** in the headline
+- Data source: **NewsAPI** (free tier)
+- Refresh: every 15 minutes
+
+### 7.5 Attendance Summary Widget (own data)
+- Quick view for employees: today's check-in/out time, hours worked today, leave balance
+
+---
+
+## 8. Admin Panel
+
+- **Employee Management:** List all employees, view profiles, edit roles, deactivate accounts
+- **Pending Approvals:** Approve/reject new registrations
+- **Leave Requests:** Approve/reject pending leave requests
+- **Attendance Override:** Admin can manually edit an employee's attendance record (e.g., forgot to check out)
+- **Geofence Configuration:** Set office location (lat/lon) and radius
+- **Work Policy Configuration:** Set work start time, late threshold, half-day threshold
+- **Leave Policy:** Set leave balance per type per employee (or global default)
+- **API Key Management:** Store API keys for data sources (Alpha Vantage, NewsAPI) — stored securely server-side
+
+---
+
+## 9. Employee Portal
+
+- **Dashboard:** Live widgets + personal attendance summary
+- **Check-In / Check-Out:** Single prominent button — GPS captured automatically
+- **Attendance History:** Calendar view + table view of own records
+- **Leave Requests:** Submit new request, view status of past requests
+- **Profile Settings:** Update display name, configure news keyword filters
+
+---
+
+## 10. UI / UX
+
+- **Themes:** Both **Light** and **Dark** mode with a toggle switch
+- **Design style:** Modern SaaS aesthetic — clean, premium, responsive
+- **Typography:** Web font (e.g., Inter or Outfit via Google Fonts)
+- **Responsive:** Works on desktop and tablet (mobile is secondary)
+- **Animations:** Subtle micro-animations on interactions
+
+---
+
+## 11. Database Schema (High-Level)
+
+```
+users
+  id, google_id, email, name, avatar_url, role, status (pending/active/rejected), created_at
+
+attendance_records
+  id, user_id, date, check_in_time, check_in_lat, check_in_lon,
+  check_out_time, check_out_lat, check_out_lon, total_hours, status, notes
+
+leave_requests
+  id, user_id, leave_type, start_date, end_date, reason, status (pending/approved/rejected),
+  reviewed_by, reviewed_at, created_at
+
+leave_balances
+  id, user_id, year, sick_total, sick_used, casual_total, casual_used,
+  paid_total, paid_used, unpaid_used
+
+work_policies
+  id, office_lat, office_lon, geofence_radius_m, work_start_time,
+  late_threshold_minutes, half_day_threshold_hours, updated_at
+
+user_news_filters
+  id, user_id, keywords (array)
+
+api_keys
+  id, service_name, api_key_encrypted, updated_at
+```
+
+---
+
+## 12. API Endpoints (High-Level)
+
+### Auth
+- `GET /auth/google` — initiate Google OAuth
+- `GET /auth/google/callback` — OAuth callback, issue JWT
+- `POST /auth/logout` — invalidate session
+
+### Attendance
+- `POST /api/attendance/checkin` — check in (with GPS coords)
+- `POST /api/attendance/checkout` — check out (with GPS coords)
+- `GET /api/attendance` — get own records (query params: date range)
+- `GET /api/attendance/all` *(admin)* — get all employees' records
+- `PUT /api/attendance/:id` *(admin)* — override a record
+
+### Leave
+- `POST /api/leave` — submit leave request
+- `GET /api/leave` — get own leave requests
+- `GET /api/leave/all` *(admin)* — all leave requests
+- `PUT /api/leave/:id/approve` *(admin)*
+- `PUT /api/leave/:id/reject` *(admin)*
+- `GET /api/leave/balance` — get own leave balance
+
+### Users / Admin
+- `GET /api/users` *(admin)* — list all users
+- `GET /api/users/pending` *(admin)* — pending approvals
+- `PUT /api/users/:id/approve` *(admin)*
+- `PUT /api/users/:id/reject` *(admin)*
+- `PUT /api/users/:id` *(admin)* — update role / status
+
+### Reports
+- `GET /api/reports/daily?date=` *(admin)*
+- `GET /api/reports/weekly?week=` *(admin)*
+- `GET /api/reports/monthly?month=` *(admin)*
+- `GET /api/reports/range?from=&to=` *(admin)*
+- `GET /api/reports/employee/:id?from=&to=` *(admin)*
+- `GET /api/reports/export?format=pdf|csv&...` *(admin)*
+
+### Policy
+- `GET /api/policy` — get current work policy
+- `PUT /api/policy` *(admin)* — update work policy
+
+### Profile
+- `GET /api/profile` — own profile
+- `PUT /api/profile` — update name, news keywords
+
+### Dashboard (proxied via backend to keep API keys server-side)
+- `GET /api/dashboard/stocks` — stock indices (IP-detected)
+- `GET /api/dashboard/commodities` — commodity prices
+- `GET /api/dashboard/weather` — weather (location from query params)
+- `GET /api/dashboard/news` — tech news (keywords from user profile)
+
+---
+
+## 13. Deployment
+
+### Docker Compose Services
+| Service    | Description                                         |
+|------------|-----------------------------------------------------|
+| `frontend` | Shadow-cljs compiled ClojureScript served via Nginx |
+| `backend`  | Clojure Ring/Compojure app (Uberjar)                |
+| `db`       | PostgreSQL 15                                       |
+
+### Environment Variables
+- `DATABASE_URL` — PostgreSQL connection string
+- `GOOGLE_CLIENT_ID` — Google OAuth client ID
+- `GOOGLE_CLIENT_SECRET` — Google OAuth client secret
+- `JWT_SECRET` — secret for signing JWTs
+- `ALPHA_VANTAGE_API_KEY` — stock/commodity data
+- `NEWS_API_KEY` — NewsAPI key
+- `APP_BASE_URL` — public URL of the app (for OAuth redirect)
+
+---
+
+## 14. Developer Tooling
+
+- **`Makefile`** with targets:
+  - `make dev` — start all services in development mode
+  - `make build` — build frontend + backend for production
+  - `make db-migrate` — run database migrations
+  - `make db-seed` — seed database with sample data
+  - `make docker-up` — start Docker Compose stack
+  - `make docker-down` — stop Docker Compose stack
+  - `make test` — run backend tests
+  - `make repl` — start Clojure REPL
+- **Shell scripts** in `scripts/`:
+  - `scripts/setup.sh` — first-time environment setup
+  - `scripts/migrate.sh` — run DB migrations
+  - `scripts/seed.sh` — seed sample data
+
+---
+
+## 15. Out of Scope (for v1)
+
+- Mobile app (native iOS/Android)
+- Biometric / RFID hardware integration
+- Payroll integration
+- Slack / Teams notifications
+- Multi-tenant / multi-company support
+- Two-factor authentication (2FA)

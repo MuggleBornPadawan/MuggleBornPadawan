@@ -1,0 +1,105 @@
+# Pre-Build Checklist — Attendance Management System
+
+## 1. API Keys & Credentials — Get these first
+
+These are blockers. Without them, the dashboard widgets won't work.
+
+| Service           | Where to get it                                             | Free tier?            |
+|-------------------|-------------------------------------------------------------|-----------------------|
+| **Google OAuth**  | https://console.cloud.google.com → Credentials → OAuth 2.0  | ✅ Free               |
+| **NewsAPI**       | https://newsapi.org → Register                              | ✅ Free (100 req/day) |
+| **Alpha Vantage** | https://www.alphavantage.co/support/#api-key → Get free key | ✅ Free (25 req/day)  |
+| **Open-Meteo**    | No key needed                                               | ✅ Fully free         |
+
+> **Action:** Register for these now and keep the keys handy for the `.env` file.
+
+---
+
+## 2. Dev Machine — Install Checks
+
+Run each command to verify the tool is installed:
+
+| Tool                        | Purpose                     | Check command      |
+|-----------------------------|-----------------------------|--------------------|
+| **Java 11+**                | Run Clojure / backend       | `java -version`    |
+| **Leiningen**               | Clojure build tool          | `lein --version`   |
+| **Node.js 18+**             | Required by Shadow-cljs     | `node --version`   |
+| **Docker + Docker Compose** | Run the full stack          | `docker --version` |
+| **PostgreSQL client**       | Optional, for DB inspection | `psql --version`   |
+
+> **Action:** Install any missing tools before starting the build.
+
+---
+
+## 3. Project Location
+
+Decide where the project directory should be created:
+
+- [ ] Inside current directory: `dummy/attendance-system/`
+- [ ] Alongside current directory: `MuggleBornPadawan/attendance-system/`
+
+---
+
+## 4. Google OAuth — Redirect URI
+
+Set the following **Authorized Redirect URI** in Google Cloud Console:
+
+- **Local dev:** `http://localhost:3000/auth/google/callback`
+- **Production:** `http://<your-server-ip-or-domain>/auth/google/callback`
+
+> **Action:** Decide your production URL/IP now so it can be configured from the start.
+
+---
+
+## 5. Office Geofence Coordinates
+
+The GPS check-in feature requires the office location.
+
+- [ ] Office latitude: ___________
+- [ ] Office longitude: ___________
+- [ ] Allowed radius (meters): ___________ *(suggested: 100–200m)*
+
+> Tip: Find coordinates via Google Maps (right-click on your office location → "What's here?")
+> These can also be configured later via the Admin Panel UI.
+
+---
+
+## 6. First Admin User
+
+Since employees self-register via Google OAuth, one account must be pre-seeded as admin.
+
+- [ ] Admin Google account email: ___________
+
+> This email will be inserted into the database seed script with the `admin` role and `active` status.
+
+---
+
+## 7. Project Naming
+
+Affects directory name, Clojure namespaces, and Docker image names.
+
+- [ ] Project directory name: ___________ *(e.g., `attendance-system`)*
+- [ ] Clojure namespace prefix: ___________ *(e.g., `com.mycompany.attendance`)*
+
+---
+
+## 8. Leave Policy Defaults
+
+Default annual leave entitlements seeded into the database:
+
+| Leave Type   | Suggested Default | Your Value |
+|--------------|-------------------|------------|
+| Sick Leave   | 10 days/year      | ___        |
+| Casual Leave | 12 days/year      | ___        |
+| Paid Leave   | 15 days/year      | ___        |
+
+> These are global defaults. Admin can override per employee via the Admin Panel.
+
+---
+
+## Summary — What to Do Now
+
+1. ✅ Run the dev tool checks (`java`, `lein`, `node`, `docker`)
+2. ✅ Register for API keys (Google OAuth + NewsAPI + Alpha Vantage)
+3. ✅ Fill in the blanks in sections 3–8 above
+4. ✅ Share the answers and give the go-ahead to start building

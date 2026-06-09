@@ -1,0 +1,342 @@
+# Build Plan — Attendance Management System
+
+## Overview
+
+The build is split into **10 phases**, executed in dependency order.
+Each phase produces a working, testable increment.
+
+---
+
+## Phase 1 — Project Scaffolding
+
+> Lay out the full directory structure and config files before writing any logic.
+
+**Tasks:**
+- Create monorepo directory layout:
+  ```
+  attendance-system/
+  ├── backend/          # Clojure Ring + Compojure
+  ├── frontend/         # ClojureScript + Shadow-cljs + Reagent
+  ├── docker/           # Dockerfiles
+  ├── scripts/          # Shell helper scripts
+  ├── migrations/       # SQL migration files
+  ├── Makefile
+  ├── docker-compose.yml
+  └── .env.example
+  ```
+- Create `backend/project.clj` (Leiningen) with all dependencies:
+  - `ring`, `compojure`, `ring-oauth2`, `buddy-sign` (JWT), `next.jdbc`, `hikari-cp`, `cheshire` (JSON), `clj-http`, `environ`
+- Create `frontend/shadow-cljs.edn` with build targets (`:app` for dev, `:release` for prod)
+- Create `frontend/package.json` for npm deps (React, ReactDOM)
+- Create `.env.example` with all required env vars
+- Create root `Makefile` with all targets stubbed out
+
+**Output:** A compilable (empty) project skeleton
+
+---
+
+## Phase 2 — Database Setup
+
+> Define the complete PostgreSQL schema and migration system.
+
+**Tasks:**
+- Choose migration tool: **Flyway** (via shell script) or plain ordered `.sql` files run by `scripts/migrate.sh`
+- Write migration SQL files:
+  - `V1__create_users.sql`
+  - `V2__create_attendance_records.sql`
+  - `V3__create_leave_requests.sql`
+  - `V4__create_leave_balances.sql`
+  - `V5__create_work_policies.sql`
+  - `V6__create_user_news_filters.sql`
+  - `V7__create_api_keys.sql`
+- Write `scripts/seed.sh` — inserts a default admin user and sample employees
+- Configure `docker-compose.yml` PostgreSQL service with volume for persistence
+
+**Output:** Running PostgreSQL with full schema, seedable via `make db-seed`
+
+---
+
+## Phase 3 — Backend Core
+
+> Set up the Clojure app server, middleware stack, routing skeleton, and DB connection.
+
+**Tasks:**
+- Set up Ring + Compojure app entry point (`core.clj`)
+- Configure middleware stack:
+  - JSON body parsing (`ring-json`)
+  - CORS headers
+  - Exception handling middleware (returns structured JSON errors)
+  - JWT auth middleware (validates Bearer token on protected routes)
+  - Role-check middleware (`require-admin` wrapper)
+- Set up database connection pool (HikariCP via `next.jdbc`)
+- Define all route namespaces (stubs returning `200 OK`):
+  - `routes.auth`, `routes.attendance`, `routes.leave`, `routes.users`, `routes.reports`, `routes.policy`, `routes.profile`, `routes.dashboard`
+- Write `config.clj` — reads all env vars via `environ`
+- Health check endpoint: `GET /health`
+
+**Output:** Backend server starts, all routes respond, DB connection live
+
+---
+
+## Phase 4 — Authentication
+
+> Implement Google OAuth 2.0 SSO + JWT issuance + approval flow.
+
+**Tasks:**
+- Configure `ring-oauth2` with Google provider (client ID/secret from env)
+- OAuth callback handler:
+  - Extract Google profile (email, name, avatar)
+  - If user exists and `active` → issue JWT
+  - If user doesn't exist → create with `pending` status → return "awaiting approval" response
+  - If user is `rejected` → return 403
+- JWT utilities (`auth/jwt.clj`):
+  - `sign-token [user]` — creates short-lived token (expires at browser-close via session cookie flag)
+  - `verify-token [token]` — validates and returns claims
+- Auth middleware: attach user to request context
+- Admin endpoints for approvals:
+  - `GET /api/users/pending`
+  - `PUT /api/users/:id/approve`
+  - `PUT /api/users/:id/reject`
+- Logout: `POST /auth/logout` (clears cookie)
+
+**Output:** Full Google SSO login → pending → admin approval → active access flow working
+
+---
+
+## Phase 5 — Attendance API
+
+> Core business logic: check-in/out with geofencing, records, and leave management.
+
+**Tasks:**
+- **Geofence validation** (`attendance/geo.clj`):
+  - Haversine formula to compute distance between user coords and office coords
+  - Check if within configured radius
+- **Check-in** (`POST /api/attendance/checkin`):
+  - Validate GPS coords present
+  - Validate within geofence
+  - Check no existing open check-in for today
+  - Insert record with `check_in_time`, coords, status = `present`
+- **Check-out** (`POST /api/attendance/checkout`):
+  - Find today's open record
+  - Update `check_out_time`, coords, compute `total_hours`
+  - Apply late/half-day rules against work policy
+- **Records query** (`GET /api/attendance`): own records with date range filter
+- **Admin override** (`PUT /api/attendance/:id`): edit any field
+- **Leave CRUD:**
+  - Submit request, list own requests, admin list all, approve/reject
+  - Update leave balance on approval
+  - Insert approved-leave attendance record (status = `leave`)
+- **Leave balance** endpoint
+
+**Output:** Employees can check in/out, submit leaves; admin can manage all records
+
+---
+
+## Phase 6 — Reports API
+
+> Generate structured attendance/leave reports and export them.
+
+**Tasks:**
+- Report query functions (`reports/queries.clj`):
+  - Aggregate attendance by date range, per employee
+  - Compute: total days present/absent/late/on-leave, avg hours/day, punctuality %
+  - Compute leave summary: used vs. remaining per type
+- Report endpoints (all admin):
+  - `GET /api/reports/daily`, `/weekly`, `/monthly`, `/range`, `/employee/:id`
+- **PDF export:**
+  - Use **iText** or **Apache PDFBox** via Java interop
+  - Formatted table with header, rows, summary section
+- **CSV export:**
+  - Use `clojure.data.csv`
+  - Flat row-per-record format
+- `GET /api/reports/export?format=pdf|csv&type=...&from=...&to=...`
+
+**Output:** All report types queryable and downloadable as PDF/CSV
+
+---
+
+## Phase 7 — Frontend Foundation
+
+> Set up ClojureScript app shell: routing, state management, theming, auth flow.
+
+**Tasks:**
+- Configure `shadow-cljs.edn` — dev server on port 3000, hot reload
+- App entry point (`core.cljs`) — mounts Reagent root
+- **Client-side routing** using `reitit-frontend` or `bidi`:
+  - `/login` — login page
+  - `/dashboard` — main dashboard (protected)
+  - `/attendance` — check-in/out + history (protected)
+  - `/leave` — leave requests (protected)
+  - `/reports` — reports page (admin only)
+  - `/admin` — admin panel (admin only)
+  - `/profile` — profile settings (protected)
+- **State management** using Reagent `ratom` atoms + `re-frame`-lite pattern:
+  - `state/auth` — current user, token
+  - `state/ui` — theme (light/dark), loading flags
+  - `state/attendance` — today's record, history
+  - `state/dashboard` — widget data
+- **Theme system** (`styles/theme.cljs` + `index.css`):
+  - CSS custom properties for light and dark palettes
+  - Toggle function that swaps `data-theme` attribute on `<html>`
+  - Persists preference in `localStorage`
+- **HTTP client** (`http/client.cljs`):
+  - Wraps `js/fetch` with JWT header injection, JSON parsing, error handling
+- **Auth guard** component: redirects unauthenticated users to `/login`
+
+**Output:** Navigable shell with working theme toggle, auth protection, and API client
+
+---
+
+## Phase 8 — Frontend Pages & Components
+
+> Build every page and reusable component.
+
+**Tasks (in order):**
+
+### 8.1 Login Page
+- "Sign in with Google" button → redirects to `/auth/google`
+- Pending approval message shown if status is `pending`
+
+### 8.2 Dashboard Page
+- Layout: top nav (logo, user avatar, theme toggle), sidebar nav, main content grid
+- Widget grid (4 widget cards) — wired to Phase 9 data
+
+### 8.3 Check-In / Check-Out Page
+- Large status card: current status (checked in / checked out)
+- Prominent **Check In** / **Check Out** button
+- Calls browser `navigator.geolocation.getCurrentPosition`
+- Shows GPS accuracy, geofence validation feedback
+- Today's timeline: check-in time → check-out time → hours worked
+
+### 8.4 Attendance History Page
+- Calendar view (month grid, color-coded by status)
+- Table view below: date, check-in, check-out, hours, status
+- Date range filter
+
+### 8.5 Leave Request Page
+- Form: leave type selector, date range picker, reason textarea, submit
+- Table of past requests with status badges
+
+### 8.6 Reports Page (Admin)
+- Tab bar: Daily / Weekly / Monthly / Custom Range
+- Date pickers per tab
+- Data table with totals row
+- **Export** buttons: PDF and CSV
+
+### 8.7 Admin Panel
+- Tabs: Pending Approvals | Employees | Leave Requests | Work Policy | Geofence
+- Pending Approvals: list cards with Approve / Reject buttons
+- Employees: table with role/status controls
+- Leave Requests: table with approve/reject actions
+- Work Policy form: work start time, late threshold, half-day threshold
+- Geofence form: map pin input (lat/lon) + radius slider
+
+### 8.8 Profile Page
+- Display name editor
+- News keyword filter manager (add/remove keyword chips)
+
+### 8.9 Shared Components
+- `<Navbar>`, `<Sidebar>`, `<Button>`, `<Badge>`, `<Modal>`, `<Table>`, `<DatePicker>`, `<Spinner>`, `<Toast>` (notification snackbar)
+
+**Output:** All pages fully functional and wired to the backend API
+
+---
+
+## Phase 9 — Dashboard Widgets
+
+> Integrate live external data feeds into the dashboard.
+
+**Tasks:**
+
+### 9.1 IP Geolocation (backend)
+- `GET /api/dashboard/stocks` — server reads `X-Forwarded-For` / `CF-Connecting-IP`
+- Calls free IP geo API (e.g., `ip-api.com`) to detect country
+- Maps country → exchange → fetches indices from Yahoo Finance / Alpha Vantage
+
+### 9.2 Stock & Commodity Widget (frontend)
+- Ticker-style cards: index name, value, Δ points, Δ %, color-coded arrow
+- Auto-refreshes every 5 minutes via `js/setInterval`
+
+### 9.3 Weather Widget (backend + frontend)
+- `GET /api/dashboard/weather?lat=&lon=` — proxies Open-Meteo API
+- Frontend captures browser geolocation → sends coords → displays result
+- Shows: temperature, condition icon, humidity, wind, 3-day mini forecast
+
+### 9.4 Tech News Widget (backend + frontend)
+- `GET /api/dashboard/news` — backend fetches from NewsAPI, filters/ranks by user's keywords
+- Frontend displays headline cards: title, source, time, external link
+- Keyword matches highlighted with `<mark>` styling
+- Auto-refreshes every 15 minutes
+
+**Output:** All 4 dashboard widgets live with real data
+
+---
+
+## Phase 10 — Docker, Deployment & Tooling
+
+> Package everything for production deployment.
+
+**Tasks:**
+
+### 10.1 Dockerfiles
+- `docker/backend.Dockerfile` — multi-stage: build uberjar with Leiningen → run with `java -jar`
+- `docker/frontend.Dockerfile` — multi-stage: compile ClojureScript with Shadow-cljs → serve with Nginx
+- `docker/nginx.conf` — serves frontend, proxies `/api/*` and `/auth/*` to backend
+
+### 10.2 Docker Compose
+- Services: `db` (PostgreSQL 15), `backend`, `frontend`
+- Named volumes: `postgres_data`
+- `.env` file for all secrets
+- Health checks on all services
+- `depends_on` ordering: db → backend → frontend
+
+### 10.3 Makefile Targets (final)
+```
+make dev          # start backend REPL + shadow-cljs watch
+make build        # compile frontend release + build backend uberjar
+make docker-up    # docker compose up -d
+make docker-down  # docker compose down
+make db-migrate   # run SQL migration files
+make db-seed      # seed sample data
+make test         # run backend unit tests
+make repl         # start Clojure REPL connected to running app
+make logs         # tail docker compose logs
+```
+
+### 10.4 Shell Scripts
+- `scripts/setup.sh` — checks for Java, Node, Docker; installs npm deps; copies `.env.example` → `.env`
+- `scripts/migrate.sh` — runs all migration `.sql` files in order against the DB
+- `scripts/seed.sh` — inserts default admin + sample employees
+
+**Output:** `make docker-up` brings the entire system live end-to-end
+
+---
+
+## Build Order Summary
+
+```
+Phase 1  →  Project Scaffolding
+Phase 2  →  Database Schema & Migrations
+Phase 3  →  Backend Server + Middleware + Routing skeleton
+Phase 4  →  Google OAuth + JWT + Approval flow
+Phase 5  →  Attendance & Leave API
+Phase 6  →  Reports API + PDF/CSV export
+Phase 7  →  Frontend Shell (routing, state, theme, HTTP client)
+Phase 8  →  All Frontend Pages & Components
+Phase 9  →  Dashboard Live Data Widgets
+Phase 10 →  Docker, Deployment, Makefile, Scripts
+```
+
+---
+
+## Estimated File Count
+
+| Area                     | Files          |
+|--------------------------|----------------|
+| Backend (Clojure)        | ~20 namespaces |
+| Frontend (ClojureScript) | ~25 namespaces |
+| SQL migrations           | 7 files        |
+| Docker / config          | 5 files        |
+| Scripts                  | 3 files        |
+| Makefile                 | 1 file         |
+| **Total**                | **~61 files**  |
