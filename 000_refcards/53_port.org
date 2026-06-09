@@ -1,4 +1,18 @@
 #+TITLE: port 53 - reroute content later to appropriate sections 
+* linus torvalds vs rich hickey
+linus:  [hardware registers] -> [linear memory blocks] -> [imperative c code]
+rich:   [real-world facts]   -> [immutable pure data]   -> [functional abstraction]
+|----------------------+----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------|
+| variable             | linus - imperative                                                                                             | rich -functional                                                                                                                       | notes                                             |
+|----------------------+----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------|
+| mastery              | infrastructure (os, db, embedded, game loop)                                                                   | architecture (complexity, distributed, massive)                                                                                        |                                                   |
+| machine              | mechanical sympathy                                                                                            | information sympathy (domain model)                                                                                                    | cpu, registers, caches, and raw pointer addresses |
+| state                | mutable slot                                                                                                   | immutable values                                                                                                                       |                                                   |
+| system (simplicity)  | tactical transparency                                                                                          | structural independence                                                                                                                |                                                   |
+| data layout          | arrays, flat contiguous structures, explicit buffers to maximize cpu cache hits                                | persistent trees, hashes, and vector matrices optimized for structural sharing                                                         |                                                   |
+| concurrency model    | explicit mutexes, spinlocks, and manual thread sync. extremely high risk of race conditions, but zero overhead | software transactional memory (stm), agents, and atoms. lock-free, completely safe concurrency at the cost of runtime managed overhead |                                                   |
+| primary failure mode | segmentation faults, memory leaks, security buffer overflows                                                   | garbage collection spikes, higher memory consumption, abstract stack traces                                                            |                                                   |
+|----------------------+----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------|
 * entropy - yt video - 3b1b
 ** compresssion = prediction | intelligence
 - limits of compression
@@ -25,12 +39,12 @@
 |                  | left      |      110 |                       | prefix (free) code                                                                  |
 |                  | right     |      111 |                       |                                                                                     |
 |------------------+-----------+----------+-----------------------+-------------------------------------------------------------------------------------|
-| theoritical      | up        |          |                       |                                                                                     |
+| theoritical      | up        |          |                       | random noise is incompressible                                                      |
 |                  | down      |          |                       |                                                                                     |
 |                  | left      |          |                       |                                                                                     |
 |                  | right     |          |                       |                                                                                     |
 |------------------+-----------+----------+-----------------------+-------------------------------------------------------------------------------------|
-
+- part 2 & 3 of yt videos are yet to be released 
 
 
 
