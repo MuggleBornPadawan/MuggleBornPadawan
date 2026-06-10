@@ -53,6 +53,17 @@ might generate text that is less relevant.
 | temperature of .1, top-p of .9, and top-k of 20  | less creative         | deterministic |
 | temperature of 0                                 | single correct answer | math problems |
 |--------------------------------------------------+-----------------------+---------------|
+** new project
+- /grill-me i want to start a new project
+- document the requirements
+- license version
+- create a plan
+- create pre build checklist
+- create test cases with test data (including edge cases)
+- /btw what is happening? 
+- start building sequentially phase by phase. show me real time progress. store progress status in a local file so that you can restart building from that point if interupted. start building ONLY [phase x] now.
+- readme file creation
+- gh integration
 ** for beginners
 - prompt/s (hungry kya?)  > project/s (kitchen) > connector/s (grocery shop) > skill/s (recipe) > scheduler/s (oven) > agent/s (chef) 
 - agent skills - https://agentskills.io/home 

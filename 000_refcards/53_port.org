@@ -1,4 +1,6 @@
 #+TITLE: port 53 - reroute content later to appropriate sections 
+* type systems
+
 * linus torvalds vs rich hickey
 linus:  [hardware registers] -> [linear memory blocks] -> [imperative c code]
 rich:   [real-world facts]   -> [immutable pure data]   -> [functional abstraction]
@@ -52,3 +54,4 @@ rich:   [real-world facts]   -> [immutable pure data]   -> [functional abstracti
 
 
 
+<eof>
