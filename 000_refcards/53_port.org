@@ -1,5 +1,14 @@
 #+TITLE: port 53 - reroute content later to appropriate sections 
 * type systems
+** intro
+- a type system is fundamentally about boundaries and predictability
+  - abstraction level: replacing memory addresses with everyday metaphors (boxes, labels, contracts)
+  - precision vs. intuition: balancing easy-to-grasp analogies with structural, mathematical realities
+  - operational risk: shifting from "why does this matter?" to "how does this break at scale?"
+** notes
+- enforceable design contract (ieee standards)
+  - space allocation and encoding
+  - operational domain - set of valid operations (eg: arithmetic operations on numbers; concat for text)
 
 * linus torvalds vs rich hickey
 linus:  [hardware registers] -> [linear memory blocks] -> [imperative c code]
