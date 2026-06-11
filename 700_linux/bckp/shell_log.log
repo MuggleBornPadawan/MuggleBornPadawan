@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Thu Jun 11 12:02:23 AM IST 2026 
+Date: Thu Jun 11 10:21:28 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -55,43 +55,43 @@ Reading state information...
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Get:1 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
-Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
-Get:5 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [72.4 kB]
-Get:6 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
-Ign:8 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Get:9 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [311 kB]
-Get:11 http://deb.debian.org/debian bookworm-backports/main Translation-en [263 kB]
-Get:12 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:13 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:14 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:15 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:16 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
-Get:17 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Get:18 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
-Get:19 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
-Get:20 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [16.6 kB]
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:2 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
+Get:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:5 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [311 kB]
+Get:6 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [72.4 kB]
+Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en [263 kB]
+Get:8 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:13 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:14 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:15 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
+Get:16 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
+Get:17 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [16.6 kB]
+Get:18 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:19 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Get:20 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
 Get:21 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
 Get:22 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
 Get:23 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
-Get:24 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [309 kB]
-Get:25 https://deb.debian.org/debian-security bookworm-security/main Translation-en [189 kB]
-Fetched 21.0 MB in 5s (4,350 kB/s)
+Get:24 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [310 kB]
+Get:25 https://deb.debian.org/debian-security bookworm-security/main Translation-en [190 kB]
+Fetched 21.0 MB in 7s (3,106 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
-Hit:1 https://download.docker.com/linux/debian bookworm InRelease
-Hit:2 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:5 https://download.docker.com/linux/debian bookworm InRelease
 Ign:6 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Hit:7 https://storage.googleapis.com/cros-packages/146 bookworm Release
-Get:9 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Fetched 7,507 B in 1s (5,333 B/s)
+Get:7 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Hit:8 https://storage.googleapis.com/cros-packages/146 bookworm Release
+Fetched 7,507 B in 1s (5,329 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -279,10 +279,10 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-Thu Jun 11 00:03:18 2026 -> ClamAV update process started at Thu Jun 11 00:03:18 2026
-Thu Jun 11 00:03:18 2026 -> daily.cld database is up-to-date (version: 28027, sigs: 355466, f-level: 90, builder: svc.clamav-publisher)
-Thu Jun 11 00:03:18 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
-Thu Jun 11 00:03:18 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+Thu Jun 11 10:22:40 2026 -> ClamAV update process started at Thu Jun 11 10:22:40 2026
+Thu Jun 11 10:22:40 2026 -> daily.cld database is up-to-date (version: 28027, sigs: 355466, f-level: 90, builder: svc.clamav-publisher)
+Thu Jun 11 10:22:40 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+Thu Jun 11 10:22:40 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 ClamAV 1.4.3/28027/Wed Jun 10 11:59:13 2026
 NEXT                        LEFT        LAST                        PASSED     UNIT                ACTIVATES
 Mon 2026-06-15 00:00:00 IST 3 days left Mon 2026-06-08 00:00:01 IST 3 days ago clamav-weekly.timer clamav-weekly.service
@@ -298,7 +298,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
- 8287 ?        00:00:00 snow.sh
+ 5104 ?        00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
