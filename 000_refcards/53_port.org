@@ -9,7 +9,7 @@
 - enforceable design contract (ieee standards)
   - space allocation and encoding
   - operational domain - set of valid operations (eg: arithmetic operations on numbers; concat for text)
-
+ 
 * linus torvalds vs rich hickey
 linus:  [hardware registers] -> [linear memory blocks] -> [imperative c code]
 rich:   [real-world facts]   -> [immutable pure data]   -> [functional abstraction]
