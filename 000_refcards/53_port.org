@@ -1,4 +1,17 @@
 #+TITLE: port 53 - reroute content later to appropriate sections 
+* trivia
+- q: given that ai is generating most of the code, is it even useful to learn new languages deeply?
+  - a: You should learn at least one programming language really well - like, really, really well - and know the specifics of others.
+    - for example, if you are building something in go for the first time, you can get far by prompting your way through it. you can ship working code without knowing the basics.
+    - but yes, you can read the code, but can you truly understand it? let me double down...
+    - go has goroutines and channels. rust has ownership and lifetimes. these are not syntax details; they are mental models.
+    - ai can generate code in a language you do not know, but it cannot generate intuition for a language you have never understood.
+    - when a deadlock happens, memory usage balloons, or a race condition surfaces, you need that mental model to reason about it. ai cannot hand you that reasoning.
+    - according to me, what ai changes is the ramp-up time - more specifically, syntax friction. that cost is now close to zero. the remaining work is the interesting part: building intuition for how the language thinks.
+    - so, you do not need to memorize every standard library method in every language. but you do need to deeply understand at least one language and then pick up the specifics of others as needed.
+    - that depth in one language gives you the mental model to reason about all the others.
+    - as engineers, our job is to solve problems, not necessarily to write code.
+  - source: https://x.com/arpit_bhayani/status/2065063532232835494?s=20
 * type systems
 ** intro
 - a type system is fundamentally about boundaries and predictability
@@ -9,7 +22,6 @@
 - enforceable design contract (ieee standards)
   - space allocation and encoding
   - operational domain - set of valid operations (eg: arithmetic operations on numbers; concat for text)
- 
 * linus torvalds vs rich hickey
 linus:  [hardware registers] -> [linear memory blocks] -> [imperative c code]
 rich:   [real-world facts]   -> [immutable pure data]   -> [functional abstraction]
