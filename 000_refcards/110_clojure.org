@@ -16,3 +16,181 @@
 - C-c C-q - quit repl
 - repl (, tab) to see list of commands (ignore brackets)
 - lein run
+  ```clojure
+** capablity schema
+- workflows, permission matrix, ownership, ui pattern - front end - roles and responsbilities pivot
+- architectural pivot - externalize the capability model as a queryable predicate engine; make the ui a pure rendering function over capability responses.
+- implementation:
+  - define a capability schema — not roles, not permissions strings, but {actor, action, resource, workflow-state} tuples. in clojure this is a map; evaluate it with a pure function.
+  - single capability resolver — one function/service that takes the current principal + current workflow state + current resource and returns the allowed action set. ui never evaluates permissions directly.
+  - ui components accept capability props, not role props — a button doesn't know if the user is an admin; it knows if [:submit :invoice] is in the capability set for this render context.
+  - workflow state machine is explicit and shared — backend and frontend share the same state transition definition. the ui derives navigation affordances from reachable states, not from hardcoded routes.
+- this eliminates the regeneration problem entirely. changing a role's permissions doesn't touch ui code. changing workflow topology doesn't touch authorization code. the projection holds because the ui has no baked-in assumptions — it renders whatever the capability resolver returns.
+- in practice this maps cleanly to:
+  - backend: a datalog-queryable policy engine (oso, casbin, or raw datalog over xtdb given your stack)
+  - frontend: a single use-capabilities hook/subscription that gates all component render decisions
+  - generated code: scaffolds only the rendering layer; the capability surface is injected, never generated
+
+;; ─── Primitives ───────────────────────────────────────────────────────────────
+
+(def workflow-states
+  #{:draft :pending-review :approved :rejected :published :archived})
+
+(def actions
+  #{:view :edit :submit :approve :reject :publish :archive :delete :comment})
+
+(def resources
+  #{:invoice :purchase-order :contract :report :user-account})
+
+;; ─── Capability Tuple ─────────────────────────────────────────────────────────
+;; The atomic unit. Everything derives from this shape.
+
+(def capability-schema
+  {:actor          {:id   :string        ; principal UUID
+                    :role :keyword        ; :admin :approver :editor :viewer
+                    :org  :string}        ; tenant/org scope
+
+   :action         :keyword              ; from #{actions}
+
+   :resource       {:type :keyword        ; from #{resources}
+                    :id   :string         ; instance UUID
+                    :org  :string}        ; must match actor org for non-admins
+
+   :workflow-state :keyword              ; from #{workflow-states}
+
+   :context        {:owned-by   :string  ; actor.id == owned-by → ownership predicate
+                    :delegated? :boolean  ; explicit delegation in effect
+                    :deadline   :inst}})  ; time-bound capability
+
+;; ─── Permission Matrix ────────────────────────────────────────────────────────
+;; role → workflow-state → #{allowed-actions}
+;; This is the ground truth. UI and API both derive from this, never diverge.
+
+(def permission-matrix
+  {:viewer    {:draft          #{:view}
+               :pending-review #{:view :comment}
+               :approved       #{:view}
+               :rejected       #{:view}
+               :published      #{:view}
+               :archived       #{:view}}
+
+   :editor    {:draft          #{:view :edit :submit :comment}
+               :pending-review #{:view :comment}
+               :approved       #{:view}
+               :rejected       #{:view :edit :submit}   ; re-submit after rejection
+               :published      #{:view}
+               :archived       #{:view}}
+
+   :approver  {:draft          #{:view :comment}
+               :pending-review #{:view :approve :reject :comment}
+               :approved       #{:view :publish}
+               :rejected       #{:view}
+               :published      #{:view :archive}
+               :archived       #{:view}}
+
+   :admin     {:draft          #{:view :edit :submit :delete :comment}
+               :pending-review #{:view :approve :reject :delete :comment}
+               :approved       #{:view :publish :delete}
+               :rejected       #{:view :edit :submit :delete}
+               :published      #{:view :archive :delete}
+               :archived       #{:view :delete}}})
+
+;; ─── Ownership Predicate ──────────────────────────────────────────────────────
+;; Ownership elevates editor to approver-equivalent on their own resources.
+;; This is the only cross-role elevation rule.
+
+(defn owned-by? [actor resource-context]
+  (= (:id actor) (:owned-by resource-context)))
+
+(defn ownership-elevation [base-actions actor resource-context]
+  (if (owned-by? actor resource-context)
+    (conj base-actions :archive)   ; owner can archive own resource at any state
+    base-actions))
+
+;; ─── Capability Resolver ──────────────────────────────────────────────────────
+;; Single entry point. UI calls this; never evaluates permissions directly.
+
+(defn resolve-capabilities
+  [{:keys [actor resource workflow-state context]}]
+  (let [role            (:role actor)
+        base-actions    (get-in permission-matrix [role workflow-state] #{})
+        elevated        (ownership-elevation base-actions actor context)
+        org-match?      (= (:org actor) (:org resource))]
+    (if org-match?
+      {:allowed  elevated
+       :state    workflow-state
+       :resource (:type resource)
+       :actor-id (:id actor)}
+      {:allowed  #{}          ; cross-org → zero capabilities
+       :state    workflow-state
+       :resource (:type resource)
+       :actor-id (:id actor)})))
+
+;; ─── Sample Resolutions ───────────────────────────────────────────────────────
+
+(def sample-actor-editor
+  {:id "u-001" :role :editor :org "org-acme"})
+
+(def sample-actor-approver
+  {:id "u-002" :role :approver :org "org-acme"})
+
+(def sample-resource
+  {:type :invoice :id "inv-099" :org "org-acme"})
+
+(def sample-context-owned
+  {:owned-by "u-001" :delegated? false :deadline nil})
+
+(def sample-context-not-owned
+  {:owned-by "u-002" :delegated? false :deadline nil})
+
+;; editor on own draft invoice
+(resolve-capabilities
+  {:actor          sample-actor-editor
+   :resource       sample-resource
+   :workflow-state :draft
+   :context        sample-context-owned})
+;; => {:allowed #{:view :edit :submit :comment :archive}
+;;     :state :draft :resource :invoice :actor-id "u-001"}
+
+;; editor on someone else's pending-review invoice
+(resolve-capabilities
+  {:actor          sample-actor-editor
+   :resource       sample-resource
+   :workflow-state :pending-review
+   :context        sample-context-not-owned})
+;; => {:allowed #{:view :comment}
+;;     :state :pending-review :resource :invoice :actor-id "u-001"}
+
+;; approver on pending-review
+(resolve-capabilities
+  {:actor          sample-actor-approver
+   :resource       sample-resource
+   :workflow-state :pending-review
+   :context        sample-context-not-owned})
+;; => {:allowed #{:view :approve :reject :comment}
+;;     :state :pending-review :resource :invoice :actor-id "u-002"}
+
+;; ─── UI Consumption Pattern ───────────────────────────────────────────────────
+;; Component never checks role. Only checks presence in :allowed set.
+
+(defn can? [capabilities action]
+  (contains? (:allowed capabilities) action))
+
+;; In a ClojureScript/Reagent component:
+;;
+;; (let [caps (resolve-capabilities context)]
+;;   [:div
+;;    (when (can? caps :edit)   [edit-button])
+;;    (when (can? caps :submit) [submit-button])
+;;    (when (can? caps :approve)[approve-button])])
+```
+
+Key structural decisions embedded here:
+
+**`permission-matrix` is the single source of truth.** Not the UI, not the API middleware, not the database RLS policy independently — those all derive from or enforce this same matrix.
+
+**`resolve-capabilities` has no side effects.** Pure function. Testable in isolation against every role/state/ownership combination with `clojure.test` table-driven tests.
+
+**Ownership is the only elevation path.** No role inheritance, no permission string concatenation, no wildcard globs. Elevation is one predicate: ownership grants `:archive` regardless of role. Every other cross-role rule is a smell indicating the permission matrix is wrong, not that elevation logic needs expansion.
+
+**The UI pattern at the bottom is the invariant.** `can?` takes a resolved capability map — never a role keyword. Generated components scaffold against `can?` calls only; they have zero knowledge of role strings, workflow state names, or org predicates.

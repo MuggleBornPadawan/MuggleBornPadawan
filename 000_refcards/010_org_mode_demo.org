@@ -1,6 +1,25 @@
 #+title: playing with org mode
 #+author: muggle born padawan
 #+date: (org-export-timestamp-file)
+#+OPTIONS: toc:2
+* Table of Contents :TOC:
+- [[#table-of-contents][table of contents]]
+- [[#welcome][Welcome]]
+  - [[#sub-heading][Sub heading]]
+  - [[#plain-lists][Plain lists]]
+  - [[#ordered-lists][Ordered lists]]
+  - [[#checkbox-items-for-tasks][Checkbox items for tasks]]
+  - [[#markup-list][Markup list]]
+  - [[#links][Links]]
+  - [[#table][Table]]
+
+* table of contents
+- #+OPTIONS: toc:2
+- #+OPTIONS: toc:nil
+- * Table of Contents :TOC:
+- * Document Index                                                   :TOC_2:
+- * Index                                                       :TOC_2_force:
+- * Contents                                                 :TOC_3_noexport:
 * Welcome
 ** TODO Sub heading
 - TODO learn lists (Use C-c C-t to toggle)

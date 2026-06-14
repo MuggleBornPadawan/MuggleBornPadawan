@@ -1,8 +1,19 @@
 #+TITLE: port 53 - reroute content later to appropriate sections 
-* millenium problems
-- the yang-mills "mass gap": if the fundamental forces of nature are carried by massless particles, why does the universe actually have weight? 🌌✨ #physics #math #millenniumprize
-- the riemann hypothesis: a 160-year-old quest to prove that seemingly random prime numbers actually follow a perfectly ordered, deeply hidden rhythm. 🧩🔢 #math #riemannhypothesis
-- 
+#+OPTIONS: toc:2
+* Table of Contents :TOC:
+- [[#trivia][trivia]]
+  - [[#genai-code][genai code]]
+- [[#millenium-problems][millenium problems]]
+- [[#chronological-intellectual-evolution-table---the-staircase-to-knowledge][chronological intellectual evolution table - the staircase to knowledge]]
+  - [[#western][western]]
+  - [[#indian-staircase-of-knowledge][indian staircase of knowledge]]
+- [[#type-systems][type systems]]
+  - [[#intro][intro]]
+  - [[#notes][notes]]
+- [[#linus-torvalds-vs-rich-hickey][linus torvalds vs rich hickey]]
+- [[#entropy---yt-video---3b1b][entropy - yt video - 3b1b]]
+  - [[#compresssion--prediction--intelligence][compresssion = prediction | intelligence]]
+
 * trivia
 ** genai code 
 - q: given that ai is generating most of the code, is it even useful to learn new languages deeply?
@@ -44,7 +55,7 @@
   - progress and preservation (the two halves of type safety, formal definition): progress: a well-typed program either produces a value or takes a step — it does not get stuck. preservation: if an expression has type t and takes a step to expression e', then e' also has type t. together these guarantee well-typed programs cannot reach undefined states
   - exhaustiveness: a pattern match or case analysis over a sum type must handle all constructors. violation: a runtime match failure that the type system could have caught. haskell and rust enforce this. java switch historically did not
   - parametricity: a polymorphic function f : ∀a. a → a can only be the identity function. the type variable a is opaque — f has no operations available on a except to pass it through. this is a constraint, and that constraint is informative — it narrows the possible behaviors to one. this is the invariant that makes generic code more trustworthy than concrete code in well-typed languages
-
+**** language level comparison 
 |------------+---------------------------------+-----------------------------------------+-----------------------|
 | language   | memory model (space)            | concurrency model (time)                | type system (meaning) |
 |------------+---------------------------------+-----------------------------------------+-----------------------|
@@ -56,6 +67,12 @@
 | python     | automated (reference counting)  | global interpreter lock (gil) / async   | dynamic / strong      |
 | javascript | automated (tracing gc)          | single-threaded event loop              | dynamic / weak        |
 |------------+---------------------------------+-----------------------------------------+-----------------------|
+* millenium problems
+- the yang-mills "mass gap": if the fundamental forces of nature are carried by massless particles, why does the universe actually have weight? 🌌✨ #physics #math #millenniumprize
+- the riemann hypothesis: a 160-year-old quest to prove that seemingly random prime numbers actually follow a perfectly ordered, deeply hidden rhythm. 🧩🔢 #math #riemannhypothesis
+- the p vs. np problem: if it's incredibly easy to verify the correct answer to a puzzle, is there a hidden shortcut that makes it just as easy to solve from scratch? 🧩💡 #compsci #math #pvsnp
+- the navier-stokes equations are the universe's master algorithm for fluid motion, dictating everything from chaotic global weather patterns to the swirling fluid simulations that power dynamic generative art. 🌊🎨🌪️ #fluiddynamics #physics #math
+- the hodge conjecture: can the world’s most complex, smooth shapes always be broken down into simple, predictable geometric building blocks?  🧱📐 #math #hodgeconjecture #scienceexplained
 * chronological intellectual evolution table - the staircase to knowledge
 ** western
 |-----------------------------+----------------------------+-------------------------+--------------------|
