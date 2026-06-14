@@ -12,6 +12,31 @@
     - that depth in one language gives you the mental model to reason about all the others.
     - as engineers, our job is to solve problems, not necessarily to write code.
   - source: https://x.com/arpit_bhayani/status/2065063532232835494?s=20
+* chronological intellectual evolution table - the staircase to knowledge
+|-----------------------------+----------------------------+-------------------------+--------------------|
+| book name                   | author                     | place of origin         | time period        |
+|-----------------------------+----------------------------+-------------------------+--------------------|
+| the epic of gilgamesh       | anonymous (mesopotamian)   | ancient mesopotamia     | c. 2100 – 1200 bce |
+| the republic                | plato                      | classical greece        | c. 375 bce         |
+| diwan of al-mutanabbi       | al-mutanabbi               | abbasid caliphate       | 10th century ce    |
+| risalat al-ghufran          | al-ma'arri                 | syria (abbasid era)     | c. 1033 ce         |
+| the divine comedy           | dante alighieri            | florence, italy         | 1320 ce            |
+| muqaddimah                  | ibn khaldun                | north africa (tunis)    | 1377 ce            |
+| the prince                  | niccolò machiavelli        | florence, italy         | 1532 ce            |
+| discourse on method         | rené descartes             | france                  | 1637 ce            |
+| the critique of pure reason | immanuel kant              | prussia (germany)       | 1781 ce            |
+| faust                       | johann wolfgang von goethe | germany                 | 1808 ce (part i)   |
+| the brothers karamazov      | fyodor dostoevsky          | russia                  | 1880 ce            |
+| thus spoke zarathustra      | friedrich nietzsche        | germany                 | 1883 ce            |
+| les désorientés             | amin maalouf               | lebanon / france        | 2012 ce            |
+| the meaning of relativity   | albert einstein            | germany / switzerland   | 1922 ce            |
+| the prophet                 | kahlil gibran              | lebanon / united states | 1923 ce            |
+| al-ayyam (the days)         | taha hussein               | egypt                   | 1929 ce            |
+| a study of history          | arnold j. toynbee          | united kingdom          | 1934 – 1961 ce     |
+| cosmos                      | carl sagan                 | united states           | 1980 ce            |
+| a brief history of time     | stephen hawking            | united kingdom          | 1988 ce            |
+| the road ahead              | bill gates                 | united states           | 1995 ce            |
+|-----------------------------+----------------------------+-------------------------+--------------------|
 * type systems
 ** intro
 - a type system is fundamentally about boundaries and predictability
