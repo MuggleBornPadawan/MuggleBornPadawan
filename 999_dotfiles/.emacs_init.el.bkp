@@ -86,7 +86,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(cider company geiser-mit geiser-racket git-commit gptel json-mode
+	   lsp-ui magit multiple-cursors org-contrib
+	   persistent-scratch racket-mode ranger request restclient
+	   slime toc-org tree-sitter-langs treesit-auto use-package
+	   vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -177,8 +182,13 @@
 ;; font
 (set-face-attribute 'default nil :font "Your Mono Font-12")
 (set-face-attribute 'fixed-pitch nil :font "Your Mono Font-12")
-
-
+;; org mode - table of contents 
+(use-package toc-org
+  :ensure t
+  :after org
+  :hook (org-mode . toc-org-mode))
+(require 'toc-org)
+(add-hook 'org-mode-hook 'toc-org-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
