@@ -3,8 +3,8 @@
 #+date: (org-export-timestamp-file)
 #+OPTIONS: toc:2
 * Table of Contents :TOC:
-- [[#table-of-contents][table of contents]]
 - [[#welcome][Welcome]]
+  - [[#table-of-contents][table of contents]]
   - [[#sub-heading][Sub heading]]
   - [[#plain-lists][Plain lists]]
   - [[#ordered-lists][Ordered lists]]
@@ -13,14 +13,17 @@
   - [[#links][Links]]
   - [[#table][Table]]
 
-* table of contents
+* Welcome
+** table of contents
 - #+OPTIONS: toc:2
 - #+OPTIONS: toc:nil
 - * Table of Contents :TOC:
 - * Document Index                                                   :TOC_2:
 - * Index                                                       :TOC_2_force:
 - * Contents                                                 :TOC_3_noexport:
-* Welcome
+- C-c C-o open link from toc
+- C-x C-s save file to update toc
+- C-c C-j goto (dynamic toc)
 ** TODO Sub heading
 - TODO learn lists (Use C-c C-t to toggle)
 - DONE  markup
@@ -145,3 +148,4 @@ If you have data separated by spaces, commas, or tabs, you can easily convert it
 - S-TAB – Jump to the previous field.
 - M-a – Move to the beginning of the table cell.
 - M-e – Move to the end of the table cell.
+  
