@@ -2,7 +2,7 @@
 #+OPTIONS: toc:2
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
-  - [[#genai-code][genai code]]
+  - [[#genai-code-limitations][genai code limitations]]
 - [[#millenium-problems][millenium problems]]
 - [[#chronological-intellectual-evolution-table---the-staircase-to-knowledge][chronological intellectual evolution table - the staircase to knowledge]]
   - [[#western][western]]
@@ -15,7 +15,7 @@
   - [[#compresssion--prediction--intelligence][compresssion = prediction | intelligence]]
 
 * trivia
-** genai code 
+** genai code limitations 
 - q: given that ai is generating most of the code, is it even useful to learn new languages deeply?
   - a: You should learn at least one programming language really well - like, really, really well - and know the specifics of others
     - for example, if you are building something in go for the first time, you can get far by prompting your way through it. you can ship working code without knowing the basics

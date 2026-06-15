@@ -1,4 +1,19 @@
 * math
+#+OPTIONS: toc:2
+* Table of Contents :TOC:
+- [[#math][math]]
+  - [[#dictionary][dictionary]]
+  - [[#difficulty-levels][difficulty levels]]
+  - [[#numbers][numbers]]
+  - [[#symbols][symbols]]
+  - [[#subjects][subjects]]
+  - [[#algebra][algebra]]
+  - [[#derivatives][derivatives]]
+  - [[#calculus][calculus]]
+  - [[#most-important-theorems-in-math][most important theorems in math]]
+  - [[#engineering-math][engineering math]]
+  - [[#scribbles][scribbles]]
+
 ** dictionary
 All of math can be described in four categories:
 1.  **Logic and Foundations:** Concerns the underlying structure, consistency, and rigorous basis of mathematical reasoning (set theory, formal systems, proof theory).
