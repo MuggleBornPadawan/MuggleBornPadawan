@@ -1,5 +1,27 @@
 #+Author: muggle born padawan
 #+Title: emacs basics - commands
+#+OPTIONS: toc:3
+* Table of Contents :TOC_3:
+- [[#emacs-basics][emacs basics]]
+  - [[#getting-started][getting started]]
+  - [[#initial-setup][initial setup]]
+  - [[#help][help]]
+  - [[#ide-setup][ide setup]]
+  - [[#buffers--windows--panes--frames][buffers / windows / panes? / frames]]
+  - [[#navigation][navigation]]
+  - [[#text-selection-and-copy--paste--undo][text selection and copy / paste / undo]]
+  - [[#files][files]]
+  - [[#search][search]]
+  - [[#gptel][gptel]]
+  - [[#company-mode-complete-anything][company mode (complete anything)]]
+  - [[#lsp-mode][lsp mode]]
+  - [[#spell-checker][spell-checker]]
+  - [[#dired][dired]]
+  - [[#toc---table-of-contents][toc - table of contents]]
+  - [[#code-block-execution][code block execution]]
+    - [[#keyboard-shortcuts][keyboard shortcuts]]
+    - [[#header-arguments][header arguments]]
+  - [[#fun-stuff][fun stuff]]
 
 * emacs basics
 GNU emacs
@@ -174,6 +196,40 @@ GNU emacs
 - u or t - unmark file 
 - g - refresh
 - + - create a new directory 
+** toc - table of contents
+- #+OPTIONS: toc:2
+- * Table of Contents :TOC:
+- :TOC_3: – Restricts the inline text list to 3 heading levels deep.
+- :TOC_2_noexport: – Keeps the interactive list visible in Emacs, but hides it if you use C-c C-e to export later.
+- C-c C-o open link
+- C-c C-j org goto
+- S-tab global cycle 
+** code block execution
+*** keyboard shortcuts
+- C-c C-c : Execute Block
+- C-c ' (Control-c + Single Quote) : Edit In-Context
+- C-c C-o : open results
+- C-c C-v k : close results 
+- C-c C-v I : view info
+- C-c C-v n : Move to the Next source block
+- C-c C-v p : Move to the Previous source block
+- C-c C-v u : Jump straight to the Head configuration line of the current block
+*** header arguments
+#+NAME: top_10_org_babel_headers
+|-----------------+-----------------------------------+---------------------------------------------------------------------------------------|
+| Header Argument | Common Permutations / Values      | Operational Description                                                               |
+|-----------------+-----------------------------------+---------------------------------------------------------------------------------------|
+| :results        | value, output, table, silent, raw | Controls how code output is collected and rendered back into the Org buffer.          |
+| :session        | none, *name* (e.g., *py*, *clj*)  | Runs code in a persistent, stateful REPL process instead of an ephemeral instance.    |
+| :exports        | code, results, both, none         | Determines what elements are included when publishing/exporting the document.         |
+| :tangle         | no, yes, filename.ext             | Extracts code into an external script file during a tangle operation (`C-c C-v t`).   |
+| :var            | name=value, name=table_name       | Binds data variables, properties, or table outputs directly into the code scope.      |
+| :dir            | /path/to/dir, /ssh:user@host:/dir | Sets the default working directory for execution; supports remote Tramp paths.        |
+| :cache          | yes, no                           | Skips code re-execution unless the source block's hash or inputs have changed.        |
+| :noweb          | no, yes, strip-export             | Enables literate programming expansions using the <<macro_or_block_name>> syntax.     |
+| :colnames       | yes, no                           | Specifies whether the first row of an incoming input table should be column headers.  |
+| :mkdirp         | yes, no                           | Automatically creates missing parent directories specified in the `:tangle` argument. |
+|-----------------+-----------------------------------+---------------------------------------------------------------------------------------|
 ** fun stuff
 - M-x tetris
 - M-x calendar

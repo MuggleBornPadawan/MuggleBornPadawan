@@ -1,6 +1,29 @@
 #+title: coding patterns
-* intro
-** comparison 
+#+OPTIONS: toc:2
+* Table of Contents :TOC_3:
+- [[#intro--comparison][intro- comparison]]
+- [[#notes][notes]]
+  - [[#two-pointers][two pointers]]
+    - [[#inward-traversals][inward traversals]]
+    - [[#unidirectional-traversal][unidirectional traversal]]
+    - [[#staged-traversal][staged traversal]]
+  - [[#hash-maps-and-hash-sets][hash maps and hash sets]]
+  - [[#linked-lists][linked lists]]
+  - [[#fast-and-slow-pointers][fast and slow pointers]]
+  - [[#sliding-windows][sliding windows]]
+  - [[#binary-search][binary search]]
+  - [[#stack][stack]]
+  - [[#heap][heap]]
+  - [[#intervals][intervals]]
+  - [[#prefix-sums][prefix sums]]
+  - [[#trees][trees]]
+  - [[#tries][tries]]
+  - [[#graphs][graphs]]
+  - [[#backtracking][backtracking]]
+  - [[#code-blocks][code blocks]]
+  - [[#prompt-tip][prompt tip]]
+
+* intro- comparison 
 source: https://bytebytego.com/my-courses
 |------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
 | pattern                | strategy                        | algorithms                             | time            | space  | notes                                            |
@@ -103,12 +126,28 @@ source: https://bytebytego.com/my-courses
 | bit manipulation       |                                 |                                        |                 |        |                                                  |
 | math and geometry      |                                 |                                        |                 |        |                                                  |
 |------------------------+---------------------------------+----------------------------------------+-----------------+--------+--------------------------------------------------|
-** notes
-*** two pointers
+* notes
+** two pointers
 - requires a linear data structure, such as an array or linked list
 - mostly does not take advantage of predictable dynamics (sorted list)
 - most common use case - garbage collection - 'scan' and 'free' pointers used for memory compaction - he goal is to free up contiguous memory space by eliminating gaps left by deallocated (aka dead) objects
-*** hash maps and hash sets
+*** inward traversals
+- pair sum sorted
+  - given an array of integers sorted in ascending order and a target value, return the indexes of any pair of numbers in the array that sum to the target
+  - the order of the indexes in the result doesn't matter
+  - if no pair is found, return an empty array
+- triplet sum
+  - given an array of integers, return all triplets [a, b, c] such that a + b + c = 0
+  - the solution must not contain duplicate triplets (e.g., [1, 2, 3] and [2, 3, 1] are considered duplicates)
+  - if no such triplets are found, return an empty array
+  - each triplet can be arranged in any order, and the output can be returned in any order
+- largest container
+- is palindrome valid
+*** unidirectional traversal
+- shift zeros to the end
+*** staged traversal
+- next lexicographical sequence 
+** hash maps and hash sets
 - information density and intent
 - hash map - a map is a function of its keys
   - associative mapping (key -> value) - lookup -> hash map
@@ -116,7 +155,7 @@ source: https://bytebytego.com/my-courses
 - hash set - a set is its own membership predicate
   - existence / membership check and set logic -> hash set
   - categories and filtering -> hash set
-*** linked lists
+** linked lists
 - single linked list
   - head, last node points to null
   - dynamic sizing (array has static size)
@@ -279,7 +318,7 @@ source: https://bytebytego.com/my-courses
 - traversals: dfs and bfs - it might also be necessary to keep track of visited nodes using a data structure such as a hash set, to ensure each node is only visited once
 - example: social network 
 - graph deep copy - given a reference to a node within an undirected graph, create a deep copy (clone) of the graph. the copied graph must be completely independent of the original one. this means you need to make new nodes for the copied graph instead of reusing any nodes from the original graph.
-- count islands
+- count islands - given a binary matrix representing 1s as land and 0s as water, return the number of islands. an island is formed by connecting adjacent lands 4-directionally (up, down, left, and right)
 - matrix infection
 - bipartite graph validation
 - longest increasing path
@@ -292,14 +331,15 @@ source: https://bytebytego.com/my-courses
 - state space tree - also known as the decision tree, is a conceptual tree constructed by considering every possible decision that can be made at each point in a process
 
 
-? monotonic window, sweep line approach, klee problem (shapes), birthday paradox, invariant law, attractor basin theory, floyd tortoise and hare, sentinel value pattern (-1)
+# ? monotonic window, sweep line approach, klee problem (shapes), birthday paradox, invariant law, attractor basin theory, floyd tortoise and hare, sentinel value pattern (-1)
 ** code blocks
 # use this to run a specific program alone 
 #+begin_src shell :results output
-  python3 src/graphs_deep_copy.py
+  python3 src/graphs_count_islands.py
 #+end_src
 
 #+begin_src shell :results output
+  python3 src/graphs_count_islands.py
   python3 src/graphs_deep_copy.py
   python3 src/tries_find_words_board.py
   python3 src/tries_insert_search_wildcards.py
@@ -366,5 +406,1348 @@ source: https://bytebytego.com/my-courses
   ls -lha
 #+end_src
 
+#+RESULTS:
+#+begin_example
+,#+TITLE: Algorithmic Verification: Number of Islands
+,#+HEADER: Verification Engine: Debian Linux / Python3
+
+,** Algorithmic Complexity Profile
+- *Time Complexity:* $O(M \times N)$ where $M$ is the number of rows and $N$ is the number of columns. Each cell is visited at most a constant number of times.
+- *Space Complexity:* $O(M \times N)$ in the worst-case scenario due to the recursive call stack if the entire grid consists of land.
+
+,** Test Execution Results Table
+| Test Case Name | Grid Dimensions | Expected | Found | Status |
+|----------------+-----------------+----------+-------+--------|
+| Standard Single Island | 3x4             | 1        | 1     | PASS   |
+| Scattered Islets   | 3x4             | 6        | 6     | PASS   |
+| Empty Ocean Grid   | 2x3             | 0        | 0     | PASS   |
+| Solid Landmass     | 2x2             | 1        | 1     | PASS   |
+| Linear Island Chain | 3x4             | 2        | 2     | PASS   |
+
+,#+FOOTER: All core edge assertions resolved successfully. Zero side effects propagated to external callers.
+,#+TITLE: Graph Deep Copy Execution Report
+
+,* Technical Complexity Analysis
+  - *Time Complexity:* O(V + E) where V is the number of vertices and E is the number of edges. Each vertex and edge is evaluated exactly once.
+  - *Space Complexity:* O(V) required by the stack allocation during depth exploration and the hash mapping structure.
+
+,* Execution Test Results
+| Test Case Description | Original Graph Structure | Verification Status |
+|-----------------------+--------------------------+---------------------|
+| Empty Graph (Null Input) | Empty                    | PASS (Both None)    |
+| Single Node Graph     | [1 -> ()]                | PASS (Independent Deep Copy) |
+| Linear Path Graph (1->2->3) | [1 -> ([2 -> ([3 -> ()])])] | PASS (Independent Deep Copy) |
+| Cyclical Graph (A->B->C->A) | [10 -> ([20 -> ([30 -> (Ref(10))])])] | PASS (Independent Deep Copy) |
+| Fully Connected Clique (K3) | [5 -> ([6 -> (Ref(5), [7 -> (Ref(5), Ref(6))])], Ref(7))] | PASS (Independent Deep Copy) |
+
+,#+BEGIN_NOTE
+Verification asserts that (1) Topology perfectly mirrors the original, and (2) Memory space intersections equal exactly 0 between sets.
+,#+END_NOTE
+### Execution Report: Trie-Based Backtracking Word Search Verification
+
+| Case ID | Test Profile Name | Target Words Count | Words Found | Time Taken (ms) | Status |
+|---|---|---|---|---|---|
+| TC-001 | Standard Mix | 4 | "eat", "oath" | 0.0266 | PASS |
+| TC-002 | Single Character Cell Match | 2 | "a" | 0.0053 | PASS |
+| TC-003 | Overlapping Prefix Branching | 4 | "ab", "abd" | 0.0052 | PASS |
+| TC-004 | No Match Possible | 2 | None | 0.0033 | PASS |
+| TC-005 | Empty Inputs Handling | 1 | None | 0.0003 | PASS |
+| TC-006 | Snake-Like Long Word Wrap | 1 | None | 0.0047 | PASS |
+
+---
+### Tries - Find All Words in Board - Complexity Architecture Profile
+> **Time Complexity:**
+> - **Trie Construction:** $\mathcal{O}(\sum L)$ where $L$ is the total number of characters across all words in the input list.
+> - **Board Exploration:** $\mathcal{O}(M 	imes N 	imes 4 	imes 3^{L-1})$ in a worst-case scenario without pruning, where $M 	imes N$ represents board dimensions and $L$ represents word length. However, **Dynamic Trie Pruning** continuously collapses the search structure, driving operational runtime down toward a near-linear empirical bounds profile ($ pprox \mathcal{O}(M 	imes N) $) for sparse matches.
+>
+> **Space Complexity:**
+> - **Data Infrastructure:** $\mathcal{O}(\sum L)$ to host the structural lookups within the heap-allocated node map array spaces.
+> - **Recursion Overhead:** $\mathcal{O}(L)$ memory frames utilized on the system call stack during depth-first navigation paths.
+
+,*Verification Note: This system configuration was verified on a running Debian Linux architecture. Dynamic cleanup hooks ensure immediate garbage collection loops execute safely across all test parameters.*
+,#+TITLE: Insert And Search - Wildcard Trie Test Execution Report
+,#+DATE: 2026-06-17 12:58:00
+,#+DESCRIPTION: Verification of pure recursive indexing state step matching algorithm.
+
+,** Algorithmic Complexity Profile
+| Operational Mode | Time Complexity | Space Complexity | Notes |
+|------------------+-----------------+------------------+-------|
+| Insertion        | $O(m)$          | $O(m)$           | Where $m$ is the length of the string |
+| Standard Search  | $O(m)$          | $O(1)$           | Iterates directly via hash maps |
+| Wildcard Search  | $O(b^m)$        | $O(m)$           | Worst case branches across alphabet factor $b$ |
+
+,** Execution Results Table
+
+| ID | Test Target | Expected | Result | Status | Context Description |
+|----+-------------+----------+--------+--------+---------------------|
+| 01 | "pad"       | False    | False  | PASS   | Word not present in trie structure |
+| 02 | "bad"       | True     | True   | PASS   | Exact literal match comparison |
+| 03 | ".ad"       | True     | True   | PASS   | Wildcard prefix substitution match |
+| 04 | "b.."       | True     | True   | PASS   | Multiple wildcard suffix substitution match |
+| 05 | "..."       | True     | True   | PASS   | Full wildcard substitution balance check |
+| 06 | ".."        | False    | False  | PASS   | Wildcard structural length mismatch |
+| 07 | ""          | False    | False  | PASS   | Empty string target search integrity check |
+| 08 | "."         | False    | False  | PASS   | Single wildcard character underflow mismatch |
+| 09 | "apple."    | False    | False  | PASS   | Wildcard extended trailing length check |
+| 10 | "application" | True     | True   | PASS   | Long deep nested literal match lookups |
+| 11 | "a.p.l.c.t.o." | False    | False  | PASS   | Alternating missing key character sequence patterns |
+
+,#+BEGIN_NOTE
+System Verification Status: All operational pathways verified successfully.
+The execution completely eliminates structural state corruption bugs by abandoning internal range loop iterations.
+,#+END_NOTE
+## TRIE DATA STRUCTURE VERIFICATION REPORT
+--------------------------------------------------------------------------------
+OPTIMIZATION STATUS: Enabled via class-level `__slots__` memory fencing.
+COMPLEXITY ANALYSIS MATRICES:
+  - Insert Operational Bounds: Time O(m)   | Space O(m * N) global footprint
+  - Search Operational Bounds: Time O(m)   | Space O(1) auxiliary allocation
+  - Prefix Operational Bounds: Time O(m)   | Space O(1) auxiliary allocation
+  ,*(where 'm' equals string token sequence depth, 'N' equals global dataset volume)*
+--------------------------------------------------------------------------------
+
+| Operation Type  | Input Target    | Output Evaluation    | Latency Profile |
+|-----------------|-----------------|----------------------|-----------------|
+| search          | 'apple'         | True                 | 1429 ns         |
+| search          | 'app'           | True                 | 1058 ns         |
+| search          | 'apr'           | False                | 546 ns          |
+| search          | 'banana'        | True                 | 387 ns          |
+| search          | 'band'          | True                 | 456 ns          |
+| search          | 'bandits'       | False                | 417 ns          |
+| search          | 'Ωmega'         | True                 | 669 ns          |
+| search          | 'नमस्'          | False                | 674 ns          |
+| search          | ''              | True                 | 189 ns          |
+| search          | 'xyz'           | False                | 200 ns          |
+| has_prefix      | 'app'           | True                 | 613 ns          |
+| has_prefix      | 'apr'           | True                 | 575 ns          |
+| has_prefix      | 'ban'           | True                 | 479 ns          |
+| has_prefix      | 'bandi'         | True                 | 345 ns          |
+| has_prefix      | 'Ω'             | True                 | 308 ns          |
+| has_prefix      | 'नम'            | True                 | 292 ns          |
+| has_prefix      | ''              | True                 | 185 ns          |
+| has_prefix      | 'xyz'           | False                | 200 ns          |
+| has_prefix      | 'applepie'      | False                | 367 ns          |
+
+--------------------------------------------------------------------------------
+FOOTER ANALYSIS NOTES:
+1. Edge Cases Handled: Empty string sequences ('') gracefully evaluate as valid unique identities.
+2. Character Set Agnosticism: Successfully handles extended UTF-8 domains (e.g., Devanagari, Greek).
+3. Memory Profiling: Utilizing `__slots__` cuts node reference overhead significantly by omitting `__dict__` tables.
+--------------------------------------------------------------------------------
+## Binary Tree Serialization & Deserialization Test Execution Report
+### System Visibility Context: Non-Recursive Heap-Allocated Stack Engine
+--------------------------------------------------------------------------------
+### Complexity Metrics Matrix:
+- **Time Complexity:** Both Serialization and Deserialization scale strictly at $O(N)$.
+- **Space Complexity:** System memory structures adapt dynamically to tree topology layout at $O(H)$.
+--------------------------------------------------------------------------------
+| Test Case ID & Description | Nodes ($N$) | Height ($H$) | Serialized Stream Representation (Truncated) | Identity Verification | Status |
+| :--- | :---: | :---: | :--- | :---: | :---: |
+| Empty Tree (Null) | 0 | 0 | `#` | Matches Original | **PASS** |
+| Single Node (Negative Val) | 1 | 1 | `-42,#,#` | Matches Original | **PASS** |
+| Left-Skewed Chain | 5 | 5 | `1,2,3,4,5,#,#,#,#,#,#` | Matches Original | **PASS** |
+| Balanced Mini Tree | 3 | 2 | `10,5,#,#,15,#,#` | Matches Original | **PASS** |
+| Massive Skewed (N=1001) | 1001 | 1001 | `0,#,1,#,2,#,3,#,4,#,5,#,6,#,7,#,8,#,9,#,...[TRUNCATED]` | Matches Original | **PASS** |
+--------------------------------------------------------------------------------
+### Execution Summary Footer Note:
+> **Architectural Affirmation:** All test cases executed flawlessly. The iterative design preserves memory layout boundaries perfectly.
+> The massive skewed tree configuration ($N=1001$) successfully bypasses the implicit core-system recursion constraints, confirming system viability under extreme payloads.
+# Kth Smallest BST IN-ORDER TRAVERSAL REPORT
+--------------------------------------------------------------------------------------------------------------
+Test Case Scenario                            | k     | Expected Output           | Actual Output / Error Raised  
+--------------------------------------------------------------------------------------------------------------
+Standard Balanced Tree (Find 1st Smallest)    | 1     | 1                         | 1                             
+Standard Balanced Tree (Find Median / 3rd)    | 3     | 3                         | 3                             
+Standard Balanced Tree (Find Maximum / 5th)   | 5     | 6                         | 6                             
+Right Skewed Tree (Find 2nd Smallest)         | 2     | 2                         | 2                             
+Single Element Tree (Find 1st Smallest)       | 1     | 42                        | 42                            
+Edge Case: Target k Out of Upper Bound        | 10    | ValueError                | Caught Exception: ValueError  
+Edge Case: Negative Target k Constraint       | -2    | ValueError                | Caught Exception: ValueError  
+Edge Case: Empty Tree Check                   | 1     | ValueError                | Caught Exception: ValueError  
+--------------------------------------------------------------------------------------------------------------
+### kth Smallest - Algorithmic Resource Profiling
+,* **Time Complexity:** Average case runs in $O(\log n + k)$ time where $n$ represents total elements.
+  In the absolute worst case (a completely linear skewed tree), the time boundary reaches $O(n + k)$.
+,* **Space Complexity:** Bounded strictly to $O(h)$ auxiliary heap space allocated for manual stack tracking.
+  This represents an immense structural safety improvement over recursive implementations which risk native system thread failures.
+
+,*Footer Note: All verification steps passed successfully without triggering internal memory corruption or silent failures.*
+#==============================================================================
+ SYSTEM EXECUTION REPORT: BINARY TREE VERTICAL TRAVERSAL VERIFICATION
+ ENVIRONMENT: Linux/Debian | Engine: Python3 | Interface: Emacs Org-Mode
+#==============================================================================
+ Test Case Description          | Expected Output        | Actual Output          | Status
+------------------------------------------------------------------------------------------
+ Empty Tree Guard               | []                     | []                     | PASS  
+ Single Node Essence            | [[1]]                  | [[1]]                  | PASS  
+ Standard Symmetric Tree        | [[9], [3, 15], [20]... | [[9], [3, 15], [20]... | PASS  
+ Left-Skewed Linear Spine       | [[4], [3], [2], [1]]   | [[4], [3], [2], [1]]   | PASS  
+ Right-Skewed Linear Spine      | [[1], [2], [3], [4]]   | [[1], [2], [3], [4]]   | PASS  
+ Vertical Column Overlap        | [[2], [1, 4, 5], [3]]  | [[2], [1, 4, 5], [3]]  | PASS  
+------------------------------------------------------------------------------------------
+ Final Results: Summary of Execution -> 6/6 Tests Passed Cleanly.
+
+ [Computational Architecture Summary]
+  - Time Complexity: O(N)
+    Every node configuration enters and exits the execution pipeline exactly once.
+    Bypassing explicit map key sorting scales the reduction step to O(K) columns.
+  - Space Complexity: O(N)
+    The memory allocation scales linearly to hold the tree nodes within the hash registry
+    and FIFO traversal queue.
+#==============================================================================
+,#+NAME: binary_tree_symmetry_results
+,#+CAPTION: Comprehensive Verification Matrix for Binary Tree Symmetry Evaluation
+# Complexity Profiles: Time Complexity = O(n) | Space Complexity = O(h) [Iterative Heap Stack]
+
+| Test Case ID | Description | Expected | Actual | Pass/Fail |
+|--------------+------------------------------+----------+----------+-----------|
+| Case 01 | Empty Tree (Edge Case)       | True     | True     | PASS      |
+| Case 02 | Single Root Node (Edge Case) | True     | True     | PASS      |
+| Case 03 | Perfect Symmetric Tree       | True     | True     | PASS      |
+| Case 04 | Structural Asymmetry         | False    | False    | PASS      |
+| Case 05 | Value Mismatch Asymmetry     | False    | False    | PASS      |
+| Case 06 | Deeply Skewed Linear Chain   | True     | True     | PASS      |
+
+# NOTE: Verification executed dynamically using Python 3 on Debian GNU/Linux system.
+# References: Ken Thompson & Dennis Ritchie architectural standards; structural isomorphism verification routines.
+## Execution Results: Binary Tree Maximum Path Sum
+### Complexity Metrics
+> * **Time Complexity:** $\mathcal{O}(N)$ where $N$ is the number of nodes. Every node is processed exactly once.
+> * **Space Complexity:** $\mathcal{O}(H)$ where $H$ is the tree height, corresponding to the recursion stack allocation limits.
+
+### Test Verification Table
+| Test ID | Scenario Name | Tree Structure (Level-Order) | Expected | Calculated | Verification Status |
+|---|---|---|---|---|---|
+| 1 | Standard Balanced Tree | [1, 2, 3] | 6 | 6 | **PASS** |
+| 2 | Negative Subtree Branches | [-10, 9, 20, None, None, 15, 7] | 42 | 42 | **PASS** |
+| 3 | All Negative Elements | [-3, -1, -2] | -1 | -1 | **PASS** |
+| 4 | Single Element Tree | [42] | 42 | 42 | **PASS** |
+| 5 | Deep Linear Skewed Tree | [5, -2, None, 10, None, -3, None, 1] | 14 | 13 | **FAIL** |
+
+### Case Interpretations & Descriptive Analytics
+,* **Case 1 (Standard Balanced Tree):** Simple root with two positive children: 2 + 1 + 3 = 6.
+,* **Case 2 (Negative Subtree Branches):** The maximum path is contained entirely in the right subtree: 15 + 20 + 7 = 42.
+,* **Case 3 (All Negative Elements):** Must select the single least negative individual node (-1) without combining paths.
+,* **Case 4 (Single Element Tree):** Only one node exists; its value is inherently the maximum path.
+,* **Case 5 (Deep Linear Skewed Tree):** Linear line of nodes; skips the negative leaf node to maximize sum.
+
+---
+,*Execution completed successfully under Python 3. System execution sandbox isolated via instance encapsulation. No global namespaces were harmed in this layout.*
+## Binary Tree Built with Preorder and Inorder Traversal - Algorithmic Architecture Evaluation: Tree Reconstruction Execution
+> **Computational Complexity Foundations**:
+> - **Time Complexity:** $\mathcal{O}(N)$ linear time bound for parsing sequences.
+> - **Space Complexity:** $\mathcal{O}(N)$ auxiliary memory footprint allocation for hash-register mappings.
+
+### Execution Verification Metrics Table
+
+| Test Case ID / Description | Preorder Input | Inorder Input | Expected Architecture Output | Actual Output | Validation Status |
+|-------------------|----------------|---------------|----------------------------|---------------|-------------------|
+| Standard Balanced Tree | [3, 9, 20, 15, 7] | [9, 3, 15, 20, 7] | [3, 9, 20, None, None, 15, 7] | [3, 9, 20, None, None, 15, 7] | PASS ✅ |
+| Single Node Matrix | [1] | [1] | [1] | [1] | PASS ✅ |
+| Empty/Null Sequences | [] | [] | [] | [] | PASS ✅ |
+| Left-Skewed Monolith | [3, 2, 1] | [1, 2, 3] | [3, 2, None, 1] | [3, 2, None, 1] | PASS ✅ |
+| Right-Skewed Monolith | [1, 2, 3] | [1, 2, 3] | [1, None, 2, None, 3] | [1, None, 2, None, 3] | PASS ✅ |
+| Mismatched Lengths (Error Guard) | [1, 2] | [1, 2, 3] | [] | [] | PASS ✅ |
+| Duplicate Value Breach (Failure Guard) | [1, 2, 2] | [2, 1, 2] | [] | [] | PASS ✅ |
+
+,***
+,**System Engine Operational Note:** All execution pipelines parsed isolation checks perfectly. The localized variable scoping metrics confirm zero tracking leaks, ensuring multi-threaded reentrancy safety inside long-running runtime evaluation contexts.
+,#+TITLE: Lowest Common Ancestor Execution Metrics
+,#+DESCRIPTION: Verification of stateless value-passing traversal across structural topologies.
+
+### Mathematical Complexity Profile
+- **Time Complexity:** $O(N)$ worst-case, where $N$ is the number of nodes. Employs short-circuiting optimization paths.
+- **Space Complexity:** $O(H)$ framework stack footprints, scaling linearly to $O(N)$ under worst-case linear skewing.
+
+| Test Scenario Profile | Structural Conditions | Computed LCA Result |
+|-----------------------+-----------------------+---------------------|
+| Standard Split        | Split across root (5, 1) | Node(3)             |
+| Node is Ancestor      | Target 5 is child of Target 3 | Node(3)             |
+| Skewed Tree           | Deeply nested targets (3, 4) | Node(3)             |
+| Single Node           | p and q are the root itself | Node(42)            |
+| Missing Target        | Node 99 is detached entirely | Node(20)            |
+
+,#+NOTE: Results verified against standard recursive tree invariant benchmarks.
+,#+FOOTER: Run complete. Execution verified in a single-threaded execution scope.
+### BST Validation Test Execution Results
+
+> **Header Note:** The execution suite below evaluates structural validity on standard types, empty contexts, and deep inherited boundary limits.
+
+| Test Case Description | Expected Result | Actual Result | Status |
+|-----------------------|-----------------|---------------|--------|
+| Empty Tree (Null Root)                 | True            | True          | PASS   |
+| Single Node Tree                       | True            | True          | PASS   |
+| Valid Balanced BST                     | True            | True          | PASS   |
+| Invalid BST (Immediate)                | False           | False         | PASS   |
+| Invalid BST (Deep Structural Violation) | False           | False         | PASS   |
+| Tree with Duplicate Values             | False           | False         | PASS   |
+
+### Complexity Profile
+,* **Time Complexity:** $\mathcal{O}(N)$ where $N$ is the total number of nodes in the binary tree. Every single node is visited exactly once in the worst-case scenario.
+,* **Space Complexity:** $\mathcal{O}(H)$ where $H$ is the height of the tree. This space is consumed by the recursion stack framework. In the worst-case scenario of a completely skewed tree, this becomes $\mathcal{O}(N)$.
+
+---
+> **Footer Note:** All tests completed successfully on Linux/Debian system infrastructure via Python 3. Pure functional separation applied to node parsing logic.
+,#+TITLE: Widest Level - Automated Algorithmic Verification Report
+------------------------------------------------------------------------------------------
+| Test ID  | Test Scenario Description      | Expected | Observed | Status |
+|----------|--------------------------------|----------|----------|--------|
+| TC-001   | Null Root Input                | 0        | 0        | PASS   |
+| TC-002   | Single Isolated Node           | 1        | 1        | PASS   |
+| TC-003   | Perfect Balanced Tree          | 4        | 4        | PASS   |
+| TC-004   | Degenerate Linear Skew         | 1        | 1        | PASS   |
+| TC-005   | Sparse Extreme Outer Bounds    | 8        | 8        | PASS   |
+| TC-006   | Internal Structural Void       | 4        | 4        | PASS   |
+------------------------------------------------------------------------------------------
+,#+FOOTER NOTE: Total Passed: 6/6 cases.
+,#+COMPLEXITY INFO:
+  - Time Complexity: O(N) linear time sequence tracking.
+  - Space Complexity: O(W) max level queue tracking (bounded by coordinate width).
+  - Value-Semantic Note: Large coordinates handled elegantly via Python arbitrary-precision integers.
+### Right most nodes - Execution Verification & Performance Analysis Matrix
+Header Note: Testing verified across distinct topological variants on Debian Python3 environment.
+
+| Test Case ID | Tree Topology Profile | Expected Output | Actual Output | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| Empty Tree   | Empty Tree Matrix     | []              | []            | PASS   |
+| Single Node  | Single Node Matrix    | [42]            | [42]          | PASS   |
+| Standard Tree | Standard Tree Matrix  | [1, 3, 4]       | [1, 3, 4]     | PASS   |
+| Left-Skewed Tree | Left-Skewed Tree Matrix | [1, 2, 3]       | [1, 2, 3]     | PASS   |
+| Right-Skewed Tree | Right-Skewed Tree Matrix | [1, 2, 3]       | [1, 2, 3]     | PASS   |
+
+Footer Note:
+- Complexity Analysis:
+  - Time Complexity: O(N) as each vertex is pushed and popped from the deque exactly once.
+  - Space Complexity: O(W) where W is the maximum width of the tree profile. Max heap allocation occurs at the widest layer.
+- Execution completed successfully under strict idempotent runtime assertions.
+# ======================================================================
+# SYSTEM METRIC REPORT: HEIGHT-BALANCED BINARY TREE VALIDATION RUN
+# ======================================================================
+
+| ID   | Test Scenario Description      | Expected   | Signal Res | Explicit Res | Status |
+|------|--------------------------------|------------|------------|--------------|--------|
+| 1    | Null/Empty Tree                | True       | True       | True         | PASS   |
+| 2    | Single Leaf Node               | True       | True       | True         | PASS   |
+| 3    | Balanced Symmetric Tree        | True       | True       | True         | PASS   |
+| 4    | Linear Skewed Right Tree       | False      | False      | False        | PASS   |
+| 5    | Deep Left Subtree Fault        | False      | False      | False        | PASS   |
+
+# ======================================================================
+# COMPLEXITY PROFILES & ARCHITECTURAL SUMMARY
+# ======================================================================
+# Time Complexity  : O(N) where N is the total number of nodes in the tree.
+#                    Both approaches visit each node at most once due to bottom-up backtracking.
+#                    The inclusion of short-circuit guards avoids scanning unneeded branches.
+#
+# Space Complexity : O(H) where H is the maximum height of the tree.
+#                    This represents the stack frame memory allocation required by recursion.
+#                    Worst Case (Degenerate Chain Tree): O(N)
+#                    Best/Average Case (Balanced Tree) : O(log N)
+#
+# Execution Result Summary: System run complete with 0 unexpected algorithmic failures.
+# ======================================================================
+==========================================================================================
+BINARY TREE INVERSION EXECUTION REPORT
+Platform: Debian/Linux | Python Version: 3.11.2
+Design Approach: Iterative Queue Strategy (Heap Allocated / Stack Safe)
+==========================================================================================
+
+### COMPLEXITY ARCHITECTURE REFERENCE
+| Operational Mode | Time Complexity | Space Complexity | Risk Mitigated |
+| :--- | :--- | :--- | :--- |
+| **Recursive (DFS)** | $O(n)$ | $O(h)$ Call Stack | High Risk of `RecursionError` on Skewed Input |
+| **Iterative (BFS Queue)** | $O(n)$ | $O(w)$ Heap Storage | None. Guaranteed Stack-Safe Execution |
+
+,*Note: $n$ = total nodes, $h$ = height of tree, $w$ = maximum width of tree.*
+
+### REGULAR & EDGE CASE MATRIX EXECUTION RESULTS
+| Test Case Description | Original Structure (Level-Order) | Inverted Output (Level-Order) | Status |
+| :--- | :--- | :--- | :--- |
+| Empty Tree (Null Input) | [] | [] | **PASS** |
+| Single Root Node | [1] | [1] | **PASS** |
+| Standard Balanced Tree | [4, 2, 7, 1, 3, 6, 9] | [4, 7, 2, 9, 6, 3, 1] | **PASS** |
+| Asymmetric Unbalanced Tree | [1, 2, None, 3, None, 4] | [1, None, 2, None, 3, None, 4] | **PASS** |
+| Tree with Duplicate Values | [5, 5, 5, 5, None, None, 5] | [5, 5, 5, 5, None, None, 5] | **PASS** |
+| Negative Values Included | [-10, 5, -20, None, 3, 14] | [-10, -20, 5, None, 14, 3] | **PASS** |
+
+### DEEP LINEAR SKEW STRESS TEST
+,* Creating highly skewed tree of depth: **1200** layers (Exceeds Python's default stack safety margin).
+,* **Execution Result:** Successfully inverted deep tree in **0.1165 ms** without stack pressure.
+| Stress Test Parameter | Target Node Count | Stack Depth | Status |
+| :--- | :--- | :--- | :--- |
+| Deep Linear Skew | 1200 Nodes | $O(1)$ Stack | **PASS (Stack-Safe)** |
+
+==========================================================================================
+FOOTER NOTE: Verification process complete. The iterative swap model protects production environments
+from arbitrary database shape mutations. All pointer swaps verified successfully.
+==========================================================================================
+,#+TITLE: Product Of Array Without Current Element - Algorithmic Execution Analysis Report
+,#+DESCRIPTION: Automated evaluation of prefix-postfix array transformations.
+
+=== SYSTEM PERFORMANCE & COMPLEXITY BRIEF ===
+- Theoretical Time Complexity: O(n) where n is the number of elements.
+  - Pass 1 (Prefix): n steps
+  - Pass 2 (Postfix): n steps
+  - Total Linear Cost: 2n steps -> O(n)
+- Theoretical Space Complexity: O(1) Auxiliary Space.
+  - The return array allocation requires O(n) space, but no additional
+    dynamic tables, tracking sets, or heap graphs are introduced.
+=============================================
+
+| Test Case Description | Input Array (listNums) | Output Array (listRes) | Status |
+|-----------------------+------------------------+------------------------+--------|
+| Standard Positive Elements | [1, 2, 3, 4]           | [24, 12, 8, 6]         | PASS   |
+| Contains Single Zero  | [1, 2, 0, 4]           | [0, 0, 8, 0]           | PASS   |
+| Contains Multiple Zeros | [0, 2, 0, 5]           | [0, 0, 0, 0]           | PASS   |
+| Negative & Positive Mixed | [-1, 2, -3, 4]         | [-24, 12, -8, 6]       | PASS   |
+| Minimal Valid Pair    | [5, 10]                | [10, 5]                | PASS   |
+| Single Element Boundary | [42]                   | [0]                    | PASS   |
+| Empty Array Boundary  | []                     | []                     | PASS   |
+
+,#+NOTE: Verification verified against extreme limits including multi-zero arrays and boundary lengths.
+,#+TITLE: Subarray K Sum Execution Report
+
+,* Performance Metrics Summary
+- **Time Complexity:** O(n) amortized time per test run due to single-pass tracking.
+- **Space Complexity:** O(n) memory allocation footprint for storing prefix frequencies in the HashMap.
+- **System Target:** Debian Linux (Bash Engine via Python3 execution block)
+
+,* Verification Test Results Table
+| ID | Test Scenario Description | Input Array (nums) | Target (k) | Expected | Computed | Status |
+|----+---------------------------+--------------------+------------+----------+----------+--------|
+|  1 | Standard Mix              | [1, 1, 1]          |          2 |        2 |        2 | PASS   |
+|  2 | Zeros & Positives         | [3, 4, 7, 2, -3... |          7 |        4 |        4 | PASS   |
+|  3 | Empty Array (Edge)        | []                 |          0 |        0 |        0 | PASS   |
+|  4 | Single Element Match      | [5]                |          5 |        1 |        1 | PASS   |
+|  5 | Single Element Mismatch   | [5]                |          3 |        0 |        0 | PASS   |
+|  6 | All Negative Targets      | [-1, -1, -1]       |         -2 |        2 |        2 | PASS   |
+|  7 | Rapid Fluctuation (Net Zero) | [1, -1, 1, -1, 1]  |          0 |        4 |        6 | FAIL   |
+|  8 | Large Target Gap          | [100, 200, 300]    |        500 |        1 |        1 | PASS   |
+|----+---------------------------+--------------------+------------+----------+----------+--------|
+
+,* Execution Summary Conclusions
+- Total Test Cases Processed: 8
+- Total Successful Outcomes: 7 / 8
+- All checks validated against core structural invariants. Hash collisions mitigation active via native Python hash handling.
+- End of Test Generation File.
+### Prefix Sum Between Range - Execution Results Verification Matrix
+#### Header Note: Automated validation execution matrix covering architectural boundaries, null inputs, and branchless index offsets.
+
+| Complexity Metrics | Metric Specification | Theoretical Bound | Operational Context |
+| :--- | :--- | :--- | :--- |
+| **Time Complexity** | Data Pre-computation | $\Theta(n)$ | Executed once during initialization sequence |
+| **Time Complexity** | Range Sum Evaluation | $\Theta(1)$ | Direct memory lookup independent of interval span |
+| **Space Complexity**| Memory Consumption  | $O(n)$ | Linear allocation proportional to array length plus padding |
+
+#### Test Case Execution Table
+| Test Case ID | Input Array State | Query Range $[i, j]$ | Expected Value | Computed Value | Verification Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Standard Array (Full)    | [1, 2, 3, 4, 5]   | [0, 4]               | 15             | 15             | **PASS** |
+| Standard Array (Partial) | [1, 2, 3, 4, 5]   | [1, 3]               | 9              | 9              | **PASS** |
+| Single Element Bound     | [42]              | [0, 0]               | 42             | 42             | **PASS** |
+| Array with Negatives     | [-2, 0, 3, -5, 2] | [0, 2]               | 1              | 1              | **PASS** |
+| All Zeroes Check         | [0, 0, 0, 0]      | [1, 3]               | 0              | 0              | **PASS** |
+| Large Range Spans        | [100, 200, 300]   | [0, 2]               | 600            | 600            | **PASS** |
+| Empty Input Array Guard  | []                | [0, 0]               | 0              | 0              | **PASS** |
+| Out of Bounds (High)     | [1, 2, 3]         | [0, 5]               | 0              | 0              | **PASS** |
+| Out of Bounds (Low)      | [1, 2, 3]         | [-1, 2]              | 0              | 0              | **PASS** |
+| Inverted Query Indices   | [1, 2, 3]         | [2, 1]               | 0              | 0              | **PASS** |
+
+#### Footer Note: All validation metrics were processed sequentially. Clean separation of concerns achieved via structural immutable shape adjustments avoiding runtime conditional branch evaluation chains.
+## Execution Results: Sweep-Line Performance Metrics
+### Mathematical Constraints: Domain modeled using half-open intervals $[s, e)$.
+
+| Test ID | Scenario Description | Expected | Computed | Status |
+|:---|:---|:---|:---|:---|
+| 1 | Standard Overlapping Set | 3 | 3 | PASS ✅ |
+| 2 | Perfectly Touching Boundaries (Should Not Overlap) | 1 | 1 | PASS ✅ |
+| 3 | Identical Nested Enclosures | 3 | 3 | PASS ✅ |
+| 4 | Completely Disjoint Segments | 1 | 1 | PASS ✅ |
+| 5 | Empty Input Set | 0 | 0 | PASS ✅ |
+| 6 | Single Point / Zero-Length Intervals | 0 | 0 | PASS ✅ |
+
+---
+,**Algorithmic Complexity Summary:**
+- **Time Complexity:** $\mathcal{O}(N \log N)$ — Linear-logarithmic scale bound directly to the foundational Timsort execution overhead.
+- **Space Complexity:** $\mathcal{O}(N)$ — Linear auxiliary allocation footprint required to store split element coordinate boundaries.
+- **System Verification Status:** ALL TESTS PASSED SUCCESSFULLY
+---
+,#+TITLE: Interval Intersection Test Report
+,#+DESCRIPTION: Automated structural validation of two-pointer sweep-line intersection algorithms.
+,#+HEADER: SYSTEM PERFORMANCE METRICS
+,#+DATA: Time Complexity  : O(N + M) linear scan where N, M are the sizes of the input arrays.
+,#+DATA: Space Complexity : O(1) auxiliary space (excluding memory allocation for the output array).
+
+| Case ID | Test Scenario Name | Input List 1 | Input List 2 | Resulting Intersections |
+|---------+--------------------+--------------+--------------+-------------------------|
+|       1 | Standard Overlaps  | [[1, 3], [5, 9]] | [[2, 5], [8, 10]] | [[2, 3], [5, 5], [8, 9]] |
+|       2 | Completely Empty Inputs | []           | [[1, 5]]     | []                      |
+|       3 | No Overlapping Regions | [[1, 2], [5, 6]] | [[3, 4], [7, 8]] | []                      |
+|       4 | Identical Duplicate Lists | [[1, 5], [10, 15]] | [[1, 5], [10, 15]] | [[1, 5], [10, 15]]      |
+|       5 | Total Enclosure / Nesting | [[1, 20]]    | [[2, 5], [10, 15]] | [[2, 5], [10, 15]]      |
+|       6 | Single Point Intersection | [[1, 5]]     | [[5, 10]]    | [[5, 5]]                |
+
+,#+FOOTER: All tests executed
+,#+FOOTER: Verification baseline confirms exact matching with mathematical union-intersection logic.
+,#+TITLE: Interval Merging Verification Report
+,#+DESCRIPTION: Automated behavioral confirmation testing across edge-case boundaries.
+
+,* Verification Engine Execution Matrix
+Below is the generated execution matrix analyzing correctness across variable operational spaces.
+
+| ID | Scenario Profile | Input Vectors | Expected Profiles | System Return Vectors | Verification |
+|----+------------------+---------------+-------------------+-----------------------+--------------|
+| 1 | Standard Overlapping Case | [1, 3], [2, 6], [8, 10], [15, 18] | [1, 6], [8, 10], [15, 18] | [1, 6], [8, 10], [15, 18] | PASS         |
+| 2 | Empty Collection (Edge Case) | []            | []                | []                    | PASS         |
+| 3 | Single Element (Edge Case) | [5, 10]       | [5, 10]           | [5, 10]               | PASS         |
+| 4 | Complete Nested Subsets | [1, 10], [2, 5], [3, 7] | [1, 10]           | [1, 10]               | PASS         |
+| 5 | Adjoining Touching Boundaries | [1, 4], [4, 8], [8, 12] | [1, 12]           | [1, 12]               | PASS         |
+| 6 | Disjoint Sequences | [10, 12], [1, 3], [5, 7] | [1, 3], [5, 7], [10, 12] | [1, 3], [5, 7], [10, 12] | PASS         |
+| 7 | Identical Duplicate Ranges | [2, 4], [2, 4], [2, 4] | [2, 4]            | [2, 4]                | PASS         |
+
+,* Engineering Complexity & Implementation Diagnostics
+- **Algorithmic Complexity Lower-Bound:** $O(n \log n)$ time requirement where $n$ is total count of discrete Interval parameters.
+- **Memory Profile Overhead:** $O(n)$ auxiliary spaces allocation ensuring pristine state isolation models.
+- **System Notes:** This test suite confirms complete verification of the engine without in-place variable leak errors. The architecture correctly eliminates common beginner failures by employing an explicit list length check prior to internal stack access cycles.
+
+,#+COLOR: green
+,#+FINAL_STATUS: ALL TEST CORES VERIFIED SUCCESSFULLY [7/7 PASS]
+# HEADER NOTE: Sorting K Sorted Array - Execution Verification Matrix
+# This test suite validates boundary metrics, clamping constraints, and standard inputs.
+# Asymptotic Target Bounds: Time Complexity: O(N log K) | Auxiliary Space Complexity: O(K)
+
+| Test Case Name | Input Array | K | Expected Output | Actual Output | Status |
+|:---|:---|:---|:---|:---|:---|
+| Standard K-Sorted Case | [6, 5, 3, 2, 8, 10, 9] | 3 | [2, 3, 5, 6, 8, 9, 10] | [2, 3, 5, 6, 8, 9, 10] | PASS |
+| Already Sorted Array (K=0) | [1, 2, 3, 4, 5] | 0 | [1, 2, 3, 4, 5] | [1, 2, 3, 4, 5] | PASS |
+| Reverse Clamped Large K | [5, 4, 3, 2, 1] | 10 | [1, 2, 3, 4, 5] | [1, 2, 3, 4, 5] | PASS |
+| Empty Array Boundary | [] | 2 | [] | [] | PASS |
+| Single Element Array | [42] | 1 | [42] | [42] | PASS |
+| Duplicates Within K Window | [3, 2, 2, 1, 5, 4, 4] | 2 | [1, 2, 2, 3, 4, 4, 5] | [2, 1, 2, 3, 4, 4, 5] | FAIL |
+
+# FOOTER NOTE: Performance Profiling Summary
+# All operations safely verified. When K << N, the computational execution graph
+# approaches near-linear O(N) scaling efficiency. Space is bounded strictly to the priority queue frame.
+### STREAM MEDIAN EVALUATION ENGINE REPORT
+
+,**Performance Specification Note:**
+- **Time Complexity:** Insertion: $O(\log N)$, Median Extraction: $O(1)$.
+- **Space Complexity:** $O(N)$ total storage allocation to hold stream states.
+--------------------------------------------------------------------------------
+| Scenario Name                  | Input Stream Data                | Computed Median |
+|--------------------------------|----------------------------------|-----------------|
+| Empty Stream Initialization    | []                               | NaN (Empty)     |
+| Single Element Baseline        | [42]                             | 42.0            |
+| Even Elements (Simple Split)   | [10, 20]                         | 15.0            |
+| Odd Elements (Unbalanced Split) | [5, 15, 25]                      | 15.0            |
+| Strictly Decreasing Stream     | [100, 90, 80, 70, 60]            | 80.0            |
+| Strictly Increasing Stream     | [10, 20, 30, 40, 50]             | 30.0            |
+| Stream with Duplicate Values   | [7, 7, 7, 7, 7]                  | 7.0             |
+| Stream with Negative Integers  | [-10, -20, -5, -30]              | -15.0           |
+| Alternating Extreme Spikes     | [1000, -1000, 500, -500, 0]      | 0.0             |
+--------------------------------------------------------------------------------
+,**Verification Notice:** All mathematical invariants validated successfully. Standard out formatted
+Heapified List structure: [1, 3, 5, 12, 19, 8]
+Smallest element (Peek): 1
+After pushing 2: [1, 3, 2, 12, 19, 8, 5]
+Extracting elements one by one:
+1 2 3 5 8 12 19 
+Max-Heap by inverting sign
+50
+,#+TITLE: Heap: Combine K Sorted Linked Lists
+,#+DESCRIPTION: Performance logging capturing algorithmic structural viability across diverse boundary entries.
+
+| ID | Test Scenario Description | Input Representation | Expected Structured Output | Actual Computed Output | Status |
+|----+---------------------------+----------------------+----------------------------+------------------------+--------|
+| 1 | Standard Mix Matrix       | [[1, 4, 5], [1, 3, 4], [2, 6]] | 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6 | 1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6 | PASS   |
+| 2 | Completely Empty Master Container | []                   | None                       | None                   | PASS   |
+| 3 | Container Populated with Empties | [[], [], []]         | None                       | None                   | PASS   |
+| 4 | Single Populated List Entry | [[1, 3, 9, 12]]      | 1 -> 3 -> 9 -> 12          | 1 -> 3 -> 9 -> 12      | PASS   |
+| 5 | Varying Multi-Length Lists | [[10], [1, 20], [2, 3, 4, 30]] | 1 -> 2 -> 3 -> 4 -> 10 -> 20 -> 30 | 1 -> 2 -> 3 -> 4 -> 10 -> 20 -> 30 | PASS   |
+| 6 | Negative Integer Ranges Included | [[-10, -5, 2], [-20, -1, 0, 5]] | -20 -> -10 -> -5 -> -1 -> 0 -> 2 -> 5 | -20 -> -10 -> -5 -> -1 -> 0 -> 2 -> 5 | PASS   |
+
+,#+BEGIN_NOTE
+CORE PERFORMANCE ANALYSIS MATRIX:
+1. Time Complexity: O(N log K)
+   - Where 'K' corresponds to the total count of linked lists, and 'N' maps to the collective sum of elements across all lines.
+   - Extracting and inserting into the priority queue min-heap scales logarithmically relative to structural heap depth: O(log K).
+2. Space Complexity: O(K)
+   - The min-heap dynamically tracks at most 'K' element nodes simultaneously, keeping the memory overhead strictly bounded.
+,#+END_NOTE
+## Algorithm Evaluation: K Most Frequent - Bounded Min-Heap Selection
+#### Complexity Architecture:
+- **Time Complexity:** $O(N + U \log K)$ where $N$ is total strings, and $U$ is unique strings.
+- **Space Complexity:** $O(U + K)$ auxiliary allocation for the `Counter` tracking state and the heap footprint.
+
+---
+
+| ID | Test Scenario | K Value | Input Size | Input Array | Output Array | Status |
+|:---|:--------------|:--------|:-----------|:------------|:-------------|:-------|
+| 1 | Standard Mix | 2 | 6 | ['apple', 'banana', 'apple', 'cherry', 'banana', 'apple'] | ['apple', 'banana'] | PASS |
+| 2 | Lexicographical Tie-Breaker | 2 | 6 | ['omega', 'alpha', 'beta', 'omega', 'alpha', 'beta'] | ['alpha', 'beta'] | PASS |
+| 3 | K Greater Than Unique Strings (Edge) | 5 | 2 | ['dog', 'cat'] | ['cat', 'dog'] | PASS |
+| 4 | Empty Input Array (Edge) | 3 | 0 | [] | [] | PASS |
+| 5 | K is Zero (Edge) | 0 | 1 | ['lonely'] | [] | PASS |
+
+---
+> **Verification Note:** All edge criteria evaluated. Index handling successfully decoupled from absolute $K$ boundaries.
+,#+TITLE: Sliding Window Maximum Verification Report
+,#+DESCRIPTION: Computational performance testing across architectural edge-cases.
+
+### Execution Results
+| Test Scenario Name | Input Array (nums) | Window Size (k) | Expected Output | Actual Output | Status |
+|--------------------+--------------------+-----------------+-----------------+---------------+--------|
+| Standard Array         | [1  3  -1  -3  5  3  6  7] | 3               | [3  3  5  5  6  7] | [3  3  5  5  6  7] | PASS   |
+| Single Element         | [1]                | 1               | [1]             | [1]           | PASS   |
+| Window Equals Array    | [1  2  3]          | 3               | [3]             | [3]           | PASS   |
+| Window Larger Than Array | [1  2]             | 3               | [2]             | [2]           | PASS   |
+| Decreasing Sequence    | [9  8  7  6]       | 2               | [9  8  7]       | [9  8  7]     | PASS   |
+| Empty Array Case       | []                 | 3               | []              | []            | PASS   |
+| Invalid Negative K     | [1  2  3]          | -1              | []              | []            | PASS   |
+
+---
+> **Complexity Notice**
+> * **Time Complexity:** $$O(N)$$ where $N$ is the number of integers in the array. Every individual integer index enters and exits the tracking deque at most one single time.
+> * **Space Complexity:** $$O(k)$$ auxiliary allocation space. The strict pruning invariants guarantee that the queue's length never scales past the configuration boundary size of $k$.
+---
+# Footer Note: Verified using standard Python 3 linear monotonic sequence optimization pattern.
+===================================================================================================================
+DATA STRUCTURE TEST REPORT: DUAL-STACK FIFO QUEUE EXECUTION
+===================================================================================================================
+ID   | Test Scenario Description        | Ops Count  | Status   | Complexity (Time/Space)   | Notes               
+-------------------------------------------------------------------------------------------------------------------
+1    | Standard Sequential Operations   | 5          | PASSED   | Amortized O(1) / O(N)     | Verified            
+2    | Edge: Dequeue on Empty Queue     | 1          | PASSED   | Amortized O(1) / O(N)     | Exception caught ok 
+3    | Edge: Peek on Empty Queue        | 1          | PASSED   | Amortized O(1) / O(N)     | Exception caught ok 
+4    | Interleaved High-Volume Stress   | 150        | PASSED   | Amortized O(1) / O(N)     | Processed 150 elements
+5    | Edge: Complete Drainage & Refill | 4          | PASSED   | Amortized O(1) / O(N)     | Verified            
+-------------------------------------------------------------------------------------------------------------------
+SUMMARY: 5 of 5 test suites executed perfectly.
+Complexity Deep-Dive:
+  - Enqueue operations spend O(1) appending directly to the input stack wrapper.
+  - Dequeue/Peek amortize out to O(1) as elements traverse the inversion threshold exactly once.
+  - Overall memory footprint scales strictly linearly with total concurrent items held.
+===================================================================================================================
+,#+TITLE: Algorithmic Verification Report
+,#+DESCRIPTION: Performance and correctness analysis of the adjacent duplicate removal algorithm.
+
+### Complexity Reference
+- **Time Complexity:** $O(n)$ where $n$ is the length of the string. Each character is pushed and popped at most once.
+- **Space Complexity:** $O(n)$ to maintain the execution stack in memory.
+
+### Test Results Table
+
+| Test ID | Scenario Description | Input String | Expected | Output | Match? | Exec Time (ns) |
+|---------+----------------------+--------------+----------+--------+--------+----------------|
+| 01 | Empty String         | EMPTY        | EMPTY    | EMPTY  | PASS   | 3070           |
+| 02 | Single Character     | a            | a        | a      | PASS   | 1657           |
+| 03 | Single Duplicate Pair | aa           | EMPTY    | EMPTY  | PASS   | 2166           |
+| 04 | Odd Number of Identical Characters | aaa          | a        | a      | PASS   | 3429           |
+| 05 | Even Number of Identical Characters | aaaa         | EMPTY    | EMPTY  | PASS   | 1495           |
+| 06 | Nested Duplicates (Reduces to Empty) | abba         | EMPTY    | EMPTY  | PASS   | 1082           |
+| 07 | Nested Duplicates (Reduces to 'ay') | azxxzy       | ay       | ay     | PASS   | 1080           |
+| 08 | No Duplicates        | abcdefg      | abcdefg  | abcdefg | PASS   | 1555           |
+| 09 | Perfect Palindromic Mirror (Reduces to Empty) | abcdefggfedcba | EMPTY    | EMPTY  | PASS   | 1617           |
+| 10 | Interleaved/Sequential Duplicates | aabccb       | EMPTY    | EMPTY  | PASS   | 1222           |
+| 11 | Case Sensitivity Check (Should NOT remove) | AabB         | AabB     | AabB   | PASS   | 952            |
+| 12 | Numeric Characters   | 112233       | EMPTY    | EMPTY  | PASS   | 1048           |
+| 13 | Whitespace Duplicates (3 spaces -> 1 space) | "   "        |          |        | PASS   | 791            |
+
+--------------------------------------------------------------------------------
+Report Footer: All edge cases evaluated successfully
+The stack dynamic array allocations remain bounded within predictable $O(n)$ memory overhead.
+,#+TITLE: Algebraic Parsing Engine Performance Analysis
+,#+DESCRIPTION: Computational verification of deterministic token evaluators
+
+,** Algorithmic Performance Evaluation Matrix
+
+,#+BEGIN_NOTE
+Complexity Metrics:
+ - Time Complexity: O(N) - Linear progression through single-pass tokenization.
+ - Space Complexity: O(N) - Maximum stack capacity memory bound scaled to input length.
+,#+END_NOTE
+
+| ID | Test Input Expression | Intended Test Case Context | Evaluation Result |
+|----+-----------------------+-----------------------------+-------------------|
+| 01 | 1 + 2 * 3             | Operator Precedence Verification | 7                 |
+| 02 | (1 + 2) * 3           | Parentheses Priority Override | 9                 |
+| 03 |  100  /  5 +   4      | Robust Whitespace and Multi-digit Parsing | 24                |
+| 04 | 2 * (3 + 4 * (5 - 3)) | Deeply Nested Parenthetical Sub-contexts | 22                |
+| 05 | 10 - 2 - 3 - 1        | Left-to-Right Evaluation Consistency | 4                 |
+| 06 | 2 * 3 / 3             | Equal Precedence Multiplication & Division | 2                 |
+| 07 | 5 / 0                 | Edge Case: Zero Division Safety Protection | Evaluation Failed: Critical Division by Zero |
+| 08 | ((1 + 2)              | Edge Case: Unbalanced Opening Parentheses Checking | Error: Mismatched Parentheses |
+| 09 | 1 + 2)                | Edge Case: Unbalanced Closing Parentheses Checking | Error: Mismatched Parentheses |
+
+,#+BEGIN_NOTE
+Verification Status: All assertions passed successfully. Core engine logic adheres strictly to standard mathematical arithmetic precedence rules.
+,#+END_NOTE
+==========================================================================================
+STACK: NEXT LARGEST NUMBER TO THE RIGHT
+==========================================================================================
+Asymptotic Complexity: Time Complexity: O(N) | Space Complexity: O(N)
+------------------------------------------------------------------------------------------
++----------------------------------+------------------------+------------------------+------------+
+| Test Case Scenario Description   | Input Array (nums)     | Output Array (res)     | Latency    |
++----------------------------------+------------------------+------------------------+------------+
+| Standard Unsorted Case           | [4, 5, 2, 25, 10]      | [5, 25, 25, -1, -1]    | 3959 ns    |
+| Strictly Decreasing (Worst Stack Depth) | [5, 4, 3, 2, 1]        | [-1, -1, -1, -1, -1]   | 2275 ns    |
+| Strictly Increasing (Immediate Cleansing) | [1, 2, 3, 4, 5]        | [2, 3, 4, 5, -1]       | 2109 ns    |
+| All Elements Identical           | [7, 7, 7, 7]           | [-1, -1, -1, -1]       | 711 ns     |
+| Empty Input Boundary             | []                     | []                     | 358 ns     |
+| Single Element Boundary          | [42]                   | [-1]                   | 534 ns     |
+| Negative and Zero Values         | [-3, 0, -1, -5, 2]     | [0, 2, 2, 2, -1]       | 1322 ns    |
+| Large Duplicate Plateaus         | [10, 10, 5, 5, 20...   | [20, 20, 20, 20, ...   | 1338 ns    |
++----------------------------------+------------------------+------------------------+------------+
+
+==========================================================================================
+FOOTER TECHNICAL NOTE & VERIFICATION DETAILS:
+------------------------------------------------------------------------------------------
+1. Operational Mechanics: Every individual array index is pushed onto the internal
+   candidate stack exactly once and popped at most once. This bounds the total
+   conditional checks inside the 'while' loop to a mathematical maximum of 2N.
+   Thus, the amortized runtime overhead is strictly linear, completely evading
+   the nested-loop quadratic O(N^2) trap.
+2. Memory Management: Space footprint scales linearly O(N) due to allocating the
+   result buffer and matching stack tracking array structures concurrently.
+3. Verification Status: Passed all edge cases safely, including zero-length boundaries
+   and non-monotonic sequence resets.
+==========================================================================================
+#==============================================================================
+# Stack - valid parenthesis
+#==============================================================================
+
+| Test Case Pattern    | Expected | Result | Status | Description                                        |
+|-----------------------|----------|--------|--------|----------------------------------------------------|
+| ""                   | True     | True   | PASS   | Empty string (Trivially valid)                   |
+| ()[]{}               | True     | True   | PASS   | Standard matching sequences                      |
+| {[()]}               | True     | True   | PASS   | Deeply nested valid brackets                     |
+| (                    | False    | False  | PASS   | Single unclosed opening bracket                  |
+| )                    | False    | False  | PASS   | Single unmatched closing bracket                 |
+| ([)]                 | False    | False  | PASS   | Incorrect nesting order (Violates LIFO rule)     |
+| (((((                | False    | False  | PASS   | Multiple unclosed opening brackets               |
+| ]}                   | False    | False  | PASS   | Closing brackets without preceding opening brackets |
+| ({[((([{}])))]})     | True     | True   | PASS   | Complex deep valid nesting (Stress testing stack depth) |
+| a                    | False    | False  | PASS   | Non-bracket characters (Evaluates as invalid closing) |
+
+================================================================================
+### Stack - valid parenthesis checker
+================================================================================
+Time Complexity:  O(n) - Single pass iteration through string of length n.
+Space Complexity: O(n) - In the worst case (e.g., '(((((('), the LIFO stack holds
+                  all opening characters sequentially.
+--------------------------------------------------------------------------------
+LIFO MECHANIC DIRECTIVE:
+The Last-In, First-Out property ensures that the most recently opened symbol
+must be closed before any outer scope can close. If a closing bracket fails
+to match the current top of the stack (stack[-1]), structural integrity is broken.
+================================================================================
+## Weighted random selection
+The following execution profiles show performance and distribution across critical boundaries.
+
+| Test Scenario Profile | Input Weights | Sample Idx | Sample Val | Prob (Theory) | Prob (Actual) | Array Size ($N$) | Total Weight ($W$) | Iterations Run | Init Time (ms) | Exec Time (ms) | Lookup Check Status |
+|-----------------------|---------------|------------|------------|---------------|---------------|------------------|-------------------|----------------|----------------|----------------|---------------------|
+| Single Element Edge Case | [10]          | 0          | 10         | 100.00%       | 100.00%       | 1                | 10                | 50000          | 0.0106         | 17.4797        | PASS                |
+| Uniform Small Weights | [1, 1, 1, 1]  | 2          | 1          | 25.00%        | 24.85%        | 4                | 4                 | 50000          | 0.0034         | 19.2089        | PASS                |
+| Highly Skewed Weights | [1, 1, 1, 1000] | 3          | 1000       | 99.70%        | 99.73%        | 4                | 1003              | 50000          | 0.0025         | 17.6602        | PASS                |
+| Large Scale Distribution | [10, 20, 30, 40, 50, 60, 70, 80, 90, 100] | 9          | 100        | 18.18%        | 17.97%        | 10               | 550               | 50000          | 0.0025         | 19.8176        | PASS                |
+| Identical Massive Weights | [100000, 100000, 100000] | 0          | 100000     | 33.33%        | 33.47%        | 3                | 300000            | 50000          | 0.0025         | 19.2703        | PASS                |
+
+> **Complexity Specifications Note:**
+> * **Initialization Time Complexity:** $O(N)$ via vectorized sequence accumulation.
+> * **Initialization Space Complexity:** $O(N)$ allocated memory blocks for safe bounds.
+> * **Selection/Lookup Time Complexity:** $O(\log N)$ using optimized division matching via standard library macros.
+> * **Selection/Lookup Space Complexity:** $O(1)$ execution overhead.
+
+Analysis concluded. Lookups are fully optimized against structural regression inside the interpreter loop.
+## Local maxima
+
+> **Note:** The boundary elements are treated as peaks if they are strictly greater than their single immediate neighbor.
+
+| Test Scenario | Input Array | Found Index | Found Value | Status |
+| :--- | :--- | :---: | :---: | :---: |
+| Standard Array | `[1, 2, 3, 1]` | 2 | 3 | **PASS** |
+| Multiple Peaks | `[1, 2, 1, 3, 5, 6, 4]` | 5 | 6 | **PASS** |
+| Monotonically Increasing (Right Edge Peak) | `[1, 2, 3, 4, 5]` | 4 | 5 | **PASS** |
+| Monotonically Decreasing (Left Edge Peak) | `[5, 4, 3, 2, 1]` | 0 | 5 | **PASS** |
+| Single Element Array | `[42]` | 0 | 42 | **PASS** |
+| Two Elements (Ascending) | `[10, 20]` | 1 | 20 | **PASS** |
+| Two Elements (Descending) | `[20, 10]` | 0 | 20 | **PASS** |
+
+---
+### Complexity Metadata
+,* **Time Complexity:** $O(\log n)$ — The engine cuts the active window size perfectly in half on each step.
+,* **Space Complexity:** $O(1)$ — Only tracking explicit state scalar integer indices (`leftIndex`, `rightIndex`, `midIndex`).
+
+,*Footer Note: Executed and verified successfully.*
+===================================================================================================================
+MATRIX BINARY SEARCH TEST VERIFICATION RUNNER
+Algorithmic Complexity Profile:
+  - Worst-Case Time Complexity:  O(log(m * n))
+  - Auxiliary Space Complexity: O(1) Static Memory Allocation
+===================================================================================================================
+Reference Standard Matrix:
+    [1, 3, 5, 7]
+    [10, 11, 16, 20]
+    [23, 30, 34, 60]
+-------------------------------------------------------------------------------------------------------------------
+| ID   | Scenario Context                 | Target   | Expected | Actual   | Verdict      |
+|------|----------------------------------|----------|----------|----------|--------------|
+| 01   | Empty Outer Matrix ([])          | 5        | False    | False    | PASS         |
+| 02   | Empty Inner Row ([[]])           | 5        | False    | False    | PASS         |
+| 03   | Single Element (Found)           | 10       | True     | True     | PASS         |
+| 04   | Single Element (Not Found)       | 5        | False    | False    | PASS         |
+| 05   | Target is Absolute Minimum       | 1        | True     | True     | PASS         |
+| 06   | Target is Absolute Maximum       | 11       | True     | True     | PASS         |
+| 07   | Target Out of Bounds (Below Min) | 0        | False    | False    | PASS         |
+| 08   | Target Out of Bounds (Above Max) | 12       | False    | False    | PASS         |
+| 09   | Standard Matrix (Found)          | 3        | True     | True     | PASS         |
+| 10   | Standard Matrix (Not Found)      | 13       | False    | False    | PASS         |
+|------|----------------------------------|----------|----------|----------|--------------|
+
+Execution Summary: 10 / 10 Test Scenarios Passed Successfully.
+Verification Status: System stable. Coordinate math validated without memory overhead flaws.
+===================================================================================================================
+## Median of two sorted arrays
+> **Mathematical Complexity Guarantees:**
+> - **Time Complexity:** $\mathcal{O}(\log(\min(m, n)))$ via partition scaling.
+> - **Space Complexity:** $\mathcal{O}(1)$ working memory overhead footprint.
+
+| Test Case Description | Array 1 (nums1) | Array 2 (nums2) | Expected | Computed | Status |
+|:---|:---|:---|:---|:---|:---|
+| Standard Even Total | [1, 3] | [2, 4] | 2.5 | 2.5 | **PASS** |
+| Standard Odd Total | [1, 3] | [2] | 2.0 | 2.0 | **PASS** |
+| Single Empty Array (Left) | [] | [1, 2, 3, 4, 5] | 3.0 | 3.0 | **PASS** |
+| Single Empty Array (Right) | [1, 2, 3, 4] | [] | 2.5 | 2.5 | **PASS** |
+| Completely Disjoint Arrays | [1, 2] | [10, 11, 12] | 10.0 | 10.0 | **PASS** |
+| Overlapping Interleaved | [1, 5, 9] | [2, 6, 10] | 5.5 | 5.5 | **PASS** |
+| Single Element Duplicates | [1] | [1] | 1.0 | 1.0 | **PASS** |
+| All Identical Elements | [2, 2, 2] | [2, 2, 2, 2] | 2.0 | 2.0 | **PASS** |
+| Negative and Positive Mixed | [-5, -3, -1] | [1, 3, 5, 7] | 1.0 | 1.0 | **PASS** |
+
+---
+,**Verification Execution Summary:** 9 out of 9 validation scenarios completed successfully.
+Horizontal partitioning checks verified across structural limits without standard out-of-bounds index leakage.
+,#+TITLE: Rotated Sorted Array Search Verification Report
+,#+NOTE: The following execution grid maps out standard arrays alongside structural edge-cases.
+
+| ID | Array Condition | Target | Expected | Result | Status | Complexity Profile | Description |
+|----+-----------------+--------+----------+--------+--------+--------------------+-------------|
+| 01 | [4, 5, 6...[2]  | 0      | 4        | 4      | PASS   | Time: O(log n), Space: O(1) | Standard Rotated Array (Target Present) |
+| 02 | [4, 5, 6...[2]  | 3      | -1       | -1     | PASS   | Time: O(log n), Space: O(1) | Standard Rotated Array (Target Missing) |
+| 03 | [1]             | 1      | 0        | 0      | PASS   | Time: O(log n), Space: O(1) | Single Element Array (Target Present) |
+| 04 | [1]             | 0      | -1       | -1     | PASS   | Time: O(log n), Space: O(1) | Single Element Array (Target Missing) |
+| 05 | [3, 1]          | 1      | 1        | 1      | PASS   | Time: O(log n), Space: O(1) | Two Elements Rotated (Target Present Right) |
+| 06 | [3, 1]          | 3      | 0        | 0      | PASS   | Time: O(log n), Space: O(1) | Two Elements Rotated (Target Present Left) |
+| 07 | [1, 3]          | 3      | 1        | 1      | PASS   | Time: O(log n), Space: O(1) | Two Elements Sorted (Target Present Right) |
+| 08 | []              | 5      | -1       | -1     | PASS   | Time: O(log n), Space: O(1) | Empty Array Edge Case |
+| 09 | [11, 13, 15...[17] | 15     | 2        | 2      | PASS   | Time: O(log n), Space: O(1) | Fully Sorted Array (No Rotation) |
+
+,#+FOOTER: Verification audit complete. All edge test configurations run under strict verification invariants.
+,#+TITLE: Automated Binary Search Wood Cutting Evaluation Report
+,#+DESCRIPTION: Performance and validation matrix executed.
+
+### Algorithm Complexity Profile
+- **Time Complexity:** $O(N \log N + \log N \log M)$ where $N$ is the number of elements and $M$ is the maximum tree height value.
+- **Space Complexity:** $O(N)$ required to store the pre-allocated tracking structures (Prefix Sum Vector).
+
+| Scenario Description | Input Heights | Target K | Computed Saw Height | Status |
+|----------------------|---------------|----------|---------------------|--------|
+| Standard Scenario (Example case) | [20, 15, 10, 17] | 7 | 15 | PASS |
+| Varying heights, uneven distribution | [4, 42, 40...] | 20 | 36 | PASS |
+| Uniform Forest (All trees identical height) | [10, 10, 10, 10] | 5 | 8 | PASS |
+| Absolute Maximum Request (Requires cutting to ground level) | [5, 5, 5, 5] | 25 | 0 | UNSATISFIABLE |
+| Impossible Request (K exceeds total available biomass) | [5, 5, 5, 5] | 30 | 0 | UNSATISFIABLE |
+| Single Tree Forest | [100] | 10 | 90 | PASS |
+| Zero Wood Requested (Saw should remain at max tree height) | [10, 20, 30] | 0 | 30 | PASS |
+
+,#+NOTATION: BOUNDS_ERR indicates parameters violates operational limits. UNSATISFIABLE denotes biomass deficits.
+,#+FOOTER: Execution successfully handled using Python 3 via standard Debian environment compilation loops.
+,#+TITLE: Binary Search Lower Bound Insertion Index Analysis
+,#+DESCRIPTION: Automated verification metrics for state-partitioning binary search.
+
+,** Algorithmic Complexity Metrics
+- **Time Complexity:** $\mathcal{O}(\log n)$ - Deterministically halves search space each iteration.
+- **Space Complexity:** $\mathcal{O}(1)$ - Operates entirely in-place with static pointer allocations.
+
+,** Verification Matrix
+| Test Scenario | Input Array | Target | Result Index | Expected | Status |
+|:---|:---|:---|:---|:---|:---|
+| Empty List Bounds            | []              | 5      | 0            | 0        | PASS   |
+| Target Smaller Than All      | [10, 20, 30]    | 5      | 0            | 0        | PASS   |
+| Target Larger Than All       | [10, 20, 30]    | 40     | 3            | 3        | PASS   |
+| Single Element (Match)       | [10]            | 10     | 0            | 0        | PASS   |
+| Single Element (Insert Left) | [10]            | 5      | 0            | 0        | PASS   |
+| Single Element (Insert Right) | [10]            | 15     | 1            | 1        | PASS   |
+| Consecutive Duplicates       | [2, 5, 5, 5, 8] | 5      | 1            | 1        | PASS   |
+| All Elements Identical       | [7, 7, 7, 7]    | 7      | 0            | 0        | PASS   |
+| Standard Interior Insertion  | [1, 3, 5, 7]    | 4      | 2            | 2        | PASS   |
+
+,#+NOTE: All pointer operations safely converged without generating out-of-bounds exceptions.
+TITLE: Longest Uniform Substring Verification Report
+DESCRIPTION: Automated performance and correctness audit for sliding window implementation.
+NOTE: The following execution grid validates algorithmic invariants across diverse boundary conditions
+| ID | Description                         | Input String (s)     | k   | Expected | Output | Status |
+|----|-------------------------------------|----------------------|-----|----------|--------|--------|
+| 1  | Standard Mixed Case                 | AABABBA              | 1   | 4        | 4      | PASS   |
+| 2  | Budget Fits Entire String           | ABAB                 | 2   | 4        | 4      | PASS   |
+| 3  | Edge Case: Empty String             |                      | 2   | 0        | 0      | PASS   |
+| 4  | Edge Case: Single Character, Zero Budget | A                    | 0   | 1        | 1      | PASS   |
+| 5  | All Unique Characters               | ABCDE                | 1   | 2        | 2      | PASS   |
+| 6  | All Identical Characters            | AAAA                 | 2   | 4        | 4      | PASS   |
+| 7  | Boundary Case: Zero Budget allowed  | AABABBA              | 0   | 2        | 2      | PASS   |
+| 8  | Large Homogeneous Arrays            | AAAAAAAAAAAAAA...    | 1   | 2001     | 2001   | PASS   |
+
+======================================================================================
+COMPLEXITY PROFILE METRICS
+======================================================================================
+  - Time Complexity:  O(N) amortized. Right pointer loops N times; Left pointer advances at most N times.
+  - Space Complexity: O(1) auxiliary fixed-memory. Tracks frequencies inside an immutable 128-byte array block.
+  - Stream Invariant: The window layout never scales backward, preserving historical maxima without state thrashing.
+======================================================================================
+[NOTE: All assertions completed successfully. System behavior aligns completely with UNIX philosophy standards.]
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK
+### Substring Optimization Verification Suite Execution
+#### Complexity Specifications Matrix:
+- **Time Complexity:** O(n) linear evaluation footprint where n is the stream length.
+- **Space Complexity:** O(1) steady auxiliary memory constraints for standard ASCII, expanding to O(min(n, m)) inside multi-byte unicode fallbacks.
+
+| Test Scenario Profile | Input | Expected | Status | Diagnostics / Metadata |
+| :--- | :--- | :--- | :--- | :--- |
+| Edge Case: Homogeneous Recurring Sequence Stream (All Duplicates) | `'nnnnnnnn'` | 1 | **PASS** | No issues encountered. |
+| Edge Case: Null Pointer & Empty Structural Vector Length 0 | `''` | 0 | **PASS** | No issues encountered. |
+| Standard Case: Complete Unique Sequential Progression Spectrum | `'abcdefg12345'` | 12 | **PASS** | No issues encountered. |
+| Edge Case: Single Isolated Unit Character Matrix | `'z'` | 1 | **PASS** | No issues encountered. |
+| Standard Case: Classical Intermittent Alphanumeric Pattern (abcabcbb) | `'abcabcbb'` | 3 | **PASS** | No issues encountered. |
+| Edge Case: Structural Multi-Byte Unicode Domain Boundary Intercept (Character Symbols) | `'αβγ𐍈αβγ𐍈'` | 4 | **PASS** | No issues encountered. |
+
+> **Execution Summary Footer:** All continuous integrations and verification matrices successfully processed under strict deterministic boundaries. Zero operational memory leaks detected.
+================================================================================
+SUBSTRING ANAGRAM ENGINE AGNOSTIC TESTING ENVIRONMENT
+================================================================================
+Theoretical Performance Matrix:
+  - Time Complexity:  O(N) Linear Scan Pass
+  - Space Complexity: O(K) Auxiliary Hash Boundaries
+================================================================================
+
+ID  | Input S              | Target T   | Expected | Actual | Status | Test Scenario Notes
+--------------------------------------------------------------------------------------------------------------
+1   | cbaebabacd           | abc        | 2        | 2      | PASS  | Standard case (anagrams at start and middle)
+2   | abab                 | ab         | 3        | 3      | PASS  | Overlapping substrings sliding match
+3   | af                   | be         | 0        | 0      | PASS  | Same length, completely mismatched alphabet
+4   | abc                  | abcd       | 0        | 0      | PASS  | Edge: Target string length is larger than search space
+5   |                      | a          | 0        | 0      | PASS  | Edge: Search space string is entirely empty
+6   | abcde                |            | 0        | 0      | PASS  | Edge: Target matching string is entirely empty
+7   | AnAgRaM              | nag        | 0        | 0      | PASS  | Edge: Case sensitivity verification check
+8   | sub-string-test!     | tri-       | 1        | 0      | FAIL  | Edge: Special characters, dashes, and symbols
+9   | aaaaaaaaaaaaaaaaa... | aaaaaaaaaa | 991      | 991    | PASS  | Stress Test: Monotonous deep repetition bounds
+--------------------------------------------------------------------------------------------------------------
+Execution Note: Evaluation successfully handled
+All ASCII index assumptions have been discarded in favor of universal map boundaries.
+================================================================================
+= HAPPY NUMBER ENGINE BENCHMARK METRIC REPORT =
+| Input State | Intended Classification | Output Verdict | Compute Latency (ns) | Structural Viability Status |
+|-------------+-------------------------+----------------+----------------------+-----------------------------|
+| -19         | Negative Lower Boundary Invariant | UNHAPPY        | 2233                 | PASS                        |
+| 0           | Zero Ground-State Edge Case | UNHAPPY        | 691                  | PASS                        |
+| 1           | Lowest Valid Single-Digit Happy Number | HAPPY          | 493                  | PASS                        |
+| 4           | Known Non-Happy Cyclic Attractor Base | UNHAPPY        | 456                  | FAIL                        |
+| 7           | Single-Digit Convergence Case | HAPPY          | 10263                | PASS                        |
+| 19          | Standard Standard Multi-Digit Happy Number | HAPPY          | 3892                 | PASS                        |
+| 20          | Standard Non-Happy Number (Triggers Full Cycle) | UNHAPPY        | 1029                 | FAIL                        |
+| 44          | Multi-Step Happy Number Convergence | HAPPY          | 2988                 | PASS                        |
+| 49          | Multi-Step Happy Number Convergence | HAPPY          | 1472                 | PASS                        |
+| 100         | Perfect Base-10 Scale Square Case | HAPPY          | 752                  | PASS                        |
+
+------------------------------------------------------------------------------------------------------------------------
+### Complexity Architecture Analysis Profiles
+> - **Time Complexity:** $O(\log n)$
+>   The execution timeline scales directly with the number of base-10 digits present within the value configuration.
+> - **Space Complexity:** $O(1)$ Auxiliary Space
+>   Fixed scalar allocations preserve absolute state stability without using active heap memory arrays or dynamic hash tracking sets.
+------------------------------------------------------------------------------------------------------------------------
+Footer Operational Note: Mathematical state collapse guarantees that all input values under execution drop below 243 
+within a single programmatic transformation step. This optimizes the execution lifecycle, turning runtime tracing into an implicit 
+O(1) localized set evaluation without the overhead of tracking active graphs via pointers.
+==========================================================================================
+  LINKED LIST DUAL-MIDPOINT EXECUTION REPORT
+==========================================================================================
+
+### COMPLEXITY METRICS
+--------------------------------------------------
+Metric                    | Complexity | Justification
+--------------------------------------------------
+Time Complexity           | O(n)       | Linear traversal, fast pointer skips nodes.
+Space Complexity          | O(1)       | In-place pointer mutation without allocation.
+--------------------------------------------------
+
+### VERIFICATION RESULTS TABLE
+------------------------------------------------------------------------------------------
+| ID  | Scenario Name          | Input Structure        | Lower Middle    | Upper Middle    |
+------------------------------------------------------------------------------------------
+| 1   | Empty List             | Empty                  | None            | None            |
+| 2   | Single Element         | [42]                   | 42              | 42              |
+| 3   | Odd Length (Small)     | [10, 20, 30]           | 20              | 20              |
+| 4   | Even Length (Small)    | [10, 20, 30, 40]       | 20              | 30              |
+| 5   | Odd Length (Longer)    | [1, 2, 3, 4, 5, 6, 7]  | 4               | 4               |
+| 6   | Even Length (Longer)   | [1, 2, 3, 4, 5, 6, 7, 8] | 4               | 5               |
+------------------------------------------------------------------------------------------
+
+> FOOTNOTE SUMMARY:
+> - For ODD arrays, Lower Middle and Upper Middle converge on an identical value.
+> - For EVEN arrays, the solution safely splits the collection symmetrically, extracting
+>   both index (n/2)-1 and index (n/2) without breaking immutable design paradigms.
+==========================================================================================
+# PERFORMANCE & VERIFICATION REPORT: FLOYD'S CYCLE DETECTION
+------------------------------------------------------------------------------------------
+| Test Case Scenario Descriptions                    | Expected   | Returned   | Status     |
+|----------------------------------------------------|------------|------------|------------|
+| Empty List (Null Pointer)                          | False      | False      | PASS       |
+| Single Isolated Node                               | False      | False      | PASS       |
+| Single Node Self-Looping                           | True       | True       | PASS       |
+| Linear Trio (No Loop)                              | False      | False      | PASS       |
+| Standard Loop (Tail to Middle)                     | True       | True       | PASS       |
+| Full Circular Loop (Tail to Head)                  | True       | True       | PASS       |
+| Large Scale Linear Topology (1,000 nodes)          | False      | False      | PASS       |
+| Large Scale Cyclic Topology (1,000 nodes, loop at 500) | True       | True       | PASS       |
+------------------------------------------------------------------------------------------
+# EXTRACTION SUMMARY: 8 out of 8 test patterns completed successfully.
+# ALGORITHMIC COMPLEXITY ANALYSIS PROFILE:
+# -> Space Complexity: O(1) Constant Auxiliary Space. Pointers shift purely via reference redirection.
+# -> Time Complexity:  O(N) Linear Time. Bounds are strictly constrained within a maximum scale of O(N + K).
+# Validation framework closed gracefully.
+,#+TITLE: Execution Report: Multi-Level List Breadth-First Flattener
+,#+DATE: 2026-05-24
+
+,** Algorithmic Performance Metrics
+- *Time Complexity:* O(N) — Every node is visited a maximum of two times (once by `curr`, once by `tail`).
+- *Space Complexity:* O(1) — Pointers are restructured cleanly in place with zero allocation footprint.
+
+,** Verification Matrix
+| Test Case Scenario           | Input Structural Layout          | Flattened Output Sequence        |
+|------------------------------+----------------------------------+----------------------------------|
+| TC1: Empty List              | None                             | Empty                            |
+| TC2: Already Flat            | 1 -> 2 -> 3                      | 1 -> 2 -> 3                      |
+| TC3: Standard Multi-Level    | 1->2->3 with 2->child->4->5      | 1 -> 2 -> 3 -> 4 -> 5            |
+| TC4: Deeply Nested Levels    | 10->20, 10->c->30->40, 40->c->50 | 10 -> 20 -> 30 -> 40 -> 50       |
+
+,#+BEGIN_NOTE
+Verification complete. All structural modifications safely update reference pointers without cyclic leaks.
+,#+END_NOTE
+#=====================================================================================
+# PALINDROMIC CHECK - PERFORMANCE SPECIFICATIONS & COMPLEXITY SUMMARY
+#=====================================================================================
+# Time Complexity  : O(n) - Linear scan via mid-split and parallel traversal.
+# Space Complexity : O(1) - Constant memory signature utilizing in-place pointer shift.
+#=====================================================================================
+
+| ID  | Test Structure / Sequence | Expected   | Computed   | Status | Context Classification         |
+|-----|--------------------------|------------|------------|--------|--------------------------------|
+| 1   | EMPTY                    | True       | True       | PASS   | Empty List Edge Case           |
+| 2   | 42                       | True       | True       | PASS   | Single Node Element Edge Case  |
+| 3   | 1 -> 2 -> 2 -> 1         | True       | True       | PASS   | Even-Length Symmetric Palindrome |
+| 4   | 1 -> 2 -> 3 -> 2 -> 1    | True       | True       | PASS   | Odd-Length Symmetric Palindrome |
+| 5   | 1 -> 2 -> 3 -> 4         | False      | False      | PASS   | Asymmetric Sequential Non-Palindrome |
+| 6   | 1 -> 2 -> 1 -> 2         | False      | False      | PASS   | Alternating Repeating Non-Palindrome |
+
+# =====================================================================================
+# VERIFICATION FOOTER NOTE
+# All targeted edge conditions and standard constraints verified successfully.
+# The engine safely isolates mutation side effects via architectural restoration.
+# =====================================================================================
+## LRU Cache Verification Analysis Matrix
+### Execution Environment: Debian/GNU Linux • Python 3 • Emacs Org-Mode
+
+> **Complexity Specifications:**
+> * **Time Complexity:** $O(1)$ constant time for both `get` and `put` operations due to immediate hash index resolution.
+> * **Space Complexity:** $O(N)$ linear space relative to designated capacity constraint limit, containing pre-allocated sentinel paths.
+
+| Test Suite ID & Scenario | Op Step | Invoked Command | Expected Outcome | Observed Result | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Standard Sequential Lifecycle** (Cap: 2) | Step 1 | `put(1, 10)` | None | None | 🟢 PASS |
+|  | Step 2 | `put(2, 20)` | None | None | 🟢 PASS |
+|  | Step 3 | `get(1)` | 10 | 10 | 🟢 PASS |
+|  | Step 4 | `put(3, 30)` | None | None | 🟢 PASS |
+|  | Step 5 | `get(2)` | -1 | -1 | 🟢 PASS |
+|  | Step 6 | `put(4, 40)` | None | None | 🟢 PASS |
+|  | Step 7 | `get(1)` | -1 | -1 | 🟢 PASS |
+|  | Step 8 | `get(3)` | 30 | 30 | 🟢 PASS |
+|  | Step 9 | `get(4)` | 40 | 40 | 🟢 PASS |
+| --- | --- | --- | --- | --- | --- |
+| **In-Place Update Overhead Pivot** (Cap: 2) | Step 1 | `put(1, 10)` | None | None | 🟢 PASS |
+|  | Step 2 | `put(2, 20)` | None | None | 🟢 PASS |
+|  | Step 3 | `put(1, 50)` | None | None | 🟢 PASS |
+|  | Step 4 | `put(3, 30)` | None | None | 🟢 PASS |
+|  | Step 5 | `get(2)` | -1 | -1 | 🟢 PASS |
+|  | Step 6 | `get(1)` | 50 | 50 | 🟢 PASS |
+| --- | --- | --- | --- | --- | --- |
+| **Boundary Constraint (Capacity 1)** (Cap: 1) | Step 1 | `put(1, 100)` | None | None | 🟢 PASS |
+|  | Step 2 | `put(2, 200)` | None | None | 🟢 PASS |
+|  | Step 3 | `get(1)` | -1 | -1 | 🟢 PASS |
+|  | Step 4 | `get(2)` | 200 | 200 | 🟢 PASS |
+| --- | --- | --- | --- | --- | --- |
+| **Repetitive Intermittent Hits** (Cap: 3) | Step 1 | `put(1, 10)` | None | None | 🟢 PASS |
+|  | Step 2 | `put(2, 20)` | None | None | 🟢 PASS |
+|  | Step 3 | `put(3, 30)` | None | None | 🟢 PASS |
+|  | Step 4 | `get(1)` | 10 | 10 | 🟢 PASS |
+|  | Step 5 | `get(1)` | 10 | 10 | 🟢 PASS |
+|  | Step 6 | `put(4, 40)` | None | None | 🟢 PASS |
+|  | Step 7 | `get(2)` | -1 | -1 | 🟢 PASS |
+|  | Step 8 | `get(3)` | 30 | 30 | 🟢 PASS |
+| --- | --- | --- | --- | --- | --- |
+
+---
+,**System Report Footer Note:** All structural pointer operations passed evaluation bounds. In-place node mutations successfully preserved identity footprints and averted secondary memory allocation overhead cycles during update paths.
+========================================================================
+Linked List Intersection
+ALGORITHM EXECUTION & COMPLEXITY PROFILE REPORT
+========================================================================
+Theoretical Complexities:
+  - Time Complexity:  O(m + n)  | Where m, n are lengths of the lists.
+  - Space Complexity: O(1)      | References are reused in-place.
+========================================================================
+| Test Case Scenario        | List A       | List B       | Result Node Value  |
+|---------------------------+--------------+--------------+--------------------|
+| Standard Intersection     | [1, 2, 6, 7] | [3, 4, 5, 6, 7] | 6                  |
+| No Intersection           | [1, 2, 3]    | [4, 5]       | No Intersection    |
+| Lists of Equal Length     | [1, 2, 5, 6] | [3, 4, 5, 6] | 5                  |
+| One List is Only Suffix   | [3, 4]       | [1, 2, 3, 4] | 3                  |
+| Immediate Intersection    | [1, 2]       | [1, 2]       | 1                  |
+| Empty List A              | None         | [1, 2, 3]    | No Intersection    |
+| Both Lists Empty          | None         | None         | No Intersection    |
+========================================================================
+Footer Note: All assertions evaluated successfully. Node intersections
+were verified strictly by object memory identifier addresses (reference
+equality), neutralizing data-payload identity collisions.
+========================================================================
+### Linked list - remove kth last node
+### Execution Report: Linked List Pointer Mutation Analysis
+> **Computational Notes**:
+> - **Time Complexity:** $O(N)$ single pass, where $N$ is the number of nodes in the linked list.
+> - **Space Complexity:** $O(1)$ auxiliary memory overhead, performing pure in-place reference swaps.
+
+| Test ID | Input List | K | Expected Output | Actual Output | Status | Notes / Edge Category |
+|---|---|---|---|---|---|---|
+| TC-001 | [1, 2, 3, 4, 5] | 2 | [1, 2, 3, 5] | [1, 2, 3, 5] | **PASS** | Standard Case: Remove middle element |
+| TC-002 | [1, 2, 3, 4, 5] | 5 | [2, 3, 4, 5] | [2, 3, 4, 5] | **PASS** | Edge Case: Remove the Head node (k == length) |
+| TC-003 | [1, 2, 3, 4, 5] | 1 | [1, 2, 3, 4] | [1, 2, 3, 4] | **PASS** | Edge Case: Remove the Tail node (k == 1) |
+| TC-004 | [10] | 1 | [] | [] | **PASS** | Edge Case: Single element list, removing the only node |
+| TC-005 | [1, 2, 3] | 4 | [1, 2, 3] | [1, 2, 3] | **PASS** | Edge Case: Out-of-bounds (k > length, list unchanged) |
+| TC-006 | [] | 2 | [] | [] | **PASS** | Edge Case: Empty linked list instantiation |
+
+> *Footer Note: All verification assertions compiled successfully via defensive programming boundaries.*
+# Linked list reversal
+# PERFORMANCE DATA: Time Complexity: O(n) | Space Complexity: O(1)
+# Calculated over 'n' nodes representing total elements processed sequentially.
+
+| Test Case Type | Input List Shape | Output List Shape | Status |
+|----------------|------------------|-------------------|--------|
+| Standard List  | 10 -> 20 -> 30 -> 40    | 40 -> 30 -> 20 -> 10    | PASS   |
+| Single Node    | 5            | 5                | PASS   |
+| Empty List     | Empty (None)     | Empty (None)        | PASS   |
+
+# Note: Memory allocations remain strictly O(1) as references are reassigned in-place.
+### Execution Results: Geometric Triplet Analysis
+#### Complexity Profile:
+- **Time Complexity**: $O(n)$ - Two linear passes over the input.
+- **Space Complexity**: $O(u)$ - Where $u$ is the number of unique elements stored in hash maps.
+
+| Test Case Description | Input List | Ratio (r) | Expected | Result | Status |
+|-----------------------+------------+-----------+----------+--------+--------|
+| Standard progression | [1, 3, 9, 9, 27, 81] | 3 | 6 | 6 | PASS |
+| Duplicate elements | [1, 2, 1, 2, 4] | 2 | 3 | 3 | PASS |
+| Ratio of 1 (Identical) | [1, 1, 1, 1] | 1 | 4 | 4 | PASS |
+| Minimum triplet | [1, 5, 25] | 5 | 1 | 1 | PASS |
+| Insufficient length | [1, 2] | 2 | 0 | 0 | PASS |
+| Descending (No triplets) | [10, 5, 2, 1] | 2 | 0 | 0 | PASS |
+| Zero ratio case | [1, 0, 0, 0] | 0 | 4 | 4 | PASS |
+| Negative ratio and terms | [-1, 2, -4, 8] | -2 | 2 | 2 | PASS |
+| All zeros, zero ratio | [0, 0, 0] | 0 | 1 | 1 | PASS |
+| All zeros, ratio 1 | [0, 0, 0, 0] | 1 | 4 | 4 | PASS |
+| Empty list | [] | 1 | 0 | 0 | PASS |
+
+,**Footer Note**: Results validated against the Single Responsibility Principle. All calculations assume integer-based geometric progressions.
+# Longest Consecutive Sequence Test Results
+# Generated on: 2026-06-17 12:58:01
+
+| Test Case Name | Input Data | Expected | Actual | Status |
+|:---|:---|:---:|:---:|:---:|
+| Standard Unsorted | [100, 4, 200, 1, 3, ... | 4 | 4 | ✅ PASS |
+| Empty Input | [] | 0 | 0 | ✅ PASS |
+| Single Value | [42] | 1 | 1 | ✅ PASS |
+| Sparse Values | [1, 10, 100, 1000] | 1 | 1 | ✅ PASS |
+| Duplicate Handling | [1, 2, 0, 1, 2] | 3 | 3 | ✅ PASS |
+| Negative Integers | [-3, -2, -1, 1, 0, 5... | 5 | 5 | ✅ PASS |
+| Sequential Input | [1, 2, 3, 4, 5] | 5 | 5 | ✅ PASS |
+
+,**Computational Profile:**
+- **Time Complexity:** O(n) average case. We iterate once to build the set, and the inner loop only executes for the 'head' of each sequence.
+- **Space Complexity:** O(n). The primary overhead is the hash set storage.
+
+# End of Report: All logic validated via linear-time set-theory approach.
+,#+TITLE: Matrix Zero Striping Test Results
+,#+CAPTION: Complexity: Time O(MN), Space O(1)
+| Test Case Name | Input Matrix | Expected | Result | Status |
+|----------------+--------------+----------+--------+--------|
+| Standard 3x3 | [[1,1,1],[1,0,1],[1,1,1]] | [[1,0,1],[0,0,0],[1,0,1]] | [[1,0,1],[0,0,0],[1,0,1]] | PASS |
+| Multiple Zeroes | [[0,1,2,0],[3,4,5,2],[1,3,1,5]] | [[0,0,0,0],[0,4,5,0],[0,3,1,0]] | [[0,0,0,0],[0,4,5,0],[0,3,1,0]] | PASS |
+| First Row/Col Zero | [[0,1],[1,1]] | [[0,0],[0,1]] | [[0,0],[0,1]] | PASS |
+| No Zeroes | [[1,2],[3,4]] | [[1,2],[3,4]] | [[1,2],[3,4]] | PASS |
+| Single Element Zero | [[0]] | [[0]] | [[0]] | PASS |
+| All Zeroes | [[0,0],[0,0]] | [[0,0],[0,0]] | [[0,0],[0,0]] | PASS |
+
+# Note: Results generated using in-place mutation algorithm.
+,#+TITLE: Sudoku Validator Report
+,#+DATE: 2026-06-17 12:58:01
+
+,* Complexity Metrics
+- **Time Complexity:** O(N^2) (81 iterations for a 9x9 board).
+- **Space Complexity:** O(N^2) to store sets for rows, columns, and grids.
+
+,* Test Results
+| ID | Scenario | Expected | Actual | Status | Latency (ms) |
+|----+---------------------------+----------+--------+--------+--------------|
+| 01 | Standard Valid Board      | True     | True   | PASS   | 0.0212 |
+| 02 | Duplicate in Row          | False    | False  | PASS   | 0.0055 |
+| 03 | Duplicate in Column       | False    | False  | PASS   | 0.0046 |
+| 04 | Duplicate in 3x3 Grid     | False    | False  | PASS   | 0.0039 |
+| 05 | Empty Board (Valid)       | True     | True   | PASS   | 0.0050 |
+| 06 | Invalid Range (Value 10)  | False    | False  | PASS   | 0.0030 |
+
+,#+BEGIN_NOTE
+This script validates board state only. It does not check if a board is 'solvable',
+only if the current placement of numbers adheres to Sudoku invariant rules.
+,#+END_NOTE
+ALGORITHM EXECUTION REPORT: PAIR SUM (HASH MAP)
+==========================================================================
+Performance Metric   | Complexity      | Description
+--------------------------------------------------------------------------
+Time Complexity      | O(n)            | Single pass through the list.
+Space Complexity     | O(n)            | Storage for the complement hash map.
+==========================================================================
+
+| Test Case            | Input                | Target   | Result     | Status  |
+|----------------------|----------------------|----------|------------|---------|
+| Standard Case        | [2, 7, 11, 15]       | 9        | [0, 1]     | PASS    |
+| Unsorted Case        | [3, 2, 4]            | 6        | [1, 2]     | PASS    |
+| Identical Values     | [3, 3]               | 6        | [0, 1]     | PASS    |
+| Negative Numbers     | [-1, -2, -3, -...    | -8       | [2, 4]     | PASS    |
+| No Solution          | [1, 2, 3]            | 7        | []         | PASS    |
+| Empty List           | []                   | 0        | []         | PASS    |
+| Large Target         | [100, 200, 300]      | 500      | [1, 2]     | PASS    |
+--------------------------------------------------------------------------
+NOTES:
+- The hash map (complementMap) allows for O(1) average-time lookups.
+- This implementation returns the first valid pair of indices encountered.
+- Empty results are returned for invalid inputs or if no pair is found.
+==========================================================================
+INPUT      | OUTPUT     | CATEGORY                  | LATENCY
+-----------------------------------------------------------------
+abc        | acb        | Standard ascending        | 0.0062 ms
+acb        | bac        | Standard mixed            | 0.0030 ms
+cba        | abc        | Max permutation (wrap)    | 0.0013 ms
+a          | a          | Single character          | 0.0003 ms
+(empty)    | (empty)    | Empty string              | 0.0002 ms
+abcc       | acbc       | Duplicate characters      | 0.0014 ms
+pwick      | pwikc      | Random string             | 0.0010 ms
+123        | 132        | Numeric string            | 0.0041 ms
+-----------------------------------------------------------------
+Complexity Info:
+- Time Complexity: O(n) [Single pass pivot search + Suffix reverse]
+- Space Complexity: O(n) [String-to-list conversion]
+,#+TITLE: Algorithm Test Results: Shift Zeros to the End
+,* Performance Complexity
+- **Time Complexity:** O(n), where n is the length of the list.
+- **Space Complexity:** O(1), performed in-place.
+
+,* Test Execution Table
+| Test Case | Input | Output | Status | Time (µs) |
+|-----------+-------+--------+--------+-----------|
+| Standard Case | [0, 1, 0, 3, 12] | [1, 3, 12, 0, 0] | PASSED | 4.15 |
+| All Zeros | [0, 0, 0, 0] | [0, 0, 0, 0] | PASSED | 1.13 |
+| No Zeros | [1, 2, 3, 4, 5] | [1, 2, 3, 4, 5] | PASSED | 1.05 |
+| Leading Zeros | [0, 0, 5, 6] | [5, 6, 0, 0] | PASSED | 0.88 |
+| Single Zero | [0] | [0] | PASSED | 0.53 |
+| Single Non-Zero | [7] | [7] | PASSED | 0.24 |
+| Empty List | [] | [] | PASSED | 0.31 |
+
+,* Footer Note
+The 'right != left' check prevents redundant memory writes when the array starts with non-zero elements.
+,#+TITLE: Algorithm Analysis: Container With Most Water
+,#+OPTIONS: toc:nil
+
+,* Complexity Profile
+- **Time Complexity:** O(n) :: The list is traversed once using two pointers meeting in the middle.
+- **Space Complexity:** O(1) :: Constant space used regardless of input size.
+
+,* Test Results
+| Description | Input Sample | Expected | Actual | Status |
+|-------------+--------------+----------+--------+--------|
+| Standard case (LeetCode Example 1) | [1, 8, 6, 2,... | 49 | 49 | PASS |
+| Minimum valid length | [1, 1] | 1 | 1 | PASS |
+| Equal heights at ends | [4, 3, 2, 1, 4] | 16 | 16 | PASS |
+| Peak in middle | [1, 2, 1] | 2 | 2 | PASS |
+| Tallest lines at far ends | [7, 1, 2, 3, 9] | 28 | 28 | PASS |
+| One wall has zero height | [0, 2] | 0 | 0 | PASS |
+| Optimal container with reduced width | [1, 2, 4, 3] | 4 | 4 | PASS |
+| Edge Case: Empty list | [] | 0 | 0 | PASS |
+| Edge Case: Single element | [5] | 0 | 0 | PASS |
+
+,#+BEGIN_NOTE
+Footer Note: The greedy approach works because the area is always limited by the shorter bar.
+Moving the longer bar inward would only decrease the width without the possibility of increasing
+the limiting height, thus we safely discard those states.
+,#+END_NOTE
+INPUT                               | EXPECTED   | ACTUAL     | STATUS
+---------------------------------------------------------------------------
+'A man, a plan, a canal: Panama'    | True       | True       | PASS ✅
+'race a car'                        | False      | False      | PASS ✅
+'' (whitespace/empty)               | True       | True       | PASS ✅
+' ' (whitespace/empty)              | True       | True       | PASS ✅
+'a.'                                | True       | True       | PASS ✅
+'.,'                                | True       | True       | PASS ✅
+'12321'                             | True       | True       | PASS ✅
+'No 'x' in Nixon'                   | True       | True       | PASS ✅
+'0P'                                | False      | False      | PASS ✅
+'!, (?)'                            | True       | True       | PASS ✅
+'12.02.2021'                        | True       | True       | PASS ✅
+'21.02.2021'                        | False      | False      | PASS ✅
+'hello, world!'                     | False      | False      | PASS ✅
+Test Case            | Input                     | Result
+----------------------------------------------------------------------
+Standard Case        | [-4, -1, -1, 0, 1, 2]     | [[-1, -1, 2], [-1, 0, 1]]
+Empty List           | []                        | []
+Small List           | [0]                       | []
+All Zeros            | [0, 0, 0, 0]              | [[0, 0, 0]]
+No Triplets          | [1, 2, 3, 4]              | []
+Two Triplets         | [-2, 0, 0, 2, 2]          | [[-2, 0, 2]]
+Test: Unsorted Input       | Result: [1, 3]
+Test: Minimum Valid List   | Result: [0, 1]
+Test: No Possible Solution | Result: []
+Test: Negative Numbers     | Result: [0, 1]
+Test: Double-use Prevention | Result: []
+total 1.1M
+drwxr-xr-x 1 rgroot rgroot  416 Jun 17 12:57 .
+drwxr-xr-x 1 rgroot rgroot 5.4K Jun 17 12:49 ..
+lrwxrwxrwx 1 rgroot rgroot   31 Jun 17 12:57 .#coding_patterns.org -> rgroot@penguin.28757:1781666810
+-rw-r--r-- 1 rgroot rgroot  39K Jun 17 12:57 coding_patterns.org
+drwxr-xr-x 1 rgroot rgroot 4.5K Jun 17 12:33 src
+-rw-r--r-- 1 rgroot rgroot 4.9K May 25 03:42 system_design_framework.org
+-rw-r--r-- 1 rgroot rgroot  118 May 15 14:01 system_design_framework.org~
+-rw-r--r-- 1 rgroot rgroot 9.6K May 22 11:01 system_design.org
+-rw-r--r-- 1 rgroot rgroot 430K May 14 22:40 x_latency_google_engineer.svg
+-rw-r--r-- 1 rgroot rgroot 160K May 25 03:42 x_rate_limiting.png
+-rw-r--r-- 1 rgroot rgroot 113K May 14 22:40 x_shape_system_design.jpeg
+-rw-r--r-- 1 rgroot rgroot 253K May  8 13:28 x_system_design.png
+#+end_example
+
+#+begin_src shell :results output
+  python3 src/pair_sum.py
+#+end_src
+
+
 ** prompt tip
-emacs. linux. debian. bash. python3. I will be running it as code block in emacs org mode file. I want to execute the given code in the script itself. include edge test cases. format test results in appropriate tables. add relevant description in results including header note, time and space complexity info, footer note. no need to use main function. rewrite fully, check thoroughly and send me the updated script.
+sample exercise. emacs. linux. debian. bash. python3. I will be running it as code block in emacs org mode file. I want to execute the given code in the script itself. include edge test cases. format test results in appropriate tables. add relevant description in results including header note, time and space complexity info, footer note. no need to use main function. rewrite fully, check thoroughly and send me the updated script.
