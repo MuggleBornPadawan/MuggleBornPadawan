@@ -64,6 +64,26 @@ might generate text that is less relevant.
 - start building sequentially phase by phase. show me real time progress. store progress status in a local file so that you can restart building from that point if interupted. start building ONLY [phase x] now.
 - readme file creation
 - gh integration
+** production check
+you are my pre-launch security reviewer. review this app for production-readiness issues, focusing only on defensive improvements.
+
+check for:
+1. rate limits on signup, login, password reset, contact forms, and expensive api routes.
+2. email verification after account creation.
+3. secrets or paid api keys exposed in frontend code.
+4. server-side validation for every user action.
+5. access-control bugs, especially whether one user could request another user’s data.
+6. supabase/firebase rules, including rls or equivalent database protections.
+7. https, minimum tls 1.2, spf/dmarc for email, and dnssec if relevant.
+8. places where i built auth, payments, or account systems from scratch when a trusted service would be safer.
+
+return:
+- critical issues to fix before launch
+- medium-risk issues to fix this week
+- exact files or settings to inspect
+- safe implementation steps
+- a final “ship / do not ship” recommendation
+
 ** for beginners
 - prompt/s (hungry kya?)  > project/s (kitchen) > connector/s (grocery shop) > skill/s (recipe) > scheduler/s (oven) > agent/s (chef) 
 - agent skills - https://agentskills.io/home 
