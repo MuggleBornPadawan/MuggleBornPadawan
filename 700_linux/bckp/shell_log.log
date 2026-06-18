@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Thu Jun 18 08:10:53 AM IST 2026 
+Date: Thu Jun 18 11:22:06 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -56,35 +56,35 @@ Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
 Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://download.docker.com/linux/debian bookworm InRelease
-Ign:5 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:4 https://deb.debian.org/debian bookworm InRelease
+Ign:5 https://download.docker.com/linux/debian bookworm InRelease
 Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://download.docker.com/linux/debian bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:5 https://download.docker.com/linux/debian bookworm InRelease
 Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease
 Ign:1 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:4 https://download.docker.com/linux/debian bookworm InRelease
-Ign:5 https://deb.debian.org/debian bookworm InRelease
+Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:5 https://download.docker.com/linux/debian bookworm InRelease
+Ign:4 https://deb.debian.org/debian bookworm InRelease
 Err:1 http://deb.debian.org/debian bookworm-backports InRelease
   Temporary failure resolving 'deb.debian.org'
-Err:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Err:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
   Temporary failure resolving 'packages.adoptium.net'
-Err:2 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Err:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
   Temporary failure resolving 'storage.googleapis.com'
-Err:4 https://download.docker.com/linux/debian bookworm InRelease
+Err:5 https://download.docker.com/linux/debian bookworm InRelease
   Temporary failure resolving 'download.docker.com'
 Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 https://deb.debian.org/debian bookworm InRelease
+Ign:4 https://deb.debian.org/debian bookworm InRelease
 Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:5 https://deb.debian.org/debian bookworm InRelease
+Err:4 https://deb.debian.org/debian bookworm InRelease
   Temporary failure resolving 'deb.debian.org'
 Err:6 https://deb.debian.org/debian bookworm-updates InRelease
   Temporary failure resolving 'deb.debian.org'
@@ -93,29 +93,29 @@ Err:7 https://deb.debian.org/debian-security bookworm-security InRelease
 Reading package lists...
 --- Cleanup Complete ---
 Ign:1 https://deb.debian.org/debian bookworm InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:3 https://download.docker.com/linux/debian bookworm InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:5 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:2 https://download.docker.com/linux/debian bookworm InRelease
+Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
 Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:5 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:3 https://download.docker.com/linux/debian bookworm InRelease
+Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Ign:2 https://download.docker.com/linux/debian bookworm InRelease
 Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:5 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:3 https://download.docker.com/linux/debian bookworm InRelease
+Ign:2 https://download.docker.com/linux/debian bookworm InRelease
+Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
+Ign:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
 Ign:1 https://deb.debian.org/debian bookworm InRelease
-Err:5 http://deb.debian.org/debian bookworm-backports InRelease
+Err:3 http://deb.debian.org/debian bookworm-backports InRelease
   Temporary failure resolving 'deb.debian.org'
-Err:3 https://download.docker.com/linux/debian bookworm InRelease
-  Temporary failure resolving 'download.docker.com'
-Err:4 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
-Err:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Err:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
   Temporary failure resolving 'packages.adoptium.net'
+Err:5 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+  Temporary failure resolving 'storage.googleapis.com'
+Err:2 https://download.docker.com/linux/debian bookworm InRelease
+  Temporary failure resolving 'download.docker.com'
 Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:1 https://deb.debian.org/debian bookworm InRelease
@@ -314,30 +314,30 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-Thu Jun 18 08:19:34 2026 -> ClamAV update process started at Thu Jun 18 08:19:34 2026
-Thu Jun 18 08:19:44 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:19:54 2026 -> Trying again in 5 secs...
-Thu Jun 18 08:19:59 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:20:10 2026 -> Trying again in 5 secs...
-Thu Jun 18 08:20:15 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:20:25 2026 -> Trying again in 5 secs...
-Thu Jun 18 08:20:30 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:20:40 2026 -> Trying again in 5 secs...
-Thu Jun 18 08:20:45 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:20:55 2026 -> Giving up on https://database.clamav.net...
-Thu Jun 18 08:20:55 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:21:05 2026 -> Trying again in 5 secs...
-Thu Jun 18 08:21:10 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:21:20 2026 -> Trying again in 5 secs...
-Thu Jun 18 08:21:25 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:21:35 2026 -> Trying again in 5 secs...
-Thu Jun 18 08:21:40 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:21:50 2026 -> Trying again in 5 secs...
-Thu Jun 18 08:21:55 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Thu Jun 18 08:22:05 2026 -> Giving up on https://database.clamav.net...
+Thu Jun 18 11:30:48 2026 -> ClamAV update process started at Thu Jun 18 11:30:48 2026
+Thu Jun 18 11:30:58 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:31:08 2026 -> Trying again in 5 secs...
+Thu Jun 18 11:31:13 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:31:23 2026 -> Trying again in 5 secs...
+Thu Jun 18 11:31:28 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:31:39 2026 -> Trying again in 5 secs...
+Thu Jun 18 11:31:44 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:31:54 2026 -> Trying again in 5 secs...
+Thu Jun 18 11:31:59 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:32:09 2026 -> Giving up on https://database.clamav.net...
+Thu Jun 18 11:32:09 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:32:19 2026 -> Trying again in 5 secs...
+Thu Jun 18 11:32:24 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:32:34 2026 -> Trying again in 5 secs...
+Thu Jun 18 11:32:39 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:32:49 2026 -> Trying again in 5 secs...
+Thu Jun 18 11:32:54 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:33:04 2026 -> Trying again in 5 secs...
+Thu Jun 18 11:33:09 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
+Thu Jun 18 11:33:19 2026 -> Giving up on https://database.clamav.net...
 ClamAV 1.4.3/28033/Tue Jun 16 11:56:28 2026
 NEXT                        LEFT        LAST                        PASSED     UNIT                ACTIVATES
-Mon 2026-06-22 00:00:00 IST 3 days left Mon 2026-06-15 09:35:21 IST 2 days ago clamav-weekly.timer clamav-weekly.service
+Mon 2026-06-22 00:00:00 IST 3 days left Mon 2026-06-15 09:35:21 IST 3 days ago clamav-weekly.timer clamav-weekly.service
 
 1 timers listed.
 Pass --all to see loaded but inactive timers, too.
@@ -350,7 +350,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
-14343 ?        00:00:00 snow.sh
+ 6654 ?        00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
