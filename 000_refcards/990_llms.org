@@ -1,4 +1,74 @@
 #+title: custom instructions to large language models
+#+OPTIONS: toc:2
+* Table of Contents :TOC:
+- [[#getting-started][getting started]]
+  - [[#resources][resources]]
+  - [[#llm-selection-and-benchmarking][llm selection and benchmarking]]
+  - [[#prompting-and-agent-cookbooks][prompting and agent cookbooks]]
+  - [[#prompt-tools][prompt tools]]
+  - [[#temperature-top-p-and-top-k][temperature, top-p and top-k]]
+  - [[#new-project][new project]]
+  - [[#production-check][production check]]
+  - [[#for-beginners][for beginners]]
+  - [[#medical-appointment][medical appointment]]
+  - [[#gguf][gguf]]
+  - [[#permission-brief-agent][permission brief agent]]
+  - [[#workflow-for-messy-tasks][workflow for messy tasks]]
+  - [[#task-router][task router]]
+  - [[#security-gut-check][security gut check]]
+  - [[#building-skills][building skills]]
+  - [[#elon-musk---five-step-rubric][elon musk - five step rubric]]
+  - [[#grill-me---spec-to-code][grill me - spec to code]]
+  - [[#coding-agent-instructions][coding agent instructions]]
+  - [[#stop-being-a-yes-man][stop being a YES man]]
+  - [[#llm-coding-problems-and-solution][llm coding problems and solution]]
+  - [[#the-llm-council---andrej-karpathy][the llm council - andrej karpathy]]
+  - [[#power-users][power users]]
+  - [[#framing][framing]]
+  - [[#agents-should-interview-you][agents should interview you]]
+  - [[#skills][skills]]
+  - [[#prompt-guy][prompt guy]]
+  - [[#simple-prompts-to-get-started][simple prompts to get started]]
+  - [[#breakdown-spec][breakdown spec]]
+  - [[#claudmd][claud.md]]
+  - [[#openclaw-3-layer-memory-system][openclaw 3-layer memory system]]
+  - [[#notebookllm][notebookllm]]
+  - [[#consulting][consulting]]
+  - [[#grumpy-senior-dev][grumpy senior dev]]
+  - [[#assistant][assistant]]
+  - [[#aiml-tutor][ai/ml tutor]]
+  - [[#professional-headshot][professional headshot]]
+  - [[#absolute-beast-mode][absolute beast mode]]
+  - [[#research-summary][research summary]]
+  - [[#crit-method][crit method]]
+  - [[#unbiased-query-request][unbiased query request]]
+  - [[#claude][claude]]
+  - [[#model-fit][model fit]]
+  - [[#chain-of-drafts][chain of drafts]]
+  - [[#brian-roemmele-deep-truth-mode][brian roemmele deep truth mode]]
+  - [[#cold-start][cold start]]
+  - [[#clojure---rich-hickey---simple-made-easy---hacks][clojure - rich hickey - simple made easy - hacks]]
+- [[#custom-instructions][custom instructions]]
+  - [[#iq-and-eq][iq and eq]]
+  - [[#what-should-you-know-about-me][what should you know about me?]]
+  - [[#how-should-you-respond][how should you respond?]]
+  - [[#fact-check][fact check]]
+  - [[#creativity][creativity]]
+  - [[#tone-and-persona-perspectives][tone and persona perspectives]]
+  - [[#sound-more-human][sound more human]]
+  - [[#isaac-asimov-way-of-writing][isaac asimov way of writing]]
+  - [[#cornell-style-numbering][cornell-style numbering]]
+  - [[#art-world][art world]]
+  - [[#mathematics][mathematics]]
+  - [[#artificial-intelligence][artificial intelligence]]
+  - [[#software][software]]
+  - [[#clojure][clojure]]
+  - [[#openusd][openusd]]
+  - [[#data-structures-and-algorithms][data structures and algorithms]]
+  - [[#amazon-web-services-aws][amazon web services (aws)]]
+  - [[#architecture--system-design][architecture & system design]]
+  - [[#ai-programming][ai programming]]
+
 * getting started 
 ** resources
 - to be included later: art related books, blogs, magazines, podcasts, social media profiles, influencers 
@@ -90,6 +160,8 @@ return:
 - skill creator - https://github.com/anthropics/skills/tree/main/skills/skill-creator
   - now can you use your skill creator skill to turn this conversation into a skill I can call anytime I need to [purpose and approach description] and create [goal/s]?
 - skills vs agents - a skill is the organizing principle: all the files, instructions, and tools the agent needs to accomplish a specific job. the agent is the thing that reasons and acts. skills are the recipe; agents are the cook
+** medical appointment
+i am preparing for a medical appointment. do not diagnose me. help me organize the information below into: 1) a short symptom timeline, 2) important context to mention, 3) possible red flags i should ask about, 4) questions for my clinician, and 5) documents or test results i should bring. if anything sounds urgent, tell me to seek professional care instead of waiting.
 ** gguf
 - gguf (ggml universal file) is the standard file format for running large language models (llms) locally on your own hardware. developed by georgi gerganov, it packages a model's weights, tokenizer vocabulary, and metadata into a single highly optimized file
 ** permission brief agent
