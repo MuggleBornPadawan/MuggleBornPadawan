@@ -2,6 +2,7 @@
 #+OPTIONS: toc:2
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
+  - [[#learn-to-build---agy][learn to build - agy]]
   - [[#genai-code-limitations][genai code limitations]]
 - [[#millenium-problems][millenium problems]]
 - [[#chronological-intellectual-evolution-table---the-staircase-to-knowledge][chronological intellectual evolution table - the staircase to knowledge]]
@@ -15,6 +16,8 @@
   - [[#compresssion--prediction--intelligence][compresssion = prediction | intelligence]]
 
 * trivia
+** learn to build - agy
+- build northstar crm with login, contacts, companies, deals, notes, search, and dashboard cards. use react, vite, typescript, firebase auth, firestore, and firebase hosting; plan first.
 ** genai code limitations 
 - q: given that ai is generating most of the code, is it even useful to learn new languages deeply?
   - a: You should learn at least one programming language really well - like, really, really well - and know the specifics of others
@@ -33,6 +36,15 @@
   - status quo: ai accelerates "time to first commit" but the "time to production-grade verification" remains static or widens if the developer lacks domain intuition
   - solution: master ability to read, reason and design domain models, system design constraints, execution models and core computer science invariants (concurrency, memory, and types)
   - failure literacy: understand that each language has a failure topology. goroutine leaks for go. lifetime violations for rust. gc pressure for jvm languages. undefined behavior for c. 
+***  build happy paths; learn from production incidents
+- read rcas, outage reports and postmortems carefully to understand:
+  - what changed recently?
+  - what assumption failed?
+  - which signal was missing?
+  - which alert came too late?
+  - what made the blast radius larger?
+  - what guardrail was added later?
+  - what process changed after this?    
 *** core computer science invariants across languages
 **** concurrency (time)
 - the underlying truth across all the below five concurrency invariants exist because shared mutable state requires serialization of access that physical hardware does not provide automatically. every concurrency primitive — mutex, channel, actor, semaphore — is a mechanism for enforcing one or more of these invariants

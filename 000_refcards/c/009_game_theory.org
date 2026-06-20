@@ -1,0 +1,47 @@
+#+TITLE: game theory 
+#+OPTIONS: toc:2
+* Table of Contents :TOC:
+- [[#intro-notes][intro notes]]
+  - [[#references][references]]
+  - [[#overview][overview]]
+  - [[#mixed-strategy-nash-equilibrium][mixed strategy nash equilibrium]]
+  - [[#alternate-solution-concepts][alternate solution concepts]]
+  - [[#extensive-form-gates][extensive form gates]]
+  - [[#repeated-games][repeated games]]
+  - [[#bayesian-games][bayesian games]]
+  - [[#coalitional-games][coalitional games]]
+  - [[#final][final]]
+
+* intro notes
+- game theory is the mathematical modeling of strategic interaction among rational (and irrational) agents
+** references
+- stanford - game theory by matthew o. jackson, kevin leyton-brown, yoav shoham
+  - syllabus - http://web.stanford.edu/~jacksonm/GTOC-Syllabus.html
+  - video - http://web.stanford.edu/~jacksonm/Intro_Networks.mp4
+  - youtube channel - www.youtube.com/@gametheoryonline
+  - book - a brief introduction to the basics of game theory, by matthew o. jackson
+  - book - essentials of game theory, by kevin leyton-brown and yoav shoham; morgan and claypool publishers, 2008
+** overview
+- kevin leyton-brown, associate professor of computer science at university of british columbia and vancouver, canada
+  - artificial intelligence, game theory, electronic commerce, and algorithms
+- matt jackson, professor of economics at stanford university
+  - game theory and social networks, microeconomics
+- yoah shoham, professor of computer scientist at standford university
+  -  artificial intelligence, electronic commerce and game theory
+- blackjack (21), rock paper scissors  
+** mixed strategy nash equilibrium
+** alternate solution concepts
+** extensive form gates
+** repeated games
+** bayesian games
+** coalitional games
+** final 
+
+
+
+
+
+<eof>
+
+
+
