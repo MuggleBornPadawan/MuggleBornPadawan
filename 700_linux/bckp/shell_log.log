@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Sat Jun 20 10:37:48 PM IST 2026 
+Date: Sun Jun 21 09:45:15 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.99-09128-g14e87a8a9b71
 Firewall is active and enabled on system startup
@@ -55,84 +55,78 @@ Reading state information...
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Ign:1 https://download.docker.com/linux/debian bookworm InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:4 https://deb.debian.org/debian bookworm InRelease
+Ign:4 https://download.docker.com/linux/debian bookworm InRelease
 Ign:5 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:1 https://download.docker.com/linux/debian bookworm InRelease
+Ign:4 https://download.docker.com/linux/debian bookworm InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
 Ign:5 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://download.docker.com/linux/debian bookworm InRelease
 Ign:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:1 https://download.docker.com/linux/debian bookworm InRelease
+Ign:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
 Ign:5 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:4 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
+Err:4 https://download.docker.com/linux/debian bookworm InRelease
+  Temporary failure resolving 'download.docker.com'
 Err:3 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
   Temporary failure resolving 'storage.googleapis.com'
-Err:2 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Err:1 https://packages.adoptium.net/artifactory/deb bookworm InRelease
   Temporary failure resolving 'packages.adoptium.net'
-Err:1 https://download.docker.com/linux/debian bookworm InRelease
-  Temporary failure resolving 'download.docker.com'
 Err:5 http://deb.debian.org/debian bookworm-backports InRelease
   Temporary failure resolving 'deb.debian.org'
 Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
 Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://deb.debian.org/debian bookworm InRelease
 Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:4 https://deb.debian.org/debian bookworm InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:6 https://deb.debian.org/debian bookworm-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:7 https://deb.debian.org/debian-security bookworm-security InRelease
-  Temporary failure resolving 'deb.debian.org'
+Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:8 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [312 kB]
+Get:9 https://deb.debian.org/debian-security bookworm-security/main Translation-en [191 kB]
+Get:10 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
+Get:11 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
+Get:12 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
+Get:6 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:13 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
+Get:14 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
+Fetched 20.2 MB in 2min 46s (121 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
-Ign:1 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:5 https://download.docker.com/linux/debian bookworm InRelease
-Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:1 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:5 https://download.docker.com/linux/debian bookworm InRelease
-Ign:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Ign:3 http://deb.debian.org/debian bookworm-backports InRelease
-Ign:1 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-Ign:5 https://download.docker.com/linux/debian bookworm InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Err:3 http://deb.debian.org/debian bookworm-backports InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:1 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
-  Temporary failure resolving 'storage.googleapis.com'
-Err:5 https://download.docker.com/linux/debian bookworm InRelease
-  Temporary failure resolving 'download.docker.com'
-Err:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-  Temporary failure resolving 'packages.adoptium.net'
-Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:2 https://deb.debian.org/debian bookworm InRelease
-Ign:6 https://deb.debian.org/debian bookworm-updates InRelease
-Ign:7 https://deb.debian.org/debian-security bookworm-security InRelease
-Err:2 https://deb.debian.org/debian bookworm InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:6 https://deb.debian.org/debian bookworm-updates InRelease
-  Temporary failure resolving 'deb.debian.org'
-Err:7 https://deb.debian.org/debian-security bookworm-security InRelease
-  Temporary failure resolving 'deb.debian.org'
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Get:4 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
+Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:6 https://storage.googleapis.com/cros-packages/146 bookworm InRelease
+Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [311 kB]
+Get:8 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/main Translation-en [263 kB]
+Get:10 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:11 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:12 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:13 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:14 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [73.3 kB]
+Get:15 https://storage.googleapis.com/cros-packages/146 bookworm Release [3,109 B]
+Get:16 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [16.6 kB]
+Get:17 https://storage.googleapis.com/cros-packages/146 bookworm Release.gpg [2,365 B]
+Get:18 https://storage.googleapis.com/cros-packages/146 bookworm/main amd64 Packages [5,140 B]
+Fetched 822 kB in 3s (319 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  containerd.io docker-ce docker-ce-cli docker-ce-rootless-extras
+  docker-model-plugin
+5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 81.2 MB of archives.
+After this operation, 2,010 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -191,7 +185,13 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  containerd.io docker-ce docker-ce-cli docker-ce-rootless-extras
+  docker-model-plugin
+5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 81.2 MB of archives.
+After this operation, 2,010 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -214,7 +214,13 @@ libssl-dev is already the newest version (3.0.20-1~deb12u2).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u5).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  containerd.io docker-ce docker-ce-cli docker-ce-rootless-extras
+  docker-model-plugin
+5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 81.2 MB of archives.
+After this operation, 2,010 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -233,122 +239,30 @@ tmux is already the newest version (3.3a-3).
 dnsutils is already the newest version (1:9.18.49-1~deb12u1).
 nmap is already the newest version (7.93+dfsg1-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  containerd.io docker-ce docker-ce-cli docker-ce-rootless-extras
+  docker-model-plugin
+5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 81.2 MB of archives.
+After this operation, 2,010 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b3).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  containerd.io docker-ce docker-ce-cli docker-ce-rootless-extras
+  docker-model-plugin
+5 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 81.2 MB of archives.
+After this operation, 2,010 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
-/usr/local/lib
-├── @google/gemini-cli@0.2.1
-├── dotenv-cli@10.0.0
-└── tmux-mem@0.0.3
-
--e 
-run commits seperately; docker and jenkins startup shell scripts to be created seperately
--e 
-IMPORTANT: restore bkp, if not done yet. list: tmux, emacs, alias, gitignore, dockerignore, jenkins
--e 
-use trash-empty or trash-restore as you see fit
-Password Store
-├── CLAUDE_API_KEY
-├── DEEPSEEK_API_KEY
-├── GEMINI_API_KEY
-├── mbprootp
-├── MOONSHOT_API_KEY
-├── OLLAMA_API_KEY
-├── OPENAI_API_KEY
-├── OPENROUTER_API_KEY
-├── protector_key
-├── tmp
-├── unKnoWn
-├── url
-└── XAI_GROK_API_KEY
-ufw 0.36.2
-Copyright 2008-2023 Canonical Ltd.
-use this command to get more info: sudo ufw app list
-use alias security to get local copy
-
---                         ------      ----
-110/tcp                    DENY IN     Anywhere                  
-110/tcp (v6)               DENY IN     Anywhere (v6)             
-137                        DENY IN     Anywhere                  
-137 (v6)                   DENY IN     Anywhere (v6)             
-138                        DENY IN     Anywhere                  
-138 (v6)                   DENY IN     Anywhere (v6)             
-139                        DENY IN     Anywhere                  
-139 (v6)                   DENY IN     Anywhere (v6)             
-143                        DENY IN     Anywhere                  
-143 (v6)                   DENY IN     Anywhere (v6)             
-20                         DENY IN     Anywhere                  
-20 (v6)                    DENY IN     Anywhere (v6)             
-21/tcp                     DENY IN     Anywhere                  
-21/tcp (v6)                DENY IN     Anywhere (v6)             
-222                        DENY IN     Anywhere                  
-222 (v6)                   DENY IN     Anywhere (v6)             
-22                         DENY IN     Anywhere                  
-22/tcp                     DENY IN     Anywhere                  
-22/tcp (v6)                DENY IN     Anywhere (v6)             
-22 (v6)                    DENY IN     Anywhere (v6)             
-25/tcp                     DENY IN     Anywhere                  
-25/tcp (v6)                DENY IN     Anywhere (v6)             
-443                        DENY IN     Anywhere                  
-443 (v6)                   DENY IN     Anywhere (v6)             
-445                        DENY IN     Anywhere                  
-445 (v6)                   DENY IN     Anywhere (v6)             
-53 (DNS)                   DENY IN     Anywhere                  
-53 (DNS (v6))              DENY IN     Anywhere (v6)             
-80/tcp                     DENY IN     Anywhere                  
-80/tcp (v6)                DENY IN     Anywhere (v6)             
-Default: deny (incoming), allow (outgoing), deny (routed)
-Logging: on (low)
-New profiles: skip
-Status: active
-To                         Action      From
-Sat Jun 20 22:46:33 2026 -> ClamAV update process started at Sat Jun 20 22:46:33 2026
-Sat Jun 20 22:46:43 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Sat Jun 20 22:46:53 2026 -> Trying again in 5 secs...
-Sat Jun 20 22:46:58 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Sat Jun 20 22:47:08 2026 -> Trying again in 5 secs...
-Sat Jun 20 22:47:13 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Sat Jun 20 22:47:23 2026 -> Trying again in 5 secs...
-Sat Jun 20 22:47:28 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Sat Jun 20 22:47:38 2026 -> Trying again in 5 secs...
-Sat Jun 20 22:47:43 2026 -> Trying to retrieve CVD header from https://database.clamav.net/daily.cvd
-Sat Jun 20 22:47:43 2026 -> OK
-Sat Jun 20 22:47:43 2026 -> daily database available for update (local version: 28035, remote version: 28037)
-Sat Jun 20 22:47:44 2026 -> Testing database: '/var/lib/clamav/tmp.dd35741cc7/clamav-b3090d2c75117f64a2b89414c8014369.tmp-daily.cld' ...
-Sat Jun 20 22:47:46 2026 -> Database test passed.
-Sat Jun 20 22:47:46 2026 -> daily.cld updated (version: 28037, sigs: 355472, f-level: 90, builder: svc.clamav-publisher)
-Sat Jun 20 22:47:47 2026 -> Trying to retrieve CVD header from https://database.clamav.net/main.cvd
-Sat Jun 20 22:47:47 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
-Sat Jun 20 22:47:47 2026 -> Trying to retrieve CVD header from https://database.clamav.net/bytecode.cvd
-Sat Jun 20 22:47:47 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/28037/Sat Jun 20 11:54:51 2026
-NEXT                        LEFT          LAST                        PASSED     UNIT                ACTIVATES
-Mon 2026-06-22 00:00:00 IST 1 day 1h left Mon 2026-06-15 09:35:21 IST 5 days ago clamav-weekly.timer clamav-weekly.service
-
-1 timers listed.
-Pass --all to see loaded but inactive timers, too.
-run 'sudo clamscan -r /' every day. stay safe. have a good day
-run 'sudo systemctl status clamav-freshclam' to check status
-use 'tmux set-option -g status on/off' to toggle tmux status bar
-User snow found. Removing...
-Looking for files to backup/remove ...
-Removing files ...
-Removing crontab ...
-Removing user `snow' ...
-Done.
-10190 ?        00:00:00 snow.sh
-snow:x:1002:
-User snow has been created/reset with sudo access.
--------------------------------------------------------
