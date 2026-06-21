@@ -215,11 +215,9 @@ Org-mode allows you to preview LaTeX math formulas directly in your Emacs buffer
 The classic mass-energy equivalence formula is $E = mc^2$. Another famous result is the Euler's identity: $e^{i\pi} + 1 = 0$.
 *** Block Math
 You can write block equations using standard LaTeX syntax. Move your cursor onto the block below and press =C-c C-x C-l= to preview it:
-
 \begin{equation}
 \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
 \end{equation}
-
 Here is another equation representing a matrix:
 
 \begin{equation}
