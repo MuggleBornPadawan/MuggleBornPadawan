@@ -28,7 +28,23 @@
   - game theory and social networks, microeconomics
 - yoah shoham, professor of computer scientist at standford university
   -  artificial intelligence, electronic commerce and game theory
-- blackjack (21), rock paper scissors  
+- sports: blackjack (21), rock paper scissors, soccer, baseball
+- serious games: auctions, financial markets, international conflict, political interactions, biology, predator-prey, competition, strategic interaction 
+- part of social scientists toolbox 
+- computer science: networks, keyword auctions, peer to peer file sharing, ecommerce (ebay),
+  - algorithms, complexity theory, ai, 
+- prerequisite: probablity and calculus
+- formal constucts: strategic interaction, equilibrium motions, incomplete information  
+  
+
+
+
+
+
+
+
+
+
 ** mixed strategy nash equilibrium
 ** alternate solution concepts
 ** extensive form gates
@@ -41,7 +57,9 @@
 
 
 
+
+
+
+
+
 <eof>
-
-
-

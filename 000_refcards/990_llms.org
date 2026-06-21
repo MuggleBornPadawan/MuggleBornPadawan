@@ -11,6 +11,7 @@
   - [[#production-check][production check]]
   - [[#for-beginners][for beginners]]
   - [[#medical-appointment][medical appointment]]
+  - [[#loop-engineer][loop engineer]]
   - [[#gguf][gguf]]
   - [[#permission-brief-agent][permission brief agent]]
   - [[#workflow-for-messy-tasks][workflow for messy tasks]]
@@ -162,6 +163,23 @@ return:
 - skills vs agents - a skill is the organizing principle: all the files, instructions, and tools the agent needs to accomplish a specific job. the agent is the thing that reasons and acts. skills are the recipe; agents are the cook
 ** medical appointment
 i am preparing for a medical appointment. do not diagnose me. help me organize the information below into: 1) a short symptom timeline, 2) important context to mention, 3) possible red flags i should ask about, 4) questions for my clinician, and 5) documents or test results i should bring. if anything sounds urgent, tell me to seek professional care instead of waiting.
+** loop engineer
+*** steps
+- DISCOVER  →  work out what needs doing
+- PLAN      →  decide how to do it
+- EXECUTE   →  do the work
+- VERIFY    →  check it against the goal
+- ITERATE   →  not there yet? feed the result back in and repeat
+*** LOOP SPEC for coding
+- GOAL: every test in /tests/auth passes, lint is clean, no type errors.
+- EACH ITERATION:
+  1. run the test suite and read every failure
+  2. pick the single highest-impact failure
+  3. write the smallest change that fixes it
+  4. re-run the tests, lint, and type checker
+- VERIFY: green tests + zero lint warnings + zero type errors
+- STOP WHEN: verify passes, OR 8 iterations reached
+- ON STOP: summarize what changed and what still fails
 ** gguf
 - gguf (ggml universal file) is the standard file format for running large language models (llms) locally on your own hardware. developed by georgi gerganov, it packages a model's weights, tokenizer vocabulary, and metadata into a single highly optimized file
 ** permission brief agent
