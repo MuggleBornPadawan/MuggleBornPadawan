@@ -87,11 +87,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(cider company geiser-mit geiser-racket git-commit gptel json-mode
-	   lsp-ui magit multiple-cursors org-contrib
-	   persistent-scratch racket-mode ranger request restclient
-	   slime toc-org tree-sitter-langs treesit-auto use-package
-	   vterm)))
+   '(cider company exec-path-from-shell geiser-mit geiser-racket
+	   git-commit gptel json-mode lsp-ui magit multiple-cursors
+	   org-contrib persistent-scratch racket-mode ranger request
+	   restclient slime toc-org tree-sitter-langs treesit-auto
+	   use-package vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -252,7 +252,24 @@
 ;;  (treesit-auto-add-to-auto-mode-alist 'all))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; --- Org-mode LaTeX Integration ---
+(with-eval-after-load 'org
+  ;; Use dvisvgm to generate crisp SVG previews of LaTeX formulas in buffers
+  (setq org-latex-create-formula-image-program 'dvisvgm)
+  (setq org-preview-latex-default-process 'dvisvgm)
+  
+  ;; Configure PDF compilation to use latexmk (handles multiple passes automatically)
+  (setq org-latex-pdf-process
+        '("latexmk -f -pdf -interaction=nonstopmode -output-directory=%o %f")))
 
+
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
+;; Set the default rendering process (dvisvgm produces sharp vector graphics)
+(setq org-preview-latex-default-process 'dvisvgm)
+;;(setq org-preview-latex-default-process 'dvipng)
 
 
 
