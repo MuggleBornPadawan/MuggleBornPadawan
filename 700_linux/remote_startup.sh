@@ -56,6 +56,8 @@ sudo apt-get upgrade gcc make pkg-config python3 python3-pip python3-pytest valg
 sudo apt-get upgrade ufw netcat-openbsd iproute2 tcpdump lsof neofetch rsync htop gnupg ncdu parallel tmux dnsutils htop nmap
 # devops
 sudo apt-get upgrade podman crun
+# latex for emacs
+sudo apt-get upgrade -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended dvipng dvisvgm latexmk texlive-base texlive-latex-base texlive-plain-generic texlive-pictures texlive-binaries preview-latex-style
 #cleanup
 sudo apt-get autoremove && sudo apt-get clean && sudo apt-get autoclean
 sudo debsums -s

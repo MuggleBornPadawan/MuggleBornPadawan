@@ -35,7 +35,7 @@
 *** solution/s   
   - a senior architect knows that ai-generated code written by someone without intuition is a high-interest technical debt engine. it creates "franken-code"—syntactically flawless scripts that fail catastrophically under load because the underlying concurrency or memory topology was completely misunderstood
   - status quo: ai accelerates "time to first commit" but the "time to production-grade verification" remains static or widens if the developer lacks domain intuition
-  - solution: master ability to read, reason and design domain models, system design constraints, execution models and core computer science invariants (concurrency, memory, and types)
+  - solution: master ability to read, reason and design domain models, system design constraints, execution models, failure topology and core computer science invariants (concurrency, memory, and types)
   - failure literacy: understand that each language has a failure topology. goroutine leaks for go. lifetime violations for rust. gc pressure for jvm languages. undefined behavior for c. 
 ***  build happy paths; learn from production incidents
 - read rcas, outage reports and postmortems carefully to understand:

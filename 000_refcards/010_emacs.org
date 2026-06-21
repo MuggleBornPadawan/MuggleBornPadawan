@@ -17,6 +17,18 @@
   - [[#lsp-mode][lsp mode]]
   - [[#spell-checker][spell-checker]]
   - [[#dired][dired]]
+  - [[#inline-latex-rendering-formula-previews][Inline LaTeX Rendering (Formula Previews)]]
+    - [[#inline-math][Inline Math]]
+    - [[#block-math][Block Math]]
+    - [[#document-exporting-pdf-export][Document Exporting (PDF Export)]]
+    - [[#org-tables-and-formatting][Org Tables and Formatting]]
+    - [[#cross-referencing][Cross-Referencing]]
+  - [[#marks][marks]]
+    - [[#the-mark-ring-quickest][The Mark Ring (Quickest)]]
+    - [[#registers-multiple-named-spots][Registers (Multiple named spots)]]
+    - [[#bookmarks-persistent-across-sessions][Bookmarks (Persistent across sessions)]]
+    - [[#removing-bookmarks-persistent][Removing Bookmarks (Persistent)]]
+    - [[#removing-registers-single-character]["Removing" Registers (Single-character)]]
   - [[#toc---table-of-contents][toc - table of contents]]
   - [[#code-block-execution][code block execution]]
     - [[#keyboard-shortcuts][keyboard shortcuts]]
@@ -196,6 +208,64 @@ GNU emacs
 - u or t - unmark file 
 - g - refresh
 - + - create a new directory 
+** Inline LaTeX Rendering (Formula Previews)
+This document serves as a test for the LaTeX installation and Emacs Org-mode configuration on your system
+Org-mode allows you to preview LaTeX math formulas directly in your Emacs buffer
+*** Inline Math
+The classic mass-energy equivalence formula is $E = mc^2$. Another famous result is the Euler's identity: $e^{i\pi} + 1 = 0$.
+*** Block Math
+You can write block equations using standard LaTeX syntax. Move your cursor onto the block below and press =C-c C-x C-l= to preview it:
+
+\begin{equation}
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+\end{equation}
+
+Here is another equation representing a matrix:
+
+\begin{equation}
+A = \begin{pmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{pmatrix}
+\end{equation}
+*** Document Exporting (PDF Export)
+To test exporting this document to a PDF using =latexmk=, run the export menu in Emacs:
+1. Press =C-c C-e= to open the Org Export Dispatcher.
+2. Press =l= to select the LaTeX export sub-menu.
+3. Press =p= to export to a PDF file (=latex_test.pdf=), or press =o= to export to PDF and open the file immediately.
+*** Org Tables and Formatting
+Org tables are converted automatically to beautiful LaTeX tables:
+| Package Name | Purpose                               | Preview Status |
+|--------------+---------------------------------------+----------------|
+| =dvisvgm=    | Vector SVG formula rendering          | [ ] Untested   |
+| =latexmk=    | Automated multi-pass PDF compilation  | [ ] Untested   |
+| =dvipng=     | Raster PNG formula rendering fallback | [ ] Untested   |
+*** Cross-Referencing
+Since we configured Org-mode to use =latexmk=, LaTeX cross-references are automatically resolved.
+** marks
+*** The Mark Ring (Quickest)
+Best for jumping back to a spot you just left.
+- **Mark:** Press `C-SPC` (sets the mark at your current position).
+- **Go back:** Press `C-u C-SPC` (moves point back to the mark). You can repeat `C-u C-SPC` to cycle backward through previous marks.
+*** Registers (Multiple named spots)
+Best for saving a specific spot while you work elsewhere.
+- **Mark:** Press `C-x r SPC` followed by a single character (e.g., `a`).
+- **Go back:** Press `C-x r j` followed by the same character (`a`).
+*** Bookmarks (Persistent across sessions)
+Best for long-term reference.
+- **Mark:** Press `C-x r m` and give it a name.
+- **Go back:** Press `C-x r b` and select your bookmark.
+*** Removing Bookmarks (Persistent)
+- **Quick way:** Type `M-x bookmark-delete` and press `RET`, then enter the name of the bookmark to delete.
+- **Visual way:** 
+  1. Open the bookmark list with `C-x r l`.
+  2. Move the cursor to the bookmark you want to delete.
+  3. Press `d` (flags it for deletion).
+  4. Press `x` (executes the deletion).
+*** "Removing" Registers (Single-character)
+- In Emacs, registers are temporary and lightweight, so there is no built-in command to delete them. Instead, you simply **overwrite** them by saving a new location to the same character (e.g., `C-x r SPC a`). 
+- If you want to clear a register completely, you can run:
+  - `M-x set-register` -> enter the register key -> enter `nil`.
 ** toc - table of contents
 - #+OPTIONS: toc:2
 - * Table of Contents :TOC:

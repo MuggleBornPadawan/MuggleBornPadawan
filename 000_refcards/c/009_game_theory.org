@@ -1,9 +1,15 @@
 #+TITLE: game theory 
 #+OPTIONS: toc:2
-* Table of Contents :TOC:
+* Table of Contents :TOC_3:
 - [[#intro-notes][intro notes]]
   - [[#references][references]]
   - [[#overview][overview]]
+  - [[#introduction][introduction]]
+    - [[#tcp-backoff-game][tcp backoff game]]
+    - [[#self-interested-agents-and-utility-theory][self interested agents and utility theory]]
+    - [[#key-ingredients][key ingredients]]
+    - [[#normal-form-representation][normal form representation]]
+    - [[#extensive-form-representation][extensive form representation]]
   - [[#mixed-strategy-nash-equilibrium][mixed strategy nash equilibrium]]
   - [[#alternate-solution-concepts][alternate solution concepts]]
   - [[#extensive-form-gates][extensive form gates]]
@@ -14,6 +20,7 @@
 
 * intro notes
 - game theory is the mathematical modeling of strategic interaction among rational (and irrational) agents
+- the von neumann–morgenstern (vnm) utility function (1947) is a mathematical tool used in economics and game theory to represent an individual's preferences over choices that involve risk or uncertainty. it demonstrates that rational agents make decisions by maximizing their expected utility rather than just expected monetary value
 ** references
 - stanford - game theory by matthew o. jackson, kevin leyton-brown, yoav shoham
   - syllabus - http://web.stanford.edu/~jacksonm/GTOC-Syllabus.html
@@ -21,6 +28,8 @@
   - youtube channel - www.youtube.com/@gametheoryonline
   - book - a brief introduction to the basics of game theory, by matthew o. jackson
   - book - essentials of game theory, by kevin leyton-brown and yoav shoham; morgan and claypool publishers, 2008
+  - ubc online game theory experiments - http://gametheory.cs.ubc.ca/
+  - vnm utility function - https://www.britannica.com/topic/von-Neumann-Morgenstern-utility-function 
 ** overview
 - kevin leyton-brown, associate professor of computer science at university of british columbia and vancouver, canada
   - artificial intelligence, game theory, electronic commerce, and algorithms
@@ -34,9 +43,58 @@
 - computer science: networks, keyword auctions, peer to peer file sharing, ecommerce (ebay),
   - algorithms, complexity theory, ai, 
 - prerequisite: probablity and calculus
-- formal constucts: strategic interaction, equilibrium motions, incomplete information  
-  
+- formal constucts: strategic interaction, equilibrium motions, incomplete information, timing, repeatition, coalation structures, 
+** introduction
+*** tcp backoff game
+- a game-theoretic model of network congestion control where multiple selfish nodes share a single communication channel
+**** the setup
+- goal: nodes want to transmit data as quickly as possible (minimize delay, maximize throughput)
+- conflict: if two nodes transmit simultaneously, a collision occurs, and both transmissions fail
+- mechanism: when a collision occurs, nodes must choose how long to wait (back off) before retransmitting
+**** the strategies
+- cooperative (standard tcp): nodes use exponential backoff (doubling their waiting time after each collision) to clear congestion
+- defect/selfish (greedy): a node refuses to back off (or waits less) to grab the channel first
+**** game-theoretic outcomes
+- tragedy of the commons: if all nodes act selfishly, they constantly collide, leading to a throughput of near zero
+- nash equilibrium: the cooperative standard tcp is not a nash equilibrium in a selfish environment, because an individual node always has an incentive to cheat (by backing off less) to get its packets through faster
+- solution: network protocols use fair-queuing, punishment mechanisms, or mac-layer policing to enforce cooperation and prevent selfish behavior 
+**** best possible strategy
+- unpoliced / selfish network: defect always
+- repeated (iterated): tit-for-tat / conditional cooperation
+- modern policed network: cooperate (standard tcp)
+*** self interested agents and utility theory
+- not that they want to harm or only care about themselves
+- only that the agent has its own description of states of the world that it likes, and acts based on this description
+- utility function:
+  - quantifies degree of preference across alternatives
+  - explains impact of uncertainity
+  - decision-theoretic rationality: act to maximize expected utility
+*** key ingredients
+- players: who? are decision makers (people, government, companies, ...) 
+- actions: what? why? how? when? 
+- payoffs: motivation (profits, care about others, ...)
+*** normal form representation
+- a.k.a. matrix form, strategic form
+- usually depicted as a multi-dimensional matrix (or a grid for two-player games), this representation assumes that players make their decisions simultaneously and independently, without knowing their opponents' choices beforehand
+- by abstracting away the sequential timing of moves, the normal form provides a clear framework for identifying strategic dominance and calculating equilibria, such as the nash equilibrium
+- finite n-person normal form game: <N,A,u>:
+  - players: N={1,...n} is a finite set of n, indexed by i
+  - action set for player i Ai
 
+e^{i\pi}
+```latex
+  \[
+  f(x) = \int_{-\infty}^{\infty} e^{-x^2} dx
+  \]
+```    
+    
+    
+*** extensive form representation
+- the extensive form representation models a game as a tree structure to capture sequential decision-making and the flow of time
+- it explicitly details the players, the chronological order of their moves (represented by decision nodes), the actions available at each turn (represented by branches), and the final payoffs at the end of each path (represented by terminal nodes)
+- crucially, unlike the normal form, the extensive form can represent imperfect or asymmetric information using "information sets," which group nodes together to show when a player must make a choice without knowing the exact previous moves of their opponents
+
+  
 
 
 
