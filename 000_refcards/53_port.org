@@ -14,6 +14,7 @@
 - [[#linus-torvalds-vs-rich-hickey][linus torvalds vs rich hickey]]
 - [[#entropy---yt-video---3b1b][entropy - yt video - 3b1b]]
   - [[#compresssion--prediction--intelligence][compresssion = prediction | intelligence]]
+  - [[#ai-infrastructure][ai infrastructure]]
 
 * trivia
 ** learn to build - agy
@@ -188,6 +189,21 @@ rich:   [real-world facts]   -> [immutable pure data]   -> [functional abstracti
 |                  | right     |          |                       |                                                                                     |
 |------------------+-----------+----------+-----------------------+-------------------------------------------------------------------------------------|
 - part 2 & 3 of yt videos are yet to be released 
+
+** ai infrastructure
+- stage 1 — linux + networking - processes, memory, gpus, sockets, http, tcp/ip basics
+- stage 2 — python + backend - async python, fastapi, queues, concurrency fundamentals
+- stage 3 — gpu fundamentals - cuda basics, vram, batching, quantization, throughput
+- stage 4 — llm inference -vllm, tensorrt-llm, speculative decoding, kv caching
+- stage 5 — distributed systems -load balancing, queues, retries, autoscaling, distributed workers
+- stage 6 — ai serving -model apis, streaming responses, rate limiting, observability
+- stage 7 — data pipelines -kafka, airflow, etl pipelines, vector indexing
+- stage 8 — kubernetes + cloud -docker, kubernetes, aws/gcp basics, infra automation
+- stage 9 — monitoring + reliability -prometheus, grafana, tracing, ai cost monitoring
+- stage 10 — real ai systems -deploy scalable chat apps, rag pipelines, inference clusters
+- stage 11 — open source - contribute to inference tooling or ai infra projects
+- stage 12 — apply - ai infra engineer, platform engineer, ml systems engineer
+
 
 
 
