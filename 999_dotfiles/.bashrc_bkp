@@ -141,3 +141,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Added by Antigravity CLI installer
 export PATH="/home/rgroot/.local/bin:$PATH"
+export PASSWORD_STORE_CLIP_TIME=3600
+export PASSWORD_STORE_CLIP_TIME=3600
+export PASSWORD_STORE_CLIP_TIME=3600
+export PASSWORD_STORE_CLIP_TIME=3600
+export PASSWORD_STORE_CLIP_TIME=3600
+export PASSWORD_STORE_CLIP_TIME=3600

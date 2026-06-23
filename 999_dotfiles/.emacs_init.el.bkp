@@ -232,7 +232,9 @@
    ;; 5. System prompt instructions
    (add-to-list 'gptel-directives
                '(custom-assistant . "you are talking to a visual artist. i create three dimensional art using procedural content generation algorithms. technology stack: processing (p5.js), quil (clojure), webgpu, bash, emacs. my development laptop: asus chromebook plus (debian). my production server: apple mac studio (m1). my cloud server: google cloud. i am a noob coder and learn multiple programming languages, coding patterns, system design. i use org mode. keep responses concise, prioritize code snippets over long explanations, and always format code blocks cleanly.")
-   (setq gptel-default-directive 'custom-assistant)))
+	       (setq gptel-default-directive 'custom-assistant))
+   ;; set pass store time 
+   (setenv "PASSWORD_STORE_CLIP_TIME" "3600"))
 
 
 

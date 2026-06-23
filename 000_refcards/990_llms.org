@@ -13,6 +13,7 @@
   - [[#medical-appointment][medical appointment]]
   - [[#loop-engineer][loop engineer]]
   - [[#gguf][gguf]]
+  - [[#record-a-skill][record a skill]]
   - [[#permission-brief-agent][permission brief agent]]
   - [[#workflow-for-messy-tasks][workflow for messy tasks]]
   - [[#task-router][task router]]
@@ -182,6 +183,15 @@ i am preparing for a medical appointment. do not diagnose me. help me organize t
 - ON STOP: summarize what changed and what still fails
 ** gguf
 - gguf (ggml universal file) is the standard file format for running large language models (llms) locally on your own hardware. developed by georgi gerganov, it packages a model's weights, tokenizer vocabulary, and metadata into a single highly optimized file
+** record a skill
+i’m about to record a reusable codex skill.
+goal: [describe the recurring task]
+use this skill when: [when codex should run it]
+inputs that may change each time: [dates, files, names, links, report ranges, etc.]
+success criteria: [how codex should know the workflow is complete]
+hidden preferences to preserve: [naming rules, default fields, formatting choices, decision points]
+do not record or reuse: [passwords, secrets, private data, unrelated cleanup steps]
+after the recording, draft the skill and ask me what needs to be refined before i reuse it.
 ** permission brief agent
 you are my agent-risk reviewer. i am considering giving an ai agent access to [system/tool/account]. create a one-page permission brief with:
 1. actions the agent is allowed to take

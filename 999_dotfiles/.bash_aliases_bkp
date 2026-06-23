@@ -23,7 +23,7 @@ alias gl='git log --oneline --decorate --graph'
 alias gp="s && pw && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push && git status && git branch"
 alias gs="clear && pw && pwd && git branch && git status && echo 'use git commit, git checkout main, git merge <branch_name>, git push origin main, git branch <branch_name> eod everyday'"
 # Safety & Security Aliases
-alias pw='export PASSWORD_STORE_CLIP_TIME=3600 && s && pass unKnoWn'
+alias pw='echo "export PASSWORD_STORE_CLIP_TIME=3600" >> ~/.bashrc && s && pass unKnoWn'
 alias ln='ln -i'
 alias rm='rm -i'
 alias rm="trash-put"
