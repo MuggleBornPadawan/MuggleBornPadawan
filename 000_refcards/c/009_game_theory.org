@@ -1,15 +1,23 @@
 #+TITLE: game theory 
 #+OPTIONS: toc:2
-* Table of Contents :TOC_3:
+* Table of Contents :TOC_4:
 - [[#intro-notes][intro notes]]
   - [[#references][references]]
   - [[#overview][overview]]
   - [[#introduction][introduction]]
     - [[#tcp-backoff-game][tcp backoff game]]
+      - [[#the-setup][the setup]]
+      - [[#the-strategies][the strategies]]
+      - [[#game-theoretic-outcomes][game-theoretic outcomes]]
+      - [[#best-possible-strategy][best possible strategy]]
     - [[#self-interested-agents-and-utility-theory][self interested agents and utility theory]]
     - [[#key-ingredients][key ingredients]]
     - [[#normal-form-representation][normal form representation]]
     - [[#extensive-form-representation][extensive form representation]]
+    - [[#examples][examples]]
+      - [[#tcp-back-off-example][tcp back off example]]
+      - [[#a-large-collective-action-game][a large collective action game]]
+      - [[#prisoners-dilemma][prisoner's dilemma]]
   - [[#mixed-strategy-nash-equilibrium][mixed strategy nash equilibrium]]
   - [[#alternate-solution-concepts][alternate solution concepts]]
   - [[#extensive-form-gates][extensive form gates]]
@@ -80,22 +88,40 @@
 - finite n-person normal form game: <N,A,u>:
   - players: N={1,...n} is a finite set of n, indexed by i
   - action set for player i Ai
-
-e^{i\pi}
-```latex
-  \[
-  f(x) = \int_{-\infty}^{\infty} e^{-x^2} dx
-  \]
-```    
-    
-    
+    - a = (a1,...an) ∈ A = A1 x .... x An is an action profile    
+  - utility function or payoff function for player i:ui:A->ℝ
+    - u = (u1,...un) is a profile of utility functions     
 *** extensive form representation
 - the extensive form representation models a game as a tree structure to capture sequential decision-making and the flow of time
-- it explicitly details the players, the chronological order of their moves (represented by decision nodes), the actions available at each turn (represented by branches), and the final payoffs at the end of each path (represented by terminal nodes)
-- crucially, unlike the normal form, the extensive form can represent imperfect or asymmetric information using "information sets," which group nodes together to show when a player must make a choice without knowing the exact previous moves of their opponents
-
+- timing: it explicitly details the players, the chronological order of their moves (represented by decision nodes), the actions available at each turn (represented by branches), and the final payoffs at the end of each path (represented by terminal nodes)
+- information: crucially, unlike the normal form, the extensive form can represent imperfect or asymmetric information using "information sets," which group nodes together to show when a player must make a choice without knowing the exact previous moves of their opponents
+*** examples
+**** tcp back off example
+- player: one represented in row; two represented in column
+- actions: cooperate (c) or defect (d)
+- payoffs: represented in the intersection cell
+|---+----------+----------|
+|   | c        | d        |
+|---+----------+----------|
+| c | (-1, -1) | (-4, 0)  |
+| d | (0, -4)  | (-3, -3) |
+|---+----------+----------|
+**** a large collective action game
+- players: N = {1,...., 10,000,000}
+- action: i Ai = {Revolt, Not}
+- utility function for player i:
+  - ui(a) = 1 if #{j:aj = Revolt} >= 2,000,000
+  - ui(a) = -1 if #{j:aj = Revolt} < 2,000,000
+  - ui(a) = 0 if #{j:aj = Revolt} < 2,000,000 and ai = Not
+**** prisoner's dilemma
+- prisoner's dilemma is any game with payoffs (c > a > d > b) 
+|---+------+------|
+|   | C    | D    |
+|---+------+------|
+| C | a, a | b, c |
+| D | c, b | d, d |
+|---+------+------|
   
-
 
 
 
