@@ -224,10 +224,10 @@
   (let ((gemini-backend (gptel-make-gemini "Gemini"
                           :key secret-key
                           :stream t
-                          :models '(gemini-3.5-flash gemini-2.5-pro))))    
+                          :models '(gemini-3.5-flash gemini-3.1-flash-lite gemini-2.5-pro))))    
    ;; 4. CRITICAL FIX: Explicitly set Gemini as the default system-wide backend
    (setq gptel-backend gemini-backend)
-   (setq gptel-model 'gemini-3.5-flash))))
+   (setq gptel-model 'gemini-3.1-flash-lite))))
 
    ;; 5. System prompt instructions
    (add-to-list 'gptel-directives
