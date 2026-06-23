@@ -81,6 +81,8 @@
 - players: who? are decision makers (people, government, companies, ...) 
 - actions: what? why? how? when? 
 - payoffs: motivation (profits, care about others, ...)
+- timing: chronological order of moves (nodes), actions (branches) and payoffs at the end of every path (terminal nodes) 
+- information: imperfect or asymmetric info amongst players 
 *** normal form representation
 - a.k.a. matrix form, strategic form
 - usually depicted as a multi-dimensional matrix (or a grid for two-player games), this representation assumes that players make their decisions simultaneously and independently, without knowing their opponents' choices beforehand
