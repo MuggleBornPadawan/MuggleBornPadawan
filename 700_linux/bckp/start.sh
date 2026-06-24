@@ -17,7 +17,6 @@ git add .
 git commit -m "daily commit"
 git status
 cd
-
 echo "Do you want to continue? (Press Enter)"
 read -p ""
 echo "Continuing..."

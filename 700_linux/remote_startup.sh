@@ -3,6 +3,8 @@ clear
 cd
 # most important stuff
 ./MuggleBornPadawan/700_linux/scripts/sentry.sh
+cd
+gpg-connect-agent reloadagent /bye
 ulimit -u 1000
 echo "/show info" > ./.ollama/history
 espeak -v en-gb -s 175 -p 50 "roger that"
