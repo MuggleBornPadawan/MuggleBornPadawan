@@ -8,7 +8,7 @@ checking 172.16.42. ...
 [0;32m[+] Subnet appears to be outside of known hacker default ranges.[0m
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Wed Jun 24 10:30:04 AM IST 2026 
+Date: Wed Jun 24 04:49:08 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.119-09251-gf81e51484dec
 Firewall is active and enabled on system startup
@@ -57,30 +57,30 @@ Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:3 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
+Get:4 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
 Ign:5 https://storage.googleapis.com/cros-packages/149 bookworm InRelease
-Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [312 kB]
-Get:7 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
-Get:8 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Get:9 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
-Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en [264 kB]
-Get:11 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:12 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:13 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:14 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:15 https://storage.googleapis.com/cros-packages/149 bookworm Release [3,109 B]
+Get:6 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:8 https://storage.googleapis.com/cros-packages/149 bookworm Release [3,109 B]
+Get:9 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [312 kB]
+Get:10 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [73.6 kB]
+Get:11 http://deb.debian.org/debian bookworm-backports/main Translation-en [264 kB]
+Get:12 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:13 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:14 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:15 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
 Get:16 https://storage.googleapis.com/cros-packages/149 bookworm Release.gpg [1,601 B]
-Get:17 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [73.3 kB]
-Get:18 https://storage.googleapis.com/cros-packages/149 bookworm/main amd64 Packages [5,141 B]
-Get:19 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [16.6 kB]
+Get:17 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
+Get:18 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [16.6 kB]
+Get:19 https://storage.googleapis.com/cros-packages/149 bookworm/main amd64 Packages [5,141 B]
 Get:20 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
 Get:21 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
 Get:22 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
 Get:23 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
 Get:24 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [312 kB]
 Get:25 https://deb.debian.org/debian-security bookworm-security/main Translation-en [193 kB]
-Fetched 21.0 MB in 5s (4,080 kB/s)
+Fetched 21.0 MB in 6s (3,449 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
@@ -88,15 +88,21 @@ Hit:2 https://deb.debian.org/debian bookworm InRelease
 Hit:3 https://download.docker.com/linux/debian bookworm InRelease
 Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:6 https://storage.googleapis.com/cros-packages/149 bookworm InRelease
-Hit:7 https://storage.googleapis.com/cros-packages/149 bookworm Release
-Hit:9 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Get:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Ign:7 https://storage.googleapis.com/cros-packages/149 bookworm InRelease
+Hit:8 https://storage.googleapis.com/cros-packages/149 bookworm Release
+Fetched 7,507 B in 1s (5,701 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  docker-buildx-plugin docker-compose-plugin
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 25.3 MB of archives.
+After this operation, 233 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -155,7 +161,12 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  docker-buildx-plugin docker-compose-plugin
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 25.3 MB of archives.
+After this operation, 233 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -178,7 +189,12 @@ libssl-dev is already the newest version (3.0.20-1~deb12u2).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u5).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  docker-buildx-plugin docker-compose-plugin
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 25.3 MB of archives.
+After this operation, 233 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -197,14 +213,24 @@ tmux is already the newest version (3.3a-3).
 dnsutils is already the newest version (1:9.18.49-1~deb12u1).
 nmap is already the newest version (7.93+dfsg1-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  docker-buildx-plugin docker-compose-plugin
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 25.3 MB of archives.
+After this operation, 233 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b3).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  docker-buildx-plugin docker-compose-plugin
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 25.3 MB of archives.
+After this operation, 233 kB disk space will be freed.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -221,7 +247,21 @@ texlive-pictures is already the newest version (2022.20230122-3).
 texlive-binaries is already the newest version (2022.20220321.62855-5.1+deb12u2).
 preview-latex-style is already the newest version (12.2-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  docker-buildx-plugin docker-compose-plugin
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 25.3 MB of archives.
+After this operation, 233 kB disk space will be freed.
+Get:1 https://download.docker.com/linux/debian bookworm/stable amd64 docker-buildx-plugin amd64 0.35.0-1~debian.12~bookworm [17.2 MB]
+Get:2 https://download.docker.com/linux/debian bookworm/stable amd64 docker-compose-plugin amd64 5.2.0-1~debian.12~bookworm [8,076 kB]
+Fetched 25.3 MB in 6s (4,101 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 165827 files and directories currently installed.)
+Preparing to unpack .../docker-buildx-plugin_0.35.0-1~debian.12~bookworm_amd64.deb ...
+Unpacking docker-buildx-plugin (0.35.0-1~debian.12~bookworm) over (0.34.1-1~debian.12~bookworm) ...
+Preparing to unpack .../docker-compose-plugin_5.2.0-1~debian.12~bookworm_amd64.deb ...
+Unpacking docker-compose-plugin (5.2.0-1~debian.12~bookworm) over (5.1.4-1~debian.12~bookworm) ...
+Setting up docker-buildx-plugin (0.35.0-1~debian.12~bookworm) ...
+Setting up docker-compose-plugin (5.2.0-1~debian.12~bookworm) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -296,11 +336,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-Wed Jun 24 10:31:15 2026 -> ClamAV update process started at Wed Jun 24 10:31:15 2026
-Wed Jun 24 10:31:15 2026 -> daily.cld database is up-to-date (version: 28040, sigs: 355472, f-level: 90, builder: svc.clamav-publisher)
-Wed Jun 24 10:31:15 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
-Wed Jun 24 10:31:15 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/28040/Tue Jun 23 11:54:57 2026
+Wed Jun 24 16:50:46 2026 -> ClamAV update process started at Wed Jun 24 16:50:46 2026
+Wed Jun 24 16:50:46 2026 -> daily database available for update (local version: 28040, remote version: 28041)
+Wed Jun 24 16:50:47 2026 -> Testing database: '/var/lib/clamav/tmp.61ecf73a04/clamav-c772fb95967cc06d7b9b0a629d8409dd.tmp-daily.cld' ...
+Wed Jun 24 16:50:50 2026 -> Database test passed.
+Wed Jun 24 16:50:50 2026 -> daily.cld updated (version: 28041, sigs: 355476, f-level: 90, builder: svc.clamav-publisher)
+Wed Jun 24 16:50:50 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+Wed Jun 24 16:50:50 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ClamAV 1.4.3/28041/Wed Jun 24 11:54:54 2026
 NEXT                        LEFT        LAST                        PASSED     UNIT                ACTIVATES
 Mon 2026-06-29 00:00:00 IST 4 days left Mon 2026-06-22 00:00:01 IST 2 days ago clamav-weekly.timer clamav-weekly.service
 
@@ -315,7 +358,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
- 4201 ?        00:00:00 snow.sh
+10302 ?        00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
