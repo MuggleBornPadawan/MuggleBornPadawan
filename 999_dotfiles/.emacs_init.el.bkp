@@ -236,8 +236,9 @@
    ;; set pass store time 
    (setenv "PASSWORD_STORE_CLIP_TIME" "3600"))
 
-
-
+;; screensaver
+(require 'zone)
+(zone-when-idle 60)
 
 
 

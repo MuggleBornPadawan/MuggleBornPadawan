@@ -1,10 +1,4 @@
 cd
-cd MuggleBornPadawan
-git status
-git add .
-git commit -m "daily commit"
-git status
-cd
 ./MuggleBornPadawan/700_linux/bckp/commits.sh
 echo -e "\nBckps - tbd"
 cp .gnupg/gpg-agent.conf MuggleBornPadawan/999_dotfiles/.gpg-agent.conf_bkp
@@ -16,6 +10,14 @@ cp .emacs.d/init.el MuggleBornPadawan/999_dotfiles/.emacs_init.el.bkp
 cp MuggleBornPadawan/.dockerignore MuggleBornPadawan/999_dotfiles/.dockerignore.bkp
 cp MuggleBornPadawan/Dockerfile MuggleBornPadawan/999_dotfiles/Dockerfile_bkp
 cp MuggleBornPadawan/Jenkinsfile MuggleBornPadawan/999_dotfiles/Jenkinsfile_bkp
+cd
+cd MuggleBornPadawan
+git status
+git add .
+git commit -m "daily commit"
+git status
+cd
+
 echo "Do you want to continue? (Press Enter)"
 read -p ""
 echo "Continuing..."
