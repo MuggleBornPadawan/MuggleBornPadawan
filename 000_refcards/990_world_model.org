@@ -1,4 +1,14 @@
 #+TITLE: world models
+#+OPTIONS: toc:2
+* Table of Contents :TOC:
+- [[#introduction][introduction]]
+  - [[#trivia][trivia]]
+  - [[#resources][resources]]
+  - [[#behind-the-scenes][behind the scenes]]
+  - [[#clojure-and-webgpu][clojure and webgpu]]
+  - [[#data-storage][data storage]]
+  - [[#world-model-players][world model players]]
+
 * introduction
 - the industry is rapidly converging toward persistent simulated universes, interactive video world models, embodied agents, differentiable simulation, generative physics, self-improving memory systems, and real-time multimodal planning, all aimed at creating ai systems that can continuously perceive, predict, reason, and evolve within dynamic environments. 
 - among these emerging directions, the most compelling frontier is the rise of procedural, symbolic, and neural hybrid systems, where algorithmic generation, structured reasoning, and learned intelligence are combined to build adaptive, creative, and deeply interpretable world models.
@@ -35,6 +45,11 @@
 - write all per-frame hot paths — chunk buffers, vertex data, uniform updates — in raw js interop using js/float32array, js/uint32array, and direct webgpu buffer mapping. let clojurescript own world state, event logic, and asset management outside the render loop. the gpu pipeline performs; clojurescript never enters the critical path
 - the flaw: the most significant existential threat here is memory alignment and endianness. webgpu wgsl struct memory layouts are notoriously strict. if you are packing chunk buffers and uniform updates into a js/float32array, you must manually calculate byte offsets and padding (e.g., a vec3 in wgsl often requires the memory alignment of a vec4)
 - the refinement: you must implement a robust, defensive serialization abstraction. you should write a macro or a pure js helper class that strictly manages the byte-stride and padding of your float32array so your clojurescript code never accidentally writes a float into a padding boundary
+** data storage
+- metadata: sqlite (fast, local, robust)
+- large objects (blobs): filesystem (minio/s3) using usd/glb files
+- ai/similarity search: qdrant
+- live/state: redis (for session/real-time sync)
 ** world model players
 |---------------------+----------------------------------------------------------------+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | company / lab       | founders / key minds                                           | primary project / model             | technical paradigm & core approach                                                                                                                                                                                                                               |

@@ -1,4 +1,43 @@
 * scribbled notes
+#+OPTIONS: toc:2
+* Table of Contents :TOC:
+- [[#scribbled-notes][scribbled notes]]
+  - [[#learning-order][learning order]]
+  - [[#sre-roadmap][sre roadmap]]
+  - [[#postgresql-database-types-and-equivalent][postgresql database types and equivalent]]
+  - [[#backend-exercises][backend exercises]]
+  - [[#patterns][patterns]]
+  - [[#cache][cache]]
+  - [[#leetcode-problems---data-structure-and-algorithms][leetcode problems - data structure and algorithms]]
+  - [[#high-performers][high performers]]
+  - [[#diagrams-as-code][diagrams as code]]
+  - [[#race-conditions][race conditions]]
+  - [[#ai-automation-vs-ai-agent][ai automation vs ai agent]]
+  - [[#chain-of-thought-cot-vs-tree-of-thought-tot-vs-graph-of-thought-got][chain of thought (cot) vs tree of thought (tot) vs graph of thought (got)]]
+  - [[#new-stack][new stack]]
+  - [[#software-engineering-laws][software engineering laws]]
+  - [[#russ-olsen---goto18---functional-programming][russ olsen - goto18 - functional programming]]
+  - [[#richard-feldman---clojuture-2019---why-isnt-functional-programs-the-norm][Richard Feldman - clojuture 2019 - Why isn't functional programs the norm?]]
+  - [[#numerical-linear-algebra][numerical linear algebra]]
+  - [[#data-fundamentals][data fundamentals]]
+  - [[#data-science][data science]]
+  - [[#data-tools-and-languages][data tools and languages]]
+  - [[#ai-vs-augmented-intelligence][AI vs augmented intelligence]]
+  - [[#natural-language-processing][natural language processing]]
+  - [[#ai-ethics][ai ethics]]
+  - [[#skills][skills]]
+  - [[#ai-general-stuff][ai general stuff]]
+  - [[#computational-intelligence][computational intelligence]]
+  - [[#algorithms][algorithms]]
+- [[#resources][resources]]
+  - [[#books][books]]
+  - [[#data-visualization][data visualization]]
+  - [[#portals][portals]]
+  - [[#journals-news-and-blogs][journals, news and blogs]]
+  - [[#free-learning][free learning]]
+  - [[#machine-learning][machine learning]]
+  - [[#future-forward-technologies][future forward technologies]]
+
 ** learning order
 - learn sql before orm
 - learn git before jenkins
@@ -687,6 +726,31 @@ Some of these software engineering laws are famous, and some are quite niche. Pa
 | observations ->     |       |         |
 |---------------------+-------+---------|
   - actions -> impact environment -> agent observes and becomes past experiences 
+** algorithms
+1.consistent hashing
+2.load balancing algorithms
+3.leaky bucket & token bucket
+4.bloom filters
+5.merkle trees
+6.quorum algorithms
+7.leader election algorithms
+8.distributed lock algorithms
+9.raft / paxos
+10.gossip protocol
+11.vector clocks / lamport timestamps
+12.two-phase / three-phase commit
+13.reservoir sampling
+14.hyperloglog
+15.crdts
+16.sharding algorithms
+17.mapreduce
+18.tail latency reduction (hedged requests)
+19.circuit breaker pattern
+20.split-brain resolution algorithms
+21.load shedding algorithms
+22.byzantine fault tolerance
+23.skip lists
+
 * resources
 ** books
 |---------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------|
