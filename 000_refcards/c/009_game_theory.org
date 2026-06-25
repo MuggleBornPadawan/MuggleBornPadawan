@@ -24,6 +24,15 @@
   - [[#repeated-games][repeated games]]
   - [[#bayesian-games][bayesian games]]
   - [[#coalitional-games][coalitional games]]
+  - [[#summary-of-sample-games-gemini-assisted-writeup][summary of sample games (gemini assisted writeup)]]
+    - [[#tcp-backoff][tcp backoff]]
+    - [[#matching-pennies-game][matching pennies game]]
+    - [[#coordination-game][coordination game]]
+    - [[#battle-of-the-sexes][battle of the sexes]]
+    - [[#keynesian-beauty-contest][keynesian beauty contest]]
+    - [[#penalty-kick][penalty kick]]
+    - [[#travellers-dilemma][traveller's dilemma]]
+    - [[#centipede-game-theory][centipede game theory]]
   - [[#final][final]]
 
 * intro notes
@@ -137,6 +146,76 @@
 ** repeated games
 ** bayesian games
 ** coalitional games
+** summary of sample games (gemini assisted writeup)
+*** tcp backoff
+- a congestion control mechanism where the retransmission timeout (rto) doubles after each consecutive failed attempt to send a packet
+- purpose: prevents network collapse by reducing the frequency of retransmission requests when the network is congested
+- mechanism: when a packet is lost, the sender waits for the rto. if the retry fails, the rto is doubled (exponentially) before the next attempt
+- reset: once a packet is successfully acknowledged, the rto typically resets to its base value
+- context: it is a core component of the exponential backoff algorithm used in tcp to maintain stability under high traffic loads
+*** matching pennies game
+- a classic zero-sum game in game theory:
+- setup: two players (a and b) each place a penny on a table simultaneously
+- rules:
+  - player a (even): wins if the pennies match (both heads or both tails)
+  - player b (odd): wins if the pennies do not match (one head, one tail)
+- strategy: there is no pure strategy equilibrium. if one player chooses a fixed strategy, the other can exploit it
+- nash equilibrium: both players should randomize their choices (heads/tails) with a probability of 0.5 to ensure the opponent cannot gain an advantage
+*** coordination game
+- a type of game theory model where players earn higher payoffs by choosing the same strategy as others
+- multiple equilibria: there are at least two "best" outcomes where no player has an incentive to deviate (e.g., meeting at location a or location b)
+- mutual benefit: the goal is to align choices, not to compete for a limited resource
+- common interest: players prefer to coordinate rather than mismatch, even if they have different preferences regarding /which/ equilibrium is chosen
+- examples: stag hunt, battle of the sexes, driving on the road, technology standard (usb type c), language, social norms (dressing)
+*** battle of the sexes
+-  a coordination game where two players prefer different outcomes but both prefer coordinating over failing to do so
+-  scenario: a couple wants to meet for the evening. player a prefers the opera; player b prefers a football match. both prefer being together at /either/ event over being apart
+-  the payoff matrix: there are two *pure strategy nash equilibria*:
+   - both go to the opera (a is happiest)
+   - both go to the football match (b is happiest)
+-  the dilemma: neither player knows which event the other will choose. this leads to a coordination problem where players must rely on "focal points" or communication to avoid mismatching
+-  mixed strategy: there is also a mixed strategy nash equilibrium where players randomize their choices to account for the uncertainty, though this often results in suboptimal coordination
+*** keynesian beauty contest
+- a game theory thought experiment illustrating how markets and asset prices are driven by *strategic interaction* rather than objective value
+- rules: participants must guess a number from 0 to 100. the winner is the person whose guess is closest to *2/3 of the average* of all guesses
+- logic:
+  - level 0: a random guess (average 50)
+  - level 1: if everyone guesses randomly, the average is 50; 2/3 of that is 33.3
+  - level 2: if everyone thinks rationally (at level 1), the average will be 33.3; 2/3 of that is 22.2
+  - nash equilibrium: this recursion continues until it reaches 0
+- key takeaway: the "rational" move isn't just about what you think; it’s about what you think others think (higher-order beliefs). in financial markets, this explains speculative bubbles: participants buy assets not because of their intrinsic value, but because they believe others will drive the price higher
+*** penalty kick
+- a classic zero-sum game modeled as a mixed-strategy nash equilibrium
+- minimax theorem: to avoid being predictable, both the kicker and the goalkeeper must randomize their strategies (e.g., kicker: left vs. right; goalkeeper: left vs. right)
+- indifference principle: to keep the opponent guessing, you must choose your strategies such that the opponent is indifferent between their own options. if the kicker's success rate is higher when aiming left, they should aim left until the goalkeeper adjusts
+- the equilibrium: the optimal strategy is to randomize choices such that the expected payoff is equal regardless of the opponent's move
+  - if a player becomes predictable, the opponent will exploit it
+  - "matching pennies": the simplest formal model. if the kicker kicks to a side, and the keeper dives the same way, the keeper wins. if they dive the wrong way, the kicker wins
+*** traveller's dilemma
+- a game theory scenario that reveals a paradox in rational thinking
+- setup: two travelers, lucy and pete, have identical antiques broken by an airline. the airline manager, unable to assess the value, asks them to independently write down its worth, from $2 to $100
+- rules:
+  - if they write the same number, that is the true value, and they both get that amount
+  - if they write different numbers, the lower number is taken as the true value. both will receive that lower amount, but...
+    - the person who wrote the lower number gets a $2 bonus
+    - the person who wrote the higher number gets a $2 penalty
+- the dilemma:
+  - intuitive thought: both should write $100 to maximize their joint payout. they would each get $100
+  - rational thought: if pete writes $100, lucy can write $99. she would get $99 + $2 bonus = $101, while pete gets $99 - $2 penalty = $97
+  - anticipating this, pete might think to write $99. but then lucy should write $98 to get $98 + $2 = $100
+  - this logic continues, creating a "race to the bottom"
+- the nash equilibrium: the only stable, purely rational outcome is for both players to write $2. at this point, neither player can improve their outcome by changing their answer. this leads to a payoff far worse than the cooperative one
+- the dilemma highlights the conflict between individual rational self-interest and a better, cooperative outcome
+*** centipede game theory
+- a sequential game in game theory that illustrates a conflict between rational self-interest and actual human behavior.
+- setup
+  - two players take turns choosing from a steadily increasing pot of money
+  - on each turn, a player can either "take" the larger share of the current pot (ending the game) or "pass" to the other player, causing the total pot to grow
+- paradox
+  - rational outcome (backward induction): the purely rational strategy is for the first player to "take" the money on the very first move. the logic is that the last player will always take the money, so the second-to-last player should take it one step before, and this reasoning cascades all the way to the start
+  - empirical result: in experiments, players almost never do this. they tend to "pass" for several rounds, cooperating to grow the pot before one player eventually defects and "takes" it
+- the game demonstrates that pure, self-interested rationality is a poor predictor of human behavior, which often involves elements of trust, altruism, and hope for mutual cooperation
+
 ** final 
 
 
