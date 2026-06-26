@@ -33,6 +33,12 @@
     - [[#penalty-kick][penalty kick]]
     - [[#travellers-dilemma][traveller's dilemma]]
     - [[#centipede-game-theory][centipede game theory]]
+    - [[#ultimatum-game][ultimatum game]]
+    - [[#rainbow-warship][rainbow warship]]
+    - [[#rock-paper-scissors][rock paper scissors]]
+    - [[#multiple-round-auctions][multiple-round auctions]]
+    - [[#repeated-prisoners-dilema-wip][repeated prisoner's dilema (wip)]]
+    - [[#repeated-battle-of-sexes-wip][repeated battle of sexes (wip)]]
   - [[#final][final]]
 
 * intro notes
@@ -215,7 +221,46 @@
   - rational outcome (backward induction): the purely rational strategy is for the first player to "take" the money on the very first move. the logic is that the last player will always take the money, so the second-to-last player should take it one step before, and this reasoning cascades all the way to the start
   - empirical result: in experiments, players almost never do this. they tend to "pass" for several rounds, cooperating to grow the pot before one player eventually defects and "takes" it
 - the game demonstrates that pure, self-interested rationality is a poor predictor of human behavior, which often involves elements of trust, altruism, and hope for mutual cooperation
-
+*** ultimatum game
+- a game theory experiment where two players split a sum of money:
+  - the proposer: offers a split of the money to the responder
+  - the responder: can accept the offer (both get the split) or reject it (both get nothing)
+- key takeaways:
+  - rational choice: standard economic theory suggests the responder should accept any non-zero offer, and the proposer should offer the smallest possible amount
+  - actual behavior: in practice, humans usually reject "unfair" offers (typically below 20–30%), preferring to receive nothing rather than accept an insulting split
+  - psychology: this demonstrates that human decision-making is driven by fairness, social norms, and altruistic punishment rather than purely selfish utility maximization
+*** rainbow warship
+- a variation of signaling games in game theory, often used to illustrate cooperation, trust, and deterrence under asymmetric information
+- the setup:
+  - two ships (often colored) encounter each other in fog or at distance
+  - the dilemma: each ship has a "fire" or "don’t fire" option
+  - information gap: each ship knows its own intentions but cannot be 100% certain of the other's color or true intent
+  - signaling: ships can deploy "rainbow" signals (or lights) to identify themselves
+- key game theory concepts
+  - signaling games: the "rainbow" acts as a signal. if the signal is costly (e.g., revealing your position makes you vulnerable), it is a "credible signal" (or spence signaling). if it is "cheap talk," it is easily faked by an aggressor
+  - prisoner’s dilemma: if both fire, both lose. if one fires and the other doesn't, the aggressor gains a temporary advantage. the most rational cooperative outcome is mutual non-aggression, but the fear of betrayal creates a "security dilemma."
+  - bayesian equilibrium: players update their beliefs about the other ship's identity (or intent) based on the signal provided. if the probability of an enemy being "hostile" is high, the incentive to strike first increases
+  - tit-for-tat: a common strategy in this game. you start by signaling peace; if the other side reciprocates, you continue; if they strike, you retaliate
+- takeaway: the game demonstrates that trust is a function of signal reliability. in environments where communication is ambiguous, players tend to choose "defensive aggression" (striking first) to avoid being the sucker, leading to sub-optimal outcomes for both
+*** rock paper scissors
+- a zero-sum game with a mixed-strategy nash equilibrium
+- the strategy: to be unexploitable, a player must choose each option with equal probability (1/3). any deviation (e.g., playing rock more often) allows an opponent to exploit the bias by playing paper more frequently
+- human psychology: humans are poor random-number generators. studies (such as those from zhejiang university) show that winners tend to repeat their winning move, while losers tend to switch to the move that would have beaten what just beat them ("win-stay, lose-shift")
+- the optimal counter: if you recognize a pattern in an opponent’s bias, the nash equilibrium breaks, and you can achieve a higher win rate by exploiting their tendency
+*** multiple-round auctions
+- extend single-round models by introducing intertemporal strategic considerations
+- key dynamics include:
+  - information revelation: bidders learn about competitors' valuations through their bidding patterns, leading to the "winner's curse" or strategic signaling
+  - dynamic learning: participants update their beliefs about others' types (bayesian learning) as the auction progresses
+  - signaling and predation: bidders may bid aggressively early on to discourage entry or signal strength (a "fat-cat" or "puppy-dog" effect)
+- common auction types:
+  - english auction: ascending price; naturally multi-round; truthful bidding is often dominant
+  - dutch auction: descending price; equivalent to first-price sealed-bid under symmetric conditions
+  - simultaneous multi-round auction (smra): used by the fcc for spectrum; allows bidders to switch between items, revealing price discovery across a market
+  - tacit collusion: multi-round structures facilitate "bid signaling," where participants communicate preferences to avoid bidding against one another (e.g., using specific digits in bids)
+- key challenge: the complexity of the "bidder’s curse" and the difficulty of calculating equilibrium strategies in real-time, often requiring numerical methods or simplified heuristic models
+*** repeated prisoner's dilema (wip)
+*** repeated battle of sexes (wip) 
 ** final 
 
 
