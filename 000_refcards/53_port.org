@@ -4,6 +4,7 @@
 - [[#trivia][trivia]]
   - [[#learn-to-build---agy][learn to build - agy]]
   - [[#genai-code-limitations][genai code limitations]]
+- [[#foundational-programming-concepts][foundational programming concepts]]
 - [[#millenium-problems][millenium problems]]
 - [[#chronological-intellectual-evolution-table---the-staircase-to-knowledge][chronological intellectual evolution table - the staircase to knowledge]]
   - [[#western][western]]
@@ -80,6 +81,33 @@
 | python     | automated (reference counting)  | global interpreter lock (gil) / async   | dynamic / strong      |
 | javascript | automated (tracing gc)          | single-threaded event loop              | dynamic / weak        |
 |------------+---------------------------------+-----------------------------------------+-----------------------|
+* foundational programming concepts
+- hashing – converting data into a fixed-size value using a hash function for fast lookup or comparison
+- memoization – caching results of expensive function calls
+- caching – storing data temporarily to serve faster on repeated access
+- serialization: converting an object or data structure into a byte stream or string so it can be stored or transmitted
+- deserialization – reconstructing the original object or data structure from that byte stream or string
+- replication: copying data across multiple systems to improve availability and fault tolerance
+- bit manipulation – using bitwise operations for compact/fast logic
+- sharding – dividing large datasets into smaller chunks for efficiency
+- divide & conquer – break, conquer recursively, merge
+- atomicity: ensuring an operation either fully completes or doesn’t happen at all, with no partial changes
+- load balancing: distributing workloads across multiple servers to optimize performance and avoid overload
+- concurrency: running multiple tasks simultaneously, overlapping their execution to maximize efficiency
+- garbage collection: automatically reclaiming memory by detecting and freeing unused objects
+- mutex: a lock ensuring only one thread accesses a resource at a time to prevent conflicts
+- event loop: a mechanism that handles asynchronous tasks by queuing and processing events in a single-threaded environment
+- indexing: creating a lookup structure to quickly find data in a database or array
+- rate limiting: restricting the number of requests a system handles in a given time to prevent overload
+- checksum & crc – a value computed from data to verify its integrity after transfer or storage
+- memory pooling – pre-allocating memory to reduce allocation overhead
+- deadlock: a situation where two or more processes block each other, waiting for resources that the others hold
+- lazy loading: delaying the initialization or loading of resources until they’re actually needed
+- event sourcing: storing the state of a system as a sequence of events rather than a single snapshot
+- race condition: when the outcome of a program depends on the unpredictable timing of multiple threads accessing shared resources
+- mapreduce: a framework for processing large datasets by splitting them into smaller tasks (map) andcombining results (reduce)
+- dependency injection: passing dependencies (like services or objects) into a component rather than having it create them internally
+- fuzzing: testing software by throwing random, unexpected inputs at it to find bugs or vulnerabilities
 * millenium problems
 - the yang-mills "mass gap": if the fundamental forces of nature are carried by massless particles, why does the universe actually have weight? 🌌✨ #physics #math #millenniumprize
 - the riemann hypothesis: a 160-year-old quest to prove that seemingly random prime numbers actually follow a perfectly ordered, deeply hidden rhythm. 🧩🔢 #math #riemannhypothesis
