@@ -86,7 +86,8 @@
 - repeated (iterated): tit-for-tat / conditional cooperation
 - modern policed network: cooperate (standard tcp)
 *** self interested agents and utility theory
-- not that they want to harm or only care about themselves
+- agents have opinions and preferences 
+- not that they want to harm others (adversarial) or only care about themselves
 - only that the agent has its own description of states of the world that it likes, and acts based on this description
 - utility function:
   - quantifies degree of preference across alternatives

@@ -2,6 +2,7 @@
 #+OPTIONS: toc:2
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
+  - [[#random-notes][random notes]]
   - [[#learn-to-build---agy][learn to build - agy]]
   - [[#genai-code-limitations][genai code limitations]]
 - [[#foundational-programming-concepts][foundational programming concepts]]
@@ -18,6 +19,11 @@
   - [[#ai-infrastructure][ai infrastructure]]
 
 * trivia
+** random notes
+- abstract syntax tree (ast)
+- language server processor (lsp)
+- state of observer (stephen wolfram) 
+- computational irreduciblity
 ** learn to build - agy
 - build northstar crm with login, contacts, companies, deals, notes, search, and dashboard cards. use react, vite, typescript, firebase auth, firestore, and firebase hosting; plan first.
 ** genai code limitations 
