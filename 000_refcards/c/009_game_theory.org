@@ -18,6 +18,12 @@
       - [[#tcp-back-off-example][tcp back off example]]
       - [[#a-large-collective-action-game][a large collective action game]]
       - [[#prisoners-dilemma][prisoner's dilemma]]
+      - [[#games-of-pure-competition][games of pure competition]]
+      - [[#matching-pennies][matching pennies]]
+      - [[#roshambo---rock-paper-scissors][roshambo - rock paper scissors]]
+      - [[#games-of-cooperation][games of cooperation]]
+      - [[#coordination-game---side-of-road][coordination game - side of road]]
+      - [[#battle-of-sexes][battle of sexes]]
   - [[#mixed-strategy-nash-equilibrium][mixed strategy nash equilibrium]]
   - [[#alternate-solution-concepts][alternate solution concepts]]
   - [[#extensive-form-gates][extensive form gates]]
@@ -44,6 +50,7 @@
 * intro notes
 - game theory is the mathematical modeling of strategic interaction among rational (and irrational) agents
 - the von neumann–morgenstern (vnm) utility function (1947) is a mathematical tool used in economics and game theory to represent an individual's preferences over choices that involve risk or uncertainty. it demonstrates that rational agents make decisions by maximizing their expected utility rather than just expected monetary value
+- the vnm theorem derives the existence of a utility function from a basic preference ordering and axioms on such orderings 
 ** references
 - stanford - game theory by matthew o. jackson, kevin leyton-brown, yoav shoham
   - syllabus - http://web.stanford.edu/~jacksonm/GTOC-Syllabus.html
@@ -63,8 +70,7 @@
 - sports: blackjack (21), rock paper scissors, soccer, baseball
 - serious games: auctions, financial markets, international conflict, political interactions, biology, predator-prey, competition, strategic interaction 
 - part of social scientists toolbox 
-- computer science: networks, keyword auctions, peer to peer file sharing, ecommerce (ebay),
-  - algorithms, complexity theory, ai, 
+- computer science: networks, keyword auctions, peer to peer file sharing, ecommerce (ebay), algorithms, complexity theory, ai, 
 - prerequisite: probablity and calculus
 - formal constucts: strategic interaction, equilibrium motions, incomplete information, timing, repeatition, coalation structures, 
 ** introduction
@@ -93,6 +99,10 @@
   - quantifies degree of preference across alternatives
   - explains impact of uncertainity
   - decision-theoretic rationality: act to maximize expected utility
+- why utility? the claim that utility function can be describe preferences is substantive because:
+  - why is a single dimensional function enough?
+  - why should an agent's response to uncertainity be captured purely by an expected value? 
+- vnm theory - check the intro notes above 
 *** key ingredients
 - players: who? are decision makers (people, government, companies, ...) 
 - actions: what? why? how? when? 
@@ -112,7 +122,7 @@
 *** extensive form representation
 - the extensive form representation models a game as a tree structure to capture sequential decision-making and the flow of time
 - timing: it explicitly details the players, the chronological order of their moves (represented by decision nodes), the actions available at each turn (represented by branches), and the final payoffs at the end of each path (represented by terminal nodes)
-- information: crucially, unlike the normal form, the extensive form can represent imperfect or asymmetric information using "information sets," which group nodes together to show when a player must make a choice without knowing the exact previous moves of their opponents
+- information: crucially, unlike the normal form, the extensive form can represent imperfect or asymmetric information (eg: poker vs chess) using "information sets," which group nodes together to show when a player must make a choice without knowing the exact previous moves of their opponents
 *** examples
 **** tcp back off example
 - player: one represented in row; two represented in column
@@ -132,14 +142,101 @@
   - ui(a) = -1 if #{j:aj = Revolt} < 2,000,000
   - ui(a) = 0 if #{j:aj = Revolt} < 2,000,000 and ai = Not
 **** prisoner's dilemma
-- prisoner's dilemma is any game with payoffs (c > a > d > b) 
-|---+------+------|
-|   | C    | D    |
-|---+------+------|
-| C | a, a | b, c |
-| D | c, b | d, d |
-|---+------+------|
-  
+- players: 2
+- actions: cooperate (co), defect (de)
+|--------------+--------+--------|
+| profile      | C      | D      |
+|--------------+--------+--------|
+| C            | co, co | co, de |
+| D            | de, co | de, de |
+|--------------+--------+--------|
+- utility function (c > a > d > b)   
+|---------+------+------|
+| payoffs | C    | D    |
+|---------+------+------|
+| C       | a, a | b, c |
+| D       | c, b | d, d |
+|---------+------+------|
+**** games of pure competition 
+- players have exactly opposed interests
+- there must be precisely two players (otherwise they cant have exactly opposit interests)
+- for all action profiles a ∈ A, u1(a) +u2(a) = c for some constant c
+  - special case: zero sum
+- thus, we only need to store a utility functino for one player
+  - in a sense, we only have to think about one player's interests
+**** matching pennies
+- players: 2
+- actions: one player wants to match (hh or tt), the other wants to mismatch (ht or th)
+|---------+-------+-------|
+| profile | Heads | Tails |
+|---------+-------+-------|
+| Heads   | hh    | ht    |
+| Tails   | th    | tt    |
+|---------+-------+-------|
+- utility function
+|---------+-------+-------|
+| payoffs | Heads | Tails |
+|---------+-------+-------|
+| Heads   | 1, -1 | -1, 1 |
+| Tails   | -1, 1 | 1, -1 |
+|---------+-------+-------|
+**** roshambo - rock paper scissors
+- generalized matching pennies
+- players: 2
+- actions
+|----------+------+-------+-----------|
+| profile  | rock | paper | scisssors |
+|----------+------+-------+-----------|
+| rock     | r,r  | r,p   | r,s       |
+| paper    | p,r  | p,p   | p,s       |
+| scissors | s,r  | s,p   | s,s       |
+|----------+------+-------+-----------|
+- utility function
+|----------+------+-------+-----------|
+| payoffs  | rock | paper | scisssors |
+|----------+------+-------+-----------|
+| rock     | 0,0  | -1,1  | 1,-1      |
+| paper    | 1,-1 | 0,0   | -1,1      |
+| scissors | -1,1 | 1,-1  | 0,0       |
+|----------+------+-------+-----------|
+**** games of cooperation 
+- players have exactly the same interests
+- no conflict: all players want the same things
+- ∀a ∈ A, ∀i,j,ui(a) = uj(a)
+- we often write such games with a single payoff per cell
+- why are such games "noncooperative"? 
+**** coordination game - side of road
+- action: left or right side of road
+|---------+------+-------|
+| profile | left | right |
+|---------+------+-------|
+| left    | ll   | lr    |
+| right   | rl   | rr    |
+|---------+------+-------|
+- utility function
+|---------+------+-------|
+| payoffs | left | right |
+|---------+------+-------|
+| left    | 1,1  | 0,0   |
+| right   | 0,0  | 1,1   |
+|---------+------+-------|
+**** battle of sexes
+- cooperation and competition
+- action
+|---------+-------+--------|
+| profile | movie | dinner |
+|---------+-------+--------|
+| movie   | mm    | md     |
+| dinner  | dm    | dd     |
+|---------+-------+--------|
+- utility function  
+|---------+-------+--------|
+| payoffs | movie | dinner |
+|---------+-------+--------|
+| movie   | 2,1   | 0,0    |
+| dinner  | 0,0   | 1,2    |
+|---------+-------+--------|
+
 
 
 

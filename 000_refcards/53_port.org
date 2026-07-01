@@ -24,6 +24,8 @@
 - language server processor (lsp)
 - state of observer (stephen wolfram) 
 - computational irreduciblity
+- system design order: basics → networking → load balancing → storage → async → reliability
+- emacs coq agda - axiomatic programming - proof assistant 
 ** learn to build - agy
 - build northstar crm with login, contacts, companies, deals, notes, search, and dashboard cards. use react, vite, typescript, firebase auth, firestore, and firebase hosting; plan first.
 ** genai code limitations 

@@ -2,9 +2,10 @@
 * intro
 - full stack: frontend, backend / apis, databases, servers, networking, cloud infra, ci/cd pipelines, security, containers, cdn, monitoring and logging, backups & recovery 
 - cloud: compute, serverless, databases, storage (object / file / archival), networking, identity and access management (iam), big data & analytics (data warehouse), automationn, compliance, 
+
 ** coursera 
 https://docs.nvidia.com/learn-openusd/latest/index.html
-
+stanford - parallel computing - https://www.youtube.com/playlist?list=PLoROMvodv4rMp7MTFr4hQsDEcX7Bx6Odp
 https://www.coursera.org/learn/relational-database-administration/?
 https://www.coursera.org/specializations/postgresql-for-everybody
 https://www.coursera.org/learn/sql-data-science
