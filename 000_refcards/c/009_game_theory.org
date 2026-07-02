@@ -24,6 +24,13 @@
       - [[#games-of-cooperation][games of cooperation]]
       - [[#coordination-game---side-of-road][coordination game - side of road]]
       - [[#battle-of-sexes][battle of sexes]]
+    - [[#nash-equilibrium][nash equilibrium]]
+    - [[#strategic-reasoning][strategic reasoning]]
+    - [[#keynes-beauty-contest-games][keynes beauty contest games]]
+    - [[#best-response-and-nash-equilibrium][best response and nash equilibrium]]
+    - [[#nash-equilibrium-of-example-games][nash equilibrium of example games]]
+    - [[#domininant-strategies][domininant strategies]]
+    - [[#pareto-optimality][pareto optimality]]
   - [[#mixed-strategy-nash-equilibrium][mixed strategy nash equilibrium]]
   - [[#alternate-solution-concepts][alternate solution concepts]]
   - [[#extensive-form-gates][extensive form gates]]
@@ -236,11 +243,21 @@
 | movie   | 2,1   | 0,0    |
 | dinner  | 0,0   | 1,2    |
 |---------+-------+--------|
-
-
-
-
-
+*** nash equilibrium
+- a nash equilibrium is a state in a strategic game where no player can increase their payoff by unilaterally changing their strategy, assuming the other players' strategies remain constant
+- we desire objects because others desire them - mimetic theory, rené girard
+- stock price - optimal strategy
+- beauty of women
+- stylized version
+  - each player names an integer betwen 1 and 100
+  - the player who names the integer closest to two thirds of the average wins a prize, the other players get nothing
+  - 
+*** strategic reasoning
+*** keynes beauty contest games
+*** best response and nash equilibrium
+*** nash equilibrium of example games
+*** domininant strategies
+*** pareto optimality
 
 
 
