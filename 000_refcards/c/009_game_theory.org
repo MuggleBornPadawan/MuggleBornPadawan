@@ -1,63 +1,54 @@
 #+TITLE: game theory 
 #+OPTIONS: toc:2
-* Table of Contents :TOC_4:
-- [[#intro-notes][intro notes]]
+* Table of Contents :TOC_2:
+- [[#notes][notes]]
+  - [[#criticisms][criticisms]]
   - [[#references][references]]
   - [[#overview][overview]]
-  - [[#introduction][introduction]]
-    - [[#tcp-backoff-game][tcp backoff game]]
-      - [[#the-setup][the setup]]
-      - [[#the-strategies][the strategies]]
-      - [[#game-theoretic-outcomes][game-theoretic outcomes]]
-      - [[#best-possible-strategy][best possible strategy]]
-    - [[#self-interested-agents-and-utility-theory][self interested agents and utility theory]]
-    - [[#key-ingredients][key ingredients]]
-    - [[#normal-form-representation][normal form representation]]
-    - [[#extensive-form-representation][extensive form representation]]
-    - [[#examples][examples]]
-      - [[#tcp-back-off-example][tcp back off example]]
-      - [[#a-large-collective-action-game][a large collective action game]]
-      - [[#prisoners-dilemma][prisoner's dilemma]]
-      - [[#games-of-pure-competition][games of pure competition]]
-      - [[#matching-pennies][matching pennies]]
-      - [[#roshambo---rock-paper-scissors][roshambo - rock paper scissors]]
-      - [[#games-of-cooperation][games of cooperation]]
-      - [[#coordination-game---side-of-road][coordination game - side of road]]
-      - [[#battle-of-sexes][battle of sexes]]
-    - [[#nash-equilibrium][nash equilibrium]]
-    - [[#strategic-reasoning][strategic reasoning]]
-    - [[#keynes-beauty-contest-games][keynes beauty contest games]]
-    - [[#best-response-and-nash-equilibrium][best response and nash equilibrium]]
-    - [[#nash-equilibrium-of-example-games][nash equilibrium of example games]]
-    - [[#domininant-strategies][domininant strategies]]
-    - [[#pareto-optimality][pareto optimality]]
-  - [[#mixed-strategy-nash-equilibrium][mixed strategy nash equilibrium]]
-  - [[#alternate-solution-concepts][alternate solution concepts]]
-  - [[#extensive-form-gates][extensive form gates]]
-  - [[#repeated-games][repeated games]]
-  - [[#bayesian-games][bayesian games]]
-  - [[#coalitional-games][coalitional games]]
-  - [[#summary-of-sample-games-gemini-assisted-writeup][summary of sample games (gemini assisted writeup)]]
-    - [[#tcp-backoff][tcp backoff]]
-    - [[#matching-pennies-game][matching pennies game]]
-    - [[#coordination-game][coordination game]]
-    - [[#battle-of-the-sexes][battle of the sexes]]
-    - [[#keynesian-beauty-contest][keynesian beauty contest]]
-    - [[#penalty-kick][penalty kick]]
-    - [[#travellers-dilemma][traveller's dilemma]]
-    - [[#centipede-game-theory][centipede game theory]]
-    - [[#ultimatum-game][ultimatum game]]
-    - [[#rainbow-warship][rainbow warship]]
-    - [[#rock-paper-scissors][rock paper scissors]]
-    - [[#multiple-round-auctions][multiple-round auctions]]
-    - [[#repeated-prisoners-dilema-wip][repeated prisoner's dilema (wip)]]
-    - [[#repeated-battle-of-sexes-wip][repeated battle of sexes (wip)]]
-  - [[#final][final]]
+- [[#introduction][introduction]]
+  - [[#tcp-backoff-game][tcp backoff game]]
+  - [[#self-interested-agents-and-utility-theory][self interested agents and utility theory]]
+  - [[#key-ingredients][key ingredients]]
+  - [[#normal-form-representation][normal form representation]]
+  - [[#extensive-form-representation][extensive form representation]]
+  - [[#examples][examples]]
+  - [[#nash-equilibrium][nash equilibrium]]
+  - [[#domininant-strategies][domininant strategies]]
+  - [[#pareto-optimality][pareto optimality]]
+- [[#mixed-strategy-nash-equilibrium][mixed strategy nash equilibrium]]
+- [[#alternate-solution-concepts][alternate solution concepts]]
+- [[#extensive-form-gates][extensive form gates]]
+- [[#repeated-games][repeated games]]
+- [[#bayesian-games][bayesian games]]
+- [[#coalitional-games][coalitional games]]
+- [[#summary-of-sample-games-gemini-assisted-writeup][summary of sample games (gemini assisted writeup)]]
+  - [[#tcp-backoff][tcp backoff]]
+  - [[#matching-pennies-game][matching pennies game]]
+  - [[#coordination-game][coordination game]]
+  - [[#battle-of-the-sexes][battle of the sexes]]
+  - [[#keynesian-beauty-contest][keynesian beauty contest]]
+  - [[#penalty-kick][penalty kick]]
+  - [[#travellers-dilemma][traveller's dilemma]]
+  - [[#centipede-game-theory][centipede game theory]]
+  - [[#ultimatum-game][ultimatum game]]
+  - [[#rainbow-warship][rainbow warship]]
+  - [[#rock-paper-scissors][rock paper scissors]]
+  - [[#multiple-round-auctions][multiple-round auctions]]
+  - [[#repeated-prisoners-dilema-wip][repeated prisoner's dilema (wip)]]
+  - [[#repeated-battle-of-sexes-wip][repeated battle of sexes (wip)]]
+- [[#final][final]]
 
-* intro notes
+* notes
 - game theory is the mathematical modeling of strategic interaction among rational (and irrational) agents
 - the von neumann–morgenstern (vnm) utility function (1947) is a mathematical tool used in economics and game theory to represent an individual's preferences over choices that involve risk or uncertainty. it demonstrates that rational agents make decisions by maximizing their expected utility rather than just expected monetary value
 - the vnm theorem derives the existence of a utility function from a basic preference ordering and axioms on such orderings 
+** criticisms
+game theory criticism focuses on its reliance on unrealistic assumptions:
+- hyper-rationality: assumes agents perfectly calculate optimal strategies, ignoring human cognitive biases and bounded rationality
+- atomized individualism: neglects social context, cultural norms, and the complexity of human motivation (e.g., altruism, spite)
+- static equilibrium: often focuses on mathematical steady states at the expense of understanding real-world processes, learning, and historical evolution
+- information asymmetry: critiques argue that real-world actors rarely have the common knowledge or complete information required for many models
+- complexity/computation: many games become intractable once variables (players, strategies, time) increase, making them poor predictors for wicked real-world problems
 ** references
 - stanford - game theory by matthew o. jackson, kevin leyton-brown, yoav shoham
   - syllabus - http://web.stanford.edu/~jacksonm/GTOC-Syllabus.html
@@ -80,25 +71,25 @@
 - computer science: networks, keyword auctions, peer to peer file sharing, ecommerce (ebay), algorithms, complexity theory, ai, 
 - prerequisite: probablity and calculus
 - formal constucts: strategic interaction, equilibrium motions, incomplete information, timing, repeatition, coalation structures, 
-** introduction
-*** tcp backoff game
+* introduction
+** tcp backoff game
 - a game-theoretic model of network congestion control where multiple selfish nodes share a single communication channel
-**** the setup
+*** the setup
 - goal: nodes want to transmit data as quickly as possible (minimize delay, maximize throughput)
 - conflict: if two nodes transmit simultaneously, a collision occurs, and both transmissions fail
 - mechanism: when a collision occurs, nodes must choose how long to wait (back off) before retransmitting
-**** the strategies
+*** the strategies
 - cooperative (standard tcp): nodes use exponential backoff (doubling their waiting time after each collision) to clear congestion
 - defect/selfish (greedy): a node refuses to back off (or waits less) to grab the channel first
-**** game-theoretic outcomes
+*** game-theoretic outcomes
 - tragedy of the commons: if all nodes act selfishly, they constantly collide, leading to a throughput of near zero
 - nash equilibrium: the cooperative standard tcp is not a nash equilibrium in a selfish environment, because an individual node always has an incentive to cheat (by backing off less) to get its packets through faster
 - solution: network protocols use fair-queuing, punishment mechanisms, or mac-layer policing to enforce cooperation and prevent selfish behavior 
-**** best possible strategy
+*** best possible strategy
 - unpoliced / selfish network: defect always
 - repeated (iterated): tit-for-tat / conditional cooperation
 - modern policed network: cooperate (standard tcp)
-*** self interested agents and utility theory
+** self interested agents and utility theory
 - agents have opinions and preferences 
 - not that they want to harm others (adversarial) or only care about themselves
 - only that the agent has its own description of states of the world that it likes, and acts based on this description
@@ -110,13 +101,13 @@
   - why is a single dimensional function enough?
   - why should an agent's response to uncertainity be captured purely by an expected value? 
 - vnm theory - check the intro notes above 
-*** key ingredients
+** key ingredients
 - players: who? are decision makers (people, government, companies, ...) 
 - actions: what? why? how? when? 
 - payoffs: motivation (profits, care about others, ...)
 - timing: chronological order of moves (nodes), actions (branches) and payoffs at the end of every path (terminal nodes) 
 - information: imperfect or asymmetric info amongst players 
-*** normal form representation
+** normal form representation
 - a.k.a. matrix form, strategic form
 - usually depicted as a multi-dimensional matrix (or a grid for two-player games), this representation assumes that players make their decisions simultaneously and independently, without knowing their opponents' choices beforehand
 - by abstracting away the sequential timing of moves, the normal form provides a clear framework for identifying strategic dominance and calculating equilibria, such as the nash equilibrium
@@ -126,12 +117,12 @@
     - a = (a1,...an) ∈ A = A1 x .... x An is an action profile    
   - utility function or payoff function for player i:ui:A->ℝ
     - u = (u1,...un) is a profile of utility functions     
-*** extensive form representation
+** extensive form representation
 - the extensive form representation models a game as a tree structure to capture sequential decision-making and the flow of time
 - timing: it explicitly details the players, the chronological order of their moves (represented by decision nodes), the actions available at each turn (represented by branches), and the final payoffs at the end of each path (represented by terminal nodes)
 - information: crucially, unlike the normal form, the extensive form can represent imperfect or asymmetric information (eg: poker vs chess) using "information sets," which group nodes together to show when a player must make a choice without knowing the exact previous moves of their opponents
-*** examples
-**** tcp back off example
+** examples
+*** tcp back off example
 - player: one represented in row; two represented in column
 - actions: cooperate (c) or defect (d)
 - payoffs: represented in the intersection cell
@@ -141,14 +132,14 @@
 | c | (-1, -1) | (-4, 0)  |
 | d | (0, -4)  | (-3, -3) |
 |---+----------+----------|
-**** a large collective action game
+*** a large collective action game
 - players: N = {1,...., 10,000,000}
 - action: i Ai = {Revolt, Not}
 - utility function for player i:
   - ui(a) = 1 if #{j:aj = Revolt} >= 2,000,000
   - ui(a) = -1 if #{j:aj = Revolt} < 2,000,000
   - ui(a) = 0 if #{j:aj = Revolt} < 2,000,000 and ai = Not
-**** prisoner's dilemma
+*** prisoner's dilemma
 - players: 2
 - actions: cooperate (co), defect (de)
 |--------------+--------+--------|
@@ -164,14 +155,14 @@
 | C       | a, a | b, c |
 | D       | c, b | d, d |
 |---------+------+------|
-**** games of pure competition 
+*** games of pure competition 
 - players have exactly opposed interests
 - there must be precisely two players (otherwise they cant have exactly opposit interests)
 - for all action profiles a ∈ A, u1(a) +u2(a) = c for some constant c
   - special case: zero sum
 - thus, we only need to store a utility functino for one player
   - in a sense, we only have to think about one player's interests
-**** matching pennies
+*** matching pennies
 - players: 2
 - actions: one player wants to match (hh or tt), the other wants to mismatch (ht or th)
 |---------+-------+-------|
@@ -187,7 +178,7 @@
 | Heads   | 1, -1 | -1, 1 |
 | Tails   | -1, 1 | 1, -1 |
 |---------+-------+-------|
-**** roshambo - rock paper scissors
+*** roshambo - rock paper scissors
 - generalized matching pennies
 - players: 2
 - actions
@@ -206,13 +197,13 @@
 | paper    | 1,-1 | 0,0   | -1,1      |
 | scissors | -1,1 | 1,-1  | 0,0       |
 |----------+------+-------+-----------|
-**** games of cooperation 
+*** games of cooperation 
 - players have exactly the same interests
 - no conflict: all players want the same things
 - ∀a ∈ A, ∀i,j,ui(a) = uj(a)
 - we often write such games with a single payoff per cell
 - why are such games "noncooperative"? 
-**** coordination game - side of road
+*** coordination game - side of road
 - action: left or right side of road
 |---------+------+-------|
 | profile | left | right |
@@ -227,7 +218,7 @@
 | left    | 1,1  | 0,0   |
 | right   | 0,0  | 1,1   |
 |---------+------+-------|
-**** battle of sexes
+*** battle of sexes
 - cooperation and competition
 - action
 |---------+-------+--------|
@@ -243,7 +234,7 @@
 | movie   | 2,1   | 0,0    |
 | dinner  | 0,0   | 1,2    |
 |---------+-------+--------|
-*** nash equilibrium
+** nash equilibrium
 - a nash equilibrium is a state in a strategic game where no player can increase their payoff by unilaterally changing their strategy, assuming the other players' strategies remain constant
 - we desire objects because others desire them - mimetic theory, rené girard
 - stock price - optimal strategy
@@ -251,30 +242,51 @@
 - stylized version
   - each player names an integer betwen 1 and 100
   - the player who names the integer closest to two thirds of the average wins a prize, the other players get nothing
-  - 
 *** strategic reasoning
-*** keynes beauty contest games
-*** best response and nash equilibrium
+- if you knew what everyone else was going to do, it would be easy to pick your own action
+- let a₋ᵢ = <a₁,..,aᵢ-1, aᵢ+1,..aₙ>
+  - now a = (a₋ᵢ,aᵢ)
+- best response (BR)
+  - aᵢ* ∈ BR(a₋ᵢ) iff ∀ai ∈ Ai, ui(aᵢ*,a₋ᵢ) ≥ ui(aᵢ,a₋ᵢ)   
+*** pure strategy nash equilibrium
+- really, no agent knows what the others will do
+- what can we say about which actions will occur?
+- idea: look for stable action profiles
+- pure strategy
+  - a = <a₁,...,aₙ> is a ("pure strategy") nash equilibrium iff ∀ᵢ, aᵢ ∈ BR(a₋ᵢ)
 *** nash equilibrium of example games
-*** domininant strategies
-*** pareto optimality
+- prisonners dilema (co, de)
+- sidewalk (l, r)
+- husband and wife (b, f)     
+- matching pennies (h, t)
+** domininant strategies
+- let sᵢ and s'ᵢ be two strategies for player i, and let S₋ᵢ be the set of all possible strategy profiles for the other players
+  - what's a "strategy"?
+  - for now, just choosing an action ("pure strategy")
+- sᵢ strictly dominiates s'ᵢ if ∀s₋ᵢ∈S₋ᵢ,uᵢ(sᵢ,s₋ᵢ) > uᵢ(s'ᵢ,s₋ᵢ)
+- sᵢ very weakly dominiates s'ᵢ if ∀s₋ᵢ∈S₋ᵢ,uᵢ(sᵢ,s₋ᵢ) ≥ uᵢ(s'ᵢ,s₋ᵢ)
+- if one strategy dominates all others, we say it is dominant
+- a strategy profile consisting of dominant strategies for every player must be a Nash equilibrium
+  - an equilibrium in strictly dominant strategies must be unique 
+- example: prisoner's dilema: it makes sense for both prisoners to defect     
+** pareto optimality
 
 
 
-** mixed strategy nash equilibrium
-** alternate solution concepts
-** extensive form gates
-** repeated games
-** bayesian games
-** coalitional games
-** summary of sample games (gemini assisted writeup)
-*** tcp backoff
+* mixed strategy nash equilibrium
+* alternate solution concepts
+* extensive form gates
+* repeated games
+* bayesian games
+* coalitional games
+* summary of sample games (gemini assisted writeup)
+** tcp backoff
 - a congestion control mechanism where the retransmission timeout (rto) doubles after each consecutive failed attempt to send a packet
 - purpose: prevents network collapse by reducing the frequency of retransmission requests when the network is congested
 - mechanism: when a packet is lost, the sender waits for the rto. if the retry fails, the rto is doubled (exponentially) before the next attempt
 - reset: once a packet is successfully acknowledged, the rto typically resets to its base value
 - context: it is a core component of the exponential backoff algorithm used in tcp to maintain stability under high traffic loads
-*** matching pennies game
+** matching pennies game
 - a classic zero-sum game in game theory:
 - setup: two players (a and b) each place a penny on a table simultaneously
 - rules:
@@ -282,13 +294,13 @@
   - player b (odd): wins if the pennies do not match (one head, one tail)
 - strategy: there is no pure strategy equilibrium. if one player chooses a fixed strategy, the other can exploit it
 - nash equilibrium: both players should randomize their choices (heads/tails) with a probability of 0.5 to ensure the opponent cannot gain an advantage
-*** coordination game
+** coordination game
 - a type of game theory model where players earn higher payoffs by choosing the same strategy as others
 - multiple equilibria: there are at least two "best" outcomes where no player has an incentive to deviate (e.g., meeting at location a or location b)
 - mutual benefit: the goal is to align choices, not to compete for a limited resource
 - common interest: players prefer to coordinate rather than mismatch, even if they have different preferences regarding /which/ equilibrium is chosen
 - examples: stag hunt, battle of the sexes, driving on the road, technology standard (usb type c), language, social norms (dressing)
-*** battle of the sexes
+** battle of the sexes
 -  a coordination game where two players prefer different outcomes but both prefer coordinating over failing to do so
 -  scenario: a couple wants to meet for the evening. player a prefers the opera; player b prefers a football match. both prefer being together at /either/ event over being apart
 -  the payoff matrix: there are two *pure strategy nash equilibria*:
@@ -296,7 +308,7 @@
    - both go to the football match (b is happiest)
 -  the dilemma: neither player knows which event the other will choose. this leads to a coordination problem where players must rely on "focal points" or communication to avoid mismatching
 -  mixed strategy: there is also a mixed strategy nash equilibrium where players randomize their choices to account for the uncertainty, though this often results in suboptimal coordination
-*** keynesian beauty contest
+** keynesian beauty contest
 - a game theory thought experiment illustrating how markets and asset prices are driven by *strategic interaction* rather than objective value
 - rules: participants must guess a number from 0 to 100. the winner is the person whose guess is closest to *2/3 of the average* of all guesses
 - logic:
@@ -305,14 +317,14 @@
   - level 2: if everyone thinks rationally (at level 1), the average will be 33.3; 2/3 of that is 22.2
   - nash equilibrium: this recursion continues until it reaches 0
 - key takeaway: the "rational" move isn't just about what you think; it’s about what you think others think (higher-order beliefs). in financial markets, this explains speculative bubbles: participants buy assets not because of their intrinsic value, but because they believe others will drive the price higher
-*** penalty kick
+** penalty kick
 - a classic zero-sum game modeled as a mixed-strategy nash equilibrium
 - minimax theorem: to avoid being predictable, both the kicker and the goalkeeper must randomize their strategies (e.g., kicker: left vs. right; goalkeeper: left vs. right)
 - indifference principle: to keep the opponent guessing, you must choose your strategies such that the opponent is indifferent between their own options. if the kicker's success rate is higher when aiming left, they should aim left until the goalkeeper adjusts
 - the equilibrium: the optimal strategy is to randomize choices such that the expected payoff is equal regardless of the opponent's move
   - if a player becomes predictable, the opponent will exploit it
   - "matching pennies": the simplest formal model. if the kicker kicks to a side, and the keeper dives the same way, the keeper wins. if they dive the wrong way, the kicker wins
-*** traveller's dilemma
+** traveller's dilemma
 - a game theory scenario that reveals a paradox in rational thinking
 - setup: two travelers, lucy and pete, have identical antiques broken by an airline. the airline manager, unable to assess the value, asks them to independently write down its worth, from $2 to $100
 - rules:
@@ -327,7 +339,7 @@
   - this logic continues, creating a "race to the bottom"
 - the nash equilibrium: the only stable, purely rational outcome is for both players to write $2. at this point, neither player can improve their outcome by changing their answer. this leads to a payoff far worse than the cooperative one
 - the dilemma highlights the conflict between individual rational self-interest and a better, cooperative outcome
-*** centipede game theory
+** centipede game theory
 - a sequential game in game theory that illustrates a conflict between rational self-interest and actual human behavior.
 - setup
   - two players take turns choosing from a steadily increasing pot of money
@@ -336,7 +348,7 @@
   - rational outcome (backward induction): the purely rational strategy is for the first player to "take" the money on the very first move. the logic is that the last player will always take the money, so the second-to-last player should take it one step before, and this reasoning cascades all the way to the start
   - empirical result: in experiments, players almost never do this. they tend to "pass" for several rounds, cooperating to grow the pot before one player eventually defects and "takes" it
 - the game demonstrates that pure, self-interested rationality is a poor predictor of human behavior, which often involves elements of trust, altruism, and hope for mutual cooperation
-*** ultimatum game
+** ultimatum game
 - a game theory experiment where two players split a sum of money:
   - the proposer: offers a split of the money to the responder
   - the responder: can accept the offer (both get the split) or reject it (both get nothing)
@@ -344,7 +356,7 @@
   - rational choice: standard economic theory suggests the responder should accept any non-zero offer, and the proposer should offer the smallest possible amount
   - actual behavior: in practice, humans usually reject "unfair" offers (typically below 20–30%), preferring to receive nothing rather than accept an insulting split
   - psychology: this demonstrates that human decision-making is driven by fairness, social norms, and altruistic punishment rather than purely selfish utility maximization
-*** rainbow warship
+** rainbow warship
 - a variation of signaling games in game theory, often used to illustrate cooperation, trust, and deterrence under asymmetric information
 - the setup:
   - two ships (often colored) encounter each other in fog or at distance
@@ -357,12 +369,12 @@
   - bayesian equilibrium: players update their beliefs about the other ship's identity (or intent) based on the signal provided. if the probability of an enemy being "hostile" is high, the incentive to strike first increases
   - tit-for-tat: a common strategy in this game. you start by signaling peace; if the other side reciprocates, you continue; if they strike, you retaliate
 - takeaway: the game demonstrates that trust is a function of signal reliability. in environments where communication is ambiguous, players tend to choose "defensive aggression" (striking first) to avoid being the sucker, leading to sub-optimal outcomes for both
-*** rock paper scissors
+** rock paper scissors
 - a zero-sum game with a mixed-strategy nash equilibrium
 - the strategy: to be unexploitable, a player must choose each option with equal probability (1/3). any deviation (e.g., playing rock more often) allows an opponent to exploit the bias by playing paper more frequently
 - human psychology: humans are poor random-number generators. studies (such as those from zhejiang university) show that winners tend to repeat their winning move, while losers tend to switch to the move that would have beaten what just beat them ("win-stay, lose-shift")
 - the optimal counter: if you recognize a pattern in an opponent’s bias, the nash equilibrium breaks, and you can achieve a higher win rate by exploiting their tendency
-*** multiple-round auctions
+** multiple-round auctions
 - extend single-round models by introducing intertemporal strategic considerations
 - key dynamics include:
   - information revelation: bidders learn about competitors' valuations through their bidding patterns, leading to the "winner's curse" or strategic signaling
@@ -374,9 +386,9 @@
   - simultaneous multi-round auction (smra): used by the fcc for spectrum; allows bidders to switch between items, revealing price discovery across a market
   - tacit collusion: multi-round structures facilitate "bid signaling," where participants communicate preferences to avoid bidding against one another (e.g., using specific digits in bids)
 - key challenge: the complexity of the "bidder’s curse" and the difficulty of calculating equilibrium strategies in real-time, often requiring numerical methods or simplified heuristic models
-*** repeated prisoner's dilema (wip)
-*** repeated battle of sexes (wip) 
-** final 
+** repeated prisoner's dilema (wip)
+** repeated battle of sexes (wip) 
+* final 
 
 
 

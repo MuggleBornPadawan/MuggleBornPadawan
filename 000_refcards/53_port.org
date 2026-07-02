@@ -25,7 +25,9 @@
 - state of observer (stephen wolfram) 
 - computational irreduciblity
 - system design order: basics → networking → load balancing → storage → async → reliability
-- emacs coq agda - axiomatic programming - proof assistant 
+  - minimize network round-trips (rtt) and payload size whenever possible
+- emacs coq agda - axiomatic programming - proof assistant
+- sovereign semantic substrate = alpha moat
 ** learn to build - agy
 - build northstar crm with login, contacts, companies, deals, notes, search, and dashboard cards. use react, vite, typescript, firebase auth, firestore, and firebase hosting; plan first.
 ** genai code limitations 

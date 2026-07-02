@@ -1,18 +1,45 @@
 * math
 #+OPTIONS: toc:2
-* Table of Contents :TOC:
+* Table of Contents :TOC_3:
 - [[#math][math]]
   - [[#dictionary][dictionary]]
   - [[#difficulty-levels][difficulty levels]]
+    - [[#arithmetic][arithmetic]]
+    - [[#algebra][algebra]]
+    - [[#geometry][geometry]]
+    - [[#trigonometry][trigonometry]]
+    - [[#calculus][calculus]]
+    - [[#statistics-and-probability][statistics and probability]]
+    - [[#linear-algebra][linear algebra]]
+    - [[#differential-equations][differential equations]]
+    - [[#abstract-algebra][abstract algebra]]
+    - [[#topology][topology]]
+    - [[#real-analysis][real analysis]]
+    - [[#complex-analysis][complex analysis]]
+    - [[#functional-analysis][functional analysis]]
+    - [[#algebraic-geometry][algebraic geometry]]
+    - [[#number-theory][number theory]]
+    - [[#category-theory][category theory]]
   - [[#numbers][numbers]]
   - [[#symbols][symbols]]
   - [[#subjects][subjects]]
-  - [[#algebra][algebra]]
+  - [[#algebra-1][algebra]]
   - [[#derivatives][derivatives]]
-  - [[#calculus][calculus]]
+  - [[#calculus-1][calculus]]
+    - [[#general-intro][general intro]]
+    - [[#diff-rules][diff rules]]
+    - [[#approach-to-integration][approach to integration]]
+    - [[#types][types]]
+    - [[#levels][levels]]
   - [[#most-important-theorems-in-math][most important theorems in math]]
   - [[#engineering-math][engineering math]]
-  - [[#scribbles][scribbles]]
+  - [[#symbollic-notations][symbollic notations]]
+    - [[#quantifiers-and-sets][Quantifiers and Sets:]]
+    - [[#logical-operators][Logical Operators:]]
+    - [[#numbers-and-constants][Numbers and Constants:]]
+    - [[#operations-and-relations][Operations and Relations:]]
+    - [[#geometric-symbols][Geometric Symbols:]]
+    - [[#reasoning-and-statements][Reasoning and Statements:]]
 
 ** dictionary
 All of math can be described in four categories:
@@ -475,8 +502,8 @@ a ranked list of fields of math, in order of difficulty to master and understand
   - faraday's law
   - anti maxweell law
 
-** scribbles
-Quantifiers and Sets:
+** symbollic notations 
+*** Quantifiers and Sets:
 ∀ - For all (universal quantifier)
 ∃ - There exists (existential quantifier)
 ∈ - Element of
@@ -491,7 +518,7 @@ Quantifiers and Sets:
 ∅ - Empty set
 ∖ - Set difference
 
-Logical Operators:
+*** Logical Operators:
 ⇒ - Implies
 ⇔ - If and only if (equivalence)
 ∧ - Logical AND
@@ -503,7 +530,7 @@ Logical Operators:
 → - Conditional implication
 ≡ - Equivalent
 
-Numbers and Constants:
+*** Numbers and Constants:
 ℕ - Set of natural numbers
 ℤ - Set of integers
 ℚ - Set of rational numbers
@@ -513,7 +540,7 @@ Numbers and Constants:
 π - Pi
 e - Euler’s number
 
-Operations and Relations:
+*** Operations and Relations:
 ∑ - Summation
 ∏ - Product
 √ - Square root
@@ -527,12 +554,12 @@ Operations and Relations:
 ≈ - Approximately equal
 ∝ - Proportional to
 
-Geometric Symbols:
+*** Geometric Symbols:
 ∡ - Angle
 ⊥ - Perpendicular
 ∥ - Parallel
 
-Reasoning and Statements:
+*** Reasoning and Statements:
 ∴ - Therefore
 ∵ - Because
 
