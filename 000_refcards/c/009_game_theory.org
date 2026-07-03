@@ -71,6 +71,7 @@ game theory criticism focuses on its reliance on unrealistic assumptions:
 - computer science: networks, keyword auctions, peer to peer file sharing, ecommerce (ebay), algorithms, complexity theory, ai, 
 - prerequisite: probablity and calculus
 - formal constucts: strategic interaction, equilibrium motions, incomplete information, timing, repeatition, coalation structures, 
+- we desire objects because others desire them - mimetic theory, rené girard
 * introduction
 ** tcp backoff game
 - a game-theoretic model of network congestion control where multiple selfish nodes share a single communication channel
@@ -236,7 +237,6 @@ game theory criticism focuses on its reliance on unrealistic assumptions:
 |---------+-------+--------|
 ** nash equilibrium
 - a nash equilibrium is a state in a strategic game where no player can increase their payoff by unilaterally changing their strategy, assuming the other players' strategies remain constant
-- we desire objects because others desire them - mimetic theory, rené girard
 - stock price - optimal strategy
 - beauty of women
 - stylized version
@@ -270,8 +270,19 @@ game theory criticism focuses on its reliance on unrealistic assumptions:
   - an equilibrium in strictly dominant strategies must be unique 
 - example: prisoner's dilema: it makes sense for both prisoners to defect     
 ** pareto optimality
-
-
+- examine the games from the outside (observer) instead of player's point of view
+- can some outcomes of a game be said to better than others
+  - can't say one agent's interests are more important than another's
+  - imagine trying to find the revenue-maximizing outcome when you don't know what currency is used to express each agent's payoff
+- are there ways to still prefer one outcome to another?
+*** idea
+- sometimes, one outcome o is at least as good for every agent as another outcome o', and there is some agent who strictly prefers o to o'
+  - in this case, it seems reasonable to say that o is better than o'
+  - we say that o Pareto-dominates o'.
+- definition: an outcome o* is Pareto-optimal if there is no other outcome that Pareto-dominates it
+- can a game have more than one Pareto-optimal outcome? 
+- does every games have at least one Pareto-optimal outcome? 
+- paradox of prisoners dilemma: the dominant strategy of nash equilibrium is the only non-pareto-optimal outcome
 
 * mixed strategy nash equilibrium
 * alternate solution concepts
