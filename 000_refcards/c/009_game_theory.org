@@ -16,6 +16,11 @@
   - [[#domininant-strategies][domininant strategies]]
   - [[#pareto-optimality][pareto optimality]]
 - [[#mixed-strategy-nash-equilibrium][mixed strategy nash equilibrium]]
+  - [[#computing-mixed-nash-eq][computing mixed nash eq]]
+  - [[#hardness-beyond-2x2-games---basic][hardness beyond 2x2 games - basic]]
+  - [[#hardness-beyond-2x2-games---advanced][hardness beyond 2x2 games - advanced]]
+  - [[#example][example]]
+  - [[#data-professional-sports][data: professional sports]]
 - [[#alternate-solution-concepts][alternate solution concepts]]
 - [[#extensive-form-gates][extensive form gates]]
 - [[#repeated-games][repeated games]]
@@ -283,8 +288,35 @@ game theory criticism focuses on its reliance on unrealistic assumptions:
 - can a game have more than one Pareto-optimal outcome? 
 - does every games have at least one Pareto-optimal outcome? 
 - paradox of prisoners dilemma: the dominant strategy of nash equilibrium is the only non-pareto-optimal outcome
-
 * mixed strategy nash equilibrium
+- it would be a pretty bad idea to play matching pennies with a deterministic strategy
+- idea: confuse the opponent by playing randomly
+- define a strategy sᵢ for agent i as any probablity distribution over the actions Aᵢ
+  - pure strategy: only one action is played with positive probablity 
+  - mixed strategy: more than one action is played with positive probablity
+    - these actions are called the support of the mixed strategy
+- let the set of all strategies for i be Sᵢ
+- let the set of all strategy profiles be S = S₁ x .... x Sₙ (cartesian product) 
+- utility under mixed strategies 
+  - what is your payoff if all the players follow mixed strategy profile s ∈ S?
+    - we cant just read this number from the game matrix anymore: we wont always end up in the same cell 
+  - instead, use the idea of expected utility from decision theory:
+uᵢ(s) = ∑ (a ∈ A) uᵢ(a)Pr(a|s)
+Pr(a|s) = ∏ (j ∈ N) sⱼ(aⱼ) 
+
+
+
+
+
+
+
+
+** computing mixed nash eq
+** hardness beyond 2x2 games - basic
+** hardness beyond 2x2 games - advanced
+** example
+** data: professional sports 
+
 * alternate solution concepts
 * extensive form gates
 * repeated games
