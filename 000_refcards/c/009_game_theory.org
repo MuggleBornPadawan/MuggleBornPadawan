@@ -5,6 +5,7 @@
   - [[#criticisms][criticisms]]
   - [[#references][references]]
   - [[#overview][overview]]
+  - [[#game-theory-axioms][game theory axioms]]
 - [[#introduction][introduction]]
   - [[#tcp-backoff-game][tcp backoff game]]
   - [[#self-interested-agents-and-utility-theory][self interested agents and utility theory]]
@@ -16,6 +17,7 @@
   - [[#domininant-strategies][domininant strategies]]
   - [[#pareto-optimality][pareto optimality]]
 - [[#mixed-strategy-nash-equilibrium][mixed strategy nash equilibrium]]
+  - [[#expected-utility-from-decision-theory][expected utility from decision theory]]
   - [[#computing-mixed-nash-eq][computing mixed nash eq]]
   - [[#hardness-beyond-2x2-games---basic][hardness beyond 2x2 games - basic]]
   - [[#hardness-beyond-2x2-games---advanced][hardness beyond 2x2 games - advanced]]
@@ -77,6 +79,17 @@ game theory criticism focuses on its reliance on unrealistic assumptions:
 - prerequisite: probablity and calculus
 - formal constucts: strategic interaction, equilibrium motions, incomplete information, timing, repeatition, coalation structures, 
 - we desire objects because others desire them - mimetic theory, rené girard
+** game theory axioms
+note: vnm utility function has only 4 axioms
+- completeness: an agent can always compare any two alternatives and decide which they prefer or if they are indifferent
+- transitivity: if an agent prefers a to b and b to c, they must prefer a to c
+- continuity: if an agent prefers a to b and b to c, there exists a probability mix of a and c that makes them indifferent to b
+- independence: preferences between two outcomes remain unchanged when both are combined with a third, identical outcome
+- monotonicity: an agent prefers a lottery with a higher probability of a more desirable outcome over one with a lower probability
+- reduction of compound lotteries: an agent only cares about the final probability distribution of outcomes, not the process of reaching them
+- substitutability: if an agent is indifferent between two outcomes, they are indifferent between lotteries containing those outcomes
+- equivalence: preferences depend only on the consequences and their associated probabilities, not the labels or framing
+- rationality: agents consistently act to maximize their own expected utility based on their preferences
 * introduction
 ** tcp backoff game
 - a game-theoretic model of network congestion control where multiple selfish nodes share a single communication channel
@@ -289,6 +302,7 @@ game theory criticism focuses on its reliance on unrealistic assumptions:
 - does every games have at least one Pareto-optimal outcome? 
 - paradox of prisoners dilemma: the dominant strategy of nash equilibrium is the only non-pareto-optimal outcome
 * mixed strategy nash equilibrium
+** expected utility from decision theory
 - it would be a pretty bad idea to play matching pennies with a deterministic strategy
 - idea: confuse the opponent by playing randomly
 - define a strategy sᵢ for agent i as any probablity distribution over the actions Aᵢ
