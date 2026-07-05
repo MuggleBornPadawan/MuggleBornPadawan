@@ -1,16 +1,10 @@
 #+TITLE: clojure for the brave
 #+AUTHOR: daniel higginbothom
-#+OPTIONS: toc:2
-* Table of Contents :TOC_2:
-- [[#general-notes][general notes:]]
-  - [[#references][references]]
-  - [[#come-back-to-this-later][come back to this later]]
-  - [[#cider][cider]]
+#+OPTIONS: toc
+* Table of Contents :TOC_1:
+- [[#general-notes][general notes]]
 - [[#building-running-and-the-repl][building, running, and the repl]]
-  - [[#objective][objective:]]
-  - [[#clojure-intro][clojure intro]]
-- [[#emacs][emacs]]
-  - [[#repl][repl]]
+- [[#emacs-with-clojure][emacs with clojure]]
 - [[#do-things-crash-course][do things; crash course]]
 - [[#core-functions-in-depth][core functions in depth]]
 - [[#functional-programming][functional programming]]
@@ -25,20 +19,25 @@
 - [[#leiningen][leiningen]]
 - [[#boot][boot]]
 
-* general notes:
+* general notes
 ** references
 - download code from: https://nostarch.com/clojure/
+- emacs manual: https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top 
+- emacs reference card: https://ic.unicamp.br/~helio/disciplinas/MC102/Emacs_Reference_Card.pdf
+- clojure: https://clojure.org/about/rationale
+- cider: https://docs.cider.mx/cider/index.html
+- leiningen: https://leiningen.org/
+- paredit cheatsheet: https://github.com/georgek/paredit-cheatsheet/blob/master/paredit-cheatsheet-refcard.pdf 
 ** come back to this later 
-- clojure - https://clojure.org/about/rationale
-- cider - https://docs.cider.mx/cider/index.html
-- leiningen - https://leiningen.org/
+- carry forward some elements 
+  - (repl keybinds to emacs.org)    
 ** cider
 - clojure interactive development environment that rocks
 - cider-jack-in for new nrepl
 - cider-connect for existing nrepl 
 - cider - inline evaluation, stacktrace browsing, debugger, and completion
 * building, running, and the repl
-** objective:
+** objective
 - create a new clojure project with leiningen
 - build the project to create an executable jar file
 - execute the jar file
@@ -64,21 +63,59 @@
 - (first [2 3 4])
 - (rest [2 3 55 66])  
 - (do (println "no prompt here!") (+ 1 3))
-* emacs
+* emacs with clojure
+** general
 - download files from the book's website 
 - C-x b switch-buffer
 - C-x C-s save-file
 - C-x C-f open-file
+- check emacs.org file for more details. common keybindings and functions are documented there 
 ** repl
-- C-c C-d C-d documentation of symbol from repl
-
-
-
-
-
-
-
+|------------------+------------+---------------------------------------------------|
+| keybinding       | buffer     | function                                          |
+|------------------+------------+---------------------------------------------------|
+| C-x C-e          | clj        | cider-eval-last-expression                        |
+| C-u C-x C-e      | clj        | ? prints the result of the evaluation after point |
+| C-c C-c          | clj        | cider-eval-defun-at-point                         |
+| C-c C-k          | clj        | cider-load-buffer                                 |
+| C-c C-d C-a      | clj        | ? appropos search                                 |
+| C-c C-d C-d      | repl       | cider-doc                                         |
+| C-c M-n          | repl / clj | cider-repl-set-ns                                 |
+| M-.              | repl       | cider-find-var                                    |
+| M-,              | repl       | xref-go-back                                      |
+| M-\              | emacs      | delete-horizontal-space                           |
+| M-/              | emacs      | hippie-expand                                     |
+| M-x paredit-mode | paredit    | toggle-paredit-mode                               |
+| M-(              | paredit    | paredit-wrap-around                               |
+| C-→              | paredit    | slurp                                             |
+| C-←              | paredit    | barf                                              |
+| C-M-f, C-M-b     | paredit    | move to the opening/closing parenthesis           |
+|------------------+------------+---------------------------------------------------|
 * do things; crash course
+- a form is any expression that the reader translates into a data structure and the compiler evaluates
+- (operator operand1 operand2 ... operandn)
+- whitespace seperates operands
+** comments
+- line comment (;); form comment (#); (comment (block a b)); M-x comment-dwim (un/comment selected region)
+** control flow
+- basic control flow operators: if, do, when
+- nil, true, false, truthiness, equality, and boolean expressions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * core functions in depth
 * functional programming
 * organizing your project: a librarians tale
