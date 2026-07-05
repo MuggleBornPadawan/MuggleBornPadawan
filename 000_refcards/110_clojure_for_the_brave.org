@@ -10,6 +10,7 @@
   - [[#objective][objective:]]
   - [[#clojure-intro][clojure intro]]
 - [[#emacs][emacs]]
+  - [[#repl][repl]]
 - [[#do-things-crash-course][do things; crash course]]
 - [[#core-functions-in-depth][core functions in depth]]
 - [[#functional-programming][functional programming]]
@@ -68,7 +69,8 @@
 - C-x b switch-buffer
 - C-x C-s save-file
 - C-x C-f open-file
-
+** repl
+- C-c C-d C-d documentation of symbol from repl
 
 
 
