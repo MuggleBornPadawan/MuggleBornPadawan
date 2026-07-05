@@ -23,19 +23,38 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 (setq desktop-save-mode t)
-;; package management
+
+;;;;
+;; Packages
+;;;;
+;; Define package repositories
 (require 'package)
+(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
+(add-to-list 'package-pinned-packages '(magit . "melpa-stable") t)
+
+;; Load and activate emacs packages. Do this first so that the
+;; packages are loaded before you start trying to modify them.
+;; This also sets the load path.
 (package-initialize)
 
+;; Download the ELPA archive description if needed.
+;; This informs Emacs about the latest versions of all packages, and
+;; makes them available for download.
 ;; use the `use-package` package for managing other packages
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-
 (require 'use-package)
 (setq use-package-always-ensure t)
+
+;; smex
+(require 'smex)
+(smex-initialize) ; Can take a moment
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; multiple cursors 
 (unless (package-installed-p 'multiple-cursors)
@@ -86,12 +105,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
  '(package-selected-packages
-   '(cider company exec-path-from-shell geiser-mit geiser-racket
-	   git-commit gptel json-mode lsp-ui magit multiple-cursors
-	   org-contrib persistent-scratch racket-mode ranger request
-	   restclient slime toc-org tree-sitter-langs treesit-auto
-	   use-package vterm)))
+   '(cider clojure-mode-extra-font-locking clojure-ts-mode company
+           exec-path-from-shell geiser-mit geiser-racket git-commit
+           gptel ido-completing-read+ json-mode lsp-ui magit
+           multiple-cursors org-contrib paredit persistent-scratch
+           racket-mode rainbow-delimiters ranger request restclient
+           slime smex tagedit toc-org tree-sitter-langs treesit-auto
+           use-package vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -182,6 +204,7 @@
 ;; font
 (set-face-attribute 'default nil :font "Your Mono Font-12")
 (set-face-attribute 'fixed-pitch nil :font "Your Mono Font-12")
+
 ;; org mode - table of contents 
 (use-package toc-org
   :ensure t
@@ -189,6 +212,9 @@
   :hook (org-mode . toc-org-mode))
 (require 'toc-org)
 (add-hook 'org-mode-hook 'toc-org-mode)
+
+;; rainbow delimitters
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -240,14 +266,63 @@
 (require 'zone)
 (zone-when-idle 600)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; clojure init.el from clojure for the brave
+;; manually install M-x package-install
+;; paredit - makes handling lisp expressions much, much easier; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
+;; *clojure-mode - key bindings and code colorization for Clojure; https://github.com/clojure-emacs/clojure-mode
+;; clojure-mode-extra-font-locking - extra syntax highlighting for clojure
+;; cider -  integration with a Clojure REPL; https://github.com/clojure-emacs/cider
+;; ido-completing-read+ - allow ido usage in as many contexts as possible. see customizations/navigation.el line 23 for a description of ido
+;; smex - Enhances M-x to allow easier execution of commands. Provides a filterable list of possible commands in the minibuffer - http://www.emacswiki.org/emacs/Smex
+;; *projectile - project navigation
+;; rainbow-delimiters - colorful parenthesis matching
+;; tagedit - edit html tags like sexps
+;; magit - git integration
+;; Define he following variables to remove the compile-log warnings
+;; when defining ido-ubiquitous
+;; (defvar ido-cur-item nil)
+;; (defvar ido-default-item nil)
+;; (defvar ido-cur-list nil)
+;; (defvar predicate nil)
+;; (defvar inherit-input-method nil)
 
+;;;;
+;; Customization
+;;;;
 
+;; Add a directory to our load path so that when you `load` things
+;; below, Emacs knows where to look for the corresponding file.
+(add-to-list 'load-path "~/.emacs.d/customizations")
 
+;; Sets up exec-path-from-shell so that Emacs will use the correct
+;; environment variables
+(load "shell-integration.el")
 
+;; These customizations make it easier for you to navigate files,
+;; switch buffers, and choose options from the minibuffer.
+;; (load "navigation.el")
 
+;; These customizations change the way emacs looks and disable/enable
+;; some user interface elements
+;; (load "ui.el")
 
+;; These customizations make editing a bit nicer.
+(load "editing.el")
 
+;; Hard-to-categorize customizations
+(load "misc.el")
 
+;; For editing lisps
+(load "elisp-editing.el")
+
+;; Langauage-specific
+(load "setup-clojure.el")
+(load "setup-js.el")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; accurate syntax tree (tree-sitter)
 ;;(use-package treesit-auto
@@ -273,15 +348,5 @@
 ;; Set the default rendering process (dvisvgm produces sharp vector graphics)
 (setq org-preview-latex-default-process 'dvisvgm)
 ;;(setq org-preview-latex-default-process 'dvipng)
-
-
-
-
-
-
-
-
-
-
 
 
