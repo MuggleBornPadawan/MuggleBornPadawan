@@ -317,7 +317,7 @@ note: vnm utility function has only 4 axioms
   - instead, use the idea of expected utility from decision theory:
 uᵢ(s) = ∑ (a ∈ A) uᵢ(a)Pr(a|s)
 Pr(a|s) = ∏ (j ∈ N) sⱼ(aⱼ) 
-
+-
 
 
 

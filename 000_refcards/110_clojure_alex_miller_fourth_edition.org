@@ -1,0 +1,9 @@
+#+TITLE: programming clojure alex miller fourth edition pragmatic programming
+#+OPTIONS: toc:2
+* Table of Contents :TOC_2:
+- [[#getting-started][getting started]]
+
+* getting started
+- elegance, interactive (repl), functional (immutable), concurrency (software transactional memory, agents, atoms and dynamic variables), jvm based, dynamic
+-
+  (redirect to beginner book - clojure for the brave) 

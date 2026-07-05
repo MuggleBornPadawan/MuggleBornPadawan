@@ -75,6 +75,7 @@ GNU emacs
 - <C-h k key-binding> describe key binding
 - <C-h f> desribe function 
 ** ide setup
+- C-c r dired (ranger)
 - fn-f8 treemacs
 - treesitter
 ** buffers / windows / panes? / frames
@@ -93,7 +94,11 @@ GNU emacs
 - C-x 5 0 closes the new frame 
 - C-x 5 o move between frames
 ** navigation
-- <M-g g> go to line
+- M-\ deletes all spaces and tab around point
+- M-/ hippie expand; cycles through possible expansions of the text before point
+- C-j new line and indent
+- M-g g go to line
+- M-m move to first non-whitespace character on the line
 - C-v M-v to move pages down and up
 - C-l - move screen up down centre around the cursor location 
 - C-p previous line
