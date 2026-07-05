@@ -55,6 +55,7 @@
 - lein run
 - lein uberjar
 - java -jar target/uberjar/clojure-noob-0.1.0-SNAPSHOT-standalone.jar
+- lein repl
 *** lein repl
 - (-main)
 - (exit)
@@ -83,6 +84,7 @@
 | C-c M-n          | repl / clj | cider-repl-set-ns                                 |
 | M-.              | repl       | cider-find-var                                    |
 | M-,              | repl       | xref-go-back                                      |
+| M-m              | emacs      | back-to-indentation                               |
 | M-\              | emacs      | delete-horizontal-space                           |
 | M-/              | emacs      | hippie-expand                                     |
 | M-x paredit-mode | paredit    | toggle-paredit-mode                               |
@@ -92,24 +94,42 @@
 | C-M-f, C-M-b     | paredit    | move to the opening/closing parenthesis           |
 |------------------+------------+---------------------------------------------------|
 * do things; crash course
+** form
 - a form is any expression that the reader translates into a data structure and the compiler evaluates
 - (operator operand1 operand2 ... operandn)
+- str concatenates text
 - whitespace seperates operands
 ** comments
 - line comment (;); form comment (#); (comment (block a b)); M-x comment-dwim (un/comment selected region)
 ** control flow
 - basic control flow operators: if, do, when
+  - use do when you want to execute multiple statements given a condition is true or false
+  - use when if you want to do multiple things when some condition is true, and you always want to return nil when the condition is false
 - nil, true, false, truthiness, equality, and boolean expressions
-
-
-
-
-
-
-
-
-
-
+  - both nil and false are used to represent logical falsiness, whereas all other values are logically truthy
+- clojure uses the boolean operators or and and. or returns either the first truthy value or the last value. and returns the first falsey value or, if no values are falsey, the last truthy value
+** def var
+- immutable; values are bound and not assigned
+** data structures
+- "string" 
+- "\"string\"" > "string"
+- maps: hash maps and sorted maps
+  - map values can be of any type—strings, numbers, maps, vectors, even functions
+- get to look up values
+- keywords can be used as functions that look up the corresponding value in a data structure. for example, you can look up :a in a map:
+  - (:a {:a 1 :b 2 :c 3})
+- vectors - similar to an array, in that it’s a 0-indexed collection
+- lists - linear collection of values
+|-------------+---------------------------------------------------------------+----------------------------------|
+| ds          | usage                                                         |                                  |
+|-------------+---------------------------------------------------------------+----------------------------------|
+| hash maps   | {:age 25 :sex "male" :location {:city "salem" :country "uae"} |                                  |
+| sorted maps |                                                               |                                  |
+| vector      | (get [1 2 3] 0) -> 1                                          | conj adds value at the end       |
+| list        | (nth '(:a :b :c) 0) -> :a                                     | conj adds value at the beginning |
+| hash sets   |                                                               |                                  |
+| sorted sets |                                                               |                                  |
+|-------------+---------------------------------------------------------------+----------------------------------|
 
 
 
