@@ -85,7 +85,8 @@
   (defn ds-demo
     "data structures"
     []
-    (println "clojure numbers - integer, float, ratio")
+    (println "ds - string, numbers - integer, float, ratio")
+    (println "ds - hash maps, sorted maps, vectors, hash sets, sorted sets")
     (def name "Chewbacca")
     (println(str "\"Uggllglglglglglglglll\" - " name))
     (println (hash-map :a 1 :b 2))
@@ -98,7 +99,40 @@
     (println "keyword as a function - equivalent to get (lookup values)")
     (println (:d {:a 1 :b 2 :c 3} "No gnome knows homes like Noah knows")) ; providing a default value
     (println (nth '(:a :b :c) 0))
+    (println (hash-set 1 1 2 2))
+    (println (conj #{:a :b} :b))
+    (println (set [3 3 3 4 4]))
+    (println (contains? #{:a :b} :a))
+    (println (contains? #{:a :b} 3))
+    (println (contains? #{nil} nil))
+    (println (:a #{:a :b}))
+    (println (get #{:a :b} :a))
+    (println (get #{:a nil} nil))
+    (println (get #{:a :b} "kurt vonnegut"))
     )
-  (train) (comments-demo) (form-demo) (control-flow-demo) (def-demo) (ds-demo)
+  (defn fn-demo
+    "function"
+    []
+    (println "functions - fn vs macros vs sp fns, call / define, anonymous, return")
+    (println (or + -)) ; function returning a function
+    (println ((or + -) 3 4 5)) ; function returning a function
+    (println ((and (= 1 1) +) 1 2 3)) ; and returning the last truthy value which is an operator function (+)
+    (println ((first [+ 0]) 1 2 3))
+    (println (map inc [0 1 2 3 1.1]))
+    (println (+ (inc 199) (/ 100 (- 7 2))))
+    (println "defining functions - defn, funciton name, docstring, parameters, fn body")
+    (defn codger-communication
+      [whippersnapper]
+      (str "Get off my lawn, " whippersnapper "!!!"))
+    (defn codger
+      [& whippersnappers]
+      (map codger-communication whippersnappers))
+    (println (codger "Billy" "Anne-Marie" "The Incredible Bulk"))
+    (defn favorite-things
+      [name & things]
+      (str "Hi, " name ", here are my favorite things: "
+           (clojure.string/join ", " things)))
+    (favorite-things "Doreen" "gum" "shoes" "kara-te")
+    )
+  (train) (comments-demo) (form-demo) (control-flow-demo) (def-demo) (ds-demo) (fn-demo)
   )
-
