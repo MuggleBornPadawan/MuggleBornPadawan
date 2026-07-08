@@ -8,6 +8,8 @@
   - [[#prompt-tools][prompt tools]]
   - [[#temperature-top-p-and-top-k][temperature, top-p and top-k]]
   - [[#new-project][new project]]
+  - [[#find-your-unknowns][find your unknowns]]
+  - [[#fan-out-method][fan out method]]
   - [[#production-check][production check]]
   - [[#for-beginners][for beginners]]
   - [[#medical-appointment][medical appointment]]
@@ -136,6 +138,17 @@ might generate text that is less relevant.
 - start building sequentially phase by phase. show me real time progress. store progress status in a local file so that you can restart building from that point if interupted. start building ONLY [phase x] now.
 - readme file creation
 - gh integration
+** find your unknowns 
+before you start building, run a blind spot pass. treat my prompt as the map and the real project as the territory. identify:
+1. known knowns: what i clearly specified.
+2. known unknowns: questions i flagged but have not answered.
+3. unknown knowns: things i probably know but failed to write down.
+4. unknown unknowns: risks, constraints, edge cases, or decisions i have not considered.
+then ask me the 5-10 highest-leverage questions that would most change the output, especially questions that affect structure, architecture, audience, scope, workflow, or quality
+if you continue after that, keep an "implementation notes" section where you log everything
+** fan out method
+- create 5 different versions of a linkedin post summarizing the most recent [newsletter / content]. make 2 of them long posts, 2 short posts, and 1 post optimized to do well on linkedin based on best practices. approach it from different angles and try different styles to get some variety.
+- number the versions you generate so i can easily ask you to iterate on one or combine elements of one with another.
 ** production check
 you are my pre-launch security reviewer. review this app for production-readiness issues, focusing only on defensive improvements.
 
