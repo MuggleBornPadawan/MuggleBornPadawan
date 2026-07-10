@@ -154,6 +154,12 @@ in clojure, special forms are the fundamental constructs evaluated by the compil
 - `monitor-enter` / `monitor-exit`**: java synchronization primitives
 - `new`: instantiates a java class
 - `set!`: sets the value of a mutable field or var
+*** destructuring
+
+
+
+
+
 
 
 
