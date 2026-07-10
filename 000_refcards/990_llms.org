@@ -8,6 +8,12 @@
   - [[#prompt-tools][prompt tools]]
   - [[#temperature-top-p-and-top-k][temperature, top-p and top-k]]
   - [[#new-project][new project]]
+  - [[#smaller-pull-requests-prs][smaller pull requests (prs)]]
+  - [[#front-end-pull-request-pr][front end pull request (pr)]]
+  - [[#b2b-case-study-engine][b2b case study engine]]
+  - [[#operations-consultant][operations consultant]]
+  - [[#find-your-unknowns][find your unknowns]]
+  - [[#fan-out-method][fan out method]]
   - [[#production-check][production check]]
   - [[#for-beginners][for beginners]]
   - [[#medical-appointment][medical appointment]]
@@ -136,6 +142,69 @@ might generate text that is less relevant.
 - start building sequentially phase by phase. show me real time progress. store progress status in a local file so that you can restart building from that point if interupted. start building ONLY [phase x] now.
 - readme file creation
 - gh integration
+** smaller pull requests (prs)
+- split work into a stack of small prs, each under 400 changed lines and focused on a single change, building only on the prs below it
+- every pr must ship with its own tests and end with a way to observe it working directly — a command to run and the output i should expect
+** front end pull request (pr)
+- for each pr with frontend work, run the affected screens and capture evidence from the branch's final state: a screenshot of each relevant state (empty, loading, error, populated) and a gif of the key interaction end to end. where behavior changes, include before/after
+- attach it all to the pr so the change can be reviewed by observation, not by reading the diff — and re-capture if the code changes after
+** b2b case study engine
+You are a B2B case study writer. I'll paste raw notes or a transcript from a conversation with a happy customer. Turn it into a publishable case study.
+
+Here is the raw material:
+"""
+[PASTE YOUR CALL TRANSCRIPT OR NOTES HERE]
+"""
+
+Additional context:
+- My company/product: [WHAT YOU SELL]
+- The customer: [COMPANY NAME + WHAT THEY DO]
+- Where this will be published: [website / sales deck / one-pager]
+
+Produce the following:
+
+1. HEADLINE: a specific, results-driven title (include a number if one exists in the notes; never invent metrics).
+
+2. AT-A-GLANCE BOX: Customer, Industry, Company size, and the single biggest result, in 4 short lines.
+
+3. THE STORY in 3 sections:
+   - The Challenge (what was broken before us, in the customer's own words where possible)
+   - The Solution (what they did with us, concrete, not marketing fluff)
+   - The Results (outcomes; use exact numbers from the notes, and flag any claim I should verify before publishing)
+
+4. PULL QUOTE: the single most compelling verbatim line from the customer, lightly cleaned for grammar only.
+
+5. A 2-SENTENCE SUMMARY I can paste into a sales email or LinkedIn post.
+
+Rules:
+- Use ONLY facts present in the notes. If a section is thin, tell me exactly what follow-up question to ask the customer to fill the gap. Do not fabricate.
+- Keep it tight and skimmable. No jargon, no hype adjectives.
+** operations consultant 
+Act as an AI operations consultant for my business.
+
+My business is: [describe business]
+The function I want to improve is: [sales / marketing / ops / customer support / content / finance]
+Here are the workflows this function handles: [paste list]
+
+For each workflow:
+1. Deeply interview me about exactly how I do each process.
+2. Break the process into core steps.
+2. Label each step as Human-only, AI-assisted, or AI-owned.
+3. Explain why.
+4. Identify the highest-ROI automation opportunity.
+5. Warn me if this is a distraction, a meeting-summary trap, or a “rebuild Calendly for $9/month” mistake.
+6. Suggest one narrow AI workflow I could test this week.
+** find your unknowns 
+before you start building, run a blind spot pass. treat my prompt as the map and the real project as the territory. identify:
+1. known knowns: what i clearly specified.
+2. known unknowns: questions i flagged but have not answered.
+3. unknown knowns: things i probably know but failed to write down.
+4. unknown unknowns: risks, constraints, edge cases, or decisions i have not considered.
+then ask me the 5-10 highest-leverage questions that would most change the output, especially questions that affect structure, architecture, audience, scope, workflow, or quality
+if you continue after that, keep an "implementation notes" section where you log everything
+** fan out method
+- create 5 different versions of a linkedin post summarizing the most recent [newsletter / content]. make 2 of them long posts, 2 short posts, and 1 post optimized to do well on linkedin based on best practices. approach it from different angles and try different styles to get some variety.
+- number the versions you generate so i can easily ask you to iterate on one or combine elements of one with another.
 ** production check
 you are my pre-launch security reviewer. review this app for production-readiness issues, focusing only on defensive improvements.
 

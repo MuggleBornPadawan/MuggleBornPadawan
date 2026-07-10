@@ -21,6 +21,7 @@
 
 * general notes
 ** references
+- practice code is in the "clojure_for_the_brave" directory 
 - download code from: https://nostarch.com/clojure/
 - emacs manual: https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html#Top 
 - emacs reference card: https://ic.unicamp.br/~helio/disciplinas/MC102/Emacs_Reference_Card.pdf
@@ -107,7 +108,9 @@
   - use when if you want to do multiple things when some condition is true, and you always want to return nil when the condition is false
 - nil, true, false, truthiness, equality, and boolean expressions
   - both nil and false are used to represent logical falsiness, whereas all other values are logically truthy
-- clojure uses the boolean operators or and and. or returns either the first truthy value or the last value. and returns the first falsey value or, if no values are falsey, the last truthy value
+- boolean operators or and and
+  - or returns either the first truthy value or the last value
+  - and returns the first falsey value or, if no values are falsey, the last truthy value
 ** def var
 - immutable; values are bound and not assigned
 ** data structures
@@ -130,6 +133,31 @@
 | hash sets   |                                                               |                                  |
 | sorted sets |                                                               |                                  |
 |-------------+---------------------------------------------------------------+----------------------------------|
+** functions
+  - clojure’s support for first-class functions allows you to build more powerful abstractions than you can in languages without them
+  - those unfamiliar with this kind of programming think of functions as allowing you to generalize operations over data instances. for example, the + function abstracts addition over any specific numbers
+  - by contrast, clojure (and all lisps) allows you to create functions that generalize over processes. map allows you to generalize the process of transforming a collection by applying a function—any function—over any collection
+*** functions
+- the docstring is a useful way to describe and document your code. you can view the docstring for a function in the repl with (doc fn-name)
+- the number of parameters is the function’s arity
+*** special form functions
+in clojure, special forms are the fundamental constructs evaluated by the compiler rather than functions. they define the core language semantics. because they are not functions, you cannot pass them as arguments (e.g., you cannot `map` an `if`). common special forms include:
+- `def` defines a var in the current namespace
+- `if` the basic branching construct
+- `do`: evaluates expressions in order, returning the last
+- `let`: creates lexical bindings
+- `fn`: defines an anonymous function
+- `quote`: prevents evaluation of an expression
+- `var`**: returns the var object (referenced by `#'`)
+- `loop` / `recur`**: provides tail-recursive looping
+- `try` / `catch` / `finally` / `throw`**: exception handling
+- `monitor-enter` / `monitor-exit`**: java synchronization primitives
+- `new`: instantiates a java class
+- `set!`: sets the value of a mutable field or var
+*** destructuring
+
+
+
 
 
 
