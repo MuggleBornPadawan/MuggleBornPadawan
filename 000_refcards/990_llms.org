@@ -10,6 +10,7 @@
   - [[#new-project][new project]]
   - [[#smaller-pull-requests-prs][smaller pull requests (prs)]]
   - [[#front-end-pull-request-pr][front end pull request (pr)]]
+  - [[#cost-audit][cost audit]]
   - [[#b2b-case-study-engine][b2b case study engine]]
   - [[#operations-consultant][operations consultant]]
   - [[#find-your-unknowns][find your unknowns]]
@@ -148,6 +149,8 @@ might generate text that is less relevant.
 ** front end pull request (pr)
 - for each pr with frontend work, run the affected screens and capture evidence from the branch's final state: a screenshot of each relevant state (empty, loading, error, populated) and a gif of the key interaction end to end. where behavior changes, include before/after
 - attach it all to the pr so the change can be reviewed by observation, not by reading the diff — and re-capture if the code changes after
+** cost audit
+i need to choose the right ai model or tool for this task: [describe task]. classify it by task value, failure cost, required quality, and whether speed or accuracy matters more. then recommend the cheapest safe option and explain what would justify upgrading.
 ** b2b case study engine
 You are a B2B case study writer. I'll paste raw notes or a transcript from a conversation with a happy customer. Turn it into a publishable case study.
 
