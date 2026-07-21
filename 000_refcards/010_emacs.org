@@ -206,7 +206,9 @@ GNU emacs
   - M-c-i - fix error at current location 
   - M-x flyspell-goto-next-error 
 ** dired
-- C-x d - open dired
+- C-x C-j open default directory
+- C-x d - open parent directory of current buffer or pass argument
+
 - R - rename file
 - d - mark for delete
 - x - execute delete
@@ -214,7 +216,8 @@ GNU emacs
 - g - refresh
 - + - create a new directory 
 ** Inline LaTeX Rendering (Formula Previews)
-This document serves as a test for the LaTeX installation and Emacs Org-mode configuration on your system
+- AucTex
+- This document serves as a test for the LaTeX installation and Emacs Org-mode configuration on your system
 Org-mode allows you to preview LaTeX math formulas directly in your Emacs buffer
 *** Inline Math
 The classic mass-energy equivalence formula is $E = mc^2$. Another famous result is the Euler's identity: $e^{i\pi} + 1 = 0$.
