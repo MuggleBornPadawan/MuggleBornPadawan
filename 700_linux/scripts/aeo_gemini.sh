@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Configuration
-QUESTIONS_FILE="questions.txt"
-ANSWERS_FILE="answers.txt"
+QUESTIONS_FILE="q"
+ANSWERS_FILE="a"
 MODEL="gemini-2.5-flash-lite"
 #MODEL="gemini-flash-latest"
 

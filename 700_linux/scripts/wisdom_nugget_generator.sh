@@ -33,7 +33,7 @@ GEMINI_API_BASE_URL="https://generativelanguage.googleapis.com/v1beta/models"
 PASS_ENTRY_NAME="GEMINI_API_KEY" # Name of the pass entry for the API key
 
 # Output file
-NUGGETS_FILE="daily_nuggets.txt"
+NUGGETS_FILE="a"
 
 # --- Helper Functions ---
 
