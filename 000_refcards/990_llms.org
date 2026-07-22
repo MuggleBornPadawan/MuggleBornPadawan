@@ -10,7 +10,10 @@
   - [[#new-project][new project]]
   - [[#smaller-pull-requests-prs][smaller pull requests (prs)]]
   - [[#front-end-pull-request-pr][front end pull request (pr)]]
+  - [[#recommendation-check][recommendation check]]
   - [[#cost-audit][cost audit]]
+  - [[#ltx---direct-a-shot-not-screenplay][ltx - direct a shot; not screenplay]]
+  - [[#cool-website-ui-build-in-stages-not-vibes][cool website ui: build in stages, not vibes]]
   - [[#b2b-case-study-engine][b2b case study engine]]
   - [[#operations-consultant][operations consultant]]
   - [[#find-your-unknowns][find your unknowns]]
@@ -149,8 +152,38 @@ might generate text that is less relevant.
 ** front end pull request (pr)
 - for each pr with frontend work, run the affected screens and capture evidence from the branch's final state: a screenshot of each relevant state (empty, loading, error, populated) and a gif of the key interaction end to end. where behavior changes, include before/after
 - attach it all to the pr so the change can be reviewed by observation, not by reading the diff — and re-capture if the code changes after
+** recommendation check
+i am about to use this recommendation: [paste recommendation]. before i act, pressure-test it. list: 1. the hidden assumptions, 2. the most likely failure modes, 3. what evidence would change your answer, and 4. the smallest low-risk test i can run today.
 ** cost audit
 i need to choose the right ai model or tool for this task: [describe task]. classify it by task value, failure cost, required quality, and whether speed or accuracy matters more. then recommend the cheapest safe option and explain what would justify upgrading.
+** ltx - direct a shot; not screenplay
+Build a single shot.
+Starting image/reference: [describe or attach the clean still]
+Length: [6-8 seconds]
+Frame rate/resolution: [18fps, 720p]
+Camera: [locked / slow push-in / close-up / high angle]
+Identity details: [face, outfit, hair, style]
+Action: [one clear movement or beat]
+Motion limits: avoid fast camera movement, identity drift, morphing, and filler.
+If extending: use the last frame or inject a second reference around frame 45-50.
+** cool website ui: build in stages, not vibes
+- seed, crack, roots, beams, rooms, city, reset
+Build this project as a staged experience, not a single static page.
+
+Project: [name + one-sentence concept]
+First screen: [exact opening visual]
+User action: [scroll, hover, drag, click]
+Stage 1: [what appears first]
+Stage 2: [what changes next]
+Stage 3: [what becomes interactive]
+Stage 4: [final reveal]
+Reset / replay: [how the user can restart]
+
+Rules:
+- Tie every visual change to the user action.
+- Make text part of the scene, not floating decoration.
+- Include lighting, motion, mobile behavior, and performance constraints.
+- Return a complete runnable version.
 ** b2b case study engine
 You are a B2B case study writer. I'll paste raw notes or a transcript from a conversation with a happy customer. Turn it into a publishable case study.
 
