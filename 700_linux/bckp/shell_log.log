@@ -9,7 +9,7 @@ checking 172.16.42. ...
 OK
 run this file for any remote debian server setup, startup and chk backups
 -e 
-Date: Tue Jul 21 05:39:52 PM IST 2026 
+Date: Wed Jul 22 11:06:47 AM IST 2026 
 OS: Linux 
 Kernel: 6.6.119-09283-g9c138e0af8c3
 Firewall is active and enabled on system startup
@@ -58,30 +58,30 @@ Vacuuming system logs...
 Rebuilding software index...
 Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
 Get:2 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:3 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:4 https://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
-Get:5 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
+Get:3 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
+Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
 Get:6 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [314 kB]
 Get:7 http://deb.debian.org/debian bookworm-backports/main Translation-en [265 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:9 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:10 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:11 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Ign:12 https://storage.googleapis.com/cros-packages/150 bookworm InRelease
+Get:8 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [76.3 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:12 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
 Get:13 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
-Get:14 https://storage.googleapis.com/cros-packages/150 bookworm Release [3,109 B]
-Get:15 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [76.3 kB]
-Get:16 https://storage.googleapis.com/cros-packages/150 bookworm Release.gpg [2,365 B]
-Get:17 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Get:18 https://storage.googleapis.com/cros-packages/150 bookworm/main amd64 Packages [5,138 B]
-Get:19 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
-Get:20 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [16.6 kB]
+Get:14 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Ign:15 https://storage.googleapis.com/cros-packages/150 bookworm InRelease
+Get:16 https://storage.googleapis.com/cros-packages/150 bookworm Release [3,109 B]
+Get:17 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
+Get:18 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [16.6 kB]
+Get:19 https://storage.googleapis.com/cros-packages/150 bookworm Release.gpg [2,365 B]
+Get:20 https://storage.googleapis.com/cros-packages/150 bookworm/main amd64 Packages [5,138 B]
 Get:21 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
 Get:22 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
 Get:23 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
-Get:24 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [318 kB]
-Get:25 https://deb.debian.org/debian-security bookworm-security/main Translation-en [194 kB]
-Fetched 21.0 MB in 6s (3,794 kB/s)
+Get:24 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [319 kB]
+Get:25 https://deb.debian.org/debian-security bookworm-security/main Translation-en [195 kB]
+Fetched 21.0 MB in 5s (3,987 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 https://download.docker.com/linux/debian bookworm InRelease
@@ -91,14 +91,19 @@ Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
 Hit:5 http://deb.debian.org/debian bookworm-backports InRelease
 Ign:6 https://storage.googleapis.com/cros-packages/150 bookworm InRelease
 Hit:7 https://storage.googleapis.com/cros-packages/150 bookworm Release
-Get:8 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Fetched 7,507 B in 1s (7,600 B/s)
+Get:9 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Fetched 7,507 B in 1s (5,611 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr libnss3
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 77.7 MB of archives.
+After this operation, 402 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -152,12 +157,16 @@ elpa-magit is already the newest version (3.3.0-2).
 clisp is already the newest version (1:2.49.20210628.gitde01f0f-3).
 r-base is already the newest version (4.2.2.20221110-2).
 build-essential is already the newest version (12.9).
-firefox-esr is already the newest version (140.12.0esr-1~deb12u1).
 fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 trash-cli is already the newest version (0.17.1.14-5).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr libnss3
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 77.7 MB of archives.
+After this operation, 402 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -180,7 +189,12 @@ libssl-dev is already the newest version (3.0.20-1~deb12u2).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u6).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr libnss3
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 77.7 MB of archives.
+After this operation, 402 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -199,14 +213,24 @@ tmux is already the newest version (3.3a-3).
 dnsutils is already the newest version (1:9.18.49-1~deb12u1).
 nmap is already the newest version (7.93+dfsg1-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr libnss3
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 77.7 MB of archives.
+After this operation, 402 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b3).
 crun is already the newest version (1.8.1-1+deb12u1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr libnss3
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 77.7 MB of archives.
+After this operation, 402 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Abort.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -223,7 +247,26 @@ texlive-pictures is already the newest version (2022.20230122-3).
 texlive-binaries is already the newest version (2022.20220321.62855-5.1+deb12u2).
 preview-latex-style is already the newest version (12.2-1).
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  firefox-esr libnss3
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 77.7 MB of archives.
+After this operation, 402 kB of additional disk space will be used.
+Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 libnss3 amd64 2:3.87.1-1+deb12u3 [1,332 kB]
+Get:2 https://deb.debian.org/debian-security bookworm-security/main amd64 firefox-esr amd64 140.13.0esr-1~deb12u1 [76.3 MB]
+Fetched 77.7 MB in 33s (2,385 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 165848 files and directories currently installed.)
+Preparing to unpack .../libnss3_2%3a3.87.1-1+deb12u3_amd64.deb ...
+Unpacking libnss3:amd64 (2:3.87.1-1+deb12u3) over (2:3.87.1-1+deb12u2) ...
+Preparing to unpack .../firefox-esr_140.13.0esr-1~deb12u1_amd64.deb ...
+Leaving 'diversion of /usr/bin/firefox to /usr/bin/firefox.real by firefox-esr'
+Unpacking firefox-esr (140.13.0esr-1~deb12u1) over (140.12.0esr-1~deb12u1) ...
+Setting up libnss3:amd64 (2:3.87.1-1+deb12u3) ...
+Setting up firefox-esr (140.13.0esr-1~deb12u1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for libc-bin (2.36-9+deb12u14) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for desktop-file-utils (0.26-1) ...
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -299,14 +342,14 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-Tue Jul 21 17:41:04 2026 -> ClamAV update process started at Tue Jul 21 17:41:04 2026
-Tue Jul 21 17:41:04 2026 -> DON'T PANIC! Read https://docs.clamav.net/manual/Installing.html
-Tue Jul 21 17:41:04 2026 -> daily.cld database is up-to-date (version: 28067, sigs: 355515, f-level: 90, builder: svc.clamav-publisher)
-Tue Jul 21 17:41:04 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
-Tue Jul 21 17:41:04 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+Wed Jul 22 11:08:48 2026 -> ClamAV update process started at Wed Jul 22 11:08:48 2026
+Wed Jul 22 11:08:48 2026 -> DON'T PANIC! Read https://docs.clamav.net/manual/Installing.html
+Wed Jul 22 11:08:48 2026 -> daily.cld database is up-to-date (version: 28067, sigs: 355515, f-level: 90, builder: svc.clamav-publisher)
+Wed Jul 22 11:08:48 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+Wed Jul 22 11:08:48 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
 ClamAV 1.4.3/28067/Tue Jul 21 11:53:56 2026
-NEXT                        LEFT        LAST                        PASSED  UNIT                ACTIVATES
-Mon 2026-07-27 00:00:00 IST 5 days left Mon 2026-07-20 22:32:06 IST 19h ago clamav-weekly.timer clamav-weekly.service
+NEXT                        LEFT        LAST                        PASSED        UNIT                ACTIVATES
+Mon 2026-07-27 00:00:00 IST 4 days left Mon 2026-07-20 22:32:06 IST 1 day 12h ago clamav-weekly.timer clamav-weekly.service
 
 1 timers listed.
 Pass --all to see loaded but inactive timers, too.
@@ -319,7 +362,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
- 4400 ?        00:00:00 snow.sh
+ 4606 ?        00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
