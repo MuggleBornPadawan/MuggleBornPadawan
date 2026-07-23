@@ -3,6 +3,7 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#sqlite][sqlite]]
   - [[#learn-to-build---agy][learn to build - agy]]
   - [[#genai-code-limitations][genai code limitations]]
 - [[#foundational-programming-concepts][foundational programming concepts]]
@@ -28,6 +29,16 @@
   - minimize network round-trips (rtt) and payload size whenever possible
 - emacs coq agda - axiomatic programming - proof assistant
 - sovereign semantic substrate = alpha moat
+** sqlite
+sqlite is composed of several key components working together to process sql and access data:
+- vdbe, pager (4096 bytes), wal/writer, fsync, db
+- interface: handles connections, parses api calls, and passes them to the engine
+- tokenizer & parser: converts sql text into a parse tree
+- code generator (compiler): translates the parse tree into bytecode instructions
+- virtual machine (vdbe): executes the bytecode. the heart of sqlite
+- b-tree engine: manages data storage. tables and indices are stored as b-trees
+- pager: manages memory, caching, and disk i/o, including acid transactions and rol- lbacia a journal/wal
+- os interface (vfs): abstracts operating system calls for cross-platform file
 ** learn to build - agy
 - build northstar crm with login, contacts, companies, deals, notes, search, and dashboard cards. use react, vite, typescript, firebase auth, firestore, and firebase hosting; plan first.
 ** genai code limitations 
