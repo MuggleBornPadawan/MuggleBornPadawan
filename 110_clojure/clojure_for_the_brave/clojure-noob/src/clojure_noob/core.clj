@@ -48,8 +48,8 @@
       (println (if false
                  (do (println "success") (println "success statement"))
                  (do (println "failure") (println "failure statement"))))
-      (when true (println "abc") "abc") ; when is a combination of (if true do)
-      (when false (println "abc") "abc") ; when has no execution for false
+      (when true (println "abc") "abx") ; when is a combination of (if true do)
+      (when false (println "abc") "abxc") ; when has no execution for false
       (println "truthy and falsey")
       (println (= 1 1))
       (println (= 1 2))
@@ -57,7 +57,7 @@
       (println (nil? 1))
       (println (nil? nil))
       (println (= 2 3))
-      (println "boolean operators or and and. clojure uses the boolean operators or and and. or returns either the first truthy value or the last value. and returns the first falsey value or, if no values are falsey, the last truthy value")
+      (println "boolean operators or and and.  or returns either the first truthy value or the last value. and returns the first falsey value or, if no values are falsey, the last truthy value")
       (println (or false nil :large_I_mean_venti :why_cant_I_just_say_large))
       (println (or (= 0 1) (= "yes" "no")))
       (println (or nil))
@@ -177,5 +177,5 @@
     (train) (comments-demo) (form-demo) (control-flow-demo) (def-demo) (ds-demo) (fn-demo) (anonfn-demo) (closures-demo)
     )
   (crash-course-demo)
-  (println "cleanliness is next to godliness")
+  (println "cleanliness is next to godlinessss")
   )
