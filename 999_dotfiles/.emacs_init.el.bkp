@@ -255,7 +255,7 @@
    ;; 4. CRITICAL FIX: Explicitly set Gemini as the default system-wide backend
    (setq gptel-backend gemini-backend)
    ;(setq gptel-model 'gemini-3.1-pro-preview)
-   (setq gptel-model 'gemini-3.6-flash)
+   (setq gptel-model 'gemini-3.5-flash-lite)
    )))
 
    ;; 5. System prompt instructions
