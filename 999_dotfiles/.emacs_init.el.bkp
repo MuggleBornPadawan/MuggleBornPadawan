@@ -352,4 +352,7 @@
 (setq org-preview-latex-default-process 'dvisvgm)
 ;;(setq org-preview-latex-default-process 'dvipng)
 
-
+;; initial setup
+(setq-default truncate-lines nil)
+(global-display-line-numbers-mode 0)
+(global-visual-line-mode 1)
