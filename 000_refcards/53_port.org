@@ -3,6 +3,11 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#c-cultrep][c++ cult,rep]]
+  - [[#java-story---cultrepo][java story - cult.repo]]
+  - [[#clojure-equivalent-of-j2ee][clojure equivalent of j2ee]]
+  - [[#clojure-equivalent-of-spring][clojure equivalent of spring]]
+  - [[#sqlite][sqlite]]
   - [[#learn-to-build---agy][learn to build - agy]]
   - [[#genai-code-limitations][genai code limitations]]
 - [[#foundational-programming-concepts][foundational programming concepts]]
@@ -28,6 +33,71 @@
   - minimize network round-trips (rtt) and payload size whenever possible
 - emacs coq agda - axiomatic programming - proof assistant
 - sovereign semantic substrate = alpha moat
+** c++ cult,rep
+- american telephone and telegraph company (at&t) bell labs, c with classes, simula 
+** java story - cult.repo
+- jdk ⊃ jre ⊃ jvm
+- java runtime environment (jre) = java virtual machine (jvm, execution engine) + Libraries
+- java development kit (jdk)  = JRE + Tools (=javac=, debugger)
+- oak - compatible with devices outside traditional industry scope (thermostat, oven, ...) 
+- mosaic (web browser) - static websites to interactive models - hot java browser
+- write once run anywhere
+- servlets, applets, java beans 
+- java 1 event
+- microsoft vs java - internet explorer 4.0 had a modified version of java
+- microsoft on java: embrace, extend, extinguish 
+- netscape - mozilla 
+- j2ee, hibernate, struts, spring, 
+- j2ee -> corba influence- eclipse foundation (red hat, sun, fujitsu?) 
+- java community process 
+- sun microsystem -> dotcom bubble (ibm was supposed to acquire) -> oracle larry ellison acquired
+- openjdk 
+- java vs google android api - google won as fair use (implementation was done by them while they reused java api's headers / parameters)
+- apache tomcat - open source 
+- release cadence of 6 months from 4 / 5 years 
+- singe by the hinge, hard by the yard - meaning
+- straw man proposal
+- panama - foreign functions and foreign data
+- amber - high productivity language features
+- loom - lightweight concurrency 
+- valhalla - primitive types and specialized generics
+- babylon -  heterogenous targets like  GPUs, SIMD, TPUs, FPGAs, execution engines like CUDA, SPIR-V, or Metal and domain-specific models (e.g., SQL, ORMs, ML/AI frameworks)
+- maven, gradle 
+** clojure equivalent of j2ee
+|----------------------------+--------------------------------+---------------------------------------------|
+| J2EE Component             | Clojure Equivalent             | Notes                                       |
+| :---                       | :---                           | :---                                        |
+| **Servlet / App Server**   | **Ring** + Jetty / Http-kit    | Standard HTTP abstraction                   |
+| **Spring MVC / JAX-RS**    | **Reitit** or Compojure        | Data-driven routing                         |
+| **CDI / EJB / Spring IoC** | **Integrant** or **Component** | System lifecycle management                 |
+| **JPA / Hibernate**        | **`next.jdbc`** + **HoneySQL** | Clojure avoids ORMs, preferring SQL-as-data |
+| **Bean Validation**        | **Malli** or Spec              | Schema and data validation                  |
+| **Spring Security**        | **Buddy**                      | Authentication and authorization            |
+|----------------------------+--------------------------------+---------------------------------------------|
+** clojure equivalent of spring
+*** Full Application Frameworks (Spring Boot equivalent)
+- *[Kit](https://kit-clj.github.io/):* The modern standard for Clojure web apps (built on Integrant).
+- *[Luminus](https://luminusweb.com/):* A popular, battle-tested micro-framework template.
+
+*** The standard Clojure stack (Spring components broken down)
+|------------------------------+----------------------------+----------------------------------------------------------------------|
+| Spring Feature               | Clojure Equivalent         | Description                                                          |
+| :---                         | :---                       | :---                                                                 |
+| *IoC / Dependency Injection* | *Integrant* or *Component* | Data-driven lifecycle and dependency management.                     |
+| *Spring MVC / REST*          | *Ring* + *Reitit*          | Ring handles HTTP abstractions; Reitit handles routing and coercion. |
+| *Spring Data / JPA*          | *=next.jdbc=* + *HoneySQL* | Low-level JDBC wrapper + writing SQL as Clojure data structures.     |
+| *Spring Security*            | *Buddy*                    | Authentication and authorization library.                            |
+|------------------------------+----------------------------+----------------------------------------------------------------------|
+** sqlite
+sqlite is composed of several key components working together to process sql and access data:
+- vdbe, pager (4096 bytes), wal/writer, fsync, db
+- interface: handles connections, parses api calls, and passes them to the engine
+- tokenizer & parser: converts sql text into a parse tree
+- code generator (compiler): translates the parse tree into bytecode instructions
+- virtual machine (vdbe): executes the bytecode. the heart of sqlite
+- b-tree engine: manages data storage. tables and indices are stored as b-trees
+- pager: manages memory, caching, and disk i/o, including acid transactions and rol- lbacia a journal/wal
+- os interface (vfs): abstracts operating system calls for cross-platform file
 ** learn to build - agy
 - build northstar crm with login, contacts, companies, deals, notes, search, and dashboard cards. use react, vite, typescript, firebase auth, firestore, and firebase hosting; plan first.
 ** genai code limitations 

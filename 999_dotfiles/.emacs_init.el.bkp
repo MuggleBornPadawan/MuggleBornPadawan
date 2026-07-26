@@ -145,6 +145,11 @@
 ;; Don't ask for confirmation when executing code blocks
 (setq org-confirm-babel-evaluate nil)
 
+;; org babel c/cpp configuration
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((C . t)))
+
 ;; --- Org-Babel Python Configuration ---
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -352,4 +357,7 @@
 (setq org-preview-latex-default-process 'dvisvgm)
 ;;(setq org-preview-latex-default-process 'dvipng)
 
-
+;; initial setup
+(setq-default truncate-lines nil)
+(global-display-line-numbers-mode 0)
+(global-visual-line-mode 1)

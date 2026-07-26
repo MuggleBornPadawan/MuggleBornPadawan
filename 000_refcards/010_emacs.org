@@ -286,6 +286,7 @@ Best for long-term reference.
 - C-c ' (Control-c + Single Quote) : Edit In-Context
 - C-c C-o : open results
 - C-c C-v k : close results 
+- C-c C-v b : execute all code blocks in buffer 
 - C-c C-v I : view info
 - C-c C-v n : Move to the Next source block
 - C-c C-v p : Move to the Previous source block
