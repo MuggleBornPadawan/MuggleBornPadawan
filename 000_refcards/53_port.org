@@ -5,6 +5,7 @@
   - [[#random-notes][random notes]]
   - [[#c-cultrep][c++ cult,rep]]
   - [[#java-story---cultrepo][java story - cult.repo]]
+  - [[#clojure-equivalent-of-ruby-on-rails][clojure equivalent of ruby on rails]]
   - [[#clojure-equivalent-of-j2ee][clojure equivalent of j2ee]]
   - [[#clojure-equivalent-of-spring][clojure equivalent of spring]]
   - [[#sqlite][sqlite]]
@@ -64,6 +65,16 @@
 - valhalla - primitive types and specialized generics
 - babylon -  heterogenous targets like  GPUs, SIMD, TPUs, FPGAs, execution engines like CUDA, SPIR-V, or Metal and domain-specific models (e.g., SQL, ORMs, ML/AI frameworks)
 - maven, gradle 
+** clojure equivalent of ruby on rails
+|------------------+-------------------------+----------------------|
+| concept          | ruby / rails equivalent | clojure equivalent   |
+|------------------+-------------------------+----------------------|
+| language         | ruby                    | clojure              |
+| http abstraction | rack                    | ring                 |
+| routing          | rails router            | reitit or compojure  |
+| database/orm     | activerecord            | next.jdbc + honeysql |
+| html templating  | erb / slim              | hiccup or selmer     |
+|------------------+-------------------------+----------------------|
 ** clojure equivalent of j2ee
 |----------------------------+--------------------------------+---------------------------------------------|
 | J2EE Component             | Clojure Equivalent             | Notes                                       |
