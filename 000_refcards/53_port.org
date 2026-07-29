@@ -5,6 +5,8 @@
   - [[#random-notes][random notes]]
   - [[#c-cultrep][c++ cult,rep]]
   - [[#java-story---cultrepo][java story - cult.repo]]
+  - [[#clojure-philosophy][clojure philosophy]]
+  - [[#llmsedn][llms.edn]]
   - [[#clojure-equivalent-of-ruby-on-rails][clojure equivalent of ruby on rails]]
   - [[#clojure-equivalent-of-j2ee][clojure equivalent of j2ee]]
   - [[#clojure-equivalent-of-spring][clojure equivalent of spring]]
@@ -65,6 +67,29 @@
 - valhalla - primitive types and specialized generics
 - babylon -  heterogenous targets like  GPUs, SIMD, TPUs, FPGAs, execution engines like CUDA, SPIR-V, or Metal and domain-specific models (e.g., SQL, ORMs, ML/AI frameworks)
 - maven, gradle 
+** clojure philosophy
+- immutable data (facts - point of time snapshot, no side effects) vs ambassidors (objects) 
+  - model information (complexity, correctness, reasoning)
+  - simple and reproducible
+  - reprsents what happned   
+- state management - time (identity is seperate from state)
+  - immutable by default; change is explicit, carefully managed exception, not the rule
+  - loop > recur 
+  - tail call optimization (tco) > trap > recur (won't grow stack) 
+- extensiblity (beyond switch case) - better polymorphism 
+  - monkey patching is recipe for chaos
+  - functions live in own namespaces
+  - composable, developer chooses
+  - extends without modification
+- pragmatic approach payoffs
+  - simpler, more predictable programs
+  - robust concurrency by default
+  - composable and extensible systems 
+  = avoids entire classes of bugs
+  - focus on data manipulation
+  - performance guarentees in semantics
+** llms.edn 
+
 ** clojure equivalent of ruby on rails
 |------------------+-------------------------+----------------------|
 | concept          | ruby / rails equivalent | clojure equivalent   |
@@ -76,16 +101,16 @@
 | html templating  | erb / slim              | hiccup or selmer     |
 |------------------+-------------------------+----------------------|
 ** clojure equivalent of j2ee
-|----------------------------+--------------------------------+---------------------------------------------|
-| J2EE Component             | Clojure Equivalent             | Notes                                       |
-| :---                       | :---                           | :---                                        |
-| **Servlet / App Server**   | **Ring** + Jetty / Http-kit    | Standard HTTP abstraction                   |
-| **Spring MVC / JAX-RS**    | **Reitit** or Compojure        | Data-driven routing                         |
-| **CDI / EJB / Spring IoC** | **Integrant** or **Component** | System lifecycle management                 |
-| **JPA / Hibernate**        | **`next.jdbc`** + **HoneySQL** | Clojure avoids ORMs, preferring SQL-as-data |
-| **Bean Validation**        | **Malli** or Spec              | Schema and data validation                  |
-| **Spring Security**        | **Buddy**                      | Authentication and authorization            |
-|----------------------------+--------------------------------+---------------------------------------------|
+|------------------------+-------------------------+---------------------------------------------|
+| j2ee component         | clojure equivalent      | notes                                       |
+| :---                   | :---                    | :---                                        |
+| servlet / app server   | ring + jetty / http-kit | standard http abstraction                   |
+| spring mvc / jax-rs    | reitit or compojure     | data-driven routing                         |
+| cdi / ejb / spring ioc | integrant or component  | system lifecycle management                 |
+| jpa / hibernate        | `next.jdbc` + honeysql  | clojure avoids orms, preferring sql-as-data |
+| bean validation        | malli or spec           | schema and data validation                  |
+| spring security        | buddy                   | authentication and authorization            |
+|------------------------+-------------------------+---------------------------------------------|
 ** clojure equivalent of spring
 *** Full Application Frameworks (Spring Boot equivalent)
 - *[Kit](https://kit-clj.github.io/):* The modern standard for Clojure web apps (built on Integrant).
