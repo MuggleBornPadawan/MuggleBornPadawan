@@ -7,6 +7,7 @@
   - [[#java-story---cultrepo][java story - cult.repo]]
   - [[#clojure-philosophy][clojure philosophy]]
   - [[#llmsedn][llms.edn]]
+  - [[#clojure-reitit-vs-compojure][clojure reitit vs compojure]]
   - [[#clojure-equivalent-of-ruby-on-rails][clojure equivalent of ruby on rails]]
   - [[#clojure-equivalent-of-j2ee][clojure equivalent of j2ee]]
   - [[#clojure-equivalent-of-spring][clojure equivalent of spring]]
@@ -89,6 +90,17 @@
   - focus on data manipulation
   - performance guarentees in semantics
 ** llms.edn 
+
+** clojure reitit vs compojure
+|-----------------+--------------------------------------------------------+----------------------------------------------|
+| Feature         | Reitit                                                 | Compojure                                    |
+| :---            | :---                                                   | :---                                         |
+| Design          | Data-driven (routes are plain vectors/maps)            | Macro-based DSL (=GET=, =POST=, =defroutes=) |
+| Performance     | Extremely fast (trie-based routing)                    | Moderate                                     |
+| Platform        | Full-stack (JVM + ClojureScript/Frontend)              | Primarily Backend (JVM)                      |
+| Coercion & Docs | Native support for Malli/Spec/Schema & Swagger/OpenAPI | Requires =compojure-api= extension           |
+| Reverse Routing | Built-in (easy path generation from route names)       | Difficult / Limited                          |
+|-----------------+--------------------------------------------------------+----------------------------------------------|
 
 ** clojure equivalent of ruby on rails
 |------------------+-------------------------+----------------------|
