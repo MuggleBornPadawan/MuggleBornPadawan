@@ -22,6 +22,7 @@
 - [[#entropy---yt-video---3b1b][entropy - yt video - 3b1b]]
   - [[#compresssion--prediction--intelligence][compresssion = prediction | intelligence]]
   - [[#ai-infrastructure][ai infrastructure]]
+  - [[#softwar-engineering][softwar engineering]]
 
 * trivia
 ** random notes
@@ -311,7 +312,22 @@ rich:   [real-world facts]   -> [immutable pure data]   -> [functional abstracti
 - stage 10 — real ai systems -deploy scalable chat apps, rag pipelines, inference clusters
 - stage 11 — open source - contribute to inference tooling or ai infra projects
 - stage 12 — apply - ai infra engineer, platform engineer, ml systems engineer
-
+** softwar engineering
+- api design - rest & grpc
+- auth - oauth2, jwt, openid, passkeys
+- databases - sql, nosql, sharding, indexing
+- caching - redis, cdn, edge strategies
+- event-driven systems - kafka, pulsar, streaming
+- concurrency & async - reactive, structured concurrency
+- distributed systems - microservices, service mesh
+- security - https, encryption, zero trust, owasp
+- observability - logs, tracing, metrics, otel
+- cloud & deployment - docker, k8s, serverless
+- infrastructure as code - terraform, pulumi
+- ci/cd - pipelines, gitops, rollouts
+- api gateways - rate limiting, routing, versioning
+- testing - unit, integration, contract testing
+- ai integration - llm apis, vector dbs, rag
 
 
 
