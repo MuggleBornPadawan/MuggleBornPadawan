@@ -111,10 +111,10 @@
            company exec-path-from-shell geiser-mit geiser-racket
            git-commit gptel ido-completing-read+ json-mode lsp-ui
            magit multiple-cursors org-contrib paredit
-           persistent-scratch racket-mode rainbow-delimiters ranger
-           request restclient slime smex tagedit toc-org
-           tree-sitter-langs treesit-auto use-package vterm
-           vterm-editor vterm-hotkey vterm-toggle)))
+           persistent-scratch protobuf-mode racket-mode
+           rainbow-delimiters ranger request restclient slime smex
+           tagedit toc-org tree-sitter-langs treesit-auto use-package
+           vterm vterm-editor vterm-hotkey vterm-toggle)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
