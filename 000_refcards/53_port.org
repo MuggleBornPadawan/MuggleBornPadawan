@@ -3,10 +3,13 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#aihero---matt-pocock][aihero - matt pocock]]
+  - [[#rfc][rfc]]
+  - [[#quant-funds][quant funds]]
   - [[#c-cultrep][c++ cult,rep]]
   - [[#java-story---cultrepo][java story - cult.repo]]
+  - [[#dhh-vs-rich-hickey][dhh vs rich hickey]]
   - [[#clojure-philosophy][clojure philosophy]]
-  - [[#llmsedn][llms.edn]]
   - [[#clojure-reitit-vs-compojure][clojure reitit vs compojure]]
   - [[#clojure-equivalent-of-ruby-on-rails][clojure equivalent of ruby on rails]]
   - [[#clojure-equivalent-of-j2ee][clojure equivalent of j2ee]]
@@ -38,6 +41,25 @@
   - minimize network round-trips (rtt) and payload size whenever possible
 - emacs coq agda - axiomatic programming - proof assistant
 - sovereign semantic substrate = alpha moat
+** aihero - matt pocock
+- rediscovering software fundamentals - https://www.aihero.dev/ 
+- human in the loop (hitl)
+- away from keyboard (afk) 
+- ralph wiggum loop
+- skills 
+  - /grill-me
+  - /to-spec or /to-prd
+  - /to-issues or /to-ticket
+    - tracer bullets - each ticket is a thin vertical slice cutting through all integration layers, not a horizontal slice of one layer. better feedback loop at feature level because of verticals instead of horizontal stage (/slices) coding 
+    - blocking relationships to be established
+  - /tdd
+  - /improve-codebase-architecture 
+** rfc
+- request for comments
+- rfc 822 (published in 1982) is the foundational standard for arpa internet text messages (email)
+- obsoleted by rfc 2822, and currently updated by rfc 5322
+** quant funds
+jane street, hudson river trading, citadel securities, jump trading, xtx markets, two sigma, d. e. shaw, optiver, imc trading, drw, tower research, akuna capital, sig, millennium, worldquant, graviton research, nk securities, alphagrep, quadeye, trexquant
 ** c++ cult,rep
 - american telephone and telegraph company (at&t) bell labs, c with classes, simula 
 ** java story - cult.repo
@@ -68,6 +90,15 @@
 - valhalla - primitive types and specialized generics
 - babylon -  heterogenous targets like  GPUs, SIMD, TPUs, FPGAs, execution engines like CUDA, SPIR-V, or Metal and domain-specific models (e.g., SQL, ORMs, ML/AI frameworks)
 - maven, gradle 
+** dhh vs rich hickey
+|----------------+-------------------------------+---------------------------------|
+| dimension      | dhh                           | rich hickey                     |
+| :---           | :---                          | :---                            |
+| primary goal   | developer joy & speed         | long-term clarity & correctness |
+| software model | opinionated monolith (rails)  | composable libraries (clojure)  |
+| code style     | expressive dsls & magic       | explicit data & pure functions  |
+| philosophy     | convention over configuration | simple over easy                |
+|----------------+-------------------------------+---------------------------------|
 ** clojure philosophy
 - immutable data (facts - point of time snapshot, no side effects) vs ambassidors (objects) 
   - model information (complexity, correctness, reasoning)
@@ -86,11 +117,9 @@
   - simpler, more predictable programs
   - robust concurrency by default
   - composable and extensible systems 
-  = avoids entire classes of bugs
+  - avoids entire classes of bugs
   - focus on data manipulation
   - performance guarentees in semantics
-** llms.edn 
-
 ** clojure reitit vs compojure
 |-----------------+--------------------------------------------------------+----------------------------------------------|
 | Feature         | Reitit                                                 | Compojure                                    |
