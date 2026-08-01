@@ -3,6 +3,9 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#postgresql---full-stack][postgresql - full stack]]
+  - [[#self-hosting][self hosting]]
+  - [[#linux-file-directories][linux file directories]]
   - [[#aihero---matt-pocock][aihero - matt pocock]]
   - [[#rfc][rfc]]
   - [[#quant-funds][quant funds]]
@@ -41,19 +44,83 @@
   - minimize network round-trips (rtt) and payload size whenever possible
 - emacs coq agda - axiomatic programming - proof assistant
 - sovereign semantic substrate = alpha moat
+** postgresql - full stack 
+- free, open source and 30 years - an incredibly battle-tested tech
+- deploy, monitor, backup and keep in sync - a single postgresql instance than multiple systems
+- typical stack: database, document store, searchh, job queue, cache, analytics
+- jsonb column type - stores json document in binary format - custom attributes (mangodb)
+- gin index - generalized inverted index 
+- tsvector - human language search - stem words, rank, lanuguage 
+- background job queue
+  - jobs and background workers
+  - jobs (avoid conflict by SELECT FOR UPDATE SKIP LOCKED)
+  - workers can poll - eg: email users about id creation
+  - listen and notify - pub/sub (redis, rabbitmq) 
+- pgvector - recommendation engines - similarity search and regular business logic in single query 
+- native graph queries - multi hop pattern matching
+- acid compliant - all (fulfill) or nothing (roll back) transaction 
+  - atomicity, consistent, isolation and durablity 
+- core engine - extension system and type systems 
+- client server architecture
+- the oversized attribute storage technique (toast) - 8k / page
+- gif compression - pglz - variant of lempel-ziv-welch (lzw) - lossless data compression algorithm for image formats like gif, tiff, pdf files
+- out of line storage - toast 2kb per page
+- write ahead logging (wal) and durablity - crash recovery
+- bytea - blob - binary large object 
+- transactions and multi-version concurrency control (mvcc) 
+- vaccum
+- downsides: real physical limits
+  - write scaling - no native sharding
+  - connections - pgbouncer 
+  - dead rows - mvcc - garbage collection
+** self hosting
+- proxmox, nextcloud, jellyfin, immich, vaultwarden, home assistant 
+** linux file directories
+- file directories
+  - bin, sbin, etc, var, lib, dev, boot
+  - home, root, tmp, var, media, xxt, proc
+- home - user files
+- bin - keeps the programmes. bin stands for binaries; toolbox
+  - ls, cp, mv, cat, mkdir
+- sbin - system binaries - administrative
+  - networking - ip, ifconfig, route
+  - disk management - fdisk, mkfs, parted
+  - boot - grub-install, init
+  - system recovery - fsck, e2fsck
+- etc - editable text configuration - network, ssh, dns
+- usr - unix system resources 
+- lib - shared libraries of applications
+- tmp - temporary files - scratch space, wiped on reboot
+- var - changes frequently - logs, queues, mail, lib, spool, databases and cache files 
+- media - for external storage devices automatically mounted
+- mnt - for external storage devices manually mounted (administrators) 
+- dev - hardware files - hard drives, usb, keyboards, mice, printers, terminals
+- proc - system information - live dashboard - virtual file system - live information - processes, memory, 
+- boot - kernel, bootloader files, startup configuration
 ** aihero - matt pocock
-- rediscovering software fundamentals - https://www.aihero.dev/ 
+- rediscover software fundamentals - https://www.aihero.dev/ 
 - human in the loop (hitl)
 - away from keyboard (afk) 
-- ralph wiggum loop
+- ralph wiggum loop (sequential) > sandcastle (parallel) 
+- flow: idea > research (optional) > prototype (optional) > prd > kanban > implementation > qa / code review 
+- intentional about modules (blocks with interfaces and test boundaries) and shape of code bases
 - skills 
-  - /grill-me
-  - /to-spec or /to-prd
-  - /to-issues or /to-ticket
+  - /grill-me (hitl)
+  - /to-spec or /to-prd (afk, doc rot will happen - remove the documents after code generation)
+  - /to-issues or /to-ticket (afk, doc rot will happen - close issues in github issues so that the documents are removed)
     - tracer bullets - each ticket is a thin vertical slice cutting through all integration layers, not a horizontal slice of one layer. better feedback loop at feature level because of verticals instead of horizontal stage (/slices) coding 
     - blocking relationships to be established
-  - /tdd
+  - /tdd (hitl)
   - /improve-codebase-architecture 
+- bullets: systems have layers > llms code horizontally > use tracer bullets for vertical slicing of features
+- feeback loop - test in smart zone (~100k), ci must stay green
+- implementing coding standards?
+  - push <> reviewer
+  - pull <> implementer
+- agents
+  - opus - reviewer
+  - sonnet - coding
+- parallelization is missing? 
 ** rfc
 - request for comments
 - rfc 822 (published in 1982) is the foundational standard for arpa internet text messages (email)
