@@ -107,13 +107,13 @@
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
  '(package-selected-packages
-   '(cider claude-code clojure-mode-extra-font-locking clojure-ts-mode
-           company exec-path-from-shell geiser-mit geiser-racket
-           git-commit gptel ido-completing-read+ json-mode lsp-ui
-           magit multiple-cursors org-contrib paredit
-           persistent-scratch racket-mode rainbow-delimiters ranger
-           request restclient slime smex tagedit toc-org
-           tree-sitter-langs treesit-auto use-package vterm
+   '(cider clojure-mode-extra-font-locking company elfeed
+           exec-path-from-shell geiser-mit geiser-racket git-commit
+           gptel ido-completing-read+ json-mode lsp-ui magit
+           multiple-cursors org-contrib org-kanban paredit
+           persistent-scratch protobuf-mode racket-mode
+           rainbow-delimiters ranger request restclient slime smex
+           tagedit toc-org tree-sitter-langs treesit-auto use-package
            vterm-editor vterm-hotkey vterm-toggle)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -356,6 +356,29 @@
 ;; Set the default rendering process (dvisvgm produces sharp vector graphics)
 (setq org-preview-latex-default-process 'dvisvgm)
 ;;(setq org-preview-latex-default-process 'dvipng)
+
+; **elfeed** is an rss/atom feed reader for emacs.
+(use-package elfeed
+  :ensure t
+  :config
+  (setq elfeed-feeds
+      '(;; Aggregators & Official
+        ("http://planet.clojure.in/rss20.xml" clojure community)
+        ("https://clojure.org/news/feed.xml" clojure official)
+        ("https://www.reddit.com/r/clojure/.rss" clojure reddit)
+        
+        ;; Companies
+        ("https://www.juxt.pro/blog/rss.xml" clojure tech)
+        ("https://blog.cognitect.com/blog?format=rss" clojure tech)
+        ("https://freshcodeit.com/rss.xml" clojure tech)
+        
+        ;; Individuals
+        ("https://www.braveclojure.com/feed.xml" clojure blog)
+        ("https://borkdude.github.io/index.xml" clojure blog)
+        ("https://ericnormand.me/feed" clojure blog)))
+  )
+;; Keep entries for 30 days maximum (in seconds)
+(setq elfeed-db-max-age (* 7 24 60 60))
 
 ;; initial setup
 (setq-default truncate-lines nil)
