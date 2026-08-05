@@ -252,15 +252,25 @@
   ;; 2. Read the key into a local variable
   (let ((secret-key (my/get-gemini-key-from-pass)))
     (when secret-key
-  ;; 3. Create the Gemini backend object
+  ;; 3.a Create the Gemini backend object
   (let ((gemini-backend (gptel-make-gemini "Gemini"
                           :key secret-key
                           :stream t
-                          :models '(gemini-3.6-flash gemini-3.5-flash-lite gemini-3.1-pro-preview))))    
-   ;; 4. CRITICAL FIX: Explicitly set Gemini as the default system-wide backend
-   (setq gptel-backend gemini-backend)
+                          :models '(gemini-3.6-flash gemini-3.5-flash-lite gemini-3.1-pro-preview))))
+    
+  ;; 3.b Define Ollama backend
+  (gptel-make-ollama "Ollama"
+    :host "localhost:11434"
+    :models '(llama3.2:latest))
+
+  ;; Set your default startup model
+  (setq gptel-backend (gptel-get-backend "Ollama")
+        gptel-model 'llama3.2:latest)
+  
+  ;; 4. CRITICAL FIX: Explicitly set Gemini as the default system-wide backend
+  (setq gptel-backend gemini-backend)
    ;(setq gptel-model 'gemini-3.1-pro-preview)
-   (setq gptel-model 'gemini-3.6-flash)
+   (setq gptel-model 'gemini-3.5-flash-lite)
    )))
 
    ;; 5. System prompt instructions
@@ -384,3 +394,4 @@
 (setq-default truncate-lines nil)
 (global-display-line-numbers-mode 0)
 (global-visual-line-mode 1)
+(define-key lisp-interaction-mode-map (kbd "C-j") 'eval-print-last-sexp)
