@@ -12,6 +12,7 @@
   - [[#front-end-pull-request-pr][front end pull request (pr)]]
   - [[#recommendation-check][recommendation check]]
   - [[#cost-audit][cost audit]]
+  - [[#gauntlet-loop][gauntlet loop]]
   - [[#red-blue-green-review-loop][red blue green review loop]]
   - [[#build-your-first-agent][build your first agent]]
   - [[#cto-as-a-prompt][cto as a prompt]]
@@ -160,6 +161,25 @@ might generate text that is less relevant.
 i am about to use this recommendation: [paste recommendation]. before i act, pressure-test it. list: 1. the hidden assumptions, 2. the most likely failure modes, 3. what evidence would change your answer, and 4. the smallest low-risk test i can run today.
 ** cost audit
 i need to choose the right ai model or tool for this task: [describe task]. classify it by task value, failure cost, required quality, and whether speed or accuracy matters more. then recommend the cheapest safe option and explain what would justify upgrading.
+** gauntlet loop
+Run a Gauntlet Loop on the task below.
+
+TASK:
+[Describe the deliverable]
+
+QUALITY BAR:
+[List specific pass-or-fail criteria]
+
+CONSTRAINTS:
+[List limits, required facts, format, tone, and sources]
+
+Phase 1 — BUILDER: Draft the strongest version without critique.
+
+Phase 2 — CRITIC: Evaluate every criterion. For each failure, quote evidence, explain it, and prescribe a specific revision. Do not rewrite.
+
+Phase 3 — BUILDER: Revise using the critique.
+
+Repeat Phases 2–3 until every criterion passes or three rounds end. Finish with a pass/fail scorecard.
 ** red blue green review loop
 Act as three reviewers for this work:
 
