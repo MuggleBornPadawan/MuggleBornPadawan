@@ -12,7 +12,9 @@
   - [[#front-end-pull-request-pr][front end pull request (pr)]]
   - [[#recommendation-check][recommendation check]]
   - [[#cost-audit][cost audit]]
+  - [[#gauntlet-loop][gauntlet loop]]
   - [[#red-blue-green-review-loop][red blue green review loop]]
+  - [[#build-your-first-agent][build your first agent]]
   - [[#cto-as-a-prompt][cto as a prompt]]
   - [[#audit-a-merge-request][audit a merge request]]
   - [[#ltx---direct-a-shot-not-screenplay][ltx - direct a shot; not screenplay]]
@@ -159,6 +161,25 @@ might generate text that is less relevant.
 i am about to use this recommendation: [paste recommendation]. before i act, pressure-test it. list: 1. the hidden assumptions, 2. the most likely failure modes, 3. what evidence would change your answer, and 4. the smallest low-risk test i can run today.
 ** cost audit
 i need to choose the right ai model or tool for this task: [describe task]. classify it by task value, failure cost, required quality, and whether speed or accuracy matters more. then recommend the cheapest safe option and explain what would justify upgrading.
+** gauntlet loop
+Run a Gauntlet Loop on the task below.
+
+TASK:
+[Describe the deliverable]
+
+QUALITY BAR:
+[List specific pass-or-fail criteria]
+
+CONSTRAINTS:
+[List limits, required facts, format, tone, and sources]
+
+Phase 1 — BUILDER: Draft the strongest version without critique.
+
+Phase 2 — CRITIC: Evaluate every criterion. For each failure, quote evidence, explain it, and prescribe a specific revision. Do not rewrite.
+
+Phase 3 — BUILDER: Revise using the critique.
+
+Repeat Phases 2–3 until every criterion passes or three rounds end. Finish with a pass/fail scorecard.
 ** red blue green review loop
 Act as three reviewers for this work:
 
@@ -168,6 +189,35 @@ Act as three reviewers for this work:
 
 Work to review:
 [paste draft, plan, workflow, email, or policy]
+** build your first agent
+Help me design a safe, reusable AI agent for this recurring task:
+
+[TASK]
+
+Do not perform the task yet. First create an “Agent Brief” containing:
+
+1. Goal: The exact outcome it must produce.
+2. Trigger: What starts the workflow.
+3. Inputs: The files, messages, tools, and context it may use.
+4. Steps: The exact sequence it should follow.
+5. Permissions:
+   - May do automatically:
+   - Must ask before:
+   - Must never do:
+6. Stop rules: When it should pause, ask a question, or return control to me.
+7. Success check: The evidence proving the task is complete and correct.
+8. Output: The required format and destination.
+9. Tests:
+   - One normal example
+   - One example with missing information
+   - One unusual edge case
+
+Default to draft-only mode.
+
+Do not send, delete, publish, purchase, contact anyone, or change external records without my explicit approval. Use the minimum access needed, and clearly flag assumptions, missing information, and uncertainty.
+
+After I approve the Agent Brief, walk me through setting it up in [ChatGPT / Claude / OTHER TOOL] without requiring code.
+
 ** cto as a prompt
 I’m building [describe the product] for [describe the customer]. Users will access it through [web, mobile, API, etc.], and it will handle [describe the data]. I currently have [prototype, early users, paying customers, etc.]. Help me plan the AWS architecture, security, authentication, observability, deployment, and cost considerations I should address at this stage. Separate what I need now from what can wait until later.
 ** audit a merge request

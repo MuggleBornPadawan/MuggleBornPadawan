@@ -71,3 +71,4 @@ alias i='to ; tty ; pwd ; date ; ulimit -a | grep processes ; abc ; ping -c 1 ww
 alias info='./MuggleBornPadawan/700_linux/scripts/info.sh | less'
 #alias pp="ping -i 5 www.google.com | awk '{print strftime("[%Y-%m-%d %H:%M:%S]"), $0}"
 alias pp='./MuggleBornPadawan/700_linux/scripts/ping_test.sh'
+alias eo='emacs -nw -q -l /home/rgroot/MuggleBornPadawan/dummy/ollama-init.el'
