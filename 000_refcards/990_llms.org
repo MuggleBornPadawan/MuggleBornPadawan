@@ -13,6 +13,8 @@
   - [[#recommendation-check][recommendation check]]
   - [[#cost-audit][cost audit]]
   - [[#gauntlet-loop][gauntlet loop]]
+  - [[#asd-ste100-simplified-technical-english-ste][ASD-STE100 Simplified Technical English (STE)]]
+  - [[#hybrid-architecture-of-agents][hybrid architecture of agents]]
   - [[#red-blue-green-review-loop][red blue green review loop]]
   - [[#build-your-first-agent][build your first agent]]
   - [[#cto-as-a-prompt][cto as a prompt]]
@@ -180,6 +182,15 @@ Phase 2 — CRITIC: Evaluate every criterion. For each failure, quote evidence, 
 Phase 3 — BUILDER: Revise using the critique.
 
 Repeat Phases 2–3 until every criterion passes or three rounds end. Finish with a pass/fail scorecard.
+** ASD-STE100 Simplified Technical English (STE)
+- ASD-STE100 Simplified Technical English (STE) is a controlled natural language that is designed to simplify and clarify technical documentation
+- use in claude.md file 
+** hybrid architecture of agents
+the hard part is not merely choosing a model. the system also needs logs, audits, retries, and fallbacks so an agent cannot quietly skip the work and report success
+- local pc: private files, email, repetitive work, and tasks that would otherwise burn tokens
+- edge or company server: shared internal workloads that need more power without sending everything to a public cloud
+- frontier cloud model: complex reasoning, planning, decomposition, and supervision
+- router: the traffic controller that weighs difficulty, confidentiality, cost, and available resources
 ** red blue green review loop
 Act as three reviewers for this work:
 
