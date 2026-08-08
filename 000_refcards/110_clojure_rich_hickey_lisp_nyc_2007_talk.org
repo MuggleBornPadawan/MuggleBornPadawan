@@ -1,0 +1,58 @@
+#+TITLE: clojure rich hicky nyc lisp talk, 2007
+#+AUTHOR: rich hickey
+#+OPTIONS: toc
+* Table of Contents :TOC_1:
+- [[#trivia][trivia]]
+- [[#intro][intro]]
+- [[#fundamentals][fundamentals]]
+- [[#rationale][rationale]]
+- [[#feature-tour][feature tour]]
+- [[#status][status]]
+- [[#qa][q&a]]
+
+* trivia
+- source: clojure tv yt channel
+* intro
+- 20 years of development - c++, java, c#, common lisp, mathematica, funcitonal language (ml/haskell)
+- lisp + java + func(ml/haskell)
+- scheduler, automation, communication
+* fundamentals
+- functional (mostly) - immutable in data structures not just function level
+- lisp (not cl or scheme) - small core, code as data principle, notion as reader #, 
+- hosted on jvm - 
+- supporting concurrency - interthread communication 
+  - erlang unifies disgtributed conc + inter thread
+  - clojure is conc in proc
+* rationale
+** functional
+- no carry over of oops
+- immutable data + first-class functions
+- could always be done in lisp, by discipline/convention
+  - but if a data strcuture can be muted, dangerous to presume it wont be
+  - in traditional lisp, only the list data strcuture is structurally recursive 
+- pure functional languages tend to strongly static types #
+  - not everyone, or every task 
+** lisp
+*** why?
+- often emulated / pillaged, still not duplicated 
+- lambda calculus yields an extremely small core
+- almost no syntax
+- core advantage still code-as-data and syntactic abstraction (compiler or evaluator to create macros or syntactic extension > lanugae designers > we can build things)
+*** what about standard lisps (cl / shceme)
+- slow / no innnovation post standardization
+- core data structures mutable, not extensible #
+- no concurrency in specs
+- good implementations already exist for jvm (abcl, kawa, sisc et al)
+- standard lisp are their own platforms (island)
+*** clojure is a lisp 
+- not constrained by backwards compatiblity
+- repl
+- extends code-as-data paradigm to maps and vectors
+- defaults in immutablity 
+- core data structures are exdtensible abstractions #
+- embraces a platform (jvm) 
+** jvm hosted
+** thread-aware
+* feature tour
+* status
+* q&a
