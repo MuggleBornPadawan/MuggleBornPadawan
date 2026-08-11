@@ -275,6 +275,13 @@
    ;; set pass store time 
    (setenv "PASSWORD_STORE_CLIP_TIME" "3600"))
 
+(setq gptel-directives
+      '((default . "Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD. You are a large language model living in Emacs and a helpful assistant. Respond concisely.")
+        (coder   . "You are an expert programmer. Write clean, concise code.")))
+
+;; Set your preferred default persona
+(setq gptel-default-mode 'default)
+
 ;; screensaver
 (require 'zone)
 (zone-when-idle 600)
@@ -390,3 +397,14 @@
 (global-visual-line-mode 1)
 (define-key lisp-interaction-mode-map (kbd "C-j") 'eval-print-last-sexp)
 (desktop-save-mode 1)
+; (set-face-background 'region "darkblue")
+(set-face-background 'hl-line "darkblue")
+(with-eval-after-load 'info
+  (set-face-attribute 'info-index-match nil :background "darkslateblue"))
+
+(with-eval-after-load 'pulse
+  (set-face-attribute 'pulse-highlight-face nil :background "darkslateblue")
+  (set-face-attribute 'pulse-highlight-start-face nil :background "darkslateblue"))
+
+(with-eval-after-load 'xref
+  (set-face-attribute 'xref-match nil :background "darkslateblue"))
