@@ -22,7 +22,7 @@
       (gptel-make-ollama "Ollama"
         :host "localhost:11434"
         :stream t
-        :models '("llama3.2")
+        :models '(llama3.2 qwen2.5:3b)
         :request-params '(:options (:temperature 0.81
                                     :top_p 0.91
                                     :top_k 41))))

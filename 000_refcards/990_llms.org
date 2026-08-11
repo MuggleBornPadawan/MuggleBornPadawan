@@ -207,6 +207,7 @@ Do not do the task yet. Design the workflow first.
 Keep anything manual that we cannot yet verify reliably. After I approve the graph, help me run one test case and improve the loop from the result.
 ** ASD-STE100 Simplified Technical English (STE)
 - ASD-STE100 Simplified Technical English (STE) is a controlled natural language that is designed to simplify and clarify technical documentation
+- Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD. 
 - use in claude.md file 
 ** hybrid architecture of agents
 the hard part is not merely choosing a model. the system also needs logs, audits, retries, and fallbacks so an agent cannot quietly skip the work and report success

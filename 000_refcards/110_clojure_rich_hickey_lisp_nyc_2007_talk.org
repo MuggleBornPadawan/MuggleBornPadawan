@@ -24,14 +24,18 @@
   - erlang unifies disgtributed conc + inter thread
   - clojure is conc in proc
 * rationale
-** functional
+** functional with dynamic emphasis 
 - no carry over of oops
 - immutable data + first-class functions
 - could always be done in lisp, by discipline/convention
   - but if a data strcuture can be muted, dangerous to presume it wont be
   - in traditional lisp, only the list data strcuture is structurally recursive 
-- pure functional languages tend to strongly static types #
-  - not everyone, or every task 
+- all data structures are immutable & persistent, supporting recursion
+- dynamically typed (like erlang); pure functional languages (like ml, haskell) tend to strongly static types #
+  - heterogenous collections, arguments and return types 
+  - not everyone, or every task
+  - expresssion problem: type related 
+- run time polymorphism 
 ** lisp
 *** why?
 - often emulated / pillaged, still not duplicated 
@@ -48,9 +52,9 @@
 - not constrained by backwards compatiblity
 - repl
 - extends code-as-data paradigm to maps and vectors
-- defaults in immutablity 
+- defaults to immutablity 
 - core data structures are exdtensible abstractions #
-- embraces a platform (jvm) 
+- embraces a platform (jvm) - unification of types
 ** jvm hosted
 ** thread-aware
 * feature tour

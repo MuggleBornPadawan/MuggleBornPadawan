@@ -9,7 +9,7 @@ checking 172.16.42. ...
 OK
 run this file for any remote debian server setup, startup and chk backups
 
-Date: Sun Aug  9 11:47:43 PM IST 2026 
+Date: Mon Aug 10 03:33:18 PM IST 2026 
 OS: Linux 
 Kernel: 6.6.119-09283-g9c138e0af8c3
 Firewall is active and enabled on system startup
@@ -56,48 +56,72 @@ Reading state information...
 Resetting software index lists...
 Vacuuming system logs...
 Rebuilding software index...
-Get:1 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
-Get:2 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:1 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:2 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
 Get:3 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:4 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:5 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [78.8 kB]
-Get:6 https://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
-Get:7 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [314 kB]
-Ign:8 https://storage.googleapis.com/cros-packages/150 bookworm InRelease
-Get:9 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
-Get:10 http://deb.debian.org/debian bookworm-backports/main Translation-en [265 kB]
-Get:11 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:12 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:13 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:14 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:4 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [314 kB]
+Get:5 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:6 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [78.8 kB]
+Get:7 https://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+Get:8 http://deb.debian.org/debian bookworm-backports/main Translation-en [265 kB]
+Get:9 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:10 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:11 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:12 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
+Get:13 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Ign:14 https://storage.googleapis.com/cros-packages/150 bookworm InRelease
 Get:15 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
 Get:16 https://storage.googleapis.com/cros-packages/150 bookworm Release [3,109 B]
 Get:17 https://storage.googleapis.com/cros-packages/150 bookworm Release.gpg [2,365 B]
-Get:18 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [17.5 kB]
-Get:19 https://storage.googleapis.com/cros-packages/150 bookworm/main amd64 Packages [5,138 B]
+Get:18 https://storage.googleapis.com/cros-packages/150 bookworm/main amd64 Packages [5,138 B]
+Get:19 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [17.5 kB]
 Get:20 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
 Get:21 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
 Get:22 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
 Get:23 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
-Get:24 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [325 kB]
-Get:25 https://deb.debian.org/debian-security bookworm-security/main Translation-en [201 kB]
-Fetched 21.0 MB in 7s (3,157 kB/s)
+Get:24 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [326 kB]
+Get:25 https://deb.debian.org/debian-security bookworm-security/main Translation-en [202 kB]
+Fetched 21.0 MB in 5s (4,617 kB/s)
 Reading package lists...
 --- Cleanup Complete ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
-Hit:2 https://download.docker.com/linux/debian bookworm InRelease
-Hit:3 https://deb.debian.org/debian bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://download.docker.com/linux/debian bookworm InRelease
 Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
 Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
 Ign:6 https://storage.googleapis.com/cros-packages/150 bookworm InRelease
-Hit:7 https://packages.adoptium.net/artifactory/deb bookworm InRelease
+Get:7 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
 Hit:8 https://storage.googleapis.com/cros-packages/150 bookworm Release
+Fetched 7,507 B in 1s (11.8 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+The following packages will be upgraded:
+  ca-certificates
+1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 162 kB of archives.
+After this operation, 3,072 B of additional disk space will be used.
+Do you want to continue? [Y/n] Get:1 https://deb.debian.org/debian-security bookworm-security/main amd64 ca-certificates all 20250419~deb12u1 [162 kB]
+Preconfiguring packages ...
+Fetched 162 kB in 0s (1,575 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 168088 files and directories currently installed.)
+Preparing to unpack .../ca-certificates_20250419~deb12u1_all.deb ...
+Unpacking ca-certificates (20250419~deb12u1) over (20230311+deb12u1) ...
+Setting up ca-certificates (20250419~deb12u1) ...
+Updating certificates in /etc/ssl/certs...
+rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+21 added, 13 removed; done.
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for ca-certificates (20250419~deb12u1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+/etc/ssl/certs/adoptium/cacerts successfully populated.
+done.
+Processing triggers for ca-certificates-java (20230710~deb12u1) ...
+done.
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -303,17 +327,17 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-Sun Aug  9 23:48:52 2026 -> ClamAV update process started at Sun Aug  9 23:48:52 2026
-Sun Aug  9 23:48:52 2026 -> DON'T PANIC! Read https://docs.clamav.net/manual/Installing.html
-Sun Aug  9 23:48:52 2026 -> daily database available for update (local version: 28086, remote version: 28087)
-Sun Aug  9 23:48:52 2026 -> Testing database: '/var/lib/clamav/tmp.893304a8ae/clamav-d82822aab9352b4ec8797a3f0d3a248f.tmp-daily.cld' ...
-Sun Aug  9 23:48:55 2026 -> Database test passed.
-Sun Aug  9 23:48:55 2026 -> daily.cld updated (version: 28087, sigs: 355593, f-level: 90, builder: svc.clamav-publisher)
-Sun Aug  9 23:48:55 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
-Sun Aug  9 23:48:55 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/28087/Sun Aug  9 11:54:56 2026
-NEXT                        LEFT       LAST                        PASSED     UNIT                ACTIVATES
-Mon 2026-08-10 00:00:00 IST 11min left Mon 2026-08-03 00:00:01 IST 6 days ago clamav-weekly.timer clamav-weekly.service
+Mon Aug 10 15:35:07 2026 -> ClamAV update process started at Mon Aug 10 15:35:07 2026
+Mon Aug 10 15:35:07 2026 -> DON'T PANIC! Read https://docs.clamav.net/manual/Installing.html
+Mon Aug 10 15:35:07 2026 -> daily database available for update (local version: 28087, remote version: 28088)
+Mon Aug 10 15:35:07 2026 -> Testing database: '/var/lib/clamav/tmp.9744c78e67/clamav-3525946972680c2bce9fe5d228f0da66.tmp-daily.cld' ...
+Mon Aug 10 15:35:10 2026 -> Database test passed.
+Mon Aug 10 15:35:10 2026 -> daily.cld updated (version: 28088, sigs: 355593, f-level: 90, builder: svc.clamav-publisher)
+Mon Aug 10 15:35:10 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+Mon Aug 10 15:35:10 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+ClamAV 1.4.3/28088/Mon Aug 10 11:54:15 2026
+NEXT                        LEFT        LAST                        PASSED  UNIT                ACTIVATES
+Mon 2026-08-17 00:00:00 IST 6 days left Mon 2026-08-10 00:00:01 IST 15h ago clamav-weekly.timer clamav-weekly.service
 
 1 timers listed.
 Pass --all to see loaded but inactive timers, too.
@@ -326,7 +350,7 @@ Removing files ...
 Removing crontab ...
 Removing user `snow' ...
 Done.
-12487 pts/13   00:00:00 snow.sh
+16278 pts/13   00:00:00 snow.sh
 snow:x:1002:
 User snow has been created/reset with sudo access.
 -------------------------------------------------------
