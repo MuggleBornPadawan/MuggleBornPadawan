@@ -13,6 +13,9 @@
   - [[#recommendation-check][recommendation check]]
   - [[#cost-audit][cost audit]]
   - [[#gauntlet-loop][gauntlet loop]]
+  - [[#loop-engineeering][loop engineeering]]
+  - [[#asd-ste100-simplified-technical-english-ste][ASD-STE100 Simplified Technical English (STE)]]
+  - [[#hybrid-architecture-of-agents][hybrid architecture of agents]]
   - [[#red-blue-green-review-loop][red blue green review loop]]
   - [[#build-your-first-agent][build your first agent]]
   - [[#cto-as-a-prompt][cto as a prompt]]
@@ -180,6 +183,38 @@ Phase 2 — CRITIC: Evaluate every criterion. For each failure, quote evidence, 
 Phase 3 — BUILDER: Revise using the critique.
 
 Repeat Phases 2–3 until every criterion passes or three rounds end. Finish with a pass/fail scorecard.
+** loop engineeering
+Design the Graph, Not the Prompt
+
+Help me design a reusable agent loop for this task: [TASK]
+
+Do not do the task yet. Design the workflow first.
+
+1. Define the goal and exact completion criteria.
+2. Map the graph: input → plan → act → verify → retry/escalate → done.
+3. For each node, specify:
+   - context the agent needs
+   - tools it may use
+   - expected output
+   - what evidence proves the step worked
+4. Define the transitions between nodes and what triggers each branch.
+5. Create a feedback loop for failed verification.
+6. Set stop conditions, maximum retries, and any time/token/budget limits.
+7. Flag actions that require human approval before execution.
+8. Create five representative eval cases and a simple pass/fail scorecard.
+9. Identify the single biggest bottleneck to automate first.
+
+Keep anything manual that we cannot yet verify reliably. After I approve the graph, help me run one test case and improve the loop from the result.
+** ASD-STE100 Simplified Technical English (STE)
+- ASD-STE100 Simplified Technical English (STE) is a controlled natural language that is designed to simplify and clarify technical documentation
+- Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD. 
+- use in claude.md file 
+** hybrid architecture of agents
+the hard part is not merely choosing a model. the system also needs logs, audits, retries, and fallbacks so an agent cannot quietly skip the work and report success
+- local pc: private files, email, repetitive work, and tasks that would otherwise burn tokens
+- edge or company server: shared internal workloads that need more power without sending everything to a public cloud
+- frontier cloud model: complex reasoning, planning, decomposition, and supervision
+- router: the traffic controller that weighs difficulty, confidentiality, cost, and available resources
 ** red blue green review loop
 Act as three reviewers for this work:
 

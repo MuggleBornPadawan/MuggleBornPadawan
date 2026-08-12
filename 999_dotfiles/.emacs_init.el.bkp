@@ -29,7 +29,6 @@
 ;;;;
 ;; Define package repositories
 (require 'package)
-(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
@@ -208,8 +207,8 @@
 (display-time-mode 1)
 
 ;; font
-(set-face-attribute 'default nil :font "Your Mono Font-12")
-(set-face-attribute 'fixed-pitch nil :font "Your Mono Font-12")
+(set-face-attribute 'default nil :font "Monospace-12")
+(set-face-attribute 'fixed-pitch nil :font "Monospace-12")
 
 ;; org mode - table of contents 
 (use-package toc-org
@@ -273,12 +272,15 @@
    (setq gptel-model 'gemini-3.5-flash-lite)
    )))
 
-   ;; 5. System prompt instructions
-   (add-to-list 'gptel-directives
-               '(custom-assistant . "you are talking to a visual artist. i create three dimensional art using procedural content generation algorithms. technology stack: processing (p5.js), quil (clojure), webgpu, bash, emacs. my development laptop: asus chromebook plus (debian). my production server: apple mac studio (m1). my cloud server: google cloud. i am a noob coder and learn multiple programming languages, coding patterns, system design. i use org mode. keep responses concise, prioritize code snippets over long explanations, and always format code blocks cleanly.")
-	       (setq gptel-default-directive 'custom-assistant))
    ;; set pass store time 
    (setenv "PASSWORD_STORE_CLIP_TIME" "3600"))
+
+(setq gptel-directives
+      '((default . "Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD. You are a large language model living in Emacs and a helpful assistant. Respond concisely.")
+        (coder   . "You are an expert programmer. Write clean, concise code.")))
+
+;; Set your preferred default persona
+(setq gptel-default-mode 'default)
 
 ;; screensaver
 (require 'zone)
@@ -351,7 +353,6 @@
 ;; --- Org-mode LaTeX Integration ---
 (with-eval-after-load 'org
   ;; Use dvisvgm to generate crisp SVG previews of LaTeX formulas in buffers
-  (setq org-latex-create-formula-image-program 'dvisvgm)
   (setq org-preview-latex-default-process 'dvisvgm)
   
   ;; Configure PDF compilation to use latexmk (handles multiple passes automatically)
@@ -388,10 +389,22 @@
         ("https://ericnormand.me/feed" clojure blog)))
   )
 ;; Keep entries for 30 days maximum (in seconds)
-(setq elfeed-db-max-age (* 7 24 60 60))
+(setq elfeed-db-max-age (* 30 24 60 60))
 
 ;; initial setup
 (setq-default truncate-lines nil)
 (global-display-line-numbers-mode 0)
 (global-visual-line-mode 1)
 (define-key lisp-interaction-mode-map (kbd "C-j") 'eval-print-last-sexp)
+(desktop-save-mode 1)
+; (set-face-background 'region "darkblue")
+(set-face-background 'hl-line "darkblue")
+(with-eval-after-load 'info
+  (set-face-attribute 'info-index-match nil :background "darkslateblue"))
+
+(with-eval-after-load 'pulse
+  (set-face-attribute 'pulse-highlight-face nil :background "darkslateblue")
+  (set-face-attribute 'pulse-highlight-start-face nil :background "darkslateblue"))
+
+(with-eval-after-load 'xref
+  (set-face-attribute 'xref-match nil :background "darkslateblue"))
