@@ -87,6 +87,12 @@
     - dispatches via static, dynamic or external properties, metadata, etc
 ** thread-aware
 - c++ has locks, semaphores, mutexes is really painful 
+- concurrency and state in multi-core future
+- immutabkity makes much of the problem go away
+  - shares freely between threads 
+- but changing state a reality for simulations and for in-program proxies to the outside world
+- lockingn is too hard to get right over and over again
+- software transactional memory does the hard part 
 * feature tour
 * status
 * q&a
