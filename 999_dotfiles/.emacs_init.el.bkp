@@ -255,7 +255,7 @@
   (let ((gemini-backend (gptel-make-gemini "Gemini"
                           :key secret-key
                           :stream t
-                          :models '(gemini-3.6-flash gemini-3.5-flash-lite gemini-3.1-pro-preview))))
+                          :models '(gemini-3.7-flash gemini-3.6-flash gemini-3.5-flash gemini-3.5-flash-lite gemini-3.1-pro-preview))))
     
   ;; 3.b Define Ollama backend
   (gptel-make-ollama "Ollama"
@@ -276,7 +276,7 @@
    (setenv "PASSWORD_STORE_CLIP_TIME" "3600"))
 
 (setq gptel-directives
-      '((default . "Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD. You are a large language model living in Emacs and a helpful assistant. Respond concisely.")
+      '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely. Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD.")
         (coder   . "You are an expert programmer. Write clean, concise code.")))
 
 ;; Set your preferred default persona
