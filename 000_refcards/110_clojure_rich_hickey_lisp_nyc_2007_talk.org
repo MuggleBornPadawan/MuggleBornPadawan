@@ -3,6 +3,7 @@
 #+OPTIONS: toc
 * Table of Contents :TOC_1:
 - [[#trivia][trivia]]
+- [[#later][later]]
 - [[#intro][intro]]
 - [[#fundamentals][fundamentals]]
 - [[#rationale][rationale]]
@@ -12,6 +13,12 @@
 
 * trivia
 - source: clojure tv yt channel
+- java concurrency in practice, book, brian goetz
+- lisp 1 (clojure) vs lisp 2
+* later
+- make-adder function
+- lambda calculus - basics and rules
+- lambda calculus - altrnatives 
 * intro
 - 20 years of development - c++, java, c#, common lisp, mathematica, funcitonal language (ml/haskell)
 - lisp + java + func(ml/haskell)
@@ -94,5 +101,26 @@
 - lockingn is too hard to get right over and over again
 - software transactional memory does the hard part 
 * feature tour
+** dynamic development
+- repl
+- basics - clojure has arbitrary precision integers, strings, ratios, doubles, characters, symbols and keywords
+- dynamic compilation - to jvm bytecode - similar to kawa which compiles scheme to java bytecode
+  - compiles dynamically without touching the disk 
+** lisp
+- clojure is lisp 1 (common lisp is lisp 2)
+  - functions and variables live in same list so cannot have same name
+  - symbols are distinguished from places
+  - risk: incidental aliasing (be careful) 
+- reader
+  - code-as-data
+  - extended for maps and vectors
+- macros (defmacro) - common lisp and scheme have different approach to macros
+  - supports overloading by arity
+** functional programming
+- first class citizens (understand make-adder function) 
+- variable arity 
+** runtime polymorphism / multimethods
+** concurrent programming / stm
+** jvm / java integration 
 * status
 * q&a
