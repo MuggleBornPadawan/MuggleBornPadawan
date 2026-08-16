@@ -1,243 +1,343 @@
 ;; -*- lexical-binding: t -*-
-;; this file is not updated regularly. check cloud backup for the most recent version
-;; this base file is created for use-and-throw linux vms / containers 
 
-;; GNU General Public License v3.0 or later
-;;
-;; This program is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-;;
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-;;
-;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
-;;
-;; Author: Muggle Born Padawan < mugglebornpadawan@icloud.com>
+;; ==========================================
+;; 1. STARTUP OPTIMIZATIONS & PERFORMANCE
+;; ==========================================
 
-;; init.el - emacs initialization file
+;; Temporarily increase GC limit during startup to speed up loading
+(setq gc-cons-threshold 100000000) ; 100 MB
+(setq read-process-output-max 1048576) ; 1 MB
+
+;; Restore sensible GC threshold after initialization is complete
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq gc-cons-threshold 800000))) ; 800 KB
+
+;; ==========================================
+;; 2. ENVIRONMENT & GENERAL SETTINGS
+;; ==========================================
+
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
-(setq desktop-save-mode t)
+(setq ring-bell-function 'ignore)
+(setq-default frame-title-format "%b (%f)")
 
-;;;;
-;; Packages
-;;;;
-;; Define package repositories
+;; Auto-save and backups
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
+(setq auto-save-default nil)
+
+;; History and state saving
+(desktop-save-mode 1)
+(recentf-mode 1)
+(savehist-mode 1)
+(save-place-mode 1)
+(setq history-length 25)
+(setq recentf-max-menu-items 40)
+(setq recentf-save-file (concat user-emacs-directory ".recentf"))
+
+;; Buffer auto-revert
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t)
+
+;; Startup window arrangement
+(split-window-horizontally)
+(list-buffers)
+
+;; ==========================================
+;; 3. CUSTOM CONFIGURATION FILE
+;; ==========================================
+
+;; Keep init.el clean by sending auto-generated customize variables to custom.el
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+;; ==========================================
+;; 4. PACKAGE MANAGEMENT
+;; ==========================================
+
 (require 'package)
 (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 (add-to-list 'package-pinned-packages '(magit . "melpa-stable") t)
 
-;; Load and activate emacs packages. Do this first so that the
-;; packages are loaded before you start trying to modify them.
-;; This also sets the load path.
 (package-initialize)
 
-;; Download the ELPA archive description if needed.
-;; This informs Emacs about the latest versions of all packages, and
-;; makes them available for download.
-;; use the `use-package` package for managing other packages
+;; Bootstrap use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; smex
-(require 'smex)
-(smex-initialize) ; Can take a moment
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; ==========================================
+;; 5. SYSTEM ENVIRONMENT INTEGRATION
+;; ==========================================
 
-;; multiple cursors 
-(unless (package-installed-p 'multiple-cursors)
-  (package-install 'multiple-cursors))
-(require 'multiple-cursors)
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
 
-;; set line numbers
-(global-display-line-numbers-mode t)
+;; Load external custom config modules
+(add-to-list 'load-path (expand-file-name "customizations" user-emacs-directory))
 
-;; enable syntax highlighting
+(load "shell-integration.el" t)
+;; (load "navigation.el" t) ; Commented out in original configuration
+;; (load "ui.el" t)         ; Commented out in original configuration
+(load "editing.el" t)
+(load "misc.el" t)
+(load "elisp-editing.el" t)
+(load "setup-clojure.el" t)
+(load "setup-js.el" t)
+
+;; ==========================================
+;; 6. UI & DISPLAY SETTINGS
+;; ==========================================
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(blink-cursor-mode 0)
+
+;; Typography
+(set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 120)
+(set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono" :height 120)
+
+;; Line wrapping & numbers (from original's final settings)
+(setq-default truncate-lines nil)
+(global-display-line-numbers-mode 0)
+(global-visual-line-mode 1)
+(setq visual-line-fringe-indicators '(nil nil))
+(column-number-mode t)
 (global-font-lock-mode t)
 
-;; enable column numbers
-(column-number-mode t)
+;; Display date and time in mode line
+(setq display-time-format "%Y-%m-%d %H:%M")
+(display-time-mode 1)
 
-;; set up basic UI improvements
-(menu-bar-mode -1)       ;; Disable the menu bar
-(tool-bar-mode -1)       ;; Disable the tool bar
-(scroll-bar-mode -1)     ;; Disable the scroll bar
+;; Highlight and face overrides
+(set-face-background 'hl-line "darkblue")
+(with-eval-after-load 'info
+  (set-face-attribute 'info-index-match nil :background "darkslateblue"))
+(with-eval-after-load 'pulse
+  (set-face-attribute 'pulse-highlight-face nil :background "darkslateblue")
+  (set-face-attribute 'pulse-highlight-start-face nil :background "darkslateblue"))
+(with-eval-after-load 'xref
+  (set-face-attribute 'xref-match nil :background "darkslateblue"))
 
-;; refresh all open buffers from their respective files.
+;; ==========================================
+;; 7. NAVIGATION & EDITING UTILITIES
+;; ==========================================
+
+;; Revert all buffers utility
 (defun revert-all-buffers ()
-  "refresh all open buffers from their respective files."
+  "Refresh all open buffers from their respective files."
   (interactive)
   (dolist (buf (buffer-list))
     (with-current-buffer buf
       (when (and (buffer-file-name) (not (buffer-modified-p)))
         (revert-buffer t t t))))
-  (message "all non-modified buffers reverted."))
-(global-set-key (kbd "C-c R") 'revert-all-buffers)  ;; Bind to Ctrl + c, Shift + r
+  (message "All non-modified buffers reverted."))
+(global-set-key (kbd "C-c R") 'revert-all-buffers)
 
-;; initial frame setup - experiment 
-(toggle-frame-fullscreen)
-(global-visual-line-mode -1) ;; soft wrap text globally
-(recentf-mode 1) ;; recent files history is saved 
-(savehist-mode 1) ;; recent commands history is saved | use Mn (next-history-element) Mp (previous-history-element) 
-(setq history-length 25) ;; saves n recent commands 
-(save-place-mode 1) ;; saves cursor location on files 
-(global-auto-revert-mode 1) ;; refreshes all buffers
-(setq global-auto-revert-non-file-buffers t) ;; refreshes non-file buffers (eg: folders)
+;; Smex (M-x enhancements)
+(use-package smex
+  :ensure t
+  :init
+  (setq smex-save-file (concat user-emacs-directory ".smex-items"))
+  :config
+  (smex-initialize)
+  :bind
+  (("M-x" . smex)
+   ("M-X" . smex-major-mode-commands)))
 
-; list buffers
-(split-window-horizontally)
-(list-buffers)
+;; Multiple Cursors
+(use-package multiple-cursors
+  :ensure t)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(coffee-tab-width 2)
- '(package-selected-packages
-   '(cider clojure-mode-extra-font-locking company elfeed
-           exec-path-from-shell geiser-mit geiser-racket git-commit
-           gptel ido-completing-read+ json-mode lsp-ui magit
-           multiple-cursors org-contrib org-kanban paredit
-           persistent-scratch protobuf-mode racket-mode
-           rainbow-delimiters ranger request restclient slime smex
-           tagedit toc-org tree-sitter-langs treesit-auto use-package
-           vterm-editor vterm-hotkey vterm-toggle)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-;; Install SLIME if not present
-(unless (package-installed-p 'slime)
-  (package-refresh-contents)
-  (package-install 'slime))
-
-(setq inferior-lisp-program "sbcl")
-
-;; Enable Scheme language support in Org Babel
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((scheme . t)))
-
-;; Specify the MIT Scheme interpreter
-;; Make sure 'mit-scheme' is the correct command to run MIT Scheme in your terminal.
-;; If it's just 'scheme', use that instead.
-(setq org-babel-scheme-interpreter "mit-scheme")
-
-;; set mit scheme as the default Scheme implementation
-(setq org-babel-scheme-cmd "mit-scheme")
-
-;; Don't ask for confirmation when executing code blocks
-(setq org-confirm-babel-evaluate nil)
-
-;; org babel c/cpp configuration
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((C . t)))
-
-;; --- Org-Babel Python Configuration ---
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((python . t)))
-
-;; Use python3 as the default interpreter
-(setq org-babel-python-command "python3")
-
-;; --- Org-Babel Shell Configuration ---
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((shell . t))) ;; 't' stands for true/enabled
-
-;; --- javascript configuration --- 
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((js . t))) ; Enables JavaScript evaluation
-
-;; geiser-repl
-(defun my/geiser-set-repl-directory ()
-  "Set Geiser's working directory to the current file's directory."
-  (when buffer-file-name
-    (setq geiser-repl-working-directory (file-name-directory buffer-file-name))))
-
-(add-hook 'geiser-mode-hook #'my/geiser-set-repl-directory)
-
-;; ido - interactively do things
-(require 'ido)
-(ido-mode 1)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t) ; Use Ido for all file-related commands
-(setq ido-ignore-extensions '(".o" ".pyc" "~")) ; Ignore these files
-(setq ido-use-virtual-buffers t) ;; Tell Ido to include recent files as virtual buffers
-
-;; ranger.el configuration
-(require 'ranger)
-(global-set-key (kbd "C-c r") 'ranger)
-(setq ranger-show-hidden-files t) ;; Enable preview pane and other features
-(setq-default ranger-image-preview-mode t) ;; Enable image previews (requires imagemagick)
-;; (add-to-list 'ranger-preview-mode-alist '(pdf-view-mode . image-dired-view-file)) ;; Configure preview for specific file types
-
-;; persistent scratch enabler 
+;; Persistent Scratch
 (use-package persistent-scratch
   :ensure t
   :config
   (persistent-scratch-setup-default))
 
-;; Hide the fringe symbols for visually wrapped lines
-(setq visual-line-fringe-indicators '(nil nil))
+;; Interactive Do (ido)
+(use-package ido
+  :init
+  (ido-mode 1)
+  :config
+  (setq ido-enable-flex-matching t
+        ido-everywhere t
+        ido-use-virtual-buffers t
+        ido-ignore-extensions '(".o" ".pyc" "~")))
 
-;; --- User Interface Settings ---
-(setq-default truncate-lines t)
+;; Ranger File Manager
+(use-package ranger
+  :ensure t
+  :bind
+  ("C-c r" . ranger)
+  :config
+  (setq ranger-show-hidden-files t)
+  (setq-default ranger-image-preview-mode t))
 
-;; display date and time in mode line of emacs
-(setq display-time-format "%Y-%m-%d %H:%M")
-(display-time-mode 1)
+;; Screensaver / Zone
+(use-package zone
+  :config
+  (zone-when-idle 600))
 
-;; font
-(set-face-attribute 'default nil :font "Monospace-12")
-(set-face-attribute 'fixed-pitch nil :font "Monospace-12")
+;; ==========================================
+;; 8. DEVELOPMENT LANGUAGES & ORG MODE
+;; ==========================================
 
-;; org mode - table of contents 
+;; SLIME (Common Lisp)
+(use-package slime
+  :ensure t
+  :init
+  (setq inferior-lisp-program "sbcl"))
+
+;; Rainbow Delimiters
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+;; Accurate syntax tree (tree-sitter)
+(use-package treesit-auto
+  :ensure t
+  :init
+  (setq treesit-language-source-alist
+        '((c "https://github.com/tree-sitter/tree-sitter-c" "v0.21.4")
+          (cpp "https://github.com/tree-sitter/tree-sitter-cpp" "v0.20.5")
+          (python "https://github.com/tree-sitter/tree-sitter-python" "v0.21.0")
+          (rust "https://github.com/tree-sitter/tree-sitter-rust" "v0.21.2")
+          (go "https://github.com/tree-sitter/tree-sitter-go" "v0.21.2")
+          (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "v0.21.4")
+          (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "v0.21.2" "typescript/src")
+          (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "v0.21.2" "tsx/src")
+          (html "https://github.com/tree-sitter/tree-sitter-html" "v0.20.3")
+          (css "https://github.com/tree-sitter/tree-sitter-css" "v0.21.0")
+          (json "https://github.com/tree-sitter/tree-sitter-json" "v0.21.0")
+          (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml" "v0.6.1")
+          (toml "https://github.com/tree-sitter/tree-sitter-toml" "v0.5.1")
+          (clojure "https://github.com/sogaiu/tree-sitter-clojure" "v0.0.13")
+          (bash "https://github.com/tree-sitter/tree-sitter-bash" "v0.21.0")))
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all))
+
+;; Org-Babel Extension Packages (ensure they are installed for third-party languages)
+(use-package ob-typescript :ensure t :defer t)
+(use-package ob-go :ensure t :defer t)
+(use-package ob-rust :ensure t :defer t)
+(use-package ob-swift :ensure t :defer t)
+(use-package ob-kotlin :ensure t :defer t)
+(use-package ob-powershell :ensure t :defer t)
+(use-package ob-elixir :ensure t :defer t)
+(use-package ob-fsharp :ensure t :defer t)
+(use-package ob-elm :ensure t :defer t)
+(use-package ob-php :ensure t :defer t)
+(use-package ob-erlang
+  :vc (:url "https://github.com/xfwduke/ob-erlang")
+  :defer t)
+
+;; Org mode Babel environments & LaTeX Setup
+(with-eval-after-load 'org
+  ;; Use dvisvgm to generate crisp SVG previews of LaTeX formulas
+  (setq org-preview-latex-default-process 'dvisvgm)
+  ;; Configure PDF compilation to use latexmk
+  (setq org-latex-pdf-process
+        '("latexmk -f -pdf -interaction=nonstopmode -output-directory=%o %f"))
+  
+  ;; Configure languages for Org-Babel evaluation
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((scheme . t)
+     (C . t)
+     (python . t)
+     (shell . t)
+     (js . t)
+     (java . t)
+     (sql . t)
+     (haskell . t)
+     (clojure . t)
+     (lisp . t)
+     (ruby . t)
+     (ocaml . t)
+     (erlang . t)
+     (typescript . t)
+     (go . t)
+     (rust . t)
+     (swift . t)
+     (kotlin . t)
+     (powershell . t)
+     (elixir . t)
+     (fsharp . t)
+     (elm . t)
+     (php . t)))
+  
+  ;; Scheme settings
+  (setq org-babel-scheme-interpreter "mit-scheme"
+        org-babel-scheme-cmd "mit-scheme")
+  
+  ;; Python settings
+  (setq org-babel-python-command "python3")
+  
+  ;; General Babel settings
+  (setq org-confirm-babel-evaluate nil))
+
+;; Geiser Scheme integration
+(use-package geiser
+  :ensure t
+  :config
+  (defun my/geiser-set-repl-directory ()
+    "Set Geiser's working directory to the current file's directory."
+    (when buffer-file-name
+      (setq geiser-repl-working-directory (file-name-directory buffer-file-name))))
+  (add-hook 'geiser-mode-hook #'my/geiser-set-repl-directory))
+
+;; Table of Contents in Org files
 (use-package toc-org
   :ensure t
   :after org
   :hook (org-mode . toc-org-mode))
-(require 'toc-org)
-(add-hook 'org-mode-hook 'toc-org-mode)
 
-;; rainbow delimitters
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+;; Elfeed RSS Feed Reader
+(use-package elfeed
+  :ensure t
+  :config
+  (setq elfeed-feeds
+        '(;; Aggregators & Official
+          ("http://planet.clojure.in/rss20.xml" clojure community)
+          ("https://clojure.org/news/feed.xml" clojure official)
+          ("https://www.reddit.com/r/clojure/.rss" clojure reddit)
+          ;; Companies
+          ("https://www.juxt.pro/blog/rss.xml" clojure tech)
+          ("https://blog.cognitect.com/blog?format=rss" clojure tech)
+          ("https://freshcodeit.com/rss.xml" clojure tech)
+          ;; Individuals
+          ("https://www.braveclojure.com/feed.xml" clojure blog)
+          ("https://borkdude.github.io/index.xml" clojure blog)
+          ("https://ericnormand.me/feed" clojure blog)))
+  (setq elfeed-db-max-age (* 30 24 60 60)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; gptel implementation 
+;; Lisp interaction evaluation hotkey
+(define-key lisp-interaction-mode-map (kbd "C-j") 'eval-print-last-sexp)
+
+;; ==========================================
+;; 9. GPTEL (AI ASSISTANT INTEGRATION)
+;; ==========================================
+
 (use-package gptel
   :ensure t
-  ;; 0. Bind keys globally using the :bind keyword. 
-  ;; use-package automatically handles the autoloading magic for you.
   :bind (("C-c g m" . gptel-menu)
          ("C-c g s" . gptel-send)
          ("C-c g a" . gptel-add)
-	 ("C-c g i" . gptel-context-inspect)
-	 ("C-c g c" . gptel-context-clear)
-	 ("C-c g b" . gptel-abort)
-	 ("C-c g r" . gptel-rewrite))
+         ("C-c g i" . gptel-context-inspect)
+         ("C-c g c" . gptel-context-clear)
+         ("C-c g b" . gptel-abort)
+         ("C-c g r" . gptel-rewrite))
   :config
-  ;; 1. Retrieve the Gemini API key securely from 'pass'
+  ;; Retrieve the Gemini API key securely from 'pass'
   (defun my/get-gemini-key-from-pass ()
     "Retrieve the Gemini API key securely from the pass password manager."
     (if (executable-find "pass")
@@ -248,163 +348,33 @@
       (message "Error: 'pass' executable not found on this system.")
       nil))
 
-  ;; 2. Read the key into a local variable
   (let ((secret-key (my/get-gemini-key-from-pass)))
     (when secret-key
-  ;; 3.a Create the Gemini backend object
-  (let ((gemini-backend (gptel-make-gemini "Gemini"
-                          :key secret-key
-                          :stream t
-                          :models '(gemini-3.7-flash gemini-3.6-flash gemini-3.5-flash gemini-3.5-flash-lite gemini-3.1-pro-preview))))
-    
-  ;; 3.b Define Ollama backend
-  (gptel-make-ollama "Ollama"
-    :host "localhost:11434"
-    :models '(llama3.2:latest))
-
-  ;; Set your default startup model
-  (setq gptel-backend (gptel-get-backend "Ollama")
-        gptel-model 'llama3.2:latest)
-  
-  ;; 4. CRITICAL FIX: Explicitly set Gemini as the default system-wide backend
-  (setq gptel-backend gemini-backend)
-   ;(setq gptel-model 'gemini-3.1-pro-preview)
-   (setq gptel-model 'gemini-3.5-flash-lite)
-   )))
-
-   ;; set pass store time 
-   (setenv "PASSWORD_STORE_CLIP_TIME" "3600"))
-
-(setq gptel-directives
-      '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely. Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD.")
-        (coder   . "You are an expert programmer. Write clean, concise code.")))
-
-;; Set your preferred default persona
-(setq gptel-default-mode 'default)
-
-;; screensaver
-(require 'zone)
-(zone-when-idle 600)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; clojure init.el from clojure for the brave
-;; manually install M-x package-install
-;; paredit - makes handling lisp expressions much, much easier; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-;; *clojure-mode - key bindings and code colorization for Clojure; https://github.com/clojure-emacs/clojure-mode
-;; clojure-mode-extra-font-locking - extra syntax highlighting for clojure
-;; cider -  integration with a Clojure REPL; https://github.com/clojure-emacs/cider
-;; ido-completing-read+ - allow ido usage in as many contexts as possible. see customizations/navigation.el line 23 for a description of ido
-;; smex - Enhances M-x to allow easier execution of commands. Provides a filterable list of possible commands in the minibuffer - http://www.emacswiki.org/emacs/Smex
-;; *projectile - project navigation
-;; rainbow-delimiters - colorful parenthesis matching
-;; tagedit - edit html tags like sexps
-;; magit - git integration
-;; Define he following variables to remove the compile-log warnings
-;; when defining ido-ubiquitous
-;; (defvar ido-cur-item nil)
-;; (defvar ido-default-item nil)
-;; (defvar ido-cur-list nil)
-;; (defvar predicate nil)
-;; (defvar inherit-input-method nil)
-
-;;;;
-;; Customization
-;;;;
-
-;; Add a directory to our load path so that when you `load` things
-;; below, Emacs knows where to look for the corresponding file.
-(add-to-list 'load-path "~/.emacs.d/customizations")
-
-;; Sets up exec-path-from-shell so that Emacs will use the correct
-;; environment variables
-(load "shell-integration.el")
-
-;; These customizations make it easier for you to navigate files,
-;; switch buffers, and choose options from the minibuffer.
-;; (load "navigation.el")
-
-;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements
-;; (load "ui.el")
-
-;; These customizations make editing a bit nicer.
-(load "editing.el")
-
-;; Hard-to-categorize customizations
-(load "misc.el")
-
-;; For editing lisps
-(load "elisp-editing.el")
-
-;; Langauage-specific
-(load "setup-clojure.el")
-(load "setup-js.el")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; accurate syntax tree (tree-sitter)
-;;(use-package treesit-auto
-;;  :config
-;;  (treesit-auto-add-to-auto-mode-alist 'all))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; --- Org-mode LaTeX Integration ---
-(with-eval-after-load 'org
-  ;; Use dvisvgm to generate crisp SVG previews of LaTeX formulas in buffers
-  (setq org-preview-latex-default-process 'dvisvgm)
-  
-  ;; Configure PDF compilation to use latexmk (handles multiple passes automatically)
-  (setq org-latex-pdf-process
-        '("latexmk -f -pdf -interaction=nonstopmode -output-directory=%o %f")))
-
-
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (exec-path-from-shell-initialize))
-;; Set the default rendering process (dvisvgm produces sharp vector graphics)
-(setq org-preview-latex-default-process 'dvisvgm)
-;;(setq org-preview-latex-default-process 'dvipng)
-
-; **elfeed** is an rss/atom feed reader for emacs.
-(use-package elfeed
-  :ensure t
-  :config
-  (setq elfeed-feeds
-      '(;; Aggregators & Official
-        ("http://planet.clojure.in/rss20.xml" clojure community)
-        ("https://clojure.org/news/feed.xml" clojure official)
-        ("https://www.reddit.com/r/clojure/.rss" clojure reddit)
+      ;; Create the Gemini backend object
+      (let ((gemini-backend (gptel-make-gemini "Gemini"
+                              :key secret-key
+                              :stream t
+                              :models '(gemini-3.7-flash gemini-3.6-flash gemini-3.5-flash gemini-3.5-flash-lite gemini-3.1-pro-preview))))
         
-        ;; Companies
-        ("https://www.juxt.pro/blog/rss.xml" clojure tech)
-        ("https://blog.cognitect.com/blog?format=rss" clojure tech)
-        ("https://freshcodeit.com/rss.xml" clojure tech)
+        ;; Define Ollama backend
+        (gptel-make-ollama "Ollama"
+          :host "localhost:11434"
+          :models '("qwen2.5:1.5b" "llama3.2:latest"))
+
+        ;; Set default startup model (Ollama)
+        (setq gptel-backend (gptel-get-backend "Ollama")
+              gptel-model "qwen2.5:1.5b")
         
-        ;; Individuals
-        ("https://www.braveclojure.com/feed.xml" clojure blog)
-        ("https://borkdude.github.io/index.xml" clojure blog)
-        ("https://ericnormand.me/feed" clojure blog)))
-  )
-;; Keep entries for 30 days maximum (in seconds)
-(setq elfeed-db-max-age (* 30 24 60 60))
+        ;; CRITICAL FIX: Explicitly set Gemini as the default system-wide backend and preferred model
+        (setq gptel-backend gemini-backend)
+        (setq gptel-model 'gemini-3.5-flash-lite))))
 
-;; initial setup
-(setq-default truncate-lines nil)
-(global-display-line-numbers-mode 0)
-(global-visual-line-mode 1)
-(define-key lisp-interaction-mode-map (kbd "C-j") 'eval-print-last-sexp)
-(desktop-save-mode 1)
-; (set-face-background 'region "darkblue")
-(set-face-background 'hl-line "darkblue")
-(with-eval-after-load 'info
-  (set-face-attribute 'info-index-match nil :background "darkslateblue"))
+  ;; Set pass store time 
+  (setenv "PASSWORD_STORE_CLIP_TIME" "3600")
 
-(with-eval-after-load 'pulse
-  (set-face-attribute 'pulse-highlight-face nil :background "darkslateblue")
-  (set-face-attribute 'pulse-highlight-start-face nil :background "darkslateblue"))
+  (setq gptel-directives
+        '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely. Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD.")
+          (coder   . "You are an expert programmer. Write clean, concise code.")))
 
-(with-eval-after-load 'xref
-  (set-face-attribute 'xref-match nil :background "darkslateblue"))
+  ;; Set preferred default persona
+  (setq gptel-default-mode 'default))
