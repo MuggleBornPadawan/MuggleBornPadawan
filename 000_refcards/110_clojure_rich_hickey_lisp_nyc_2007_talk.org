@@ -3,6 +3,7 @@
 #+OPTIONS: toc
 * Table of Contents :TOC_1:
 - [[#trivia][trivia]]
+- [[#later][later]]
 - [[#intro][intro]]
 - [[#fundamentals][fundamentals]]
 - [[#rationale][rationale]]
@@ -12,10 +13,16 @@
 
 * trivia
 - source: clojure tv yt channel
+- java concurrency in practice, book, brian goetz
+- lisp 1 (clojure) vs lisp 2
+* later
+- make-adder function
+- lambda calculus - basics and rules
+- lambda calculus - altrnatives 
 * intro
 - 20 years of development - c++, java, c#, common lisp, mathematica, funcitonal language (ml/haskell)
 - lisp + java + func(ml/haskell)
-- scheduler, automation, communication
+- scheduler, automation, communication, highly concurrent audio playback systems
 * fundamentals
 - functional (mostly) - immutable in data structures not just function level
 - lisp (not cl or scheme) - small core, code as data principle, notion as reader #, 
@@ -35,7 +42,8 @@
   - heterogenous collections, arguments and return types 
   - not everyone, or every task
   - expresssion problem: type related 
-- run time polymorphism 
+- expression problem: how to add both new types (easy in oops languages) and new functions (easy in functional languages) later, without breaking old code - protocols and multimethods 
+- embraces run time polymorphism (interfaces of java, clos). no switch statements are required.
 ** lisp
 *** why?
 - often emulated / pillaged, still not duplicated 
@@ -56,7 +64,63 @@
 - core data structures are exdtensible abstractions #
 - embraces a platform (jvm) - unification of types
 ** jvm hosted
+- a new language should target a vm instead of rebuilding interpeter, runtime, gc, bytecode, type systems, libraries, et al
+  - solved problems: talking to internet, talking to database 
+- vms, not oses, are the target platforms of future languages, providing:
+  - type system
+    - dynamic enforcement and safety
+  - libraries
+    - huge set of facilities
+  - memory and other resource management
+    - gc is platform, not language, facility
+    - hotspot optimization
+  - byte code + jit compilation 
+- language as platform vs language + platform
+  - old way - each language defines its own run time 
+  - new way - common runtime independent of language 
+  - platforms are dictated by clients - huge investments in performance, scalablity and securty, et al
+- object orientation is overrated
+  - born of simulation, now used for everything, even when inappropriate
+    - encouraged by java/c# in all situations, due to their lack of (idiomatic) suppprt for anything else
+  - mutable stateful code is the new spaghetti code
+    - hard to understand, test and reason about
+    - concurrency disaster
+- polymorphism is good
+  - inheritance is not the only way to do polymorphism 
+  - switch statements, structural matching, etc yield brittle systems
+  - polymorphism yields extensible, flexible systems
+  - clojure multimethods decouple polymorphism from oo and types
+    - supports multiple taxonomies
+    - dispatches via static, dynamic or external properties, metadata, etc
 ** thread-aware
+- c++ has locks, semaphores, mutexes is really painful 
+- concurrency and state in multi-core future
+- immutabkity makes much of the problem go away
+  - shares freely between threads 
+- but changing state a reality for simulations and for in-program proxies to the outside world
+- lockingn is too hard to get right over and over again
+- software transactional memory does the hard part 
 * feature tour
+** dynamic development
+- repl
+- basics - clojure has arbitrary precision integers, strings, ratios, doubles, characters, symbols and keywords
+- dynamic compilation - to jvm bytecode - similar to kawa which compiles scheme to java bytecode
+  - compiles dynamically without touching the disk 
+** lisp
+- clojure is lisp 1 (common lisp is lisp 2)
+  - functions and variables live in same list so cannot have same name
+  - symbols are distinguished from places
+  - risk: incidental aliasing (be careful) 
+- reader
+  - code-as-data
+  - extended for maps and vectors
+- macros (defmacro) - common lisp and scheme have different approach to macros
+  - supports overloading by arity
+** functional programming
+- first class citizens (understand make-adder function) 
+- variable arity 
+** runtime polymorphism / multimethods
+** concurrent programming / stm
+** jvm / java integration 
 * status
 * q&a

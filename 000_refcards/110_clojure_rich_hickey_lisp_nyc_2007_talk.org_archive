@@ -1,0 +1,35 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/rgroot/MuggleBornPadawan/000_refcards/110_clojure_rich_hickey_lisp_nyc_2007_talk.org
+
+
+* jvm hosted
+:PROPERTIES:
+:ARCHIVE_TIME: 2026-08-13 Thu 00:13
+:ARCHIVE_FILE: ~/MuggleBornPadawan/000_refcards/110_clojure_rich_hickey_lisp_nyc_2007_talk.org
+:ARCHIVE_OLPATH: rationale
+:ARCHIVE_CATEGORY: 110_clojure_rich_hickey_lisp_nyc_2007_talk
+:END:
+- a new language should target a vm instead of rebuilding interpeter, runtime, gc, bytecode, type systems, libraries, et al
+  - solved problems: talking to internet, talking to database 
+- vms, not oses, are the target platforms of future languages, providing:
+  - type system
+    - dynamic enforcement and safety
+  - libraries
+    - huge set of facilities
+  - memory and other resource management
+    - gc is platform, not language, facility
+    - hotspot optimization
+  - byte code + jit compilation 
+- language as platform vs language + platform
+  - old way - each language defines its own run time 
+  - new way - common runtime independent of language 
+  - platforms are dictated by clients - huge investments in performance, scalablity and securty, et al
+- object orientation is overrated
+  - born of simulation, now used for everything, even when inappropriate
+    - encouraged by java/c# in all situations, due to their lack of (idiomatic) suppprt for anything else
+  - mutable stateful code is the new spaghetti code
+    - hard to understand, test and reason about
+    - concurrency disaster
+  - inheritance is not the only way to do polymorphism 

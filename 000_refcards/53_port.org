@@ -120,7 +120,7 @@
 - agents
   - opus - reviewer
   - sonnet - coding
-- parallelization is missing? 
+- parallelization is missing - some sand? library was there 
 ** rfc
 - request for comments
 - rfc 822 (published in 1982) is the foundational standard for arpa internet text messages (email)
