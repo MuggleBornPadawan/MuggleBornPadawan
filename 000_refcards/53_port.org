@@ -40,6 +40,7 @@
 - language server processor (lsp)
 - state of observer (stephen wolfram) 
 - computational irreduciblity
+- language - paradigms (oops, procedural, functional), abstraction level (machine code, assembly, low level, high level, mark up), translation (interpreted, compiled)
 - system design order: basics → networking → load balancing → storage → async → reliability
   - minimize network round-trips (rtt) and payload size whenever possible
 - emacs coq agda - axiomatic programming - proof assistant
