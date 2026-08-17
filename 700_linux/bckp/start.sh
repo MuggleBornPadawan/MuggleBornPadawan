@@ -20,7 +20,8 @@ cd
 echo "Do you want to continue? (Press Enter)"
 read -p ""
 echo "Continuing..."
-./MuggleBornPadawan/700_linux/remote_startup.sh | tee - a ./MuggleBornPadawan/700_linux/bckp/shell_log.log
+./MuggleBornPadawan/700_linux/remote_startup.sh | tee - a 
+# # # ./MuggleBornPadawan/700_linux/bckp/shell_log.log
 cd
 # emacs backup - this has to be moved to another file?
 ./MuggleBornPadawan/700_linux/bckp/backup_emacs.sh
