@@ -106,3 +106,6 @@ cd
 # user creation for use & throw
 ./MuggleBornPadawan/700_linux/scripts/snow.sh
 espeak -v en-gb -s 175 -p 50 "Tux out"
+# emacs backup - this has to be moved to another file?
+./MuggleBornPadawan/700_linux/bckp/backup_emacs.sh
+mv emacs_backups/ MuggleBornPadawan/999_dotfiles/
