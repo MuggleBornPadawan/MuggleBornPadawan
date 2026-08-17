@@ -6,7 +6,8 @@ set -e
 # Configuration
 SOURCE_DIR="$HOME/.emacs.d"
 BACKUP_PARENT_DIR="$HOME/emacs_backups"
-TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+#TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+TIMESTAMP=$(date +"%Y%m")
 BACKUP_DIR="$BACKUP_PARENT_DIR/emacs_backup_$TIMESTAMP"
 
 # List of essential files/directories to back up
