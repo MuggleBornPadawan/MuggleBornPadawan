@@ -12,13 +12,22 @@
 - [[#qa][q&a]]
 
 * trivia
-- source: clojure tv yt channel
+- source: clojure tv yt channel - https://youtu.be/m1tZEn_NAqg?si=XUsYCtD_9MWbgYO7 
+- Clojure (the first talk) - Rich Hickey at LispNYC (2007)
 - java concurrency in practice, book, brian goetz
 - lisp 1 (clojure) vs lisp 2
+- defn is defun without u
+- [] are vector literals
+- map (in let) and map (function) are different. remember this is lisp 1. there is no conflict. (36:30)
+  - map (in let) - local variable - key value (hash?)
+  - map (function) - cannot be called on map (in let) variable - no conflict - 
+- extra parens are gone in general (eg: cons, let) 
 * later
 - make-adder function
 - lambda calculus - basics and rules
 - lambda calculus - altrnatives 
+- henry baker - paper on equal - identical (same object - twin 1 and twin 1) and equal (twin 1 and twin 2)
+- how do symbols work in clojure? qualifier of the package? (36:37)
 * intro
 - 20 years of development - c++, java, c#, common lisp, mathematica, funcitonal language (ml/haskell)
 - lisp + java + func(ml/haskell)
@@ -119,8 +128,13 @@
 ** functional programming
 - first class citizens (understand make-adder function) 
 - variable arity 
+- immutable data structures
+  - lists, vectors, maps
+  - reader, backquote support 
 ** runtime polymorphism / multimethods
 ** concurrent programming / stm
 ** jvm / java integration 
 * status
 * q&a
+
+- timestamp: 35.58

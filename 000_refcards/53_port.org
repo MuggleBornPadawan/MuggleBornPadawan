@@ -33,6 +33,7 @@
   - [[#compresssion--prediction--intelligence][compresssion = prediction | intelligence]]
   - [[#ai-infrastructure][ai infrastructure]]
   - [[#softwar-engineering][softwar engineering]]
+- [[#github-outage][github outage]]
 
 * trivia
 ** random notes
@@ -473,6 +474,19 @@ rich:   [real-world facts]   -> [immutable pure data]   -> [functional abstracti
 - api gateways - rate limiting, routing, versioning
 - testing - unit, integration, contract testing
 - ai integration - llm apis, vector dbs, rag
+* github outage
+- https://x.com/pulkit_mittal_?s=20
+- github’s recent outage is a real-world example of almost all of system design concepts:
+1. autoscaling: scale capacity with demand automatically. github’s autoscaling missed the istio sidecar’s concurrency bottleneck.
+2. retry storms: retries improve reliability until they amplify an outage.
+3. load balancing: spread traffic across healthy capacity. haproxy nodes hit their flow limits.
+4. failover: move traffic away from unhealthy infrastructure. github shifted traffic between regions, but the extra load created new problems.
+5. backpressure: stop accepting work when the system is overloaded. otherwise, the queue keeps growing.
+6. rate limiting: protect a service from too much traffic. github eventually blocked some copilot token requests to reduce load.
+7. circuit breakers: stop hammering a dependency that is already failing.
+8. cascading failures: one bottleneck -> more retries -> more traffic -> more failures.
+this is why system design isn’t just about the happy path.
+
 
 
 

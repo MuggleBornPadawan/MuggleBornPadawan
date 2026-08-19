@@ -1,0 +1,95 @@
+Name,Category,Website,Frontend,Backend,Infrastructure,Functional Programming
+Anthropic,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.anthropic.com,React/Next.js,"Python, Rust",AWS,None
+Applied Compute,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://appliedcompute.com,React,Python,AWS,None
+BaseTen,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.baseten.co,React,"Python, Go",AWS,None
+Black Forest Labs,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://blackforestlabs.ai,React,Python,AWS,None
+Chai Discovery,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.chaidiscovery.com,React,Python,AWS,None
+Cognition,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.cognition.ai,React,"Python, TypeScript",AWS,None
+CoreWeave,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.coreweave.com,React,"Go, Python","Kubernetes, Bare Metal",None
+Crusoe,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://crusoe.ai,React,"Python, Go","AWS, Own DCs",None
+Etched,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.etched.com,React,"Python, C++",AWS,None
+Exa,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://exa.ai,React,"Python, Go",AWS,None
+Fal,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://fal.ai,React,"Python, Rust",AWS,None
+Fireworks,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://fireworks.ai,React,"Python, C++",AWS,None
+Lambda,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://lambdalabs.com,React,Python,Bare Metal,None
+LangChain,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.langchain.com,React,"Python, TypeScript",AWS,None
+Liquid AI,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.liquid.ai,React,Python,AWS,None
+LlamaIndex,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.llamaindex.ai,React,"Python, TypeScript",AWS,None
+Mistral AI,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://mistral.ai,React,"Python, Rust","AWS, GCP",None
+Modal,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://modal.com,React,"Python, Rust",AWS,None
+OpenAI,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://openai.com,React,"Python, Rust",Azure,None
+Prime Intellect,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.primeintellect.ai,React,"Python, Go",AWS,None
+Safe Superintelligence,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://ssi.inc,React,"Python, C++",AWS,None
+Together,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.together.ai,React,"Python, C++",AWS,None
+World Labs,"Artificial Intelligence (Frontier Labs, Infrastructure & Tooling)",https://www.worldlabs.ai,React,"Python, C++",AWS,None
+Abridge,AI-Native Applications & Agents,https://www.abridge.com,React,Python,AWS,None
+Basis,AI-Native Applications & Agents,https://www.basis.ai,React,Python,AWS,None
+Clay,AI-Native Applications & Agents,https://www.clay.com,React,"Node.js, TypeScript",AWS,None
+Decagon,AI-Native Applications & Agents,https://decagon.ai,React,Python,AWS,None
+ElevenLabs,AI-Native Applications & Agents,https://elevenlabs.io,React,"Python, C++",AWS,None
+Factory,AI-Native Applications & Agents,https://www.factory.ai,React,Python,AWS,None
+Gamma,AI-Native Applications & Agents,https://gamma.app,React,"Node.js, Python",AWS,None
+Genspark,AI-Native Applications & Agents,https://www.genspark.ai,React,Python,AWS,None
+Glean,AI-Native Applications & Agents,https://www.glean.com,React,"Go, Python",GCP,None
+Granola,AI-Native Applications & Agents,https://www.granola.ai,React,Python,AWS,None
+Harvey,AI-Native Applications & Agents,https://www.harvey.ai,React,Python,AWS,None
+Legora,AI-Native Applications & Agents,https://www.legora.ai,React,Python,AWS,None
+OpenEvidence,AI-Native Applications & Agents,https://www.openevidence.com,React,Python,AWS,None
+Profound,AI-Native Applications & Agents,https://www.profound.ai,React,Python,AWS,None
+Reflection AI,AI-Native Applications & Agents,https://www.reflection.ai,React,Python,AWS,None
+Sierra,AI-Native Applications & Agents,https://sierra.ai,React,Python,AWS,None
+Surge AI,AI-Native Applications & Agents,https://www.surgehq.ai,React,"Python, Go",AWS,None
+Thinking Machines,AI-Native Applications & Agents,https://thinkingmachin.es,React,Python,GCP,None
+Wispr Flow,AI-Native Applications & Agents,https://www.flow.wispr.ai,React,Python,AWS,None
+Chainguard,"Developer Tools, Data & Infrastructure",https://www.chainguard.dev,React,Go,GCP,None
+ClickHouse,"Developer Tools, Data & Infrastructure",https://clickhouse.com,React,C++,"AWS, GCP, Azure",None
+Cloudflare,"Developer Tools, Data & Infrastructure",https://www.cloudflare.com,React,"Go, Rust",Bare Metal,None
+Cursor,"Developer Tools, Data & Infrastructure",https://www.cursor.com,React,"TypeScript, Python",AWS,None
+Databricks,"Developer Tools, Data & Infrastructure",https://databricks.com,React,Scala,"AWS, Azure",Scala
+Hex,"Developer Tools, Data & Infrastructure",https://hex.tech,React,"Python, Node.js",AWS,None
+Linear,"Developer Tools, Data & Infrastructure",https://linear.app,React,"Node.js, TypeScript",GCP,None
+Lovable,"Developer Tools, Data & Infrastructure",https://lovable.dev,React,TypeScript,AWS,None
+n8n,"Developer Tools, Data & Infrastructure",https://n8n.io,Vue.js,"Node.js, TypeScript",AWS,None
+Parallel Web Systems,"Developer Tools, Data & Infrastructure",https://parallel.com,React,Go,AWS,None
+Pierre Computer,"Developer Tools, Data & Infrastructure",https://pierre.co,React,Go,AWS,None
+PostHog,"Developer Tools, Data & Infrastructure",https://posthog.com,React,"Python, Django",AWS,None
+Replit,"Developer Tools, Data & Infrastructure",https://replit.com,React,"Go, Python, Nix",GCP,None
+Supabase,"Developer Tools, Data & Infrastructure",https://supabase.com,React,"Elixir, Go",AWS,Elixir
+Temporal,"Developer Tools, Data & Infrastructure",https://temporal.io,React,Go,AWS,None
+Turbopuffer,"Developer Tools, Data & Infrastructure",https://turbopuffer.com,React,Rust,AWS,None
+Vercel,"Developer Tools, Data & Infrastructure",https://vercel.com,React/Next.js,"Node.js, Go",AWS,None
+WorkOS,"Developer Tools, Data & Infrastructure",https://workos.com,React,"TypeScript, Node.js",AWS,None
+Anduril,"Robotics, Aerospace & Defense",https://www.anduril.com,React,"C++, Rust, Go",AWS,None
+Applied Intuition,"Robotics, Aerospace & Defense",https://www.appliedintuition.com,React,"C++, Python",AWS,None
+Bedrock Robotics,"Robotics, Aerospace & Defense",https://www.bedrock.com,React,"C++, Python",AWS,None
+Figure,"Robotics, Aerospace & Defense",https://figure.ai,React,"C++, Python",AWS,None
+Helsing,"Robotics, Aerospace & Defense",https://helsing.ai,React,"Rust, Python, C++",AWS,None
+Physical Intelligence,"Robotics, Aerospace & Defense",https://www.physicalintelligence.company,React,"Python, C++",AWS,None
+Saronic,"Robotics, Aerospace & Defense",https://www.saronic.com,React,"C++, Python",AWS,None
+Shield AI,"Robotics, Aerospace & Defense",https://shield.ai,React,"C++, Python",AWS,None
+Skild,"Robotics, Aerospace & Defense",https://skild.ai,React,"Python, C++",AWS,None
+SpaceX,"Robotics, Aerospace & Defense",https://www.spacex.com,"Angular, React","C++, Python",Bare Metal,None
+Sunday Robotics,"Robotics, Aerospace & Defense",https://sundayrobotics.com,React,"C++, Python",AWS,None
+Tesla,"Robotics, Aerospace & Defense",https://www.tesla.com,React,"C++, Python","Bare Metal, AWS",None
+Waymo,"Robotics, Aerospace & Defense",https://waymo.com,React,"C++, Python",GCP,None
+Airwallex,Fintech & Business Operations,https://www.airwallex.com,React,"Java, Kotlin","AWS, GCP",None
+Deel,Fintech & Business Operations,https://www.deel.com,React,"Node.js, Python",AWS,None
+Kalshi,Fintech & Business Operations,https://kalshi.com,React,"OCaml, Python",AWS,OCaml
+Mercury,Fintech & Business Operations,https://mercury.com,React,Haskell,AWS,Haskell
+Polymarket,Fintech & Business Operations,https://polymarket.com,React,"Go, Python",AWS,None
+Ramp,Fintech & Business Operations,https://ramp.com,React,Python,AWS,None
+Revolut,Fintech & Business Operations,https://www.revolut.com,React,"Java, Scala",GCP,Scala
+Rippling,Fintech & Business Operations,https://www.rippling.com,React,Python,AWS,None
+Stripe,Fintech & Business Operations,https://stripe.com,React,Ruby,AWS,None
+Vanta,Fintech & Business Operations,https://www.vanta.com,React,"Go, Node.js",AWS,None
+Airbnb,"Consumer, Collaboration & Marketplaces",https://www.airbnb.com,React,"Java, Ruby",AWS,None
+Figma,"Consumer, Collaboration & Marketplaces",https://www.figma.com,React,"C++, Rust",AWS,None
+Handshake,"Consumer, Collaboration & Marketplaces",https://joinhandshake.com,React,"Ruby on Rails, Go",GCP,None
+Mercor,"Consumer, Collaboration & Marketplaces",https://mercor.com,React,"Python, Node.js",AWS,None
+Notion,"Consumer, Collaboration & Marketplaces",https://www.notion.so,React,"Node.js, Go",AWS,None
+Periodic Labs,"Consumer, Collaboration & Marketplaces",https://periodiclabs.com,React,Python,AWS,None
+Shopify,"Consumer, Collaboration & Marketplaces",https://www.shopify.com,React,Ruby on Rails,GCP,None
+Whatnot,"Consumer, Collaboration & Marketplaces",https://www.whatnot.com,React,"Python, Elixir",AWS,Elixir
+Google,Tech Giants,https://about.google,"Angular, React","C++, Java, Python, Go",GCP,None
+NVIDIA,Tech Giants,https://www.nvidia.com,"React, Angular","C++, Python",Bare Metal,None
+Palantir,Tech Giants,https://www.palantir.com,React,"Java, Go",AWS,None
