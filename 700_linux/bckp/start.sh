@@ -11,6 +11,10 @@ cp MuggleBornPadawan/.dockerignore MuggleBornPadawan/999_dotfiles/.dockerignore.
 cp MuggleBornPadawan/Dockerfile MuggleBornPadawan/999_dotfiles/Dockerfile_bkp
 cp MuggleBornPadawan/Jenkinsfile MuggleBornPadawan/999_dotfiles/Jenkinsfile_bkp
 cd
+# emacs backup - this has to be moved to another file?
+./MuggleBornPadawan/700_linux/bckp/backup_emacs.sh
+mv emacs_backups/* MuggleBornPadawan/999_dotfiles/
+rmdir emacs_backups/
 cd MuggleBornPadawan
 git status
 git add .
@@ -20,12 +24,10 @@ cd
 echo "Do you want to continue? (Press Enter)"
 read -p ""
 echo "Continuing..."
-./MuggleBornPadawan/700_linux/remote_startup.sh | tee - a ./MuggleBornPadawan/700_linux/bckp/shell_log.log
+./MuggleBornPadawan/700_linux/remote_startup.sh | tee - a 
+# # # ./MuggleBornPadawan/700_linux/bckp/shell_log.log
 cd
-# emacs backup - this has to be moved to another file?
-./MuggleBornPadawan/700_linux/bckp/backup_emacs.sh
-mv emacs_backups/ MuggleBornPadawan/999_dotfiles/
-rm -rf emacs_backups/
+
 # backups 
 # ./MuggleBornPadawan/700_linux/bckp/bckp.sh
 # ./MuggleBornPadawan/700_linux/scripts/gpg_protector.sh encrypt daily_nuggets.txt 13
