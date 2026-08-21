@@ -1,3 +1,0 @@
-This is a dummy text file.
-It contains some placeholder text.
-You can use this for testing purposes.

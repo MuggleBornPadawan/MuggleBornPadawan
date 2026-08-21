@@ -83,6 +83,8 @@
 | C-c C-d C-a      | clj        | ? appropos search                                 |
 | C-c C-d C-d      | repl       | cider-doc                                         |
 | C-c M-n          | repl / clj | cider-repl-set-ns                                 |
+| C-c M-n          | repl       | in-ns 'your.namespace.here                        |
+| C-c M-n          | repl       | ns your.namespace.here                            |
 | C-c C-q C-q      | clj        | quit repl                                         |
 | M-.              | repl       | cider-find-var                                    |
 | M-,              | repl       | xref-go-back                                      |
