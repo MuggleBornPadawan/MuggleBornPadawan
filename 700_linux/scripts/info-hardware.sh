@@ -24,6 +24,8 @@ else
 fi
 echo " "
 emacs --version | head -n 1
-#ollama ls
+ollama --version | grep version
+ollama ls
+clojure --version
 echo "-----------------------------------"
 #echo "Done."

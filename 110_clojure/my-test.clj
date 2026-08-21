@@ -16,5 +16,5 @@
 
 
 (defn -main [& args]
-  (println (greet "world")))
- 
+  (let [name (or (first args) "world")]
+    (println (greet name))))

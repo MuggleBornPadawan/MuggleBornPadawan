@@ -37,8 +37,7 @@
 
 * trivia
 ** random notes
-- abstract syntax tree (ast)
-- language server processor (lsp)
+- `code text` -> `tree-sitter` (fast colors, concrete syntax tree) -> `abstract syntax tree` (logic map) -> `language-server-processor` (smart tips) -> `intermediate-representation` (machine steps)
 - state of observer (stephen wolfram) 
 - computational irreduciblity
 - language - paradigms (oops, procedural, functional), abstraction level (machine code, assembly, low level, high level, mark up), translation (interpreted, compiled)
