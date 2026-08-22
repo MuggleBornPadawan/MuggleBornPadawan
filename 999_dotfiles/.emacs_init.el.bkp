@@ -236,7 +236,9 @@
           (elixir "https://github.com/elixir-lang/tree-sitter-elixir")
           (fsharp "https://github.com/ionide/tree-sitter-fsharp" "v0.1.0" "fsharp/src")
           (elm "https://github.com/elm-tooling/tree-sitter-elm" "v3.0.0")
-          (php "https://github.com/tree-sitter/tree-sitter-php" "v0.21.1" "php/src")))
+          (php "https://github.com/tree-sitter/tree-sitter-php" "v0.21.1" "php/src")
+          (markdown "https://github.com/tree-sitter-grammars/tree-sitter-markdown" "v0.2.0" "tree-sitter-markdown/src")
+          (markdown-inline "https://github.com/tree-sitter-grammars/tree-sitter-markdown" "v0.2.0" "tree-sitter-markdown-inline/src")))
   :config
   (treesit-auto-add-to-auto-mode-alist 'all))
 
@@ -363,6 +365,16 @@
       (message "Error: 'pass' executable not found on this system.")
       nil))
 
+  ;; Define Ollama backend (always available locally)
+  (gptel-make-ollama "Ollama"
+    :host "localhost:11434"
+    :models '("hermes3:3b" "qwen2.5-coder:3b")
+    :stream t)
+
+  ;; Set Ollama as default fallback first
+  (setq gptel-backend (gptel-get-backend "Ollama")
+        gptel-model "qwen2.5-coder:3b")
+
   (let ((secret-key (my/get-gemini-key-from-pass)))
     (when secret-key
       ;; Create the Gemini backend object
@@ -370,19 +382,9 @@
                               :key secret-key
                               :stream t
                               :models '(gemini-3.7-flash gemini-3.6-flash gemini-3.5-flash gemini-3.5-flash-lite gemini-3.1-pro-preview))))
-        
-        ;; Define Ollama backend
-        (gptel-make-ollama "Ollama"
-          :host "localhost:11434"
-          :models '("qwen2.5:1.5b" "llama3.2:latest"))
-
-        ;; Set default startup model (Ollama)
-        (setq gptel-backend (gptel-get-backend "Ollama")
-              gptel-model "qwen2.5:1.5b")
-        
-        ;; CRITICAL FIX: Explicitly set Gemini as the default system-wide backend and preferred model
-        (setq gptel-backend gemini-backend)
-        (setq gptel-model 'gemini-3.5-flash-lite))))
+        ;; Set Gemini as the default system-wide backend and preferred model
+        (setq gptel-backend gemini-backend
+              gptel-model 'gemini-3.5-flash-lite))))
 
   ;; Set pass store time 
   (setenv "PASSWORD_STORE_CLIP_TIME" "3600")
@@ -391,5 +393,11 @@
         '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely. Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD.")
           (coder   . "You are an expert programmer. Write clean, concise code.")))
 
-  ;; Set preferred default persona
-  (setq gptel-default-mode 'default))
+  ;; Update the system message since gptel--system-message is a defvar and won't automatically update from gptel-directives configuration set in :config
+  (setq gptel--system-message (alist-get 'default gptel-directives)))
+
+
+(global-set-key (kbd "C-j") 'eval-print-last-sexp)
+
+
+

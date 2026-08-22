@@ -79,7 +79,7 @@ set -g @tmux-cpu-display-format "CPU: #{cpu_percentage}"
 #set -g @tmux-disk-display-format "DISK: #{disk_percentage}"
 
 # Other status bar stuff
-set -g status-right '#{cpu_percentage} #[fg=grey]%b-%d %H:%M#[default] ' # Date and time
+set -g status-right '#{pane_current_path} #{cpu_percentage} #[fg=grey]%b-%d %H:%M#[default] ' # Date and time
 #set -g status-right '#{cpu_percentage} | #[fg=grey]%H:%M %b-%d'
 #set -g status-right '#{cpu_percentage} | #{mem_percentage} | #{disk_percentage} | #[fg=grey]%H:%M %d-%b-%y'
 # set -g status-right '#{cpu_percentage} | '#(/usr/local/bin/tmux-mem --format ":currentBytes [#[fg=:grey]:spark#[default]] #[fg=:grey]:percent#[default]") | #{disk_percentage} | #[fg=grey]%H:%M %d-%b-%y'
@@ -87,6 +87,6 @@ set -g status-right '#{cpu_percentage} #[fg=grey]%b-%d %H:%M#[default] ' # Date 
 #set-option -g status-right '#(/usr/local/bin/tmux-mem --format ":currentBytes [#[fg=:color]:spark#[default]] #[fg=:color]:percent#[default]") #(/usr/local/bin/tmux-cpu --format ":load [#[fg=:color]:spark#[default]] #[fg=:color]:percent#[default]") %H:%M %d-%b-%y'
 # You can also add temperature here if your system supports it and you have a plugin or script for it.
 
-
+set -g extended-keys on
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
