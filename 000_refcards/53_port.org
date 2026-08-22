@@ -45,6 +45,10 @@
   - minimize network round-trips (rtt) and payload size whenever possible
 - emacs coq agda - axiomatic programming - proof assistant
 - sovereign semantic substrate = alpha moat
+- electron instance
+  - vs code, slack, discord, spotify, whatsapp desktop, notion, and microsoft teams
+  - html, css, and javascript
+  - chromium, node.js
 ** postgresql - full stack 
 - free, open source and 30 years - an incredibly battle-tested tech
 - deploy, monitor, backup and keep in sync - a single postgresql instance than multiple systems
