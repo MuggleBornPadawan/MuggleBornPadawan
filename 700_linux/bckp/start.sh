@@ -13,6 +13,8 @@ cp MuggleBornPadawan/Jenkinsfile MuggleBornPadawan/999_dotfiles/Jenkinsfile_bkp
 cd
 # emacs backup - this has to be moved to another file?
 ./MuggleBornPadawan/700_linux/bckp/backup_emacs.sh
+./MuggleBornPadawan/700_linux/scripts/backup_agy_skills.sh
+./MuggleBornPadawan/700_linux/scripts/backup_pi_skills.sh
 mv emacs_backups/* MuggleBornPadawan/999_dotfiles/
 rmdir emacs_backups/
 cd MuggleBornPadawan
