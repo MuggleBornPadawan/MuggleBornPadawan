@@ -28,4 +28,6 @@ ollama --version | grep version
 ollama ls
 clojure --version
 echo "-----------------------------------"
+ps aux --sort=-%cpu | head -n 6
+ps aux --sort=-%mem | head -n 6
 #echo "Done."
