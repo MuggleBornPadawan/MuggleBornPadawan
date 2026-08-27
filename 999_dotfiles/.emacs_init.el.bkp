@@ -398,6 +398,6 @@
 
 
 (global-set-key (kbd "C-j") 'eval-print-last-sexp)
-
+(evil-mode 0)
 
 
