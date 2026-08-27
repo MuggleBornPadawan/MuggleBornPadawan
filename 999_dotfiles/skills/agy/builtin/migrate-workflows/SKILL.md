@@ -1,6 +1,6 @@
 ---
 name: migrate-workflows
-description: Automatically migrate legacy workflows (.agents/workflows/ or ~/.gemini/config/workflows/) to skills (.agents/skills/ or ~/.gemini/config/skills/). Scans for existing workflows, creates target SKILL.md files, and archives old workflow files.
+description: Automatically migrate legacy workflows to modern skills across global and workspace configurations. Scans for existing workflows, creates target SKILL.md files, and safely archives old workflow files.
 ---
 
 # Migrate Workflows to Skills
@@ -45,6 +45,11 @@ using filesystem search tools for legacy `.md` workflow files and
     -   `<workspace_root>/_agent/workflows/*.md`
     -   Manifests:
         `<workspace_root>/{.agents,_agents,.agent,_agent}/workflows.json`
+
+> [!NOTE]
+> **OS-Specific Path and Output Formatting:**
+> - Adapt path resolution to the host OS (`%USERPROFILE%` on Windows vs. `$HOME` on macOS/Linux).
+> - When presenting tables, progress, or summaries to the user, **always format paths using the host OS path separators** (e.g. `\` on Windows such as `%USERPROFILE%\.gemini\config\global_workflows\<name>.md`, `/` on macOS/Linux).
 
 **Check each discovered workflow against existing skills:** For each workflow,
 check if `<target_skill_dir>/<name>/SKILL.md` already exists to determine
@@ -108,9 +113,10 @@ For each workflow file:
 
 4.  **Archive the legacy workflow safely**:
 
-    -   Rename the old `.md` workflow file to `<name>.md.bak` (e.g. `mv
-        my_workflow.md my_workflow.md.bak`). Do not permanently delete the file
-        so that the original content is safely preserved as a backup.
+    -   Rename the old `.md` workflow file to `<name>.md.bak` (e.g. using `mv
+        my_workflow.md my_workflow.md.bak` on Linux/macOS, or using `Move-Item` /
+        file tools on Windows). Do not permanently delete the file so that the
+        original content is safely preserved as a backup.
     -   Remove migrated workflow entries from any `workflows.json` manifests.
 
 --------------------------------------------------------------------------------
@@ -124,7 +130,3 @@ For each workflow file:
     -   Previously migrated skills skipped (preserved existing `SKILL.md`
         files).
     -   Legacy workflow files safely archived as `.md.bak`.
-3.  Remind the user that the skills are immediately available:
-    -   **Slash Commands**: Typing `/<name>` in chat invokes the skill.
-    -   **Agent Discovery**: The agent will discover and use the skill when
-        relevant tasks arise.

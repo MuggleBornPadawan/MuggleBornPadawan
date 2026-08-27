@@ -20,7 +20,7 @@ small interactive experiences for the user.
     conversation:
 
     ```
-    <agent-embed src="file:///<artifact_path>/widget.html" height="400px"></agent-embed>
+    <agent-embed src="file:///<artifact_path>/widget.html"></agent-embed>
     ```
 
 ## Constraints & Theming
@@ -78,7 +78,7 @@ small interactive experiences for the user.
 
 **Default to artifact only** — reference the HTML artifact in your response and
 let the user open it in the side pane. Consider inlining when the widget is
-compact (fits in ~300–500 px) and directly illustrates the surrounding
+compact (comfortably under 500px tall) and directly illustrates the surrounding
 explanation (e.g., a small educational widget, plot, or diagram). Larger, more
 complex content (data dashboards, simulations, app prototypes) should stay
 artifact-only. Always follow the user's explicit preference if stated.
@@ -96,13 +96,26 @@ components:
 *   **Standalone Artifacts**: For full-page side-pane artifacts (like
     dashboards), use a solid background (e.g., `bg-[var(--background)]`).
 
-## Sizing Guidelines for Inline embeds
+## Sizing Inline Embeds
 
-When embedding inline, you MUST specify a `height` attribute. Choose the height
-that lets **all** content render without clipping. For compact inline widgets,
-target 350px, and generally you should **never** exceed 500px height unless the
-user asks.
+For inline embeds, it is important to think **small and compact**.
 
-> [!CAUTION] **Don't under-size the embed height.** The most common mistake is
-> setting a height that is too small, causing the bottom of the widget to be
-> clipped and invisible to the user. When in doubt, **round up**.
+Inline embeds only have a **500px** height viewport. Past that the widget
+scrolls inside a small box and the user sees only a fragment of what you built,
+so don't build inlined widgets that are too tall.
+
+*   **Do not set a `height` attribute on `<agent-embed>`.** It is ignored.
+*   **Think compact** Think carefully about designing something that is compact
+    and fits nicely inline in the chat height budget.
+*   **If the idea genuinely needs more room, make it a standalone artifact.** A
+    scrolling inline widget is usually wrong — full-height in the side pane
+    beats cropped in the chat.
+
+After generating the artifact, consider whether it is sufficiently compact to be
+useful inline and adjust if needed.
+
+> [!IMPORTANT] Never size an inline widget relative to the viewport: no
+> `h-screen`, `min-h-screen`, `100vh`, or `height: 100%` on a top-level
+> container. The frame's viewport is derived from your content, so these feed
+> themselves and the widget collapses to a sliver. Use padding for breathing
+> room instead.
