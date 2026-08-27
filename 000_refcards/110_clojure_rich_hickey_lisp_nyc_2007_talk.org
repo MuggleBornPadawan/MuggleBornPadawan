@@ -121,20 +121,21 @@
   - symbols are distinguished from places
   - risk: incidental aliasing (be careful) 
 - reader
-  - code-as-data
+  - code-as-data - language itself is defined as list data structure (unlike other languages) 
   - extended for maps and vectors
 - macros (defmacro) - common lisp and scheme have different approach to macros
   - supports overloading by arity
 ** functional programming
 - first class citizens (understand make-adder function) 
-- variable arity 
+- variable arity - function overloading 
 - immutable data structures
   - lists, vectors, maps
   - reader, backquote support 
+- fn is lambda
 ** runtime polymorphism / multimethods
 ** concurrent programming / stm
 ** jvm / java integration 
 * status
 * q&a
 
-- timestamp: 35.58
+- timestamp: 35.47
