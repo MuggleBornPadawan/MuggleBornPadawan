@@ -37,6 +37,8 @@
 
 * trivia
 ** random notes
+- techniques to shrink a language model: quantization, pruning, distillation 
+  - https://open.substack.com/pub/bytebytego/p/how-to-shrink-a-language-model-without-295?
 - `code text` -> `tree-sitter` (fast colors, concrete syntax tree) -> `abstract syntax tree` (logic map) -> `language-server-processor` (smart tips) -> `intermediate-representation` (machine steps)
 - state of observer (stephen wolfram) 
 - computational irreduciblity
