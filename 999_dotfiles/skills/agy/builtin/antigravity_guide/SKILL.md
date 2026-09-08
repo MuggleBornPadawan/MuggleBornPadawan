@@ -49,6 +49,7 @@ sitemap:
     `https://antigravity.google/docs/ide/browser`
 -   **Agent Permissions & Security**:
     `https://antigravity.google/docs/permissions`
+-   **Terminal Sandbox**: `https://antigravity.google/docs/sandbox`
 -   **Changelog & Release Notes**: `https://antigravity.google/changelog`
 -   **Troubleshooting & Support**: `https://antigravity.google/support`
     <!-- LINT.ThenChange(//depot/google3/third_party/gemini_coder/agent_ui_toolkit/dev/appVariant/externalAppVariant.ts:custom_links) -->
