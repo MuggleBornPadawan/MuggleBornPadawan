@@ -51,6 +51,24 @@
   - vs code, slack, discord, spotify, whatsapp desktop, notion, and microsoft teams
   - html, css, and javascript
   - chromium, node.js
+- how jvm works - https://youtu.be/bF28LFPjFsI?si=-px9mA8hHe9EnG6U
+  - source file 
+  - build (.java to javac to class [bytecode + metadata])
+    - metadata: classes, methods, access modifiers (public, private), variable types 
+  - class loader subsystem - lazy loader
+    - parent delegation model
+    - application class loader (app) > platform class loader (jdk platform) > bootstrap class loader (core java)
+  - link & init
+    - linking - verification > preparation > resolution
+      - verification - valide bytecode, type casting 
+      - preparation - memory allocation (static memory defaults: count, rate, name, total)
+      - resolution - symbolic names to direct references
+   - init - memory allocation 
+  - runtime data areas - accessible to all threads - heap and method area 
+  - execution - interpreter and jit compiler
+    - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
+    - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
+  - machine code 
 ** postgresql - full stack 
 - free, open source and 30 years - an incredibly battle-tested tech
 - deploy, monitor, backup and keep in sync - a single postgresql instance than multiple systems
