@@ -1,5 +1,5 @@
 #!/bin/bash
-# backup_emacs.sh - Safe backup of Emacs config
+# backup_emacs.sh - Safe backup of Emacs config (polished)
 # Usage: ./backup_emacs.sh [--dry-run] [--dest DIR] [--keep N]
 set -euo pipefail
 IFS=$'\n\t'
@@ -10,36 +10,39 @@ IFS=$'\n\t'
 SOURCE_DIR="${HOME}/.emacs.d"
 BACKUP_PARENT_DIR="${HOME}/emacs_backups"
 FINAL_DST="${HOME}/MuggleBornPadawan/999_dotfiles"  # optional move target
-TIMESTAMP="$(date +"%Y%m%d_%H%M%S")"  # was %Y%m - now per-second, no overwrite
+TIMESTAMP="$(date +"%Y%m%d_%H%M%S")"  # per-second, no overwrite
 BACKUP_DIR="${BACKUP_PARENT_DIR}/emacs_backup_${TIMESTAMP}"
 TAR_FILE="${BACKUP_PARENT_DIR}/emacs_backup_${TIMESTAMP}.tar.gz"
-KEEP=12  # keep last 12 backups (12 months if monthly, ~12 days if daily)
+KEEP=12  # keep last 12 backups
 DRY_RUN=false
 DEST_OVERRIDE=""
 
-for arg in "$@"; do
-  case "$arg" in
-    --dry-run) DRY_RUN=true ;;
-    --keep=*) KEEP="${arg#*=}" ;;
-    --dest=*) DEST_OVERRIDE="${arg#*=}" ;;
-    --dest) echo "ERROR: --dest needs value --dest=DIR" >&2; exit 1 ;;
+# robust arg parse - supports --dest DIR and --dest=DIR, --keep N and --keep=N
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run) DRY_RUN=true; shift ;;
+    --keep=*) KEEP="${1#*=}"; shift ;;
+    --keep)
+      if [[ -z "${2:-}" ]]; then echo "ERROR: --keep needs value --keep N" >&2; exit 1; fi
+      KEEP="$2"; shift 2 ;;
+    --dest=*) DEST_OVERRIDE="${1#*=}"; shift ;;
+    --dest)
+      if [[ -z "${2:-}" ]]; then echo "ERROR: --dest needs value --dest DIR" >&2; exit 1; fi
+      DEST_OVERRIDE="$2"; shift 2 ;;
     -h|--help)
       echo "Usage: $0 [--dry-run] [--dest DIR] [--keep N]"
       echo "  Backup ~/.emacs.d to emacs_backups/ tar.gz"
       echo "  --keep N : keep last N archives (default 12)"
       exit 0
       ;;
-    *) echo "Unknown arg $arg" >&2; exit 1 ;;
+    *) echo "Unknown arg $1" >&2; exit 1 ;;
   esac
-done
-# support --dest DIR as two args
-for ((i=1;i<=$#;i++)); do
-  if [[ "${!i}" == "--dest" ]]; then j=$((i+1)); DEST_OVERRIDE="${!j:-}"; break; fi
 done
 if [[ -n "$DEST_OVERRIDE" ]]; then FINAL_DST="$DEST_OVERRIDE"; fi
 
 ESSENTIAL_ITEMS=(
   "init.el"
+  "early-init.el"
   "custom.el"
   "customizations"
   "bookmarks"
@@ -50,7 +53,14 @@ OPTIONAL_ITEMS=(
 )
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
-run() { if [[ "$DRY_RUN" == true ]]; then log "[DRY-RUN] $*"; else eval "$@"; fi; }
+# safe run - no eval, direct exec
+run() {
+  if [[ "$DRY_RUN" == true ]]; then
+    (IFS=' '; log "[DRY-RUN] $*")
+  else
+    "$@"
+  fi
+}
 
 # --------------------------------------------------------------------------
 # Pre-checks
@@ -90,7 +100,7 @@ for item in "${ESSENTIAL_ITEMS[@]}"; do
   src="$SOURCE_DIR/$item"
   if [[ -e "$src" ]]; then
     log "Copy essential: $item"
-    run "cp -a \"$src\" \"$BACKUP_DIR/\""
+    run cp -a "$src" "$BACKUP_DIR/"
     copied=$((copied+1))
   else
     log "WARN: essential '$item' not found, skip"
@@ -101,14 +111,14 @@ for item in "${OPTIONAL_ITEMS[@]}"; do
   src="$SOURCE_DIR/$item"
   if [[ -f "$src" ]]; then
     log "Copy optional: $item"
-    run "cp -a \"$src\" \"$BACKUP_DIR/\""
+    run cp -a "$src" "$BACKUP_DIR/"
     copied=$((copied+1))
   fi
 done
 
 if [[ "$copied" -eq 0 ]]; then
   log "ERROR: nothing copied, abort"
-  run "rmdir \"$BACKUP_DIR\" 2>/dev/null || true"
+  run rmdir "$BACKUP_DIR" 2>/dev/null || true
   exit 1
 fi
 
@@ -131,7 +141,7 @@ fi
 
 # Only now remove uncompressed dir
 log "Clean temp dir"
-run "rm -rf \"$BACKUP_DIR\""
+run rm -rf "$BACKUP_DIR"
 
 log "----------------------------------------"
 log "Backup OK: $TAR_FILE"
@@ -143,8 +153,8 @@ log "----------------------------------------"
 # --------------------------------------------------------------------------
 if [[ -n "$FINAL_DST" && -d "$FINAL_DST" ]]; then
   log "Copy tar to $FINAL_DST (keep original)"
-  run "cp -a \"$TAR_FILE\" \"$FINAL_DST/\" 2>/dev/null || true"
-  run "cp -a \"${TAR_FILE}.sha256\" \"$FINAL_DST/\" 2>/dev/null || true"
+  run cp -a "$TAR_FILE" "$FINAL_DST/" 2>/dev/null || true
+  run cp -a "${TAR_FILE}.sha256" "$FINAL_DST/" 2>/dev/null || true
 fi
 
 # --------------------------------------------------------------------------
