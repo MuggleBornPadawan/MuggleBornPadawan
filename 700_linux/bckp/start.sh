@@ -1,42 +1,301 @@
-cd
-./MuggleBornPadawan/700_linux/bckp/commits.sh
-echo -e "\nBckps - tbd"
-cp .gnupg/gpg-agent.conf MuggleBornPadawan/999_dotfiles/.gpg-agent.conf_bkp
-cp .bashrc MuggleBornPadawan/999_dotfiles/.bashrc_bkp
-cp .bash_aliases MuggleBornPadawan/999_dotfiles/.bash_aliases_bkp
-cp .tmux.conf MuggleBornPadawan/999_dotfiles/.tmux.conf.bkp
-cp MuggleBornPadawan/.gitignore MuggleBornPadawan/999_dotfiles/.gitignore_bkp
-cp .emacs.d/init.el MuggleBornPadawan/999_dotfiles/.emacs_init.el.bkp
-cp MuggleBornPadawan/.dockerignore MuggleBornPadawan/999_dotfiles/.dockerignore.bkp
-cp MuggleBornPadawan/Dockerfile MuggleBornPadawan/999_dotfiles/Dockerfile_bkp
-cp MuggleBornPadawan/Jenkinsfile MuggleBornPadawan/999_dotfiles/Jenkinsfile_bkp
-cd
-# emacs backup - this has to be moved to another file?
-./MuggleBornPadawan/700_linux/bckp/backup_emacs.sh
-./MuggleBornPadawan/700_linux/scripts/backup_agy_skills.sh
-./MuggleBornPadawan/700_linux/scripts/backup_pi_skills.sh
-mv emacs_backups/* MuggleBornPadawan/999_dotfiles/
-rmdir emacs_backups/
-cd MuggleBornPadawan
-git status
-git add .
-git commit -m "daily commit"
-git status
-cd
-echo "Do you want to continue? (Press Enter)"
-read -p ""
-echo "Continuing..."
-./MuggleBornPadawan/700_linux/remote_startup.sh | tee - a 
-# # # ./MuggleBornPadawan/700_linux/bckp/shell_log.log
-cd
+#!/bin/bash
+# start.sh - Daily orchestrator (polished)
+# Runs: commits -> dotfile bkps -> emacs/skills bkps -> git commit -> remote_startup -> yadda -> cleanup
+# Usage: ./MuggleBornPadawan/700_linux/bckp/start.sh [--dry-run] [--yes] [--skip-commits] [--skip-remote] 2>&1 | tee -a ./MuggleBornPadawan/700_linux/bckp/shell_log.log
+set -euo pipefail
+IFS=$'\n\t'
 
-# backups 
-# ./MuggleBornPadawan/700_linux/bckp/bckp.sh
-# ./MuggleBornPadawan/700_linux/scripts/gpg_protector.sh encrypt daily_nuggets.txt 13
-# mv daily_nuggets.txt.enc MuggleBornPadawan/700_linux/bckp/
-echo "Backup log - done"
-./MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh
-cd
-rm daily_nuggets.txt model_answers.log aeo_results_log.txt
-rm startup_log.log - a tmp.txt
-rm tempF*
+# --------------------------------------------------------------------------
+# Config
+# --------------------------------------------------------------------------
+readonly LOG_FILE="${HOME}/MuggleBornPadawan/700_linux/bckp/shell_log.log"
+readonly COMMITS_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/commits.sh"
+readonly EMACS_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/backup_emacs.sh"
+readonly AGY_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/backup_agy_skills.sh"
+readonly PI_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/backup_pi_skills.sh"
+readonly REMOTE_STARTUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/remote_startup.sh"
+readonly YADDA_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh"
+readonly DOTFILES_DST="${HOME}/MuggleBornPadawan/999_dotfiles"
+
+DRY_RUN=false
+AUTO_YES=false
+SKIP_COMMITS=false
+SKIP_REMOTE=false
+
+for arg in "$@"; do
+  case "$arg" in
+    --dry-run) DRY_RUN=true ;;
+    --yes|-y) AUTO_YES=true ;;
+    --skip-commits) SKIP_COMMITS=true ;;
+    --skip-remote) SKIP_REMOTE=true ;;
+    -h|--help)
+      echo "Usage: $0 [--dry-run] [--yes] [--skip-commits] [--skip-remote]"
+      echo "  --dry-run      : print actions, do not execute"
+      echo "  --yes          : skip pause prompt"
+      echo "  --skip-commits : skip commits.sh"
+      echo "  --skip-remote  : skip remote_startup.sh"
+      exit 0
+      ;;
+    *) echo "Unknown arg: $arg" >&2; exit 1 ;;
+  esac
+done
+
+# --------------------------------------------------------------------------
+# Helpers
+# --------------------------------------------------------------------------
+log()  { echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
+info() { log "INFO: $*"; }
+warn() { log "WARN: $*"; }
+die()  { log "ERROR: $*"; exit 1; }
+
+run() {
+  if [[ "$DRY_RUN" == true ]]; then
+    log "[DRY-RUN] $*"
+  else
+    eval "$@"
+  fi
+}
+
+has_cmd() { command -v "$1" >/dev/null 2>&1; }
+
+trap 'die "Failed at line $LINENO: $BASH_COMMAND"' ERR
+mkdir -p "$(dirname "$LOG_FILE")"
+mkdir -p "$DOTFILES_DST"
+
+# --------------------------------------------------------------------------
+# 1. Commits (language hello_worlds)
+# --------------------------------------------------------------------------
+run_commits() {
+  if [[ "$SKIP_COMMITS" == true ]]; then
+    warn "Skip commits (--skip-commits)"
+    return 0
+  fi
+  info "--- Commits ---"
+  if [[ -x "$COMMITS_SCRIPT" ]]; then
+    run "\"$COMMITS_SCRIPT\""
+  else
+    warn "Commits script not found or not executable: $COMMITS_SCRIPT"
+  fi
+}
+
+# --------------------------------------------------------------------------
+# 2. Dotfile backups (cp with checks)
+# --------------------------------------------------------------------------
+backup_dotfiles() {
+  info "--- Dotfile backups -> $DOTFILES_DST ---"
+  # Map: src -> dst filename (keep original names for compat)
+  # Use array of "src|dst" so we can loop safely
+  local pairs=(
+    "${HOME}/.gnupg/gpg-agent.conf|.gpg-agent.conf_bkp"
+    "${HOME}/.bashrc|.bashrc_bkp"
+    "${HOME}/.bash_aliases|.bash_aliases_bkp"
+    "${HOME}/.tmux.conf|.tmux.conf.bkp"
+    "${HOME}/MuggleBornPadawan/.gitignore|.gitignore_bkp"
+    "${HOME}/.emacs.d/init.el|.emacs_init.el.bkp"
+    "${HOME}/MuggleBornPadawan/.dockerignore|.dockerignore.bkp"
+    "${HOME}/MuggleBornPadawan/Dockerfile|Dockerfile_bkp"
+    "${HOME}/MuggleBornPadawan/Jenkinsfile|Jenkinsfile_bkp"
+  )
+  local src dst
+  for pair in "${pairs[@]}"; do
+    src="${pair%%|*}"
+    dst="${DOTFILES_DST}/${pair##*|}"
+    if [[ -e "$src" ]]; then
+      info "Copy $(basename "$src") -> $(basename "$dst")"
+      run "cp -a \"$src\" \"$dst\""
+    else
+      warn "Skip missing: $src"
+    fi
+  done
+  if [[ "$DRY_RUN" == false ]]; then
+    ls -lh "$DOTFILES_DST"/*_bkp "$DOTFILES_DST"/*.bkp 2>/dev/null | head -n 20 || true
+  fi
+}
+
+# --------------------------------------------------------------------------
+# 3. Emacs + skills backups (delegate, no mv/rmdir)
+# --------------------------------------------------------------------------
+backup_emacs_and_skills() {
+  info "--- Emacs + Skills backups ---"
+
+  if [[ -x "$EMACS_BACKUP_SCRIPT" ]]; then
+    info "Run backup_emacs.sh (handles tar + verify + retention + copy to dst)"
+    run "\"$EMACS_BACKUP_SCRIPT\" || true"
+  else
+    warn "Emacs backup not found: $EMACS_BACKUP_SCRIPT"
+  fi
+
+  if [[ -x "$AGY_BACKUP_SCRIPT" ]]; then
+    run "\"$AGY_BACKUP_SCRIPT\" || true"
+  else
+    warn "Agy backup not found: $AGY_BACKUP_SCRIPT"
+  fi
+
+  if [[ -x "$PI_BACKUP_SCRIPT" ]]; then
+    run "\"$PI_BACKUP_SCRIPT\" || true"
+  else
+    warn "Pi backup not found: $PI_BACKUP_SCRIPT"
+  fi
+
+  # NOTE: old script did mv emacs_backups/* -> 999_dotfiles/ + rmdir
+  # Removed: backup_emacs.sh already copies tar to dst and manages retention.
+  # Moving * would place tar in wrong dir and break retention.
+  info "Emacs backups kept in ~/emacs_backups + copied to $DOTFILES_DST"
+}
+
+# --------------------------------------------------------------------------
+# 4. Git commit dotfiles (only if changes)
+# --------------------------------------------------------------------------
+git_commit_dotfiles() {
+  info "--- Git commit (MuggleBornPadawan) ---"
+  local repo="${HOME}/MuggleBornPadawan"
+  if [[ ! -d "$repo/.git" ]]; then
+    warn "No git repo at $repo, skip"
+    return 0
+  fi
+  # show status for log
+  run "cd \"$repo\" && git status --short || true"
+
+  # only commit if there are changes (including untracked relevant files)
+  local has_changes=false
+  if [[ "$DRY_RUN" == true ]]; then
+    has_changes=true
+  else
+    if [[ -n "$(cd "$repo" && git status --porcelain 2>/dev/null)" ]]; then
+      has_changes=true
+    fi
+  fi
+
+  if [[ "$has_changes" == true ]]; then
+    info "Commit dotfiles"
+    run "cd \"$repo\" && git add . || true"
+    # second check after add - avoid empty commit error
+    if [[ "$DRY_RUN" == true ]]; then
+      log "[DRY-RUN] would run: git commit -m \"daily commit\""
+    else
+      if [[ -n "$(cd "$repo" && git diff --cached --quiet 2>&1 || echo "has-staged")" ]]; then
+        # diff --quiet exits 1 if has diff, so we check exit code
+        if ! cd "$repo" && git diff --cached --quiet 2>/dev/null; then
+          run "cd \"$repo\" && git commit -m \"daily commit\" || true"
+        else
+          info "Nothing staged, skip commit"
+        fi
+      fi
+    fi
+    run "cd \"$repo\" && git status --short || true"
+  else
+    info "No changes, skip commit"
+  fi
+}
+
+# --------------------------------------------------------------------------
+# 5. Pause (opt-in, skip with --yes or non-interactive)
+# --------------------------------------------------------------------------
+maybe_pause() {
+  if [[ "$AUTO_YES" == true ]]; then
+    info "Skip pause (--yes)"
+    return 0
+  fi
+  # skip if not interactive (e.g. piped)
+  if [[ ! -t 0 ]]; then
+    info "Non-interactive stdin, skip pause"
+    return 0
+  fi
+  echo "Do you want to continue? (Press Enter)"
+  # shellcheck disable=SC2162
+  read -p "" || true
+  echo "Continuing..."
+}
+
+# --------------------------------------------------------------------------
+# 6. Remote startup (fixed tee -a)
+# --------------------------------------------------------------------------
+run_remote_startup() {
+  if [[ "$SKIP_REMOTE" == true ]]; then
+    warn "Skip remote_startup (--skip-remote)"
+    return 0
+  fi
+  info "--- Remote startup ---"
+  if [[ -x "$REMOTE_STARTUP_SCRIPT" ]]; then
+    # tee -a with correct spacing, append to LOG_FILE
+    if [[ "$DRY_RUN" == true ]]; then
+      log "[DRY-RUN] $REMOTE_STARTUP_SCRIPT 2>&1 | tee -a $LOG_FILE"
+    else
+      # run and tee to log (also keep stdout)
+      "$REMOTE_STARTUP_SCRIPT" 2>&1 | tee -a "$LOG_FILE" || warn "remote_startup.sh exited non-zero"
+    fi
+  else
+    warn "Remote startup not found: $REMOTE_STARTUP_SCRIPT"
+  fi
+}
+
+# --------------------------------------------------------------------------
+# 7. Yadda diagnostics
+# --------------------------------------------------------------------------
+run_yadda() {
+  info "--- Yadda yadda ---"
+  if [[ -x "$YADDA_SCRIPT" ]]; then
+    run "\"$YADDA_SCRIPT\" || true"
+  else
+    warn "Yadda script not found: $YADDA_SCRIPT"
+  fi
+}
+
+# --------------------------------------------------------------------------
+# 8. Cleanup (safe rm -f, fix old artifact files)
+# --------------------------------------------------------------------------
+cleanup_temps() {
+  info "--- Cleanup ---"
+  # work from HOME as original did
+  local to_rm=(
+    "${HOME}/daily_nuggets.txt"
+    "${HOME}/model_answers.log"
+    "${HOME}/aeo_results_log.txt"
+    "${HOME}/startup_log.log"
+    "${HOME}/tmp.txt"
+    "${HOME}/a"      # artifact from old bug: tee - a
+    "${HOME}/-"      # artifact from old bug: rm startup_log.log -
+  )
+  for f in "${to_rm[@]}"; do
+    if [[ -e "$f" ]]; then
+      info "Remove $(basename "$f")"
+      run "rm -f \"$f\""
+    fi
+  done
+
+  # tempFile_* created by yadda_yadda.sh (seq -f tempFile_%02g.txt)
+  # Use -f and limit to HOME to avoid expanding to nothing
+  if [[ "$DRY_RUN" == true ]]; then
+    log "[DRY-RUN] rm -f ~/tempFile_*.txt ~/tempF* 2>/dev/null || true"
+  else
+    rm -f "${HOME}"/tempFile_*.txt 2>/dev/null || true
+    rm -f "${HOME}"/tempF* 2>/dev/null || true
+    info "Temp files cleaned"
+  fi
+}
+
+# --------------------------------------------------------------------------
+# Main
+# --------------------------------------------------------------------------
+main() {
+  log "Start start.sh (DRY_RUN=$DRY_RUN AUTO_YES=$AUTO_YES SKIP_COMMITS=$SKIP_COMMITS SKIP_REMOTE=$SKIP_REMOTE)"
+  cd "$HOME" || die "Cannot cd to HOME"
+
+  echo -e "\nBckps - tbd"
+  run_commits
+  backup_dotfiles
+  backup_emacs_and_skills
+  git_commit_dotfiles
+  maybe_pause
+  run_remote_startup
+
+  # Backups (commented in old script - kept as info, not run)
+  info "Backup log - done"
+
+  run_yadda
+  cleanup_temps
+
+  log "Done. start.sh complete"
+}
+
+main "$@"
