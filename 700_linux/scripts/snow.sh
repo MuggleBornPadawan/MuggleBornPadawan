@@ -1,8 +1,8 @@
 #!/bin/bash
 # snow.sh - Create or reset throwaway user 'snow' (safe version)
-# Author: Gemini (refactored)
+# Author: Gemini (refactored, polished)
 # License: GNU GPL v3
-# Usage: ./snow.sh [--dry-run] [--with-sudo] [--password PASS] [--force]
+# Usage: ./snow.sh [--dry-run] [--with-sudo] [--password PASS] [--password=PASS] [--force]
 #   --dry-run   : show actions, do not change system
 #   --with-sudo : add user to sudo group (default: no sudo)
 #   --password  : set password (default: generate random, print once)
@@ -21,41 +21,42 @@ WITH_SUDO=false
 FORCE=false
 PROVIDED_PASS=""
 
-for arg in "$@"; do
-  case "$arg" in
-    --dry-run) DRY_RUN=true ;;
-    --with-sudo) WITH_SUDO=true ;;
-    --force) FORCE=true ;;
-    --password) echo "ERROR: --password needs value: --password=XXX" >&2; exit 1 ;;
-    --password=*) PROVIDED_PASS="${arg#*=}" ;;
+# robust arg parse - single loop, supports both --password PASS and --password=PASS
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run) DRY_RUN=true; shift ;;
+    --with-sudo) WITH_SUDO=true; shift ;;
+    --force) FORCE=true; shift ;;
+    --password)
+      if [[ -z "${2:-}" ]]; then
+        echo "ERROR: --password needs value: --password PASS or --password=PASS" >&2; exit 1
+      fi
+      PROVIDED_PASS="$2"; shift 2 ;;
+    --password=*) PROVIDED_PASS="${1#*=}"; shift ;;
     -h|--help)
-      echo "Usage: $0 [--dry-run] [--with-sudo] [--password=PASS] [--force]"
+      echo "Usage: $0 [--dry-run] [--with-sudo] [--password PASS] [--password=PASS] [--force]"
       echo "  Creates throwaway user snow with private HOME (0700, UMASK 077)."
       echo "  Default: NO sudo, random password. Use --with-sudo to allow sudo."
+      echo "  --password can be given as next arg or as --password=VALUE."
       exit 0
       ;;
-    *) echo "Unknown arg: $arg (try --help)" >&2; exit 1 ;;
+    *) echo "Unknown arg: $1 (try --help)" >&2; exit 1 ;;
   esac
 done
 
-# Handle --password as separate arg: --password foo
-if [[ "${1:-}" == "--password" ]]; then
-  echo "Use --password=VALUE" >&2; exit 1
-fi
-# support: ./snow.sh --password myPass  (two args)
-for ((i=1;i<=$#;i++)); do
-  if [[ "${!i}" == "--password" ]]; then
-    j=$((i+1)); PROVIDED_PASS="${!j:-}"; break
-  fi
-done
-
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
+info() { log "INFO: $*"; }
+warn() { log "WARN: $*"; }
+die()  { log "ERROR: $*"; exit 1; }
+
 run() {
   if [[ "$DRY_RUN" == true ]]; then log "[DRY-RUN] $*"; else eval "$@"; fi
 }
 run_sudo() {
   if [[ "$DRY_RUN" == true ]]; then log "[DRY-RUN sudo] $*"; else sudo bash -c "$*"; fi
 }
+
+trap 'die "Failed at line $LINENO: $BASH_COMMAND"' ERR
 
 # --------------------------------------------------------------------------
 # Pre-checks
@@ -98,7 +99,7 @@ if id "$TARGET_USER" &>/dev/null; then
       log "ERROR: user still exists after deluser"; exit 1
     fi
     if [[ -d "$EXISTING_HOME" ]]; then
-      log "WARN: home still exists $EXISTING_HOME"; run_sudo "rm -rf \"$EXISTING_HOME\" || true"
+      warn "home still exists $EXISTING_HOME"; run_sudo "rm -rf \"$EXISTING_HOME\" || true"
     fi
     if [[ -n "$EXISTING_UID" ]]; then
       log "Check leftover files for UID $EXISTING_UID (in /home, /tmp)"
@@ -121,23 +122,28 @@ run_sudo "chmod 700 \"/home/$TARGET_USER\""
 run_sudo "chown \"$TARGET_USER:$TARGET_USER\" \"/home/$TARGET_USER\""
 
 # --------------------------------------------------------------------------
-# 3. Password - generate random if not provided
+# 3. Password - generate random if not provided (masked in dry-run)
 # --------------------------------------------------------------------------
 if [[ -n "$PROVIDED_PASS" ]]; then
   USER_PASS="$PROVIDED_PASS"
   log "Use provided password (will not log value)"
 else
-  if command -v openssl >/dev/null 2>&1; then
-    USER_PASS=$(openssl rand -base64 12 | tr -d '\n' | cut -c1-16)
+  if [[ "$DRY_RUN" == true ]]; then
+    USER_PASS="***dry-run-masked***"
+    log "Would generate random password for $TARGET_USER (masked in dry-run)"
   else
-    USER_PASS=$(head -c 32 /dev/urandom | base64 | tr -d '\n' | cut -c1-16)
+    if command -v openssl >/dev/null 2>&1; then
+      USER_PASS=$(openssl rand -base64 12 | tr -d '\n' | cut -c1-16)
+    else
+      USER_PASS=$(head -c 32 /dev/urandom | base64 | tr -d '\n' | cut -c1-16)
+    fi
+    log "Generated random password for $TARGET_USER"
   fi
-  log "Generated random password for $TARGET_USER"
 fi
 
 # Use printf + chpasswd via stdin - no password in ps
 if [[ "$DRY_RUN" == true ]]; then
-  log "[DRY-RUN] would set password for $TARGET_USER"
+  log "[DRY-RUN] would set password for $TARGET_USER (masked)"
 else
   printf '%s:%s\n' "$TARGET_USER" "$USER_PASS" | sudo chpasswd
   log "Password set"
@@ -168,11 +174,14 @@ run "getent group \"$ADMIN_GROUP\" | grep -w \"$TARGET_USER\" && echo \"IN sudo\
 run_sudo "ls -ld \"/home/$TARGET_USER\" || true"
 
 log "User $TARGET_USER ready"
-if [[ -z "$PROVIDED_PASS" ]]; then
-  log "Password (save now, shown once): $USER_PASS"
+if [[ -n "$PROVIDED_PASS" ]]; then
+  log "Password was provided - not shown"
+elif [[ "$DRY_RUN" == true ]]; then
+  log "Password (dry-run, masked): ***not set in dry-run***"
   log "Login: ssh $TARGET_USER@host  or  su - $TARGET_USER"
 else
-  log "Password was provided - not shown"
+  log "Password (save now, shown once): $USER_PASS"
+  log "Login: ssh $TARGET_USER@host  or  su - $TARGET_USER"
 fi
 log "To delete: sudo deluser --remove-home $TARGET_USER"
 log "-------------------------------------------------------"
