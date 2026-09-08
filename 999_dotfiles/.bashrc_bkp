@@ -188,3 +188,6 @@ export PASSWORD_STORE_CLIP_TIME=3600
 export PASSWORD_STORE_CLIP_TIME=3600
 export PASSWORD_STORE_CLIP_TIME=3600
 
+
+# safe rm - added by remote_startup.sh 2026-09-08
+alias rm="trash-put"

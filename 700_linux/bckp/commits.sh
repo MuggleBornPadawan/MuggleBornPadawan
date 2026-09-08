@@ -1,169 +1,196 @@
 #!/bin/bash
+# commits.sh - Test hello_world blocks + daily git commits (polished)
+# Usage: ./commits.sh [--dry-run] [r]
+#   --dry-run : print actions, do not execute
+#   r         : random delay 60-240s between blocks (keep for cron jitter)
+set -euo pipefail
+IFS=$'\n\t'
 
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# --------------------------------------------------------------------------
+# Config
+# --------------------------------------------------------------------------
+readonly REPO="${HOME}/MuggleBornPadawan"
+DRY_RUN=false
+DELAY_ARG=""
 
-# Helper function to potentially pause script execution for a random duration.
-# Arguments:
-#   $1 - The first argument to check (e.g., "r")
+for arg in "$@"; do
+  case "$arg" in
+    --dry-run) DRY_RUN=true ;;
+    -h|--help)
+      echo "Usage: $0 [--dry-run] [r]"
+      echo "  --dry-run : show what would run"
+      echo "  r         : random delay 60-240s between blocks"
+      exit 0
+      ;;
+    r) DELAY_ARG="r" ;;
+    *) echo "Unknown arg: $arg" >&2; exit 1 ;;
+  esac
+done
 
-delay_timer() {
-  # Access the first argument passed to the function
-  local func_arg="$1"
+# --------------------------------------------------------------------------
+# Helpers
+# --------------------------------------------------------------------------
+log()  { echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
+info() { log "INFO: $*"; }
+warn() { log "WARN: $*"; }
+die()  { log "ERROR: $*"; exit 1; }
 
-  # Check if the function argument is exactly "r"
-  if [ "$func_arg" = "r" ]; then
-    # If it is "r", calculate a random number of seconds between 60 and 240
-    local random_duration # Use 'local' for variables inside functions
-    random_duration=$(shuf -i 60-240 -n 1)
-
-    # Print a message indicating the duration before sleeping
-    echo "Argument 'r' received by delay_timer. Sleeping for ${random_duration} seconds..."
-
-    # Pause script execution for the calculated random duration
-    sleep "${random_duration}"
-
-    # Print a message after sleeping finishes
-    echo "Sleep finished."
-  # else
-    # Optionally, add an 'else' block here if you want to do something
-    # when the argument is NOT "r", e.g., print a message.
-    # echo "Argument '$func_arg' is not 'r'. No delay triggered."
+run() {
+  if [[ "$DRY_RUN" == true ]]; then
+    log "[DRY-RUN] $*"
+  else
+    eval "$@"
   fi
 }
 
-# --- Example Usage of the function ---
-# To use the function, you call it by name, passing any required arguments.
-# For instance, to make the function behave based on the argument
-# passed to the *script* itself, you would call it like this:
+has_cmd() { command -v "$1" >/dev/null 2>&1; }
 
-# echo "Script started."
-# delay_timer "$1" # Pass the script's first argument ($1) to the function
-# echo "Script continued after delay_timer (or immediately if no delay)."
+delay_timer() {
+  local func_arg="${1:-}"
+  if [[ "$func_arg" == "r" ]]; then
+    local d
+    d=$(shuf -i 60-240 -n 1)
+    log "Delay 'r' -> sleep ${d}s..."
+    if [[ "$DRY_RUN" == true ]]; then
+      log "[DRY-RUN] would sleep ${d}s"
+    else
+      sleep "$d"
+      log "Sleep done"
+    fi
+  fi
+}
 
-# You can call the function multiple times with different arguments:
-# delay_timer "r"   # This call would trigger the delay
-# delay_timer "xyz" # This call would not trigger the delay
+# Run one language block and commit only that folder if changed
+# Usage: run_block <label> <rel_dir> <commit_msg> <cmd...>
+run_block() {
+  local label="$1"
+  local rel_dir="$2"
+  local commit_msg="$3"
+  shift 3
+  local cmd="$*"
 
-# For this specific request, I'll provide just the function definition
-# without the example calls, as you asked for the function itself.
-# But keep the example usage commented out for reference!
+  info "--- $label ($rel_dir) ---"
+  local abs_dir="${REPO}/${rel_dir}"
 
-# --- Function Definition Ends Here ---
+  if [[ ! -d "$abs_dir" ]]; then
+    warn "Skip $label: dir not found $abs_dir"
+    return 0
+  fi
 
-# Note: When you run this script, if you provide 'r' as the first argument,
-# nothing will visibly happen because the example usage is commented out.
-# Uncomment the example usage section above to see the function in action
-# based on script arguments.
+  # run hello_world in its dir
+  if [[ -n "$cmd" ]]; then
+    # check primary binary exists (first word of cmd, before | etc)
+    local bin
+    bin=$(echo "$cmd" | awk '{print $1}')
+    # only warn if bin looks like a command (not ./hello)
+    if [[ "$bin" != ./* ]] && ! has_cmd "$bin"; then
+      warn "Command not found: $bin, still try: $cmd"
+    fi
+    run "cd \"$abs_dir\" && $cmd || true"
+  fi
 
-echo " - - - "
-echo "test programming blocks"
-cd
-cd MuggleBornPadawan/130_mit_scheme
-scheme --load hello_world.scm --eval '(exit)' | tail -n 4 2>&1 | tee -a hello_world.log
-cd
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily mit-scheme"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/150_racket_scheme 
-racket hello_world.rkt | head -n 2 2>&1 | tee -a hello_world.log
-cd
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily racket"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/100_cpp
-./hello > hello_world.log
-cd
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily cpp"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/100_nasm
-./hellotime
-./hellotime >> log.txt
-cd
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily nasm"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/200_java
-java -jar HelloWorld.jar
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily java"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/300_python
-python3 hello_world.py
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily python"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/140_clisp
-clisp hello-world.lisp
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily clisp"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/400_r
-Rscript hello_world.R
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily r"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/110_clojure
-clojure hello_world.clj
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily clj"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/120_elisp
-emacs -Q --script hello_world.el
-cd
-cd MuggleBornPadawan/
-git add .
-git commit -m "daily elisp"
-cd
-delay_timer "$1"
-cd MuggleBornPadawan/700_linux/bckp/
-git add daily_nuggets.txt.enc
-cd
-cd MuggleBornPadawan/700_linux/scripts/
-./hello_world.sh
-git add .
-git commit -m "daily shell and nuggets"
-cd
-delay_timer "$1"
+  # git add only that subdir (not repo-wide) + commit if staged changes
+  if [[ ! -d "${REPO}/.git" ]]; then
+    warn "No git repo at $REPO"
+    return 0
+  fi
 
-echo " - - - "
-neofetch
+  if [[ "$DRY_RUN" == true ]]; then
+    log "[DRY-RUN] cd $REPO && git add $rel_dir && git commit -m \"$commit_msg\" (if changes)"
+  else
+    cd "$REPO" || die "Cannot cd to $REPO"
+    # add that folder (and also hello_world.log if created)
+    git add -- "$rel_dir" 2>/dev/null || git add "$rel_dir" || true
+    # also stage log files explicitly (in case ignored)
+    git add -f "${rel_dir}/hello_world.log" "${rel_dir}/log.txt" 2>/dev/null || true
+
+    if git diff --cached --quiet 2>/dev/null; then
+      info "No changes in $rel_dir, skip commit"
+    else
+      info "Commit: $commit_msg"
+      git commit -m "$commit_msg" || warn "Commit failed for $label"
+    fi
+    cd - >/dev/null || true
+  fi
+
+  delay_timer "$DELAY_ARG"
+}
+
+# --------------------------------------------------------------------------
+# Main
+# --------------------------------------------------------------------------
+main() {
+  log "Start commits.sh (DRY_RUN=$DRY_RUN DELAY=$DELAY_ARG)"
+  echo " - - - "
+  echo "test programming blocks"
+
+  run_block "mit-scheme" "130_mit_scheme" "daily mit-scheme" \
+    "scheme --load hello_world.scm --eval '(exit)' | tail -n 4 2>&1 | tee -a hello_world.log"
+
+  run_block "racket" "150_racket_scheme" "daily racket" \
+    "racket hello_world.rkt | head -n 2 2>&1 | tee -a hello_world.log"
+
+  run_block "cpp" "100_cpp" "daily cpp" \
+    "./hello > hello_world.log"
+
+  # nasm: runs twice (once stdout, once append to log.txt)
+  run_block "nasm" "100_nasm" "daily nasm" \
+    "./hellotime; ./hellotime >> log.txt"
+
+  run_block "java" "200_java" "daily java" \
+    "java -jar HelloWorld.jar"
+
+  run_block "python" "300_python" "daily python" \
+    "python3 hello_world.py"
+
+  run_block "clisp" "140_clisp" "daily clisp" \
+    "clisp hello-world.lisp"
+
+  run_block "R" "400_r" "daily r" \
+    "Rscript hello_world.R"
+
+  run_block "clojure" "110_clojure" "daily clj" \
+    "clojure hello_world.clj"
+
+  run_block "elisp" "120_elisp" "daily elisp" \
+    "emacs -Q --script hello_world.el"
+
+  # shell + nuggets: two dirs but one commit as before
+  info "--- shell and nuggets (700_linux) ---"
+  local bckp_dir="${REPO}/700_linux/bckp"
+  local scripts_dir="${REPO}/700_linux/scripts"
+  if [[ -d "$bckp_dir" ]]; then
+    if [[ -f "${bckp_dir}/daily_nuggets.txt.enc" ]]; then
+      run "cd \"$REPO\" && git add -- \"700_linux/bckp/daily_nuggets.txt.enc\" 2>/dev/null || true"
+    else
+      warn "Skip daily_nuggets.txt.enc not found"
+    fi
+  fi
+  if [[ -x "${scripts_dir}/hello_world.sh" ]]; then
+    run "cd \"$scripts_dir\" && ./hello_world.sh || true"
+  else
+    warn "hello_world.sh not found in $scripts_dir"
+  fi
+  if [[ "$DRY_RUN" == true ]]; then
+    log "[DRY-RUN] cd $REPO && git add 700_linux/ && git commit -m \"daily shell and nuggets\" (if changes)"
+  else
+    cd "$REPO" || die "Cannot cd to $REPO"
+    git add -- "700_linux/bckp" "700_linux/scripts" 2>/dev/null || true
+    git add -f "700_linux/scripts/hello_world.log" 2>/dev/null || true
+    if git diff --cached --quiet 2>/dev/null; then
+      info "No changes in 700_linux, skip commit"
+    else
+      git commit -m "daily shell and nuggets" || warn "Commit failed for shell and nuggets"
+    fi
+    cd - >/dev/null || true
+  fi
+  delay_timer "$DELAY_ARG"
+
+  echo " - - - "
+  if has_cmd neofetch; then
+    run "neofetch || true"
+  fi
+  log "Done commits.sh"
+}
+
+main "$@"
