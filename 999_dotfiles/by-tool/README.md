@@ -3,10 +3,13 @@
 - Physical data stays in `home/` (mirrors `~`) + `skills/` + `prompts/` for simple `rsync -a home/ ~` restore.
 - This folder is docs only - links to where each tool lives.
 
-## pi (Muse Spark)
+## pi (coding agent - model agnostic, v0.85.1)
+- Harness: pi - provider/model from `settings.json` + `models.json` (now `opencode/muse-spark-1.2`, can change anytime)
+- Context: `home/.pi/agent/AGENTS.md`
 - Globals: `home/.pi/agent/AGENTS.md`, `settings.json`, `models.json`, `bin/clean-opencode-free.bb`
-- Skills: `skills/pi/` (9: codebase-design, domain-modeling, grilling, grill-with-docs, improve-codebase-architecture, prototype, research, wayfinder, wizard)
-- Prompts: `prompts/pi/` (15 prompts)
+- Skills: 23 loaded as startup shows (`skills/pi` 9: codebase-design, domain-modeling, grilling, grill-with-docs, improve-codebase-architecture, prototype, research, wayfinder, wizard + `skills/agents` 14: brainstorming, context-keeper, executing-plans, finishing-a-development-branch, hf-cli, karpathy-guidelines, receiving-code-review, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills)
+- Prompts: 15 (`prompts/pi` -> `/changelog`, `/cleanup`, `/commit`, `/docs`, `/explain`, `/find-bugs`, `/fix`, `/onboard`, `/plan`, `/pr`, `/refactor`, `/review`, `/simplify`, `/sync-free-models`, `/test`)
+- Controls: `esc` interrupt, `ctrl+c/d` clear/exit, `/` commands, `!` bash, `ctrl+o` help
 - Home source: `~/.pi/agent/`
 - Restore: `restore.sh --dry-run AGENTS.md`
 
