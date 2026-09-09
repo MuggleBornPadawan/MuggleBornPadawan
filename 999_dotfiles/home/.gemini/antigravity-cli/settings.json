@@ -1,0 +1,28 @@
+{
+  "colorScheme": "colorblind-friendly dark",
+  "model": "Gemini 3.6 Flash (Low)",
+  "permissions": {
+    "allow": [
+      "command(pass)"
+    ]
+  },
+  "statusLine": {
+    "type": "",
+    "command": "",
+    "enabled": true
+  },
+  "trustedWorkspaces": [
+    "/home/rgroot/MuggleBornPadawan",
+    "/home/rgroot/MuggleBornPadawan/dummy/style",
+    "/home/rgroot/MuggleBornPadawan/700_linux/scripts",
+    "/home/rgroot/MuggleBornPadawan/dummy",
+    "/home/rgroot/.emacs.d/elpa/vterm-editor-20260330.845",
+    "/home/rgroot",
+    "/home/rgroot/MuggleBornPadawan/dummy/ccircle",
+    "/home/rgroot/MuggleBornPadawan/dummy/dummy",
+    "/home/rgroot/MuggleBornPadawan/999_dotfiles/emacs_backups",
+    "/home/rgroot/dummy",
+    "/home/rgroot/MuggleBornPadawan/000_refcards",
+    "/home/rgroot/d"
+  ]
+}

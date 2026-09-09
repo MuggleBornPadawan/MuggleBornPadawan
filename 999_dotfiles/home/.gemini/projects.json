@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "/home/rgroot": "rgroot",
+    "/home/rgroot/MuggleBornPadawan": "mugglebornpadawan",
+    "/home/rgroot/MuggleBornPadawan/700_linux/scripts": "scripts",
+    "/home/rgroot/MuggleBornPadawan/dummy": "dummy",
+    "/home/rgroot/MuggleBornPadawan/000_refcards/bbg/src": "src",
+    "/home/rgroot/MuggleBornPadawan/dummy/style": "style",
+    "/home/rgroot/MuggleBornPadawan/990_webgpu/your-first-webgpu-app-codelab": "your-first-webgpu-app-codelab",
+    "/home/rgroot/Downloads": "downloads"
+  }
+}
