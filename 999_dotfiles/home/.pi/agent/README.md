@@ -5,5 +5,5 @@
 - Files: `AGENTS.md` ([Context]), `settings.json`, `models.json`, `bin/clean-opencode-free.bb`
 - Parent: `../README.md` (pi overview)
 - Secrets: `auth.json`, `models-store.json`, `sessions/` excluded
-- Skills: 23 on startup (`../../../skills/pi/` 9 + `../../../skills/agents/` 14)
+- Skills: 30 on startup (`../../../skills/pi/` 9 + `../../../skills/agents/` 21)
 - Prompts: 15 (`../../../prompts/pi/` -> `/changelog` .. `/test`)

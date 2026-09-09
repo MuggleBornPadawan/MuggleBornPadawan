@@ -7,7 +7,7 @@
 - Harness: pi - provider/model from `settings.json` + `models.json` (now `opencode/muse-spark-1.2`, can change anytime)
 - Context: `home/.pi/agent/AGENTS.md`
 - Globals: `home/.pi/agent/AGENTS.md`, `settings.json`, `models.json`, `bin/clean-opencode-free.bb`
-- Skills: 23 loaded as startup shows (`skills/pi` 9: codebase-design, domain-modeling, grilling, grill-with-docs, improve-codebase-architecture, prototype, research, wayfinder, wizard + `skills/agents` 14: brainstorming, context-keeper, executing-plans, finishing-a-development-branch, hf-cli, karpathy-guidelines, receiving-code-review, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills)
+- Skills: 30 loaded as startup shows (`skills/pi` 9: codebase-design, domain-modeling, grilling, grill-with-docs, improve-codebase-architecture, prototype, research, wayfinder, wizard + `skills/agents` 21: brainstorming, code-review, context-keeper, diagnosing-bugs, executing-plans, finishing-a-development-branch, handoff, hf-cli, implement, karpathy-guidelines, receiving-code-review, systematic-debugging, test-driven-development, to-spec, to-tickets, using-git-worktrees, using-superpowers, verification-before-completion, writing-for-agents, writing-plans, writing-skills)
 - Prompts: 15 (`prompts/pi` -> `/changelog`, `/cleanup`, `/commit`, `/docs`, `/explain`, `/find-bugs`, `/fix`, `/onboard`, `/plan`, `/pr`, `/refactor`, `/review`, `/simplify`, `/sync-free-models`, `/test`)
 - Controls: `esc` interrupt, `ctrl+c/d` clear/exit, `/` commands, `!` bash, `ctrl+o` help
 - Home source: `~/.pi/agent/`
@@ -22,7 +22,7 @@
 - Secrets excluded: `oauth_creds.json`, `google_accounts.json`, `mcp-oauth-tokens*`, `state.json`, `brain/`, `conversations/`
 
 ## opencode
-- Globals: `home/.config/opencode/opencode.jsonc`, `package.json`, `package-lock.json`, `plugins/compaction-optimizer.js`
+- Globals: `home/.config/opencode/opencode.jsonc`, `package.json`, `package-lock.json`, `.gitignore`, `plugins/compaction-optimizer.js`
 - Home source: `~/.config/opencode/`
 - Excluded: `node_modules/` (584 files, 30MB), lean
 - Plugin: custom `compaction-optimizer.js` (preserve state on compact)
@@ -34,8 +34,8 @@
 - Config: `ollama` provider for opencode + pi (`baseURL http://localhost:11434/v1`, models `hermes3:3b`, `qwen2.5-coder:3b`)
 
 ## agents (shared spec - model agnostic — also loaded by pi, counted above)
-- Note: same 14 skills already counted in `pi` 23 above — pi loads both `skills/pi` + `skills/agents`. This section is upstream index only.
-- Skills: `skills/agents/` (14: brainstorming, context-keeper, executing-plans, finishing-a-development-branch, hf-cli, karpathy-guidelines, receiving-code-review, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills)
+- Note: same 21 skills already counted in `pi` 30 above — pi loads both `skills/pi` + `skills/agents`. This section is upstream index only.
+- Skills: `skills/agents/` (21: brainstorming, code-review, context-keeper, diagnosing-bugs, executing-plans, finishing-a-development-branch, handoff, hf-cli, implement, karpathy-guidelines, receiving-code-review, systematic-debugging, test-driven-development, to-spec, to-tickets, using-git-worktrees, using-superpowers, verification-before-completion, writing-for-agents, writing-plans, writing-skills)
 - Home source: `~/.agents/skills/` (no globals, skills only)
 
 ## templates (repo)

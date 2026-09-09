@@ -9,6 +9,6 @@
   - `models.json` - providers (`ollama` `hermes3:3b`, `qwen2.5-coder:3b` + opencode)
   - `bin/clean-opencode-free.bb` - cleanup (`rg` excluded)
 - Secrets: `auth.json`, `models-store.json`, `sessions/` excluded
-- Skills: 23 loaded on startup (`../../skills/pi/` 9 + `../../skills/agents/` 14)
+- Skills: 30 loaded on startup (`../../skills/pi/` 9 + `../../skills/agents/` 21)
 - Prompts: 15 (`../../prompts/pi/` -> `/changelog` .. `/test`)
 - Restore: `restore.sh --dry-run AGENTS.md`

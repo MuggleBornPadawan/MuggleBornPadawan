@@ -14,10 +14,10 @@
     .gitconfig, .vimrc, .tmux.conf, .selected_editor
     .emacs.d/{init.el,custom.el,customizations/,bookmarks}
     .config/gh/config.yml, .gnupg/gpg-agent.conf
-    .pi/agent/{AGENTS.md,settings.json,models.json,bin/}
-    .config/opencode/{opencode.jsonc,package.json,package-lock.json,plugins/}
-    .gemini/{settings.json,trustedFolders.json,projects.json,antigravity-cli/settings.json,config/config.json}
-    .ollama/config.json
+    .pi/{README.md,agent/{AGENTS.md,settings.json,models.json,bin/,README.md}}
+    .config/opencode/{opencode.jsonc,package.json,package-lock.json,plugins/,.gitignore,README.md}
+    .gemini/{settings.json,trustedFolders.json,projects.json,antigravity-cli/settings.json,config/{config.json,mcp_config.json},README.md}
+    .ollama/{config.json,README.md}
     README.md         # details for home/
   templates/          # repo templates (not dotfiles) - from ~/MuggleBornPadawan/
     Dockerfile, Jenkinsfile, .gitignore
@@ -64,6 +64,7 @@
 | `~/.config/opencode/package.json` | `home/.config/opencode/package.json` | opencode |
 | `~/.config/opencode/package-lock.json` | `home/.config/opencode/package-lock.json` | opencode lock |
 | `~/.config/opencode/plugins/` | `home/.config/opencode/plugins/` | opencode plugins (node_modules excluded) |
+| `~/.config/opencode/.gitignore` | `home/.config/opencode/.gitignore` | opencode ignore |
 | `~/.gemini/settings.json` | `home/.gemini/settings.json` | gemini global |
 | `~/.gemini/trustedFolders.json` | `home/.gemini/trustedFolders.json` | gemini |
 | `~/.gemini/projects.json` | `home/.gemini/projects.json` | gemini |

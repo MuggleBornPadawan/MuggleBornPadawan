@@ -27,10 +27,10 @@
 - git/tmux/vim: `.gitconfig` `.tmux.conf` `.vimrc` `.selected_editor`
 - emacs: `.emacs.d/init.el` `custom.el` `customizations/` `bookmarks` (no tar)
 - safe configs: `.config/gh/config.yml` (hosts.yml excluded), `.gnupg/gpg-agent.conf`
-- pi: `.pi/agent/AGENTS.md` `settings.json` `models.json` `bin/`
-- opencode: `.config/opencode/opencode.jsonc` `package.json` `package-lock.json` `plugins/`
-- gemini/agy: `.gemini/settings.json` `trustedFolders.json` `projects.json` `antigravity-cli/settings.json` `config/config.json` `config/mcp_config.json`
-- ollama: `.ollama/config.json` (models/blobs excluded, lean)
+- pi: `.pi/agent/AGENTS.md` `settings.json` `models.json` `bin/` + `README.md` (docs per folder: `.pi/README.md`, `.pi/agent/README.md`)
+- opencode: `.config/opencode/opencode.jsonc` `package.json` `package-lock.json` `plugins/` `.gitignore` `README.md`
+- gemini/agy: `.gemini/settings.json` `trustedFolders.json` `projects.json` `antigravity-cli/settings.json` `config/config.json` `config/mcp_config.json` `README.md`
+- ollama: `.ollama/config.json` `README.md` (models/blobs excluded, lean)
 
 ## Secrets - never commit
 
