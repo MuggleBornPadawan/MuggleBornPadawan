@@ -1,6 +1,7 @@
 #!/bin/bash
 # remote_startup.sh - Safe remote Debian server startup
-# Usage: ./MuggleBornPadawan/700_linux/remote_startup.sh [--dry-run] [--skip-upgrade] 2>&1 | tee -a ./MuggleBornPadawan/700_linux/bckp/shell_log.log
+# Usage: ./MuggleBornPadawan/700_linux/remote_startup.sh [--dry-run] [--skip-upgrade] 2>&1 | tee ./MuggleBornPadawan/700_linux/bckp/shell_log.log
+# Logs: pure overwrite (no -a) to keep disk lean
 # Fixes: no SSH lockout, non-interactive, idempotent, modular, fail-fast
 set -euo pipefail
 IFS=$'\n\t'

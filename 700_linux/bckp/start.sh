@@ -1,7 +1,8 @@
 #!/bin/bash
 # start.sh - Daily orchestrator (polished)
 # Runs: commits -> dotfile bkps -> emacs/skills bkps -> git commit -> remote_startup -> yadda -> cleanup
-# Usage: ./MuggleBornPadawan/700_linux/bckp/start.sh [--dry-run] [--yes] [--skip-commits] [--skip-remote] 2>&1 | tee -a ./MuggleBornPadawan/700_linux/bckp/shell_log.log
+# Usage: ./MuggleBornPadawan/700_linux/bckp/start.sh [--dry-run] [--yes] [--skip-commits] [--skip-remote] 2>&1 | tee ./MuggleBornPadawan/700_linux/bckp/shell_log.log
+# Logs: pure overwrite (no -a) to keep disk lean on 11GB free machine
 set -euo pipefail
 IFS=$'\n\t'
 
@@ -170,7 +171,7 @@ maybe_pause() {
 }
 
 # --------------------------------------------------------------------------
-# 6. Remote startup (fixed tee -a)
+# 6. Remote startup (pure overwrite, no -a)
 # --------------------------------------------------------------------------
 run_remote_startup() {
   if [[ "$SKIP_REMOTE" == true ]]; then
@@ -179,12 +180,12 @@ run_remote_startup() {
   fi
   info "--- Remote startup ---"
   if [[ -x "$REMOTE_STARTUP_SCRIPT" ]]; then
-    # tee -a with correct spacing, append to LOG_FILE
+    # tee without -a = overwrite (pure update) to keep log lean
     if [[ "$DRY_RUN" == true ]]; then
-      log "[DRY-RUN] $REMOTE_STARTUP_SCRIPT 2>&1 | tee -a $LOG_FILE"
+      log "[DRY-RUN] $REMOTE_STARTUP_SCRIPT 2>&1 | tee $LOG_FILE"
     else
-      # run and tee to log (also keep stdout)
-      "$REMOTE_STARTUP_SCRIPT" 2>&1 | tee -a "$LOG_FILE" || warn "remote_startup.sh exited non-zero"
+      # run and tee to log (overwrite, also keep stdout)
+      "$REMOTE_STARTUP_SCRIPT" 2>&1 | tee "$LOG_FILE" || warn "remote_startup.sh exited non-zero"
     fi
   else
     warn "Remote startup not found: $REMOTE_STARTUP_SCRIPT"
@@ -204,7 +205,26 @@ run_yadda() {
 }
 
 # --------------------------------------------------------------------------
-# 8. Cleanup (safe rm -f, fix old artifact files)
+# 8. Editor backups (monthly, >30 days) - keep disk lean
+# --------------------------------------------------------------------------
+cleanup_editor_backups() {
+  info "--- Editor backups (monthly, >30 days) ---"
+  if [[ "$DRY_RUN" == true ]]; then
+    log "[DRY-RUN] find ~/.emacs.d/backups -type f -mtime +30 -delete"
+    log "[DRY-RUN] find ~/ -maxdepth 1 -name '*~' -type f -mtime +30 -delete"
+    log "[DRY-RUN] find ~/MuggleBornPadawan -name '*~' -type f -mtime +30 -delete"
+  else
+    find "${HOME}/.emacs.d/backups" -type f -mtime +30 -delete 2>/dev/null || true
+    find "${HOME}" -maxdepth 1 -name '*~' -type f -mtime +30 -delete 2>/dev/null || true
+    find "${HOME}/MuggleBornPadawan" -name '*~' -type f -mtime +30 -delete 2>/dev/null || true
+    # also clean Emacs auto-save list older than 30d (safe)
+    find "${HOME}/.emacs.d/auto-save-list" -type f -mtime +30 -delete 2>/dev/null || true
+    info "Editor backups cleaned (>30d)"
+  fi
+}
+
+# --------------------------------------------------------------------------
+# 9. Cleanup (safe rm -f, fix old artifact files)
 # --------------------------------------------------------------------------
 cleanup_temps() {
   info "--- Cleanup ---"
@@ -255,6 +275,7 @@ main() {
   info "Backup log - done"
 
   run_yadda
+  cleanup_editor_backups
   cleanup_temps
 
   log "Done. start.sh complete"
