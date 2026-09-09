@@ -1,3 +1,4 @@
+# DEPRECATED: use 700_linux/bckp/dotfiles.sh (single manifest) - this wrapper kept for history, will be removed 2026-10-01
 #!/bin/bash
 # backup_pi_skills.sh - Back up pi coding agent skills to dotfiles repo
 # Sources (both global locations per pi docs/skills.md):

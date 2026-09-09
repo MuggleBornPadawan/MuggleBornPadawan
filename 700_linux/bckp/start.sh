@@ -10,6 +10,7 @@ IFS=$'\n\t'
 # --------------------------------------------------------------------------
 readonly LOG_FILE="${HOME}/MuggleBornPadawan/700_linux/bckp/shell_log.log"
 readonly COMMITS_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/commits.sh"
+readonly DOTFILES_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/dotfiles.sh"
 readonly EMACS_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/backup_emacs.sh"
 readonly AGY_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/backup_agy_skills.sh"
 readonly PI_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/backup_pi_skills.sh"
@@ -18,6 +19,7 @@ readonly YADDA_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/yadda_yadda.s
 readonly DOTFILES_DST="${HOME}/MuggleBornPadawan/999_dotfiles"
 
 DRY_RUN=false
+VERBOSE=false
 AUTO_YES=false
 SKIP_COMMITS=false
 SKIP_REMOTE=false
@@ -46,6 +48,7 @@ done
 log()  { echo -e "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
 info() { log "INFO: $*"; }
 warn() { log "WARN: $*"; }
+vlog() { log "VERBOSE: $*"; }
 die()  { log "ERROR: $*"; exit 1; }
 
 run() {
@@ -79,68 +82,30 @@ run_commits() {
 }
 
 # --------------------------------------------------------------------------
-# 2. Dotfile backups (cp with checks)
+# 2. Dotfile backups (single manifest -> dotfiles.sh)
 # --------------------------------------------------------------------------
 backup_dotfiles() {
-  info "--- Dotfile backups -> $DOTFILES_DST ---"
-  # Map: src -> dst filename (keep original names for compat)
-  # Use array of "src|dst" so we can loop safely
-  local pairs=(
-    "${HOME}/.gnupg/gpg-agent.conf|.gpg-agent.conf_bkp"
-    "${HOME}/.bashrc|.bashrc_bkp"
-    "${HOME}/.bash_aliases|.bash_aliases_bkp"
-    "${HOME}/.tmux.conf|.tmux.conf.bkp"
-    "${HOME}/MuggleBornPadawan/.gitignore|.gitignore_bkp"
-    "${HOME}/.emacs.d/init.el|.emacs_init.el.bkp"
-    "${HOME}/MuggleBornPadawan/.dockerignore|.dockerignore.bkp"
-    "${HOME}/MuggleBornPadawan/Dockerfile|Dockerfile_bkp"
-    "${HOME}/MuggleBornPadawan/Jenkinsfile|Jenkinsfile_bkp"
-  )
-  local src dst
-  for pair in "${pairs[@]}"; do
-    src="${pair%%|*}"
-    dst="${DOTFILES_DST}/${pair##*|}"
-    if [[ -e "$src" ]]; then
-      info "Copy $(basename "$src") -> $(basename "$dst")"
-      run "cp -a \"$src\" \"$dst\""
+  info "--- Dotfile backups -> $DOTFILES_DST (via dotfiles.sh) ---"
+  if [[ -x "$DOTFILES_SCRIPT" ]]; then
+    if [[ "$DRY_RUN" == true ]]; then
+      log "[DRY-RUN] $DOTFILES_SCRIPT --dry-run --verbose"
+      "$DOTFILES_SCRIPT" --dry-run --verbose || warn "dotfiles.sh dry-run failed"
     else
-      warn "Skip missing: $src"
+      "$DOTFILES_SCRIPT" --verbose || warn "dotfiles.sh failed"
     fi
-  done
-  if [[ "$DRY_RUN" == false ]]; then
-    ls -lh "$DOTFILES_DST"/*_bkp "$DOTFILES_DST"/*.bkp 2>/dev/null | head -n 20 || true
+  else
+    warn "dotfiles.sh not found: $DOTFILES_SCRIPT"
   fi
 }
 
 # --------------------------------------------------------------------------
-# 3. Emacs + skills backups (delegate, no mv/rmdir)
+# 3. Emacs + skills backups (DEPRECATED - now in dotfiles.sh)
 # --------------------------------------------------------------------------
 backup_emacs_and_skills() {
-  info "--- Emacs + Skills backups ---"
-
-  if [[ -x "$EMACS_BACKUP_SCRIPT" ]]; then
-    info "Run backup_emacs.sh (handles tar + verify + retention + copy to dst)"
-    run "\"$EMACS_BACKUP_SCRIPT\" || true"
-  else
-    warn "Emacs backup not found: $EMACS_BACKUP_SCRIPT"
-  fi
-
-  if [[ -x "$AGY_BACKUP_SCRIPT" ]]; then
-    run "\"$AGY_BACKUP_SCRIPT\" || true"
-  else
-    warn "Agy backup not found: $AGY_BACKUP_SCRIPT"
-  fi
-
-  if [[ -x "$PI_BACKUP_SCRIPT" ]]; then
-    run "\"$PI_BACKUP_SCRIPT\" || true"
-  else
-    warn "Pi backup not found: $PI_BACKUP_SCRIPT"
-  fi
-
-  # NOTE: old script did mv emacs_backups/* -> 999_dotfiles/ + rmdir
-  # Removed: backup_emacs.sh already copies tar to dst and manages retention.
-  # Moving * would place tar in wrong dir and break retention.
-  info "Emacs backups kept in ~/emacs_backups + copied to $DOTFILES_DST"
+  info "--- Emacs + Skills (deprecated, covered by dotfiles.sh) ---"
+  # Keep old tars for 30 days then phase out. No action needed daily.
+  # If you still want tar history, run: ~/MuggleBornPadawan/700_linux/bckp/backup_emacs.sh --keep 12
+  vlog "Skip: skills/prompts/emacs now via dotfiles.sh manifest"
 }
 
 # --------------------------------------------------------------------------

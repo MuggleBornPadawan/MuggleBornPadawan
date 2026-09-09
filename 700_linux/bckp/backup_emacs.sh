@@ -1,3 +1,4 @@
+# DEPRECATED: use 700_linux/bckp/dotfiles.sh (single manifest) - this wrapper kept for history, will be removed 2026-10-01
 #!/bin/bash
 # backup_emacs.sh - Safe backup of Emacs config (polished)
 # Usage: ./backup_emacs.sh [--dry-run] [--dest DIR] [--keep N]

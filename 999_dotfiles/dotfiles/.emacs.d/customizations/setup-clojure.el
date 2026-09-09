@@ -15,16 +15,30 @@
 ;; syntax hilighting for midje
 (add-hook 'clojure-mode-hook
           (lambda ()
-            (setq inferior-lisp-program "lein repl")
-            (font-lock-add-keywords
-             nil
-             '(("(\\(facts?\\)"
-                (1 font-lock-keyword-face))
-               ("(\\(background?\\)"
-                (1 font-lock-keyword-face))))
-            (define-clojure-indent (fact 1))
-            (define-clojure-indent (facts 1))
-            (rainbow-delimiters-mode)))
+             (setq inferior-lisp-program "lein repl")
+             (font-lock-add-keywords
+              nil
+              '(("(\\(facts?\\)"
+                 (1 font-lock-keyword-face))
+                ("(\\(background?\\)"
+                 (1 font-lock-keyword-face))))
+             (define-clojure-indent (fact 1))
+             (define-clojure-indent (facts 1))
+             (rainbow-delimiters-mode)))
+
+;; Tree-sitter support (clojure-ts-mode)
+(use-package clojure-ts-mode
+  :ensure t
+  :mode ("\\.clj\\'" "\\.cljs\\'" "\\.cljc\\'" "\\.edn\\'")
+  :hook ((clojure-ts-mode . enable-paredit-mode)
+         (clojure-ts-mode . subword-mode)
+         (clojure-ts-mode . rainbow-delimiters-mode)))
+
+;; LSP support (eglot) for on-the-fly syntax checks and IDE features
+(use-package eglot
+  :ensure nil
+  :hook ((clojure-ts-mode . eglot-ensure)))
+
 
 ;;;;
 ;; Cider
@@ -80,4 +94,8 @@
      (define-key clojure-mode-map (kbd "C-c C-v") 'cider-start-http-server)
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
+     (when (boundp 'clojure-ts-mode-map)
+       (define-key clojure-ts-mode-map (kbd "C-c C-v") 'cider-start-http-server)
+       (define-key clojure-ts-mode-map (kbd "C-M-r") 'cider-refresh)
+       (define-key clojure-ts-mode-map (kbd "C-c u") 'cider-user-ns))
      (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
