@@ -7,4 +7,10 @@ Rules:
 4. Arrange–Act–Assert structure; keep fixtures minimal
 5. Do not modify production code to make testing easier unless you flag it explicitly
 
-Run the tests when done and report results.
+Clojure / lean-machine (AGENTS.md):
+- Test at the public `ns` seam: public `defn`, not `defn-`. Pure data in -> data out.
+- Runner priority: `bb test -n my.ns` (fast, low RAM on 6 Gi) -> `clojure -M:test -n my.ns` -> `lein test`.
+- Use `clojure.test` + `bb`; ask before adding `test.check`/`criterium`. Keep deps minimal.
+- Style: idiomatic `->`/`->>` threading, clean `ns` requires; respect `clj-kondo` + `cljfmt`.
+
+Run the tests when done and report results (`bb test -n <ns>` + `clj-kondo --lint src` if Clojure).

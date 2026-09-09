@@ -1,9 +1,18 @@
 ---
 name: hf-cli
-description: "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when: handling authentication; managing local cache; managing Hugging Face Buckets; running or scheduling jobs on Hugging Face infrastructure; managing Hugging Face repos; discussions and pull requests; browsing models, datasets and spaces; reading, searching, or browsing academic papers; managing collections; querying datasets; configuring spaces; setting up webhooks; or deploying and managing HF Inference Endpoints. Make sure to use this skill whenever the user mentions 'hf', 'huggingface', 'Hugging Face', 'huggingface-cli', or 'hugging face cli', or wants to do anything related to the Hugging Face ecosystem and to AI and ML in general. Also use for cloud storage needs like training checkpoints, data pipelines, or agent traces. Use even if the user doesn't explicitly ask for a CLI command. Replaces the deprecated `huggingface-cli`."
+description: "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when user explicitly asks via /skill:hf-cli and needs hf/Hugging Face CLI help for auth, cache, buckets, repos, papers, or jobs. Replaces the deprecated `huggingface-cli`."
+disable-model-invocation: true
 ---
 
 Install: `curl -LsSf https://hf.co/cli/install.sh | bash -s`.
+
+> **Lean-machine guard (this host: Debian 12, i3, 6.3 Gi RAM, 11 GB disk free per AGENTS.md).**
+> This skill is `disable-model-invocation: true` — only run when user says `/skill:hf-cli`.
+> Before any `hf download` / `hf upload` / `hf jobs run`:
+> 1. Run `df -h` and `free -h` — refuse if <5 GB disk or <1 GB RAM free.
+> 2. Ask user to confirm: model size + cache dir. Prefer `--dry-run` first.
+> 3. Never auto-download large models/datasets on this machine. Small metadata/list/info commands are safe.
+> 4. For disk pressure, run `hf cache prune --dry-run` or `hf cache rm` to free space.
 
 The Hugging Face Hub CLI tool `hf` is available. IMPORTANT: The `hf` command replaces the deprecated `huggingface-cli` command.
 

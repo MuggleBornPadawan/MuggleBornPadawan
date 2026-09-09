@@ -10,3 +10,8 @@ Approach:
 5. Re-run to confirm the fix; check for similar issues nearby
 
 Report: root cause, what you changed and why, and verification results.
+
+Clojure / lean-machine (AGENTS.md):
+- Reproduce via `bb test -n my.ns` (fast, low RAM) -> `clojure -M:test -n my.ns` -> `lein test`. Use REPL harness `(comment ...)` with CIDER if faster.
+- Verify with `clj-kondo --lint src` and `cljfmt check` after fix. Keep deps minimal (ask before adding).
+- Prefer pure data-in/data-out fixes; keep `ns` seams small, error maps via `ex-info`.
