@@ -1,6 +1,6 @@
 ---
 name: to-tickets
-description: Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker. Clojure-adapted: vertical slices via ns APIs, deps.edn, clojure.test.
+description: "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker. Clojure-adapted: vertical slices via ns APIs, deps.edn, clojure.test."
 disable-model-invocation: true
 ---
 

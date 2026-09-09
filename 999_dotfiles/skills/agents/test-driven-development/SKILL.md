@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: Use when implementing any feature or bugfix, before writing implementation code. Clojure-adapted: clojure.test + bb, REPL-first, ns seams.
+description: "Use when implementing any feature or bugfix, before writing implementation code. Clojure-adapted: clojure.test + bb, REPL-first, ns seams."
 ---
 
 # Test-Driven Development (TDD) — Clojure Patch

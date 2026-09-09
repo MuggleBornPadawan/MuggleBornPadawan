@@ -1,6 +1,6 @@
 ---
 name: writing-for-agents
-description: Writing documents for agents. Clojure+Pi adapted: context pointers, two loads, leading words, pruning — for skills, AGENTS.md, CLAUDE.md.
+description: "Writing documents for agents. Clojure+Pi adapted: context pointers, two loads, leading words, pruning — for skills, AGENTS.md, CLAUDE.md."
 ---
 
 # Writing For Agents — Clojure + Pi Patch

@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Compact the current conversation into a handoff document for another agent to pick up. Clojure-adapted: references specs/tickets/ADRs by path, lean temp-dir save.
+description: "Compact the current conversation into a handoff document for another agent to pick up. Clojure-adapted: references specs/tickets/ADRs by path, lean temp-dir save."
 argument-hint: "What will the next session be used for?"
 disable-model-invocation: true
 ---
