@@ -47,13 +47,21 @@ PAIRS=(
   "dotfiles/Jenkinsfile|${HOME}/MuggleBornPadawan/Jenkinsfile"
   "dotfiles/.pi/agent/AGENTS.md|${HOME}/.pi/agent/AGENTS.md"
   "dotfiles/.pi/agent/settings.json|${HOME}/.pi/agent/settings.json"
+  "dotfiles/.pi/agent/models.json|${HOME}/.pi/agent/models.json"
+  "dotfiles/.pi/agent/bin|${HOME}/.pi/agent/bin"
   "skills/pi|${HOME}/.pi/agent/skills"
   "skills/agents|${HOME}/.agents/skills"
   "skills/agy/config|${HOME}/.gemini/config/skills"
   "skills/agy/builtin|${HOME}/.gemini/antigravity-cli/builtin/skills"
   "prompts/pi|${HOME}/.pi/agent/prompts"
+  "dotfiles/.config/opencode/opencode.jsonc|${HOME}/.config/opencode/opencode.jsonc"
+  "dotfiles/.config/opencode/package.json|${HOME}/.config/opencode/package.json"
+  "dotfiles/.gemini/settings.json|${HOME}/.gemini/settings.json"
+  "dotfiles/.gemini/trustedFolders.json|${HOME}/.gemini/trustedFolders.json"
+  "dotfiles/.ollama/config.json|${HOME}/.ollama/config.json"
 )
 
+# rg is excluded from backup (see dotfiles.sh), so restore will skip it
 HAS_RSYNc=false; command -v rsync >/dev/null 2>&1 && HAS_RSYNc=true
 TS="$(date +%Y%m%d_%H%M%S)"
 

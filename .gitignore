@@ -78,6 +78,8 @@ vendor/
 
 # Go binaries
 bin/
+!999_dotfiles/
+!999_dotfiles/**
 
 # Rust target directory
 target/

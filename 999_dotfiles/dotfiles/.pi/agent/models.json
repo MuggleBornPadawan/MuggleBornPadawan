@@ -1,0 +1,23 @@
+{
+  "providers": {
+    "ollama": {
+      "baseUrl": "http://localhost:11434/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "compat": {
+        "supportsDeveloperRole": false,
+        "supportsReasoningEffort": false
+      },
+      "models": [
+        {
+          "id": "hermes3:3b",
+          "name": "Hermes 3 3B (Local)"
+        },
+        {
+          "id": "qwen2.5-coder:3b",
+          "name": "Qwen 2.5 Coder 3B (Local)"
+        }
+      ]
+    }
+  }
+}

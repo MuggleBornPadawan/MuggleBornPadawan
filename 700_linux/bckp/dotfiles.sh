@@ -60,20 +60,41 @@ PAIRS=(
   # pi / agents
   "${HOME}/.pi/agent/AGENTS.md|dotfiles/.pi/agent/AGENTS.md"
   "${HOME}/.pi/agent/settings.json|dotfiles/.pi/agent/settings.json"
+  "${HOME}/.pi/agent/models.json|dotfiles/.pi/agent/models.json"
+  "${HOME}/.pi/agent/bin|dotfiles/.pi/agent/bin"
   "${HOME}/.pi/agent/skills|skills/pi"
   "${HOME}/.agents/skills|skills/agents"
   "${HOME}/.gemini/config/skills|skills/agy/config"
   "${HOME}/.gemini/antigravity-cli/builtin/skills|skills/agy/builtin"
   "${HOME}/.pi/agent/prompts|prompts/pi"
+  # opencode
+  "${HOME}/.config/opencode/opencode.jsonc|dotfiles/.config/opencode/opencode.jsonc"
+  "${HOME}/.config/opencode/package.json|dotfiles/.config/opencode/package.json"
+  # gemini global
+  "${HOME}/.gemini/settings.json|dotfiles/.gemini/settings.json"
+  "${HOME}/.gemini/trustedFolders.json|dotfiles/.gemini/trustedFolders.json"
+  # ollama
+  "${HOME}/.ollama/config.json|dotfiles/.ollama/config.json"
 )
 
 # Excludes for rsync (secrets, caches). Applied to all dir syncs.
 RSYNC_EXCLUDES=(
-  --exclude='hosts.yml'      # gh token
-  --exclude='auth.json'      # pi token
+  --exclude='hosts.yml'              # gh token
+  --exclude='auth.json'              # pi token
+  --exclude='oauth_creds.json'       # gemini
+  --exclude='google_accounts.json'
+  --exclude='mcp-oauth-tokens*'
+  --exclude='state.json'
+  --exclude='*.db'
   --exclude='*.log'
   --exclude='.cache/'
   --exclude='__pycache__/'
+  --exclude='node_modules/'
+  --exclude='sessions/'
+  --exclude='models/'
+  --exclude='blobs/'
+  --exclude='cache/'
+  --exclude='rg'                     # pi bundled ripgrep binary (5M, re-downloadable)
 )
 
 mkdir -p "$DEST_ROOT"
