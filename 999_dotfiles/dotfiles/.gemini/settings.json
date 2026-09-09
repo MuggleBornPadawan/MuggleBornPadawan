@@ -1,0 +1,20 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    },
+    "disableYoloMode": true
+  },
+  "general": {
+    "preferredEditor": "emacs",
+    "previewFeatures": true,
+    "sessionRetention": {
+      "warningAcknowledged": true,
+      "enabled": true,
+      "maxAge": "120d"
+    }
+  },
+  "ui": {
+    "theme": "Default"
+  }
+}
