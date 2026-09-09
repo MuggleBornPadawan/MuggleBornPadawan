@@ -61,6 +61,7 @@ PAIRS=(
   "dotfiles/.ollama/config.json|${HOME}/.ollama/config.json"
 )
 
+# rg is excluded from backup (see dotfiles.sh), so restore will skip it
 HAS_RSYNc=false; command -v rsync >/dev/null 2>&1 && HAS_RSYNc=true
 TS="$(date +%Y%m%d_%H%M%S)"
 

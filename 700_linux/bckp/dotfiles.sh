@@ -94,6 +94,7 @@ RSYNC_EXCLUDES=(
   --exclude='models/'
   --exclude='blobs/'
   --exclude='cache/'
+  --exclude='rg'                     # pi bundled ripgrep binary (5M, re-downloadable)
 )
 
 mkdir -p "$DEST_ROOT"
