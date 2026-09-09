@@ -6,7 +6,7 @@
 #   --dry-run : show what would copy, do not change
 #   --verbose : extra output
 # Design: one PAIRS list = single truth. Plain files (no tar), keep original names.
-#   dotfiles/*. -> mirrors HOME (easy restore: rsync -a dotfiles/ ~/)
+#   home/*. -> mirrors HOME (easy restore: rsync -a home/ ~/) #   templates/* -> repo templates (Dockerfile, Jenkinsfile, .gitignore)
 #   skills/*, prompts/* -> keep existing layout for compat
 set -euo pipefail
 IFS=$'\n\t'
@@ -33,48 +33,55 @@ vlog() { [[ "$VERBOSE" == true ]] && log "[verbose] $*"; }
 err()  { echo "[ERROR] $*" >&2; }
 
 # --- Manifest: src|dest_rel (dest_rel is under DEST_ROOT) ---
-# dotfiles/* mirrors HOME layout. skills/prompts keep their current dirs.
+# home/* mirrors HOME layout. skills/prompts keep their current dirs. templates/* holds repo templates.
 PAIRS=(
   # shell
-  "${HOME}/.bashrc|dotfiles/.bashrc"
-  "${HOME}/.bash_aliases|dotfiles/.bash_aliases"
-  "${HOME}/.profile|dotfiles/.profile"
-  "${HOME}/.bash_logout|dotfiles/.bash_logout"
+  "${HOME}/.bashrc|home/.bashrc"
+  "${HOME}/.bash_aliases|home/.bash_aliases"
+  "${HOME}/.profile|home/.profile"
+  "${HOME}/.bash_logout|home/.bash_logout"
   # git / editor / tmux
-  "${HOME}/.gitconfig|dotfiles/.gitconfig"
-  "${HOME}/.vimrc|dotfiles/.vimrc"
-  "${HOME}/.tmux.conf|dotfiles/.tmux.conf"
-  "${HOME}/.selected_editor|dotfiles/.selected_editor"
+  "${HOME}/.gitconfig|home/.gitconfig"
+  "${HOME}/.vimrc|home/.vimrc"
+  "${HOME}/.tmux.conf|home/.tmux.conf"
+  "${HOME}/.selected_editor|home/.selected_editor"
   # emacs - plain files, git diffable (no tar)
-  "${HOME}/.emacs.d/init.el|dotfiles/.emacs.d/init.el"
-  "${HOME}/.emacs.d/custom.el|dotfiles/.emacs.d/custom.el"
-  "${HOME}/.emacs.d/customizations|dotfiles/.emacs.d/customizations"
-  "${HOME}/.emacs.d/bookmarks|dotfiles/.emacs.d/bookmarks"
+  "${HOME}/.emacs.d/init.el|home/.emacs.d/init.el"
+  "${HOME}/.emacs.d/custom.el|home/.emacs.d/custom.el"
+  "${HOME}/.emacs.d/customizations|home/.emacs.d/customizations"
+  "${HOME}/.emacs.d/bookmarks|home/.emacs.d/bookmarks"
   # safe configs (exclude secrets via rsync --exclude)
-  "${HOME}/.config/gh/config.yml|dotfiles/.config/gh/config.yml"
-  "${HOME}/.gnupg/gpg-agent.conf|dotfiles/.gnupg/gpg-agent.conf"
-  # project templates
-  "${HOME}/MuggleBornPadawan/.gitignore|dotfiles/.gitignore"
-  "${HOME}/MuggleBornPadawan/Dockerfile|dotfiles/Dockerfile"
-  "${HOME}/MuggleBornPadawan/Jenkinsfile|dotfiles/Jenkinsfile"
+  "${HOME}/.config/gh/config.yml|home/.config/gh/config.yml"
+  "${HOME}/.gnupg/gpg-agent.conf|home/.gnupg/gpg-agent.conf"
+  # project templates (repo root)
+  "${HOME}/MuggleBornPadawan/.gitignore|templates/.gitignore"
+  "${HOME}/MuggleBornPadawan/Dockerfile|templates/Dockerfile"
+  "${HOME}/MuggleBornPadawan/Jenkinsfile|templates/Jenkinsfile"
   # pi / agents
-  "${HOME}/.pi/agent/AGENTS.md|dotfiles/.pi/agent/AGENTS.md"
-  "${HOME}/.pi/agent/settings.json|dotfiles/.pi/agent/settings.json"
-  "${HOME}/.pi/agent/models.json|dotfiles/.pi/agent/models.json"
-  "${HOME}/.pi/agent/bin|dotfiles/.pi/agent/bin"
+  "${HOME}/.pi/agent/AGENTS.md|home/.pi/agent/AGENTS.md"
+  "${HOME}/.pi/agent/settings.json|home/.pi/agent/settings.json"
+  "${HOME}/.pi/agent/models.json|home/.pi/agent/models.json"
+  "${HOME}/.pi/agent/bin|home/.pi/agent/bin"
   "${HOME}/.pi/agent/skills|skills/pi"
   "${HOME}/.agents/skills|skills/agents"
   "${HOME}/.gemini/config/skills|skills/agy/config"
   "${HOME}/.gemini/antigravity-cli/builtin/skills|skills/agy/builtin"
   "${HOME}/.pi/agent/prompts|prompts/pi"
-  # opencode
-  "${HOME}/.config/opencode/opencode.jsonc|dotfiles/.config/opencode/opencode.jsonc"
-  "${HOME}/.config/opencode/package.json|dotfiles/.config/opencode/package.json"
-  # gemini global
-  "${HOME}/.gemini/settings.json|dotfiles/.gemini/settings.json"
-  "${HOME}/.gemini/trustedFolders.json|dotfiles/.gemini/trustedFolders.json"
-  # ollama
-  "${HOME}/.ollama/config.json|dotfiles/.ollama/config.json"
+  # opencode (global)
+  "${HOME}/.config/opencode/opencode.jsonc|home/.config/opencode/opencode.jsonc"
+  "${HOME}/.config/opencode/package.json|home/.config/opencode/package.json"
+  "${HOME}/.config/opencode/package-lock.json|home/.config/opencode/package-lock.json"
+  "${HOME}/.config/opencode/.gitignore|home/.config/opencode/.gitignore"
+  "${HOME}/.config/opencode/plugins|home/.config/opencode/plugins"
+  # gemini global (agy)
+  "${HOME}/.gemini/settings.json|home/.gemini/settings.json"
+  "${HOME}/.gemini/trustedFolders.json|home/.gemini/trustedFolders.json"
+  "${HOME}/.gemini/projects.json|home/.gemini/projects.json"
+  "${HOME}/.gemini/antigravity-cli/settings.json|home/.gemini/antigravity-cli/settings.json"
+  "${HOME}/.gemini/config/config.json|home/.gemini/config/config.json"
+  "${HOME}/.gemini/config/mcp_config.json|home/.gemini/config/mcp_config.json"
+  # ollama (global)
+  "${HOME}/.ollama/config.json|home/.ollama/config.json"
 )
 
 # Excludes for rsync (secrets, caches). Applied to all dir syncs.
@@ -193,5 +200,5 @@ if [[ "$FAILED" -gt 0 ]]; then exit 1; fi
 
 # hint
 if [[ -d "${DEST_ROOT}/.git" || -d "${HOME}/MuggleBornPadawan/.git" ]]; then
-  log "Tip: cd ~/MuggleBornPadawan && git status --short && git add 999_dotfiles/dotfiles 999_dotfiles/skills 999_dotfiles/prompts && git commit -m 'chore: dotfiles backup $(date +%Y-%m-%d)'"
+  log "Tip: cd ~/MuggleBornPadawan && git status --short && git add 999_dotfiles/home 999_dotfiles/templates 999_dotfiles/skills 999_dotfiles/prompts 999_dotfiles/by-tool && git commit -m 'chore: dotfiles backup $(date +%Y-%m-%d)'"
 fi
