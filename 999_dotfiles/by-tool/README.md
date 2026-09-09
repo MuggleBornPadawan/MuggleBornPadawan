@@ -33,7 +33,7 @@
 - Excluded: `models/blobs/` + `manifests/` (1-2GB, re-downloadable), `cache/`
 - Config: `ollama` provider for opencode + pi (`baseURL http://localhost:11434/v1`, models `hermes3:3b`, `qwen2.5-coder:3b`)
 
-## agents (Muse) — shared upstream (also loaded by pi, counted above)
+## agents (shared spec - model agnostic — also loaded by pi, counted above)
 - Note: same 14 skills already counted in `pi` 23 above — pi loads both `skills/pi` + `skills/agents`. This section is upstream index only.
 - Skills: `skills/agents/` (14: brainstorming, context-keeper, executing-plans, finishing-a-development-branch, hf-cli, karpathy-guidelines, receiving-code-review, systematic-debugging, test-driven-development, using-git-worktrees, using-superpowers, verification-before-completion, writing-plans, writing-skills)
 - Home source: `~/.agents/skills/` (no globals, skills only)
