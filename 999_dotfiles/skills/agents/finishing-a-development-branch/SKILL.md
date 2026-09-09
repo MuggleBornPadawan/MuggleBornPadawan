@@ -1,9 +1,9 @@
 ---
 name: finishing-a-development-branch
-description: Use when implementation is complete, all tests pass, and you need to decide how to integrate the work
+description: Use when implementation is complete, all tests pass, and you need to decide how to integrate the work. Clojure-adapted: bb/clojure.test first, lean-machine safe.
 ---
 
-# Finishing a Development Branch
+# Finishing a Development Branch — Clojure Patch
 
 ## Overview
 
@@ -11,9 +11,22 @@ description: Use when implementation is complete, all tests pass, and you need t
 
 **Announce at start:** "I'm using the finishing-a-development-branch skill to complete this work."
 
-## Step 1: Verify Tests
+> **Clojure adaption.** Original lists `npm test / cargo test / pytest / go test`. This patch prioritises `bb`/`clojure.test` (lean, fast on 6 Gi), then generic. See original in `~/.agents/skills/finishing-a-development-branch/`. Pure Markdown, 0 deps. Location: `~/.agents/skills/finishing-a-development-branch/` (global, cross-harness). `/reload` after edit.
 
-Run the project's full test suite (`npm test` / `cargo test` / `pytest` / `go test ./...`).
+## Step 1: Verify Tests — Clojure First
+
+Run the project's full test suite — **Clojure priority order:**
+
+```bash
+bb test                          # fastest, low RAM (preferred on this 6 Gi box)
+clojure -M:test                  # Clojure CLI
+lein test
+# generic fallbacks (keep for polyglot repos):
+# npm test / cargo test / pytest / go test ./... 
+clj-kondo --lint src             # also check — no new warnings
+```
+
+Pick the command that matches `deps.edn`/`project.clj`/`bb.edn` in this repo. On this box, prefer `bb test` for the green check — cold JVM `clojure -M:test` is heavy in tight loop; run it once at final gate if you have both.
 
 **If tests fail**, report the failures and stop — the menu comes after a green suite:
 
@@ -23,7 +36,7 @@ Tests failing (<N> failures). Must fix before completing:
 [Show failures]
 ```
 
-**If tests pass:** continue to Step 2.
+Include `clj-kondo` warnings if they fail (treat as test failure if repo enforces lint). **If tests pass:** continue to Step 2.
 
 ## Step 2: Detect Environment
 
@@ -45,10 +58,7 @@ This determines which menu to show and how cleanup works:
 
 ## Step 3: Determine Base Branch
 
-The base branch is whatever this work forked from — usually named in the
-plan, the conversation, or the branch's upstream. If it is not already
-known, ask: "This branch split from <your best guess> - is that correct?"
-Confirm before merging: merging into the wrong base is expensive to undo.
+The base branch is whatever this work forked from — usually named in the plan, the conversation, or the branch's upstream. If it is not already known, ask: "This branch split from <your best guess> - is that correct?" Confirm before merging: merging into the wrong base is expensive to undo.
 
 ## Step 4: Present Options
 
@@ -75,11 +85,7 @@ Implementation complete. You're on a detached HEAD (externally managed workspace
 Which option?
 ```
 
-Present the menu exactly as written — concise, with every option coming
-from the list above. Discarding the work happens only in response to your
-human partner explicitly asking for it (see "If your human partner asks to
-discard the work" below). Wait for their answer; the integration decision
-is theirs.
+Present the menu exactly as written — concise, with every option coming from the list above. Discarding the work happens only in response to your human partner explicitly asking for it (see "If your human partner asks to discard the work" below). Wait for their answer; the integration decision is theirs.
 
 ## Step 5: Execute Choice
 
@@ -95,16 +101,13 @@ git checkout <base-branch>
 git pull
 git merge <feature-branch>
 
-# Verify tests on merged result
-<test command>
+# Verify tests on merged result — Clojure first:
+bb test && clj-kondo --lint src || clojure -M:test
 ```
 
-If tests fail on the merged result: stop, leave the worktree and branch in
-place, and investigate — nothing has been pushed, so the merge is local
-and recoverable.
+If tests fail on the merged result: stop, leave the worktree and branch in place, and investigate — nothing has been pushed, so the merge is local and recoverable.
 
-Once the merged result is green: clean up the worktree (Step 6), then
-delete the branch:
+Once the merged result is green: clean up the worktree (Step 6), then delete the branch:
 
 ```bash
 git branch -d <feature-branch>
@@ -118,10 +121,7 @@ git push -u origin <feature-branch>
 # git push origin HEAD:refs/heads/<new-branch>
 ```
 
-Then create the pull/merge request against <base-branch> with the forge's
-tooling — its CLI if one is available, or the creation URL most forges
-print when you push — following the repo's PR template and conventions if
-present, and report the URL to your human partner.
+Then create the pull/merge request against <base-branch> with the forge's tooling — its CLI if one is available, or the creation URL most forges print when you push — following the repo's PR template and conventions if present, and report the URL to your human partner.
 
 Keep the worktree — your human partner iterates on PR feedback there.
 
@@ -131,8 +131,7 @@ Report: "Keeping branch <name>. Worktree preserved at <path>."
 
 ### If your human partner asks to discard the work
 
-This path exists only as a response to an explicit request to throw the
-work away. Confirm first:
+This path exists only as a response to an explicit request to throw the work away. Confirm first:
 
 ```
 This will permanently delete:
@@ -158,26 +157,18 @@ git branch -D <feature-branch>
 
 ## Step 6: Cleanup Workspace
 
-**Runs for Option 1 and confirmed discards.** Options 2 and 3 always
-preserve the worktree. Both callers have already changed directory to the
-main repo root — worktree removal must run from outside the worktree —
-and use the `GIT_DIR`/`GIT_COMMON`/`WORKTREE_PATH` values captured in
-Step 2, from before that directory change.
+**Runs for Option 1 and confirmed discards.** Options 2 and 3 always preserve the worktree. Both callers have already changed directory to the main repo root — worktree removal must run from outside the worktree — and use the `GIT_DIR`/`GIT_COMMON`/`WORKTREE_PATH` values captured in Step 2, from before that directory change.
 
 **If `GIT_DIR == GIT_COMMON`:** Normal repo, no worktree to clean up. Done.
 
-**If `WORKTREE_PATH` is under `.worktrees/` or `worktrees/`:** Superpowers
-created this worktree — we own cleanup:
+**If `WORKTREE_PATH` is under `.worktrees/` or `worktrees/`:** Superpowers created this worktree — we own cleanup:
 
 ```bash
 git worktree remove "$WORKTREE_PATH"
 git worktree prune  # Self-healing: clean up any stale registrations
 ```
 
-**If removal is refused** (`contains modified or untracked files`): the
-worktree holds files that exist nowhere else — uncommitted plans, notes,
-or scratch work. Never `--force` on your own initiative. Show your human
-partner what is at stake and ask:
+**If removal is refused** (`contains modified or untracked files`): the worktree holds files that exist nowhere else — uncommitted plans, notes, or scratch work. Never `--force` on your own initiative. Show your human partner what is at stake and ask:
 
 ```bash
 git -C "$WORKTREE_PATH" status --porcelain -uall
@@ -197,23 +188,22 @@ Which?
 
 Carry out the choice, then remove the worktree.
 
-**Otherwise:** The host environment owns this workspace — leave it in
-place. If your platform provides a workspace-exit tool, use it.
+**Otherwise:** The host environment owns this workspace — leave it in place. If your platform provides a workspace-exit tool, use it.
 
-## Quick Reference
+## Quick Reference — Clojure
 
-| Option | Merge | Push | Keep Worktree | Cleanup Branch |
-|--------|-------|------|---------------|----------------|
-| 1. Merge locally | yes | - | - | yes |
-| 2. Create PR | - | yes | yes | - |
-| 3. Keep as-is | - | - | yes | - |
-| Discard (explicit request only) | - | - | - | yes (force) |
+| Option | Merge | Push | Keep Worktree | Cleanup Branch | Verify (Clojure) |
+|--------|-------|------|---------------|----------------|------------------|
+| 1. Merge locally | yes | - | - | yes | `bb test && clj-kondo --lint src` |
+| 2. Create PR | - | yes | yes | - | - |
+| 3. Keep as-is | - | - | yes | - | - |
+| Discard (explicit only) | - | - | - | yes (force) | - |
 
 ## Common Rationalizations
 
 | Excuse | Reality |
 |--------|---------|
-| "Tests passed earlier this session" | Run the suite on the tree you are about to integrate. A green run only proves the tree it ran on. |
+| "Tests passed earlier this session" | Run the suite on the tree you are about to integrate. A green run only proves the tree it ran on. `bb test` on merged result still required. |
 | "They obviously want it merged" | Integration is your human partner's decision. Present the menu and wait. |
 | "They seem done with this feature — I'll offer to discard it" | The menu is complete as written. Discard happens only when your human partner asks for it in so many words. |
 | "'Yeah, get rid of it' counts as confirmation" | Only the typed word `discard` authorizes deletion. |

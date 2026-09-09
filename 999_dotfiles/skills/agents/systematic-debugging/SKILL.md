@@ -1,7 +1,11 @@
 ---
 name: systematic-debugging
 description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
+license: MIT
+disable-model-invocation: true
 ---
+
+> **Retired — use `diagnosing-bugs` instead.** This skill is kept for reference but hidden from auto-invoke to avoid duplicate trigger with `diagnosing-bugs` (Clojure-patched, tight `bb` loop). Call explicitly via `/skill:systematic-debugging` if you need its generic 4-phase view. Auto path is `/skill:diagnosing-bugs`.
 
 # Systematic Debugging
 
