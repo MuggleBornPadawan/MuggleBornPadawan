@@ -11,7 +11,6 @@ IFS=$'\n\t'
 readonly LOG_FILE="${HOME}/MuggleBornPadawan/700_linux/bckp/shell_log.log"
 readonly COMMITS_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/commits.sh"
 readonly DOTFILES_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/dotfiles.sh"
-readonly EMACS_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/backup_emacs.sh"
 readonly AGY_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/backup_agy_skills.sh"
 readonly PI_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/backup_pi_skills.sh"
 readonly REMOTE_STARTUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/remote_startup.sh"
