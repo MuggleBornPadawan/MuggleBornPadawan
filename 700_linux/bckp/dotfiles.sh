@@ -71,6 +71,7 @@ PAIRS=(
   "${HOME}/.config/opencode/opencode.jsonc|home/.config/opencode/opencode.jsonc"
   "${HOME}/.config/opencode/package.json|home/.config/opencode/package.json"
   "${HOME}/.config/opencode/package-lock.json|home/.config/opencode/package-lock.json"
+  "${HOME}/.config/opencode/.gitignore|home/.config/opencode/.gitignore"
   "${HOME}/.config/opencode/plugins|home/.config/opencode/plugins"
   # gemini global (agy)
   "${HOME}/.gemini/settings.json|home/.gemini/settings.json"
@@ -199,5 +200,5 @@ if [[ "$FAILED" -gt 0 ]]; then exit 1; fi
 
 # hint
 if [[ -d "${DEST_ROOT}/.git" || -d "${HOME}/MuggleBornPadawan/.git" ]]; then
-  log "Tip: cd ~/MuggleBornPadawan && git status --short && git add 999_dotfiles/home 999_dotfiles/templates 999_dotfiles/skills 999_dotfiles/prompts && git commit -m 'chore: dotfiles backup $(date +%Y-%m-%d)'"
+  log "Tip: cd ~/MuggleBornPadawan && git status --short && git add 999_dotfiles/home 999_dotfiles/templates 999_dotfiles/skills 999_dotfiles/prompts 999_dotfiles/by-tool && git commit -m 'chore: dotfiles backup $(date +%Y-%m-%d)'"
 fi

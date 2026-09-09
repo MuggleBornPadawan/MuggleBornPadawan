@@ -57,6 +57,7 @@ PAIRS=(
   "home/.config/opencode/opencode.jsonc|${HOME}/.config/opencode/opencode.jsonc"
   "home/.config/opencode/package.json|${HOME}/.config/opencode/package.json"
   "home/.config/opencode/package-lock.json|${HOME}/.config/opencode/package-lock.json"
+  "home/.config/opencode/.gitignore|${HOME}/.config/opencode/.gitignore"
   "home/.config/opencode/plugins|${HOME}/.config/opencode/plugins"
   "home/.gemini/settings.json|${HOME}/.gemini/settings.json"
   "home/.gemini/trustedFolders.json|${HOME}/.gemini/trustedFolders.json"
