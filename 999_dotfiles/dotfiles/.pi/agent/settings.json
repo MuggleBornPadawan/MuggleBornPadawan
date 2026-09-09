@@ -1,0 +1,15 @@
+{
+  "lastChangelogVersion": "0.85.1",
+  "defaultProvider": "opencode",
+  "defaultModel": "muse-spark-1.2-contributor-free",
+  "defaultThinkingLevel": "high",
+  "enabledModels": [
+    "opencode/big-pickle",
+    "opencode/ling-3.0-flash-fin-free",
+    "opencode/mimo-v2.5-free",
+    "opencode/muse-spark-1.2-contributor-free",
+    "opencode/muse-spark-1.3-contributor-free",
+    "opencode/nemotron-3-ultra-free",
+    "opencode/nemotron-3.5-lightning-free"
+  ]
+}
