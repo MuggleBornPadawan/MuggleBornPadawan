@@ -93,6 +93,7 @@
 | M-/              | emacs      | hippie-expand                                     |
 | M-x paredit-mode | paredit    | toggle-paredit-mode                               |
 | M-(              | paredit    | paredit-wrap-around                               |
+| M-s              | paredit    | splice - delete () but keep inside                |
 | C-→              | paredit    | slurp                                             |
 | C-←              | paredit    | barf                                              |
 | C-M-f, C-M-b     | paredit    | move to the opening/closing parenthesis           |
