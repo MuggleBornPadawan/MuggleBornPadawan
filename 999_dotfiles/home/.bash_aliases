@@ -84,8 +84,8 @@ alias i='to ; tty ; pwd ; date ; ulimit -a | grep processes ; abc ; ping -c 1 ww
 # q/mq/qg/sy were aliases with `$1` / `$(pass url)` — converted to functions so args expand at run time, not at source time
 # unalias first: if old aliases still loaded, `q() {` would expand to broken syntax
 unalias q mq qg sy chat 2>/dev/null || true
-q()  { ./MuggleBornPadawan/700_linux/scripts/gemini_query.sh "$@"; }
-mq() { ./MuggleBornPadawan/700_linux/scripts/openrouter_multiple_models_query.sh "$@"; }
-qg() { ./MuggleBornPadawan/700_linux/scripts/grok.sh "$@"; }
+q()  { "$HOME/MuggleBornPadawan/700_linux/scripts/gemini_query.sh" "$@"; }
+mq() { "$HOME/MuggleBornPadawan/700_linux/scripts/openrouter_multiple_models_query.sh" "$@"; }
+qg() { "$HOME/MuggleBornPadawan/700_linux/scripts/grok.sh" "$@"; }
 sy() { (cd ~ && ./MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh "$(pass url)"); }
 chat() { (cd ~ && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh); }

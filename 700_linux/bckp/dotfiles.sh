@@ -59,6 +59,8 @@ PAIRS=(
   "${HOME}/MuggleBornPadawan/Jenkinsfile|templates/Jenkinsfile"
   # pi / agents
   "${HOME}/.pi/agent/AGENTS.md|home/.pi/agent/AGENTS.md"
+  "${HOME}/.pi/agent/SYSTEM.md|home/.pi/agent/SYSTEM.md"
+  "${HOME}/.pi/agent/APPEND_SYSTEM.md|home/.pi/agent/APPEND_SYSTEM.md"
   "${HOME}/.pi/agent/settings.json|home/.pi/agent/settings.json"
   "${HOME}/.pi/agent/models.json|home/.pi/agent/models.json"
   "${HOME}/.pi/agent/bin|home/.pi/agent/bin"
