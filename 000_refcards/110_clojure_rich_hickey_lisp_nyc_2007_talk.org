@@ -1,13 +1,25 @@
 #+TITLE: clojure rich hicky nyc lisp talk, 2007
 #+AUTHOR: rich hickey
 #+OPTIONS: toc
-* Table of Contents :TOC_1:
+* Table of Contents :TOC_2:
 - [[#trivia][trivia]]
 - [[#later][later]]
 - [[#intro][intro]]
 - [[#fundamentals][fundamentals]]
 - [[#rationale][rationale]]
+  - [[#functional-with-dynamic-emphasis][functional with dynamic emphasis]]
+  - [[#lisp][lisp]]
+  - [[#jvm-hosted][jvm hosted]]
+  - [[#thread-aware][thread-aware]]
 - [[#feature-tour][feature tour]]
+  - [[#dynamic-development][dynamic development]]
+  - [[#lisp-1][lisp]]
+  - [[#functional-programming][functional programming]]
+  - [[#persistant-data-structures][persistant data structures]]
+  - [[#extensible-abstractions][extensible abstractions]]
+  - [[#runtime-polymorphism--multimethods][runtime polymorphism / multimethods]]
+  - [[#concurrent-programming--stm][concurrent programming / stm]]
+  - [[#jvm--java-integration][jvm / java integration]]
 - [[#status][status]]
 - [[#qa][q&a]]
 
@@ -126,16 +138,81 @@
 - macros (defmacro) - common lisp and scheme have different approach to macros
   - supports overloading by arity
 ** functional programming
-- first class citizens (understand make-adder function) 
-- variable arity - function overloading 
+- first class citizens (understand make-adder function) - function is a value - you can save it, pass it, return it, and store it
+  - give function a name
+  - pass a function to another function
+  - return a function from another function
+  - put functions in collections
+- variable arity - function overloading
+  - use ([]) ([x]) for few fixed cases
+  - use [& args] when you want any number
 - immutable data structures
-  - lists, vectors, maps
-  - reader, backquote support 
+  - (lists), [vectors], {maps}, #{set}
+  - value based equality semantics
+    - henry baker - equals
+  - exception: boxes (atom/def) and java interop are mutable 
+  - reader (R -> e -> p -> l; repl) 
+    - translator (text in -> clojure data out) 
+    - reader error - your text is bad (syntactic, typos)
+      - example: Unmatched delimiter, EOF while reading, Map literal must contain 
+    - eval error - your code is bad (logic, types, names)
+      - Unable to resolve, Wrong number of args, ClassCastException, ArityException
+  - backquote support
+    - ' = quote - reads + eval stops + keep as is
+    - ` = backquote - reads + eval stops + keep as is + add namespaces + let you insert with ~ / ~@.
 - fn is lambda
+** persistant data structures 
+- not db persistance
+  - persistent = safe functions (no suprise bugs) + free undo + safe for threads + fast UI checks
+  - you get safety without paying big copy cost
+- old version of the collection is still available after the 'change'
+- collection maintains its performance guarentees for most operations
+  - therefore new versions are not full copies
+- log base 32; billion things > 5 step process max
+  - insertion speed may not match java
+  - lookup speed may be better than java 
+- hash map and vector both based upon array mapped hash tries (bagwell)
+- sorted map is red-black tree 
+- all core data is persistant
+  - [] vector -> 32-way trie
+  - {} map -> Hash Array Mapped Trie (HAMT)
+  - #{} set -> same as map
+  - () list -> linked list
+** extensible abstractions
+- clojure uses java interfaces to define its core data structures
+- supports extensions to new concrete implementations
+  - library functions will work with these extensions 
+- big improvement vs hardwiring a language to the concrete implementations of its data types
+*** example: the Seq abstraction
+- highlights
+  - write one function, works on all data
+  - enables lazy seqs - values made only when needed
+  - seq is not a list. it is a promise: "you can walk me with first/rest". all Clojure collections
+ keep that promise
+- works on [], {}, #{}, (), str ; everything is a list 
+- collection is real data store; seq is view (abstraction) of it 
+- first, rest, next, cons 
+- two rules
+  - (seq []) -> nil - empty seq is nil, not ()
+  - next vs rest: rest never nil -> (), next gives nil when empty
+- an abstraction of cons
+  - first (car) and rest (cdr) are functions
+  - immutable and persistent
+  - can be implemented lazily
+- many implementations
+  - all collections provide seqs
+  - can get seqs over java iterables and arrays
+- library functions (map reduce filter etc) work with all seq
+*** lazy seqs
+- haskell is always lazy
+- seqs can be used as interators or generators of other languages 
+- seq, take, lazy-cons (macro), cycle
+- lazy = recipe, not cake. Bake only when you eat
+- good for infinite + save work. Bad for file handles. Use doall/vec when you need it now
 ** runtime polymorphism / multimethods
 ** concurrent programming / stm
 ** jvm / java integration 
 * status
 * q&a
 
-- timestamp: 35.47
+- timestamp: 45.01
