@@ -17,8 +17,12 @@
   - [[#functional-programming][functional programming]]
   - [[#persistant-data-structures][persistant data structures]]
   - [[#extensible-abstractions][extensible abstractions]]
+  - [[#metadata][metadata]]
+  - [[#recursive-loops][recursive loops]]
   - [[#runtime-polymorphism--multimethods][runtime polymorphism / multimethods]]
   - [[#concurrent-programming--stm][concurrent programming / stm]]
+  - [[#refs-and-transactions][refs and transactions]]
+  - [[#vars][vars]]
   - [[#jvm--java-integration][jvm / java integration]]
 - [[#status][status]]
 - [[#qa][q&a]]
@@ -209,8 +213,38 @@
 - seq, take, lazy-cons (macro), cycle
 - lazy = recipe, not cake. Bake only when you eat
 - good for infinite + save work. Bad for file handles. Use doall/vec when you need it now
+** metadata
+- orthogonal to the logical value of the data
+- symbols and collections support a metadata map
+- does not impact equality semantics
+- not seen in operations on the value
+- support for literal metadata in reader
+** recursive loops
+- no mutable locals in clojure
+- no tail recursion optimization in the jvm
+- recur op does constant-space recursive looping
+- rebinds and jumps to nearest loop or function frame 
 ** runtime polymorphism / multimethods
+- full generalization of indirect dispatch
+  - not tied to oo or types
+- fixed dispatch function which is an arbitrary function of the arguments
+- open set of methods associated wtih different values of the dispatch function
+- call sequence:
+  - call dispatch function on args to get dispatch value
+  - find method associated with dispatch value
+    - else, call default method if present
+      - else, error
 ** concurrent programming / stm
+- immutable persistant data structures
+- refs
+  - sharing changes between threads
+  - transactional
+- vars
+  - isolating changes within threads 
+** refs and transactions 
+tbu
+** vars
+tbu
 ** jvm / java integration 
 * status
 * q&a
