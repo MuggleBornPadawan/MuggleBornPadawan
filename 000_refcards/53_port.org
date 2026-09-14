@@ -3,6 +3,7 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#performant-code][performant code]]
   - [[#postgresql---full-stack][postgresql - full stack]]
   - [[#self-hosting][self hosting]]
   - [[#linux-file-directories][linux file directories]]
@@ -69,6 +70,21 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** performant code 
+*** references
+- https://newsletter.pragmaticengineer.com/p/why-performant-code-matters-but-gets?
+- https://www.computerenhance.com/p/performance-excuses-debunked
+*** info
+- excuses: no need, too small, not worth it, niche, hotspot 
+- performance - resource consumption (not correctness):  CPU time, wall-clock time, battery life, network traffic, storage footprint  
+- cpu instructions
+  - How data moves in and out: load/store units and L1–L3 caches
+  - How instructions flow through the pipes: branch prediction, i-cache
+  - Execution unit scheduling: raw throughput per operation type
+
+*** blah blah
+- loose typing, reflection, and boxing/unboxing, syntactic shortcuts, pattern matching variations, implicit conversions, and dynamic runtime features
+- proof-checkers, compilers, type systems, and linters
 ** postgresql - full stack 
 - free, open source and 30 years - an incredibly battle-tested tech
 - deploy, monitor, backup and keep in sync - a single postgresql instance than multiple systems

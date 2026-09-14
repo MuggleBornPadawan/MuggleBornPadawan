@@ -1,21 +1,17 @@
-;;;;
-;; Clojure
+;;;;;;
+;; Clojure — primary: clojure-ts-mode, fallback: clojure-mode
 ;;;;
 
-;; Enable paredit for Clojure
+;; Fallback mode hooks (kept for when tree-sitter grammar missing)
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
-
-;; This is useful for working with camel-case tokens, like names of
-;; Java classes (e.g. JavaClassName)
 (add-hook 'clojure-mode-hook 'subword-mode)
+(require 'clojure-mode-extra-font-locking) ;; only for clojure-mode fallback
 
-;; A little more syntax highlighting
-(require 'clojure-mode-extra-font-locking)
-
-;; syntax hilighting for midje
+;; syntax hilighting for midje (fallback mode)
 (add-hook 'clojure-mode-hook
           (lambda ()
-             (setq inferior-lisp-program "lein repl")
+             ;; Sync with machine stack: prefer Clojure CLI (deps.edn); CIDER jack-in auto-detects lein vs cli
+             (setq inferior-lisp-program "clojure")
              (font-lock-add-keywords
               nil
               '(("(\\(facts?\\)"
@@ -26,7 +22,7 @@
              (define-clojure-indent (facts 1))
              (rainbow-delimiters-mode)))
 
-;; Tree-sitter support (clojure-ts-mode)
+;; Primary mode: tree-sitter (Emacs 30.1) — handles all Clojure files
 (use-package clojure-ts-mode
   :ensure t
   :mode ("\\.clj\\'" "\\.cljs\\'" "\\.cljc\\'" "\\.edn\\'")
@@ -34,10 +30,11 @@
          (clojure-ts-mode . subword-mode)
          (clojure-ts-mode . rainbow-delimiters-mode)))
 
-;; LSP support (eglot) for on-the-fly syntax checks and IDE features
+;; LSP support (eglot) — eglot-ensure for both (fallback safe)
 (use-package eglot
   :ensure nil
-  :hook ((clojure-ts-mode . eglot-ensure)))
+  :hook ((clojure-mode . eglot-ensure)
+         (clojure-ts-mode . eglot-ensure)))
 
 
 ;;;;
@@ -63,12 +60,38 @@
 ;; enable paredit in your REPL
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
-;; Use clojure mode for other extensions
-(add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
+;; File mappings: ts-mode is primary (see use-package :mode above)
+;; Keep only legacy fallbacks that ts-mode does not handle
 (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
-(add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
+
+;;;;
+;; Babashka (bb) — fast nREPL for scripts, lean RAM (bb 1.13.219)
+;;;;
+
+(defun cider-bb-nrepl ()
+  "Start bb nREPL server (port 1667) and connect CIDER.
+Lean RAM, fast start — good for scripts and quick tests on this 6.3 Gi machine."
+  (interactive)
+  (let* ((port 1667)
+         (project-dir (or (locate-dominating-file default-directory "bb.edn")
+                          (locate-dominating-file default-directory "deps.edn")
+                          (locate-dominating-file default-directory "project.clj")
+                          default-directory))
+         (buf "*bb-nrepl*"))
+    (when (get-buffer buf)
+      (when (get-buffer-process buf) (delete-process (get-buffer-process buf)))
+      (kill-buffer buf))
+    (start-process "bb-nrepl" buf "bb" "nrepl-server" (format "localhost:%d" port))
+    (message "bb nREPL started on localhost:%d in %s — connecting in 1 sec..." port project-dir)
+    (run-with-timer 1 nil (lambda () (cider-connect-clj `(:host "localhost" :port ,port :project-dir ,project-dir))))))
+
+;; Ensure C-c C-b works even if cider loads before ts-mode
+(with-eval-after-load 'clojure-mode
+  (define-key clojure-mode-map (kbd "C-c C-b") 'cider-bb-nrepl))
+(with-eval-after-load 'clojure-ts-mode
+  (define-key clojure-ts-mode-map (kbd "C-c C-b") 'cider-bb-nrepl))
 
 ;; key bindings
 ;; these help me out with the way I usually develop web apps
@@ -94,8 +117,10 @@
      (define-key clojure-mode-map (kbd "C-c C-v") 'cider-start-http-server)
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
+     (define-key clojure-mode-map (kbd "C-c C-b") 'cider-bb-nrepl)
      (when (boundp 'clojure-ts-mode-map)
        (define-key clojure-ts-mode-map (kbd "C-c C-v") 'cider-start-http-server)
        (define-key clojure-ts-mode-map (kbd "C-M-r") 'cider-refresh)
-       (define-key clojure-ts-mode-map (kbd "C-c u") 'cider-user-ns))
+       (define-key clojure-ts-mode-map (kbd "C-c u") 'cider-user-ns)
+       (define-key clojure-ts-mode-map (kbd "C-c C-b") 'cider-bb-nrepl))
      (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))

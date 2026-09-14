@@ -89,3 +89,6 @@ mq() { "$HOME/MuggleBornPadawan/700_linux/scripts/openrouter_multiple_models_que
 qg() { "$HOME/MuggleBornPadawan/700_linux/scripts/grok.sh" "$@"; }
 sy() { (cd ~ && ./MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh "$(pass url)"); }
 chat() { (cd ~ && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh); }
+
+# ── ssh  ──
+alias gcl='gcloud cloud-shell ssh'
