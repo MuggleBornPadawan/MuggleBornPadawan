@@ -63,7 +63,7 @@ alias sm='cd && ./MuggleBornPadawan/700_linux/scripts/gemini_artithmetic_test.sh
 alias sa='cd && ./MuggleBornPadawan/700_linux/scripts/aeo_gemini.sh'
 alias sl="s && c && echo 'sleeping for few mins... $(date)' && sleep $((RANDOM % 600))"
 alias info='./MuggleBornPadawan/700_linux/scripts/info.sh | less'
-alias ii='./MuggleBornPadawan/700_linux/scripts/sysinfo.sh'
+alias ii='./MuggleBornPadawan/700_linux/scripts/sysinfo.sh --tech'
 alias pp='./MuggleBornPadawan/700_linux/scripts/ping_test.sh'
 alias eo='emacs -nw -q -l /home/rgroot/MuggleBornPadawan/dummy/ollama-init.el'
 

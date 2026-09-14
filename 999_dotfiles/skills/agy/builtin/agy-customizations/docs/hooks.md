@@ -211,6 +211,11 @@ Use to gate, block, or audit tool executions.
         }
         ```
 
+        The agent replays the tool call it originally emitted, so when
+        `overwrite` changes the arguments the tool result is prefixed with a
+        notice telling the agent that a hook rewrote them, naming the keys that
+        changed.
+
 --------------------------------------------------------------------------------
 
 ### 2. `PostToolUse` Contract
