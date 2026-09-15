@@ -44,8 +44,12 @@
 - lambda calculus - altrnatives 
 - henry baker - paper on equal - identical (same object - twin 1 and twin 1) and equal (twin 1 and twin 2)
 - how do symbols work in clojure? qualifier of the package? (36:37)
-- context oriented programming (pascal constanza) 
-- aspecct oriented programming 
+- aspect oriented programming (aop)
+  - examples: logging, security, metrics, auth, caching, retry, transactions
+  - keywords: joint point, pointcut, advice, weaving
+- context oriented programming (pascal constanza)
+  - examples: device (mobile/desktop), location, battery low, user role, day/night mode
+  - keywords: context, layer, activation 
 - in clojure, you rarely need full AOP/COP frameworks
   - AOP-like: use wrap functions, middleware, with-redefs for tests.
   - COP-like: use binding + ^:dynamic vars or multimethod on context map.

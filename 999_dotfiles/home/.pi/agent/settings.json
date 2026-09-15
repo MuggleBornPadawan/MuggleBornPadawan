@@ -11,5 +11,8 @@
     "opencode/muse-spark-1.3-contributor-free",
     "opencode/nemotron-3-ultra-free",
     "opencode/nemotron-3.5-lightning-free"
+  ],
+  "skills": [
+    "+skills/codebase-design/SKILL.md"
   ]
 }
