@@ -14,9 +14,8 @@ readonly TMUX_SESSION="alpha"
 readonly LOG_FILE="${HOME}/MuggleBornPadawan/700_linux/bckp/shell_log.log"
 readonly SENTRY_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/sentry.sh"
 readonly SNOW_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/snow.sh"
-readonly EMACS_BACKUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/backup_emacs.sh"
-readonly EMACS_BACKUP_SRC="${HOME}/emacs_backups"
-readonly EMACS_BACKUP_DST="${HOME}/MuggleBornPadawan/999_dotfiles"
+# Emacs backup now via dotfiles.sh (manifest: init.el, custom.el, customizations, bookmarks)
+readonly DOTFILES_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/dotfiles.sh"
 
 DRY_RUN=false
 SKIP_UPGRADE=false
@@ -111,7 +110,7 @@ init_system() {
 # --------------------------------------------------------------------------
 configure_firewall() {
   info "--- Firewall (UFW) ---"
-  if ! has_cmd ufw; then
+  if ! has_cmd ufw && [[ ! -x /usr/sbin/ufw ]] && ! sudo bash -c 'command -v ufw >/dev/null 2>&1'; then
     warn "ufw not installed, skip"
     return 0
   fi
@@ -124,17 +123,8 @@ configure_firewall() {
   info "Allow SSH port $SSH_PORT before enable (prevent lockout)"
   run_sudo "ufw allow ${SSH_PORT}/tcp comment 'allow SSH' || true"
 
-  # Deny risky ports - only if not SSH. Default deny already covers these,
-  # explicit deny is for logging/clarity. Sorted, deduped list.
-  local deny_ports=(20 21 25 53 80 110 137 138 139 143 443 445)
-  for p in "${deny_ports[@]}"; do
-    run_sudo "ufw deny $p || true"
-  done
-  # also handle named services if ufw recognizes them
-  for svc in ftp smtp dns http pop3 imap https; do
-    # only if service exists in ufw app list - ignore error
-    run_sudo "ufw deny $svc || true"
-  done
+  # Default deny incoming already blocks risky ports (20,21,25,53,80,110,137-139,143,443,445,222).
+  # No explicit DENY needed - keeps `ufw status` clean. Only ALLOW SSH.
 
   info "Enable UFW non-interactively"
   run_sudo "ufw --force enable"
@@ -496,7 +486,10 @@ archive_history() {
     fi
   fi
   if has_cmd pass; then
-    run "pass ls || true"
+    # Do NOT log secret names - only count (privacy safe)
+    local pass_count
+    pass_count=$(pass ls 2>/dev/null | wc -l || echo "unknown")
+    info "pass store present ($pass_count lines, names not logged)"
   fi
 }
 
@@ -523,11 +516,22 @@ setup_tmux() {
 # --------------------------------------------------------------------------
 setup_clamav() {
   info "--- ClamAV ---"
+  # Ensure freshclam daemon is unmasked + enabled (Debian masks it if /etc/cron.d/clamav-freshclam exists)
+  if has_cmd systemctl; then
+    run_sudo "systemctl unmask clamav-freshclam 2>/dev/null || true"
+    run_sudo "systemctl daemon-reload 2>/dev/null || true"
+    run_sudo "systemctl enable --now clamav-freshclam 2>/dev/null || true"
+  fi
   if has_cmd freshclam; then
-    run_sudo "freshclam || true"
+    if has_cmd systemctl && systemctl is-active --quiet clamav-freshclam 2>/dev/null; then
+      info "freshclam daemon active - skip manual freshclam (avoids lock)"
+    else
+      run_sudo "freshclam || true"
+    fi
   fi
   if has_cmd clamscan; then
     run "clamscan --version || true"
+    # Note: 1.4.3 is latest in Debian bookworm; upstream 1.4.6 warning is expected until Debian backports it
   fi
   if has_cmd systemctl; then
     run "systemctl list-timers clamav-weekly.timer 2>/dev/null || systemctl list-timers | grep clam || true"
@@ -551,11 +555,11 @@ handle_optional_tasks() {
     fi
   fi
 
-  if [[ -x "$EMACS_BACKUP_SCRIPT" ]]; then
-    info "Run emacs backup (handles copy + retention)"
-    run "\"$EMACS_BACKUP_SCRIPT\" || true"
+  # Emacs backup now via dotfiles.sh (plain files, git diffable)
+  if [[ -x "$DOTFILES_SCRIPT" ]]; then
+    info "Emacs backup via dotfiles.sh (init.el, custom.el, customizations, bookmarks) - OK"
   else
-    warn "Emacs backup script not found"
+    warn "dotfiles.sh not found - emacs backup skipped"
   fi
 }
 

@@ -1,74 +1,96 @@
-[2026-09-09 23:30:41] INFO: Start remote_startup.sh (DRY_RUN=false SKIP_UPGRADE=false)
-[2026-09-09 23:30:41] INFO: Log: /home/rgroot/MuggleBornPadawan/700_linux/bckp/shell_log.log
-[2026-09-09 23:30:41] INFO: --- Init ---
-[H[J[3J[2026-09-09 23:30:41] INFO: Run sentry.sh
+[2026-09-15 18:45:01] INFO: Start remote_startup.sh (DRY_RUN=false SKIP_UPGRADE=false)
+[2026-09-15 18:45:01] INFO: Log: /home/rgroot/MuggleBornPadawan/700_linux/bckp/shell_log.log
+[2026-09-15 18:45:01] INFO: --- Init ---
+[H[J[3J[2026-09-15 18:45:01] INFO: Run sentry.sh
 --- Omni-Sentry v2.1 Initialized ---
 [*] Auditing Connection: xxx.xxx.xx.xxx # 1 IP(s) - use --verbose to see count, --json for detail
 [+] Subnet appears to be outside of known hacker default ranges.
 OK
-[2026-09-09 23:30:41] INFO: Current ulimit -u: 1000 (target 1000 if higher)
-[2026-09-09 23:30:41] INFO: Ollama history preserved
-[2026-09-09 23:30:42] Date: Wed Sep  9 11:30:42 PM IST 2026 | OS: Linux | Kernel: 6.6.135-09383-g1140e4f27e24
-[2026-09-09 23:30:42] INFO: --- Firewall (UFW) ---
-[2026-09-09 23:30:42] WARN: ufw not installed, skip
-[2026-09-09 23:30:42] INFO: --- System Cleanup ---
+[2026-09-15 18:45:01] INFO: Current ulimit -u: 1000 (target 1000 if higher)
+[2026-09-15 18:45:01] INFO: Ollama history preserved
+[2026-09-15 18:45:02] Date: Tue Sep 15 06:45:02 PM IST 2026 | OS: Linux | Kernel: 6.6.141-09476-g954adab60416
+[2026-09-15 18:45:02] INFO: --- Firewall (UFW) ---
+[2026-09-15 18:45:02] WARN: ufw not installed, skip
+[2026-09-15 18:45:02] INFO: --- System Cleanup ---
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-[2026-09-09 23:30:43] INFO: Reset apt lists
-[2026-09-09 23:30:43] INFO: Vacuum journal (2 days)
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+[2026-09-15 18:45:03] INFO: Reset apt lists
+[2026-09-15 18:45:03] INFO: Vacuum journal (2 days)
 Vacuuming done, freed 0B of archived journals from /var/log/journal/c0c1e941767f4e56ac8732769cb9dfc2.
 Vacuuming done, freed 0B of archived journals from /var/log/journal.
 Vacuuming done, freed 0B of archived journals from /run/log/journal.
-[2026-09-09 23:30:43] INFO: Rebuild apt index
-Get:1 https://deb.debian.org/debian bookworm InRelease [151 kB]
-Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
-Get:3 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
-Ign:4 https://storage.googleapis.com/cros-packages/151 bookworm InRelease
-Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
-Get:6 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
-Get:7 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
-Get:8 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
-Get:9 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [80.7 kB]
-Get:10 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [314 kB]
-Get:11 https://storage.googleapis.com/cros-packages/151 bookworm Release [3,109 B]
-Get:12 http://deb.debian.org/debian bookworm-backports/main Translation-en [265 kB]
-Get:13 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [18.2 kB]
-Get:14 https://storage.googleapis.com/cros-packages/151 bookworm Release.gpg [2,365 B]
-Get:15 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
-Get:16 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
-Get:17 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
-Get:18 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
-Get:19 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
-Get:20 https://storage.googleapis.com/cros-packages/151 bookworm/main amd64 Packages [5,139 B]
-Get:21 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
-Get:22 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
-Get:23 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
-Get:24 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [338 kB]
-Get:25 https://deb.debian.org/debian-security bookworm-security/main Translation-en [211 kB]
-Fetched 21.0 MB in 6s (3,332 kB/s)
+[2026-09-15 18:45:03] INFO: Rebuild apt index
+Get:1 https://packages.cloud.google.com/apt cloud-sdk InRelease [1,442 B]
+Ign:2 https://storage.googleapis.com/cros-packages/152 bookworm InRelease
+Get:3 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Get:4 http://deb.debian.org/debian bookworm-backports InRelease [59.4 kB]
+Get:5 https://download.docker.com/linux/debian bookworm InRelease [46.6 kB]
+Get:6 https://packages.cloud.google.com/apt cloud-sdk/main all Packages [300 kB]
+Get:7 https://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:8 https://download.docker.com/linux/debian bookworm/stable amd64 Packages [80.6 kB]
+Get:9 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:10 https://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+Get:11 http://deb.debian.org/debian bookworm-backports/main amd64 Packages [314 kB]
+Get:12 https://deb.debian.org/debian bookworm/main amd64 Packages [8,790 kB]
+Get:13 http://deb.debian.org/debian bookworm-backports/main Translation-en [265 kB]
+Get:14 http://deb.debian.org/debian bookworm-backports/contrib amd64 Packages [5,856 B]
+Get:15 http://deb.debian.org/debian bookworm-backports/contrib Translation-en [5,864 B]
+Get:16 http://deb.debian.org/debian bookworm-backports/non-free amd64 Packages [13.3 kB]
+Get:17 http://deb.debian.org/debian bookworm-backports/non-free Translation-en [8,460 B]
+Get:18 https://packages.cloud.google.com/apt cloud-sdk/main amd64 Packages [955 kB]
+Get:19 https://packages.adoptium.net/artifactory/deb bookworm/main amd64 Packages [18.2 kB]
+Get:20 https://storage.googleapis.com/cros-packages/152 bookworm Release [3,109 B]
+Get:21 https://storage.googleapis.com/cros-packages/152 bookworm Release.gpg [2,365 B]
+Get:22 https://storage.googleapis.com/cros-packages/152 bookworm/main amd64 Packages [5,138 B]
+Get:23 https://deb.debian.org/debian bookworm/main Translation-en [6,107 kB]
+Get:24 https://deb.debian.org/debian bookworm/main amd64 DEP-11 Metadata [4,492 kB]
+Get:25 https://deb.debian.org/debian bookworm-updates/main amd64 Packages [6,924 B]
+Get:26 https://deb.debian.org/debian bookworm-updates/main Translation-en [5,448 B]
+Get:27 https://deb.debian.org/debian-security bookworm-security/main amd64 Packages [338 kB]
+Get:28 https://deb.debian.org/debian-security bookworm-security/main Translation-en [211 kB]
+Fetched 22.3 MB in 8s (2,870 kB/s)
 Reading package lists...
-[2026-09-09 23:30:51] INFO: Cleanup complete
-[2026-09-09 23:30:51] INFO: --- Upgrade Packages ---
+[2026-09-15 18:45:13] INFO: Cleanup complete
+[2026-09-15 18:45:13] INFO: --- Upgrade Packages ---
 Hit:1 http://deb.debian.org/debian bookworm-backports InRelease
 Hit:2 https://deb.debian.org/debian bookworm InRelease
-Hit:3 https://download.docker.com/linux/debian bookworm InRelease
-Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
-Hit:5 https://deb.debian.org/debian-security bookworm-security InRelease
-Ign:6 https://storage.googleapis.com/cros-packages/151 bookworm InRelease
-Hit:7 https://packages.adoptium.net/artifactory/deb bookworm InRelease
-Hit:8 https://storage.googleapis.com/cros-packages/151 bookworm Release
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:5 https://packages.cloud.google.com/apt cloud-sdk InRelease
+Hit:6 https://download.docker.com/linux/debian bookworm InRelease
+Ign:7 https://storage.googleapis.com/cros-packages/152 bookworm InRelease
+Get:8 https://packages.adoptium.net/artifactory/deb bookworm InRelease [7,507 B]
+Hit:9 https://storage.googleapis.com/cros-packages/152 bookworm Release
+Fetched 7,507 B in 1s (8,650 B/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 Calculating upgrade...
-0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-[2026-09-09 23:30:54] INFO: Install base packages (53)
+The following packages will be upgraded:
+  docker-buildx-plugin google-cloud-cli
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 105 MB of archives.
+After this operation, 3,131 kB of additional disk space will be used.
+Get:1 https://download.docker.com/linux/debian bookworm/stable amd64 docker-buildx-plugin amd64 0.37.1-1~debian.12~bookworm [17.3 MB]
+Get:2 https://packages.cloud.google.com/apt cloud-sdk/main amd64 google-cloud-cli amd64 585.0.0-0 [87.5 MB]
+Ign:2 https://packages.cloud.google.com/apt cloud-sdk/main amd64 google-cloud-cli amd64 585.0.0-0
+Get:2 https://packages.cloud.google.com/apt cloud-sdk/main amd64 google-cloud-cli amd64 585.0.0-0 [87.5 MB]
+Fetched 26.7 MB in 41s (648 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 207118 files and directories currently installed.)
+Preparing to unpack .../docker-buildx-plugin_0.37.1-1~debian.12~bookworm_amd64.deb ...
+Unpacking docker-buildx-plugin (0.37.1-1~debian.12~bookworm) over (0.37.0-1~debian.12~bookworm) ...
+Preparing to unpack .../google-cloud-cli_585.0.0-0_amd64.deb ...
+Unpacking google-cloud-cli (585.0.0-0) over (584.0.0-0) ...
+Setting up docker-buildx-plugin (0.37.1-1~debian.12~bookworm) ...
+Setting up google-cloud-cli (585.0.0-0) ...
+Processing triggers for libc-bin (2.36-9+deb12u14) ...
+[2026-09-15 18:46:22] INFO: Install base packages (53)
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -126,7 +148,7 @@ fortune-mod is already the newest version (1:1.99.1-7.3).
 cowsay is already the newest version (3.03+dfsg2-8).
 trash-cli is already the newest version (0.17.1.14-5).
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-[2026-09-09 23:30:54] INFO: Install build deps
+[2026-09-15 18:46:22] INFO: Install build deps
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -149,7 +171,7 @@ libssl-dev is already the newest version (3.0.20-1~deb12u2).
 libxml2-dev is already the newest version (2.9.14+dfsg-1.3~deb12u6).
 zlib1g-dev is already the newest version (1:1.2.13.dfsg-1).
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-[2026-09-09 23:30:54] INFO: Install net tools
+[2026-09-15 18:46:23] INFO: Install net tools
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -168,14 +190,14 @@ tmux is already the newest version (3.3a-3).
 dnsutils is already the newest version (1:9.18.49-1~deb12u2).
 nmap is already the newest version (7.93+dfsg1-1).
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-[2026-09-09 23:30:55] INFO: Install devops
+[2026-09-15 18:46:23] INFO: Install devops
 Reading package lists...
 Building dependency tree...
 Reading state information...
 podman is already the newest version (4.3.1+ds1-8+deb12u1+b3).
 crun is already the newest version (1.8.1-1+deb12u1).
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
-[2026-09-09 23:30:55] INFO: Install latex
+[2026-09-15 18:46:23] INFO: Install latex
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -199,9 +221,9 @@ Reading state information...
 Reading package lists...
 Building dependency tree...
 Reading state information...
-[2026-09-09 23:30:56] INFO: Verify with debsums
+[2026-09-15 18:46:25] INFO: Verify with debsums
 debsums: changed file /etc/apt/trusted.gpg.d/cros.gpg (from cros-apt-config package)
-[2026-09-09 23:31:38] INFO: NPM globals
+[2026-09-15 18:47:08] INFO: NPM globals
 /home/rgroot/.config/nvm/versions/node/v24.6.0/lib
 ├── @earendil-works/pi-coding-agent@0.85.1
 ├── @google/gemini-cli@0.51.0
@@ -210,53 +232,39 @@ debsums: changed file /etc/apt/trusted.gpg.d/cros.gpg (from cros-apt-config pack
 ├── npm-check-updates@19.2.0
 └── npm@11.7.0
 
-[2026-09-09 23:31:38] INFO: --- Clojure stack (upstream, Temurin-25) ---
-[2026-09-09 23:31:38] java: openjdk version "25.0.4.1" 2026-08-18 LTS
-[2026-09-09 23:31:38] INFO: clojure already: Clojure CLI version 1.12.6.1673
-[2026-09-09 23:31:39] INFO: lein already: Leiningen 2.12.0 on Java 25.0.4.1 OpenJDK 64-Bit Server VM
-[2026-09-09 23:31:39] INFO: bb already: babashka v1.13.219
-[2026-09-09 23:31:39] INFO: clj-kondo already: clj-kondo v2026.08.04
-[2026-09-09 23:31:39] INFO: clojure-lsp already: clojure-lsp 2025.08.25-14.21.46
-[2026-09-09 23:31:39] INFO: neil already: Usage: neil <subcommand> <options>
-[2026-09-09 23:31:39] INFO: jet already: 0.7.27
-[2026-09-09 23:31:39] INFO: cljfmt already: Usage:
-[2026-09-09 23:31:39] INFO: --- Git + Aliases ---
-[2026-09-09 23:31:39] INFO: IMPORTANT: restore bkp if not done. Check tmux, emacs, alias, gitignore
-[2026-09-09 23:31:39] INFO: Use trash-list / trash-restore / trash-empty as needed
-[2026-09-09 23:31:39] INFO: --- History ---
-[2026-09-09 23:31:39] INFO: Archive history to /home/rgroot/.bash_history.bak.20260909_233139 (not delete)
-Password Store
-├── CLAUDE_API_KEY
-├── DEEPSEEK_API_KEY
-├── freenet
-├── GEMINI_API_KEY
-├── GROQ_API_KEY
-├── hf
-├── mbprootp
-├── MOONSHOT_API_KEY
-├── OLLAMA_API_KEY
-├── OPENAI_API_KEY
-├── OPENCODE_API_KEY
-├── OPENROUTER_API_KEY
-├── protector_key
-├── tmp
-├── unKnoWn
-├── url
-└── XAI_GROK_API_KEY
-[2026-09-09 23:31:39] INFO: --- Tmux ---
-[2026-09-09 23:31:39] INFO: Tmux session alpha exists, skip
-[2026-09-09 23:31:39] INFO: Toggle bar: tmux set-option -g status on/off
-[2026-09-09 23:31:39] INFO: --- ClamAV ---
-Wed Sep  9 23:31:39 2026 -> ClamAV update process started at Wed Sep  9 23:31:39 2026
-WARNING: Wed Sep  9 23:31:40 2026 -> Your ClamAV installation is OUTDATED!
-WARNING: Wed Sep  9 23:31:40 2026 -> Local version: 1.4.3 Recommended version: 1.4.6
-Wed Sep  9 23:31:40 2026 -> DON'T PANIC! Read https://docs.clamav.net/manual/Installing.html
-Wed Sep  9 23:31:40 2026 -> daily.cld database is up-to-date (version: 28118, sigs: 355649, f-level: 90, builder: svc.clamav-publisher)
-Wed Sep  9 23:31:40 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
-Wed Sep  9 23:31:40 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
-ClamAV 1.4.3/28118/Wed Sep  9 11:54:03 2026
-NEXT                        LEFT        LAST                        PASSED     UNIT                ACTIVATES
-Mon 2026-09-14 00:00:00 IST 4 days left Mon 2026-09-07 09:10:00 IST 2 days ago clamav-weekly.timer clamav-weekly.service
+[2026-09-15 18:47:09] INFO: --- Clojure stack (upstream, Temurin-25) ---
+[2026-09-15 18:47:09] java: openjdk version "25.0.4.1" 2026-08-18 LTS
+[2026-09-15 18:47:09] INFO: clojure already: Clojure CLI version 1.12.6.1673
+[2026-09-15 18:47:10] INFO: lein already: Leiningen 2.12.0 on Java 25.0.4.1 OpenJDK 64-Bit Server VM
+[2026-09-15 18:47:10] INFO: bb already: babashka v1.13.219
+[2026-09-15 18:47:10] INFO: clj-kondo already: clj-kondo v2026.08.04
+[2026-09-15 18:47:10] INFO: clojure-lsp already: clojure-lsp 2025.08.25-14.21.46
+[2026-09-15 18:47:11] INFO: neil already: Usage: neil <subcommand> <options>
+[2026-09-15 18:47:11] INFO: jet already: 0.7.27
+[2026-09-15 18:47:11] INFO: cljfmt already: Usage:
+[2026-09-15 18:47:11] INFO: --- Git + Aliases ---
+[2026-09-15 18:47:11] INFO: IMPORTANT: restore bkp if not done. Check tmux, emacs, alias, gitignore
+[2026-09-15 18:47:11] INFO: Use trash-list / trash-restore / trash-empty as needed
+[2026-09-15 18:47:11] INFO: --- History ---
+[2026-09-15 18:47:11] INFO: Archive history to /home/rgroot/.bash_history.bak.20260915_184711 (not delete)
+[2026-09-15 18:47:11] INFO: --- Tmux ---
+[2026-09-15 18:47:11] INFO: Tmux session alpha exists, skip
+[2026-09-15 18:47:11] INFO: Toggle bar: tmux set-option -g status on/off
+[2026-09-15 18:47:11] INFO: --- ClamAV ---
+Tue Sep 15 18:47:11 2026 -> ClamAV update process started at Tue Sep 15 18:47:11 2026
+WARNING: Tue Sep 15 18:47:12 2026 -> Your ClamAV installation is OUTDATED!
+WARNING: Tue Sep 15 18:47:12 2026 -> Local version: 1.4.3 Recommended version: 1.4.6
+Tue Sep 15 18:47:12 2026 -> DON'T PANIC! Read https://docs.clamav.net/manual/Installing.html
+Tue Sep 15 18:47:12 2026 -> daily database available for update (local version: 28122, remote version: 28124)
+Tue Sep 15 18:47:13 2026 -> Testing database: '/var/lib/clamav/tmp.d428cdae32/clamav-0520a540a952b59b1873efd5f5921464.tmp-daily.cld' ...
+Tue Sep 15 18:47:15 2026 -> Database test passed.
+Tue Sep 15 18:47:15 2026 -> daily.cld updated (version: 28124, sigs: 355661, f-level: 90, builder: svc.clamav-publisher)
+Tue Sep 15 18:47:15 2026 -> main.cld database is up-to-date (version: 63, sigs: 3287027, f-level: 90, builder: tomjudge)
+Tue Sep 15 18:47:15 2026 -> bytecode.cvd database is up-to-date (version: 339, sigs: 80, f-level: 90, builder: nrandolp)
+WARNING: Tue Sep 15 18:47:15 2026 -> Clamd was NOT notified: Can't connect to clamd through /var/run/clamav/clamd.ctl: No such file or directory
+ClamAV 1.4.3/28124/Tue Sep 15 11:57:28 2026
+NEXT                        LEFT        LAST                        PASSED        UNIT                ACTIVATES
+Mon 2026-09-21 00:00:00 IST 5 days left Mon 2026-09-14 00:56:42 IST 1 day 17h ago clamav-weekly.timer clamav-weekly.service
 
 1 timers listed.
 Pass --all to see loaded but inactive timers, too.
@@ -267,7 +275,7 @@ Warning: The unit file, source configuration file or drop-ins of clamav-freshcla
     Drop-In: /run/systemd/system/service.d
              └─zzz-lxc-service.conf
      Active: inactive (dead)
-[2026-09-09 23:31:40] INFO: Run 'sudo clamscan -r /' daily
+[2026-09-15 18:47:15] INFO: Run 'sudo clamscan -r /' daily
 
 --                         ------      ----
 110/tcp                    DENY IN     Anywhere                  
@@ -305,9 +313,9 @@ Logging: on (low)
 New profiles: skip
 Status: active
 To                         Action      From
-[2026-09-09 23:31:40] INFO: --- Optional tasks ---
-[2026-09-09 23:31:40] WARN: snow.sh - throwaway user. Run manually: /home/rgroot/MuggleBornPadawan/700_linux/scripts/snow.sh --force [--with-sudo]
-[2026-09-09 23:31:40] WARN: Skip auto-run (needs confirm). To auto-run, uncomment next line:
-[2026-09-09 23:31:42] WARN: Emacs backup script not found
-[2026-09-09 23:31:42] INFO: --- Done. All safe ---
-[2026-09-09 23:31:42] INFO: Next: sudo ufw status verbose | sudo clamscan -r / --log=scan.log
+[2026-09-15 18:47:15] INFO: --- Optional tasks ---
+[2026-09-15 18:47:15] WARN: snow.sh - throwaway user. Run manually: /home/rgroot/MuggleBornPadawan/700_linux/scripts/snow.sh --force [--with-sudo]
+[2026-09-15 18:47:15] WARN: Skip auto-run (needs confirm). To auto-run, uncomment next line:
+[2026-09-15 18:47:17] WARN: Emacs backup script not found
+[2026-09-15 18:47:17] INFO: --- Done. All safe ---
+[2026-09-15 18:47:17] INFO: Next: sudo ufw status verbose | sudo clamscan -r / --log=scan.log
