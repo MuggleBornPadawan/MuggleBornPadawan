@@ -72,8 +72,8 @@
   - machine code 
 ** performant code 
 *** references
-- https://newsletter.pragmaticengineer.com/p/why-performant-code-matters-but-gets?
-- https://www.computerenhance.com/p/performance-excuses-debunked
+- Gergely Orosz - https://newsletter.pragmaticengineer.com/p/why-performant-code-matters-but-gets?
+- Casey Muratori - https://www.computerenhance.com/p/performance-excuses-debunked
 *** info
 - excuses: no need, too small, not worth it, niche, hotspot 
 - performance - resource consumption (not correctness):  CPU time, wall-clock time, battery life, network traffic, storage footprint  
@@ -81,7 +81,6 @@
   - How data moves in and out: load/store units and L1–L3 caches
   - How instructions flow through the pipes: branch prediction, i-cache
   - Execution unit scheduling: raw throughput per operation type
-
 *** blah blah
 - loose typing, reflection, and boxing/unboxing, syntactic shortcuts, pattern matching variations, implicit conversions, and dynamic runtime features
 - proof-checkers, compilers, type systems, and linters

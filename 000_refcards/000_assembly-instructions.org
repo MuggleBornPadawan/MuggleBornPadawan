@@ -1,0 +1,64 @@
+#+TITLE: Core x86-64 Instructions — Read Assembly (20-30 ops)
+#+AUTHOR: Casey Muratori / Pragmatic Engineer — summary
+#+DATE: 2026-09-14
+#+OPTIONS: toc:t
+
+* Overview
+You need only ~25 instructions to read 90% of compiler output.
+Goal: read, not write. Focus on x86-64 (Intel syntax). ARM64 uses same ideas with different names.
+
+* Table — Core Instructions
+
+| Category  | Mnemonic | What it does                            | Example              | Notes                        |
+|-----------+----------+-----------------------------------------+----------------------+------------------------------|
+| Move      | mov      | Copy data reg<->reg, mem<->reg          | mov eax, 5           | Most common op, ~60% of code |
+| Move      | movzx    | Move and zero-extend (small -> large)   | movzx eax, bl        | Use for byte -> int          |
+| Move      | movsx    | Move and sign-extend                    | movsx eax, bl        | Keeps sign for negative      |
+| Move/Math | lea      | Load address / cheap math               | lea eax, [rbx+rcx*4] | No memory read, just math    |
+| Math      | add      | Add                                     | add eax, 3           | Sets flags                   |
+| Math      | sub      | Subtract                                | sub eax, 1           | Sets flags                   |
+| Math      | imul     | Signed multiply                         | imul eax, ebx        |                              |
+| Math      | inc      | Add 1                                   | inc eax              |                              |
+| Math      | dec      | Subtract 1                              | dec eax              |                              |
+| Math      | neg      | Negate (0 - x)                          | neg eax              |                              |
+| Logic     | and      | Bitwise AND                             | and eax, 0xFF        |                              |
+| Logic     | or       | Bitwise OR                              | or eax, ebx          |                              |
+| Logic     | xor      | Bitwise XOR (xor eax,eax = zero)        | xor eax, eax         | Common zero idiom            |
+| Logic     | not      | Flip all bits                           | not eax              |                              |
+| Logic     | shl      | Shift left                              | shl eax, 2           | Multiply by 4                |
+| Logic     | shr      | Shift right (logical, zero fill)        | shr eax, 2           | Unsigned divide              |
+| Logic     | sar      | Shift right (arithmetic, sign fill)     | sar eax, 2           | Signed divide                |
+| Compare   | cmp      | Compare (sub without store, sets flags) | cmp eax, ebx         | Use before jcc               |
+| Compare   | test     | Bit test (and without store)            | test eax, eax        | Check if zero                |
+| Control   | jmp      | Always jump                             | jmp label            |                              |
+| Control   | je       | Jump if equal (==)                      | je label             | After cmp/test               |
+| Control   | jne      | Jump if not equal (!=)                  | jne label            |                              |
+| Control   | jl       | Jump if less (signed <)                 | jl label             |                              |
+| Control   | jle      | Jump if less or equal (signed <=)       | jle label            |                              |
+| Control   | jg       | Jump if greater (signed >)              | jg label             |                              |
+| Control   | jge      | Jump if greater or equal (signed >=)    | jge label            |                              |
+| Control   | ja / jb  | Jump if above/below (unsigned > / <)    | ja label             | Unsigned compare             |
+| Control   | call     | Call function (push return addr + jmp)  | call foo             |                              |
+| Control   | ret      | Return from function                    | ret                  | Pops return addr             |
+| Stack     | push     | Push to stack                           | push rbx             | Saves reg                    |
+| Stack     | pop      | Pop from stack                          | pop rbx              | Restores reg                 |
+| Misc      | nop      | Do nothing                              | nop                  | Padding / alignment          |
+
+* Example — Casey demo 5+3-1 = 7
+
+#+BEGIN_SRC asm
+mov eax, 5      ; eax = 5
+add eax, 3      ; eax = 8
+sub eax, 1      ; eax = 7
+ret             ; return 7 in eax
+#+END_SRC
+
+* Tips
+- Use godbolt.org with -O2, Intel syntax, to see these ops.
+- Intel vs AT&T: mov eax,5 (Intel) = movl $5, %eax (AT&T) — same op.
+- Focus on registers first (eax, ebx, ecx, edx, rsi, rdi, rsp, rbp), ignore [rsp+8] at start.
+- ARM64 map: mov->mov, ldr/str->mov mem, b.eq->je, bl->call, ret->ret
+
+* Source
+- Pragmatic Engineer # Why performance actually matters (but gets widely ignored), with Casey Muratori — Gergely Orosz, 2026-08-26
+- Casey Muratori — Computer, Enhance!

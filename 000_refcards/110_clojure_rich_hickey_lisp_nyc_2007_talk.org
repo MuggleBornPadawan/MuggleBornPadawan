@@ -44,10 +44,15 @@
 - lambda calculus - altrnatives 
 - henry baker - paper on equal - identical (same object - twin 1 and twin 1) and equal (twin 1 and twin 2)
 - how do symbols work in clojure? qualifier of the package? (36:37)
+- context oriented programming (pascal constanza) 
+- aspecct oriented programming 
+- in clojure, you rarely need full AOP/COP frameworks
+  - AOP-like: use wrap functions, middleware, with-redefs for tests.
+  - COP-like: use binding + ^:dynamic vars or multimethod on context map.
 * intro
 - 20 years of development - c++, java, c#, common lisp, mathematica, funcitonal language (ml/haskell)
 - lisp + java + func(ml/haskell)
-- scheduler, automation, communication, highly concurrent audio playback systems
+- scheduler, automation, communication, audio analysis, highly concurrent audio playback systems
 * fundamentals
 - functional (mostly) - immutable in data structures not just function level
 - lisp (not cl or scheme) - small core, code as data principle, notion as reader #, 
@@ -187,6 +192,12 @@
 - supports extensions to new concrete implementations
   - library functions will work with these extensions 
 - big improvement vs hardwiring a language to the concrete implementations of its data types
+*** collection abstraction (IPersistentCollection)
+- count, conj, seq
+*** sequence abstraction (ISeq)
+- map, filter, reduce, take, drop
+*** associative abstraction 
+- get, assoc, dissoc?
 *** example: the Seq abstraction
 - highlights
   - write one function, works on all data
@@ -242,11 +253,33 @@
 - vars
   - isolating changes within threads 
 ** refs and transactions 
-tbu
+tbu - persistent data structure; alter - commute - ref-set 
+- ref = shared state for coordinated change
+- def my-ref (ref 0) to make
+- @my-ref to read
+- (dosync (alter my-ref f)) to write
+- Use ref only if 2+ values must stay in sync. Else use atom
 ** vars
-tbu
+- use atom for state; vars for definition 
+- like cl's special vars - dynamic scope, stack discipline
+- shared root binding established by def - root can be unbound
+- can be set! but only if first thread-locally bound using binding (using let)
+- functions stored in vars, so they too can be dynamically rebound - context/aspect-like idioms 
+- lisp 1 > all functions are effectively stored in special vars; all functions can be dynamically rebound 
 ** jvm / java integration 
+- consuming java
+  - instantiate objects with new
+  - access members with dot operator
+    - inference + hints can avoid reflection 
+  - import class names with import
+- extending java 
+  - implement interfaces dynamically with implement macro
+- clojure strings are java strings
+- clojure collections implement (read-only portion of) Collections interface 
+- clojure fns are callable
+- symbols and keywords are comparable
+- emits standard jvm debug info
 * status
 * q&a
 
-- timestamp: 45.01
+- timestamp: 1.45.01

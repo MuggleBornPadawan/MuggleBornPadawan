@@ -1,11 +1,25 @@
 #+TITLE: clojure for the brave
 #+AUTHOR: daniel higginbothom
 #+OPTIONS: toc
-* Table of Contents :TOC_1:
+* Table of Contents :TOC_2:
 - [[#general-notes][general notes]]
+  - [[#references][references]]
+  - [[#come-back-to-this-later][come back to this later]]
+  - [[#cider][cider]]
 - [[#building-running-and-the-repl][building, running, and the repl]]
+  - [[#objective][objective]]
+  - [[#clojure-intro][clojure intro]]
 - [[#emacs-with-clojure][emacs with clojure]]
+  - [[#general][general]]
+  - [[#repl][repl]]
+  - [[#clojure-debugger][clojure debugger]]
 - [[#do-things-crash-course][do things; crash course]]
+  - [[#form][form]]
+  - [[#comments][comments]]
+  - [[#control-flow][control flow]]
+  - [[#def-var][def var]]
+  - [[#data-structures][data structures]]
+  - [[#functions][functions]]
 - [[#core-functions-in-depth][core functions in depth]]
 - [[#functional-programming][functional programming]]
 - [[#organizing-your-project-a-librarians-tale][organizing your project: a librarians tale]]
@@ -98,6 +112,91 @@
 | C-←              | paredit    | barf                                              |
 | C-M-f, C-M-b     | paredit    | move to the opening/closing parenthesis           |
 |------------------+------------+---------------------------------------------------|
+** clojure debugger
+*** flow
+- Dev (CIDER live fix) -> commit -> Test (verify) -> Prod (deploy)
+- Rule: Live in Dev to LEARN fast. Ship via pipeline to STAY safe
+- cider-jack-in
+- C-u C-M-x instrumented breakpoint
+- C-M-x exit
+*** live prod server - network repl (nrepl)
+- use only for emergency hotfixes and diagnostics; avoid as much as possible 
+- clojure -M -m nrepl.cmdline --middleware '["cider.nrepl/cider-middleware"]' --interactive
+ --port 7888
+- Flags:
+     - --interactive = also local REPL
+     - --port = set port
+     - --middleware = add CIDER debug/inspect support
+- Rule: -M = how to run. -m nrepl.cmdline = what to run
+*** Keys
+- continue next in out here eval inspect locals inject stacktrace trace quit
+|----------+------------+----------------------------------+--------------------------|
+| Key      | Name       | Job                              | Example                  |
+|----------+------------+----------------------------------+--------------------------|
+| c        | continue   | Run to end or next breakpoint    | Skip to result           |
+| n        | next       | Go to next form, do not enter    | Step over (add x y)      |
+| i        | in         | Enter inside function call       | Step into add            |
+| o        | out        | Exit function, go back to caller | Leave add, back to total |
+| H        | here       | Run to cursor point              | Stop at my cursor        |
+| e        | eval       | Type code, see result            | e -> x -> 2              |
+| I        | inspect    | Open value in inspector          | Inspect map              |
+| l        | locals     | Show all locals + values         | See x=2 y=3              |
+| (inject) | inject     | Change value mid-debug           | Set x=99 to test path    |
+| s        | stacktrace | Show call stack, who called who  | total -> add -> +        |
+| t        | trace      | Print each step to REPL          | Keep log for later       |
+| q / Q    | quit       | Exit debugger, abort run         | Stop debug now           |
+|----------+------------+----------------------------------+--------------------------|
+*** Test code - tests all 12 keys
+#+begin_src clojure
+(ns example.core)
+
+;; tree example/core.clj
+;; (defn calculate-total
+;;   "Calculates total price including tax."
+;;   [prices tax-rate]
+;;   (let [subtotal (reduce + prices)
+;;         tax (* subtotal tax-rate)]
+;;     (+ subtotal tax)))
+
+(defn add [a b]
+  (+ a b))
+
+(defn calc-tax [subtotal]
+  (* subtotal 0.2))
+
+(defn make-order [user items]
+  (let [subtotal (reduce + (map :price items))
+        tax (calc-tax subtotal)
+        total (add subtotal tax)
+        order {:user user
+               :items items
+               :subtotal subtotal
+               :tax tax
+               :total total}]
+    (if (> total 100)
+      (assoc order :discount 10)
+      order)))
+
+(make-order "bob" [{:price 40} {:price 50}])
+#+end_src
+*** How to test each key here
+- c (continue): run once to end, run again to next breakpoint on make-order.
+- n (next): step over (map :price items), (calc-tax subtotal) without entering.
+- i (in): on (calc-tax subtotal) press i to enter inside calc-tax. On (add subtotal tax) press i to enter inside add.
+- o (out): after i into add or calc-tax, press o to jump back to make-order let.
+- H (here): put cursor on (assoc order :discount 10), press H to run straight to discount branch.
+- e (eval): press e, type subtotal, tax, total, (> total 100). Check values.
+- I (inspect): press I on order map or items vector to open inspector. Good for nested map.
+- l (locals): press l inside let to see user, items, subtotal, tax, total, order.
+- inject: press inject, set total to 5 or 200 to force else / then branch without restart. Tests discount logic.
+- s (stacktrace): press s while inside add or calc-tax to see make-order -> add -> +.
+- t (trace): press t before c to log all steps to REPL. Check trace after run.
+- q (quit): press q on (reduce ...) to abort run. Re-eval (make-order ...) to start again.
+*** Which to use?
+- Lost? -> l then s
+- Want to skip? -> n
+- Want detail? -> i
+- Want test? -> e
 * do things; crash course
 ** form
 - a form is any expression that the reader translates into a data structure and the compiler evaluates
