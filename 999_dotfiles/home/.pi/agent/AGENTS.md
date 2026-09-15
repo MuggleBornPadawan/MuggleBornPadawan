@@ -3,8 +3,8 @@
 ## Machine
 - Debian 12 (bookworm), x86_64, kernel 6.6
 - CPU: Intel Core i3-1215U (8 threads) — modest machine
-- RAM: 6.3 Gi total (~6.1 Gi available per sysinfo 2026-08-31) — avoid memory-heavy tooling; prefer lean approaches
-- Disk: 31 GB total, 11 GB free (65% used per sysinfo 2026-08-31) — ask before large downloads or installs
+- RAM: 6.3 Gi total (~5.3 Gi available per sysinfo 2026-09-15) — avoid memory-heavy tooling; prefer lean approaches
+- Disk: 31 GB total, 10 GB free (67% used per sysinfo 2026-09-15, after cleanup) — ask before large downloads or installs
 - Java: OpenJDK 25 (Temurin-25 at /usr/lib/jvm/temurin-25-jdk-amd64, 64-Bit Server VM)
 
 ## Preferred Stack: Clojure
