@@ -8,11 +8,12 @@ Do these steps:
 
 1. Run system info collection:
    ```bash
+   mkdir -p ~/bkp && [[ -f ~/bkp/sysinfo.log ]] && cp -f ~/bkp/sysinfo.log ~/bkp/sysinfo.log.prev
    ~/MuggleBornPadawan/700_linux/scripts/sysinfo.sh --tech
    ```
    - Timeout 30s. No downloads. No model loads.
-   - Output goes to `~/bkp/sysinfo.log` (script redirects stdout, prev saved to `~/bkp/sysinfo.log.prev` in ~/bkp/).
-   - Script creates `~/bkp/` if missing.
+   - Backup `~/bkp/sysinfo.log` to `~/bkp/sysinfo.log.prev` BEFORE run (script also does internal backup as fallback; `~/bkp/` created if missing).
+   - Script redirects stdout to `~/bkp/sysinfo.log`.
    - Alias `--stack` = `--tech`. Env `NO_COLOR=1` strips ANSI, `SYSINFO_NO_IP=1` skips public IP.
 
 2. Read logs completely (use `read` tool, handle ANSI colors):
