@@ -5,14 +5,8 @@ cd "$(dirname "$0")"
 echo "Building..."
 for f in 0*.c; do
   out="${f%.c}"
-  # 03 needs real branches, not cmov — disable if-conversion
-  if [[ "$f" == "03"* ]]; then
-    echo "  gcc -O2 -fno-if-conversion -fno-tree-vectorize -o $out $f"
-    gcc -O2 -fno-if-conversion -fno-tree-vectorize -o "$out" "$f"
-  else
-    echo "  gcc -O2 -o $out $f"
-    gcc -O2 -o "$out" "$f"
-  fi
+  echo "  gcc -O2 -o $out $f"
+  gcc -O2 -o "$out" "$f"
 done
 echo ""
 echo "Running..."

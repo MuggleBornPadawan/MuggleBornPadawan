@@ -2,7 +2,7 @@
 
 ## Machine
 - Debian 12 (bookworm), x86_64, kernel 6.6
-- CPU: Intel Core i3-1215U (8 threads) — modest machine
+- CPU: Intel i3-1215U (host 2P+4E = 8 threads, Golden Cove + Gracemont) — guest 8 vCPUs via KVM — L1d 144K / L1i 224K / L2 2M / L3 10M, line 64B, no `perf` — modest machine
 - RAM: 6.3 Gi total (~5.3 Gi available per sysinfo 2026-09-15) — avoid memory-heavy tooling; prefer lean approaches
 - Disk: 31 GB total, 10 GB free (67% used per sysinfo 2026-09-15, after cleanup) — ask before large downloads or installs
 - Java: OpenJDK 25 (Temurin-25 at /usr/lib/jvm/temurin-25-jdk-amd64, 64-Bit Server VM)

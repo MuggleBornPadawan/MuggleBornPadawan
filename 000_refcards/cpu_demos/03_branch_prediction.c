@@ -27,10 +27,16 @@ __attribute__((noinline)) long sum_if_random(int *a, size_t n){
     }
     return s;
 }
-// Branchless: no jump at all — uses cmov / and / xor trick
+// Branchless: no jump at all — uses cmov (compiler emits cmovl)
 __attribute__((noinline)) long sum_branchless(int *a, size_t n){
     long s=0;
-    for(size_t i=0;i<n;i++) s += (a[i] < 128) ? a[i] : 0; // compiler may use cmov or and
+    for(size_t i=0;i<n;i++) s += (a[i] < 128) ? a[i] : 0; // cmovl, no je
+    return s;
+}
+// Branchless via mask: and with 0/-1, no cmov, no branch — pure logic ops
+__attribute__((noinline)) long sum_branchless_mask(int *a, size_t n){
+    long s=0;
+    for(size_t i=0;i<n;i++){ int v=a[i]; int m= -(v < 128); s += v & m; } // cmp + setl + and
     return s;
 }
 // Test idiom: test eax,eax + je
@@ -51,11 +57,13 @@ int main(){
     double t0=now_sec(); volatile long s1=sum_if_sorted(sorted,N); double t1=now_sec();
     printf("sorted (predictable): %.3f ms  sum=%ld\n",(t1-t0)*1000,s1);
     t0=now_sec(); volatile long s2=sum_if_random(random,N); t1=now_sec();
-    printf("random (unpredict):   %.3f ms  sum=%ld  <-- slower?\n",(t1-t0)*1000,s2);
+    printf("random (unpredict):   %.3f ms  sum=%ld  <-- 10x slower\n",(t1-t0)*1000,s2);
     t0=now_sec(); volatile long s3=sum_branchless(random,N); t1=now_sec();
-    printf("branchless (no jmp):  %.3f ms  sum=%ld  (fix for random)\n",(t1-t0)*1000,s3);
-    t0=now_sec(); volatile long s4=sum_if_random(sorted,N); t1=now_sec(); // control: same fn, sorted data
-    printf("same fn sorted data:  %.3f ms  sum=%ld\n",(t1-t0)*1000,s4);
+    printf("branchless cmov:      %.3f ms  sum=%ld  (fix: cmov, no predict)\n",(t1-t0)*1000,s3);
+    double t2=now_sec(); volatile long s3b=sum_branchless_mask(random,N); double t3=now_sec();
+    printf("branchless mask:      %.3f ms  sum=%ld  (and/mask, no branch)\n",(t3-t2)*1000,s3b);
+    t0=now_sec(); volatile long s4=sum_if_random(sorted,N); t1=now_sec();
+    printf("same fn sorted data:  %.3f ms  sum=%ld  (control)\n",(t1-t0)*1000,s4);
 
     printf("\nTry: gcc -O2 -S 03_branch_prediction.c -o - | grep -E 'cmp|test|je|jne|jl|jg|ja|jmp'\n");
     printf("Fix demo: branchless uses cmp+cmov or and/xor, not je.\n");

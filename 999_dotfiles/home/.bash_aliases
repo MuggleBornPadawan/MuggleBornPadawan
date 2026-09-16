@@ -41,6 +41,7 @@ alias g='pwd && git gc && git cat-file -p HEAD && git diff --staged && git diff 
 alias gl='git log --oneline --decorate --graph'
 alias gp="s && pw && touch test.tmp && echo 'meowww at $(date)' >> test.tmp && git add . && git commit -m 'wip $(date +%s)' && git push && git status && git branch"
 alias gs="clear && pw && pwd && git branch && git status && echo 'use git commit, git checkout main, git merge <branch_name>, git push origin main, git branch <branch_name> eod everyday'"
+alias pigp='pi -p "add, commit and push. branch, main and remote"'
 
 # ── NPM ──
 alias nu='npm list -g --depth=0 && npm outdated && npm update && npm audit fix --force && npm install -g npm-check-updates'
