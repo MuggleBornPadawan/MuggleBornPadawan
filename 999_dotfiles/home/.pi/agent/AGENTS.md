@@ -13,7 +13,7 @@
   - Clojure CLI (`deps.edn`) preferred for new projects — version 1.12.6 (upstream, not apt)
   - Leiningen (`project.clj`) acceptable when working with existing Lein projects — version 2.12.0 (upstream, not apt)
 - Toolchain (upstream via `MuggleBornPadawan/700_linux/remote_startup.sh:install_clojure_stack()`, Temurin-25, no Debian apt to avoid `openjdk-17`):
-  - Core: `clojure` CLI + `lein` + `bb` (babashka 1.13.219 at `~/.local/bin/bb`) + `clj-kondo` + `clojure-lsp` (rest at `/usr/local/bin`)
+  - Core: `clojure` CLI + `lein` + `bb` (babashka 1.13.223 at `~/.local/bin/bb`, dynamic build with `babashka.ffi` + tasks `:exec-fn` compose) + `clj-kondo` + `clojure-lsp` (rest at `/usr/local/bin`)
   - Add-ons: `neil` (add dep to `deps.edn`) + `jet` (EDN<->JSON) + `cljfmt` (formatter, static binary)
   - Install: curl upstream scripts to `/usr/local/bin` (not `apt install clojure`); `default-jre-headless` = `openjdk-17` must be avoided
   - No global `~/.clojure/deps.edn` or `~/.lein/profiles.clj` — per-project only
