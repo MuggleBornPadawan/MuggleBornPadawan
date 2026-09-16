@@ -1,0 +1,117 @@
+#+TITLE: CPU Microbenchmarks — Data, Pipes, Execution Units
+#+DATE: 2026-09-16
+#+OPTIONS: toc:t
+
+* Prereq — read first
+- [[./000_assembly-instructions.org][000_assembly-instructions.org]] — 25 ops refcard (mov, lea, cmp/test, jcc, call/ret, etc.).
+- This doc shows each op running on real hardware. No new ops here — just live demos of those 25.
+- If you know the table, skip the refcard. Else read it first (5 min).
+
+* Overview
+Simple C demos that show how your i3-1215U runs those 25 ops.
+Three groups: data move, pipe flow, execution scheduling. Each demo = <80 lines, gcc -O2 only.
+
+Your CPU: L1d 144K, L1i 224K, L2 2M, L3 10M, 8 threads @ ~2.5 GHz, Golden Cove cores.
+
+* Quick start
+#+BEGIN_SRC sh
+  cd 000_refcards/cpu_demos
+  ./run_all.sh           # build + run all 6 demos
+  # peek at asm
+  gcc -O2 -S 02_load_store_units.c -o - | grep -E 'mov|lea' | head
+  gcc -O2 -S 03_branch_prediction.c -o - | grep -E 'cmp|test|je|jne' | head
+#+END_SRC
+
+* 1. How data moves — load/store units + L1-L3
+
+** 01_cache_l1_l2_l3.c — cache hierarchy (mov, movzx, lea)**
+- What: seq vs stride64 vs random access at 32K / 256K / 4M / 32M.
+- Expect: 32K ~0.02 ms (L1 hit), 32M ~8 ms seq but 250 ms random (DRAM miss, ~30x).
+- Lesson: cache line = 64 bytes. Stride64 wastes 63/64 bytes. Random pointer chase = load-use miss.
+- Ops: ~mov, movzx (byte->int), lea (address calc), add, cmp, jl.
+
+** 02_load_store_units.c — load/store throughput (mov load/store)**
+- What: 1 load vs 2 loads vs store+load vs byte movzx, all in L1 (1K buffer, cache not factor).
+- Expect: 2 loads ~ same time as 1 load (~230 ms each for 100M iters). Proves 2 load units.
+- byte movzx same speed — zero-extend is free.
+- Ops: ~mov reg,[mem], mov [mem],reg, movzx.
+
+| Demo | Ops covered              | Key number                |
+|------+--------------------------+---------------------------|
+|   01 | mov, movzx, lea, cmp, jl | 32K hit vs 32M miss = 30x |
+|   02 | mov load/store, movzx    | 2 loads = 1.0x not 2.0x   |
+
+* 2. How instructions flow — pipes, branch predict, i-cache
+
+** 03_branch_prediction.c — branch predict (cmp/test + je/jne/jl/ja)**
+- What: sorted (predictable) vs random (unpredictable) branch: ~if (x<128) sum+=x~.
+- Forced real branch via ~asm volatile memory clobber + -fno-if-conversion~ (else compiler uses cmov).
+- Expect: sorted ~16 ms, random ~176 ms = 10x slower. Mispredict = 15-20 cycles flush.
+- Fix: branchless (~(x<128)?x:0~ with cmov/and) helps for random, not for sorted.
+- Ops: cmp, test, je, jne, jl, jle, jg, jge, ja/jb, jmp.
+
+** 04_icache.c — i-cache + pipe fetch (call, ret, jmp, nop)**
+- What: small hot loop vs 64 functions + switch+call bloat (exceeds 224K L1i).
+- Expect: small loop ~10 ms, bloat ~46 ms = 4-5x slower (i-cache miss + BTB miss + call/ret).
+- Lesson: keep hot code < L1i, inline, avoid indirect branches.
+- Ops: call, ret, jmp, nop (padding).
+
+| Demo | Ops covered                        | Key number               |
+|------+------------------------------------+--------------------------|
+|   03 | cmp, test, je/jne/jl/jg/ja/jb, jmp | 10x mispredict penalty   |
+|   04 | call, ret, jmp, nop                | 4x i-cache bloat penalty |
+
+* 3. Execution units — throughput per op type + scheduling
+
+** 05_throughput_ops.c — raw throughput per op (add/sub/imul/logic/shift)**
+- What: 4 independent chains, 200M iters each, inline asm forces exact op (~add $3, %0~).
+- Expect: add/sub/and/or/xor/neg/not ~100 ms, shl/shr/sar ~120 ms, imul ~185 ms (1.7x slower), div ~460 ms equiv (4x slower).
+- Note: ~xor eax,eax~ zero idiom is renamed (no port) — even faster than ~xor $imm~.
+- Ops: add, sub, inc, dec, neg, and, or, xor, not, shl, shr, sar, imul, div.
+
+** 06_ilp_dependency.c — scheduling / ILP (same ops, different dependencies)**
+- What: chain (1 dep: ~x+=1~) vs 4 parallel chains (~a+=1; b+=1; c+=1; d+=1~).
+- Expect: add chain 23 ms for 100M, 4x parallel 51 ms for 400M = 1.8x per-op speedup with ILP.
+- imul chain latency 3c => parallel helps less (69 vs 93 ms).
+- lea trick: ~lea (%0,%0,4)~ = x*5 in one op, no flags, same speed as add.
+- Ops: add, imul, lea (cheap math).
+
+| Demo | Ops covered                                         | Key number                        |
+|------+-----------------------------------------------------+-----------------------------------|
+|   05 | add sub inc and or xor shl shr sar imul div neg not | imul 1.7x, div 4x slower than add |
+|   06 | add, imul, lea                                      | 4x parallel = 1.8x faster per op  |
+
+* Map: refcard -> demo
+| Refcard op                     | Demo where you see it |
+|--------------------------------+-----------------------|
+| mov, movzx, movsx              | 01, 02                |
+| lea                            | 01, 06                |
+| add sub inc dec neg            | 05, 06                |
+| imul                           | 05, 06                |
+| and or xor not                 | 05                    |
+| shl shr sar                    | 05                    |
+| cmp test                       | 03                    |
+| jmp je jne jl jle jg jge ja jb | 03, 04                |
+| call ret                       | 04                    |
+| push pop                       | 02 (stack spill), 04  |
+| nop                            | 04 (asm padding)      |
+
+* What to try next
+- Change ~N~ in 01 to find your exact L2/L3 cliff.
+- Edit 03 to test ~jl~ (signed) vs ~jb~ (unsigned) — same predict cost, different flags.
+- Edit 05 to compare ~xor eax,eax~ vs ~xor $imm~ — see rename trick.
+- Use ~gcc -O2 -S file.c -o - | grep -E 'mov|add|imul'~ to map C -> asm.
+
+* Files
+- ~cpu_demos/01_cache_l1_l2_l3.c~
+- ~cpu_demos/02_load_store_units.c~
+- ~cpu_demos/03_branch_prediction.c~
+- ~cpu_demos/04_icache.c~
+- ~cpu_demos/05_throughput_ops.c~
+- ~cpu_demos/06_ilp_dependency.c~
+- ~cpu_demos/run_all.sh~
+
+* See also
+- [[./000_assembly-instructions.org][000_assembly-instructions.org]] — op definitions + example ~mov/add/sub/ret~. This doc is the companion: same ops, measured.
+- Intel Optimization Manual, Golden Cove ports.
+- Casey Muratori — Computer, Enhance!

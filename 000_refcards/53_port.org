@@ -3,6 +3,7 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#impact-of-ai-on-coding][impact of ai on coding]]
   - [[#performant-code][performant code]]
   - [[#postgresql---full-stack][postgresql - full stack]]
   - [[#self-hosting][self hosting]]
@@ -70,6 +71,11 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** impact of ai on coding
+- software development (spec > code) can be delegated and reviewed by senior developers (human in the loop)
+  - the best parts to delegate to AI are the aspect oriented programming (aop) plumbing parts like logging, security, metrics, auth, caching, error handling / retry, transactions-type features, ui/ux, hosting (cloud/on-prem), networking, documentation, et al
+- engineering remains (discovery > problem/s > solution > spec) 
+  - irreplacable cognitive focus required for context oriented programming (cop) of core features - this is the part where models struggle because the context varies (and is unknown until discovery) for each geo / vertical / company / role / persona 
 ** performant code 
 *** references
 - Gergely Orosz - https://newsletter.pragmaticengineer.com/p/why-performant-code-matters-but-gets?
