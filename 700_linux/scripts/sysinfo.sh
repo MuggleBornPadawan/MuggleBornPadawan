@@ -10,10 +10,11 @@
 #   ./sysinfo.sh --stack      # alias for --tech
 #
 # Output:
-#   Overwrites ~/sysinfo.log (old log saved to ~/sysinfo.log.prev). All stdout goes to log, only startup msg to stderr.
-#   View with: cat ~/sysinfo.log  or  less ~/sysinfo.log
+#   Overwrites ~/bkp/sysinfo.log (old log saved to ~/bkp/sysinfo.log.prev). All stdout goes to log, only startup msg to stderr.
+#   View with: cat ~/bkp/sysinfo.log  or  less ~/bkp/sysinfo.log
 #   Clean log (no ANSI): NO_COLOR=1 ./sysinfo.sh
 #   Skip public IP: SYSINFO_NO_IP=1 ./sysinfo.sh
+#   Backup dir: ~/bkp/ is created if missing (mkdir -p).
 #
 # Notes - When to use what:
 #   - Default (no flag): use for general debug, before asking for help, cron snapshot.
@@ -33,10 +34,11 @@
 
 set -uo pipefail
 
-# Redirect all stdout to ~/sysinfo.log (overwriting it, backup old log)
-echo "Gathering system information... saving to $HOME/sysinfo.log" >&2
-[[ -f "$HOME/sysinfo.log" ]] && cp -f "$HOME/sysinfo.log" "$HOME/sysinfo.log.prev" 2>/dev/null || true
-exec > "$HOME/sysinfo.log"
+# Redirect all stdout to ~/bkp/sysinfo.log (overwriting it, backup old log)
+mkdir -p "$HOME/bkp"
+echo "Gathering system information... saving to $HOME/bkp/sysinfo.log" >&2
+[[ -f "$HOME/bkp/sysinfo.log" ]] && cp -f "$HOME/bkp/sysinfo.log" "$HOME/bkp/sysinfo.log.prev" 2>/dev/null || true
+exec > "$HOME/bkp/sysinfo.log"
 
 # ANSI Color Codes for formatting (disable with NO_COLOR=1 or when not a tty)
 BOLD="\033[1m"
