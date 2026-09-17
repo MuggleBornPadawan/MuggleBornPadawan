@@ -40,7 +40,8 @@ entries and inherit from other configurations.
 ### Top-Level Fields
 
 *   **`entries`** (array of objects, optional): A list of path entries to scan
-    for customizations of this type.
+    for customizations of this type. Each entry directory is scanned **one level
+    deep**.
 *   **`inherits`** (array of objects, optional): A list of other configuration
     files to inherit from. The entries from inherited files are merged with your
     local entries. Inherited files are processed in the order they are listed.
@@ -55,17 +56,26 @@ Each object in the `entries` or `inherits` array supports the following fields:
 :                :                  :          : directory (for `entries`) or  :
 :                :                  :          : another JSON config file (for :
 :                :                  :          : `inherits`).                  :
-| `include_only` | array of strings | No       | A list of regex patterns. If  |
-:                :                  :          : specified, only               :
-:                :                  :          : customizations whose          :
-:                :                  :          : directory names match at      :
-:                :                  :          : least one of these patterns   :
-:                :                  :          : will be loaded.               :
-| `exclude`      | array of strings | No       | A list of regex patterns.     |
-:                :                  :          : Customizations whose          :
-:                :                  :          : directory names match any of  :
-:                :                  :          : these patterns will be        :
+| `include_only` | array of strings | No       | Patterns naming items         |
+:                :                  :          : relative to `path`. If        :
+:                :                  :          : specified, only matching      :
+:                :                  :          : customizations will be        :
+:                :                  :          : loaded.                       :
+| `exclude`      | array of strings | No       | Patterns. Customizations      |
+:                :                  :          : whose directory names match   :
+:                :                  :          : any of these patterns will be :
 :                :                  :          : skipped.                      :
+
+## Explicitly Configured Paths
+
+Config files are also honored on explicitly configured customization paths (e.g.
+`skills_paths` in an agent's customization discovery config) when the configured
+path points directly at a config file (e.g. `path/to/skills.json`). A configured
+directory keeps its regular one-level scan; a manifest inside it is not
+expanded. Directories referenced from manifest `entries` follow the standard
+one-level entry scan, and top-level `exclude` patterns apply across all
+explicitly configured paths, not just the one that declared them. They never
+filter customizations inherited from the user's environment.
 
 ## Path Resolution Rules
 
