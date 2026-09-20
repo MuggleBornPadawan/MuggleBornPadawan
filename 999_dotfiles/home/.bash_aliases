@@ -92,4 +92,4 @@ sy() { (cd ~ && ./MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh "$(pass url
 chat() { (cd ~ && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh); }
 
 # ── ssh  ──
-alias gcl='gcloud cloud-shell ssh'
+alias gcl='gcloud cloud-shell ssh --authorize-session'
