@@ -392,6 +392,28 @@
         (setq gptel-backend gemini-backend
               gptel-model 'gemini-3.5-flash-lite))))
 
+  ;; Retrieve OpenCode API key securely from 'pass'
+  (defun my/get-opencode-key-from-pass ()
+    "Retrieve OpenCode API key securely from pass."
+    (when (executable-find "pass")
+      (let ((key (shell-command-to-string "pass show OPENCODE_API_KEY")))
+        (unless (string-empty-p key)
+          (string-trim-right key)))))
+
+  ;; Define OpenCode Zen backend with the primary Pareto models
+  (let ((opencode-key (my/get-opencode-key-from-pass)))
+    (when opencode-key
+      (gptel-make-openai "OpenCode-Zen"
+        :host "opencode.ai"
+        :endpoint "/zen/v1/chat/completions"
+        :stream t
+        :key opencode-key
+        :models '("deepseek-v4-flash"
+                  "qwen3.6-plus"
+                  "kimi-k2.6"
+                  "kimi-k3"
+                  "deepseek-v4-pro"))))
+
   ;; Set pass store time 
   (setenv "PASSWORD_STORE_CLIP_TIME" "3600")
 

@@ -53,6 +53,10 @@ Use TypeSafe AI when software needs narrow, structured judgments rather than ope
 * **Headers**:
   * `Authorization: Bearer <TYPESAFE_API_KEY>`
   * `Content-Type: application/json`
+* **API Key Retrieval (`pass`)**:
+  * Store in pass: `pass insert TYPESAFE_API_KEY`
+  * Load in shell: `export TYPESAFE_API_KEY=$(pass show TYPESAFE_API_KEY)`
+  * Never hardcode secrets in code or skill files.
 * **Model**: `jev-latest`
 * **Token limit**: ~32k tokens (~150k characters) shared across state and questions.
 
@@ -95,21 +99,31 @@ Use TypeSafe AI when software needs narrow, structured judgments rather than ope
 ```clojure
 (ns typesafe.client
   (:require [babashka.http-client :as http]
-            [cheshire.core :as json]))
+            [babashka.process :as p]
+            [cheshire.core :as json]
+            [clojure.string :as str]))
 
 (def api-url "https://api.typesafe.ai/v1/systemone")
 
+(defn get-api-key
+  "Retrieves API key from environment variable or pass."
+  []
+  (or (System/getenv "TYPESAFE_API_KEY")
+      (some-> (p/sh "pass" "TYPESAFE_API_KEY") :out str/trim)))
+
 (defn evaluate-state
   "Evaluates state against a map of questions using TypeSafe Jev."
-  [api-key state questions]
-  (let [body {:state state
-              :model "jev-latest"
-              :questions questions}
-        resp (http/post api-url
-                        {:headers {"Authorization" (str "Bearer " api-key)
-                                   "Content-Type" "application/json"}
-                         :body (json/generate-string body)})]
-    (-> resp :body (json/parse-string true))))
+  ([state questions]
+   (evaluate-state (get-api-key) state questions))
+  ([api-key state questions]
+   (let [body {:state state
+               :model "jev-latest"
+               :questions questions}
+         resp (http/post api-url
+                         {:headers {"Authorization" (str "Bearer " api-key)
+                                    "Content-Type" "application/json"}
+                          :body (json/generate-string body)})]
+     (-> resp :body (json/parse-string true)))))
 
 ;; Example call:
 (comment
@@ -121,8 +135,8 @@ Use TypeSafe AI when software needs narrow, structured judgments rather than ope
      :urgent {:type "noul"
               :instructions "Customer indicates urgent deadline"}})
 
-  (evaluate-state (System/getenv "TYPESAFE_API_KEY")
-                  {:message "Stripe webhook broken, urgent!"}
+  ;; Uses key from env or pass automatically:
+  (evaluate-state {:message "Stripe webhook broken, urgent!"}
                   questions))
 ```
 
