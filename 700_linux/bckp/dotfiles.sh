@@ -101,7 +101,6 @@ PAIRS=(
   # ollama (global)
   "${HOME}/.ollama/config.json|home/.ollama/config.json"
   # other ai tools
-  "${HOME}/.config/cursor/cli-config.json|home/.config/cursor/cli-config.json"
   "${HOME}/.vibe/config.toml|home/.vibe/config.toml"
   "${HOME}/.qwen/settings.json|home/.qwen/settings.json"
   "${HOME}/.antigravity-ide/argv.json|home/.antigravity-ide/argv.json"
