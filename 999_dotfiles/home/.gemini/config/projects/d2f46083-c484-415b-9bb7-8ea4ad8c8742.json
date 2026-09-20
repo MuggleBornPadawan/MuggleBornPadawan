@@ -1,0 +1,11 @@
+{
+  "id":  "d2f46083-c484-415b-9bb7-8ea4ad8c8742",
+  "name":  "/home/rgroot/attendance-system",
+  "projectResources":  {
+    "resources":  [
+      {
+        "folderUri":  "file:///home/rgroot/attendance-system"
+      }
+    ]
+  }
+}

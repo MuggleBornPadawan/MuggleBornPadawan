@@ -1,0 +1,39 @@
+[[stations]]
+name = "Radio Caprice - Free Jazz"
+url = "http://79.111.14.76:9005/"
+
+[[stations]]
+name = "Radio Caprice - Avant-Garde Jazz / Free Improvisation"
+url = "http://79.111.119.111:8000/avantgardejazz"
+
+[[stations]]
+name = "Public Domain Jazz"
+url = "https://stream.publicdomain.ch/jazz"
+
+[[stations]]
+name = "Jazz24 (Seattle)"
+url = "https://live.amperwave.net/direct/ppm-jazz24aac-ibc1"
+
+[[stations]]
+name = "Suryan FM Chennai 93.5"
+url = "http://radios.crabdance.com:8002/1"
+
+[[stations]]
+name = "Hello FM Chennai 106.4"
+url = "http://radios.crabdance.com:8002/3"
+
+[[stations]]
+name = "Radio City Chennai 91.1"
+url = "http://radios.crabdance.com:8002/5"
+
+[[stations]]
+name = "AIR FM Rainbow Chennai 101.4"
+url = "https://air.pc.cdn.bitgravity.com/air/live/pbaudio022/chunklist.m3u8"
+
+[[stations]]
+name = "AIR FM Gold Chennai"
+url = "https://air.pc.cdn.bitgravity.com/air/live/pbaudio021/chunklist.m3u8"
+
+[[stations]]
+name = "Big FM Tamil"
+url = "https://stream.zeno.fm/r2gn1pgm4qruv"

@@ -29,30 +29,43 @@ for arg in "$@"; do
 done
 
 log()  { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >&2; }
-vlog() { [[ "$VERBOSE" == true ]] && log "[verbose] $*"; }
+vlog() { [[ "$VERBOSE" == true ]] && log "[verbose] $*" || true; }
 err()  { echo "[ERROR] $*" >&2; }
 
 # --- Manifest: src|dest_rel (dest_rel is under DEST_ROOT) ---
 # home/* mirrors HOME layout. skills/prompts keep their current dirs. templates/* holds repo templates.
 PAIRS=(
-  # shell
+  # shell & system
   "${HOME}/.bashrc|home/.bashrc"
   "${HOME}/.bash_aliases|home/.bash_aliases"
   "${HOME}/.profile|home/.profile"
   "${HOME}/.bash_logout|home/.bash_logout"
-  # git / editor / tmux
+  "${HOME}/.sommelierrc|home/.sommelierrc"
+  "${HOME}/.config/weston.ini|home/.config/weston.ini"
+  "${HOME}/.config/cros-garcon.conf|home/.config/cros-garcon.conf"
+  "${HOME}/.config/fontconfig/fonts.conf|home/.config/fontconfig/fonts.conf"
+  "${HOME}/.config/htop/htoprc|home/.config/htop/htoprc"
+  # git / editor / tmux / ssh
   "${HOME}/.gitconfig|home/.gitconfig"
+  "${HOME}/.gitignore|home/.gitignore"
+  "${HOME}/.dockerignore|home/.dockerignore"
   "${HOME}/.vimrc|home/.vimrc"
   "${HOME}/.tmux.conf|home/.tmux.conf"
   "${HOME}/.selected_editor|home/.selected_editor"
+  "${HOME}/.ssh/config|home/.ssh/config"
+  "${HOME}/.config/pass-git-helper/git-pass-mapping.ini|home/.config/pass-git-helper/git-pass-mapping.ini"
   # emacs - plain files, git diffable (no tar)
   "${HOME}/.emacs.d/init.el|home/.emacs.d/init.el"
   "${HOME}/.emacs.d/custom.el|home/.emacs.d/custom.el"
   "${HOME}/.emacs.d/customizations|home/.emacs.d/customizations"
   "${HOME}/.emacs.d/bookmarks|home/.emacs.d/bookmarks"
+  "${HOME}/.emacs.d/.mc-lists.el|home/.emacs.d/.mc-lists.el"
   # safe configs (exclude secrets via rsync --exclude)
   "${HOME}/.config/gh/config.yml|home/.config/gh/config.yml"
   "${HOME}/.gnupg/gpg-agent.conf|home/.gnupg/gpg-agent.conf"
+  "${HOME}/.config/clojure/deps.edn|home/.config/clojure/deps.edn"
+  "${HOME}/.config/cliamp/config.toml|home/.config/cliamp/config.toml"
+  "${HOME}/.config/cliamp/radios.toml|home/.config/cliamp/radios.toml"
   # project templates (repo root)
   "${HOME}/MuggleBornPadawan/.gitignore|templates/.gitignore"
   "${HOME}/MuggleBornPadawan/Dockerfile|templates/Dockerfile"
@@ -63,11 +76,13 @@ PAIRS=(
   "${HOME}/.pi/agent/APPEND_SYSTEM.md|home/.pi/agent/APPEND_SYSTEM.md"
   "${HOME}/.pi/agent/settings.json|home/.pi/agent/settings.json"
   "${HOME}/.pi/agent/models.json|home/.pi/agent/models.json"
+  "${HOME}/.pi/agent/models-store.json|home/.pi/agent/models-store.json"
   "${HOME}/.pi/agent/bin|home/.pi/agent/bin"
   "${HOME}/.pi/agent/skills|skills/pi"
   "${HOME}/.agents/skills|skills/agents"
   "${HOME}/.gemini/config/skills|skills/agy/config"
   "${HOME}/.gemini/antigravity-cli/builtin/skills|skills/agy/builtin"
+  "${HOME}/.cursor/skills-cursor|skills/cursor"
   "${HOME}/.pi/agent/prompts|prompts/pi"
   # opencode (global)
   "${HOME}/.config/opencode/opencode.jsonc|home/.config/opencode/opencode.jsonc"
@@ -82,8 +97,15 @@ PAIRS=(
   "${HOME}/.gemini/antigravity-cli/settings.json|home/.gemini/antigravity-cli/settings.json"
   "${HOME}/.gemini/config/config.json|home/.gemini/config/config.json"
   "${HOME}/.gemini/config/mcp_config.json|home/.gemini/config/mcp_config.json"
+  "${HOME}/.gemini/config/projects|home/.gemini/config/projects"
   # ollama (global)
   "${HOME}/.ollama/config.json|home/.ollama/config.json"
+  # other ai tools
+  "${HOME}/.config/cursor/cli-config.json|home/.config/cursor/cli-config.json"
+  "${HOME}/.vibe/config.toml|home/.vibe/config.toml"
+  "${HOME}/.qwen/settings.json|home/.qwen/settings.json"
+  "${HOME}/.antigravity-ide/argv.json|home/.antigravity-ide/argv.json"
+  "${HOME}/.config/Antigravity IDE/User/settings.json|home/.config/Antigravity IDE/User/settings.json"
 )
 
 # Excludes for rsync (secrets, caches). Applied to all dir syncs.

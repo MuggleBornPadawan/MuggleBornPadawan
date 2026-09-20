@@ -1,0 +1,11 @@
+{
+  "general": {
+    "preferredEditor": "emacs"
+  },
+  "security": {
+    "auth": {
+      "selectedType": "qwen-oauth"
+    }
+  },
+  "$version": 2
+}

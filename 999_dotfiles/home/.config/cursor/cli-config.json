@@ -1,0 +1,91 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(ls)"
+    ],
+    "deny": []
+  },
+  "version": 1,
+  "editor": {
+    "vimMode": false
+  },
+  "display": {
+    "showLineNumbers": false,
+    "showThinkingBlocks": false,
+    "showStatusIndicators": true,
+    "showStatusLineRunningTime": false
+  },
+  "notifications": true,
+  "hints": true,
+  "modelSlashCommands": true,
+  "rewind": false,
+  "model": {
+    "modelId": "composer-2.5",
+    "displayModelId": "composer-2.5",
+    "displayName": "Composer 2.5 Fast",
+    "displayNameShort": "Composer 2.5 Fast",
+    "aliases": [],
+    "maxMode": false
+  },
+  "hasChangedDefaultModel": true,
+  "maxMode": false,
+  "modelParameters": {
+    "composer-2.5": [
+      {
+        "id": "fast",
+        "value": "true"
+      }
+    ]
+  },
+  "selectedModel": {
+    "modelId": "composer-2.5",
+    "parameters": [
+      {
+        "id": "fast",
+        "value": "true"
+      }
+    ]
+  },
+  "privacyCache": {
+    "ghostMode": false,
+    "privacyMode": 4,
+    "updatedAt": 1784813128590
+  },
+  "autoReviewAvailabilityCache": {
+    "backendUrl": "https://api2.cursor.sh",
+    "authCacheKey": "auth:google-oauth2|user_01K54936MWS1C3ZV89RS9HZZSR",
+    "available": true,
+    "updatedAt": 1784042432726
+  },
+  "serverConfigCache": {
+    "backendUrl": "https://api2.cursor.sh",
+    "authCacheKey": "auth:google-oauth2|user_01K54936MWS1C3ZV89RS9HZZSR",
+    "agentUrlConfig": {
+      "agentUrl": "https://agentn.global.api5.cursor.sh",
+      "agentnUrl": "https://agentn.global.api5.cursor.sh"
+    },
+    "cliSandboxDefaultEnabled": false,
+    "serverHttp2Config": 0,
+    "updatedAt": 1784813103301
+  },
+  "authInfo": {
+    "email": "ganesh.rajendran@gmail.com",
+    "displayName": "Ganesh Rajendran",
+    "userId": 292594880,
+    "authId": "google-oauth2|user_01K54936MWS1C3ZV89RS9HZZSR"
+  },
+  "network": {
+    "useHttp1ForAgent": false
+  },
+  "approvalMode": "allowlist",
+  "autoAcceptWebSearch": false,
+  "sandbox": {
+    "mode": "disabled",
+    "networkAccess": "user_config_with_defaults"
+  },
+  "runEverythingSettingsPromptStreak": 0,
+  "attribution": {
+    "attributeCommitsToAgent": true,
+    "attributePRsToAgent": true
+  }
+}
