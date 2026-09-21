@@ -27,3 +27,15 @@ _Avoid_: Subtitle, secondary title, description
 **Profile Text**:
 The full editorial text and quotes written about an Entry.
 _Avoid_: Blurb, bio, body, story
+
+**Social Presence**:
+The set of public network profiles and official web links associated with an Honoree.
+_Avoid_: Links, accounts, social media
+
+**Personal Profile**:
+An online account managed directly by or for an individual Honoree.
+_Avoid_: Personal handle, user account
+
+**Institutional Profile**:
+A studio, foundation, museum, or gallery account recorded when an Honoree has no Personal Profile.
+_Avoid_: Proxy account, secondary profile, backup link
