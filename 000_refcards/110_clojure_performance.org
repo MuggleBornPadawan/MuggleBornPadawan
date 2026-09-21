@@ -1,0 +1,251 @@
+#+TITLE: Clojure Performance Engineering Guide
+#+AUTHOR: Pi Coding Agent
+#+OPTIONS: toc:2 num:t
+#+STARTUP: showeverything
+
+* Measure First: Profiling and Benchmarking
+
+Do not optimize without measurement.
+
+** Avoid =time= for Microbenchmarks
+- The built-in =time= macro gives false measurements.
+- JIT warm-up and Garbage Collection distort the numbers.
+
+** Use Criterium for Microbenchmarks
+- Criterium runs independent warmup cycles.
+- It calculates statistical means, variance, and GC activity.
+
+#+BEGIN_SRC clojure
+(require '[criterium.core :as c])
+
+;; Quick benchmark (runs in ~few seconds)
+(c/quick-bench (my-function arg))
+
+;; Full statistical benchmark
+(c/bench (my-function arg))
+#+END_SRC
+
+** Use clj-async-profiler for Systems
+- Use =clj-async-profiler= for high-load analysis.
+- Generates interactive SVG flame graphs.
+- Avoids JVM safe-point bias.
+
+#+BEGIN_SRC clojure
+(require '[clj-async-profiler.core :as prof])
+
+;; Profile a code block
+(prof/profile (run-workload))
+
+;; Open browser UI at http://localhost:8080
+(prof/serve-ui 8080)
+#+END_SRC
+
+* The Hardware and JIT Mental Model
+
+To get maximum speed, align Clojure with CPU architecture and HotSpot JIT rules.
+
+** Memory and Cache Cost Hierarchy
+- *CPU Registers:* Instant access (0 cycles).
+- *L1d Cache (64-byte lines):* ~4–5 cycles.
+- *L2 Cache:* ~12–14 cycles.
+- *L3 Cache:* ~30–50 cycles.
+- *Main RAM:* ~150–200+ cycles (High penalty).
+- *Garbage Collector (GC):* Millions of cycles during collection pauses.
+
+** HotSpot JIT Requirements for Peak Speed
+- *Monomorphic call sites:* Calling one concrete implementation at a call site enables inlining.
+- *Bytecode size:* Keep hot functions small (< 325 bytes) for easy inlining.
+- *Separate cold paths:* Move error handling and debug logging into separate functions.
+- *Escape Analysis:* Temporary objects that do not escape run in registers, not on the heap.
+
+* Eliminate Compiler Friction
+
+By default, Clojure uses dynamic types. Dynamic types create reflection and boxing.
+
+** Enable Compiler Warnings
+Put these expressions at the top of performance namespaces:
+
+#+BEGIN_SRC clojure
+(set! *warn-on-reflection* true)
+(set! *unchecked-math* :warn-on-boxed)
+#+END_SRC
+
+- =*warn-on-reflection*=: Shows warnings when the compiler cannot infer Java types.
+- =*unchecked-math* :warn-on-boxed=: Throws warnings when primitive math boxes values.
+
+** Eliminate Boxing in Math Loops
+Unannotated numbers box into =java.lang.Long= on the heap.
+
+*** Slow (Boxes on every iteration and at return)
+#+BEGIN_SRC clojure
+(defn sum-up [n]
+  (loop [i 0 acc 0]
+    (if (< i n)
+      (recur (inc i) (+ acc i))
+      acc)))
+#+END_SRC
+
+*** Fast (Stays inside 64-bit CPU registers)
+#+BEGIN_SRC clojure
+(defn sum-up ^long [^long n]
+  (loop [i (long 0)
+         acc (long 0)]
+    (if (< i n)
+      (recur (unchecked-inc i) (unchecked-add acc i))
+      acc)))
+#+END_SRC
+
+- *Return type hint:* The =^long= before =[n]= prevents boxing when the caller receives the return value.
+
+* Function Invocation and JIT Inlining
+
+Every Clojure function implements =clojure.lang.IFn=. Calls go through interface dispatch.
+
+** Enable Direct Linking
+Clojure calls functions through dynamic Vars by default. This prevents JIT inlining.
+
+- Add this JVM flag for production builds:
+#+BEGIN_SRC bash
+-Dclojure.compiler.direct-linking=true
+#+END_SRC
+- *Result:* Replaces Var dereferencing with direct static method calls.
+- *Caution (Production Only):* Direct linking breaks REPL workflow.
+- Function updates in a running REPL do not update caller code.
+- Dynamic rebinding tools like =with-redefs= do not work.
+
+** Monomorphic vs Megamorphic Calls
+- *Monomorphic Call:* The call site executes only one function type. The JIT inlines it.
+- *Megamorphic Call:* The call site receives many different function objects. The JIT cannot inline.
+- *Rule:* Use explicit =loop=/=recur= on hot paths instead of dynamic higher-order functions.
+
+* Data Layout and Cache Locality
+
+Data layout controls CPU cache hit rates.
+
+** Collections Comparison Table
+
+| Data Structure | Cache Efficiency | Primary Use Case |
+|----------------+------------------+------------------|
+| *Primitive Arrays* (=long-array=) | *Highest* (Flat, contiguous, 0 pointer chasing) | Numerical computing, tight loops |
+| *=defrecord=* | *Good* (Named fields compiled directly to JVM class fields) | Domain models, structured data |
+| *Persistent Vectors / Maps* | *Moderate* (32-way trees, pointer chasing) | General application logic |
+| *Lazy Sequences* | *Lowest* (Allocates thunk nodes, creates GC pressure) | Stream processing (non-hot paths) |
+
+** Flat Memory via Primitive Arrays
+Hardware prefetchers pull 64-byte contiguous blocks into L1d cache:
+
+#+BEGIN_SRC clojure
+(defn sum-array ^long [^longs arr]
+  (let [len (alength arr)]
+    (loop [idx (long 0)
+           sum (long 0)]
+      (if (< idx len)
+        (recur (unchecked-inc idx)
+               (unchecked-add sum (aget arr idx)))
+        sum))))
+#+END_SRC
+
+** Fast Field Access with =defrecord=
+- Standard Maps: Compute hash codes and traverse node arrays.
+- =defrecord=: Accesses direct JVM fields at constant memory offsets.
+
+#+BEGIN_SRC clojure
+(defrecord Person [^String name ^long age])
+
+(def p (->Person "Alice" 30))
+
+;; Fast: Direct field access (same speed as Java)
+(.-age ^Person p)
+
+;; Slow: Keyword lookup on defrecord (slower than standard map)
+(:age p)
+#+END_SRC
+
+- *Rule:* Always use direct dot-access =(=.-field ^Type obj)= on hot paths.
+
+* Zero-Allocation Pipelines
+
+Object allocation pollutes CPU caches and triggers GC pauses.
+
+** Replace Lazy Sequences with Transducers
+Lazy sequences allocate =LazySeq= objects for every element.
+
+*** Slow (Allocates intermediate lazy sequence objects)
+#+BEGIN_SRC clojure
+(->> data
+     (map inc)
+     (filter even?)
+     (into []))
+#+END_SRC
+
+*** Fast (Zero intermediate collection allocations)
+#+BEGIN_SRC clojure
+(into [] (comp (map inc) (filter even?)) data)
+#+END_SRC
+
+** Use Transients for Batch Writes
+Persistent collections copy nodes on each change. Transients mutate in-place safely:
+
+#+BEGIN_SRC clojure
+(defn build-vector [^long n]
+  (loop [i (long 0)
+         v (transient [])]
+    (if (< i n)
+      (recur (unchecked-inc i) (conj! v i))
+      (persistent! v))))
+#+END_SRC
+
+- *Caution on Primitive Boxing:* Vectors store Java =Object= references (=Object[]=).
+- =conj!= boxes primitive numbers into =java.lang.Long=.
+- If zero primitive allocation is necessary, use primitive arrays (=long-array=).
+
+* Strings and I/O Operations
+
+String and I/O operations allocate large numbers of objects.
+
+** Efficient String Assembly
+- The =str= function in loops creates many temporary String objects.
+- Use =java.lang.StringBuilder= for high-frequency string concatenation.
+
+#+BEGIN_SRC clojure
+(defn build-string ^String [^long n]
+  (let [sb (StringBuilder.)]
+    (loop [i (long 0)]
+      (if (< i n)
+        (do (.append sb i)
+            (recur (unchecked-inc i)))
+        (.toString sb)))))
+#+END_SRC
+
+** Avoid Lazy I/O on Hot Paths
+- =line-seq= allocates lazy sequence objects for every line read.
+- Use =java.io.BufferedReader= with a direct loop on hot paths.
+- Use Java NIO (=ByteBuffer= and channels) for maximum I/O throughput.
+
+* Concurrency and Mutable State
+
+** State Containers Ranked by Overhead
+1. *=volatile!=*:
+   - Lowest overhead.
+   - Compiles to JVM volatile read/write.
+   - Zero lock, zero CAS retry overhead.
+2. *Java =AtomicLong= / =AtomicReference=*:
+   - Single CPU-level Compare-And-Swap (CAS) instruction.
+3. *Clojure =atom=*:
+   - Uses CAS internally, but manages metadata and watch handlers.
+4. *=ref= (Software Transactional Memory)*:
+   - High allocation and lock coordination. Avoid on latency-critical paths.
+
+* Summary Checklist
+
+- [ ] Measure with Criterium (=quick-bench=) and =clj-async-profiler= (never trust =time=).
+- [ ] Add =*warn-on-reflection* true= to namespaces.
+- [ ] Add =*unchecked-math* :warn-on-boxed= to namespaces.
+- [ ] Type-hint numerical loop arguments and function return values with =^long= or =^double=.
+- [ ] Keep hot functions small (< 325 bytes); isolate cold branches.
+- [ ] Replace lazy pipelines with Transducers or explicit =reduce=.
+- [ ] Use =defrecord= with dot-field access =(=.-field ^Type obj)=; avoid keyword access on records.
+- [ ] Use Java primitive arrays for tight numeric algorithms to avoid vector primitive boxing.
+- [ ] Use =StringBuilder= instead of =str= in tight string loops.
+- [ ] Avoid =line-seq= on latency-critical I/O paths.
+- [ ] Compile production artifacts with =-Dclojure.compiler.direct-linking=true= (keep disabled in REPL).
