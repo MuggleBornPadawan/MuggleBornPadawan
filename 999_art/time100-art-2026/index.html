@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TIME100 Art 2026 — Social Presence Registry</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #111827;
+      --surface-hover: #1f2937;
+      --surface-card: #182234;
+      --border: #2d3748;
+      --border-light: #374151;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      
+      --cat-leaders: #10b981;
+      --cat-leaders-bg: rgba(16, 185, 129, 0.15);
+      --cat-titans: #f59e0b;
+      --cat-titans-bg: rgba(245, 158, 11, 0.15);
+      --cat-icons: #8b5cf6;
+      --cat-icons-bg: rgba(139, 92, 246, 0.15);
+      --cat-innovators: #06b6d4;
+      --cat-innovators-bg: rgba(6, 182, 212, 0.15);
+      
+      --badge-personal: rgba(59, 130, 246, 0.2);
+      --badge-personal-text: #60a5fa;
+      --badge-inst: rgba(156, 163, 175, 0.2);
+      --badge-inst-text: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+
+    .header-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #fff;
+    }
+
+    .badge-collection {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .metric-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .metric-val {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 0.15rem;
+    }
+
+    .metric-sub {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+    }
+
+    .controls-wrapper {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .search-input-box {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.65rem 1rem 0.65rem 1rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+
+    .filter-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-right: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pill-btn {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .pill-btn:hover {
+      background: var(--surface-hover);
+      color: var(--text);
+    }
+
+    .pill-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .platform-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 0.75rem;
+    }
+
+    .platform-checkbox-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.375rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .platform-checkbox-btn:hover {
+      background: var(--surface-hover);
+      color: var(--text);
+    }
+
+    .platform-checkbox-btn.active {
+      border-color: var(--primary);
+      color: #fff;
+      background: rgba(99, 102, 241, 0.2);
+    }
+
+    .counter-status {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .table-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      overflow-x: auto;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+
+    th {
+      background: rgba(17, 24, 39, 0.9);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .index-col {
+      color: var(--text-dim);
+      font-weight: 600;
+      font-size: 0.8rem;
+      width: 40px;
+      text-align: center;
+    }
+
+    .honoree-cell {
+      min-width: 200px;
+    }
+
+    .honoree-name {
+      font-weight: 600;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .entry-id {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      font-family: monospace;
+    }
+
+    .category-badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+    }
+
+    .cat-Leaders {
+      background: var(--cat-leaders-bg);
+      color: var(--cat-leaders);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .cat-Titans {
+      background: var(--cat-titans-bg);
+      color: var(--cat-titans);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .cat-Icons {
+      background: var(--cat-icons-bg);
+      color: var(--cat-icons);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    .cat-Innovators {
+      background: var(--cat-innovators-bg);
+      color: var(--cat-innovators);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .link-cell {
+      min-width: 170px;
+    }
+
+    .profile-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: #93c5fd;
+      text-decoration: none;
+      font-size: 0.83rem;
+      transition: color 0.15s;
+      word-break: break-all;
+    }
+
+    .profile-link:hover {
+      color: #bfdbfe;
+      text-decoration: underline;
+    }
+
+    .type-badge {
+      font-size: 0.65rem;
+      font-weight: 500;
+      padding: 0.1rem 0.35rem;
+      border-radius: 0.25rem;
+      text-transform: capitalize;
+      margin-left: 0.25rem;
+      display: inline-block;
+    }
+
+    .type-personal {
+      background: var(--badge-personal);
+      color: var(--badge-personal-text);
+      border: 1px solid rgba(96, 165, 250, 0.25);
+    }
+
+    .type-institutional {
+      background: var(--badge-inst);
+      color: var(--badge-inst-text);
+      border: 1px solid rgba(203, 213, 225, 0.25);
+    }
+
+    .dash-empty {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    .empty-state {
+      padding: 3rem 1rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem 0.75rem;
+      }
+      .controls-wrapper {
+        padding: 0.85rem;
+      }
+      th, td {
+        padding: 0.6rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-title-row">
+        <div>
+          <h1>TIME100 Art 2026</h1>
+          <div class="subtitle">Public Network Profiles and Official Web Links</div>
+        </div>
+        <span class="badge-collection">Complete Extraction</span>
+      </div>
+
+      <div class="metrics-bar">
+        <div class="metric-card">
+          <div class="metric-label">Total Honorees</div>
+          <div class="metric-val" id="metric-honorees">100</div>
+          <div class="metric-sub">Across 97 Entries</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Websites</div>
+          <div class="metric-val" id="metric-websites">99</div>
+          <div class="metric-sub">99.0% verified coverage</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Instagram</div>
+          <div class="metric-val" id="metric-instagram">63</div>
+          <div class="metric-sub">45 Personal &bull; 18 Institutional</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">X (Twitter)</div>
+          <div class="metric-val" id="metric-x">21</div>
+          <div class="metric-sub">21.0% active coverage</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">LinkedIn</div>
+          <div class="metric-val" id="metric-linkedin">18</div>
+          <div class="metric-sub">18.0% verified coverage</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="controls-wrapper">
+      <div class="search-row">
+        <div class="search-input-box">
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search by honoree name, entry ID, or handle..."
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <div class="filter-pills-row">
+        <span class="filter-label">Category:</span>
+        <button class="pill-btn active" data-category="all">All (100)</button>
+        <button class="pill-btn" data-category="Leaders">Leaders (25)</button>
+        <button class="pill-btn" data-category="Titans">Titans (25)</button>
+        <button class="pill-btn" data-category="Icons">Icons (25)</button>
+        <button class="pill-btn" data-category="Innovators">Innovators (25)</button>
+      </div>
+
+      <div class="platform-filters">
+        <span class="filter-label">Require Platform:</span>
+        <label class="platform-checkbox-btn" id="btn-filter-ig">
+          <input type="checkbox" id="check-ig" style="display:none" />
+          <span>Has Instagram</span>
+        </label>
+        <label class="platform-checkbox-btn" id="btn-filter-x">
+          <input type="checkbox" id="check-x" style="display:none" />
+          <span>Has X (Twitter)</span>
+        </label>
+        <label class="platform-checkbox-btn" id="btn-filter-li">
+          <input type="checkbox" id="check-li" style="display:none" />
+          <span>Has LinkedIn</span>
+        </label>
+        <label class="platform-checkbox-btn" id="btn-filter-web">
+          <input type="checkbox" id="check-web" style="display:none" />
+          <span>Has Website</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="counter-status">
+      <span id="visible-count-text">Showing 100 of 100 Honorees</span>
+      <span id="filter-status-text"></span>
+    </div>
+
+    <div class="table-container">
+      <table id="registry-table">
+        <thead>
+          <tr>
+            <th class="index-col">#</th>
+            <th>Honoree</th>
+            <th>Category</th>
+            <th>Website</th>
+            <th>Instagram</th>
+            <th>X (Twitter)</th>
+            <th>LinkedIn</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Rows rendered via JavaScript -->
+        </tbody>
+      </table>
+      <div id="empty-message" class="empty-state" style="display:none;">
+        No records match your search criteria.
+      </div>
+    </div>
+
+    <footer>
+      TIME100 Art 2026 Registry &bull; Verified Public Profiles &bull; Generated September 2026
+    </footer>
+  </div>
+
+  <!-- Embedded Social Dataset Placeholder -->
+  <script id="social-dataset" type="application/json">
+{
+  "collection" : "TIME100 Art 2026",
+  "generated_at" : "2026-09-21T19:43:54.202722174Z",
+  "total_entries" : 97,
+  "total_honorees" : 100,
+  "completed_categories" : [ "Leaders", "Titans", "Icons", "Innovators" ],
+  "entries" : [ {
+    "id" : "amy-sherald",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Amy Sherald",
+      "website" : {
+        "url" : "https://www.hauserwirth.com/artists/11577-amy-sherald/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@asherald",
+        "url" : "https://www.instagram.com/asherald/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "jr",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "JR",
+      "website" : {
+        "url" : "https://www.jr-art.net/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@jr",
+        "url" : "https://www.instagram.com/jr/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@JRart",
+        "url" : "https://x.com/JRart",
+        "type" : "personal"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "bonnie-brennan",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Bonnie Brennan",
+      "website" : {
+        "url" : "https://www.christies.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@bbrennanchristies",
+        "url" : "https://www.instagram.com/bbrennanchristies/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : {
+        "handle" : "bonnie-brennan-6144822",
+        "url" : "https://www.linkedin.com/in/bonnie-brennan-6144822",
+        "type" : "personal"
+      }
+    } ]
+  }, {
+    "id" : "taryn-simon",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Taryn Simon",
+      "website" : {
+        "url" : "https://tarynsimon.com/",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "kerry-james-marshall",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Kerry James Marshall",
+      "website" : {
+        "url" : "https://www.davidzwirner.com/artists/kerry-james-marshall",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@kerryjamesmarshs",
+        "url" : "https://www.instagram.com/kerryjamesmarshs/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "wolfgang-tillmans",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Wolfgang Tillmans",
+      "website" : {
+        "url" : "http://tillmans.co.uk/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@wolfgang_tillmans",
+        "url" : "https://www.instagram.com/wolfgang_tillmans/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "jennifer-rubio",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Jennifer Rubio",
+      "website" : {
+        "url" : "https://www.awaytravel.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@jennifer",
+        "url" : "https://www.instagram.com/jennifer/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@jennifer",
+        "url" : "https://x.com/jennifer",
+        "type" : "personal"
+      },
+      "linkedin" : {
+        "handle" : "jenrubio",
+        "url" : "https://www.linkedin.com/in/jenrubio",
+        "type" : "personal"
+      }
+    } ]
+  }, {
+    "id" : "cao-fei",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Cao Fei",
+      "website" : {
+        "url" : "http://www.caofei.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@cao_fei",
+        "url" : "https://www.instagram.com/cao_fei/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "david-zwirner",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "David Zwirner",
+      "website" : {
+        "url" : "https://www.davidzwirner.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@davidzwirner",
+        "url" : "https://www.instagram.com/davidzwirner/",
+        "type" : "institutional"
+      },
+      "x" : {
+        "handle" : "@davidzwirner",
+        "url" : "https://x.com/davidzwirner",
+        "type" : "institutional"
+      },
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/company/david-zwirner/",
+        "type" : "institutional"
+      }
+    } ]
+  }, {
+    "id" : "charles-stewart",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Charles Stewart",
+      "website" : {
+        "url" : "https://www.sothebys.com/en/about/team/charles-f-stewart",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@charlesfstewart",
+        "url" : "https://www.instagram.com/charlesfstewart/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : {
+        "handle" : "cfstewart",
+        "url" : "https://www.linkedin.com/in/cfstewart",
+        "type" : "personal"
+      }
+    } ]
+  }, {
+    "id" : "anne-imhof",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Anne Imhof",
+      "website" : {
+        "url" : "https://anneimhof.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@anne_imhof",
+        "url" : "https://www.instagram.com/anne_imhof/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "hank-willis-thomas",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Hank Willis Thomas",
+      "website" : {
+        "url" : "https://www.hankwillisthomas.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@hankwillisthomas",
+        "url" : "https://www.instagram.com/hankwillisthomas/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "sheikha-hoor-al-qasimi",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Hoor Al Qasimi",
+      "website" : {
+        "url" : "https://sharjahart.org/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@hooralqasimi",
+        "url" : "https://www.instagram.com/hooralqasimi/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@HoorAlq",
+        "url" : "https://x.com/HoorAlq",
+        "type" : "personal"
+      },
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/in/hoor-al-qasimi-07829228/",
+        "type" : "personal"
+      }
+    } ]
+  }, {
+    "id" : "christopher-a-marinello",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Christopher A. Marinello",
+      "website" : {
+        "url" : "https://www.artrecovery.com/about/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@artrecovery",
+        "url" : "https://www.instagram.com/artrecovery/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : {
+        "handle" : "christopher-a-marinello-esq-4b59293b",
+        "url" : "https://www.linkedin.com/in/christopher-a-marinello-esq-4b59293b",
+        "type" : "personal"
+      }
+    } ]
+  }, {
+    "id" : "suhanya-raffel",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Suhanya Raffel",
+      "website" : {
+        "url" : "https://www.mplus.org.hk/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "dayanita-singh",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Dayanita Singh",
+      "website" : {
+        "url" : "http://dayanitasingh.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@dayanitasingh",
+        "url" : "https://www.instagram.com/dayanitasingh/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "ken-griffin",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Ken Griffin",
+      "website" : {
+        "url" : "https://www.citadel.com/leadership/kenneth-c-griffin/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : {
+        "handle" : "ken-griffin",
+        "url" : "https://www.linkedin.com/in/ken-griffin/",
+        "type" : "personal"
+      }
+    } ]
+  }, {
+    "id" : "noah-horowitz",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Noah Horowitz",
+      "website" : {
+        "url" : "https://www.artbasel.com/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "stan-prokopenko",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Stan Prokopenko",
+      "website" : {
+        "url" : "https://stanprokopenko.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@stanprokopenko",
+        "url" : "https://www.instagram.com/stanprokopenko/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@StanProkopenko",
+        "url" : "https://twitter.com/StanProkopenko",
+        "type" : "personal"
+      },
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/in/stanprokopenko/",
+        "type" : "personal"
+      }
+    } ]
+  }, {
+    "id" : "myriam-ben-salah",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Myriam Ben Salah",
+      "website" : {
+        "url" : "https://renaissancesociety.org/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@myriambensalah",
+        "url" : "https://www.instagram.com/myriambensalah/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "olugbile-holloway",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Olugbile Holloway",
+      "website" : {
+        "url" : "https://museum.ng/the-director-general/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@ncmmHQ",
+        "url" : "https://www.instagram.com/ncmmHQ/",
+        "type" : "institutional"
+      },
+      "x" : {
+        "handle" : "@nigeriancmm",
+        "url" : "https://x.com/nigeriancmm",
+        "type" : "institutional"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "dana-awartani",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Dana Awartani",
+      "website" : {
+        "url" : "http://danaawartani.com/",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "luke-nikas",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Luke Nikas",
+      "website" : {
+        "url" : "https://www.quinnemanuel.com/attorneys/nikas-luke/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@quinnemanuel",
+        "url" : "https://www.instagram.com/quinnemanuel/",
+        "type" : "institutional"
+      },
+      "x" : {
+        "handle" : "@quinnemanuel",
+        "url" : "https://twitter.com/quinnemanuel",
+        "type" : "institutional"
+      },
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/company/quinn-emanuel/",
+        "type" : "institutional"
+      }
+    } ]
+  }, {
+    "id" : "vanessa-horabuena",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Vanessa Horabuena",
+      "website" : {
+        "url" : "https://vanessahorabuena.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@vanessahorabuena",
+        "url" : "https://instagram.com/vanessahorabuena",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "matthew-affron",
+    "category" : "Leaders",
+    "honorees" : [ {
+      "name" : "Matthew Affron",
+      "website" : {
+        "url" : "https://philamuseum.org/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "alicia-keys-and-swizz-beatz",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Alicia Keys",
+      "website" : {
+        "url" : "https://aliciakeys.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@aliciakeys",
+        "url" : "https://www.instagram.com/aliciakeys/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@aliciakeys",
+        "url" : "https://x.com/aliciakeys",
+        "type" : "personal"
+      },
+      "linkedin" : null
+    }, {
+      "name" : "Swizz Beatz",
+      "website" : {
+        "url" : "https://thedeancollection.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@therealswizzz",
+        "url" : "https://www.instagram.com/therealswizzz/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@THEREALSWIZZZ",
+        "url" : "https://x.com/THEREALSWIZZZ",
+        "type" : "personal"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "rashid-johnson",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Rashid Johnson",
+      "website" : {
+        "url" : "https://www.hauserwirth.com/artists/2799-rashid-johnson/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@rashidjohnson",
+        "url" : "https://www.instagram.com/rashidjohnson/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "bernard-arnault",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Bernard Arnault",
+      "website" : {
+        "url" : "https://www.lvmh.com/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "max-hollein",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Max Hollein",
+      "website" : {
+        "url" : "https://www.metmuseum.org/about-the-met/leadership/max-hollein",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "jenny-holzer",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Jenny Holzer",
+      "website" : {
+        "url" : "https://projects.jennyholzer.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@jennyholzerstudio",
+        "url" : "https://www.instagram.com/jennyholzerstudio/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "carmelo-anthony",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Carmelo Anthony",
+      "website" : {
+        "url" : "https://thisiscarmelo.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@carmeloanthony",
+        "url" : "https://www.instagram.com/carmeloanthony/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@carmeloanthony",
+        "url" : "https://x.com/carmeloanthony",
+        "type" : "personal"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "simone-leigh",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Simone Leigh",
+      "website" : {
+        "url" : "https://matthewmarks.com/artists/simone-leigh",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "gerhard-richter",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Gerhard Richter",
+      "website" : {
+        "url" : "https://www.gerhard-richter.com/",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "kaws",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "KAWS",
+      "website" : {
+        "url" : "https://kawsone.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@kaws",
+        "url" : "https://www.instagram.com/kaws/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "tracey-emin",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Tracey Emin",
+      "website" : {
+        "url" : "https://traceyeminstudio.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@traceyeminstudio",
+        "url" : "https://www.instagram.com/traceyeminstudio/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "thelma-golden",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Thelma Golden",
+      "website" : {
+        "url" : "https://studiomuseum.org/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@thelmagolden",
+        "url" : "https://www.instagram.com/thelmagolden/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "michael-govan",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Michael Govan",
+      "website" : {
+        "url" : "https://www.lacma.org/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "jessica-morgan",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Jessica Morgan",
+      "website" : {
+        "url" : "https://diaart.org/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "matthew-bogdanos",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Matthew Bogdanos",
+      "website" : {
+        "url" : "https://manhattanda.org/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "refik-anadol",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Refik Anadol",
+      "website" : {
+        "url" : "https://refikanadol.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@refikanadol",
+        "url" : "https://www.instagram.com/refikanadol/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@refikanadol",
+        "url" : "https://x.com/refikanadol",
+        "type" : "personal"
+      },
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/in/refikanadol/",
+        "type" : "personal"
+      }
+    } ]
+  }, {
+    "id" : "adriano-pedrosa",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Adriano Pedrosa",
+      "website" : {
+        "url" : "https://masp.org.br/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@adrianopedrosa",
+        "url" : "https://www.instagram.com/adrianopedrosa/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "elizabeth-alexander",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Elizabeth Alexander",
+      "website" : {
+        "url" : "http://elizabethalexander.net/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@alexanderlizzy",
+        "url" : "https://www.instagram.com/alexanderlizzy/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@ProfessorEA",
+        "url" : "https://x.com/ProfessorEA",
+        "type" : "personal"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "larry-gagosian",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Larry Gagosian",
+      "website" : {
+        "url" : "https://gagosian.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@gagosian",
+        "url" : "https://www.instagram.com/gagosian/",
+        "type" : "institutional"
+      },
+      "x" : {
+        "handle" : "@gagosian",
+        "url" : "https://x.com/gagosian",
+        "type" : "institutional"
+      },
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/company/gagosian-gallery/",
+        "type" : "institutional"
+      }
+    } ]
+  }, {
+    "id" : "naomi-beckwith",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Naomi Beckwith",
+      "website" : {
+        "url" : "https://www.guggenheim.org/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "amy-cappellazzo-and-yuki-terase",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Amy Cappellazzo",
+      "website" : {
+        "url" : "https://www.artintelligenceglobal.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@artintelligenceglobal",
+        "url" : "https://www.instagram.com/artintelligenceglobal/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/company/art-intelligence-global/",
+        "type" : "institutional"
+      }
+    }, {
+      "name" : "Yuki Terase",
+      "website" : {
+        "url" : "https://www.artintelligenceglobal.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@artintelligenceglobal",
+        "url" : "https://www.instagram.com/artintelligenceglobal/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/company/art-intelligence-global/",
+        "type" : "institutional"
+      }
+    } ]
+  }, {
+    "id" : "kymberly-pinder",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Kymberly Pinder",
+      "website" : {
+        "url" : "https://www.art.yale.edu/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "susan-freedman",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Susan Freedman",
+      "website" : {
+        "url" : "https://www.publicartfund.org/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "joe-hage",
+    "category" : "Titans",
+    "honorees" : [ {
+      "name" : "Joe Hage",
+      "website" : {
+        "url" : "https://heni.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@heni",
+        "url" : "https://www.instagram.com/heni",
+        "type" : "institutional"
+      },
+      "x" : {
+        "handle" : "@heni",
+        "url" : "https://twitter.com/heni",
+        "type" : "institutional"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "diya-vij",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Diya Vij",
+      "website" : {
+        "url" : "https://www.nyc.gov/site/dcla/index.page",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@diyavij",
+        "url" : "https://www.instagram.com/diyavij/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : {
+        "handle" : "diya-vij-42083bb",
+        "url" : "https://www.linkedin.com/in/diya-vij-42083bb/",
+        "type" : "personal"
+      }
+    } ]
+  }, {
+    "id" : "jeffrey-gibson",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Jeffrey Gibson",
+      "website" : {
+        "url" : "http://www.jeffreygibson.net/",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "lorna-simpson",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Lorna Simpson",
+      "website" : {
+        "url" : "https://lsimpsonstudio.com",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@lornasimpson",
+        "url" : "https://www.instagram.com/lornasimpson/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "banksy",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Banksy",
+      "website" : {
+        "url" : "https://banksy.co.uk",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@banksy",
+        "url" : "https://www.instagram.com/banksy/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "sheila-hicks",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Sheila Hicks",
+      "website" : {
+        "url" : "http://www.sheilahicks.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@ateliersheilahicks",
+        "url" : "https://www.instagram.com/ateliersheilahicks/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "david-hammons",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "David Hammons",
+      "website" : null,
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "emily-wei-rales",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Emily Wei Rales",
+      "website" : {
+        "url" : "https://www.glenstone.org/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@glenstonemuseum",
+        "url" : "https://www.instagram.com/glenstonemuseum/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "gabriel-orozco",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Gabriel Orozco",
+      "website" : {
+        "url" : "https://www.mariangoodman.com/artists/54-gabriel-orozco/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "ronald-lauder",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Ronald Lauder",
+      "website" : {
+        "url" : "https://www.neuegalerie.org/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : {
+        "handle" : "@lauder_ronald",
+        "url" : "https://x.com/lauder_ronald",
+        "type" : "personal"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "theaster-gates",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Theaster Gates",
+      "website" : {
+        "url" : "https://www.theastergates.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@theastergates",
+        "url" : "https://www.instagram.com/theastergates/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "florentina-holzinger",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Florentina Holzinger",
+      "website" : {
+        "url" : "https://floholzinger.wordpress.com/",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "el-anatsui",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "El Anatsui",
+      "website" : {
+        "url" : "http://elanatsui.com/",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "josh-kline",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Josh Kline",
+      "website" : {
+        "url" : "http://joshkline.info/",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "hito-steyerl",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Hito Steyerl",
+      "website" : {
+        "url" : "https://www.estherschipper.com/artists/88-hito-steyerl/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "catherine-opie",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Catherine Opie",
+      "website" : {
+        "url" : "https://www.regenprojects.com/artists/catherine-opie",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@csopie",
+        "url" : "https://www.instagram.com/csopie/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "salman-toor",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Salman Toor",
+      "website" : {
+        "url" : "https://www.luhringaugustine.com/artists/salman-toor",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@salman.toor",
+        "url" : "https://www.instagram.com/salman.toor/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "amalia-mesa-bains",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Amalia Mesa-Bains",
+      "website" : {
+        "url" : "http://mesabains.com",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "magdalene-odundo",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Magdalene Odundo",
+      "website" : {
+        "url" : "http://magdaleneodundo.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@magdaleneodundo",
+        "url" : "https://www.instagram.com/magdaleneodundo/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "komal-shah",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Komal Shah",
+      "website" : {
+        "url" : "https://www.shahgarg.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@komalshahgarg",
+        "url" : "https://www.instagram.com/komalshahgarg/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "michael-heizer",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Michael Heizer",
+      "website" : {
+        "url" : "https://tripleaughtfoundation.org/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "philomene-magers-and-monika-spruth",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Philomene Magers",
+      "website" : {
+        "url" : "https://spruethmagers.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@spruethmagers",
+        "url" : "https://www.instagram.com/spruethmagers/",
+        "type" : "institutional"
+      },
+      "x" : {
+        "handle" : "@spruethmagers",
+        "url" : "https://x.com/spruethmagers",
+        "type" : "institutional"
+      },
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/company/sprueth-magers/",
+        "type" : "institutional"
+      }
+    }, {
+      "name" : "Monika Sprüth",
+      "website" : {
+        "url" : "https://spruethmagers.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@spruethmagers",
+        "url" : "https://www.instagram.com/spruethmagers/",
+        "type" : "institutional"
+      },
+      "x" : {
+        "handle" : "@spruethmagers",
+        "url" : "https://x.com/spruethmagers",
+        "type" : "institutional"
+      },
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/company/sprueth-magers/",
+        "type" : "institutional"
+      }
+    } ]
+  }, {
+    "id" : "sarah-lewis",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Sarah Lewis",
+      "website" : {
+        "url" : "https://sarahelizabethlewis.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@sarahelizabethlewis1",
+        "url" : "https://www.instagram.com/sarahelizabethlewis1/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "annabelle-selldorf",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Annabelle Selldorf",
+      "website" : {
+        "url" : "https://www.selldorf.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@selldorfarchitects",
+        "url" : "https://www.instagram.com/selldorfarchitects/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/company/selldorf-architects/",
+        "type" : "institutional"
+      }
+    } ]
+  }, {
+    "id" : "maxwell-graham",
+    "category" : "Icons",
+    "honorees" : [ {
+      "name" : "Maxwell Graham",
+      "website" : {
+        "url" : "https://maxwellgraham.biz/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@maxwellgrahamgallery",
+        "url" : "https://www.instagram.com/maxwellgrahamgallery/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "maurizio-cattelan",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Maurizio Cattelan",
+      "website" : {
+        "url" : "http://mauriziocattelan.altervista.org",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "lauren-halsey",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Lauren Halsey",
+      "website" : {
+        "url" : "http://www.laurenhalsey.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@summaeverythang",
+        "url" : "https://www.instagram.com/summaeverythang/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "trevor-paglen",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Trevor Paglen",
+      "website" : {
+        "url" : "https://paglen.studio/",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : {
+        "handle" : "@trevorpaglen",
+        "url" : "https://x.com/trevorpaglen",
+        "type" : "personal"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "alison-luchs",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Alison Luchs",
+      "website" : {
+        "url" : "https://www.nga.gov/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "christine-sun-kim",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Christine Sun Kim",
+      "website" : {
+        "url" : "http://christinesunkim.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@chrisunkim",
+        "url" : "https://www.instagram.com/chrisunkim/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "lawrence-abu-hamdan",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Lawrence Abu Hamdan",
+      "website" : {
+        "url" : "http://lawrenceabuhamdan.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@lawrenceabuhamdan",
+        "url" : "https://www.instagram.com/lawrenceabuhamdan",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "anne-kraybill",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Anne Kraybill",
+      "website" : {
+        "url" : "https://www.joslyn.org/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "michael-armitage",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Michael Armitage",
+      "website" : {
+        "url" : "https://whitecube.com/artists/artist/michael-armitage",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "sarah-arison",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Sarah Arison",
+      "website" : {
+        "url" : "https://www.arisonarts.org/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@saraharison",
+        "url" : "https://www.instagram.com/saraharison/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "gus-casely-hayford",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Gus Casely-Hayford",
+      "website" : {
+        "url" : "https://www.vam.ac.uk/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : {
+        "handle" : "@GusCaselyHayfor",
+        "url" : "https://x.com/GusCaselyHayfor",
+        "type" : "personal"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "wael-shawky",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Wael Shawky",
+      "website" : {
+        "url" : "https://www.lissongallery.com/artists/wael-shawky",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "cecilia-alemani",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Cecilia Alemani",
+      "website" : {
+        "url" : "https://www.ceciliaalemani.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@ceciliaalemani",
+        "url" : "https://www.instagram.com/ceciliaalemani/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "cameron-rowland",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Cameron Rowland",
+      "website" : {
+        "url" : "http://www.essexstreet.biz/artist/rowland",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "petra-collins",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Petra Collins",
+      "website" : {
+        "url" : "https://petra-collins.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@petrafcollins",
+        "url" : "https://www.instagram.com/petrafcollins/",
+        "type" : "personal"
+      },
+      "x" : {
+        "handle" : "@petracollins",
+        "url" : "https://x.com/petracollins",
+        "type" : "personal"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "alex-da-corte",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Alex Da Corte",
+      "website" : {
+        "url" : "https://matthewmarks.com/artists/alex-da-corte",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@alexdacorte",
+        "url" : "https://www.instagram.com/alexdacorte/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "tuan-andrew-nguyen",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Tuan Andrew Nguyen",
+      "website" : {
+        "url" : "https://www.tuanandrewnguyen.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@tuan.andrew.nguyen",
+        "url" : "https://www.instagram.com/tuan.andrew.nguyen/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "loic-gouzer",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Loïc Gouzer",
+      "website" : {
+        "url" : "https://www.fair-warning.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@loicgouzer",
+        "url" : "https://www.instagram.com/loicgouzer/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "marie-watt",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Marie Watt",
+      "website" : {
+        "url" : "https://www.mariewattstudio.com/",
+        "type" : "personal"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "leo-villareal",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Leo Villareal",
+      "website" : {
+        "url" : "http://villareal.net/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@leo_villareal_studio",
+        "url" : "https://www.instagram.com/leo_villareal_studio/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "danielle-mckinney",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Danielle Mckinney",
+      "website" : {
+        "url" : "https://marianneboeskygallery.com/artists/211-danielle-mckinney/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "tyler-mitchell",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Tyler Mitchell",
+      "website" : {
+        "url" : "https://tylermitchell.co/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@tylersphotos",
+        "url" : "https://www.instagram.com/tylersphotos/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "devon-rodriguez",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Devon Rodriguez",
+      "website" : {
+        "url" : "https://www.devonrodriguezart.com/",
+        "type" : "personal"
+      },
+      "instagram" : {
+        "handle" : "@devonrodriguezart",
+        "url" : "https://www.instagram.com/devonrodriguezart/",
+        "type" : "personal"
+      },
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "atsuko-ninagawa",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Atsuko Ninagawa",
+      "website" : {
+        "url" : "https://www.takeninagawa.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@takeninagawa",
+        "url" : "https://www.instagram.com/takeninagawa/",
+        "type" : "institutional"
+      },
+      "x" : {
+        "handle" : "@TakeNinagawa",
+        "url" : "https://twitter.com/TakeNinagawa",
+        "type" : "institutional"
+      },
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "max-teicher",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Max Teicher",
+      "website" : {
+        "url" : "https://gagosian.com/",
+        "type" : "institutional"
+      },
+      "instagram" : null,
+      "x" : null,
+      "linkedin" : null
+    } ]
+  }, {
+    "id" : "mazdak-sanii",
+    "category" : "Innovators",
+    "honorees" : [ {
+      "name" : "Mazdak Sanii",
+      "website" : {
+        "url" : "https://avantarte.com/",
+        "type" : "institutional"
+      },
+      "instagram" : {
+        "handle" : "@avant_arte",
+        "url" : "https://www.instagram.com/avant_arte/",
+        "type" : "institutional"
+      },
+      "x" : null,
+      "linkedin" : {
+        "url" : "https://www.linkedin.com/company/avant-arte/",
+        "type" : "institutional"
+      }
+    } ]
+  } ]
+}
+  </script>
+
+  <script>
+    (function () {
+      let rawData = null;
+      try {
+        const rawText = document.getElementById('social-dataset').textContent;
+        rawData = JSON.parse(rawText);
+      } catch (err) {
+        console.error('Failed to parse embedded dataset:', err);
+      }
+
+      // Flatten entries into individual Honoree records with Entry context
+      const records = [];
+      let globalIndex = 1;
+      if (rawData && rawData.entries) {
+        rawData.entries.forEach(entry => {
+          entry.honorees.forEach(h => {
+            records.push({
+              index: globalIndex++,
+              entryId: entry.id,
+              category: entry.category,
+              name: h.name,
+              website: h.website,
+              instagram: h.instagram,
+              x: h.x,
+              linkedin: h.linkedin
+            });
+          });
+        });
+      }
+
+      let activeCategory = 'all';
+      let searchQuery = '';
+      const activePlatformFilters = {
+        ig: false,
+        x: false,
+        li: false,
+        web: false
+      };
+
+      const tableBody = document.getElementById('table-body');
+      const emptyMsg = document.getElementById('empty-message');
+      const searchInput = document.getElementById('search-input');
+      const countText = document.getElementById('visible-count-text');
+
+      function formatUrl(url) {
+        if (!url) return '';
+        try {
+          const parsed = new URL(url);
+          return parsed.hostname.replace(/^www\./, '') + (parsed.pathname !== '/' ? parsed.pathname : '');
+        } catch {
+          return url.replace(/^https?:\/\//, '');
+        }
+      }
+
+      function render() {
+        const filtered = records.filter(r => {
+          // Category filter
+          if (activeCategory !== 'all' && r.category !== activeCategory) {
+            return false;
+          }
+
+          // Platform requirements
+          if (activePlatformFilters.ig && !r.instagram) return false;
+          if (activePlatformFilters.x && !r.x) return false;
+          if (activePlatformFilters.li && !r.linkedin) return false;
+          if (activePlatformFilters.web && !r.website) return false;
+
+          // Search query
+          if (searchQuery) {
+            const query = searchQuery.toLowerCase();
+            const inName = r.name.toLowerCase().includes(query);
+            const inId = r.entryId.toLowerCase().includes(query);
+            const inIg = r.instagram && r.instagram.handle && r.instagram.handle.toLowerCase().includes(query);
+            const inX = r.x && r.x.handle && r.x.handle.toLowerCase().includes(query);
+            if (!inName && !inId && !inIg && !inX) return false;
+          }
+
+          return true;
+        });
+
+        tableBody.innerHTML = '';
+
+        if (filtered.length === 0) {
+          emptyMsg.style.display = 'block';
+        } else {
+          emptyMsg.style.display = 'none';
+        }
+
+        filtered.forEach(r => {
+          const tr = document.createElement('tr');
+
+          // Index
+          const tdIdx = document.createElement('td');
+          tdIdx.className = 'index-col';
+          tdIdx.textContent = r.index;
+          tr.appendChild(tdIdx);
+
+          // Name
+          const tdName = document.createElement('td');
+          tdName.className = 'honoree-cell';
+          tdName.innerHTML = `
+            <div class="honoree-name">${escapeHtml(r.name)}</div>
+            <div class="entry-id">${escapeHtml(r.entryId)}</div>
+          `;
+          tr.appendChild(tdName);
+
+          // Category
+          const tdCat = document.createElement('td');
+          tdCat.innerHTML = `<span class="category-badge cat-${escapeHtml(r.category)}">${escapeHtml(r.category)}</span>`;
+          tr.appendChild(tdCat);
+
+          // Website
+          const tdWeb = document.createElement('td');
+          tdWeb.className = 'link-cell';
+          if (r.website && r.website.url) {
+            const hostDisplay = formatUrl(r.website.url);
+            tdWeb.innerHTML = `
+              <a href="${escapeHtml(r.website.url)}" target="_blank" rel="noopener noreferrer" class="profile-link" title="${escapeHtml(r.website.url)}">
+                ${escapeHtml(hostDisplay.length > 25 ? hostDisplay.substring(0, 24) + '…' : hostDisplay)}
+              </a>
+              <span class="type-badge type-${escapeHtml(r.website.type || 'personal')}">${escapeHtml(r.website.type || 'personal')}</span>
+            `;
+          } else {
+            tdWeb.innerHTML = `<span class="dash-empty">&mdash;</span>`;
+          }
+          tr.appendChild(tdWeb);
+
+          // Instagram
+          const tdIg = document.createElement('td');
+          tdIg.className = 'link-cell';
+          if (r.instagram && r.instagram.url) {
+            tdIg.innerHTML = `
+              <a href="${escapeHtml(r.instagram.url)}" target="_blank" rel="noopener noreferrer" class="profile-link">
+                ${escapeHtml(r.instagram.handle || '@link')}
+              </a>
+              <span class="type-badge type-${escapeHtml(r.instagram.type || 'personal')}">${escapeHtml(r.instagram.type || 'personal')}</span>
+            `;
+          } else {
+            tdIg.innerHTML = `<span class="dash-empty">&mdash;</span>`;
+          }
+          tr.appendChild(tdIg);
+
+          // X (Twitter)
+          const tdX = document.createElement('td');
+          tdX.className = 'link-cell';
+          if (r.x && r.x.url) {
+            tdX.innerHTML = `
+              <a href="${escapeHtml(r.x.url)}" target="_blank" rel="noopener noreferrer" class="profile-link">
+                ${escapeHtml(r.x.handle || '@link')}
+              </a>
+            `;
+          } else {
+            tdX.innerHTML = `<span class="dash-empty">&mdash;</span>`;
+          }
+          tr.appendChild(tdX);
+
+          // LinkedIn
+          const tdLi = document.createElement('td');
+          tdLi.className = 'link-cell';
+          if (r.linkedin && r.linkedin.url) {
+            const liDisplay = r.linkedin.handle ? r.linkedin.handle : 'View Profile';
+            tdLi.innerHTML = `
+              <a href="${escapeHtml(r.linkedin.url)}" target="_blank" rel="noopener noreferrer" class="profile-link">
+                ${escapeHtml(liDisplay.length > 22 ? liDisplay.substring(0, 20) + '…' : liDisplay)}
+              </a>
+            `;
+          } else {
+            tdLi.innerHTML = `<span class="dash-empty">&mdash;</span>`;
+          }
+          tr.appendChild(tdLi);
+
+          tableBody.appendChild(tr);
+        });
+
+        countText.textContent = `Showing ${filtered.length} of ${records.length} Honorees`;
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      // Event listeners
+      searchInput.addEventListener('input', e => {
+        searchQuery = e.target.value.trim();
+        render();
+      });
+
+      document.querySelectorAll('.pill-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeCategory = btn.dataset.category;
+          render();
+        });
+      });
+
+      function setupPlatformToggle(btnId, checkId, propKey) {
+        const btn = document.getElementById(btnId);
+        const check = document.getElementById(checkId);
+        btn.addEventListener('click', () => {
+          activePlatformFilters[propKey] = !activePlatformFilters[propKey];
+          check.checked = activePlatformFilters[propKey];
+          btn.classList.toggle('active', activePlatformFilters[propKey]);
+          render();
+        });
+      }
+
+      setupPlatformToggle('btn-filter-ig', 'check-ig', 'ig');
+      setupPlatformToggle('btn-filter-x', 'check-x', 'x');
+      setupPlatformToggle('btn-filter-li', 'check-li', 'li');
+      setupPlatformToggle('btn-filter-web', 'check-web', 'web');
+
+      // Initial render
+      render();
+    })();
+  </script>
+</body>
+</html>
