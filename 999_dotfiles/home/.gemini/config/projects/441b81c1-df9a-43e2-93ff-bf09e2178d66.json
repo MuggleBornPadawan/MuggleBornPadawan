@@ -1,0 +1,14 @@
+{
+  "id": "441b81c1-df9a-43e2-93ff-bf09e2178d66",
+  "name": "/home/rgroot",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///home/rgroot",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}
