@@ -31,10 +31,20 @@
          (clojure-ts-mode . rainbow-delimiters-mode)))
 
 ;; LSP support (eglot) — eglot-ensure for both (fallback safe)
+(defun my/clojure-format-on-save ()
+  "Format Clojure buffer before saving using eglot when active."
+  (add-hook 'before-save-hook
+            (lambda ()
+              (when (eglot-managed-p)
+                (eglot-format-buffer)))
+            nil t))
+
 (use-package eglot
   :ensure nil
   :hook ((clojure-mode . eglot-ensure)
-         (clojure-ts-mode . eglot-ensure)))
+         (clojure-ts-mode . eglot-ensure)
+         (clojure-mode . my/clojure-format-on-save)
+         (clojure-ts-mode . my/clojure-format-on-save)))
 
 
 ;;;;
