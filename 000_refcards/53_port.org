@@ -3,6 +3,7 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#spec-driven-development---simon-martinelli][spec driven development - simon martinelli]]
   - [[#impact-of-ai-on-coding][impact of ai on coding]]
   - [[#performant-code][performant code]]
   - [[#postgresql---full-stack][postgresql - full stack]]
@@ -71,6 +72,27 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** spec driven development - simon martinelli
+*** intro
+- ainativedev - tessl
+- ai native developement
+  - spec centric dev
+  - context aware dev
+  - agent experience (ax) 
+- caution: ai is not a compiler 
+- spring - https://start.spring.io/ 
+- process - ai unified process (aiup) - https://unifiedprocess.ai/
+- greenfield vs brownfield 
+*** spec-driven dev (sdd)
+- define the intended behavior of the system
+- serve as shared contract between business and dev
+- are the single source of truth
+- reduce guesswork and improve quality
+*** inputs
+- entity relation (er) model
+- attributes
+- use cases (uc) 
+- guidelines 
 ** impact of ai on coding
 - software development (spec > code) can be delegated and reviewed by senior developers (human in the loop)
   - the best parts to delegate to AI are the aspect oriented programming (aop) plumbing parts like logging, security, metrics, auth, caching, error handling / retry, transactions-type features, ui/ux, hosting (cloud/on-prem), networking, documentation, et al
