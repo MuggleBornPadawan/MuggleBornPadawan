@@ -2139,6 +2139,48 @@
         }
       },
       {
+        "id": "grok-4.7",
+        "name": "Grok 4.7 (30% Off)",
+        "api": "openai-responses",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 1.4,
+          "output": 4.2,
+          "cacheRead": 0.35,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "sessionAffinityFormat": "openai-nosession"
+        },
+        "contextWindow": 500000,
+        "maxTokens": 500000,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": null
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        }
+      },
+      {
         "id": "grok-build-0.1",
         "name": "Grok Build 0.1",
         "api": "openai-responses",
@@ -2794,9 +2836,9 @@
         }
       }
     ],
-    "checkedAt": 1790133924300,
-    "lastModified": 1790105582000,
-    "etag": "W/\"3b36baa8a0e6047ae9d4fbc12bb555e8\""
+    "checkedAt": 1790179315472,
+    "lastModified": 1790159381000,
+    "etag": "W/\"991b580fd280916334404f8d0ab7b5b7\""
   },
   "opencode-go": {
     "models": [
@@ -3892,7 +3934,7 @@
         }
       }
     ],
-    "checkedAt": 1790133924303,
+    "checkedAt": 1790179315468,
     "lastModified": 1790028946000,
     "etag": "W/\"ced500f3d4855617ae90476fd69793dc\""
   },
@@ -4743,7 +4785,7 @@
         }
       }
     ],
-    "checkedAt": 1790133924312,
+    "checkedAt": 1790179315465,
     "lastModified": 1789986573000,
     "etag": "W/\"fee80210a431c8e0feeb613aa6215687\""
   }

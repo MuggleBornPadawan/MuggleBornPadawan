@@ -1,0 +1,87 @@
+#+TITLE: God's Eye View - Technical Stack
+#+AUTHOR: Assistant
+#+DATE: 2026-09-23
+
+* System Overview
+- *Name:* God's Eye View (GEV)
+- *Type:* Real-time 3D geospatial intelligence client
+- *Model:* Local-first web application with a server proxy
+- *Design:* No large UI framework (Vanilla JS)
+
+* Frontend Stack
+** Core Technologies
+- *Language:* JavaScript (ECMAScript Modules / ESM)
+- *UI Library:* None (Vanilla JS + DOM API)
+- *Bundler:* Vite (version 6.x)
+- *CSS:* Custom CSS with responsive layouts and HUD overlays
+
+** Geospatial & 3D Visualization
+- *3D Engine:* CesiumJS (v1.124+) via =vite-plugin-cesium=
+- *3D Tiles:* Google Photorealistic 3D Tiles
+- *Basemaps:*
+  - Esri World Imagery (default keyless satellite)
+  - OpenStreetMap (fallback basemap)
+  - Cesium ion (Google 3D and global terrain)
+- *Vector Tiles:* =@mapbox/vector-tile= (v3.0.0)
+- *Protobuf Parser:* =pbf= (v5.1.2)
+
+** Orbit & Coordinates Math
+- *Satellite Math:* =satellite.js= (SGP4 propagation model)
+- *Geoid Height:* =egm96-universal= (EGM96 geoid conversions)
+- *Military Grid:* =mgrs= (Military Grid Reference System)
+- *GRIB Weather:* =@meri-imperiumi/eccodes-wasm= (ECMWF ecCodes WebAssembly)
+
+** Media & Shaders
+- *Video Stream:* =hls.js= (HTTP Live Streaming for CCTV cameras)
+- *Custom Shaders:* WebGL / GLSL shaders
+- *Sensor Filters:* CRT, Night Vision (NVG), Thermal (FLIR), Noir, Snow
+
+* Backend & Server Proxy
+** Runtime
+- *Platform:* Node.js (supported versions: 24.14+ or 26+)
+- *Protocol:* HTTP/HTTPS and WebSockets (=ws=)
+
+** Security & Proxy Functions
+- *API Key Storage:* Local owner-only files (=.env= or macOS Keychain)
+- *SSRF Protection:* Strict target host allowlists
+- *Rate Limits:* Per-IP client throttling
+- *HLS Stream Leases:* In-memory proxy for live camera feeds
+
+* Artificial Intelligence & Voice
+** Agent Service
+- *Provider:* OpenAI Realtime API
+- *Communication:* Low-latency WebSocket connection
+- *Models:* GPT-4o Realtime / Mini
+
+** Agent Tools & Capabilities
+- 29 client-side execution tools
+- Spatial queries and distance measurement
+- Boundary and route drawing
+- Camera control and automatic framing
+- HUD text generation
+
+* External Data Sources & APIs
+** Movement & Tracking
+- *Flights (ADS-B):* OpenSky Network, adsb.lol
+- *Maritime (AIS):* AISStream WebSocket
+- *Satellites:* CelesTrak (Two-Line Element sets / TLE)
+- *Traffic Flow:* TomTom Traffic API + OpenStreetMap roads
+- *Transit:* GTFS-Realtime operator feeds
+- *Bikeshare:* GBFS feeds
+
+** Infrastructure & Physical World
+- *Wildfires:* NASA FIRMS (thermal anomalies)
+- *Earthquakes:* USGS Earthquake Hazards Program
+- *CCTV:* City open data portals (Austin, TfL London, Caltrans, etc.)
+- *ALPR Cameras:* OpenStreetMap / DeFlock tags
+- *Radio:* Radio Browser API
+- *Space Launches:* Launch Library 2
+- *Weather:* NOAA GFS, ECMWF IFS, NOAA nowCOAST radar
+- *Routing:* OSRM via FOSSGIS servers
+
+* Tooling & Quality Assurance
+** Build & Code Quality
+- *Formatter:* Prettier (v3.9.6)
+- *Image Processing:* Sharp (v0.35.4)
+- *Integration Tests:* Puppeteer (headless Chrome)
+- *Custom Scripts:* Setup doctor, package boundary checkers
