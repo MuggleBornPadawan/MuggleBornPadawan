@@ -1,6 +1,6 @@
 {
   "colorScheme": "colorblind-friendly dark",
-  "model": "Gemini 3.6 Flash (Low)",
+  "model": "Gemini 3.8 Flash (High)",
   "permissions": {
     "allow": [
       "command(pass)"
