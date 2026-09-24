@@ -13,4 +13,4 @@ Do NOT write any implementation code yet. Instead:
 
 Save the plan to a markdown file so it can be reviewed and executed later.
 
-> Source: `~/.pi/agent/prompts/plan.md` (symlink target, Pi canonical)
+> Source: `~/.pi/agent/prompts/plan.md`
