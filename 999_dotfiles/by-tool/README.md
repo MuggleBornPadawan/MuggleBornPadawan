@@ -23,6 +23,8 @@
 
 ## opencode
 - Globals: `home/.config/opencode/opencode.jsonc`, `package.json`, `package-lock.json`, `.gitignore`, `plugins/compaction-optimizer.js`
+- Commands: `home/.config/opencode/commands/` (6 slash commands: `commit`, `fix`, `git-sync`, `onboard`, `plan`, `review`)
+- Skills: `skills/opencode/` (17 skills) <- `~/.config/opencode/skills/`
 - Home source: `~/.config/opencode/`
 - Excluded: `node_modules/` (584 files, 30MB), lean
 - Plugin: custom `compaction-optimizer.js` (preserve state on compact)

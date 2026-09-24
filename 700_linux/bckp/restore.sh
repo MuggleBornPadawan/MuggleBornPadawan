@@ -24,7 +24,7 @@ for arg in "$@"; do
 done
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >&2; }
-vlog() { [[ "$VERBOSE" == true ]] && log "[verbose] $*"; }
+vlog() { [[ "$VERBOSE" == true ]] && log "[verbose] $*" || true; }
 
 # Same manifest as dotfiles.sh but reversed: dest_rel|src
 PAIRS=(
@@ -53,12 +53,14 @@ PAIRS=(
   "skills/agents|${HOME}/.agents/skills"
   "skills/agy/config|${HOME}/.gemini/config/skills"
   "skills/agy/builtin|${HOME}/.gemini/antigravity-cli/builtin/skills"
+  "skills/opencode|${HOME}/.config/opencode/skills"
   "prompts/pi|${HOME}/.pi/agent/prompts"
   "home/.config/opencode/opencode.jsonc|${HOME}/.config/opencode/opencode.jsonc"
   "home/.config/opencode/package.json|${HOME}/.config/opencode/package.json"
   "home/.config/opencode/package-lock.json|${HOME}/.config/opencode/package-lock.json"
   "home/.config/opencode/.gitignore|${HOME}/.config/opencode/.gitignore"
   "home/.config/opencode/plugins|${HOME}/.config/opencode/plugins"
+  "home/.config/opencode/commands|${HOME}/.config/opencode/commands"
   "home/.gemini/settings.json|${HOME}/.gemini/settings.json"
   "home/.gemini/trustedFolders.json|${HOME}/.gemini/trustedFolders.json"
   "home/.gemini/projects.json|${HOME}/.gemini/projects.json"

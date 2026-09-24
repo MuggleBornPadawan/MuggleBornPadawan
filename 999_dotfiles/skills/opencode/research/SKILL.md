@@ -1,0 +1,1 @@
+/home/rgroot/.pi/agent/skills/research/SKILL.md

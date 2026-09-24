@@ -52,7 +52,7 @@ git branch -vv
 ### 3. Stage
 
 ```bash
-git add 700_linux/scripts/sysinfo.sh 999_dotfiles/home 999_dotfiles/prompts 999_dotfiles/skills 999_dotfiles/templates 999_dotfiles/by-tool 2>/dev/null || true
+git add 700_linux/bckp 700_linux/scripts/sysinfo.sh 999_dotfiles/home 999_dotfiles/prompts 999_dotfiles/skills 999_dotfiles/templates 999_dotfiles/by-tool 2>/dev/null || true
 # Also check for other modified tracked files:
 git status --short
 # If untracked files outside 999_dotfiles are needed, ask user before adding

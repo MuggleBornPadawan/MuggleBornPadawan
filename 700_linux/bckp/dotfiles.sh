@@ -83,6 +83,7 @@ PAIRS=(
   "${HOME}/.gemini/config/skills|skills/agy/config"
   "${HOME}/.gemini/antigravity-cli/builtin/skills|skills/agy/builtin"
   "${HOME}/.cursor/skills-cursor|skills/cursor"
+  "${HOME}/.config/opencode/skills|skills/opencode"
   "${HOME}/.pi/agent/prompts|prompts/pi"
   # opencode (global)
   "${HOME}/.config/opencode/opencode.jsonc|home/.config/opencode/opencode.jsonc"
@@ -90,6 +91,7 @@ PAIRS=(
   "${HOME}/.config/opencode/package-lock.json|home/.config/opencode/package-lock.json"
   "${HOME}/.config/opencode/.gitignore|home/.config/opencode/.gitignore"
   "${HOME}/.config/opencode/plugins|home/.config/opencode/plugins"
+  "${HOME}/.config/opencode/commands|home/.config/opencode/commands"
   # gemini global (agy)
   "${HOME}/.gemini/settings.json|home/.gemini/settings.json"
   "${HOME}/.gemini/trustedFolders.json|home/.gemini/trustedFolders.json"
@@ -119,6 +121,7 @@ RSYNC_EXCLUDES=(
   --exclude='*.log'
   --exclude='.cache/'
   --exclude='__pycache__/'
+  --exclude='*.pyc'
   --exclude='node_modules/'
   --exclude='sessions/'
   --exclude='models/'
@@ -223,5 +226,5 @@ if [[ "$FAILED" -gt 0 ]]; then exit 1; fi
 
 # hint
 if [[ -d "${DEST_ROOT}/.git" || -d "${HOME}/MuggleBornPadawan/.git" ]]; then
-  log "Tip: cd ~/MuggleBornPadawan && git status --short && git add 999_dotfiles/home 999_dotfiles/templates 999_dotfiles/skills 999_dotfiles/prompts 999_dotfiles/by-tool && git commit -m 'chore: dotfiles backup $(date +%Y-%m-%d)'"
+  log "Tip: cd ~/MuggleBornPadawan && git status --short && git add 700_linux/bckp 999_dotfiles/home 999_dotfiles/templates 999_dotfiles/skills 999_dotfiles/prompts 999_dotfiles/by-tool && git commit -m 'chore: dotfiles backup $(date +%Y-%m-%d)'"
 fi

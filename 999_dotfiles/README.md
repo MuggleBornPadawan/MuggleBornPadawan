@@ -26,6 +26,7 @@
     agents/           # from ~/.agents/skills
     agy/config/       # from ~/.gemini/config/skills
     agy/builtin/      # from ~/.gemini/antigravity-cli/builtin/skills
+    opencode/         # from ~/.config/opencode/skills
   prompts/
     pi/               # from ~/.pi/agent/prompts
 ```
@@ -64,6 +65,8 @@
 | `~/.config/opencode/package.json` | `home/.config/opencode/package.json` | opencode |
 | `~/.config/opencode/package-lock.json` | `home/.config/opencode/package-lock.json` | opencode lock |
 | `~/.config/opencode/plugins/` | `home/.config/opencode/plugins/` | opencode plugins (node_modules excluded) |
+| `~/.config/opencode/commands/` | `home/.config/opencode/commands/` | opencode custom commands |
+| `~/.config/opencode/skills/` | `skills/opencode/` | opencode skills |
 | `~/.config/opencode/.gitignore` | `home/.config/opencode/.gitignore` | opencode ignore |
 | `~/.gemini/settings.json` | `home/.gemini/settings.json` | gemini global |
 | `~/.gemini/trustedFolders.json` | `home/.gemini/trustedFolders.json` | gemini |

@@ -62,6 +62,7 @@ git diff --stat 2>&1 | head -n 20 || true
 
 # Show what would be added (explicit list per manifest)
 STAGE_LIST=(
+  "700_linux/bckp"
   "700_linux/scripts/sysinfo.sh"
   "999_dotfiles/home"
   "999_dotfiles/prompts"
