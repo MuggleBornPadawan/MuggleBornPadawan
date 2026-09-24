@@ -12,7 +12,7 @@ A prototype is **throwaway code that answers a question**. The question decides 
 Identify which question is being answered, using the user's prompt, the surrounding code, or by asking if the user is around:
 
 - **"Does this logic / state model feel right?"** → [LOGIC.md](LOGIC.md). Build a single shareable HTML file (free-play buttons plus tabbed guided walkthroughs) that pushes the state machine through cases that are hard to reason about on paper, and that a non-developer can drive. **Clojure option:** if the state is a pure `ns` (data in → data out), also offer a `bb` REPL harness: `bb -e "(require 'my.ns) (my.ns/transition state event)"` or a one-file `src/prototype_logic.clj` with `(comment ...)` blocks for CIDER `C-c C-e`. HTML is still best when non-devs must click.
-- **"What should this look like?"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar. **Clojure/Quil option:** if visual/creative (per `AGENTS.md` Quil stack), use `quil` sketch (`lein run` / `clojure -M -m quil.sketch`) as one variant. Otherwise HTML/CSS.
+- **"What should this look like?"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar. **Clojure/Quil option:** if visual/creative 2D or 3D (per `AGENTS.md` Quil stack), use `clojure-quil` (`lein run` / `clojure -M -m art.core`, `:p3d` for 3D) as one variant. For browser 3D, use `scittle-threejs` (single HTML file + Three.js via CDN, zero build step, served with `bb serve`). For desktop games or real-time simulations, use `clojure-raylib` (`b12n-oss/raylib-clj`, embedded nREPL on port 7888). Otherwise HTML/CSS.
 
 The two branches produce very different artifacts, so getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend `ns` → logic; a page or component → UI via HTML or Quil) and state the assumption at the top of the prototype.
 
@@ -22,7 +22,7 @@ The two branches produce very different artifacts, so getting this wrong wastes 
 
 2. **Trivial to run — Clojure lean.** A prototype starts from one command in the project's task runner:
    - Logic (Clojure): `bb prototype-logic` (via `bb.edn` task) or `clojure -M -e "(load-file \"prototype.clj\")"` or single HTML file double-click
-   - UI (Clojure/Quil): `bb quil-prototype` or `clojure -M -m my.prototype-sketch`
+   - UI (Clojure/Quil): `bb quil-prototype` or `clojure -M -m my.prototype-sketch`; UI (Browser 3D): `bb serve` (`scittle-threejs` single HTML); Simulation/Game (Raylib): `clojure -M:run` (`clojure-raylib` template)
    - Generic fallback: `bb <name>`, `clojure -M <path>`, `python <path>`, etc.
    Either way, no thinking required to start it. Prefer `bb` on this 6 Gi box (fast, low RAM) over cold JVM.
 
@@ -37,5 +37,7 @@ The two branches produce very different artifacts, so getting this wrong wastes 
 ## Clojure Guardrails
 
 - Don't add `quil` or `http-kit` to `deps.edn` without asking (per `AGENTS.md` minimal deps).
+- For browser 3D prototypes, use `scittle-threejs` (zero-build HTML via CDN); do not introduce `shadow-cljs` or `npm`.
+- Raylib prototype: use `clojure-raylib` (`b12n-oss/raylib-clj`); run with `clojure`, not `clj`; never use `-XstartOnFirstThread` on Linux.
 - For pure logic, prefer `bb` + EDN over HTML if the audience is devs + CIDER. For non-devs, HTML wins.
-- Quil prototype: keep sketch single-file, no `lein` plugins unless already in repo.
+- Quil prototype: use `clojure-quil`; keep sketch single-file, no `lein` plugins unless already in repo.

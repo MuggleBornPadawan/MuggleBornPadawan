@@ -19,13 +19,16 @@
   - Install: curl upstream scripts to `/usr/local/bin` (not `apt install clojure`); `default-jre-headless` = `openjdk-17` must be avoided
   - No global `~/.clojure/deps.edn` or `~/.lein/profiles.clj` — per-project only
 - Editor/REPL workflow: Emacs 30.1 (`/usr/bin/emacs`, config `~/.emacs.d/init.el` + `customizations/setup-clojure.el`) with CIDER + `clojure-ts-mode` + `eglot` (`clojure-lsp` for Clojure) — structure code and instructions for REPL-driven eval in Emacs; see `setup-clojure.el` for keys (`C-j` eval, `C-c C-v`/`C-M-r`/`C-c u`); `lsp-mode` installed but not used for Clojure
-- Visual/creative coding: Processing stack, via Quil (https://quil.info/) — use the quil library for Clojure sketches
+- Visual / creative coding & graphics:
+  - 2D/3D generative art, math & vector plotters: Processing stack via Quil (https://quil.info/) — use `quil/quil` (`:java2d` for 2D, `:p3d` for OpenGL 3D, DXF for CAD/3D printing)
+  - Desktop games & real-time simulations: Raylib via `b12n-oss/raylib-clj` (Panama FFM on JDK 25; no `-XstartOnFirstThread` on Linux)
+  - Browser 3D & WebGL: Scittle + Three.js (zero-build, single-file HTML, served via `bb http-server`)
 - REPL-driven development: prefer evaluating code in a running REPL over one-off scripts
 - Testing: `clojure.test`; run tests before claiming anything works
 - Databases:
   - PostgreSQL for server/production persistence
   - SQLite for local/embedded/small projects and prototypes
-- Web/frontend/HTTP libraries: no fixed preference yet
+- Web/frontend/HTTP libraries: no fixed preference yet; for browser graphics/3D, prefer zero-build Scittle over npm/shadow-cljs
 - Dependencies: keep them minimal; prefer small well-maintained libraries
 - Code style: community style guide (idiomatic `->`/`->>` threading, namespaces clean of unused requires)
 
