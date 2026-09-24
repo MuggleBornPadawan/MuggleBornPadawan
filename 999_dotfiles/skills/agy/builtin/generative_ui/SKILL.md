@@ -41,7 +41,9 @@ small interactive experiences for the user.
     `--muted-foreground`, `--placeholder`), and accents
     (`--primary`/`--primary-foreground`, `--secondary`/`--secondary-foreground`,
     `--accent`) are all available. Typography is applied for you on the document
-    body — you do not need to set a font.
+    body — you do not need to set a font, and never use sub-12px micro-text
+    (`text-[10px]`, `text-[11px]`, or CSS `font-size` below `12px`; keep
+    `text-xs` / `12px` as the minimum floor unless the user asks).
 
 *   **Text & Surface Colors**: Use semantic variables (`bg-[var(--card)]`,
     `text-[var(--foreground)]`, `text-[var(--muted-foreground)]`)

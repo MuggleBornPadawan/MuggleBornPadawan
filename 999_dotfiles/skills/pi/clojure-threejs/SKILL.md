@@ -1,5 +1,5 @@
 ---
-name: scittle-threejs
+name: clojure-threejs
 description: "Build interactive 3D browser graphics, WebGL scenes, and spatial prototypes in Clojure with zero build tools using Scittle and Three.js. Use when creating browser 3D visualizations, WebGL prototypes, or lightweight 3D web apps without Node.js or shadow-cljs."
 ---
 
