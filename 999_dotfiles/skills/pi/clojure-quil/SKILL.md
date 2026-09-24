@@ -1,36 +1,39 @@
 ---
 name: clojure-quil
-description: "Build 2D/3D generative art, creative coding sketches, visual simulations, and vector/DXF plotter graphics with Quil and Processing in Clojure. Use when creating Quil 2D or 3D sketches, setting up live REPL visual workflows, exporting SVG/PDF/DXF, or implementing generative algorithms."
+description: "Build 2D/3D procedural visual art, generative systems, and plotter graphics with Quil and Processing in Clojure. Use when implementing procedural content generation (PCG), flow fields, noise algorithms, L-systems, recursive geometry, or reproducible seeded artwork."
 ---
 
-# Clojure Quil Skill
+# Clojure Quil Skill: Procedural Visual Art
 
-Use this skill to build visual art, generative graphics, and creative sketches in Clojure with [Quil](http://quil.info/) (Processing).
+Use this skill to build procedural content generation (PCG) systems and generative visual art in Clojure with [Quil](http://quil.info/) (Processing).
 
 ---
 
-## 1. Golden Rules (Read Before Writing Sketches)
+## 1. Golden Rules for Procedural Art
 
+* **Separate Data Generation From Drawing**:
+  * Write pure Clojure functions to generate art data.
+  * Generate point lists, shapes, and colors as pure data first.
+  * Send the generated data to Quil only to render pixels.
+* **Guarantee Determinism With Seeds**:
+  * Set `(q/random-seed seed)` and `(q/noise-seed seed)`.
+  * The same seed must always produce the same image.
+  * Store the seed in metadata or file names.
 * **Always Use Functional Mode (`fun-mode`)**:
-  * Never mutate global variables inside `draw`.
+  * Do not mutate global variables in `draw`.
   * Pass `:middleware [m/fun-mode m/pause-on-error]`.
-  * State flows immutably: `setup` -> `update` -> `draw`.
-* **Always Pass Vars for Live REPL Reloading**:
-  * Use `#'setup`, `#'update-state`, `#'draw-state` in `(q/sketch ...)`.
+  * Pass state immutably: `setup` -> `update` -> `draw`.
+* **Pass Vars for Live REPL Reloading**:
+  * Use `#'setup`, `#'update-state`, and `#'draw-state` in `(q/sketch ...)`.
   * Store the sketch in `(defonce sketch ...)`.
-  * When you re-evaluate a function in Emacs CIDER (`C-c C-e` or `C-j`), the running window updates immediately without closing.
-* **Always Include `pause-on-error`**:
-  * Add `m/pause-on-error` to `:middleware`.
-  * If your code throws an exception during live evaluation, the sketch freezes instead of crashing. Fix the code and re-eval to resume.
-* **Never Call Context Functions Outside Sketches**:
-  * `(q/random)`, `(q/width)`, and `(q/color)` throw a `NullPointerException` if called at the top-level.
-  * Use pure Clojure (`rand`, `rand-int`) outside sketches, or wrap calls in `(quil.applet/with-applet sketch ...)`.
-* **Disable Loop for Static Art**:
-  * For static images, call `(q/no-loop)` in `setup`.
-  * Redraw on demand via `(.redraw sketch)` to avoid high CPU usage.
-* **3D Mode Requires `:p3d`**:
-  * For 3D geometry and lights, set `:renderer :p3d` in `(q/sketch ...)`.
-  * Default renderer is `:java2d` (2D only).
+  * Re-evaluating a function in Emacs (`C-c C-c` or `C-j`) updates the canvas immediately.
+* **Stop the Animation Loop for Static PCG**:
+  * Call `(q/no-loop)` in `setup` for static renders.
+  * Call `(.redraw sketch)` from the REPL to generate a new variation.
+* **Never Call Quil Math Outside Sketches**:
+  * `(q/random)`, `(q/width)`, and `(q/noise)` fail outside active sketches.
+  * Use pure Clojure functions (`rand`, `rand-int`) outside sketches.
+  * Or wrap outside calls in `(quil.applet/with-applet sketch ...)`.
 
 ---
 
@@ -50,9 +53,87 @@ Use this skill to build visual art, generative graphics, and creative sketches i
 
 ---
 
-## 3. Template A: Live Interactive REPL Easel (Animated)
+## 3. Core PCG Algorithms in Clojure
 
-Use this template for real-time animations, simulations, and particle systems.
+### Cosine Color Palettes (Inigo Quilez Formula)
+
+Generate procedural color palettes with cosine functions:
+`color(t) = a + b * cos(2 * PI * (c * t + d))`
+
+```clojure
+(defn cosine-palette
+  "Return [r g b] vector (0.0 to 1.0) for phase t."
+  [t {:keys [a b c d]}]
+  (mapv (fn [ai bi ci di]
+          (let [tau (* 2.0 Math/PI)
+                val (+ ai (* bi (Math/cos (* tau (+ (* ci t) di)))))]
+            (max 0.0 (min 1.0 val))))
+        a b c d))
+
+;; Preset: Neon Rainbow
+(def neon-palette
+  {:a [0.5 0.5 0.5]
+   :b [0.5 0.5 0.5]
+   :c [1.0 1.0 1.0]
+   :d [0.0 0.33 0.67]})
+
+;; Preset: Warm Desert
+(def desert-palette
+  {:a [0.5 0.5 0.5]
+   :b [0.5 0.5 0.5]
+   :c [2.0 1.0 0.0]
+   :d [0.5 0.20 0.25]})
+```
+
+### 2D Noise Flow Field Generator
+
+Generate particle paths that follow 2D Perlin noise angles:
+
+```clojure
+(defn trace-flow-path
+  "Generate a procedural curve through a noise vector field."
+  [start-x start-y {:keys [steps step-len noise-scale]}]
+  (loop [step 0
+         x (double start-x)
+         y (double start-y)
+         path [[start-x start-y]]]
+    (if (>= step steps)
+      path
+      (let [angle (* (q/noise (* x noise-scale) (* y noise-scale)) (* 2.0 Math/PI) 2.0)
+            nx (+ x (* step-len (Math/cos angle)))
+            ny (+ y (* step-len (Math/sin angle)))]
+        (recur (inc step) nx ny (conj path [nx ny]))))))
+```
+
+### Recursive Grid Subdivision (Quadtree PCG)
+
+Subdivide rectangles recursively for generative layouts:
+
+```clojure
+(defn subdivide-rect
+  "Recursively split a rectangle into smaller generative cells."
+  [x y w h depth max-depth min-size]
+  (let [split? (< (rand) 0.75)]
+    (if (or (>= depth max-depth)
+            (< w (* min-size 2))
+            (< h (* min-size 2))
+            (not split?))
+      [{:x x :y y :w w :h h :depth depth}]
+      (let [half-w (/ w 2.0)
+            half-h (/ h 2.0)
+            next-depth (inc depth)]
+        (concat
+         (subdivide-rect x y half-w half-h next-depth max-depth min-size)
+         (subdivide-rect (+ x half-w) y half-w half-h next-depth max-depth min-size)
+         (subdivide-rect x (+ y half-h) half-w half-h next-depth max-depth min-size)
+         (subdivide-rect (+ x half-w) (+ y half-h) half-w half-h next-depth max-depth min-size))))))
+```
+
+---
+
+## 4. Template A: Live Generative Flow Field (Interactive)
+
+Use this template for real-time procedural animations and particle systems.
 
 Create `src/art/core.clj`:
 
@@ -64,36 +145,52 @@ Create `src/art/core.clj`:
 
 (defn setup []
   (q/frame-rate 60)
-  (q/color-mode :hsb 360 100 100 1.0)
-  ;; Return initial immutable state map
-  {:time 0.0
-   :particles (for [_ (range 150)]
-                {:x (q/random (q/width))
-                 :y (q/random (q/height))
-                 :speed (q/random 1.0 3.0)
-                 :hue (q/random 180 260)})})
+  (q/color-mode :rgb 1.0)
+  ;; State holds PCG parameters and active entities
+  {:seed 42
+   :time 0.0
+   :noise-scale 0.005
+   :particles (for [_ (range 200)]
+                {:x (q/random 800)
+                 :y (q/random 800)
+                 :speed (q/random 1.5 3.5)
+                 :life (q/random 100 300)})})
 
 (defn update-state [state]
-  (-> state
-      (update :time + 0.02)
-      (update :particles
-              (fn [ps]
-                (map (fn [p]
-                       (-> p
-                           (update :y #(mod (+ % (:speed p)) (q/height)))
-                           (update :x #(+ % (Math/sin (+ (:y p) (:time state)))))))
-                     ps)))))
+  (let [ns-scale (:noise-scale state)
+        t (:time state)]
+    (-> state
+        (update :time + 0.005)
+        (update :particles
+                (fn [ps]
+                  (map (fn [p]
+                         (let [angle (* (q/noise (* (:x p) ns-scale)
+                                                 (* (:y p) ns-scale)
+                                                 t)
+                                        (* 2.0 Math/PI) 4.0)
+                               nx (+ (:x p) (* (:speed p) (Math/cos angle)))
+                               ny (+ (:y p) (* (:speed p) (Math/sin angle)))]
+                           (if (or (< nx 0) (> nx 800) (< ny 0) (> ny 800))
+                             {:x (q/random 800) :y (q/random 800) :speed (:speed p) :life 200}
+                             (assoc p :x nx :y ny))))
+                       ps))))))
 
 (defn draw-state [state]
-  (q/background 220 20 15)
-  (doseq [{:keys [x y hue]} (:particles state)]
-    (q/stroke hue 80 95 0.7)
-    (q/stroke-weight 4)
-    (q/point x y)))
+  ;; Semi-transparent fade gives motion trails
+  (q/fill 0.05 0.05 0.08 0.1)
+  (q/no-stroke)
+  (q/rect 0 0 (q/width) (q/height))
+
+  ;; Render procedural particles
+  (doseq [{:keys [x y speed]} (:particles state)]
+    (let [t-val (/ speed 3.5)]
+      (q/stroke 0.2 (+ 0.4 (* 0.6 t-val)) 1.0 0.8)
+      (q/stroke-weight 2)
+      (q/point x y))))
 
 (defn create-sketch []
   (q/sketch
-    :title "Live Quil Easel"
+    :title "Live PCG Flow Field"
     :size [800 800]
     :setup #'setup
     :update #'update-state
@@ -101,80 +198,86 @@ Create `src/art/core.clj`:
     :features [:keep-on-top]
     :middleware [m/fun-mode m/pause-on-error]))
 
-;; Defonce ensures evaluating the file does not open duplicate windows
 (defonce sketch (create-sketch))
 
 (defn -main [& _args]
   (create-sketch))
 ```
 
-### Emacs CIDER Workflow:
-1. Start REPL with `M-x cider-jack-in-clj`.
-2. Load the buffer with `C-c C-k`. The window opens.
-3. Edit `draw-state` or `update-state`.
-4. Re-evaluate the function with `C-c C-c` or `C-j`.
-5. The open window reflects changes on the next frame instantly.
+### Live REPL Workflow:
+1. Start REPL: `M-x cider-jack-in-clj`.
+2. Load buffer: `C-c C-k`. The window opens.
+3. Edit `noise-scale`, `update-state`, or colors.
+4. Evaluate form: `C-c C-c` or `C-j`.
+5. The window updates instantly.
 
 ---
 
-## 4. Template B: Static Generative Art & Reproducibility
+## 5. Template B: Reproducible High-Resolution Static Art
 
-Use this template (inspired by Tyler Hobbs) for high-resolution static art with seed logging and code snapshots.
+Use this template for static procedural artworks. It logs seeds and saves output images.
 
 ```clojure
 (ns art.static
   (:require [quil.core :as q]
-            [genartlib.util :refer [w h set-color-mode]])
+            [genartlib.util :refer [w h]])
   (:gen-class))
 
-(defn draw-art [seed]
-  (println "Rendering seed:" seed)
+(defn generate-art-data [seed]
   (q/random-seed seed)
   (q/noise-seed seed)
+  (let [count 600]
+    (for [i (range count)]
+      (let [t (/ (double i) count)
+            radius (w (* 0.35 (Math/sqrt t)))
+            angle (* t 40.0 Math/PI)
+            noise-offset (* (w 0.05) (- (q/noise (* t 5.0)) 0.5))]
+        {:x (+ (w 0.5) (* (+ radius noise-offset) (Math/cos angle)))
+         :y (+ (h 0.5) (* (+ radius noise-offset) (Math/sin angle)))
+         :size (+ (w 0.003) (* (w 0.015) (q/noise (* t 10.0))))
+         :alpha (+ 0.2 (* 0.7 (q/noise (+ 100.0 (* t 3.0)))))}))))
 
-  ;; Background
-  (q/background 40 5 95)
-
-  ;; Generative drawing operations
-  (q/stroke 210 60 30 0.8)
-  (q/stroke-weight (w 0.002))
-  (dotimes [i 200]
-    (let [x (w (+ 0.1 (* 0.8 (q/random 1.0))))
-          y (h (+ 0.1 (* 0.8 (q/random 1.0))))
-          len (w (* 0.05 (q/noise (* i 0.1))))]
-      (q/line x y (+ x len) (+ y len)))))
+(defn render-art [seed]
+  (println "Rendering seed:" seed)
+  (let [elements (generate-art-data seed)]
+    ;; Dark background
+    (q/background 15 15 22)
+    (q/no-stroke)
+    ;; Draw procedural elements
+    (doseq [{:keys [x y size alpha]} elements]
+      (q/fill 240 180 80 (* alpha 255))
+      (q/ellipse x y size size))))
 
 (defn setup []
   (q/smooth)
-  (q/no-loop)
-  (set-color-mode))
+  (q/no-loop))
 
 (defn draw []
-  (let [seed (System/nanoTime)
-        filename (str "output/art-" seed ".png")]
-    (draw-art seed)
+  (let [seed (System/currentTimeMillis)
+        filename (str "output/pcg-" seed ".png")]
+    (render-art seed)
     (q/save filename)
-    (println "Saved image:" filename)))
+    (println "Saved static PCG render:" filename)))
 
-(defn create-static-art []
+(defn create-static-sketch []
   (q/sketch
-    :title "Static Generative Artwork"
+    :title "Static PCG Artwork"
     :size [1200 1200]
     :setup setup
     :draw draw))
 
-(defonce static-art (create-static-art))
+(defonce static-sketch (create-static-sketch))
 
-;; Call from REPL to generate a new piece with a new seed:
+;; Call from REPL to generate a new seed:
 (defn redraw! []
-  (.redraw static-art))
+  (.redraw static-sketch))
 ```
 
 ---
 
-## 5. Template C: Pen Plotter & Vector Export (SVG / PDF)
+## 6. Template C: Pen Plotter & Vector Art (SVG Export)
 
-Use this template to generate resolution-independent vector files for pen plotters (AxiDraw) and laser cutters.
+Use this template to generate procedural vector paths for pen plotters (AxiDraw) and laser cutters.
 
 ```clojure
 (ns art.plotter
@@ -182,104 +285,115 @@ Use this template to generate resolution-independent vector files for pen plotte
             [genartlib.curves :refer [chaikin-curve]]
             [genartlib.random :refer [gauss]]))
 
-(defn generate-plot-paths []
-  ;; Generate organic curves with Chaikin smoothing
-  (for [y (range 100 900 20)]
-    (let [points (for [x (range 100 900 40)]
-                   [x (+ y (gauss 0 10))])]
-      (chaikin-curve points 3))))
+(defn generate-plotter-lines [seed]
+  (q/random-seed seed)
+  (for [y (range 150 850 15)]
+    (let [raw-points (for [x (range 100 900 30)]
+                       (let [dist-center (Math/abs (- x 500))
+                             envelope (max 0.0 (- 1.0 (/ dist-center 400.0)))
+                             y-offset (* envelope (gauss 0 18))]
+                         [x (+ y y-offset)]))]
+      ;; Smooth points with Chaikin algorithm
+      (chaikin-curve raw-points 3))))
 
-(defn export-svg [filepath]
+(defn export-svg [filepath seed]
   (q/sketch
     :size [1000 1000]
     :renderer :svg
     :output-file filepath
     :draw (fn []
-            (let [paths (generate-plot-paths)]
+            (let [lines (generate-plotter-lines seed)]
               (q/background 255)
               (q/no-fill)
               (q/stroke 0)
               (q/stroke-weight 1.5)
-              (doseq [path paths]
+              (doseq [polyline lines]
                 (q/begin-shape)
-                (doseq [[x y] path]
+                (doseq [[x y] polyline]
                   (q/vertex x y))
                 (q/end-shape))
-              (println "Plotter SVG exported successfully to:" filepath)
+              (println "SVG exported to:" filepath)
               (q/exit)))))
 ```
 
 ---
 
-## 6. Template D: 3D Graphics & Navigation (`:renderer :p3d`)
+## 7. Template D: 3D Procedural Sculptures (`:renderer :p3d`)
 
-Use this template for 3D sculptures, polyhedra, mathematical surfaces, or first-person camera navigation.
+Use this template for 3D procedural structures, polyhedra, and DXF export for 3D printing.
 
 ```clojure
-(ns art.three-d
+(ns art.sculpture-3d
   (:require [quil.core :as q]
             [quil.middleware :as m])
   (:gen-class))
 
 (defn setup []
   (q/frame-rate 60)
-  {:rot 0.0})
+  {:rot 0.0
+   :seed 99})
 
 (defn update-state [state]
   (update state :rot + 0.01))
 
 (defn draw-state [state]
-  (q/background 20)
-  (q/lights)                          ;; Enable 3D lighting
-
-  ;; Translate to center of 3D viewport
+  (q/background 15)
+  (q/lights)
   (q/with-translation [(/ (q/width) 2) (/ (q/height) 2) 0]
     (q/rotate-x (:rot state))
-    (q/rotate-y (* 1.5 (:rot state)))
+    (q/rotate-y (* 1.3 (:rot state)))
+    (q/stroke 100 200 255)
+    (q/no-fill)
 
-    (q/fill 0 200 255)
-    (q/stroke 255)
-    (q/box 150)))                      ;; Render 3D cube (or q/sphere)
+    ;; Render procedural helix ring
+    (let [steps 120]
+      (dotimes [i steps]
+        (let [theta (* (/ (double i) steps) (* 4.0 Math/PI))
+              r (+ 180 (* 40 (Math/sin (* theta 3.0))))
+              x (* r (Math/cos theta))
+              y (* r (Math/sin theta))
+              z (* 80 (Math/sin (* theta 2.0)))]
+          (q/with-translation [x y z]
+            (q/box 12)))))))
 
 (defn create-3d-sketch []
   (q/sketch
-    :title "Quil 3D Sketch"
+    :title "3D Procedural Sculpture"
     :size [800 800]
-    :renderer :p3d                     ;; Enables OpenGL 3D engine
+    :renderer :p3d
     :setup #'setup
     :update #'update-state
     :draw #'draw-state
-    ;; Optional: add m/navigation-3d for instant WASD + mouse-look camera controls
     :middleware [m/fun-mode m/pause-on-error]))
 
 (defonce sketch-3d (create-3d-sketch))
 ```
 
-*Note: For 3D printing and CAD, export 3D geometry to DXF with `(q/begin-raw :dxf "model.dxf")` and `(q/end-raw)`.*
+*Note: Export 3D geometry to DXF with `(q/begin-raw :dxf "model.dxf")` and `(q/end-raw)`.*
 
 ---
 
-## 7. Generative Art Toolkit (`genartlib`)
+## 8. Generative Art Toolkit (`genartlib`)
 
-When writing generative algorithms, use `thobbs/genartlib`:
+Use `thobbs/genartlib` for procedural generation tasks:
 
 | Namespace | Function | Purpose |
 | :--- | :--- | :--- |
-| `genartlib.curves` | `(chaikin-curve pts depth)` | Smooths rough line segments into organic hand-drawn curves. |
-| `genartlib.poisson-disc` | `(poisson-disc-sample min-dist w h)` | Blue noise point distribution with guaranteed minimum spacing. |
-| `genartlib.random` | `(gauss mean sd)` | Gaussian normal distribution sampling instead of uniform random. |
-| `genartlib.plotter` | `(sort-curves-for-plotting curves)` | Optimizes toolpaths to minimize pen-up transit on physical plotters. |
-| `genartlib.util` | `(w pct)`, `(h pct)` | Dimensions relative to image width/height (resolution-independent art). |
+| `genartlib.curves` | `(chaikin-curve pts depth)` | Smooths rough segments into organic curves. |
+| `genartlib.poisson-disc` | `(poisson-disc-sample min-dist w h)` | Blue noise distribution with minimum distance. |
+| `genartlib.random` | `(gauss mean sd)` | Gaussian normal distribution sampling. |
+| `genartlib.plotter` | `(sort-curves-for-plotting curves)` | Optimizes paths to reduce pen-up transit. |
+| `genartlib.util` | `(w pct)`, `(h pct)` | Dimensions relative to canvas (resolution-independent). |
 
 ---
 
-## 8. Troubleshooting Checklist
+## 9. Troubleshooting Checklist
 
 | Symptom | Cause | Solution |
 | :--- | :--- | :--- |
-| `NullPointerException` on `(q/random)` | Called outside sketch context | Use pure Clojure `rand` or wrap in `(quil.applet/with-applet sketch ...)`. |
+| `NullPointerException` on `(q/random)` | Called outside sketch context | Use pure Clojure `rand` or wrap in `(quil.applet/with-applet ...)`. |
 | Modifying code does not update running window | Forgot var quotation | Pass `#'draw-state` and `#'update-state`, not `draw-state`. |
-| Re-evaluating file opens a second window | Re-calling `(q/sketch)` | Wrap sketch definition in `(defonce sketch (create-sketch))`. |
+| Re-evaluating file opens a second window | Re-called `(q/sketch)` | Wrap sketch in `(defonce sketch (create-sketch))`. |
 | Sketch window crashes on typo | Missing error middleware | Add `m/pause-on-error` to `:middleware` vector. |
 | CPU usage stays at 100% on static sketch | Loop running at 60 FPS | Call `(q/no-loop)` in `setup`. Trigger redraws with `(.redraw sketch)`. |
-| Text does not show in exported PDF | Default text mode | Call `(q/text-mode :shape)` or `(q/text-mode :model)` at the start of draw. |
+| Random values differ across identical seeds | Mixed Clojure `rand` with Quil `q/random` | Use only Quil seeded functions or a seeded `java.util.Random` instance. |

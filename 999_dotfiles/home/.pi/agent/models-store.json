@@ -24,7 +24,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 200000,
-        "maxTokens": 32000
+        "maxTokens": 32000,
+        "type": "chat"
       },
       {
         "id": "claude-fable-5",
@@ -63,7 +64,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-fable-5-1",
@@ -102,7 +104,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-haiku-4-5",
@@ -132,7 +135,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-opus-4-5",
@@ -162,7 +166,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-opus-4-6",
@@ -198,7 +203,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-opus-4-7",
@@ -236,7 +242,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-opus-4-8",
@@ -275,7 +282,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-opus-5",
@@ -314,7 +322,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-opus-5-5",
@@ -353,7 +362,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-sonnet-4",
@@ -383,7 +393,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-sonnet-4-5",
@@ -413,7 +424,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-sonnet-4-6",
@@ -449,7 +461,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "claude-sonnet-5",
@@ -486,7 +499,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "deepseek-v4-flash",
@@ -522,7 +536,8 @@
           "high": "high",
           "xhigh": null,
           "max": "max"
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "deepseek-v4-flash-vision-exp",
@@ -568,7 +583,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "deepseek-v4-pro",
@@ -604,7 +620,8 @@
           "high": "high",
           "xhigh": null,
           "max": "max"
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "deepseek-v4.1-flash",
@@ -650,7 +667,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3-flash",
@@ -689,7 +707,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.1-pro",
@@ -728,7 +747,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.5-flash",
@@ -767,7 +787,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.5-flash-lite",
@@ -806,7 +827,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.6-flash",
@@ -845,7 +867,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.7-flash",
@@ -884,7 +907,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.8-flash",
@@ -923,7 +947,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "glm-5",
@@ -948,7 +973,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 204800,
-        "maxTokens": 131072
+        "maxTokens": 131072,
+        "type": "chat"
       },
       {
         "id": "glm-5.1",
@@ -973,7 +999,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 204800,
-        "maxTokens": 131072
+        "maxTokens": 131072,
+        "type": "chat"
       },
       {
         "id": "glm-5.2",
@@ -1007,7 +1034,8 @@
           "high": "high",
           "xhigh": null,
           "max": "max"
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "glm-5.3",
@@ -1041,7 +1069,8 @@
           "high": "high",
           "xhigh": null,
           "max": "max"
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "glm-5.3-flash",
@@ -1086,7 +1115,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5",
@@ -1129,7 +1159,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5-codex",
@@ -1172,7 +1203,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5-nano",
@@ -1215,7 +1247,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.1",
@@ -1258,7 +1291,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.1-codex",
@@ -1301,7 +1335,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.1-codex-max",
@@ -1344,7 +1379,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.1-codex-mini",
@@ -1387,7 +1423,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.2",
@@ -1430,7 +1467,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.2-codex",
@@ -1473,7 +1511,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.3-codex",
@@ -1516,7 +1555,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.4",
@@ -1561,7 +1601,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.4-mini",
@@ -1606,7 +1647,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.4-nano",
@@ -1649,7 +1691,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.4-pro",
@@ -1694,7 +1737,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.5",
@@ -1739,7 +1783,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.5-pro",
@@ -1782,7 +1827,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.6-luna",
@@ -1827,7 +1873,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.6-sol",
@@ -1872,7 +1919,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.6-terra",
@@ -1917,7 +1965,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-6-astra",
@@ -1962,7 +2011,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-6-luna",
@@ -2007,7 +2057,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-6-sol",
@@ -2052,7 +2103,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "grok-4.5",
@@ -2094,7 +2146,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "grok-4.6",
@@ -2136,7 +2189,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "grok-4.7",
@@ -2178,7 +2232,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "grok-build-0.1",
@@ -2218,7 +2273,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "kimi-k2.5",
@@ -2255,7 +2311,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "kimi-k2.6",
@@ -2294,7 +2351,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "kimi-k2.7-code",
@@ -2330,7 +2388,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "kimi-k3",
@@ -2377,7 +2436,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "ling-3.0-flash-fin-free",
@@ -2402,7 +2462,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 262144,
-        "maxTokens": 32768
+        "maxTokens": 32768,
+        "type": "chat"
       },
       {
         "id": "mimo-v2.6-flash-free",
@@ -2438,7 +2499,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "minimax-m2.5",
@@ -2463,7 +2525,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 204800,
-        "maxTokens": 131072
+        "maxTokens": 131072,
+        "type": "chat"
       },
       {
         "id": "minimax-m2.7",
@@ -2489,7 +2552,8 @@
           "supportsLongCacheRetention": false
         },
         "contextWindow": 204800,
-        "maxTokens": 131072
+        "maxTokens": 131072,
+        "type": "chat"
       },
       {
         "id": "minimax-m3",
@@ -2525,7 +2589,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "muse-spark-1.2",
@@ -2567,7 +2632,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "muse-spark-1.2-contributor-free",
@@ -2609,7 +2675,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "muse-spark-1.3",
@@ -2651,7 +2718,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "muse-spark-1.3-contributor-free",
@@ -2693,7 +2761,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "nemotron-3-ultra-free",
@@ -2718,7 +2787,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 1000000,
-        "maxTokens": 128000
+        "maxTokens": 128000,
+        "type": "chat"
       },
       {
         "id": "nemotron-3.5-lightning-free",
@@ -2743,7 +2813,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 262144,
-        "maxTokens": 262144
+        "maxTokens": 262144,
+        "type": "chat"
       },
       {
         "id": "qwen3.5-plus",
@@ -2773,7 +2844,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "qwen3.6-plus",
@@ -2803,7 +2875,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "qwen3.8-flash",
@@ -2833,12 +2906,59 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
+      },
+      {
+        "id": "space-bunny-free",
+        "name": "Space Bunny Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 524288,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
       }
     ],
-    "checkedAt": 1790228920230,
-    "lastModified": 1790159381000,
-    "etag": "W/\"991b580fd280916334404f8d0ab7b5b7\""
+    "checkedAt": 1790271541708,
+    "lastModified": 1790239078000,
+    "etag": "W/\"35e05a276ccb0829d2c47c7b36f95b6a\""
   },
   "opencode-go": {
     "models": [
@@ -2874,7 +2994,8 @@
           "medium": null,
           "high": "high",
           "max": "max"
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "deepseek-v4-flash-vision-exp",
@@ -2919,7 +3040,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "deepseek-v4-pro",
@@ -2953,7 +3075,8 @@
           "medium": null,
           "high": "high",
           "max": "max"
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "deepseek-v4.1-flash",
@@ -3000,7 +3123,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "glm-5.1",
@@ -3025,7 +3149,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 202752,
-        "maxTokens": 32768
+        "maxTokens": 32768,
+        "type": "chat"
       },
       {
         "id": "glm-5.2",
@@ -3059,7 +3184,8 @@
           "high": "high",
           "xhigh": null,
           "max": "max"
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "glm-5.3",
@@ -3093,7 +3219,8 @@
           "high": "high",
           "xhigh": null,
           "max": "max"
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "glm-5.3-flash",
@@ -3138,7 +3265,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gpt-5.6-luna",
@@ -3182,7 +3310,53 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
+      },
+      {
+        "id": "gpt-6-luna",
+        "name": "GPT-6 Luna",
+        "api": "openai-responses",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0.1,
+          "output": 0.5,
+          "cacheRead": 0.01,
+          "cacheWrite": 0.125
+        },
+        "compat": {
+          "sessionAffinityFormat": "openai-nosession",
+          "supportsMidConvoSystemMessages": true,
+          "supportsAdditionalTools": true
+        },
+        "contextWindow": 1050000,
+        "maxTokens": 128000,
+        "thinkingLevelMap": {
+          "off": "none",
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
       },
       {
         "id": "grok-4.6",
@@ -3224,7 +3398,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "grok-4.7",
@@ -3266,7 +3441,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "hy3",
@@ -3300,7 +3476,8 @@
           "high": "high",
           "xhigh": null,
           "max": null
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "hy4-preview",
@@ -3334,7 +3511,8 @@
           "high": "high",
           "xhigh": null,
           "max": null
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "kimi-k2.6",
@@ -3378,7 +3556,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "kimi-k2.7-code",
@@ -3414,7 +3593,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "kimi-k3",
@@ -3461,7 +3641,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "longcat-2.0",
@@ -3486,7 +3667,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 1000000,
-        "maxTokens": 131072
+        "maxTokens": 131072,
+        "type": "chat"
       },
       {
         "id": "mimo-v2.5",
@@ -3522,7 +3704,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "mimo-v2.5-pro",
@@ -3547,7 +3730,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 1048576,
-        "maxTokens": 128000
+        "maxTokens": 128000,
+        "type": "chat"
       },
       {
         "id": "mimo-v2.6-flash",
@@ -3583,7 +3767,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "mimo-v2.6-pro",
@@ -3619,7 +3804,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "minimax-m2.7",
@@ -3644,7 +3830,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 204800,
-        "maxTokens": 131072
+        "maxTokens": 131072,
+        "type": "chat"
       },
       {
         "id": "minimax-m3",
@@ -3674,7 +3861,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "muse-spark-1.2-contributor",
@@ -3716,7 +3904,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "muse-spark-1.3-contributor",
@@ -3758,7 +3947,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "qwen3.6-plus",
@@ -3795,7 +3985,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "qwen3.7-max",
@@ -3820,7 +4011,8 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 1000000,
-        "maxTokens": 65536
+        "maxTokens": 65536,
+        "type": "chat"
       },
       {
         "id": "qwen3.7-plus",
@@ -3856,7 +4048,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "qwen3.8-flash",
@@ -3886,7 +4079,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "qwen3.8-max",
@@ -3931,12 +4125,59 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
+      },
+      {
+        "id": "space-bunny-free",
+        "name": "Space Bunny Free",
+        "api": "openai-completions",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 524288,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
       }
     ],
-    "checkedAt": 1790228920136,
-    "lastModified": 1790028946000,
-    "etag": "W/\"ced500f3d4855617ae90476fd69793dc\""
+    "checkedAt": 1790271541602,
+    "lastModified": 1790239080000,
+    "etag": "W/\"c653a77f8466c9b648ef5dfb011a1e36\""
   },
   "google": {
     "models": [
@@ -3970,7 +4211,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "deep-research-preview-04-2026",
@@ -4002,7 +4244,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-2.5-computer-use-preview-10-2025",
@@ -4021,8 +4264,8 @@
           "cacheRead": 0,
           "cacheWrite": 0
         },
-        "contextWindow": 131072,
-        "maxTokens": 65536,
+        "contextWindow": 128000,
+        "maxTokens": 64000,
         "inputLimits": {
           "maxRequestBytes": 20971520,
           "images": {
@@ -4034,7 +4277,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-2.5-flash",
@@ -4066,7 +4310,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-2.5-flash-lite",
@@ -4098,7 +4343,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-2.5-pro",
@@ -4130,7 +4376,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3-flash-preview",
@@ -4171,7 +4418,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.1-flash-lite",
@@ -4212,7 +4460,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.1-flash-lite-image",
@@ -4241,7 +4490,7 @@
           "cacheWrite": 0
         },
         "contextWindow": 65536,
-        "maxTokens": 65536,
+        "maxTokens": 4096,
         "inputLimits": {
           "maxRequestBytes": 20971520,
           "images": {
@@ -4253,7 +4502,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.1-flash-lite-preview",
@@ -4294,7 +4544,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.1-flash-live-preview",
@@ -4335,7 +4586,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.1-pro-preview",
@@ -4376,7 +4628,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.1-pro-preview-customtools",
@@ -4417,7 +4670,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.5-flash",
@@ -4458,7 +4712,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.5-flash-lite",
@@ -4499,7 +4754,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.6-flash",
@@ -4540,7 +4796,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.7-flash",
@@ -4581,7 +4838,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-3.8-flash",
@@ -4622,7 +4880,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-flash-latest",
@@ -4663,7 +4922,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemini-flash-lite-latest",
@@ -4704,7 +4964,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemma-4-26b-a4b-it",
@@ -4743,7 +5004,8 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       },
       {
         "id": "gemma-4-31b-it",
@@ -4782,11 +5044,12 @@
               "jpegQuality": 80
             }
           }
-        }
+        },
+        "type": "chat"
       }
     ],
-    "checkedAt": 1790228921028,
-    "lastModified": 1789986573000,
-    "etag": "W/\"fee80210a431c8e0feeb613aa6215687\""
+    "checkedAt": 1790271541680,
+    "lastModified": 1790239043000,
+    "etag": "W/\"7479536815e7f52fb17815e7f6031a76\""
   }
 }

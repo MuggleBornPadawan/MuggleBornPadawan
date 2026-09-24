@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like. Clojure-adapted: bb + HTML logic demo, Quil/Browser for UI."
+description: "Build a throwaway prototype to answer a design question. Use when sanity-checking state logic, exploring UI layouts, or evaluating procedural generation (PCG) algorithms and visual parameters. Clojure-adapted: bb + HTML logic demo, Quil/Raylib/Three.js for visual art."
 ---
 
 # Prototype — Clojure Patch
@@ -12,9 +12,14 @@ A prototype is **throwaway code that answers a question**. The question decides 
 Identify which question is being answered, using the user's prompt, the surrounding code, or by asking if the user is around:
 
 - **"Does this logic / state model feel right?"** → [LOGIC.md](LOGIC.md). Build a single shareable HTML file (free-play buttons plus tabbed guided walkthroughs) that pushes the state machine through cases that are hard to reason about on paper, and that a non-developer can drive. **Clojure option:** if the state is a pure `ns` (data in → data out), also offer a `bb` REPL harness: `bb -e "(require 'my.ns) (my.ns/transition state event)"` or a one-file `src/prototype_logic.clj` with `(comment ...)` blocks for CIDER `C-c C-e`. HTML is still best when non-devs must click.
-- **"What should this look like?"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar. **Clojure/Quil option:** if visual/creative 2D or 3D (per `AGENTS.md` Quil stack), use `clojure-quil` (`lein run` / `clojure -M -m art.core`, `:p3d` for 3D) as one variant. For browser 3D, use `clojure-threejs` (single HTML file + Three.js via CDN, zero build step, served with `bb serve`). For desktop games or real-time simulations, use `clojure-raylib` (`b12n-oss/raylib-clj`, embedded nREPL on port 7888). Otherwise HTML/CSS.
+- **"What should this look like?"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar. Otherwise HTML/CSS.
+- **"Does this procedural generation algorithm or parameter space look good?"** → Generative Art & PCG. Build a lean visual easel to test noise scales, recursion rules, seeds, and color palettes:
+  - **Quil**: 2D/3D flow fields, static renders, or plotter paths (`clojure-quil`).
+  - **Raylib**: Real-time particle simulations or GPU raymarching shaders (`clojure-raylib`).
+  - **Three.js**: Zero-build 3D browser scenes and instanced geometries (`clojure-threejs`).
+  - Always expose parameters in an atom or keyboard controls (`r` to re-seed, arrows to adjust scale) for fast parameter exploration.
 
-The two branches produce very different artifacts, so getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend `ns` → logic; a page or component → UI via HTML or Quil) and state the assumption at the top of the prototype.
+The three branches produce very different artifacts, so getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend `ns` → logic; a page or component → UI; generative functions or graphics deps → PCG visual) and state the assumption at the top of the prototype.
 
 ## Rules that apply to both
 

@@ -1,35 +1,39 @@
 ---
 name: clojure-raylib
-description: "Build 2D/3D games, visual simulations, and graphics with Raylib in Clojure. Use when creating Raylib games, configuring Clojure Raylib deps.edn, debugging Raylib window crashes, or setting up interactive REPL game loops."
+description: "Build high-performance 2D/3D procedural visual art, real-time simulations, and GPU shader art with Raylib in Clojure. Use when generating procedural meshes, raymarched shaders, particle fields, agent simulations, or live parameter tuning in the REPL."
 ---
 
-# Clojure Raylib Skill
+# Clojure Raylib Skill: Procedural Visual Art & Real-Time PCG
 
-Use this skill to build desktop games, visual simulations, and creative graphics in Clojure with [Raylib](https://www.raylib.com/).
+Use this skill to build real-time procedural visual art, GPU shader simulations, and procedural 3D environments with [Raylib](https://www.raylib.com/) in Clojure.
 
 ---
 
-## 1. Golden Rules (Read Before Running Code)
-
-Follow these rules to prevent JVM crashes and deadlocks:
+## 1. Golden Rules for Procedural Raylib
 
 * **Linux vs macOS JVM Flags**:
-  * **On Linux**: NEVER use `-XstartOnFirstThread`. The JVM will crash immediately.
-  * **On macOS**: ALWAYS use `-XstartOnFirstThread`. OpenGL needs thread 0 on macOS.
+  * **On Linux**: NEVER pass `-XstartOnFirstThread`. The JVM will crash.
+  * **On macOS**: ALWAYS pass `-XstartOnFirstThread`. OpenGL needs thread 0 on macOS.
   * **On all platforms**: ALWAYS pass `--enable-native-access=ALL-UNNAMED` for Panama FFM.
-* **CLI Command**:
-  * Use `clojure`, NOT `clj`.
-  * `clj` runs `rlwrap`. `rlwrap` breaks GUI window event loops.
-* **REPL Strategy**:
-  * Raylib blocks the main thread with its game loop.
-  * Start an embedded nREPL server on port 7888 *before* opening the window.
-  * Connect your editor (Emacs CIDER / VS Code Calva) to `localhost:7888`.
+* **CLI Execution**:
+  * Run with `clojure -M:run`, NOT `clj`.
+  * `clj` runs `rlwrap`. `rlwrap` breaks GUI window event processing.
+* **Store PCG Parameters in an Atom**:
+  * Put all generative parameters in a single state map: `{:seed 42 :frequency 0.05 :speed 1.0}`.
+  * Use `swap!` from the REPL to alter the procedural world in real time.
+* **Separate Entity Generation From Frame Drawing**:
+  * Generate procedural data (vertices, particles, grids) with pure functions.
+  * Keep the inner drawing loop light to maintain 60 FPS.
+* **Embedded nREPL Connection**:
+  * Raylib blocks the main OS thread with its game loop.
+  * Start an embedded nREPL server on port 7888 before opening the window.
+  * Connect Emacs CIDER or VS Code Calva to `localhost:7888`.
 
 ---
 
 ## 2. Recommended Stack: `b12n-oss/raylib-clj`
 
-This is the standard binding for idiomatic Clojure. It uses JDK 22+ Foreign Function & Memory (FFM) API via `coffi` and bundles Raylib binaries.
+Uses JDK 22+ Foreign Function & Memory (FFM) API via `coffi` with bundled Raylib binaries.
 
 ### `deps.edn` Template
 
@@ -45,120 +49,254 @@ This is the standard binding for idiomatic Clojure. It uses JDK 22+ Foreign Func
  :aliases
  {:run
   {:jvm-opts ["--enable-native-access=ALL-UNNAMED"
-              ;; Linux library search path:
               "-Djava.library.path=libs/linux_amd64:/usr/local/lib:/usr/lib"]
-   :main-opts ["-m" "game.core"]}}}
+   :main-opts ["-m" "art.core"]}}}
 ```
 
 ---
 
-## 3. Minimal Live-Reload Game Template
+## 3. Template A: Live Generative Agent / Particle System
 
-Create `src/game/core.clj`:
+Use this template for real-time procedural simulations with live REPL parameter tuning.
+
+Create `src/art/core.clj`:
 
 ```clojure
-(ns game.core
+(ns art.core
   (:require [raylib.core.window :as window]
             [raylib.core.drawing :as drawing]
             [raylib.core.timing :as timing]
             [raylib.shapes.basic :as shapes]
-            [raylib.text.drawing :as text]
             [raylib.colors :as colors]
             [nrepl.server :as nrepl])
   (:gen-class))
 
-;; Game state atom for REPL updates
-(defonce state (atom {:x 400 :y 225 :radius 30}))
+;; PCG Parameters and Entity State
+(defonce pcg-params
+  (atom {:particle-count 800
+         :speed-scale 2.0
+         :field-frequency 0.008
+         :color-mode :gold}))
 
-(defn draw-frame [s]
-  (drawing/clear-background! colors/raywhite)
-  (text/draw-text! "Live REPL Game - Edit state or functions!" 20 20 20 colors/darkgray)
-  (shapes/draw-circle! (:x s) (:y s) (:radius s) colors/maroon))
+(defn create-particles [n]
+  (vec (for [_ (range n)]
+         {:x (rand 800)
+          :y (rand 600)
+          :vx 0.0
+          :vy 0.0})))
+
+(defonce particles (atom (create-particles 800)))
+
+(defn step-particles [ps {:keys [speed-scale field-frequency]}]
+  (mapv (fn [{:keys [x y]}]
+          (let [angle (* (Math/sin (* x field-frequency))
+                         (Math/cos (* y field-frequency))
+                         Math/PI 4.0)
+                nx (+ x (* speed-scale (Math/cos angle)))
+                ny (+ y (* speed-scale (Math/sin angle)))]
+            (cond
+              (< nx 0) (assoc {:x 800 :y (rand 600) :vx 0.0 :vy 0.0} :y ny)
+              (> nx 800) (assoc {:x 0 :y (rand 600) :vx 0.0 :vy 0.0} :y ny)
+              (< ny 0) (assoc {:x (rand 800) :y 600 :vx 0.0 :vy 0.0} :x nx)
+              (> ny 600) (assoc {:x (rand 800) :y 0 :vx 0.0 :vy 0.0} :x nx)
+              :else {:x nx :y ny :vx 0.0 :vy 0.0})))
+        ps))
+
+(defn draw-frame [ps params]
+  ;; Dark slate clear
+  (drawing/clear-background! [12 14 20 255])
+
+  (let [pt-color (if (= (:color-mode params) :gold)
+                   colors/gold
+                   colors/skyblue)]
+    (doseq [{:keys [x y]} ps]
+      (shapes/draw-circle! (int x) (int y) 1.5 pt-color))))
 
 (defn -main [& _args]
-  ;; 1. Start embedded nREPL on port 7888
+  ;; 1. Embedded nREPL for live controls
   (nrepl/start-server :port 7888 :bind "127.0.0.1")
-  (println "nREPL server running on port 7888. Connect CIDER or Calva now.")
+  (println "nREPL running on port 7888. Connect CIDER or Calva.")
 
-  ;; 2. Initialize Raylib window
-  (window/init-window! 800 450 "Clojure Raylib Window")
+  ;; 2. Window setup
+  (window/init-window! 800 600 "Clojure Raylib: Procedural Field")
   (timing/set-target-fps! 60)
 
-  ;; 3. Main Loop
+  ;; 3. Main render loop
   (while (not (window/window-should-close?))
+    (swap! particles step-particles @pcg-params)
     (drawing/begin-drawing!)
-    (draw-frame @state)
+    (draw-frame @particles @pcg-params)
     (drawing/end-drawing!))
 
-  ;; 4. Clean exit
+  ;; 4. Cleanup
   (window/close-window!)
   (System/exit 0))
 ```
 
-Run the game with:
-```bash
-clojure -M:run
+### Live REPL Controls:
+```clojure
+;; Connect via M-x cider-connect-clj to localhost:7888
+;; Change simulation parameters live:
+(swap! art.core/pcg-params assoc :field-frequency 0.02 :speed-scale 4.0)
+
+;; Switch color palette live:
+(swap! art.core/pcg-params assoc :color-mode :skyblue)
+
+;; Reset particle population:
+(reset! art.core/particles (art.core/create-particles 1500))
 ```
 
 ---
 
-## 4. Live REPL Workflow (Emacs / CIDER / Calva)
+## 4. Template B: Real-Time Procedural GPU Shaders (Raymarching / SDF)
 
-1. Launch the game from terminal:
-   ```bash
-   clojure -M:run
-   ```
-2. Connect your editor to the running game:
-   * **Emacs**: `M-x cider-connect-clj` -> Host: `localhost`, Port: `7888`.
-   * **VS Code**: `Calva: Connect to a Running REPL Server in the Project`.
-3. Modify the running game live from the REPL:
-   ```clojure
-   ;; Move the circle immediately:
-   (swap! game.core/state assoc :x 200 :y 100)
+Use this template to generate real-time mathematical procedural art directly on the GPU.
 
-   ;; Redefine rendering on the fly:
-   (in-ns 'game.core)
-   (defn draw-frame [s]
-     (drawing/clear-background! colors/black)
-     (shapes/draw-circle! (:x s) (:y s) (:radius s) colors/gold))
-   ```
-   *Notice the window updates on the next frame without restarting.*
+### GLSL Fragment Shader (`resources/shaders/sdf_art.fs`):
+
+```glsl
+#version 330
+
+in vec2 fragTexCoord;
+out vec4 finalColor;
+
+uniform float uTime;
+uniform vec2 uResolution;
+
+// Sphere SDF
+float sdSphere(vec3 p, float s) {
+    return length(p) - s;
+}
+
+// Procedural scene distance
+float map(vec3 p) {
+    // Domain repetition for infinite procedural grid
+    vec3 q = mod(p + vec3(2.0), 4.0) - vec3(2.0);
+    return sdSphere(q, 0.8 + 0.2 * sin(uTime * 2.0 + p.x));
+}
+
+void main() {
+    vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
+    vec3 ro = vec3(0.0, 0.0, -5.0 + uTime * 0.5); // Camera ray origin
+    vec3 rd = normalize(vec3(uv, 1.0));             // Ray direction
+
+    float dTotal = 0.0;
+    for (int i = 0; i < 64; i++) {
+        vec3 p = ro + rd * dTotal;
+        float d = map(p);
+        if (d < 0.001 || dTotal > 50.0) break;
+        dTotal += d;
+    }
+
+    if (dTotal < 50.0) {
+        float fog = 1.0 / (1.0 + dTotal * dTotal * 0.02);
+        vec3 col = vec3(0.1, 0.5, 0.9) * fog;
+        finalColor = vec4(col, 1.0);
+    } else {
+        finalColor = vec4(0.02, 0.02, 0.04, 1.0);
+    }
+}
+```
+
+### Clojure Shader Host:
+
+```clojure
+(ns art.shader
+  (:require [raylib.core.window :as window]
+            [raylib.core.drawing :as drawing]
+            [raylib.core.timing :as timing]
+            [raylib.shaders.core :as shaders]
+            [raylib.shapes.basic :as shapes]
+            [raylib.colors :as colors])
+  (:gen-class))
+
+(defn -main [& _args]
+  (window/init-window! 800 600 "Procedural Raymarching")
+  (timing/set-target-fps! 60)
+
+  ;; Load fragment shader
+  (let [shader (shaders/load-shader nil "resources/shaders/sdf_art.fs")
+        time-loc (shaders/get-shader-location shader "uTime")
+        res-loc (shaders/get-shader-location shader "uResolution")]
+
+    (while (not (window/window-should-close?))
+      (let [time (float (timing/get-time))]
+        ;; Send uniform parameters to GPU
+        (shaders/set-shader-value! shader time-loc (float-array [time]) :float)
+        (shaders/set-shader-value! shader res-loc (float-array [800.0 600.0]) :vec2)
+
+        (drawing/begin-drawing!)
+        (drawing/clear-background! colors/black)
+
+        ;; Render procedural shader across full screen quad
+        (shaders/begin-shader-mode! shader)
+        (shapes/draw-rectangle! 0 0 800 600 colors/white)
+        (shaders/end-shader-mode!)
+
+        (drawing/end-drawing!)))
+
+    (shaders/unload-shader! shader)
+    (window/close-window!)))
+```
 
 ---
 
-## 5. Alternative Options
+## 5. Template C: Procedural 3D Parametric Meshes
 
-### Option B: Maximum Performance / RayGui (`Jaylib`)
+Use this template to generate 3D mathematical surfaces and procedural terrain:
 
-If you hit FPS bottlenecks with 10,000+ objects or need `RayGui`:
-* Dependency: `uk.co.electronstudio.jaylib/jaylib {:mvn/version "6.0.1-0"}`
-* Uses JavaCPP JNI (4x faster in tight inner loops).
-* Call directly with Java interop:
-  ```clojure
-  (import '[com.raylib Raylib Colors])
-  (Raylib/InitWindow 800 450 "Jaylib")
-  (Raylib/SetTargetFPS 60)
-  ```
+```clojure
+(ns art.mesh-3d
+  (:require [raylib.core.window :as window]
+            [raylib.core.drawing :as drawing]
+            [raylib.core.timing :as timing]
+            [raylib.models.mesh :as mesh]
+            [raylib.models.drawing :as models]
+            [raylib.models.camera :as camera]
+            [raylib.colors :as colors]))
 
-### Option C: Instant Babashka Script (`babashka.ffi`)
+(defn generate-heightmap-image
+  "Generate a procedural 2D noise image for terrain elevation."
+  [width height]
+  ;; Pure Clojure generation of height pixel values
+  (let [data (byte-array (* width height))]
+    (dotimes [y height]
+      (dotimes [x width]
+        (let [val (byte (* 255 (Math/sin (+ (* 0.05 x) (* 0.05 y)))))]
+          (aset data (+ x (* y width)) val))))
+    data))
 
-Use when startup time must be under 50ms:
-* Requires system `libraylib.so`: `sudo apt install libraylib-dev` (or build from source).
-* Call via `babashka.ffi`:
-  ```clojure
-  (require '[babashka.ffi :as ffi :refer [defcfn]])
-  (ffi/load-system-library "raylib")
-  (defcfn init-window "InitWindow" [:int :int :string] :void)
-  ```
+;; Use raylib.models.mesh/gen-mesh-heightmap to turn height data into a 3D terrain mesh.
+```
 
 ---
 
-## 6. Troubleshooting Checklist
+## 6. Performance Options
 
-| Symptom | Cause | Fix |
+### Option A: `b12n-oss/raylib-clj` (Standard)
+* Idiomatic Clojure.
+* Panama FFM on JDK 25.
+* Best balance between interactive REPL speed and performance.
+
+### Option B: `uk.co.electronstudio.jaylib/jaylib` (Maximum Inner-Loop Speed)
+* Dependency: `uk.co.electronstudio.jaylib/jaylib {:mvn/version "6.0.1-0"}`.
+* JavaCPP JNI binding.
+* Use when drawing more than 20,000 procedural shapes per frame.
+
+### Option C: `babashka.ffi` (Instant CLI Generator)
+* Sub-50ms startup time.
+* Requires system `libraylib.so`.
+* Best for CLI utilities that render single images or batch exports.
+
+---
+
+## 7. Troubleshooting Checklist
+
+| Symptom | Cause | Solution |
 | :--- | :--- | :--- |
-| `Unrecognized option: -XstartOnFirstThread` | Running macOS flag on Linux | Remove `-XstartOnFirstThread` from `deps.edn` JVM opts. |
-| `java.lang.IllegalCallerException: native access` | Missing Panama permission | Add `--enable-native-access=ALL-UNNAMED` to `:jvm-opts`. |
-| Window freezes or keyboard input fails | Used `clj` with `rlwrap` | Run with `clojure -M:run`, not `clj`. |
-| REPL hangs when evaluating window code | Tried to open window from standalone REPL | Start game process first; connect editor to embedded nREPL port 7888. |
-| `UnsatisfiedLinkError: no raylib in java.library.path` | Dynamic library path missing | Add `-Djava.library.path=libs/linux_amd64` or install system `libraylib.so`. |
+| `Unrecognized option: -XstartOnFirstThread` | Running macOS flag on Linux | Remove `-XstartOnFirstThread` from `deps.edn` `:jvm-opts`. |
+| `IllegalCallerException: native access` | Missing Panama permission | Add `--enable-native-access=ALL-UNNAMED` to `:jvm-opts`. |
+| Window freezes or input deadlocks | Executed with `clj` | Use `clojure -M:run` instead of `clj`. |
+| REPL hangs when evaluating window code | Opened window from standalone REPL thread | Launch the game process first. Connect editor to port 7888. |
+| Shader compilation fails silently | Invalid GLSL version | Ensure `#version 330` header matches your graphics driver. |
+| Memory leaks during procedural regeneration | Recreating meshes without unloading | Call `unload-mesh!` or `unload-texture!` before allocating new procedural GPU assets. |

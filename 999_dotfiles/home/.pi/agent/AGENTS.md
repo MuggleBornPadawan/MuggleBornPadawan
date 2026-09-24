@@ -20,6 +20,10 @@
   - No global `~/.clojure/deps.edn` or `~/.lein/profiles.clj` — per-project only
 - Editor/REPL workflow: Emacs 30.1 (`/usr/bin/emacs`, config `~/.emacs.d/init.el` + `customizations/setup-clojure.el`) with CIDER + `clojure-ts-mode` + `eglot` (`clojure-lsp` for Clojure) — structure code and instructions for REPL-driven eval in Emacs; see `setup-clojure.el` for keys (`C-j` eval, `C-c C-v`/`C-M-r`/`C-c u`); `lsp-mode` installed but not used for Clojure
 - Visual / creative coding & graphics:
+  - Procedural content generation (PCG) standards:
+    - Separate data from rendering: generate art structures with pure Clojure functions first
+    - Determinism: always seed random generators; identical seeds must produce identical visuals; log seeds with output
+    - Parameter exploration: expose tweakable parameter maps for rapid REPL tuning
   - 2D/3D generative art, math & vector plotters: Processing stack via Quil (https://quil.info/) — use `quil/quil` (`:java2d` for 2D, `:p3d` for OpenGL 3D, DXF for CAD/3D printing)
   - Desktop games & real-time simulations: Raylib via `b12n-oss/raylib-clj` (Panama FFM on JDK 25; no `-XstartOnFirstThread` on Linux)
   - Browser 3D & WebGL: Scittle + Three.js (zero-build, single-file HTML, served via `bb http-server`)
