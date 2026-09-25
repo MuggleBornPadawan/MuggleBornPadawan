@@ -1,11 +1,13 @@
 ---
 name: clojure-quil
-description: "Build 2D/3D procedural visual art, generative systems, and plotter graphics with Quil and Processing in Clojure. Use when implementing procedural content generation (PCG), flow fields, noise algorithms, L-systems, recursive geometry, or reproducible seeded artwork."
+description: "Use when building 2D/3D procedural art with Quil/Processing, or when previewing USD-shared local ±1 art in Quil via clojure-pcg (flow fields, noise, L-systems, seeded art, plotter/SVG)."
 ---
 
 # Clojure Quil Skill: Procedural Visual Art
 
 Use this skill to build procedural content generation (PCG) systems and generative visual art in Clojure with [Quil](http://quil.info/) (Processing).
+
+> **Mode:** `Standalone` = pixels + GL `z -1..1` (this skill, fast preview) vs `USD-shared` = local `±1` + `xformOpOrder` via `clojure-pcg` + `pcg-spaces` (pure `java.util.Random`). See §10.
 
 ---
 
@@ -131,7 +133,7 @@ Subdivide rectangles recursively for generative layouts:
 
 ---
 
-## 4. Template A: Live Generative Flow Field (Interactive)
+## 4. Template A: Live Generative Flow Field (Interactive) [Standalone — Not USD]
 
 Use this template for real-time procedural animations and particle systems.
 
@@ -213,7 +215,7 @@ Create `src/art/core.clj`:
 
 ---
 
-## 5. Template B: Reproducible High-Resolution Static Art
+## 5. Template B: Reproducible High-Resolution Static Art [Standalone — Not USD]
 
 Use this template for static procedural artworks. It logs seeds and saves output images.
 
@@ -275,7 +277,7 @@ Use this template for static procedural artworks. It logs seeds and saves output
 
 ---
 
-## 6. Template C: Pen Plotter & Vector Art (SVG Export)
+## 6. Template C: Pen Plotter & Vector Art (SVG Export) [Standalone — Not USD]
 
 Use this template to generate procedural vector paths for pen plotters (AxiDraw) and laser cutters.
 
@@ -318,7 +320,7 @@ Use this template to generate procedural vector paths for pen plotters (AxiDraw)
 
 ---
 
-## 7. Template D: 3D Procedural Sculptures (`:renderer :p3d`)
+## 7. Template D: 3D Procedural Sculptures (`:renderer :p3d`) [Standalone — Not USD]
 
 Use this template for 3D procedural structures, polyhedra, and DXF export for 3D printing.
 
@@ -397,3 +399,15 @@ Use `thobbs/genartlib` for procedural generation tasks:
 | Sketch window crashes on typo | Missing error middleware | Add `m/pause-on-error` to `:middleware` vector. |
 | CPU usage stays at 100% on static sketch | Loop running at 60 FPS | Call `(q/no-loop)` in `setup`. Trigger redraws with `(.redraw sketch)`. |
 | Random values differ across identical seeds | Mixed Clojure `rand` with Quil `q/random` | Use only Quil seeded functions or a seeded `java.util.Random` instance. |
+
+---
+
+## 10. OpenUSD / `pcg-spaces` Compatibility (Preview Only)
+
+Quil is **not** USD-native. Use it as the fast 2D preview in the `clojure-pcg` triple-render pipeline. For USD-correct browser see `clojure-webgpu` + `pcg-spaces` skills + `MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md`.
+
+*   **Rule 1 Model = USD local:** Do NOT generate pixels in `art.generate`. Generate local `±1` points/normals/`primvars:st` with pure `java.util.Random` (no `q/random`/`q/noise` in generate). Map `±1 → pixels` only in `render_quil.clj` via `w`/`h`. Quil never stores `xformOpOrder` — store it in `art.json` for sharing.
+*   **Rule 2 World = hierarchy:** Quil has no USD stage. Do not bake `ComputeLocalToWorldTransform()` into points. Export hierarchy + `xformOpOrder`/`xformOps` + `upAxis`/`metersPerUnit` + `!resetXformStack!` via `clojure-pcg` `art/export.clj` → `public/art.json`. Keep Quil `draw` flat (ignore `!resetXformStack!` in preview, but store it).
+*   **Rule 3 USD ends after world:** Quil `draw` is screen space only. Never compute `view/clip/NDC` in Clojure. That is WebGPU-only (see `pcg-spaces`).
+*   **Rule 4 WebGPU vs Quil p3d:** Quil `:p3d` is GL `z -1..1`. WebGPU is DirectX `z 0..1`. Do not reuse Quil projection for USD/WebGPU. Browser must use `perspectiveZO` (`far*nf / far*near*nf`).
+*   **Pattern:** `art.generate/generate {:seed 42}` (pure) → `render_quil/draw` (pixels) + `export/write-json!` (local ±1 + xformOps). Same seed = same Quil + Raylib + WebGPU image. See `clojure-pcg` skill for `bb.edn` tasks.
