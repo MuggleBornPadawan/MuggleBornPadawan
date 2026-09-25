@@ -5,7 +5,7 @@ description: "One pure Clojure PCG core rendered via Quil, Raylib, and WebGPU/WG
 
 # Clojure PCG — One Generate, Three Renders
 
-Compose `clojure-quil` + `clojure-raylib` + `clojure-threejs` + `pcg-spaces`. Do not duplicate them. This skill is the glue.
+Compose `clojure-quil` + `clojure-raylib` + `clojure-webgpu` + `pcg-spaces`. `clojure-threejs` is WebGL-only preview — not USD. Do not duplicate. This skill is the glue.
 
 ## When to Use
 
@@ -22,10 +22,10 @@ Compose `clojure-quil` + `clojure-raylib` + `clojure-threejs` + `pcg-spaces`. Do
 deps.edn               ; quil, raylib-clj, data.json
 bb.edn                 ; tasks below
 src/art/generate.clj   ; pure: (generate {:seed 42 :params {...}}) -> {:points [...] :indices [...] :colors [...]}
-src/art/render_quil.clj   ; uses quil skill
-src/art/render_raylib.clj ; uses raylib skill
+src/art/render_quil.clj   ; uses quil skill (§10)
+src/art/render_raylib.clj ; uses raylib skill (§8)
 src/art/export.clj     ; -> public/art.json (for WebGPU)
-public/index.html      ; single-file WebGPU/WGSL, reads art.json, no npm
+public/index.html      ; single-file WebGPU/WGSL, reads art.json, no npm (see clojure-webgpu Template D)
 MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md ; spaces reference (via pcg-spaces skill)
 ```
 
@@ -57,7 +57,7 @@ Keep local coords ±1. Log seed with output. Params map for REPL tuning.
 
 ## Render C — WebGPU (browser)
 
-- See `pcg-spaces` skill for correct spaces.
+- See `clojure-webgpu` skill (renderer) + `pcg-spaces` skill (spaces) for correct pipeline.
 - `bb.edn` task `export` writes `public/art.json` `{stage, prims:[{xformOpOrder,xformOps,mesh}]}`.
 - `index.html` inline WGSL + JS (~40 lines mat4, `perspectiveZO` 0..1 depth, top-left framebuffer). `bb http-server` to serve. No USD parser, no gl-matrix.
 

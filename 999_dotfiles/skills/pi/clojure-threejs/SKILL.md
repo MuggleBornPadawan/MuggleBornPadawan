@@ -1,6 +1,6 @@
 ---
 name: clojure-threejs
-description: "Build browser-based 3D procedural visual art, WebGL generative scenes, and spatial algorithms in Clojure with zero build tools (Scittle + Three.js). Use when creating procedural 3D geometries, instanced particle arrays, custom shader materials, or mathematical forms in the browser."
+description: "Use when creating browser 3D with Scittle + Three.js WebGL (zero build, no npm) for instanced particle arrays, procedural geometries, or custom shader materials without USD/WebGPU share."
 ---
 
 # Scittle + Three.js Skill: Browser Procedural 3D Art
@@ -278,3 +278,17 @@ To connect Emacs CIDER or a live REPL to your running browser scene:
 | Scene distorts when resizing window | Camera aspect ratio not updated | Update `(.-aspect camera)` and call `(.updateProjectionMatrix camera)`. |
 | Browser shows CORS error | Opened file directly via `file://` | Start `bb serve` and load via `http://localhost:8000`. |
 | Shaders fail to compile | Syntax error in GLSL strings | Check browser developer console (F12) for detailed GLSL compiler logs. |
+
+---
+
+## 9. OpenUSD / `pcg-spaces` Compatibility — WebGL vs WebGPU
+
+> **Scope:** This skill is **WebGL** (`THREE.WebGLRenderer`, `three@0.128.0`, GL NDC `z -1..1`). `pcg-spaces` is **WebGPU/WGSL** (DirectX NDC `z 0..1`). They are not interchangeable. Choose one per project.
+
+**When you need USD-correct sharing, prefer `clojure-webgpu` + `pcg-spaces` + `clojure-pcg` Render C.** Use this Three.js skill for quick WebGL previews only. Do not mix `THREE.Object3D` hierarchy with USD `xformOpOrder`.
+
+*   **Rule 1-2 Model/World = USD:** Three.js `scene.add()` + `Object3D.matrix` is NOT USD `GetLocalTransformation()` → `ComputeLocalToWorldTransform()`. USD requires least-to-most-local `xformOpOrder` (last = applied first, `M=T*R` if `[translate,rotate]`), `!resetXformStack!`, and `upAxis`/`metersPerUnit` at root. Store `xformOpOrder`/`xformOps` in `art.json` via `clojure-pcg`, compute `fromXformOps(order,ops)` walking reverse in JS (~40 lines, no gl-matrix). Do not bake world.
+*   **Rule 3 USD ends after world:** Three.js `PerspectiveCamera.projectionMatrix` is GL `-1..1`. If you must reuse Three.js for USD data, replace its projection with `perspectiveZO` and set `depthClearValue` `0..1`. Browser must compute `view=inverse(cameraWorld)` from `UsdGeomCamera` Xformable world, not `camera.matrixWorldInverse`.
+*   **Rule 4 WebGPU = DirectX:** NDC `z 0..1` (not `-1..1`), clip `0≤z≤w`, framebuffer `(0,0)` top-left y-down, texture `uv (0,0)` top-left. Flip `v=1-v` for `primvars:st`. Three.js `uv` is GL bottom-left — flip on export/import. Use `perspectiveZO` with `far*nf / far*near*nf`.
+*   **Rule 5 Lean:** For USD/WebGPU do NOT use this skill's `THREE.InstancedMesh`/`OrbitControls` path. Use `clojure-webgpu` Template D: single-file WGSL + JS inline math, reads `art.json` `{stage,prims:[{xformOpOrder,xformOps,points}]}` via `bb http-server` (no npm, no gl-matrix, no USD parser). See `clojure-webgpu` + `pcg-spaces` for full pipeline `bb generate → art.json → WebGPU`.
+*   **Decision:** Need USD share / long-term asset? → `pcg-spaces` WebGPU. Need quick WebGL demo only? → this skill.

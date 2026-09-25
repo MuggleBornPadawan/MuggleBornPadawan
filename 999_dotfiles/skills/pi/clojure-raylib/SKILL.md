@@ -1,11 +1,13 @@
 ---
 name: clojure-raylib
-description: "Build high-performance 2D/3D procedural visual art, real-time simulations, and GPU shader art with Raylib in Clojure. Use when generating procedural meshes, raymarched shaders, particle fields, agent simulations, or live parameter tuning in the REPL."
+description: "Use when building real-time procedural art with Raylib (Panama FFM) or when previewing USD-shared local ±1 art at 60 FPS via clojure-pcg (particles, SDF shaders, meshes, seeded generate)."
 ---
 
 # Clojure Raylib Skill: Procedural Visual Art & Real-Time PCG
 
 Use this skill to build real-time procedural visual art, GPU shader simulations, and procedural 3D environments with [Raylib](https://www.raylib.com/) in Clojure.
+
+> **Mode:** `Standalone` = GL `z -1..1` (this skill, 60 FPS preview) vs `USD-shared` = local `±1` + `xformOpOrder` via `clojure-pcg` + `pcg-spaces` (pure `java.util.Random`). See §8.
 
 ---
 
@@ -55,7 +57,7 @@ Uses JDK 22+ Foreign Function & Memory (FFM) API via `coffi` with bundled Raylib
 
 ---
 
-## 3. Template A: Live Generative Agent / Particle System
+## 3. Template A: Live Generative Agent / Particle System [Standalone — Not USD]
 
 Use this template for real-time procedural simulations with live REPL parameter tuning.
 
@@ -148,7 +150,7 @@ Create `src/art/core.clj`:
 
 ---
 
-## 4. Template B: Real-Time Procedural GPU Shaders (Raymarching / SDF)
+## 4. Template B: Real-Time Procedural GPU Shaders (Raymarching / SDF) [Standalone — Not USD]
 
 Use this template to generate real-time mathematical procedural art directly on the GPU.
 
@@ -241,7 +243,7 @@ void main() {
 
 ---
 
-## 5. Template C: Procedural 3D Parametric Meshes
+## 5. Template C: Procedural 3D Parametric Meshes [Standalone — Not USD]
 
 Use this template to generate 3D mathematical surfaces and procedural terrain:
 
@@ -300,3 +302,15 @@ Use this template to generate 3D mathematical surfaces and procedural terrain:
 | REPL hangs when evaluating window code | Opened window from standalone REPL thread | Launch the game process first. Connect editor to port 7888. |
 | Shader compilation fails silently | Invalid GLSL version | Ensure `#version 330` header matches your graphics driver. |
 | Memory leaks during procedural regeneration | Recreating meshes without unloading | Call `unload-mesh!` or `unload-texture!` before allocating new procedural GPU assets. |
+
+---
+
+## 8. OpenUSD / `pcg-spaces` Compatibility (Real-Time Preview)
+
+Raylib is **not** USD-native (OpenGL `z -1..1`). Use it as the 60 FPS real-time preview in the `clojure-pcg` triple-render pipeline. For USD-correct browser see `clojure-webgpu` + `pcg-spaces` skills + `MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md`.
+
+*   **Rule 1 Model = USD local:** `art.generate` must be pure `java.util.Random` + math, no `raylib/*` imports. Emit local `±1` `points`/`indices`/`primvars:st`. Raylib maps local→world via its own draw calls, but the shared `art.json` stores USD `xformOpOrder`/`xformOps`.
+*   **Rule 2 World = USD stage:** Do not bake world matrices into points. Export `{stage:{upAxis, metersPerUnit, !resetXformStack!}, prims:[{xformOpOrder,xformOps,mesh}]}` via `clojure-pcg` `art/export.clj`. Compute `world = parentWorld * localToWorld(fromXformOps)` each frame only in the browser; Raylib just draws the preview mesh (store `!resetXformStack!` even if preview ignores it).
+*   **Rule 3 USD ends after world:** Raylib camera (`raylib.models.camera`) is NOT the USD `UsdGeomCamera`. For sharing, store camera `xformOpOrder` + `focalLength`/`horizontalAperture`/`clippingRange` in JSON. Browser computes `view = inverse(cameraWorld)` + `projZO`.
+*   **Rule 4 WebGPU vs Raylib GL:** Raylib/GL uses `perspectiveNO` (`z -1..1`). WebGPU uses `perspectiveZO` (`z 0..1`, clip `0≤z≤w`). Never reuse Raylib projection in WebGPU. Use `pcg-spaces` inline helpers `mul/invert/perspectiveZO` (~40 lines, no gl-matrix).
+*   **Rule 5 Lean:** Keep `art.json` <1MB. Do not ship `clip/NDC/screen` or baked matrices. See `clojure-pcg` skill for pure `generate` template and `bb export && bb serve` flow.
