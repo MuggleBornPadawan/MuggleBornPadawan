@@ -3,6 +3,7 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#math---the-palindrome---10-most-important-lessons][math - the palindrome - 10 most important lessons]]
   - [[#spec-driven-development---simon-martinelli][spec driven development - simon martinelli]]
   - [[#impact-of-ai-on-coding][impact of ai on coding]]
   - [[#performant-code][performant code]]
@@ -72,6 +73,11 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** math - the palindrome - 10 most important lessons
+- yt channel video - https://www.youtube.com/watch?v=dxWeZMszSGo
+*** 10 most important lessons
+- break the rules - 
+
 ** spec driven development - simon martinelli
 *** intro
 - ainativedev - tessl
