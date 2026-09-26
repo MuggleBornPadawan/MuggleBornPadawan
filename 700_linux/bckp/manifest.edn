@@ -34,6 +34,10 @@
   {:src "~/.config/fontconfig/fonts.conf"     :dest "home/.config/fontconfig/fonts.conf"}
   {:src "~/.config/htop/htoprc"               :dest "home/.config/htop/htoprc"}
 
+  ;; User maintenance scripts
+  {:src "~/bin/cleanup.sh"                    :dest "home/bin/cleanup.sh"}
+  {:src "~/bin/cleanup-boot.sh"               :dest "home/bin/cleanup-boot.sh"}
+
   ;; Git, editor, tmux, ssh
   {:src "~/.gitconfig"                        :dest "home/.gitconfig"}
   {:src "~/.gitignore"                        :dest "home/.gitignore"}
