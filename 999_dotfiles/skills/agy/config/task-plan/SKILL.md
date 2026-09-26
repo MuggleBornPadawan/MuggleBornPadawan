@@ -16,4 +16,3 @@ Do NOT write any implementation code yet. Instead:
 5. Flag risks, edge cases, and files that will need changes
 
 Save the plan to a markdown file so it can be reviewed and executed later.
-

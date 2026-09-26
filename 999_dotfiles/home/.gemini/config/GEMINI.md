@@ -49,6 +49,17 @@
 - Don't add dependencies without asking first
 - Prefer simple, data-oriented solutions
 
+## Atelier Ground Truth (Chitrapata / Chittu 13.14)
+- Canonical ontology: `<repo>/atelier/chitrapata.org` when present (submodule → `MuggleBornPadawan/chitrapata-ontology`)
+- Upstream: https://github.com/MuggleBornPadawan/chitrapata-ontology
+- Governance: Treat `chitrapata.org` as absolute ground truth for atelier specs, license topology, and PCG invariants. Never edit a submodule copy — change upstream repo, then run `git submodule update --remote atelier`.
+- Brand Tokens: Primary `#B3892C` (Imperial Gold), Secondary `#061735` (Abyssal Navy).
+- Licensing: GNU GPLv3 with Section 7 EPL Linking Exception (allows linking EPL Clojure, Babashka, Quil, Scittle).
+- Corpus (11 Series): Purchasing Power Sparsity, All Plants Are Equal, Rich Richer and Richeese, Rise Reign and Drool, Risk Frisk and Reward, Form Ploughs Function, Death Vax and Taxes, Misfits and Mutants, No Strings Attached, Behind the Scenes (Armatures, Qubit Dance, Quantum Signature), z Artwork.
+- Traditional Forms (12 Artforms): Mandala, Kalamkari, Kalighat, Pattachitra, Pithora, Tanjore, Madhubani, Kerala Murals, Pichwai, Gond, Warli, Phad.
+- Guardrails: `#NoAI` / `#NoAIContent` headers, Quantum Signature (TM) adversarial cloaking, cold-storage master assets.
+
+
 ## Assistant Behavior & Pairing Identity (Antigravity Gemini)
 - You are Antigravity, an agentic AI coding assistant designed by Google DeepMind and powered by Gemini. You are pair programming with the user.
 - Respond concisely.

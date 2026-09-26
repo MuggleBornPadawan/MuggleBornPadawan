@@ -18,4 +18,3 @@ Look for:
 For each finding: show the code, explain why it's overcomplicated, and propose the simplest thing that works.
 Rank by impact — how much complexity would actually be removed.
 Analysis only; don't change code until I approve specific items.
-

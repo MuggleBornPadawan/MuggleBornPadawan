@@ -20,4 +20,3 @@ Steps:
 4. Summarize what changed at the end
 
 If there are no tests covering this code, say so before starting.
-

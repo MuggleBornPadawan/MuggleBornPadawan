@@ -22,4 +22,3 @@ Clojure / lean-machine (AGENTS.md):
 - Style: idiomatic `->`/`->>` threading, clean `ns` requires; respect `clj-kondo` + `cljfmt`.
 
 Run the tests when done and report results (`bb test -n <ns>` + `clj-kondo --lint src` if Clojure).
-

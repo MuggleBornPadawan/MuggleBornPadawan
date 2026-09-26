@@ -18,4 +18,3 @@ Focus on:
 For each suspected bug: explain the exact scenario that triggers it, rate likelihood × impact, and propose a fix.
 Verify claims against the actual code — no speculation without reading the relevant paths.
 Write failing test cases for confirmed bugs.
-

@@ -15,4 +15,3 @@ Update the changelog.
 5. Prepend the entries under an `## [Unreleased]` heading (or ask me for the version number)
 
 Match the existing changelog format exactly.
-

@@ -16,4 +16,3 @@ Give me a newcomer's tour of this codebase.
 6. **Gotchas** — generated code, legacy areas, anything that looks unusual
 
 Read the actual code — don't just summarize file names. Keep it under ~60 lines so I can absorb it.
-

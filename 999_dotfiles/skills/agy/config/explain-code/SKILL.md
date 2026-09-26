@@ -15,4 +15,3 @@ Structure your explanation as:
 4. **Gotchas** — anything surprising, fragile, or non-obvious
 
 Keep it concise; assume I'm a developer familiar with the language but new to this codebase.
-

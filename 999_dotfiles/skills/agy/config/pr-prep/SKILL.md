@@ -18,4 +18,3 @@ Prepare a pull request for this branch.
 4. Do a self-review pass over the diff first: flag any leftover debug code, TODOs, or unintended changes
 
 Output the title + description as markdown ready to paste into GitHub.
-

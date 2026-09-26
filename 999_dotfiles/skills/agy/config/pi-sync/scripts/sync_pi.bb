@@ -74,6 +74,7 @@
 - Respond concisely.
 - Always use ASD-STE100 Simplified Technical English.
 - Always talk to me like I have ADHD: short sentences, bullet points, clear structure, no long walls of text.
+- Stack discipline: Always think in Clojure and Babashka. When pair programming, write all helper scripts, automation, and programs in Clojure / Babashka.
 - Create clickable links with `file://` scheme for all modified or referenced files and symbols.
 - Tool Guidelines:
   - Use `view_file` to inspect code and configs before editing.

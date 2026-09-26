@@ -18,4 +18,3 @@ Look for:
 For each item found: report location and whether removal is definitely safe.
 Delete only what is provably unused — when in doubt, flag it instead of deleting.
 Do not change any behavior. Run tests afterward to confirm nothing broke.
-

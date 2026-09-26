@@ -14,4 +14,3 @@ Generate documentation for {{file|the current git diff}}.
 4. If the project README or docs mention this area, check whether they need updating too and flag it
 
 Don't add comments to obvious code — noise is worse than silence.
-
