@@ -86,6 +86,7 @@ PAIRS=(
   "${HOME}/.config/opencode/skills|skills/opencode"
   "${HOME}/.pi/agent/prompts|prompts/pi"
   # opencode (global)
+  "${HOME}/.config/opencode/AGENTS.md|home/.config/opencode/AGENTS.md"
   "${HOME}/.config/opencode/opencode.jsonc|home/.config/opencode/opencode.jsonc"
   "${HOME}/.config/opencode/package.json|home/.config/opencode/package.json"
   "${HOME}/.config/opencode/package-lock.json|home/.config/opencode/package-lock.json"
@@ -93,6 +94,8 @@ PAIRS=(
   "${HOME}/.config/opencode/plugins|home/.config/opencode/plugins"
   "${HOME}/.config/opencode/commands|home/.config/opencode/commands"
   # gemini global (agy)
+  "${HOME}/.gemini/config/GEMINI.md|home/.gemini/config/GEMINI.md"
+  "${HOME}/.gemini/config/AGENTS.md|home/.gemini/config/AGENTS.md"
   "${HOME}/.gemini/settings.json|home/.gemini/settings.json"
   "${HOME}/.gemini/trustedFolders.json|home/.gemini/trustedFolders.json"
   "${HOME}/.gemini/projects.json|home/.gemini/projects.json"
