@@ -1,0 +1,111 @@
+;; manifest.edn - Single Source of Truth for Dotfiles Backup & Restore
+;; Used by dotfiles.bb (backup) and dotfiles.bb --restore (restore)
+
+{:dest-root "~/MuggleBornPadawan/999_dotfiles"
+
+ :excludes
+ ["hosts.yml"              ;; gh auth token
+  "auth.json"              ;; pi auth token
+  "oauth_creds.json"       ;; gemini credentials
+  "google_accounts.json"
+  "mcp-oauth-tokens*"
+  "state.json"
+  "*.db"
+  "*.log"
+  ".cache/"
+  "__pycache__/"
+  "*.pyc"
+  "node_modules/"
+  "sessions/"
+  "models/"
+  "blobs/"
+  "cache/"
+  "rg"]                    ;; pi bundled ripgrep binary
+
+ :pairs
+ [;; Shell & system
+  {:src "~/.bashrc"                           :dest "home/.bashrc"}
+  {:src "~/.bash_aliases"                     :dest "home/.bash_aliases"}
+  {:src "~/.profile"                          :dest "home/.profile"}
+  {:src "~/.bash_logout"                      :dest "home/.bash_logout"}
+  {:src "~/.sommelierrc"                      :dest "home/.sommelierrc"}
+  {:src "~/.config/weston.ini"                :dest "home/.config/weston.ini"}
+  {:src "~/.config/cros-garcon.conf"          :dest "home/.config/cros-garcon.conf"}
+  {:src "~/.config/fontconfig/fonts.conf"     :dest "home/.config/fontconfig/fonts.conf"}
+  {:src "~/.config/htop/htoprc"               :dest "home/.config/htop/htoprc"}
+
+  ;; Git, editor, tmux, ssh
+  {:src "~/.gitconfig"                        :dest "home/.gitconfig"}
+  {:src "~/.gitignore"                        :dest "home/.gitignore"}
+  {:src "~/.dockerignore"                     :dest "home/.dockerignore"}
+  {:src "~/.vimrc"                            :dest "home/.vimrc"}
+  {:src "~/.tmux.conf"                        :dest "home/.tmux.conf"}
+  {:src "~/.selected_editor"                  :dest "home/.selected_editor"}
+  {:src "~/.ssh/config"                       :dest "home/.ssh/config"}
+  {:src "~/.config/pass-git-helper/git-pass-mapping.ini" :dest "home/.config/pass-git-helper/git-pass-mapping.ini"}
+
+  ;; Emacs (plain files, git-diffable)
+  {:src "~/.emacs.d/init.el"                  :dest "home/.emacs.d/init.el"}
+  {:src "~/.emacs.d/custom.el"                :dest "home/.emacs.d/custom.el"}
+  {:src "~/.emacs.d/customizations"           :dest "home/.emacs.d/customizations"}
+  {:src "~/.emacs.d/bookmarks"                :dest "home/.emacs.d/bookmarks"}
+  {:src "~/.emacs.d/.mc-lists.el"             :dest "home/.emacs.d/.mc-lists.el"}
+
+  ;; Safe configs
+  {:src "~/.config/gh/config.yml"             :dest "home/.config/gh/config.yml"}
+  {:src "~/.gnupg/gpg-agent.conf"             :dest "home/.gnupg/gpg-agent.conf"}
+  {:src "~/.config/clojure/deps.edn"          :dest "home/.config/clojure/deps.edn"}
+  {:src "~/.config/cliamp/config.toml"        :dest "home/.config/cliamp/config.toml"}
+  {:src "~/.config/cliamp/radios.toml"        :dest "home/.config/cliamp/radios.toml"}
+
+  ;; Project templates (repo root)
+  {:src "~/MuggleBornPadawan/.gitignore"      :dest "templates/.gitignore"}
+  {:src "~/MuggleBornPadawan/Dockerfile"      :dest "templates/Dockerfile"}
+  {:src "~/MuggleBornPadawan/Jenkinsfile"     :dest "templates/Jenkinsfile"}
+
+  ;; Agent memory & Pi configs
+  {:src "~/.pi/agent/AGENTS.md"               :dest "home/.pi/agent/AGENTS.md"}
+  {:src "~/.pi/agent/settings.json"           :dest "home/.pi/agent/settings.json"}
+  {:src "~/.pi/agent/models.json"             :dest "home/.pi/agent/models.json"}
+  {:src "~/.pi/agent/models-store.json"       :dest "home/.pi/agent/models-store.json"}
+  {:src "~/.pi/agent/bin"                     :dest "home/.pi/agent/bin"}
+  {:src "~/.local/share/agent-memory"         :dest "home/.local/share/agent-memory"}
+
+  ;; Central skills & prompts (ground truth managed by harness-sync)
+  {:src "~/.local/share/agent-prompts"        :dest "prompts/central"}
+  {:src "~/.local/share/skills"               :dest "skills/central"}
+  {:src "~/.agents/skills"                    :dest "skills/agents"}
+  {:src "~/.gemini/antigravity-cli/builtin/skills" :dest "skills/agy/builtin"}
+
+  ;; OpenCode (global)
+  {:src "~/.config/opencode/AGENTS.md"        :dest "home/.config/opencode/AGENTS.md"}
+  {:src "~/.config/opencode/opencode.jsonc"   :dest "home/.config/opencode/opencode.jsonc"}
+  {:src "~/.config/opencode/package.json"     :dest "home/.config/opencode/package.json"}
+  {:src "~/.config/opencode/package-lock.json":dest "home/.config/opencode/package-lock.json"}
+  {:src "~/.config/opencode/.gitignore"       :dest "home/.config/opencode/.gitignore"}
+  {:src "~/.config/opencode/plugins"          :dest "home/.config/opencode/plugins"}
+  {:src "~/.config/opencode/commands"         :dest "home/.config/opencode/commands"}
+
+  ;; Gemini global (agy)
+  {:src "~/.gemini/config/GEMINI.md"          :dest "home/.gemini/config/GEMINI.md"}
+  {:src "~/.gemini/config/AGENTS.md"          :dest "home/.gemini/config/AGENTS.md"}
+  {:src "~/.gemini/settings.json"             :dest "home/.gemini/settings.json"}
+  {:src "~/.gemini/trustedFolders.json"       :dest "home/.gemini/trustedFolders.json"}
+  {:src "~/.gemini/projects.json"             :dest "home/.gemini/projects.json"}
+  {:src "~/.gemini/antigravity-cli/settings.json" :dest "home/.gemini/antigravity-cli/settings.json"}
+  {:src "~/.gemini/config/config.json"        :dest "home/.gemini/config/config.json"}
+  {:src "~/.gemini/config/mcp_config.json"    :dest "home/.gemini/config/mcp_config.json"}
+  {:src "~/.gemini/config/projects"           :dest "home/.gemini/config/projects"}
+
+  ;; Other AI tools
+  {:src "~/.ollama/config.json"               :dest "home/.ollama/config.json"}
+  {:src "~/.vibe/config.toml"                 :dest "home/.vibe/config.toml"}
+  {:src "~/.qwen/settings.json"               :dest "home/.qwen/settings.json"}
+  {:src "~/.antigravity-ide/argv.json"        :dest "home/.antigravity-ide/argv.json"}
+  {:src "~/.config/Antigravity IDE/User/settings.json" :dest "home/.config/Antigravity IDE/User/settings.json"}
+
+  ;; Compatibility mirrors (symlinks to central on host; skipped on restore)
+  {:src "~/.pi/agent/skills"                  :dest "skills/pi"          :compat? true}
+  {:src "~/.gemini/config/skills"             :dest "skills/agy/config"  :compat? true}
+  {:src "~/.config/opencode/skills"           :dest "skills/opencode"    :compat? true}
+  {:src "~/.pi/agent/prompts"                 :dest "prompts/pi"         :compat? true}]}
