@@ -1,1 +1,0 @@
-/home/rgroot/.pi/agent/skills/domain-modeling/CONTEXT-FORMAT.md

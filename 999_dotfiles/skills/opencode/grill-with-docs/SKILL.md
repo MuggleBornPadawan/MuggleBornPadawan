@@ -1,1 +1,0 @@
-/home/rgroot/.pi/agent/skills/grill-with-docs/SKILL.md

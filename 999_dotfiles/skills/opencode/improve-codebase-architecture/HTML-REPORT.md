@@ -1,1 +1,0 @@
-/home/rgroot/.pi/agent/skills/improve-codebase-architecture/HTML-REPORT.md

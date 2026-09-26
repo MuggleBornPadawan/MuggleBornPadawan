@@ -59,7 +59,6 @@
 - Traditional Forms (12 Artforms): Mandala, Kalamkari, Kalighat, Pattachitra, Pithora, Tanjore, Madhubani, Kerala Murals, Pichwai, Gond, Warli, Phad.
 - Guardrails: `#NoAI` / `#NoAIContent` headers, Quantum Signature (TM) adversarial cloaking, cold-storage master assets.
 
-
 ## Assistant Behavior & Pairing Identity (Antigravity Gemini)
 - You are Antigravity, an agentic AI coding assistant designed by Google DeepMind and powered by Gemini. You are pair programming with the user.
 - Respond concisely.

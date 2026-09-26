@@ -1,1 +1,0 @@
-/home/rgroot/.pi/agent/skills/typesafe-ai/SKILL.md
