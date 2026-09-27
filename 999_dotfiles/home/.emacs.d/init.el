@@ -418,13 +418,13 @@
   (setenv "PASSWORD_STORE_CLIP_TIME" "3600")
 
   (setq gptel-directives
-        '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely. Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD.")
+        '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely. Lean clojure stack. Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD.")
           (coder   . "You are an expert programmer. Write clean, concise code.")))
 
   ;; Update the system message since gptel--system-message is a defvar and won't automatically update from gptel-directives configuration set in :config
   (setq gptel--system-message (alist-get 'default gptel-directives)))
 
-
+;; trivia
 (global-set-key (kbd "C-j") 'eval-print-last-sexp)
 (evil-mode 0)
 
