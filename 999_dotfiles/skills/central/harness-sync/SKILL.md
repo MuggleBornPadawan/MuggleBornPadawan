@@ -53,3 +53,4 @@ bb ~/.local/share/skills/harness-sync/scripts/sync_harness.bb --dry-run
 
 ## Helper Scripts
 - [`sync_harness.bb`](./scripts/sync_harness.bb): Fast Clojure/Babashka symlink and memory assembly engine.
+- [`sync_memory.bb`](./scripts/sync_memory.bb): Memory assembly helper (core + tails -> assembled).

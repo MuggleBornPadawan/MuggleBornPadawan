@@ -1,44 +1,43 @@
 # by-tool - per-agent view (index only, no data move)
 
-- Physical data stays in `home/` (mirrors `~`) + `skills/` + `prompts/` for simple `rsync -a home/ ~` restore.
+- Physical data stays in `home/` (mirrors `~`) + `skills/central/` + `prompts/central/` + `memory/central` for simple restores.
+- Ground truth is central (`~/.local/share/`). Compat copies (`skills/pi`, `skills/opencode`, `skills/agy/config`, `prompts/pi`, opencode `commands/`) are NOT stored. Re-derived via harness-sync.
 - This folder is docs only - links to where each tool lives.
 
-## pi (coding agent - model agnostic, v0.85.1)
-- Harness: pi - provider/model from `settings.json` + `models.json` (now `opencode/muse-spark-1.2`, can change anytime)
-- Context: `home/.pi/agent/AGENTS.md`
-- Globals: `home/.pi/agent/AGENTS.md`, `settings.json`, `models.json`, `bin/clean-opencode-free.bb`
-- Skills: 30 loaded as startup shows (`skills/pi` 9: codebase-design, domain-modeling, grilling, grill-with-docs, improve-codebase-architecture, prototype, research, wayfinder, wizard + `skills/agents` 21: brainstorming, code-review, context-keeper, diagnosing-bugs, executing-plans, finishing-a-development-branch, handoff, hf-cli, implement, karpathy-guidelines, receiving-code-review, systematic-debugging, test-driven-development, to-spec, to-tickets, using-git-worktrees, using-superpowers, verification-before-completion, writing-for-agents, writing-plans, writing-skills)
-- Prompts: 15 (`prompts/pi` -> `/changelog`, `/cleanup`, `/commit`, `/docs`, `/explain`, `/find-bugs`, `/fix`, `/onboard`, `/plan`, `/pr`, `/refactor`, `/review`, `/simplify`, `/sync-free-models`, `/test`)
-- Controls: `esc` interrupt, `ctrl+c/d` clear/exit, `/` commands, `!` bash, `ctrl+o` help
+## pi (coding agent)
+- Context: `home/.pi/agent/AGENTS.md` (symlink to `memory/central/assembled/pi.md`)
+- Globals: `home/.pi/agent/AGENTS.md`, `settings.json`, `models.json`, `bin/`
+- Skills: `skills/central/` (symlinked as `~/.pi/agent/skills`)
+- Prompts: `prompts/central/` (symlinked as `~/.pi/agent/prompts`)
 - Home source: `~/.pi/agent/`
 - Restore: `restore.sh --dry-run AGENTS.md`
 
 ## agy / gemini (Antigravity)
 - Globals: `home/.gemini/settings.json`, `trustedFolders.json`, `projects.json`, `home/.gemini/antigravity-cli/settings.json`, `home/.gemini/config/config.json`, `mcp_config.json`
 - Skills:
-  - `skills/agy/config/` (6: andrej-karpathy-skills, context-keeper, graphify, plan-critique, ponytail, superpowers) <- `~/.gemini/config/skills/`
-  - `skills/agy/builtin/` (5: agy-customizations, antigravity_guide, generative_ui, migrate-workflows, permissioned-github) <- `~/.gemini/antigravity-cli/builtin/skills/`
+  - `skills/central/` (symlinked as `~/.gemini/config/skills`)
+  - `skills/agy/builtin/` <- `~/.gemini/antigravity-cli/builtin/skills/`
 - Home source: `~/.gemini/`
 - Secrets excluded: `oauth_creds.json`, `google_accounts.json`, `mcp-oauth-tokens*`, `state.json`, `brain/`, `conversations/`
 
 ## opencode
-- Globals: `home/.config/opencode/opencode.jsonc`, `package.json`, `package-lock.json`, `.gitignore`, `plugins/compaction-optimizer.js`
-- Commands: `home/.config/opencode/commands/` (6 slash commands: `commit`, `fix`, `git-sync`, `onboard`, `plan`, `review`)
-- Skills: `skills/opencode/` (17 skills) <- `~/.config/opencode/skills/`
+- Globals: `home/.config/opencode/opencode.jsonc`, `package.json`, `package-lock.json`, `.gitignore`, `plugins/`
+- Commands: `prompts/central/` (symlinked as `~/.config/opencode/commands`)
+- Skills: `skills/central/` (symlinked as `~/.config/opencode/skills`)
 - Home source: `~/.config/opencode/`
-- Excluded: `node_modules/` (584 files, 30MB), lean
-- Plugin: custom `compaction-optimizer.js` (preserve state on compact)
+- Excluded: `node_modules/`, lean
 
 ## ollama
 - Globals: `home/.ollama/config.json`
 - Home source: `~/.ollama/`
 - Excluded: `models/blobs/` + `manifests/` (1-2GB, re-downloadable), `cache/`
-- Config: `ollama` provider for opencode + pi (`baseURL http://localhost:11434/v1`, models `hermes3:3b`, `qwen2.5-coder:3b`)
 
-## agents (shared spec - model agnostic — also loaded by pi, counted above)
-- Note: same 21 skills already counted in `pi` 30 above — pi loads both `skills/pi` + `skills/agents`. This section is upstream index only.
-- Skills: `skills/agents/` (21: brainstorming, code-review, context-keeper, diagnosing-bugs, executing-plans, finishing-a-development-branch, handoff, hf-cli, implement, karpathy-guidelines, receiving-code-review, systematic-debugging, test-driven-development, to-spec, to-tickets, using-git-worktrees, using-superpowers, verification-before-completion, writing-for-agents, writing-plans, writing-skills)
-- Home source: `~/.agents/skills/` (no globals, skills only)
+## agents (shared skills)
+- Skills: `skills/agents/` <- `~/.agents/skills/` (no globals, skills only)
+
+## memory (all harnesses)
+- Core: `memory/central/AGENTS_CORE.md` <- `~/.local/share/agent-memory/`
+- Assembled per harness: `memory/central/assembled/{gemini,pi,opencode}.md` (generated, do not hand-edit)
 
 ## templates (repo)
 - `templates/Dockerfile`, `Jenkinsfile`, `.gitignore` <- `~/MuggleBornPadawan/` (not `~/`)
