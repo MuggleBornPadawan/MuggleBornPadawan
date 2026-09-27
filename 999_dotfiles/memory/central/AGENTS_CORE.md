@@ -65,7 +65,7 @@
 - EDIT (ground truth): `~/.local/share/agent-prompts` (prompts); `~/.local/share/skills` (skills); `~/.local/share/agent-memory/AGENTS_CORE.md` + `tails/` (memory).
 - DO NOT EDIT (symlinks, `:compat? true`): `~/.pi/agent/prompts`, `~/.pi/agent/skills`, `~/.gemini/config/skills`, `~/.config/opencode/skills`.
 - Repo mirrors (backup copies, written by `dotfiles.bb` only): `999_dotfiles/prompts/central`, `999_dotfiles/skills/central`, `999_dotfiles/memory/central`.
-- Compat copies (`skills/pi`, `skills/opencode`, `skills/agy/config`, `prompts/pi`) are NOT stored. Re-derived via harness-sync. Never back them up.
+- Compat copies (`skills/pi`, `skills/opencode`, `skills/agy/config`, `prompts/pi`) + opencode `commands` are NOT stored. Manifest flag: `:backup? false`. Re-derived via harness-sync. Never back them up.
 - Regular (non-compat) skill mirrors: `skills/agents` (from `~/.agents/skills`), `skills/agy/builtin` (from Gemini builtin skills).
 - Assembled memory (generated, do not hand-edit): `assembled/{gemini,pi,opencode}.md` = core + tail.
 - Harness consumption: Gemini reads `AGENTS.md` + `GEMINI.md` + `skills` + `prompts`; Pi reads `AGENTS.md` + `skills` + `prompts`; OpenCode reads `AGENTS.md` + `skills` + `commands`.

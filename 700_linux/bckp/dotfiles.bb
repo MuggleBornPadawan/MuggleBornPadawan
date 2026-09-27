@@ -91,7 +91,7 @@
 (defn run-backup! [manifest {:keys [dry-run? verbose?] :as opts}]
   (let [dest-root (expand-home (:dest-root manifest))
         excludes (:excludes manifest)
-        pairs (remove :backup? (:pairs manifest))
+        pairs (remove #(false? (:backup? %)) (:pairs manifest))
         stats (atom {:succeeded 0 :skipped 0 :failed 0})]
     (fs/create-dirs dest-root)
     (log (str "Start dotfiles backup -> " dest-root " (dry_run=" dry-run? ")"))
@@ -126,7 +126,7 @@
     (cond
       ;; Skip compatibility mirrors to avoid duplicate overwrites on symlinked directories
       ;; Also skip :backup? false pairs (redundant copies of central, never stored)
-      (or (:compat? pair) (:backup? pair))
+      (or (:compat? pair) (false? (:backup? pair)))
       (vlog verbose? (str "skip compat mirror: " (:dest pair)))
 
       (not (fs/exists? bkp-abs))
