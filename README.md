@@ -1,8 +1,3 @@
-## License
-Copyright (C) 2027 MuggleBornPadawan
-- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
-
 ## About
 - 👋 Hi, I’m @MuggleBornPadawan
 - 👀 I craft visual art using creative coding
@@ -42,5 +37,7 @@ Copyright (C) 2027 MuggleBornPadawan
 - `000_refcards/` — refcards & notes
 - `100_cpp/`, `200_java/`, `300_python/`, etc. — historical explorations
 
-## About the repository
-![hello world](https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/x-hello-world.jpeg "hello world")
+## License
+Copyright (C) 2027 MuggleBornPadawan
+- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+- This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
