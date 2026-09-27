@@ -91,7 +91,7 @@
 (defn run-backup! [manifest {:keys [dry-run? verbose?] :as opts}]
   (let [dest-root (expand-home (:dest-root manifest))
         excludes (:excludes manifest)
-        pairs (:pairs manifest)
+        pairs (remove :backup? (:pairs manifest))
         stats (atom {:succeeded 0 :skipped 0 :failed 0})]
     (fs/create-dirs dest-root)
     (log (str "Start dotfiles backup -> " dest-root " (dry_run=" dry-run? ")"))
@@ -105,9 +105,9 @@
     (let [home (System/getProperty "user.home")
           repo-git (fs/file home "MuggleBornPadawan/.git")]
       (when (fs/exists? repo-git)
-        (log (str "Tip: cd ~/MuggleBornPadawan && git status --short && "
-                  "git add 700_linux/bckp 999_dotfiles/home 999_dotfiles/templates "
-                  "999_dotfiles/skills 999_dotfiles/prompts && "
+         (log (str "Tip: cd ~/MuggleBornPadawan && git status --short && "
+                   "git add 700_linux/bckp 999_dotfiles/home 999_dotfiles/templates "
+                   "999_dotfiles/skills 999_dotfiles/prompts 999_dotfiles/memory && "
                   "git commit -m 'chore: dotfiles backup "
                   (.format (LocalDateTime/now) (DateTimeFormatter/ofPattern "yyyy-MM-dd")) "'"))))
     (when (pos? (:failed @stats))
@@ -125,7 +125,8 @@
         label (str (fs/file-name home-target))]
     (cond
       ;; Skip compatibility mirrors to avoid duplicate overwrites on symlinked directories
-      (:compat? pair)
+      ;; Also skip :backup? false pairs (redundant copies of central, never stored)
+      (or (:compat? pair) (:backup? pair))
       (vlog verbose? (str "skip compat mirror: " (:dest pair)))
 
       (not (fs/exists? bkp-abs))

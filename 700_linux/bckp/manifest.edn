@@ -73,7 +73,7 @@
   {:src "~/.pi/agent/models.json"             :dest "home/.pi/agent/models.json"}
   {:src "~/.pi/agent/models-store.json"       :dest "home/.pi/agent/models-store.json"}
   {:src "~/.pi/agent/bin"                     :dest "home/.pi/agent/bin"}
-  {:src "~/.local/share/agent-memory"         :dest "home/.local/share/agent-memory"}
+  {:src "~/.local/share/agent-memory"         :dest "memory/central"}
 
   ;; Central skills & prompts (ground truth managed by harness-sync)
   {:src "~/.local/share/agent-prompts"        :dest "prompts/central"}
@@ -88,7 +88,7 @@
   {:src "~/.config/opencode/package-lock.json":dest "home/.config/opencode/package-lock.json"}
   {:src "~/.config/opencode/.gitignore"       :dest "home/.config/opencode/.gitignore"}
   {:src "~/.config/opencode/plugins"          :dest "home/.config/opencode/plugins"}
-  {:src "~/.config/opencode/commands"         :dest "home/.config/opencode/commands"}
+  {:src "~/.config/opencode/commands"         :dest "home/.config/opencode/commands" :backup? false}
 
   ;; Gemini global (agy)
   {:src "~/.gemini/config/GEMINI.md"          :dest "home/.gemini/config/GEMINI.md"}
@@ -109,7 +109,8 @@
   {:src "~/.config/Antigravity IDE/User/settings.json" :dest "home/.config/Antigravity IDE/User/settings.json"}
 
   ;; Compatibility mirrors (symlinks to central on host; skipped on restore)
-  {:src "~/.pi/agent/skills"                  :dest "skills/pi"          :compat? true}
-  {:src "~/.gemini/config/skills"             :dest "skills/agy/config"  :compat? true}
-  {:src "~/.config/opencode/skills"           :dest "skills/opencode"    :compat? true}
-  {:src "~/.pi/agent/prompts"                 :dest "prompts/pi"         :compat? true}]}
+  ;; :backup? false — byte-copies of central, re-derived via harness-sync. Not stored.
+  {:src "~/.pi/agent/skills"                  :dest "skills/pi"          :compat? true :backup? false}
+  {:src "~/.gemini/config/skills"             :dest "skills/agy/config"  :compat? true :backup? false}
+  {:src "~/.config/opencode/skills"           :dest "skills/opencode"    :compat? true :backup? false}
+  {:src "~/.pi/agent/prompts"                 :dest "prompts/pi"         :compat? true :backup? false}]}

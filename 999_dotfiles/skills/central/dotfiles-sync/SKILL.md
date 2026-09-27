@@ -36,6 +36,7 @@ Backup dotfiles and push to both branches (`chromebook` + `main` -> `origin`).
 - Dest: `~/MuggleBornPadawan/999_dotfiles/` (plain files, git tracked)
 - Excludes secrets: `auth.json`, `hosts.yml`, `oauth_creds.json`, `*.db`, `*.log`, `node_modules/`, `sessions/`, `blobs/`
 - Verify: `Done: X ok, Y skipped, 0 failed`
+- Compat mirrors (`skills/pi`, `skills/agy/config`, `skills/opencode`, `prompts/pi`, opencode `commands`) are NOT stored (`:backup? false` in manifest). Re-derived via harness-sync. Do not stage them if present.
 
 ### 2. Check git status
 
@@ -53,7 +54,7 @@ git branch -vv
 ### 3. Stage
 
 ```bash
-git add 700_linux/bckp 700_linux/scripts/sysinfo.sh 999_dotfiles/home 999_dotfiles/prompts 999_dotfiles/skills 999_dotfiles/templates 999_dotfiles/by-tool 2>/dev/null || true
+git add 700_linux/bckp 700_linux/scripts/sysinfo.sh 999_dotfiles/home 999_dotfiles/prompts 999_dotfiles/skills 999_dotfiles/memory 999_dotfiles/templates 999_dotfiles/by-tool 2>/dev/null || true
 # Also check for other modified tracked files:
 git status --short
 # If untracked files outside 999_dotfiles are needed, ask user before adding

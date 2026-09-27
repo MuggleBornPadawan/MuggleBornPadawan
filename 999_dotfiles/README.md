@@ -22,13 +22,15 @@
   templates/          # repo templates (not dotfiles) - from ~/MuggleBornPadawan/
     Dockerfile, Jenkinsfile, .gitignore
   skills/
-    pi/               # from ~/.pi/agent/skills
+    central/          # from ~/.local/share/skills (ground truth)
     agents/           # from ~/.agents/skills
-    agy/config/       # from ~/.gemini/config/skills
     agy/builtin/      # from ~/.gemini/antigravity-cli/builtin/skills
-    opencode/         # from ~/.config/opencode/skills
+    # NOT STORED (re-derived via harness-sync): pi/, agy/config/, opencode/
   prompts/
-    pi/               # from ~/.pi/agent/prompts
+    central/          # from ~/.local/share/agent-prompts (ground truth)
+    # NOT STORED (re-derived via harness-sync): pi/
+  memory/
+    central/          # from ~/.local/share/agent-memory (core + tails + assembled)
 ```
 
 ## Map: HOME -> repo
@@ -56,17 +58,20 @@
 | `~/.pi/agent/settings.json` | `home/.pi/agent/settings.json` | pi global |
 | `~/.pi/agent/models.json` | `home/.pi/agent/models.json` | pi global |
 | `~/.pi/agent/bin/` | `home/.pi/agent/bin/` | pi bin (rg excluded) |
-| `~/.pi/agent/skills/` | `skills/pi/` | pi skills |
-| `~/.pi/agent/prompts/` | `prompts/pi/` | pi prompts |
+| `~/.local/share/agent-prompts/` | `prompts/central/` | prompts ground truth |
+| `~/.local/share/skills/` | `skills/central/` | skills ground truth |
+| `~/.local/share/agent-memory/` | `memory/central/` | memory core + tails + assembled |
+| `~/.pi/agent/skills/` | `skills/pi/` | NOT STORED, re-derived |
+| `~/.pi/agent/prompts/` | `prompts/pi/` | NOT STORED, re-derived |
 | `~/.agents/skills/` | `skills/agents/` | agents skills |
-| `~/.gemini/config/skills/` | `skills/agy/config/` | agy config skills |
+| `~/.gemini/config/skills/` | `skills/agy/config/` | NOT STORED, re-derived |
 | `~/.gemini/antigravity-cli/builtin/skills/` | `skills/agy/builtin/` | agy builtin |
 | `~/.config/opencode/opencode.jsonc` | `home/.config/opencode/opencode.jsonc` | opencode global |
 | `~/.config/opencode/package.json` | `home/.config/opencode/package.json` | opencode |
 | `~/.config/opencode/package-lock.json` | `home/.config/opencode/package-lock.json` | opencode lock |
 | `~/.config/opencode/plugins/` | `home/.config/opencode/plugins/` | opencode plugins (node_modules excluded) |
-| `~/.config/opencode/commands/` | `home/.config/opencode/commands/` | opencode custom commands |
-| `~/.config/opencode/skills/` | `skills/opencode/` | opencode skills |
+| `~/.config/opencode/commands/` | — | NOT STORED, symlink to central prompts |
+| `~/.config/opencode/skills/` | `skills/opencode/` | NOT STORED, re-derived |
 | `~/.config/opencode/.gitignore` | `home/.config/opencode/.gitignore` | opencode ignore |
 | `~/.gemini/settings.json` | `home/.gemini/settings.json` | gemini global |
 | `~/.gemini/trustedFolders.json` | `home/.gemini/trustedFolders.json` | gemini |
