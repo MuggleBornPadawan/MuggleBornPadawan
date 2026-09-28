@@ -8,7 +8,6 @@ Personal monorepo for creative coding, lean Clojure work, and visual art tests.
 - 👀 I craft visual art using creative coding
 - 💞️ I’m looking to collaborate on art related projects
 - 📫 How to reach me [mugglebornpadawan].[at].[icloud.com]
-- 😄 Pronouns: he/him
 - ⚡ Fun fact: I am building my own light saber with special spells
 
 ## Tech Stack
