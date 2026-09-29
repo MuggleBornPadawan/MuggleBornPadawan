@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Clojure Quil Skill: Procedural Visual Art
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-quil
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Use this skill to build procedural content generation (PCG) systems and generative visual art in Clojure with [Quil](http://quil.info/) (Processing).
 

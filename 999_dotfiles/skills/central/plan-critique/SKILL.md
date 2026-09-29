@@ -6,6 +6,11 @@ description: >-
 ---
 
 # Plan Critique Skill
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill plan-critique
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Critique and challenge your proposed approach before executing tasks to prevent over-engineering or wrong assumptions:
 

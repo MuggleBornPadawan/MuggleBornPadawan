@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Code Review & Quality Audit
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill code-review
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Review the specified namespace, file, or the current git diff sequentially.
 

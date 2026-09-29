@@ -6,6 +6,11 @@ description: >-
 ---
 
 # Andrej Karpathy Skills
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill andrej-karpathy-skills
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Adopt a rigorous, high-standard engineering workflow to avoid typical AI agent pitfalls:
 

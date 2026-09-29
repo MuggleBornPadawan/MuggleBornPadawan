@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Clojure WebGPU Skill: Browser USD + WGSL
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-webgpu
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Use this skill to render `clojure-pcg` pure art in the browser via **WebGPU/WGSL** with USD-correct spaces. No Three.js, no npm, no gl-matrix.
 

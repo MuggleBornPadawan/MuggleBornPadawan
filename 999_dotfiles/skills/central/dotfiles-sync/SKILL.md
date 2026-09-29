@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Dotfiles Sync
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill dotfiles-sync
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Backup dotfiles and push to both branches (`chromebook` + `main` -> `origin`).
 

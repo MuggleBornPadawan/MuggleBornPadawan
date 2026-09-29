@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Write LLM Judge Prompt — Pi Lean Edition
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill write-judge-prompt
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Design a focused, binary Pass/Fail evaluator for one specific failure mode.
 

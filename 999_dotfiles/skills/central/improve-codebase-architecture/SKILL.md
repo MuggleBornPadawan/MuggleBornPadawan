@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Improve Codebase Architecture
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill improve-codebase-architecture
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Surface architectural friction and propose **deepening opportunities**: refactors that turn shallow modules into deep ones. The aim is testability and AI-navigability.
 

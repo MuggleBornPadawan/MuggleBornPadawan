@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Clojure Raylib Skill: Procedural Visual Art & Real-Time PCG
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-raylib
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Use this skill to build real-time procedural visual art, GPU shader simulations, and procedural 3D environments with [Raylib](https://www.raylib.com/) in Clojure.
 

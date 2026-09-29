@@ -6,6 +6,17 @@ description: >-
 
 # Test Authoring & Verification (Clojure / Polyglot)
 
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-test
+```
+- Read `SKILL_START_PROTO`, `SESSION_ID`, `TEL_START`.
+- If missing: use safe defaults. Continue task. Report stale install.
+- At end:
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill clojure-test --outcome success --session-id SESSION_ID
+```
+
 Write tests for the specified namespace or target code sequentially. Do not run parallel test workers.
 
 Rules:
@@ -22,3 +33,18 @@ Clojure / lean-machine (AGENTS.md):
 - Style: idiomatic `->`/`->>` threading, clean `ns` requires; respect `clj-kondo` + `cljfmt`.
 
 Run the tests when done and report results (`bb test -n <ns>` + `clj-kondo --lint src` if Clojure).
+
+## QA evidence (full notes)
+- For each probe: write `.context/exploration-NNN.json`.
+- Fields: `result`, `assumption`, `next`.
+- Link notes in final report.
+- For each bug:
+  - Reproduce first.
+  - Write failing test. Must fail before fix.
+  - Fix cause. Re-run. Must pass after.
+  - Check adjacent paths.
+- Report blocks:
+  - `FAIL`: with command + expected + actual.
+  - `BLOCKED`: with cause + untested contracts.
+  - `UNTESTED`: list what you did not check.
+- Bounded run: stop at deadline. Show unfinished checks. No silent pass.

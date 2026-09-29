@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Open Source Telemetry Standard
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill open-source-telemetry
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Follow this workflow for all telemetry design, coding, and code reviews.
 

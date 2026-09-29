@@ -5,6 +5,11 @@ description: >-
 ---
 
 # PCG Spaces — USD + WebGPU
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill pcg-spaces
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Lean pointer to full research: `/home/rgroot/MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md` (20KB, 14 primary sources: openusd.org + W3C WebGPU/WGSL).
 

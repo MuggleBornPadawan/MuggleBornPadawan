@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Prototype — Clojure Patch
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill prototype
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 A prototype is **throwaway code that answers a question**. The question decides the shape. **Clojure + lean-machine adapted.** See original at `https://github.com/mattpocock/skills` logic + pi `~/.pi/agent/skills/prototype`. Pure Markdown, 0 deps. Location: `~/.pi/agent/skills/prototype/` (global, pi). `/reload` after edit.
 

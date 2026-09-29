@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Scittle + Three.js Skill: Browser Procedural 3D Art
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-threejs
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Use this skill to build procedural 3D visual art, WebGL generative algorithms, and mathematical forms in Clojure without `npm`, `node_modules`, or `shadow-cljs`.
 

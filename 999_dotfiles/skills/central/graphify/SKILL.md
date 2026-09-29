@@ -6,6 +6,11 @@ description: >-
 ---
 
 # Graphify Skill
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill graphify
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Optimize navigation and codebase comprehension using structured mapping:
 

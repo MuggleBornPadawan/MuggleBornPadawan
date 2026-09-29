@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Incremental Code Refactorer
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill refactor-code
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Refactor the specified target namespace or file sequentially.
 

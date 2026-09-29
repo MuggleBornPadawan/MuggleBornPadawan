@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Proactive Bug Hunting & Vulnerability Scanner
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill find-bugs
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Proactively hunt for bugs in the specified namespace, file, or module sequentially.
 

@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Issue Diagnosis & Surgical Fix Protocol
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill fix-issue
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Diagnose and fix the target problem, error message, or stack trace sequentially:
 

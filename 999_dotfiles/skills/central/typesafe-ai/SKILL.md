@@ -5,6 +5,11 @@ description: >-
 ---
 
 # TypeSafe AI (Jev)
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill typesafe-ai
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 ## Overview
 

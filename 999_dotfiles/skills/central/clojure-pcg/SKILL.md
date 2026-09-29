@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Clojure PCG — One Generate, Three Renders
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-pcg
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Compose `clojure-quil` + `clojure-raylib` + `clojure-webgpu` + `pcg-spaces`. `clojure-threejs` is WebGL-only preview — not USD. Do not duplicate. This skill is the glue.
 

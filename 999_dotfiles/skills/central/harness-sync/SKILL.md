@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Centralized Harness Symlink Manager (Gemini, Pi, OpenCode)
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill harness-sync
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Maintains a single centralized repository for system memory, skills, and prompts in `~/.local/share/`, and automatically establishes symbolic links across all active AI coding harnesses.
 

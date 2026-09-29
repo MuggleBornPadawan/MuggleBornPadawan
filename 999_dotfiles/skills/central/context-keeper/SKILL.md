@@ -6,6 +6,11 @@ description: >-
 ---
 
 # Context Keeper
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill context-keeper
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Use this skill to systematically manage your token context when performing long-running tasks.
 

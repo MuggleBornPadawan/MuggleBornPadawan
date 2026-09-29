@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Error Discovery — Pi Lean Edition
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill error-discovery
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Discover failure modes in AI applications before writing metrics.
 Adapted for Pi: turn-based workflow, no subagents, 0 extra dependencies.

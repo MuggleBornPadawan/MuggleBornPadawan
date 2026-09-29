@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Clojure Performance Engineering
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-performance
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Optimization discipline for Clojure on the JVM.
 Follow these steps to optimize hot paths without damaging idiomatic code.

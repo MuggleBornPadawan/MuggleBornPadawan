@@ -8,6 +8,11 @@ description: >-
 ---
 
 # Chitrapata Traditional Indian Artforms — PCG Skill
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill chitrapata-artforms
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Generate procedural art rooted in 12 indigenous Indian traditions via pure Clojure.
 Composes with `clojure-pcg` (triple render), `clojure-quil`, `clojure-raylib`, and `clojure-webgpu`.

@@ -5,6 +5,11 @@ description: >-
 ---
 
 # Codebase Design — Clojure Patch
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill codebase-design
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Design **deep modules**: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface. Use this language and these principles wherever Clojure code is being designed or restructured. The aim is leverage for callers, locality for maintainers, and testability for everyone. **Clojure + lean-machine adapted.** See original at `https://github.com/mattpocock/skills` + pi `~/.pi/agent/skills/codebase-design`. Pure Markdown. Location: `~/.pi/agent/skills/codebase-design/` (global, pi).
 

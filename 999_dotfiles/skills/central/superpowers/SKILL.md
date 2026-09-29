@@ -6,6 +6,11 @@ description: >-
 ---
 
 # Superpowers Skill
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill superpowers
+```
+- Read SESSION_ID. Use for skill-end at close.
 
 Enforce a disciplined, spec-driven engineering methodology to ensure correctness, testability, and safety:
 

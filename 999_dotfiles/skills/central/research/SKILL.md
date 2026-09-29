@@ -3,6 +3,12 @@ name: research
 description: Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated.
 ---
 
+## Preamble (run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill research
+```
+- Read SESSION_ID. Use for skill-end at close.
+
 Perform the research sequentially in the current session. Do not spawn parallel subagents. Trace one claim at a time to conserve memory and maintain clear context.
 
 Its job:
