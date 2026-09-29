@@ -14,6 +14,7 @@
 {:file "x_ai_then_now.jpeg", :category "ai-agents"}
 {:file "x_ai_top_17_basic_concepts.png", :category "ai-agents"}
 {:file "x_aigo_srini_peter_voss.jpeg", :category "ai-agents"}
+{:file "x_algebra_identities.jpeg", :category "math"}
 {:file "x_angles.jpeg", :category "math"}
 {:file "x_api.png", :category "system-design"}
 {:file "x_api_design_complete_roadmap.jpeg", :category "system-design"}
