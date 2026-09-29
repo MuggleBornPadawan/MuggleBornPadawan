@@ -14,6 +14,7 @@ readonly COMMITS_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/commits.sh"
 readonly DOTFILES_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/bckp/dotfiles.sh"
 readonly REMOTE_STARTUP_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/remote_startup.sh"
 readonly YADDA_SCRIPT="${HOME}/MuggleBornPadawan/700_linux/scripts/yadda_yadda.sh"
+readonly GALLERY_SCRIPT="${HOME}/MuggleBornPadawan/000_refcards/generate_gallery.bb"
 readonly DOTFILES_DST="${HOME}/MuggleBornPadawan/999_dotfiles"
 
 DRY_RUN=false
@@ -104,6 +105,22 @@ backup_emacs_and_skills() {
   # Keep old tars for 30 days then phase out. No action needed daily.
   # If you still want tar history, run: ~/MuggleBornPadawan/700_linux/bckp/backup_emacs.sh --keep 12
   vlog "Skip: skills/prompts/emacs now via dotfiles.sh manifest"
+}
+
+# --------------------------------------------------------------------------
+# 3b. Gallery regen (refcards viewer, only if images changed)
+# --------------------------------------------------------------------------
+regen_gallery() {
+  info "--- Gallery regen (000_refcards) ---"
+  if ! has_cmd bb; then
+    warn "bb not found, skip gallery regen"
+    return 0
+  fi
+  if [[ ! -f "$GALLERY_SCRIPT" ]]; then
+    warn "Gallery script not found: $GALLERY_SCRIPT"
+    return 0
+  fi
+  run "bb \"$GALLERY_SCRIPT\""
 }
 
 # --------------------------------------------------------------------------
@@ -267,6 +284,7 @@ main() {
   run_commits
   backup_dotfiles
   backup_emacs_and_skills
+  regen_gallery
   git_commit_dotfiles
   maybe_pause
   run_remote_startup
