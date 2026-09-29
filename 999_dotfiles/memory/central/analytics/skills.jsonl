@@ -2,3 +2,6 @@
 {:t 1790705393344, :skill "unknown", :outcome "unknown", :sid "none"}
 {:t 1790705395729, :skill "unknown", :outcome "unknown", :sid "none"}
 {:t 1790705479842, :skill "unknown", :outcome "unknown", :sid "none"}
+{:t 1790707138661, :skill "unknown", :outcome "unknown", :sid "none"}
+{:t 1790707143398, :skill "unknown", :outcome "unknown", :sid "none"}
+{:t 1790707149525, :skill "dotfiles-sync", :outcome "success", :sid "1790707091632-dotfiles-sync"}

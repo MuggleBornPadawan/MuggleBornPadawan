@@ -10,7 +10,7 @@
 - Disk: 31 GB total (~10 GB free headroom, 2026-09 baseline; check live with sysinfo before trusting) — ask before large downloads (>100 MB) or package installs
 - Prohibited heavy commands: Do NOT run memory-heavy commands like `ollama run`, `docker pull`, `clojure -P`, or `lein deps` without asking
 - Java: OpenJDK 25 (Temurin-25 at /usr/lib/jvm/temurin-25-jdk-amd64, 64-Bit Server VM)
-- Cloud: Google Cloud SDK 585.0.0 at /usr/lib/google-cloud-sdk (`gcloud` at /usr/bin/gcloud, includes `gsutil`/`bq`/`alpha`/`beta`) — auth configured
+- Cloud: Google Cloud SDK 587.0.0 at /usr/lib/google-cloud-sdk (`gcloud` at /usr/bin/gcloud, includes `gsutil`/`bq`/`alpha`/`beta`) — auth configured
 - Net: Chromebook host + Crostini container (LXD NAT) — Mac Studio on same WiFi, SSH via LAN IP / .local only
 - VPN: PIA Play Store app with Allow LAN ON — keep ON, LAN bypass required for SSH
 - Cloud SSH: use gcloud compute ssh with default google keys — auth configured
