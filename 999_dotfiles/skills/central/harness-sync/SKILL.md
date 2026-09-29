@@ -22,7 +22,7 @@ Maintains a single centralized repository for system memory, skills, and prompts
 ### 1. Antigravity Gemini (`~/.gemini/config/`)
 - `AGENTS.md` -> `~/.local/share/agent-memory/assembled/gemini.md`
 - `GEMINI.md` -> `~/.local/share/agent-memory/assembled/gemini.md`
-- `skills` -> `~/.local/share/skills`
+- `skills/` -> Managed directory: symlinks all `~/.local/share/skills/*` + prompt bridges (`<name>/SKILL.md -> ~/.local/share/agent-prompts/<name>.md`) for non-colliding workflow prompts
 - `prompts` -> `~/.local/share/agent-prompts`
 
 ### 2. Pi Coding Agent (`~/.pi/agent/`)

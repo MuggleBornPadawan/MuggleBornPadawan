@@ -1,4 +1,5 @@
 ---
+name: git-sync
 description: Add, commit, push current branch, and merge into main
 argument-hint: "[commit-message]"
 ---

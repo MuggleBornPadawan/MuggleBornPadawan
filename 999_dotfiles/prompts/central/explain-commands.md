@@ -1,4 +1,5 @@
 ---
+name: explain-commands
 description: Explain commands from previous prompt
 argument-hint: "[empty = previous prompt]"
 ---

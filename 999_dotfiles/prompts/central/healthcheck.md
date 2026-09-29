@@ -1,4 +1,5 @@
 ---
+name: healthcheck
 description: Run sysinfo.sh --tech and review ~/bkp/sysinfo.log for system health
 ---
 

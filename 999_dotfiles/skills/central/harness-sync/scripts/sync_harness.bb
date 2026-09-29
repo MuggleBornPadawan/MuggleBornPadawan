@@ -14,6 +14,13 @@
 (def central-skills "/home/rgroot/.local/share/skills")
 (def central-prompts "/home/rgroot/.local/share/agent-prompts")
 
+;; Anti-pollution and collision guardrails for Antigravity prompt bridges
+(def agy-builtin-commands
+  #{"goal" "schedule" "browser" "plan" "grill-me" "teamwork-preview" "learn" "boost"})
+
+(def prompt-skill-collisions
+  #{"find-bugs" "refactor" "review" "test" "plan"})
+
 ;; Harness Configuration Targets
 (def harness-targets
   [{:name "Antigravity Gemini"
@@ -22,7 +29,6 @@
     :assembled "/home/rgroot/.local/share/agent-memory/assembled/gemini.md"
     :links [{:sub "AGENTS.md" :target :assembled}
             {:sub "GEMINI.md" :target :assembled}
-            {:sub "skills"    :target central-skills}
             {:sub "prompts"   :target central-prompts}]}
 
    {:name "Pi Agent"
@@ -99,6 +105,126 @@
           (when-not dry-run?
             (fs/move f target-item {:replace-existing false})))))))
 
+(defn parse-frontmatter
+  "Extracts YAML frontmatter key-value pairs if present."
+  [file-path]
+  (try
+    (let [lines (str/split-lines (slurp (str file-path)))]
+      (if (and (seq lines) (= "---" (str/trim (first lines))))
+        (let [fm-lines (take-while #(not= "---" (str/trim %)) (rest lines))]
+          (into {}
+                (keep (fn [line]
+                        (when-let [[_ k v] (re-matches #"^([a-zA-Z0-9_-]+):\s*(.*)$" (str/trim line))]
+                          [(keyword (str/lower-case k)) (str/trim v)])))
+                fm-lines))
+        {}))
+    (catch Exception _ {})))
+
+(defn eligible-prompt? [prompt-file central-skills-set]
+  (let [p-name (str (fs/strip-ext (fs/file-name prompt-file)))
+        fm (parse-frontmatter prompt-file)]
+    (cond
+      (contains? central-skills-set p-name)
+      {:eligible? false :reason (str "collides with central skill '" p-name "'")}
+
+      (contains? agy-builtin-commands p-name)
+      {:eligible? false :reason (str "collides with Antigravity builtin '/" p-name "'")}
+
+      (contains? prompt-skill-collisions p-name)
+      {:eligible? false :reason "overlaps existing skill scope"}
+
+      (empty? (:description fm))
+      {:eligible? false :reason "lacks YAML frontmatter description"}
+
+      :else
+      {:eligible? true :name p-name :description (:description fm)})))
+
+(defn sync-gemini-skills! [dry-run?]
+  (println "\n--- Managing Antigravity Skills & Prompt Bridges ---")
+  (let [gemini-skills-dir "/home/rgroot/.gemini/config/skills"
+        central-skills-dirs (filter fs/directory? (fs/list-dir central-skills))
+        central-skills-set (set (map #(str (fs/file-name %)) central-skills-dirs))
+        expected-entries (atom #{})]
+
+    ;; If gemini-skills-dir is a symlink pointing directly to central-skills, migrate to directory
+    (when (symlink? gemini-skills-dir)
+      (println "  [MIGRATE] Converting skills symlink to managed directory...")
+      (when-not dry-run?
+        (fs/delete gemini-skills-dir)
+        (fs/create-dirs gemini-skills-dir)))
+
+    (when-not (fs/exists? gemini-skills-dir)
+      (when-not dry-run?
+        (fs/create-dirs gemini-skills-dir)))
+
+    ;; 1. Symlink central skills into gemini-skills-dir
+    (doseq [skill-dir (sort-by #(str (fs/file-name %)) central-skills-dirs)]
+      (let [s-name (str (fs/file-name skill-dir))
+            link-path (str gemini-skills-dir "/" s-name)]
+        (swap! expected-entries conj s-name)
+        (cond
+          (and (symlink? link-path)
+               (try (= (str (fs/canonicalize link-path)) (str (fs/canonicalize skill-dir)))
+                    (catch Exception _ false)))
+          (println (str "  [OK SKILL] " s-name " -> " skill-dir))
+
+          (symlink? link-path)
+          (do
+            (println (str "  [REPAIR SKILL SYMLINK] " s-name " -> " skill-dir))
+            (when-not dry-run?
+              (fs/delete link-path)
+              (create-link! link-path skill-dir)))
+
+          (fs/exists? link-path)
+          (do
+            (println (str "  [REPLACE EXISTING] " s-name " with symlink to central skill"))
+            (when-not dry-run?
+              (fs/delete-tree link-path)
+              (create-link! link-path skill-dir)))
+
+          :else
+          (do
+            (println (str "  [LINK SKILL] " s-name " -> " skill-dir))
+            (when-not dry-run?
+              (create-link! link-path skill-dir))))))
+
+    ;; 2. Bridge eligible prompts into gemini-skills-dir
+    (doseq [prompt-file (sort (filter #(str/ends-with? (str %) ".md") (fs/list-dir central-prompts)))]
+      (let [p-name (str (fs/strip-ext (fs/file-name prompt-file)))
+            check (eligible-prompt? prompt-file central-skills-set)]
+        (if (:eligible? check)
+          (let [bridge-dir (str gemini-skills-dir "/" p-name)
+                skill-md (str bridge-dir "/SKILL.md")]
+            (swap! expected-entries conj p-name)
+            (when-not (fs/exists? bridge-dir)
+              (println (str "  [CREATE BRIDGE DIR] " p-name))
+              (when-not dry-run?
+                (fs/create-dirs bridge-dir)))
+            (cond
+              (and (symlink? skill-md)
+                   (try (= (str (fs/canonicalize skill-md)) (str (fs/canonicalize prompt-file)))
+                        (catch Exception _ false)))
+              (println (str "  [OK BRIDGE] /" p-name " -> " (fs/file-name prompt-file)))
+
+              :else
+              (do
+                (println (str "  [BRIDGE PROMPT] /" p-name " -> " (fs/file-name prompt-file)))
+                (when-not dry-run?
+                  (when (fs/exists? skill-md) (fs/delete skill-md))
+                  (create-link! skill-md prompt-file)))))
+          (println (str "  [SKIP PROMPT] " p-name " (" (:reason check) ")")))))
+
+    ;; 3. Prune stale entries
+    (when (and (fs/exists? gemini-skills-dir) (fs/directory? gemini-skills-dir) (not (symlink? gemini-skills-dir)))
+      (doseq [entry (fs/list-dir gemini-skills-dir)]
+        (let [e-name (str (fs/file-name entry))]
+          (when-not (contains? @expected-entries e-name)
+            (println (str "  [PRUNE STALE] " e-name))
+            (when-not dry-run?
+              (if (fs/directory? entry)
+                (fs/delete-tree entry)
+                (fs/delete entry)))))))))
+
 (defn process-link! [harness-spec link-spec dry-run?]
   (let [{:keys [sub target]} link-spec
         link-path (str (:base harness-spec) "/" sub)
@@ -158,7 +284,9 @@
   (doseq [harness harness-targets]
     (println (str "\nChecking Harness: " (:name harness)))
     (doseq [link-spec (:links harness)]
-      (process-link! harness link-spec dry-run?)))
+      (process-link! harness link-spec dry-run?))
+    (when (= (:name harness) "Antigravity Gemini")
+      (sync-gemini-skills! dry-run?)))
 
   (println "\n-------------------------------------------")
   (println "Centralized Harness Synchronization Completed."))
