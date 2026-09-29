@@ -259,9 +259,9 @@ tools: diagrams, go diagrams, mermaid, plantuml, ascii editor, markup
   - load-linked (ll)
   - store-conditional (sc) 
 ** ai automation vs ai agent
-[[file:x_ai_automation_vs_ai_agents.png]]
+[[file:images/x_ai_automation_vs_ai_agents.png]]
 ** chain of thought (cot) vs tree of thought (tot) vs graph of thought (got) 
-[[file:x_cot_vs_tot_vs_got_llm.png]]
+[[file:images/x_cot_vs_tot_vs_got_llm.png]]
 ** new stack
 The new magic tardigrade level tech stack = domain specific composable architecture (mach) + model context protocol (standardized interop) + ai inference providers (eg: OpenRouter.ai) + polyglot programming + multimodal capabilities (better human machine interfaces) + omniverse (simulation) + hardware integration (robotics, not necessarily in human form)
 - ai inference providers
