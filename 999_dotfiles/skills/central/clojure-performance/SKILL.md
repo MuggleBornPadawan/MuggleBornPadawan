@@ -147,6 +147,29 @@ Avoid `(str ...)` in tight loops. Use `StringBuilder`:
         (.toString sb)))))
 ```
 
+### G. Off-Heap Buffers (`ByteBuffer`)
+For binary I/O, native FFM interop (Raylib, Panama), and zero-allocation byte transfers:
+
+```clojure
+(import '(java.nio ByteBuffer ByteOrder))
+
+(defn write-packet ^ByteBuffer [^long id ^double val]
+  (doto (ByteBuffer/allocateDirect 16)
+    (.order ByteOrder/LITTLE_ENDIAN)
+    (.putLong id)
+    (.putDouble val)
+    (.flip))) ;; Switch from write mode to read mode
+
+(defn read-packet [^ByteBuffer buf]
+  {:id (.getLong buf)
+   :val (.getDouble buf)})
+```
+
+* Always type-hint `^ByteBuffer` to eliminate reflection.
+* Use `allocateDirect` for off-heap buffers to avoid JVM GC overhead and enable zero-copy native I/O.
+* Always specify `.order` (`ByteOrder/LITTLE_ENDIAN` or `ByteOrder/BIG_ENDIAN`).
+* Call `.flip` after writing before reading. Call `.clear` before writing again.
+
 ---
 
 ## 4. State Containers Ranked by Overhead
@@ -176,4 +199,5 @@ By default, Clojure invokes functions through dynamic Vars. This prevents JIT in
 - [ ] Set `*unchecked-math* :warn-on-boxed` (zero boxing warnings).
 - [ ] Replaced lazy sequences on hot paths with transducers.
 - [ ] Type-hinted numeric function arguments and returns (`^long`, `^double`).
+- [ ] Type-hinted buffers (`^ByteBuffer`) and configured byte order for binary/native paths.
 - [ ] Checked that dev REPL workflow remains intact.

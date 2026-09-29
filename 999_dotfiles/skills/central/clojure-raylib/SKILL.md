@@ -291,6 +291,13 @@ Use this template to generate 3D mathematical surfaces and procedural terrain:
 * Requires system `libraylib.so`.
 * Best for CLI utilities that render single images or batch exports.
 
+### Option D: High-Density Mesh Buffers (`ByteBuffer` / Native Memory)
+* For dynamic meshes or particle arrays with > 10,000 vertices:
+  * Do NOT allocate new Clojure sequences inside the 60 FPS drawing loop.
+  * Use off-heap direct buffers (`ByteBuffer/allocateDirect` with `ByteOrder/LITTLE_ENDIAN`).
+  * Pass buffer pointers directly to Raylib C structs to prevent garbage collection pauses.
+  * Keep `art.generate` pure Clojure data. Convert to `ByteBuffer` only at the Raylib render boundary.
+
 ---
 
 ## 7. Troubleshooting Checklist
