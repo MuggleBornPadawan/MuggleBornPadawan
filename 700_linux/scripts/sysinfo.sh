@@ -252,9 +252,32 @@ if command -v mullvad &>/dev/null; then
 fi
 
 if [[ $_vpn_found -eq 0 ]]; then
-    echo "No active VPN interface or tunnel detected."
+    echo "No active VPN interface or tunnel detected (container scope only)."
+    echo "Note: Crostini container cannot see host ChromeOS VPN (e.g. PIA app). See effective exit check below."
 fi
-unset _vpn_found _vpn_ifaces _ts_status _wg_status _mullvad_status
+
+echo "Effective exit (host scope):"
+if [[ -n "${SYSINFO_NO_IP:-}" ]]; then
+    echo "  Skipped (SYSINFO_NO_IP=1)"
+elif command -v curl &> /dev/null; then
+    _exit_json=$(curl -s --max-time 5 https://ipinfo.io/json 2>/dev/null || true)
+    if [[ -z "$_exit_json" ]]; then
+        echo "  Unable to fetch exit IP (timeout/no connection)."
+    else
+        _exit_ip=$(echo "$_exit_json" | grep -o '"ip": *"[^"]*"' | cut -d'"' -f4)
+        _exit_country=$(echo "$_exit_json" | grep -o '"country": *"[^"]*"' | cut -d'"' -f4)
+        _exit_org=$(echo "$_exit_json" | grep -o '"org": *"[^"]*"' | cut -d'"' -f4)
+        echo "  exit IP: ${_exit_ip:-unknown} country: ${_exit_country:-unknown} org: ${_exit_org:-unknown}"
+        if echo "${_exit_org:-}" | grep -qiE 'datacamp|m247|choopa|leaseweb|ovh|hetzner|digitalocean|vultr|linode|contabo|vpn|hosting|datacenter|cloud|cdn|colocation'; then
+            printf "${GREEN}  Effective exit: LIKELY VPN/datacenter (org suggests tunnel exit)${RESET}\n"
+        else
+            echo "  Effective exit: direct ISP (no VPN sign in org)"
+        fi
+    fi
+else
+    echo "  curl not available, cannot check exit IP."
+fi
+unset _vpn_found _vpn_ifaces _ts_status _wg_status _mullvad_status _exit_json _exit_ip _exit_country _exit_org
 
 # ----------------------------------------------------
 # 4) SERVICES & ERROR LOGS
