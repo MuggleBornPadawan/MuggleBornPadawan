@@ -1,6 +1,6 @@
 # MuggleBornPadawan
 
-Personal monorepo for creative coding, lean Clojure work, and visual art tests.
+Personal monorepo for learning creative coding, lean Clojure work, and visual art tests.
 
 ## About
 
