@@ -33,7 +33,15 @@ Personal monorepo for creative coding, lean Clojure work, and visual art tests.
   - PostgreSQL (prod) + SQLite (local/prototype)
   - Google Cloud SDK (`gcloud`/`gsutil`/`bq`)
 
+## Atelier (Chitrapata / Chittu 13.14)
+
+- Ontology: [`atelier/chitrapata.org`](atelier/chitrapata.org) — submodule → [`MuggleBornPadawan/chitrapata-ontology`](https://github.com/MuggleBornPadawan/chitrapata-ontology)
+  - Never edit local copy. Edit upstream, then `git submodule update --remote atelier`.
+- Live work: [Mandala viewer](https://mugglebornpadawan.github.io/chittu-1314-mandala/) — source [`MuggleBornPadawan/chittu-1314-mandala`](https://github.com/MuggleBornPadawan/chittu-1314-mandala)
+
 ## Repository Map
+
+- `atelier/` — canonical ontology (submodule, upstream-only)
 
 - `000_refcards/` — refcards & notes
 - `100_cpp/` — historical explorations
