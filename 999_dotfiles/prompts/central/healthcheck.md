@@ -30,7 +30,7 @@ Do these steps:
    - **Memory:** Available >1.5G = OK, 0.5-1.5G = WARN, <0.5G = CRITICAL. Swap 0B is expected.
    - **CPU/Load:** Load avg <4 on 8 threads = OK. Check top 5 CPU/MEM for runaways (e.g., `emacs`, `pi`, `postgres`).
    - **I/O:** `iostat` await >20ms = WARN.
-   - **Network:** Internet ping to 8.8.8.8 must pass. Public IP fetch may timeout - OK.
+   - **Network & VPN:** Internet ping to 8.8.8.8 must pass. VPN check: Active tunnel/interface = OK (active), No active VPN = INFO (disconnected). Public IP fetch may timeout - OK.
    - **Services:** Failed services = 0 is OK. Any failed = CRITICAL.
    - **Journal:** No permission errors. Show last errors if present.
    - **Security (Section 7):** Pending updates >0 = WARN (`apt upgrade`), `reboot-required` = WARN, firewall missing (ufw/nft/iptables) = INFO (optional on Crostini), clamav/freshclam inactive = OK (no scan here).

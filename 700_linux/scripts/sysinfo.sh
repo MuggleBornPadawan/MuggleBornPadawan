@@ -213,6 +213,49 @@ else
     printf "${RED}✖ Internet Ping Failed${RESET}\n"
 fi
 
+print_subheader "VPN & Tunnel Status"
+_vpn_found=0
+
+if command -v ip &> /dev/null; then
+    _vpn_ifaces=$(ip -brief link 2>/dev/null | awk '$1 ~ /^(tun|tap|wg|tailscale|mullvad|proton|ppp|cscotun)/ {print $1 " (" $2 ")"}')
+    if [[ -n "$_vpn_ifaces" ]]; then
+        _vpn_found=1
+        printf "${GREEN}✔ VPN Interface Active:${RESET}\n"
+        echo "$_vpn_ifaces" | sed 's/^/  /'
+    fi
+fi
+
+if command -v tailscale &>/dev/null; then
+    _ts_status=$(timeout 2 tailscale status 2>/dev/null | head -n 5 || true)
+    if [[ -n "$_ts_status" && "$_ts_status" != *"Logged out"* ]]; then
+        _vpn_found=1
+        echo "Tailscale:"
+        echo "$_ts_status" | sed 's/^/  /'
+    fi
+fi
+
+if command -v wg &>/dev/null; then
+    _wg_status=$(timeout 2 wg show 2>/dev/null || true)
+    if [[ -n "$_wg_status" ]]; then
+        _vpn_found=1
+        echo "WireGuard:"
+        echo "$_wg_status" | sed 's/^/  /'
+    fi
+fi
+
+if command -v mullvad &>/dev/null; then
+    _mullvad_status=$(timeout 2 mullvad status 2>/dev/null || true)
+    if [[ -n "$_mullvad_status" ]]; then
+        _vpn_found=1
+        echo "Mullvad: $_mullvad_status"
+    fi
+fi
+
+if [[ $_vpn_found -eq 0 ]]; then
+    echo "No active VPN interface or tunnel detected."
+fi
+unset _vpn_found _vpn_ifaces _ts_status _wg_status _mullvad_status
+
 # ----------------------------------------------------
 # 4) SERVICES & ERROR LOGS
 # ----------------------------------------------------
