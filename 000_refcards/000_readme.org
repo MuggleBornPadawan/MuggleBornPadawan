@@ -5,9 +5,14 @@
 ** README.md
 - License: This project is licensed under the GNU General Public License v3.0 or later - see the LICENSE.txt file for details.
 ** Source code snippet:
-- Copyright (C) 2025 MuggleBornPadawan
+- Copyright (C) 2026 MuggleBornPadawan
 - This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 - This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+* Third-party content notice
+- This folder holds study notes plus images and code snippets collected from third-party sources on the web for personal learning.
+- All rights stay with the rightful owners. Nothing here claims their work as mine.
+- GPLv3 in this repo covers my notes only, not third-party images or snippets.
+- If you own content here and want credit added or the file removed, open an issue and I will act within 14 days.
 * vision: to become a 10x developer
 - sackman, erickson, and grant’s study published in 1968 -  https://www.construx.com/blog/the-origins-of-10x-how-valid-is-the-underlying-research/ 
 ** characteristics

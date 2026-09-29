@@ -67,3 +67,4 @@ Personal monorepo for creative coding, lean Clojure work, and visual art tests.
 
 Copyright (C) 2026 MuggleBornPadawan. See `LICENSE.txt` (GPLv3).
 EPL deps (Clojure, bb, Quil, Scittle) link via Section 7 exception.
+Any third-party study images and code snippets inside this repo belong to their rightful owners. Used for personal study only. Owners may request credit or removal via an issue — action within 14 days.
