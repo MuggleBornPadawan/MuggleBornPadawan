@@ -169,6 +169,7 @@ For binary I/O, native FFM interop (Raylib, Panama), and zero-allocation byte tr
 * Use `allocateDirect` for off-heap buffers to avoid JVM GC overhead and enable zero-copy native I/O.
 * Always specify `.order` (`ByteOrder/LITTLE_ENDIAN` or `ByteOrder/BIG_ENDIAN`).
 * Call `.flip` after writing before reading. Call `.clear` before writing again.
+* Avoid external wrapper libraries (`octet`, `byte-streams`). Use zero-dependency Java interop for Babashka compatibility and zero intermediate allocations.
 
 ---
 
