@@ -93,3 +93,6 @@ chat() { (cd ~ && ./MuggleBornPadawan/700_linux/scripts/gemini_chat.sh); }
 
 # ── ssh  ──
 alias gcl='gcloud cloud-shell ssh --authorize-session'
+
+# --- new ---
+alias im='bb $HOME/MuggleBornPadawan/000_refcards/generate_gallery.bb && bb $HOME/MuggleBornPadawan/000_refcards/classify_catalog.bb && xdg-open MuggleBornPadawan/000_refcards/images/index.html >/dev/null 2>&1 & disown' 

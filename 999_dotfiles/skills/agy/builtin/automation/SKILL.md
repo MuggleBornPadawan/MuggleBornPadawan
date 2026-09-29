@@ -55,12 +55,18 @@ Wait for the user's response.
 
 ### 1. Translate Schedule & Author Self-Contained Run Prompt
 
-- **Cron schedule**: Standard 5-field cron expression (`minute hour day-of-month month day-of-week`) in the user's local timezone:
-  - Hourly: `0 * * * *`
-  - Daily at 9:00 AM: `0 9 * * *`
-  - Daily at 5:00 PM: `0 17 * * *`
-  - Weekly on Monday at 9:00 AM: `0 9 * * 1`
-  - Weekdays at 9:00 AM: `0 9 * * 1-5`
+- **Cron schedule**: Standard 5-field cron expression (`minute hour day-of-month month day-of-week`) written in the user's local time, always prefixed with `CRON_TZ=<IANA zone> ` so it runs in the user's timezone:
+  - Hourly: `CRON_TZ=America/New_York 0 * * * *`
+  - Daily at 9:00 AM: `CRON_TZ=America/New_York 0 9 * * *`
+  - Daily at 5:00 PM: `CRON_TZ=America/New_York 0 17 * * *`
+  - Weekly on Monday at 9:00 AM: `CRON_TZ=America/New_York 0 9 * * 1`
+  - Weekdays at 9:00 AM: `CRON_TZ=America/New_York 0 9 * * 1-5`
+- **Determine the user's timezone** (an IANA name such as `Europe/Zurich`; never an abbreviation like `PST` or a raw offset like `+02:00`):
+  1. If the user already stated a timezone or city, use the matching IANA zone.
+  2. Otherwise detect the host's timezone (map any OS-specific zone name to its IANA equivalent).
+  3. If detection fails, use `ask_question` to confirm the user's timezone (offer the detected zone plus a few common zones; the user can write in their own).
+  - If the user supplies a custom cron that already starts with `CRON_TZ=` or `TZ=`, keep it as-is and do not add a second prefix.
+  - When confirming the schedule to the user, state it with the zone (e.g., "every day at 9:00 AM Europe/Zurich time").
 - **Self-contained prompt**: Each scheduled run starts a brand-new conversation with no memory of prior runs. Write a clear, self-contained prompt stating the data sources, actions, and desired output format.
 
 ### 2. Announce Automation Creation & Write `<configDir>/sidecars/<sidecar-id>/sidecar.json`
@@ -91,7 +97,7 @@ Create the configuration file at:
 {
   "builtin": "schedule",
   "args": [
-    "0 9 * * *",
+    "CRON_TZ=America/New_York 0 9 * * *",
     "agentapi",
     "new-conversation",
     "--",
@@ -99,7 +105,7 @@ Create the configuration file at:
   ],
   "restart_policy": "always",
   "display_name": "Daily PR Status Check",
-  "description": "Every day at 9:00 AM, checks open pull requests and summarizes failing checks or review comments.",
+  "description": "Every day at 9:00 AM (America/New_York), checks open pull requests and summarizes failing checks or review comments.",
   "agent_permissions": {
     "access_grants": [
       "command(gh pr list)",
@@ -109,6 +115,7 @@ Create the configuration file at:
 }
 ```
 
+- `args[0]` is the full schedule as a single string, including the `CRON_TZ=<zone>` prefix.
 - Always include `"--"` immediately before the prompt string in `args` so the prompt is cleanly separated from `agentapi new-conversation` flags.
 
 ### 3. Point to the Dashboard (with Automation Name) & Ask to Test-Run for Reliable Permissions
