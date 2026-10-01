@@ -184,6 +184,7 @@
 {:file "x_python_oneliners.jpeg" :category "dev-tools"}
 {:file "x_quantum_abc.jpeg" :category "physics"}
 {:file "x_quantum_gravity.jpeg" :category "physics"}
+{:file "x_quantum_mechanics_timeline.jpeg" :category "physics"}
 {:file "x_quibits_superimposition.jpeg" :category "physics"}
 {:file "x_rdf_ai.jpeg" :category "ai-agents"}
 {:file "x_reinforcement_learning_loop.png" :category "ai-agents"}

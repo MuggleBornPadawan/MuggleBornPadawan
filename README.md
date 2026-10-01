@@ -14,11 +14,9 @@ Personal monorepo for learning creative coding, lean Clojure work, and visual ar
 
 - **Primary stack: Lean Clojure (exclusive)**
   - Clojure (JVM) for apps; Babashka (`bb`) for all scripting, automation, and data tasks
-  - No Python / Node.js / Ruby — Babashka only for scripts
 - **Runtime & Build**
   - OpenJDK (Temurin) + Clojure CLI (`deps.edn` preferred) + Leiningen
   - Toolchain: `clj-kondo` + `clojure-lsp` + `neil` + `jet` (EDN↔JSON) + `cljfmt`
-  - See `700_linux/` for pinned versions
 - **Editor / Workflow**
   - Emacs + CIDER + `clojure-ts-mode` + `eglot` — REPL-driven
   - `clojure.test` — tests before claims; community style guide (`->`/`->>`)
@@ -30,38 +28,11 @@ Personal monorepo for learning creative coding, lean Clojure work, and visual ar
   - Browser 3D: Scittle + Three.js (zero-build, single-file HTML)
   - WebGPU/WGSL + USD share: `art.json` with `xformOpOrder`, local ±1, `perspectiveZO` 0..1
 - **Data & Cloud**
-  - PostgreSQL (prod) + SQLite (local/prototype)
-  - Google Cloud SDK (`gcloud`/`gsutil`/`bq`)
+  - PostgreSQL + SQLite 
 
-## Atelier (Chitrapata / Chittu 13.14)
+## Atelier (Chittu 13.14)
 
-- Ontology: [`atelier/chitrapata.org`](atelier/chitrapata.org) — submodule → [`MuggleBornPadawan/chitrapata-ontology`](https://github.com/MuggleBornPadawan/chitrapata-ontology)
-  - Never edit local copy. Edit upstream, then `git submodule update --remote atelier`.
 - Live work: [Mandala viewer](https://mugglebornpadawan.github.io/chittu-1314-mandala/) — source [`MuggleBornPadawan/chittu-1314-mandala`](https://github.com/MuggleBornPadawan/chittu-1314-mandala)
-
-## Repository Map
-
-- `atelier/` — canonical ontology (submodule, upstream-only)
-
-- `000_refcards/` — refcards & notes
-- `100_cpp/` — historical explorations
-- `100_nasm/` — historical explorations
-- `110_clojure/` — Clojure projects (`deps.edn` / `project.clj`)
-- `120_elisp/` — historical explorations
-- `130_mit_scheme/` — historical explorations
-- `140_clisp/` — historical explorations
-- `150_racket_scheme/` — historical explorations
-- `200_java/` — historical explorations
-- `300_python/` — historical explorations
-- `400_r/` — historical explorations
-- `610_sqlite/` — local DB tests
-- `700_linux/` — lean box setup + `bckp/dotfiles.sh` (pinned versions live here)
-- `850_api/` — API tests
-- `900_awsec2/` — cloud tests
-- `990_webgpu/` — WebGPU tests
-- `999_art/` — PCG art (Quil / Raylib / WebGPU specs)
-- `999_dotfiles/` — backed-up dotfiles (manifest-driven)
-- `999_skills/` — skill notes
 
 ## License
 
