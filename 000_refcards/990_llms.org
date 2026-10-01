@@ -14,6 +14,7 @@
   - [[#cost-audit][cost audit]]
   - [[#gauntlet-loop][gauntlet loop]]
   - [[#loop-engineeering][loop engineeering]]
+  - [[#restate-complicated-requests][restate complicated requests]]
   - [[#asd-ste100-simplified-technical-english-ste][ASD-STE100 Simplified Technical English (STE)]]
   - [[#hybrid-architecture-of-agents][hybrid architecture of agents]]
   - [[#red-blue-green-review-loop][red blue green review loop]]
@@ -205,6 +206,8 @@ Do not do the task yet. Design the workflow first.
 9. Identify the single biggest bottleneck to automate first.
 
 Keep anything manual that we cannot yet verify reliably. After I approve the graph, help me run one test case and improve the loop from the result.
+** restate complicated requests
+restate in your own words what you think my goals are and what the problem I'm trying to solve is
 ** ASD-STE100 Simplified Technical English (STE)
 - ASD-STE100 Simplified Technical English (STE) is a controlled natural language that is designed to simplify and clarify technical documentation
 - Always talk in ASD-STE100 Simplified Technical English. Always talk to me like I have ADHD. 
