@@ -483,8 +483,8 @@ if [[ "${1:-}" == "--tech" || "${1:-}" == "--stack" ]]; then
 
     print_subheader "Google Gemini Antigravity"
     # Do NOT cat tokens. Only check for config presence.
-    # Binary names: agy (CLI), antigravity-ide (IDE), gemini (Gemini CLI), antigravity (legacy alias)
-    for cmd in agy antigravity antigravity-ide gemini; do
+    # Binary names: agy (CLI), gemini (Gemini CLI), antigravity (legacy alias)
+    for cmd in agy antigravity gemini; do
         if command -v "$cmd" &>/dev/null; then
             echo -n "$cmd: "; timeout 3 "$cmd" --version 2>&1 | head -n 1 || echo "installed (version unknown)"
             # show binary location for debug
@@ -499,7 +499,7 @@ if [[ "${1:-}" == "--tech" || "${1:-}" == "--stack" ]]; then
         echo "gcloud: not installed (optional for Gemini)"
     fi
     # Check common config locations without reading secrets
-    for p in ~/.config/gemini ~/.config/antigravity ~/.config/google ~/.gemini ~/.antigravitycli ~/.cache/antigravity ~/.config/"Antigravity IDE"; do
+    for p in ~/.config/gemini ~/.config/antigravity ~/.config/google ~/.gemini ~/.antigravitycli ~/.cache/antigravity; do
         test -e "$p" && echo "  config path exists: $p" || true
     done
     test -f ~/.gemini/antigravity-cli/antigravity-oauth-token && echo "  oauth token: found (~/.gemini/antigravity-cli/antigravity-oauth-token)" || true

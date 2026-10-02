@@ -43,7 +43,7 @@ Do these steps:
      - Ollama: service check only, NEVER run `ollama run` (OOM risk)
      - Emacs init.el + setup-clojure.el present
      - pi agent present, AGENTS.md present
-     - Gemini Antigravity: check paths only (`agy`, `antigravity-ide`, `gemini`, `gcloud` + config dirs), never log tokens
+     - Gemini Antigravity: check paths only (`agy`, `gemini`, `gcloud` + config dirs), never log tokens
 
 4. Final verdict:
    - List CRITICAL first, then WARN, then OK summary.
