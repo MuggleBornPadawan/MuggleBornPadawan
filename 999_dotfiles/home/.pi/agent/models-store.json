@@ -711,6 +711,52 @@
         "type": "chat"
       },
       {
+        "id": "fledge-alpha-free",
+        "name": "Fledge Alpha Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "gemini-3-flash",
         "name": "Gemini 3 Flash",
         "api": "google-generative-ai",
@@ -2147,6 +2193,52 @@
         "type": "chat"
       },
       {
+        "id": "gpt-6.1-sol",
+        "name": "GPT-6.1 Sol",
+        "api": "openai-responses",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 2,
+          "output": 10,
+          "cacheRead": 0.1,
+          "cacheWrite": 2.5
+        },
+        "compat": {
+          "sessionAffinityFormat": "openai-nosession",
+          "supportsOpenAIGrammarTools": true,
+          "supportsMidConvoSystemMessages": true,
+          "supportsAdditionalTools": true
+        },
+        "contextWindow": 1050000,
+        "maxTokens": 128000,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "grok-4.5",
         "name": "Grok 4.5",
         "api": "openai-responses",
@@ -2482,6 +2574,32 @@
       {
         "id": "ling-3.0-flash-fin-free",
         "name": "Ling 3.0 Flash Fin Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 262144,
+        "maxTokens": 32768,
+        "type": "chat"
+      },
+      {
+        "id": "ling-3.1-flash-free",
+        "name": "Ling 3.1 Flash Free",
         "api": "openai-completions",
         "provider": "opencode",
         "baseUrl": "https://opencode.ai/zen/v1",
@@ -3030,9 +3148,9 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1790689333355,
-    "lastModified": 1790685874000,
-    "etag": "W/\"c9c9fd068b052f7dca1d7f14fab883fa\""
+    "checkedAt": 1791313103216,
+    "lastModified": 1791290554000,
+    "etag": "W/\"f859ce131ae55f13e874e0be85bc6276\""
   },
   "opencode-go": {
     "models": [
@@ -3993,9 +4111,9 @@
       {
         "id": "qwen3.7-plus",
         "name": "Qwen3.7 Plus",
-        "api": "openai-completions",
+        "api": "anthropic-messages",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/zen/go",
         "reasoning": true,
         "input": [
           "text",
@@ -4006,12 +4124,6 @@
           "output": 1.6,
           "cacheRead": 0.04,
           "cacheWrite": 0.5
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
         },
         "contextWindow": 1000000,
         "maxTokens": 65536,
@@ -4064,9 +4176,9 @@
       {
         "id": "qwen3.8-max",
         "name": "Qwen3.8 Max",
-        "api": "openai-completions",
+        "api": "anthropic-messages",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/zen/go",
         "reasoning": true,
         "input": [
           "text",
@@ -4078,23 +4190,8 @@
           "cacheRead": 0.25,
           "cacheWrite": 2.5
         },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
-        },
         "contextWindow": 1000000,
         "maxTokens": 131072,
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": null,
-          "xhigh": "xhigh",
-          "max": null
-        },
         "inputLimits": {
           "images": {
             "resize": {
@@ -4108,8 +4205,8 @@
         "type": "chat"
       },
       {
-        "id": "space-bunny-free",
-        "name": "Space Bunny Free",
+        "id": "space-bunny",
+        "name": "Space Bunny",
         "api": "openai-completions",
         "provider": "opencode-go",
         "baseUrl": "https://opencode.ai/zen/go/v1",
@@ -4119,9 +4216,9 @@
           "image"
         ],
         "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 0.15,
+          "output": 0.6,
+          "cacheRead": 0.03,
           "cacheWrite": 0
         },
         "compat": {
@@ -4154,9 +4251,9 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1790689333106,
-    "lastModified": 1790685876000,
-    "etag": "W/\"ae71beff0034395511c0b166de1372bc\""
+    "checkedAt": 1791313103370,
+    "lastModified": 1791290556000,
+    "etag": "W/\"fe1cd5ba33a2d24bb17ee3017dd0351b\""
   },
   "google": {
     "models": [
@@ -5027,7 +5124,7 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1790689332938,
+    "checkedAt": 1791313103324,
     "lastModified": 1790239043000,
     "etag": "W/\"7479536815e7f52fb17815e7f6031a76\""
   },
@@ -5234,7 +5331,7 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1790689334693,
+    "checkedAt": 1791313104572,
     "lastModified": 1790253628000,
     "etag": "W/\"7e7d2b2f5c2717f8e00faff6c36684f5\""
   }
