@@ -14,6 +14,8 @@
   - [[#cost-audit][cost audit]]
   - [[#gauntlet-loop][gauntlet loop]]
   - [[#loop-engineeering][loop engineeering]]
+  - [[#argue-bot][argue bot]]
+  - [[#content-creation-from-brain-dump][content creation from brain dump]]
   - [[#restate-complicated-requests][restate complicated requests]]
   - [[#asd-ste100-simplified-technical-english-ste][ASD-STE100 Simplified Technical English (STE)]]
   - [[#hybrid-architecture-of-agents][hybrid architecture of agents]]
@@ -206,6 +208,19 @@ Do not do the task yet. Design the workflow first.
 9. Identify the single biggest bottleneck to automate first.
 
 Keep anything manual that we cannot yet verify reliably. After I approve the graph, help me run one test case and improve the loop from the result.
+** argue bot
+Here is my position:
+<position>[paste your plan, argument, or draft]</position>
+
+Act as a rival with a strong incentive to defeat this. Give me: the three best counter-arguments, most dangerous first; the question I would least want to answer in front of a skeptical boss or client; and any assumption that, if false, makes the whole thing collapse. Then say which of my points you would concede because arguing them is hopeless. Mark any fact or source you mention as unverified.
+** content creation from brain dump
+Help me craft the above brain dump into a finished [what kind of piece], using as much of my own wording as possible.
+
+Make only the edits needed to improve clarity, structure, and flow without changing what I mean.
+
+Write like I'm talking. Make vague ideas more concrete (show, don't tell). Step the explanation out so each idea naturally builds on the last, so it flows in the exact right order.
+
+If something is unclear or could be interpreted multiple ways, flag it instead of inventing what I meant. Debate my thinking.
 ** restate complicated requests
 restate in your own words what you think my goals are and what the problem I'm trying to solve is
 ** ASD-STE100 Simplified Technical English (STE)
