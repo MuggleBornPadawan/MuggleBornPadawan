@@ -711,6 +711,52 @@
         "type": "chat"
       },
       {
+        "id": "exo-free",
+        "name": "Exo Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": null,
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": null
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "fledge-alpha-free",
         "name": "Fledge Alpha Free",
         "api": "openai-completions",
@@ -2788,6 +2834,52 @@
         "type": "chat"
       },
       {
+        "id": "mistral-large-4",
+        "name": "Mistral Large 4",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0.68,
+          "output": 2.09,
+          "cacheRead": 0.07,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 524288,
+        "maxTokens": 262144,
+        "thinkingLevelMap": {
+          "off": "none",
+          "minimal": null,
+          "low": null,
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": null
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "muse-spark-1.2",
         "name": "Muse Spark 1.2",
         "api": "openai-responses",
@@ -3146,11 +3238,47 @@
           }
         },
         "type": "chat"
+      },
+      {
+        "type": "classifier",
+        "id": "jev-1.13",
+        "name": "Jev 1.13",
+        "api": "typesafe-system-one",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0.042,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 32000
+      },
+      {
+        "type": "classifier",
+        "id": "jev-1.13-free",
+        "name": "Jev 1.13 Free",
+        "api": "typesafe-system-one",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 32000
       }
     ],
-    "checkedAt": 1791313103216,
-    "lastModified": 1791290554000,
-    "etag": "W/\"f859ce131ae55f13e874e0be85bc6276\""
+    "checkedAt": 1791436169099,
+    "lastModified": 1791377191000,
+    "etag": "W/\"fe97075e689884a210fd12a9b2d37861\""
   },
   "opencode-go": {
     "models": [
@@ -4251,9 +4379,9 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1791313103370,
-    "lastModified": 1791290556000,
-    "etag": "W/\"fe1cd5ba33a2d24bb17ee3017dd0351b\""
+    "checkedAt": 1791436169056,
+    "lastModified": 1791377193000,
+    "etag": "W/\"8b5cda724ecc49c7df3bb8ba880346df\""
   },
   "google": {
     "models": [
@@ -5124,9 +5252,9 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1791313103324,
-    "lastModified": 1790239043000,
-    "etag": "W/\"7479536815e7f52fb17815e7f6031a76\""
+    "checkedAt": 1791436169176,
+    "lastModified": 1791377158000,
+    "etag": "W/\"1cb2f49be25b1ba3b871e356aa249893\""
   },
   "meta": {
     "models": [
@@ -5331,8 +5459,8 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1791313104572,
-    "lastModified": 1790253628000,
-    "etag": "W/\"7e7d2b2f5c2717f8e00faff6c36684f5\""
+    "checkedAt": 1791436168976,
+    "lastModified": 1791377170000,
+    "etag": "W/\"8d00a3e9c7f4064b9f5fcee309720d2e\""
   }
 }

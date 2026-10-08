@@ -40,12 +40,18 @@
             {:sub "prompts"   :target central-prompts}]}
 
    {:name "OpenCode Agent"
-    :base "/home/rgroot/.config/opencode"
-    :tail "opencode_tail.md"
-    :assembled "/home/rgroot/.local/share/agent-memory/assembled/opencode.md"
-    :links [{:sub "AGENTS.md" :target :assembled}
-            {:sub "skills"    :target central-skills}
-            {:sub "commands"  :target central-prompts}]}])
+     :base "/home/rgroot/.config/opencode"
+     :tail "opencode_tail.md"
+     :assembled "/home/rgroot/.local/share/agent-memory/assembled/opencode.md"
+     :links [{:sub "AGENTS.md" :target :assembled}
+             {:sub "skills"    :target central-skills}
+             {:sub "commands"  :target central-prompts}]}
+
+   {:name "Emacs Gptel"
+     :base "/home/rgroot/.emacs.d"
+     :tail "emacs_tail.md"
+     :assembled "/home/rgroot/.local/share/agent-memory/assembled/emacs.md"
+     :links []}])
 
 (defn symlink? [p]
   (Files/isSymbolicLink (fs/path (str p))))

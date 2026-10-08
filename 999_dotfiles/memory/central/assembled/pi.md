@@ -38,6 +38,7 @@
     - Determinism: always seed random generators; identical seeds must produce identical visuals; log seeds with output
     - Parameter exploration: expose tweakable parameter maps for rapid REPL tuning
   - 2D/3D generative art, math & vector plotters: Processing stack via Quil (https://quil.info/) — use `quil/quil` (`:java2d` for 2D, `:p3d` for OpenGL 3D, DXF for CAD/3D printing)
+  - Browser 2D/3D graphics & Quil ClojureScript backend: p5.js (WebGL mode for browser 3D primitives, materials, lighting, and orbit controls)
   - Desktop games & real-time simulations: Raylib via `b12n-oss/raylib-clj` (Panama FFM on JDK 25; no `-XstartOnFirstThread` on Linux)
   - Browser 3D & WebGL: Scittle + Three.js (zero-build, single-file HTML, served via `bb http-server`)
   - PCG Spaces (USD + WebGPU): see `pcg-spaces` skill + `MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md`.
@@ -81,7 +82,7 @@
 - Repo mirrors (backup copies, written by `dotfiles.bb` only): `999_dotfiles/prompts/central`, `999_dotfiles/skills/central`, `999_dotfiles/memory/central`.
 - Compat copies (`skills/pi`, `skills/opencode`, `skills/agy/config`, `prompts/pi`) + opencode `commands` are NOT stored. Manifest flag: `:backup? false`. Re-derived via harness-sync. Never back them up.
 - Regular (non-compat) skill mirrors: `skills/agents` (from `~/.agents/skills`), `skills/agy/builtin` (from Gemini builtin skills).
-- Assembled memory (generated, do not hand-edit): `assembled/{gemini,pi,opencode}.md` = core + tail.
+- Assembled memory (generated, do not hand-edit): `assembled/{gemini,pi,opencode,emacs}.md` = core + tail.
 - Harness consumption: Gemini reads `AGENTS.md` + `GEMINI.md` + `skills` + `prompts`; Pi reads `AGENTS.md` + `skills` + `prompts`; OpenCode reads `AGENTS.md` + `skills` + `commands`.
 - Sources: `MuggleBornPadawan/700_linux/bckp/manifest.edn`; engines `sync_harness.bb`, `sync_memory.bb`. Never commit secrets (`hosts.yml`, `auth.json`, `oauth_creds.json`, tokens, `state.json`, `*.db`, `*.log`).
 - After edit, re-sync: `bb ~/.local/share/skills/harness-sync/scripts/sync_harness.bb` (`--dry-run` to audit).
