@@ -4,6 +4,9 @@
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
   - [[#joel-spolsky][joel spolsky]]
+  - [[#napkin-math][napkin math]]
+  - [[#lenny---how-to-scale-intent-quality-and-artistry-with-al--katie-dill-stripe][lenny - How to scale intent, quality, and artistry with Al | Katie Dill (Stripe)]]
+  - [[#john-ruskin---gothic-architecture][john ruskin - gothic architecture]]
   - [[#math---the-palindrome---10-most-important-lessons][math - the palindrome - 10 most important lessons]]
   - [[#spec-driven-development---simon-martinelli][spec driven development - simon martinelli]]
   - [[#impact-of-ai-on-coding][impact of ai on coding]]
@@ -80,6 +83,30 @@
   - lower layers bleed through when pushed
   - ignoring the leak leads to failure
   - examples: orm, gc, docker images, tcp/ip, sql, network libraries  
+** napkin math
+- Techniques and numbers for estimating system's performance from first-principles
+- https://github.com/sirupsen/napkin-math
+** lenny - How to scale intent, quality, and artistry with Al | Katie Dill (Stripe)
+- yt: https://youtu.be/GLvFTMtw4Jk?si=r7gyO5u2iuKk2Ero
+- nabeel s qureshi - what makes art great? https://nabeelqu.substack.com/p/what-makes-art-great - suprise, echos, depth, mystery link between art and life 
+- have a point of view
+- encode your standards into the machine
+  - gutenberg - not just upper case and lower case letters - 290 unique characters - different widths, abbreviations, ligatures 
+- refuse to confuse done with good 
+- unleash your creativity and artistry
+  - interfaces - chats, charts, clis, ...
+** john ruskin - gothic architecture 
+John Ruskin’s views on Gothic architecture are foundational to the Arts and Crafts movement. Key ideas:
+- **Moral Truth in Art:** Gothic architecture reflects the moral and spiritual health of the society that built it. Good art requires freedom of thought and labor.
+- **The Nature of Gothic (from *The Stones of Venice*):** Ruskin identified six moral and structural elements:
+  1. *Savageness / Rudeness:* Imperfection is natural and human. Medieval stonemasons were allowed to express themselves, unlike modern factory workers reduced to cogs.
+  2. *Changefulness:* Variety, irregularity, and life over rigid classical symmetry.
+  3. *Naturalism:* Direct observation of nature (leaves, animals, stone carving).
+  4. *Grotesqueness:* Playfulness, dark humor, and fantasy.
+  5. *Rigidity:* Structural strength and verticality.
+  6. *Abundance:* Generosity of ornamentation, not stingy minimalism.
+- **Critique of Industrialization:** Machinery and mass production destroy the soul of the worker. The perfect finish of modern machine-made goods is actually a sign of moral decay and human enslavement.
+- **The Pointed Arch:** Not just a structural trick for height, but a symbol of spiritual aspiration and organic growth.
 ** math - the palindrome - 10 most important lessons
 - yt channel video - https://www.youtube.com/watch?v=dxWeZMszSGo
 - graph theory for visual learners - https://open.substack.com/pub/thepalindrome/p/graph-theory-for-visual-learners? 

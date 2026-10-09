@@ -46,11 +46,13 @@ lsrpc() {  # usage: lsrpc <MethodName> <json-body>
 EOF
 ```
 
-Now list the installed plugins. Prefix every `lsrpc` snippet in this skill with
+Now list the installed plugins, passing active workspace URIs in
+`workspaceUris` so workspace-scoped plugins are discovered (or `'{}'` when no
+workspace is active). Prefix every `lsrpc` snippet in this skill with
 `source /tmp/lsrpc.sh &&`:
 
 ```bash
-source /tmp/lsrpc.sh && lsrpc GetAllPlugins '{}' | jq '[.plugins[] | {
+source /tmp/lsrpc.sh && lsrpc GetAllPlugins '{"workspaceUris":["file:///path/to/workspace"]}' | jq '[.plugins[] | {
   name,
   dir: (.path | split("/") | last),
   disabled: (.disabled // false),
