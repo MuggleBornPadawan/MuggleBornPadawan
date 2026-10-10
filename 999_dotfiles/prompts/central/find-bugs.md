@@ -1,12 +1,16 @@
-Proactively hunt for bugs in {{file|the specified module}}.
+---
+name: find-bugs
+description: Hunt bugs in file/module (edge cases, error handling, concurrency, leaks). Delegates to find-bugs skill.
+argument-hint: "[file|module]"
+---
 
-Focus on:
-1. **Edge cases** — empty inputs, null/undefined, zero, negative numbers, huge values, unicode
-2. **Error handling** — swallowed exceptions, missing failure paths, unchecked results
-3. **Concurrency/state** — race conditions, shared mutable state, ordering assumptions
-4. **Resource leaks** — unclosed files/connections, missing cleanup on error paths
-5. **Boundary assumptions** — off-by-one errors, timezone/locale issues, integer overflow
+Proactively hunt bugs in {{ARGS}} (file or module).
 
-For each suspected bug: explain the exact scenario that triggers it, rate likelihood × impact, and propose a fix.
-Verify claims against the actual code — no speculation without reading the relevant paths.
-Write failing test cases for confirmed bugs.
+Delegates to `find-bugs` skill for full workflow. Do not duplicate logic here.
+Quick prompt path:
+1. Read relevant code (no speculation without reading)
+2. Check: edge cases | error handling | concurrency/state | resource leaks | off-by-one/timezone/overflow
+3. For each finding: scenario that triggers, likelihood × impact, concrete fix
+4. Write failing test for confirmed bugs
+
+If detailed scan needed, invoke skill `find-bugs`.

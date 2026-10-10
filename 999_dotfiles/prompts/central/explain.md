@@ -1,9 +1,15 @@
-Explain {{file}}.
+---
+name: explain
+description: Explain file/module purpose, parts, data flow, and gotchas. Use when user asks to explain code.
+argument-hint: "[file]"
+---
 
-Structure your explanation as:
-1. **Purpose** — what this does in one or two sentences
-2. **Key parts** — walk through the important functions/classes/blocks, skipping boilerplate
-3. **Data flow** — inputs, outputs, side effects, and how it connects to the rest of the codebase (follow imports if needed)
-4. **Gotchas** — anything surprising, fragile, or non-obvious
+Explain {{ARGS}}.
 
-Keep it concise; assume I'm a developer familiar with the language but new to this codebase.
+Structure (max 60 lines):
+1. **Purpose** — 1-2 sentences
+2. **Key parts** — important fns/classes, skip boilerplate
+3. **Data flow** — inputs, outputs, side effects, connections (follow imports)
+4. **Gotchas** — surprising, fragile, non-obvious
+
+Read actual code — not file names. Assume dev knows language, not codebase.

@@ -1,12 +1,20 @@
-Clean up {{file|the current project}}.
+---
+name: cleanup
+description: Find dead code, debug leftovers, and stale comments. Use when user asks to clean up, declutter, or remove unused code.
+argument-hint: "[file|directory]"
+---
+
+Clean up {{ARGS}} (file or whole project if empty).
 
 Look for:
-- Dead code: unused functions, imports, variables, CSS classes
-- Leftover debug statements (console.log, print, debugger)
+- Dead code: unused functions, imports, variables, CSS classes (prove via `rg` + `clj-kondo --lint src` unused-var)
+- Leftover debug: console.log, print, debugger
 - Commented-out code blocks
-- Duplicate logic that can be consolidated
-- Stale comments that no longer match the code
+- Duplicate logic to consolidate
+- Stale comments
 
-For each item found: report location and whether removal is definitely safe.
-Delete only what is provably unused — when in doubt, flag it instead of deleting.
-Do not change any behavior. Run tests afterward to confirm nothing broke.
+For each item: report location + whether removal is definitely safe.
+Rule: Delete ONLY what is provably unused — when in doubt, FLAG instead of deleting.
+Do not change behavior. Run tests after: `bb test -n <ns>` or project runner.
+
+Delegates to: none (analysis only). Output: table | location | safe? | action.

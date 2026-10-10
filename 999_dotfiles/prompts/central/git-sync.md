@@ -3,6 +3,8 @@ name: git-sync
 description: Add, commit, push current branch, and merge into main
 argument-hint: "[commit-message]"
 ---
+SAFETY GATE: Preview `git status` + `git diff --stat` and ASK user to confirm before any `git add`/`push`/`merge`. If user says dry-run, stop after preview.
+
 Perform these git steps in the current working directory:
 
 1. Identify the current branch, default branch (`main` or `master`), and remote repository.

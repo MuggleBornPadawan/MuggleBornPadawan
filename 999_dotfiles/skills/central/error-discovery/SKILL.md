@@ -1,15 +1,17 @@
 ---
 name: error-discovery
+triggers: [trace, eval dataset, failure modes]
+anti-triggers: [code bug only]
 description: >-
   Discover failure modes in LLM traces or agent logs before writing metrics. Use when inspecting traces, finding bugs in AI outputs, or starting an eval dataset. Lean Pi adapted: turn-based review, HTML app, sequential scanning.
 ---
 
 # Error Discovery — Pi Lean Edition
-## Preamble (run first)
+## Preamble (MANDATORY — run first)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill error-discovery
 ```
-- Read SESSION_ID. Use for skill-end at close.
+- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
 Discover failure modes in AI applications before writing metrics.
 Adapted for Pi: turn-based workflow, no subagents, 0 extra dependencies.
@@ -53,7 +55,10 @@ Adapted for Pi: turn-based workflow, no subagents, 0 extra dependencies.
    * Auto-save annotations to `POST /api/annotations` on port 8080.
 3. Start the helper server in the background:
    ```bash
-   python3 ~/.pi/agent/skills/error-discovery/scripts/server.py 8080 &
+   # Lean override: bb preferred, python allowed as exception for this skill only
+   # If bb http-server available: bb -e "(babashka.http-server/exec {:port 8080 :dir "."})" &
+   # Fallback (exception to lean Clojure rule — keep Python here):
+   python3 ~/.local/share/skills/error-discovery/scripts/server.py 8080 &
    ```
 
 ### Phase 3: Human Review Turn
@@ -86,3 +91,11 @@ When the human returns:
    * Summary of discovered failure modes.
    * Count of occurrences.
    * Proposed next 10 traces to inspect.
+> **Stack exception:** This skill uses Python `server.py` for HTML annotation server. Exception to AGENTS_CORE lean Clojure rule — keep Python here. Do not port to bb without testing annotation POST handling.
+
+## LLM Contract
+- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
+- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
+- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
+- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
+- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

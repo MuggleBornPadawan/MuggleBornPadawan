@@ -1,15 +1,17 @@
 ---
 name: improve-codebase-architecture
+triggers: [architecture, deepening, html report]
+anti-triggers: [single file fix]
 description: >-
   Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
 ---
 
 # Improve Codebase Architecture
-## Preamble (run first)
+## Preamble (MANDATORY — run first)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill improve-codebase-architecture
 ```
-- Read SESSION_ID. Use for skill-end at close.
+- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
 Surface architectural friction and propose **deepening opportunities**: refactors that turn shallow modules into deep ones. The aim is testability and AI-navigability.
 
@@ -43,6 +45,8 @@ Apply the **deletion test** to anything you suspect is shallow: would deleting i
 
 Write a self-contained HTML file to the OS temp directory so nothing lands in the repo. Resolve the temp dir from `$TMPDIR`, falling back to `/tmp` (or `%TEMP%` on Windows), and write to `<tmpdir>/architecture-review-<timestamp>.html` so each run gets a fresh file. Open it for the user (`xdg-open <path>` on Linux, `open <path>` on macOS, `start <path>` on Windows) and tell them the absolute path.
 
+**LLM headless fallback (no browser):** If `xdg-open`/`open` fails or no display, also `cat` a markdown summary table to stdout: `| Candidate | Files | Problem | Strength |` + Top recommendation. LLM must not fail if browser not available.
+
 The report uses **Tailwind via CDN** for layout and styling, and **Mermaid via CDN** for diagrams where a graph/flow/sequence reliably communicates the structure. Mix Mermaid with hand-crafted CSS/SVG visuals: use Mermaid when relationships are graph-shaped (call graphs, dependencies, sequences), and hand-built divs/SVG when you want something more editorial (mass diagrams, cross-sections, collapse animations). Each candidate gets a **before/after visualisation**. Be visual.
 
 For each candidate, render a card with:
@@ -74,3 +78,9 @@ Side effects happen inline as decisions crystallize; call the Skill tool with "d
 - **Sharpening a fuzzy term during the conversation?** Update `CONTEXT.md` right there.
 - **User rejects the candidate with a load-bearing reason?** Offer an ADR, framed as: _"Want me to record this as an ADR so future architecture reviews don't re-suggest it?"_ Only offer when the reason would actually be needed by a future explorer to avoid re-suggesting the same thing; skip ephemeral reasons ("not worth it right now") and self-evident ones.
 - **Want to explore alternative interfaces for the deepened module?** Call the Skill tool with "codebase-design" and use its design-it-twice pattern (sequential by default, parallel if `subagent` extension is installed).
+## LLM Contract
+- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
+- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
+- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
+- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
+- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

@@ -1,8 +1,14 @@
-Generate documentation for {{file|the current git diff}}.
+---
+name: docs
+description: Generate docstrings/comments for exported functions. Use when user asks to document code.
+argument-hint: "[file|diff]"
+---
 
-1. For each exported/public function, class, or module: write or update a docstring/comment covering purpose, parameters, return value, side effects, and a usage example if non-trivial
-2. Follow the existing doc style in this project (check neighboring files first)
-3. Document *why*, not just *what* — skip trivial getters and self-evident code
-4. If the project README or docs mention this area, check whether they need updating too and flag it
+Generate docs for {{ARGS}} (file or current git diff if empty).
 
-Don't add comments to obvious code — noise is worse than silence.
+1. Read neighboring files to match doc style first
+2. For each exported/public defn/class/module: write docstring covering purpose, params, return, side effects, usage example if non-trivial
+3. Document *why*, not just *what* — skip trivial getters
+4. If README/docs mention this area, flag update needed
+
+Do not add noise comments to obvious code. Clojure: idiomatic docstrings, not `//`.

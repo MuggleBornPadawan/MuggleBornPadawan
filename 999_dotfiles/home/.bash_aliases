@@ -11,7 +11,7 @@ alias grep='grep --color=auto'
 alias c='clear'
 alias h='history | less'
 alias ps='ps aux'
-alias du='du -sh'
+alias du='du -h'
 alias df='df -hT'
 alias o='xdg-open'
 

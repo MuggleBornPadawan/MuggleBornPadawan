@@ -1,12 +1,19 @@
-Prepare a pull request for this branch.
+---
+name: pr
+description: Prepare PR title + description from branch diff. Use when user asks to open PR.
+argument-hint: ""
+---
 
-1. Determine the merge base with the main branch and review all commits/diffs on it
-2. Write a PR title: short imperative summary (`type(scope): ...` style)
-3. Write a PR description:
-   - **What** — what changed, bullet points
-   - **Why** — motivation and context
-   - **Testing** — how it was/was verified, including what wasn't tested
-   - **Risks** — anything reviewers should look at closely
-4. Do a self-review pass over the diff first: flag any leftover debug code, TODOs, or unintended changes
+Prepare PR for current branch.
 
-Output the title + description as markdown ready to paste into GitHub.
+1. Find merge base: `git merge-base HEAD main||master`
+2. Review commits/diffs on branch
+3. Self-review diff first: flag debug code, TODOs, unintended changes
+4. Title: short imperative `type(scope): ...`
+5. Description:
+   - **What** — bullets
+   - **Why** — motivation
+   - **Testing** — how verified, what not tested
+   - **Risks** — reviewers focus
+
+Output markdown ready for `gh pr create --title ... --body ...` (or glab). Do not create PR until confirmed.

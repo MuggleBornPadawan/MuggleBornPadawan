@@ -1,15 +1,17 @@
 ---
 name: open-source-telemetry
+triggers: [telemetry, opt-in, do_not_track, privacy]
+anti-triggers: [no telemetry]
 description: >-
   Audit, design, or implement telemetry in open-source projects. Use when adding metrics, reviewing network tracking, or enforcing privacy standards.
 ---
 
 # Open Source Telemetry Standard
-## Preamble (run first)
+## Preamble (MANDATORY — run first)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill open-source-telemetry
 ```
-- Read SESSION_ID. Use for skill-end at close.
+- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
 Follow this workflow for all telemetry design, coding, and code reviews.
 
@@ -48,3 +50,9 @@ Do not complete the task until you verify:
 * [ ] Telemetry halts immediately when `DO_NOT_TRACK=1` is set.
 * [ ] Payload audit passes: zero file paths, zero PII, zero environment secrets.
 * [ ] Automated tests pass for both enabled and disabled states.
+## LLM Contract
+- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
+- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
+- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
+- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
+- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

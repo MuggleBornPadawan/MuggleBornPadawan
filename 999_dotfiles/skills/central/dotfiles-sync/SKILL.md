@@ -1,15 +1,17 @@
 ---
 name: dotfiles-sync
+triggers: [dotfiles, backup, harness sync]
+anti-triggers: [none]
 description: >-
   Backup dotfiles via dotfiles.sh, commit and push to chromebook and main branches. Runs dotfiles backup, checks git status, commits changes, pushes chromebook, merges to main and pushes main. Use after editing dotfiles, prompts, skills, sysinfo.sh, or templates, or for daily backup.
 ---
 
 # Dotfiles Sync
-## Preamble (run first)
+## Preamble (MANDATORY — run first)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill dotfiles-sync
 ```
-- Read SESSION_ID. Use for skill-end at close.
+- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
 Backup dotfiles and push to both branches (`chromebook` + `main` -> `origin`).
 
@@ -134,3 +136,9 @@ See `scripts/backup-push.sh --help` for options.
 - Show: commit hash on both branches (e.g., `55c2609a0`)
 - Show: `git branch -vv` both tracking `origin`
 - Show: `Done` msg from `dotfiles.sh`
+## LLM Contract
+- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
+- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
+- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
+- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
+- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

@@ -1,15 +1,17 @@
 ---
 name: prototype
+triggers: [prototype, throwaway, demo, easel]
+anti-triggers: [production code]
 description: >-
   Build a throwaway prototype to answer a design question. Use when sanity-checking state logic, exploring UI layouts, or evaluating procedural generation (PCG) algorithms and visual parameters. Clojure-adapted: bb + HTML logic demo, Quil/Raylib/Three.js for visual art.
 ---
 
 # Prototype — Clojure Patch
-## Preamble (run first)
+## Preamble (MANDATORY — run first)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill prototype
 ```
-- Read SESSION_ID. Use for skill-end at close.
+- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
 A prototype is **throwaway code that answers a question**. The question decides the shape. **Clojure + lean-machine adapted.** See original at `https://github.com/mattpocock/skills` logic + pi `~/.pi/agent/skills/prototype`. Pure Markdown, 0 deps. Location: `~/.pi/agent/skills/prototype/` (global, pi). `/reload` after edit.
 
@@ -52,3 +54,9 @@ The three branches produce very different artifacts, so getting this wrong waste
 - Raylib prototype: use `clojure-raylib` (`b12n-oss/raylib-clj`); run with `clojure`, not `clj`; never use `-XstartOnFirstThread` on Linux.
 - For pure logic, prefer `bb` + EDN over HTML if the audience is devs + CIDER. For non-devs, HTML wins.
 - Quil prototype: use `clojure-quil`; keep sketch single-file, no `lein` plugins unless already in repo.
+## LLM Contract
+- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
+- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
+- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
+- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
+- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

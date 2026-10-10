@@ -26,7 +26,7 @@ Do these steps:
 
    Check these thresholds (lean box: 6.3 Gi RAM, 31G disk):
 
-    - **Disk:** Use% <80% = OK, 80-90% = WARN (clean), >90% = CRITICAL. Root is priority. Current baseline ~58% (~13G free, 2026-09-29).
+    - **Disk:** Use% <80% = OK, 80-90% = WARN (clean), >90% = CRITICAL. Root is priority. Current baseline: compare to last ~/bkp/sysinfo.log, not hardcoded 2026-09 value.
    - **Memory:** Available >1.5G = OK, 0.5-1.5G = WARN, <0.5G = CRITICAL. Swap 0B is expected.
    - **CPU/Load:** Load avg <4 on 8 threads = OK. Check top 5 CPU/MEM for runaways (e.g., `emacs`, `pi`, `postgres`).
    - **I/O:** `iostat` await >20ms = WARN.

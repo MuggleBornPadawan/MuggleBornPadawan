@@ -1,10 +1,16 @@
-Give me a newcomer's tour of this codebase.
+---
+name: onboard
+description: Newcomer tour — purpose, layout, entry points, key modules, conventions. Use when onboarding.
+argument-hint: ""
+---
 
-1. **What it is** — purpose and tech stack (check README, package manifests, entry points)
-2. **Layout** — top-level directory map with one line per directory explaining its role
-3. **Entry points** — where execution starts, main flows through the code
-4. **Key modules** — the 3–5 most important files/modules and why they matter
-5. **Conventions** — testing approach, error handling style, naming patterns, build/run commands
-6. **Gotchas** — generated code, legacy areas, anything that looks unusual
+Give newcomer's tour (max 60 lines, stdout only, no file write).
 
-Read the actual code — don't just summarize file names. Keep it under ~60 lines so I can absorb it.
+1. **What it is** — purpose + stack (README, manifests, entry points)
+2. **Layout** — top-level dir map, one line per dir
+3. **Entry points** — where execution starts, main flows
+4. **Key modules** — 3-5 most important files, why
+5. **Conventions** — test, error handling, naming, build/run commands
+6. **Gotchas** — generated code, legacy, unusual
+
+Read actual code.

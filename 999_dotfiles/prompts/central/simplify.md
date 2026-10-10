@@ -1,23 +1,12 @@
-Find overcomplicated code and YAGNI violations in {{file|the current project}}.
+---
+name: simplify
+description: Find overcomplicated/YAGNI code. Analysis only, no edits until approved.
+argument-hint: "[file|project]"
+---
 
-### Principles to Enforce:
-- **Necessity:** Challenge whether code or features need to exist at all.
-- **Native Over Custom:** Use standard library and language idioms instead of custom wrappers or extra dependencies.
-- **Reuse:** Reuse existing project utilities and patterns before creating new helpers.
-- **Minimal Footprint:** Write the minimum code required. Prefer simple data over complex abstractions.
+Find overcomplicated code in {{ARGS}} (file or project if empty). **Analysis only — do not edit until approved.**
 
-### Look For:
-- Unnecessary abstractions: layers, interfaces, or indirection with only one implementation
-- Overly generic solutions to simple problems
-- Configuration or options that are not used
-- Deep nesting or convoluted control flow that can be flattened
-- Premature optimization or speculative future-proofing
-
-### Output Format:
-For each finding:
-1. Show the specific code snippet and location.
-2. Explain why it is overcomplicated.
-3. Propose the simplest working alternative using standard patterns.
-4. Rank findings by impact (highest complexity reduction first).
-
-**Safety Guard:** Analysis only. Do not edit code until specific recommendations are approved.
+Principles: Necessity | Native over custom | Reuse existing utils | Minimal footprint
+Look for: unnecessary abstractions, over-generic, unused config/options, deep nesting, premature optimization.
+For each finding (ranked by impact):
+1. Snippet + location 2. Why overcomplicated 3. Simplest alternative (std lib) 4. Impact rank

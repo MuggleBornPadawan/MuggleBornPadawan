@@ -1,9 +1,16 @@
+---
+name: changelog
+description: Update Keep-a-Changelog from commits since last tag. Use when user asks to update changelog, cut release, or summarize commits.
+argument-hint: "[version]"
+---
+
 Update the changelog.
 
-1. List all commits since the last tag (`git log $(git describe --tags --abbrev=0)..HEAD --oneline`)
-2. Review the actual diffs for anything noteworthy that commit messages miss
-3. Group entries by type: Added / Changed / Fixed / Removed / Security (Keep a Changelog style)
-4. Write user-facing descriptions — skip internal chores unless they affect consumers
-5. Prepend the entries under an `## [Unreleased]` heading (or ask me for the version number)
+1. Read existing CHANGELOG.md to match format exactly.
+2. List commits since last tag: `git log $(git describe --tags --abbrev=0 2>/dev/null || echo HEAD~20)..HEAD --oneline`
+3. Review diffs for noteworthy changes commit messages miss
+4. Group entries: Added / Changed / Fixed / Removed / Security (Keep a Changelog)
+5. Write user-facing descriptions — skip internal chores unless they affect consumers
+6. Prepend under `## [Unreleased]` or ask for version number
 
-Match the existing changelog format exactly.
+Args: version string or empty for Unreleased. No code changes beyond CHANGELOG.md.

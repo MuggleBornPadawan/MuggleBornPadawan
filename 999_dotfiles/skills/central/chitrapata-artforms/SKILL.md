@@ -1,5 +1,7 @@
 ---
 name: chitrapata-artforms
+triggers: [mandala, kalamkari, warli, gond, traditional form]
+anti-triggers: [generic generative]
 description: >-
   Traditional Indian artform generators for Chittu 13.14. Use when generating procedural art
   in the style of Mandala, Kalamkari, Kalighat, Pattachitra, Pithora, Tanjore, Madhubani,
@@ -8,11 +10,11 @@ description: >-
 ---
 
 # Chitrapata Traditional Indian Artforms — PCG Skill
-## Preamble (run first)
+## Preamble (MANDATORY — run first)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill chitrapata-artforms
 ```
-- Read SESSION_ID. Use for skill-end at close.
+- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
 Generate procedural art rooted in 12 indigenous Indian traditions via pure Clojure.
 Composes with `clojure-pcg` (triple render), `clojure-quil`, `clojure-raylib`, and `clojure-webgpu`.
@@ -118,3 +120,9 @@ When working on a specific artform, read the corresponding reference file:
 - [ ] Palette uses only pigments listed for that artform
 - [ ] Parameter map exposed for REPL tuning
 - [ ] Output renders correctly in at least one target (Quil recommended for first pass)
+## LLM Contract
+- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
+- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
+- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
+- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
+- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask
