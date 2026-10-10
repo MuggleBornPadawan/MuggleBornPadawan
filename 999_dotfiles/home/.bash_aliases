@@ -22,6 +22,7 @@ alias ..='cd .. && l'
 alias ...='cd ../.. && l'
 alias m='cd && cd MuggleBornPadawan && l'
 alias ww='cd && cd /home/rgroot/MuggleBornPadawan/000_refcards/c/test && l'
+alias d='pwd && cd && cd d && ls -lha && pwd'
 
 # ── File Mgmt + Safety ──
 alias ln='ln -i'
