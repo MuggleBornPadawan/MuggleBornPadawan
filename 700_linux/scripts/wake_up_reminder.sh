@@ -7,6 +7,10 @@
 # Define the message variable
 REMINDER_TEXT="Time to wake up and get moving."
 
+# Ensure audio environment for cron / non-interactive shells
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+export PULSE_SERVER="${PULSE_SERVER:-unix:${XDG_RUNTIME_DIR}/pulse/native}"
+
 # Execute espeak
 espeak-ng -p 80 -a 100 "[[O::]]"
 

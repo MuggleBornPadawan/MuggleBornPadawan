@@ -41,7 +41,9 @@
   - PCG Spaces (USD + WebGPU): see `pcg-spaces` skill + `MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md`.
   - One PCG -> Triple Render (Quil + Raylib + WebGPU): see `clojure-pcg` skill (single pure `generate` fn -> `art.json`).
 - REPL-driven development: prefer evaluating code in a running REPL over one-off scripts
-- Testing: `clojure.test`. Runner order: `bb test -n <ns>` -> `clojure -M:test -n <ns>` -> `lein test`. Run tests before claiming anything works.
+- Testing: `clojure.test`.
+  - Runner order: Live REPL Socket (`bb scripts/test_repl.bb` or evaluating `(require 'clojure.tools.namespace.repl) (clojure.tools.namespace.repl/refresh) (clojure.test/run-all-tests)` via `.socket-port`/`.nrepl-port`) -> `bb test -n <ns>` -> `clojure -M:test -n <ns>` -> `lein test`.
+  - Prefer evaluating code and running tests in a running JVM REPL over restarting the JVM.
 - Databases:
   - PostgreSQL for server/production persistence
   - SQLite for local/embedded/small projects and prototypes

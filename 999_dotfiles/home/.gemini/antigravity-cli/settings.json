@@ -1,9 +1,10 @@
 {
   "colorScheme": "colorblind-friendly dark",
-  "model": "Gemini 3.6 Flash (High)",
+  "model": "Gemini 3.8 Flash (High)",
   "permissions": {
     "allow": [
-      "command(pass)"
+      "command(pass)",
+      "command(git show)"
     ]
   },
   "statusLine": {
@@ -30,6 +31,9 @@
     "/home/rgroot/chi/mandala",
     "/home/rgroot/chi/d",
     "/home/rgroot/.local/share/skills",
-    "/home/rgroot/MuggleBornPadawan/700_linux/bckp"
+    "/home/rgroot/MuggleBornPadawan/700_linux/bckp",
+    "/home/rgroot/d/d",
+    "/home/rgroot/d/pallete-craft",
+    "/home/rgroot/d/palete-craft"
   ]
 }

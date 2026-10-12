@@ -30,7 +30,7 @@ Rules:
 
 Clojure / lean-machine (AGENTS.md):
 - Test at the public `ns` seam: public `defn`, not `defn-`. Pure data in -> data out.
-- Runner priority: `bb test -n my.ns` (fast, low RAM on 6 Gi) -> `clojure -M:test -n my.ns` -> `lein test`.
+- Runner priority: Live REPL Socket (`bb scripts/test_repl.bb` or REPL evaluation via `.socket-port`/`.nrepl-port`) -> `bb test -n my.ns` (fast, low RAM on 6 Gi) -> `clojure -M:test -n my.ns` -> `lein test`. Prefer REPL-driven refresh and test execution without restarting JVM.
 - Use `clojure.test` + `bb`; ask before adding `test.check`/`criterium`. Keep deps minimal.
 - Style: idiomatic `->`/`->>` threading, clean `ns` requires; respect `clj-kondo` + `cljfmt`.
 
