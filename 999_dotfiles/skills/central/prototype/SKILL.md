@@ -36,7 +36,7 @@ The three branches produce very different artifacts, so getting this wrong waste
 2. **Trivial to run — Clojure lean.** A prototype starts from one command in the project's task runner:
    - Logic (Clojure): `bb prototype-logic` (via `bb.edn` task) or `clojure -M -e "(load-file \"prototype.clj\")"` or single HTML file double-click
    - UI (Clojure/Quil): `bb quil-prototype` or `clojure -M -m my.prototype-sketch`; UI (Browser 3D): `bb serve` (`clojure-threejs` single HTML); Simulation/Game (Raylib): `clojure -M:run` (`clojure-raylib` template)
-   - Generic fallback: `bb <name>`, `clojure -M <path>`, `python <path>`, etc.
+   - Generic fallback: `bb <name>`, `clojure -M <path>`, etc.
    Either way, no thinking required to start it. Prefer `bb` on this 6 Gi box (fast, low RAM) over cold JVM.
 
 3. **No persistence by default.** State lives in memory (atom). Persistence is the thing the prototype is _checking_, not something it should depend on. If the question explicitly involves a database, hit a scratch DB (in-memory `SQLite` `:memory:`) or a local EDN file with a clear "PROTOTYPE, wipe me" name. For Quil, no DB at all.
