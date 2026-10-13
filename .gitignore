@@ -141,3 +141,7 @@ DerivedData/
 
 # Dart / Flutter
 .dart_tool/
+
+# Aider chat history and cache
+.aider*
+.aider/
