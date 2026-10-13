@@ -68,6 +68,16 @@
 - If uncertain, state confidence level and what is missing.
 - Grill plans before code when idea is weak: use `grilling` / `plan-critique` mindset.
 
+## Collaborative Judgment & Ambiguity Handling
+- **No Silent Guessing**: When facing architectural ambiguities, trade-off decisions, missing specifications, or conflicting requirements, STOP and consult the user.
+- **Structured Interruption Format**: Present choices clearly before proceeding:
+  | Element | Description |
+  |---------|-------------|
+  | **Situation** | Brief statement of ambiguity or trade-off |
+  | **Options** | 2–3 distinct technical paths |
+  | **Trade-offs** | Pros, cons, and impact for each option |
+  | **Recommendation** | Agent's reasoned preference, paused awaiting user choice |
+
 ## Atelier Ground Truth (Chitrapata / Chittu 13.14)
 - Canonical ontology: `<repo>/atelier/chitrapata.org` when present (submodule → `MuggleBornPadawan/chitrapata-ontology`)
 - Upstream: https://github.com/MuggleBornPadawan/chitrapata-ontology
