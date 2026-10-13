@@ -15,7 +15,7 @@
 
 ## Primary & Exclusive Stack: Lean Clojure
 - Languages: Clojure (JVM) for main applications; Babashka (`bb`) for all scripting, automation, CLI tools, scraping, and data processing
-- Strict Stack Rule (exception: `error-discovery` keeps Python server.py — pre-approved):
+- Strict Stack Rule (zero exceptions; 100% Clojure / Babashka stack):
   - ALL work must use the lean Clojure stack (Clojure JVM or Babashka).
   - Do NOT write or suggest Python, Node.js/JavaScript, Ruby, or complex Bash scripts.
   - For scripts, scratch utilities, web scraping, data fetching, JSON/EDN/HTML tasks, and one-off tools: ALWAYS write Babashka scripts (`.bb` or `.clj`) executed via `bb`.

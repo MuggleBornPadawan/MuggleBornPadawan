@@ -53,12 +53,9 @@ Adapted for Pi: turn-based workflow, no subagents, 0 extra dependencies.
    * Mute identical boilerplate (such as static system prompts).
    * Provide an inline text selection tool and a free-text notes input.
    * Auto-save annotations to `POST /api/annotations` on port 8080.
-3. Start the helper server in the background:
+3. Start the helper server in the background (Babashka):
    ```bash
-   # Lean override: bb preferred, python allowed as exception for this skill only
-   # If bb http-server available: bb -e "(babashka.http-server/exec {:port 8080 :dir "."})" &
-   # Fallback (exception to lean Clojure rule — keep Python here):
-   python3 ~/.local/share/skills/error-discovery/scripts/server.py 8080 &
+   bb ~/.local/share/skills/error-discovery/scripts/server.bb 8080 &
    ```
 
 ### Phase 3: Human Review Turn
@@ -91,7 +88,7 @@ When the human returns:
    * Summary of discovered failure modes.
    * Count of occurrences.
    * Proposed next 10 traces to inspect.
-> **Stack exception:** This skill uses Python `server.py` for HTML annotation server. Exception to AGENTS_CORE lean Clojure rule — keep Python here. Do not port to bb without testing annotation POST handling.
+
 
 ## LLM Contract
 - **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
