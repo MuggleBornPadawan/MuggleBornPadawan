@@ -28,6 +28,41 @@
         "type": "chat"
       },
       {
+        "id": "cat-jam-free",
+        "name": "Cat Jam Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen/v1",
+        "reasoning": true,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 262144,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "type": "chat"
+      },
+      {
         "id": "claude-fable-5",
         "name": "Claude Fable 5",
         "api": "anthropic-messages",
@@ -3460,9 +3495,9 @@
         "contextWindow": 32000
       }
     ],
-    "checkedAt": 1791869669503,
-    "lastModified": 1791541999000,
-    "etag": "W/\"84be4c58929c816d7869ae822c0a9cc8\""
+    "lastModified": 1791895626000,
+    "etag": "W/\"1ff6cd48ddb612f368e77eeb5afe33ef\"",
+    "checkedAt": 1791910797954
   },
   "opencode-go": {
     "models": [
@@ -4711,7 +4746,7 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1791869669614,
+    "checkedAt": 1791910797836,
     "lastModified": 1791542002000,
     "etag": "W/\"634a55fb553c1d2d83305159b8bfd5cc\""
   },
@@ -5638,7 +5673,7 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1791869669570,
+    "checkedAt": 1791910797889,
     "lastModified": 1791541965000,
     "etag": "W/\"f2803f8fe4c1cd17fd856e3023230371\""
   },
@@ -5843,10 +5878,50 @@
           }
         },
         "type": "chat"
+      },
+      {
+        "id": "muse-wonder-1.0",
+        "name": "Muse Wonder",
+        "api": "openai-responses",
+        "provider": "meta",
+        "baseUrl": "https://api.meta.ai/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": "minimal",
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
       }
     ],
-    "checkedAt": 1791869669773,
-    "lastModified": 1791377170000,
-    "etag": "W/\"8d00a3e9c7f4064b9f5fcee309720d2e\""
+    "lastModified": 1791895604000,
+    "etag": "W/\"5cb507c9b6deee31ca228e85506504e7\"",
+    "checkedAt": 1791910797941
   }
 }

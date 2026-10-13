@@ -52,6 +52,16 @@ When a plugin is discovered and enabled:
 3.  **Lifecycle Scoping**:
     *   **Hooks** defined in `plugins/<name>/hooks.json` are registered and run
         during the agent's lifecycle.
+        > [!NOTE]
+        > Runtime plugin discovery strictly loads `hooks.json` from the plugin
+        > root (`<plugin_dir>/hooks.json`). While `agy plugin install` stages
+        > `hooks/hooks.json` into `<plugin_dir>/hooks.json` when importing a
+        > pure Gemini CLI (`gemini-extension.json`) or Claude Code
+        > (`.claude-plugin/plugin.json`) extension, native plugins (any
+        > directory containing `plugin.json`, `.antigravity-plugin/plugin.json`,
+        > or `.gemini-plugin/plugin.json`, or loaded via `plugins.json`) do not
+        > run extension staging and **must** place `hooks.json` directly at the
+        > plugin root.
     *   **MCP Servers** defined in `plugins/<name>/mcp_config.json` are
         launched, and their tools are made available.
     *   **Rules** in `plugins/<name>/rules/` are merged into the active rule

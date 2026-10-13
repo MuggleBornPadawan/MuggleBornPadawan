@@ -15,6 +15,8 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill code-review
 
 Review the specified namespace, file, or the current git diff sequentially.
 
+**Anti-Pattern Warning (The PR Rubber-Stamp Trap):** Never perform superficial 10-minute browser diff reviews that only comment on variable names or minor syntax while transferring blind responsibility. Code review is active verification: check out the branch, run test suites (`bb test`), and trace execution.
+
 Look for:
 1. Bugs and logic errors
 2. Security vulnerabilities
