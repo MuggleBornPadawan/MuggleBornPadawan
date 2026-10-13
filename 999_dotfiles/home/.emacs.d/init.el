@@ -195,7 +195,14 @@
 (use-package slime
   :ensure t
   :init
-  (setq inferior-lisp-program "sbcl"))
+  ;; Set SBCL as the default Common Lisp implementation
+  (setq inferior-lisp-program "sbcl")
+  :config
+  ;; Enable standard SLIME contribs (fancy auto-completion, doc, inspector)
+  (setq slime-contribs '(slime-fancy))
+
+  ;; Auto-enable slime-mode in lisp-mode
+  (add-hook 'lisp-mode-hook #'slime-mode))
 
 ;; Rainbow Delimiters
 (use-package rainbow-delimiters
@@ -451,7 +458,7 @@
 
   (setq gptel-directives
         `((default . ,my/gptel-harness-system-message)
-          (coder   . "You are an expert programmer in clojure stack. Write clean, concise code.")
+          (coder   . "You are an expert programmer living inside emacs and a helpful assistant. Write clean, concise code. Respond concisely")
           (mmm     . "Respond concisely")))
 
   ;; Update the system message since gptel--system-message is a defvar and won't automatically update from gptel-directives configuration set in :config
