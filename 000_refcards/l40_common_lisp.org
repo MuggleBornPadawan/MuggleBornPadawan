@@ -1,0 +1,77 @@
+#+TITLE: common lisp
+#+AUTHOR: Micah Killian - almighty lisp,  David S. Touretzky (Professor of Computer Science at Carnegie Mellon University), Peter Norvig, SICP, 
+#+OPTIONS: toc
+* Table of Contents :TOC_2:
+- [[#intro][intro]]
+  - [[#trivia][trivia]]
+- [[#getting-started][getting started]]
+  - [[#emacs][emacs]]
+- [[#lisp-fundamentals][lisp fundamentals]]
+  - [[#special-forms][special forms]]
+  - [[#global-variables][global variables]]
+- [[#emacs-fundamentals][emacs fundamentals]]
+- [[#lisp-ide][lisp ide]]
+- [[#structured-editing][structured editing]]
+- [[#beyond-lists][beyond lists]]
+- [[#the-loop-macro][the loop macro]]
+- [[#errors-and-conditions][errors and conditions]]
+- [[#macros][macros]]
+- [[#organizing-code][organizing code]]
+- [[#ecosystem][ecosystem]]
+- [[#money-library][money library]]
+- [[#accounting-library][accounting library]]
+- [[#deploying][deploying]]
+- [[#resources][resources]]
+
+* intro
+- Micah Killian, freelance software developer, Saga, Japan
+- almight lisp - https://almightylisp.com/book/essentials/introduction
+- lisp 2 - seperate namespaces for values and functions 
+- mutable 
+** trivia 
+- https://coalton-lang.github.io/
+- special forms - https://cl-community-spec.github.io/pages/Special-Forms.html 
+* getting started
+- Steel Bank Common Lisp (SBCL) - https://sbcl.org/ 
+- apt install sbcl 
+- curl -O https://beta.quicklisp.org/quicklisp.lisp
+- sbcl --load quicklisp.lisp
+- (quicklisp-quickstart:install)
+- (ql:add-to-init-file)
+- (exit)
+** emacs
+- buffer, modeline, window, frame, popup buffer, minibuffer, mode (major and minor), state (evil-mode: normal, visual, insert) 
+- doom: workspaces and projects
+- packages: extensions or plugins 
+- mode line
+- compiling code / evaluating lisp from buffer ? (sly -> compilation -> compile defun)
+- lisp images - save the image as executable and then restore by running the executable (deploying chapter) 
+- structural editin: lispy-mode (toggle)
+- debugger
+* lisp fundamentals
+- s-expressions (forms)
+- atoms (indivisible units) and lists (divisible units) 
+- the first atom - looked up and evaluated as a function, macro or special operator name 
+- the rest of the symbols are treated as variables and the form (s-expression) is evaluated 
+- prefix notation and parenthesis 
+- all inner forms evaluated left-to-right before being passed to function
+- repl 
+** special forms
+block, let*, return-from, catch, load-time-value, setq, eval-when, locally, symbol-macrolet, flet, macrolet, tagbody, function,	multiple-value-call, the, go, multiple-value-prog1, throw, if, progn, unwind-protect, labels, progv, let, quote
+** global variables
+- surrounded by *<x>* as convention to indicate global nature 
+- defvar (use setf to mutate) 
+- defparamameter 
+* emacs fundamentals
+* lisp ide
+* structured editing
+* beyond lists
+* the loop macro
+* errors and conditions
+* macros
+* organizing code
+* ecosystem
+* money library 
+* accounting library
+* deploying
+* resources

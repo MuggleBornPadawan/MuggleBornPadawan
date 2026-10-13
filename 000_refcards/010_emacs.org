@@ -111,6 +111,7 @@ GNU emacs
 - M-> end of whole text
 - C-u 10 C-n moves down 10 lines 
 ** text selection and copy / paste / undo 
+- C-x C-q read only buffer (toggle) - lock icon
 - M-x mc/edit-lines | select block and invoke multi cursor edit lines function 
 - M-w - copy text
 - C-w - kill or cut text
