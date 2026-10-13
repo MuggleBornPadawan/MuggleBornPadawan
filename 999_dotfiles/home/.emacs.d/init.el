@@ -414,6 +414,25 @@
                   "kimi-k3"
                   "deepseek-v4-pro"))))
 
+  ;; Retrieve Meta API key securely from 'pass'
+  (defun my/get-meta-key-from-pass ()
+    "Retrieve Meta API key securely from pass."
+    (when (executable-find "pass")
+      (let ((key (shell-command-to-string "pass show META_API_KEY")))
+        (unless (string-empty-p key)
+          (string-trim-right key)))))
+
+  ;; Define Meta Muse backend with Meta Muse Spark contributor models only
+  (let ((meta-key (my/get-meta-key-from-pass)))
+    (when meta-key
+      (gptel-make-openai "Meta-Muse"
+        :host "api.meta.ai"
+        :endpoint "/v1/chat/completions"
+        :stream t
+        :key meta-key
+        :models '("muse-spark-1.3-contributor"
+                  "muse-spark-1.2-contributor"))))
+
   ;; Set pass store time 
   (setenv "PASSWORD_STORE_CLIP_TIME" "3600")
 
@@ -432,7 +451,8 @@
 
   (setq gptel-directives
         `((default . ,my/gptel-harness-system-message)
-          (coder   . "You are an expert programmer. Write clean, concise code.")))
+          (coder   . "You are an expert programmer in clojure stack. Write clean, concise code.")
+          (mmm     . "Respond concisely")))
 
   ;; Update the system message since gptel--system-message is a defvar and won't automatically update from gptel-directives configuration set in :config
   (setq gptel--system-message (alist-get 'default gptel-directives)))

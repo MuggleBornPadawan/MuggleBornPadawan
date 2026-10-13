@@ -15,3 +15,4 @@
 {:t 1791702294388, :skill "grilling", :outcome "unknown", :sid "1791702256689-grilling"}
 {:t 1791704289310, :skill "grilling", :outcome "unknown", :sid "1791704143949-grilling"}
 {:t 1791705465261, :skill "grilling", :outcome "unknown", :sid "1791705395796-grilling"}
+{:t 1791832333531, :skill "dotfiles-sync", :outcome "unknown", :sid "1791832314224-dotfiles-sync"}
