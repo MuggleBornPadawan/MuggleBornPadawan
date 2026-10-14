@@ -8,7 +8,8 @@
   - [[#emacs][emacs]]
 - [[#lisp-fundamentals][lisp fundamentals]]
   - [[#special-forms][special forms]]
-  - [[#global-variables][global variables]]
+  - [[#variables][variables]]
+  - [[#functions][functions]]
 - [[#emacs-fundamentals][emacs fundamentals]]
 - [[#lisp-ide][lisp ide]]
 - [[#structured-editing][structured editing]]
@@ -58,10 +59,26 @@
 - repl 
 ** special forms
 block, let*, return-from, catch, load-time-value, setq, eval-when, locally, symbol-macrolet, flet, macrolet, tagbody, function,	multiple-value-call, the, go, multiple-value-prog1, throw, if, progn, unwind-protect, labels, progv, let, quote
-** global variables
+** variables
 - surrounded by *<x>* as convention to indicate global nature 
 - defvar (use setf to mutate) 
 - defparamameter 
+- let - local variables
+- let* - reuse local variables in the same form later
+** functions
+- all defun are global (top level) functions
+- flet and labels are local functions
+  - flet is like let, and labels is like let*
+  - importantly, this means if you want to do anything recursive you need to use labels
+- args
+- rest args
+- default args
+- optional args
+- keys args
+- dont mix &optional &key parameters
+- &optional and &rest are fine 
+- &rest and &key - fine
+- &key and &rest - error 
 * emacs fundamentals
 * lisp ide
 * structured editing
