@@ -79,6 +79,7 @@ block, let*, return-from, catch, load-time-value, setq, eval-when, locally, symb
 - &optional and &rest are fine 
 - &rest and &key - fine
 - &key and &rest - error 
+
 * emacs fundamentals
 * lisp ide
 * structured editing

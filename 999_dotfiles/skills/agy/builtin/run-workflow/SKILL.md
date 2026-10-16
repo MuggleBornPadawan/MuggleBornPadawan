@@ -26,11 +26,15 @@ itself is code: loops over a list, fan-out then aggregate, or staged pipelines.
     `run_workflow(ScriptPath="/abs/path/workflow.py", Description="...")`.
     `Description` is a one-line goal shown in the UI.
     The workflow runs in the background, and you are notified when it ends.
+    For a quick script, such as a `call_tool` fan-out, set
+    `WaitMsBeforeAsync` (up to 10000) to get the result in the same turn if it
+    finishes in time.
     To pass inputs, set `Args` to a JSON object; the script reads it as the
     `args` dict. When `ScriptPath` is a saved workflow's entry script, `Args`
     is validated against the args schema in its `workflow.json`.
-3.  Read the tool result: it contains the `log()` output. Each agent is also
-    linked from the workflow step, so the user can open its conversation.
+3.  Read the tool result: it contains the `log()` output (`Logs:`) and what the
+    script printed (`Output:`). Each agent is also linked from the workflow
+    step, so the user can open its conversation.
 4.  If the tool returns an error, fix the script at the reported line and run
     it again.
 
@@ -43,7 +47,15 @@ on `PATH`:
 -   Installed library workflows are importable by name (`import <library>` or
     `from <library> import <name>`); library modules see the same primitives as
     the script.
+-   What the script prints (`print()`, `stderr`, child-process output, and the
+    `repr` of a trailing expression) is returned in the tool result's `Output:`
+    section (and appended to the error when the workflow fails).
 -   An uncaught exception stops the workflow and reports the script line.
+-   `CONVERSATION_ID` and `STEP_INDEX` identify the `run_workflow` step.
+    `WORKSPACES` is a tuple of the workspace directories, primary first (empty
+    if there are none).
+-   The working directory is `Cwd` if given, else `WORKSPACES[0]`, so relative
+    paths resolve against it. Local modules are not importable.
 
 ## Primitives
 
@@ -114,10 +126,12 @@ script can call them directly:
     runs the tool with the arguments you would pass to it directly and returns
     the tool's output as a `str`.
 -   It raises `ToolError` (with `.tool` and `.message`) if the tool fails or
-    the call is denied.
+    the call is denied. `.denied` is `True` when a pre-tool hook or the
+    permission check rejected the call before the tool ran, so a script can
+    skip denied calls and still fail on real errors.
 -   The user cannot be asked anything from a workflow: a call that needs user
     approval that has not already been granted is denied.
--   Tool outputs are not shown to you unless the script logs them.
+-   Tool outputs are not shown to you unless the script logs or prints them.
 
 ## Behavior to know
 

@@ -106,8 +106,42 @@ pom.xml.asc
 .lsp/
 profiles.clj
 
-# others
-.hgignore
-.hg/
-.svn
+# Common Lisp
+*.fasl
+*.dfasl
+*.ufasl
+*.faslf
+*.x86f
+*.fas
+*.cls
+
+# Zig
+zig-out/
+zig-cache/
+
+# Elixir / Erlang
+_build/
+deps/
+
+# Haskell
+dist-newstyle/
+*.hi
+*.dyn_hi
+*.dyn_o
+
+# OCaml
+_build/
+*.cmi
+*.cmo
+*.cmx
+
+# Swift / iOS
+.build/
+DerivedData/
+
+# Dart / Flutter
+.dart_tool/
+
+# Aider chat history and cache
 .aider*
+.aider/

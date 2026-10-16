@@ -6,7 +6,7 @@
         "name": "Big Pickle",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -32,7 +32,7 @@
         "name": "Cat Jam Free",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -49,7 +49,7 @@
           "supportsStrictMode": true,
           "maxTokensField": "max_tokens"
         },
-        "contextWindow": 262144,
+        "contextWindow": 1048576,
         "maxTokens": 131072,
         "thinkingLevelMap": {
           "off": null,
@@ -67,7 +67,7 @@
         "name": "Claude Fable 5",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -107,7 +107,7 @@
         "name": "Claude Fable 5.1",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -147,7 +147,7 @@
         "name": "Claude Haiku 4.5",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -178,7 +178,7 @@
         "name": "Claude Haiku 5.5",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -227,7 +227,7 @@
         "name": "Claude Opus 4.5",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -258,7 +258,7 @@
         "name": "Claude Opus 4.6",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -295,7 +295,7 @@
         "name": "Claude Opus 4.7",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -334,7 +334,7 @@
         "name": "Claude Opus 4.8",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -374,7 +374,7 @@
         "name": "Claude Opus 5",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -414,7 +414,7 @@
         "name": "Claude Opus 5.5",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -454,7 +454,7 @@
         "name": "Claude Sonnet 4",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -494,7 +494,7 @@
         "name": "Claude Sonnet 4.5",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -534,7 +534,7 @@
         "name": "Claude Sonnet 4.6",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -571,7 +571,7 @@
         "name": "Claude Sonnet 5",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -609,7 +609,7 @@
         "name": "Claude Sonnet 5.5",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -649,7 +649,7 @@
         "name": "DeepSeek V4 Flash",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -686,7 +686,7 @@
         "name": "DeepSeek V4 Flash Vision Exp",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -733,7 +733,7 @@
         "name": "DeepSeek V4 Pro",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -770,7 +770,7 @@
         "name": "DeepSeek V4.1 Flash",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -813,11 +813,11 @@
         "type": "chat"
       },
       {
-        "id": "exo-free",
-        "name": "Exo Free",
+        "id": "deepseek-v4.1-flash-free",
+        "name": "DeepSeek V4.1 Flash Free",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -833,18 +833,19 @@
           "supportsStore": false,
           "supportsDeveloperRole": false,
           "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
+          "maxTokensField": "max_tokens",
+          "requiresReasoningContentOnAssistantMessages": true
         },
-        "contextWindow": 1048576,
-        "maxTokens": 131072,
+        "contextWindow": 200000,
+        "maxTokens": 32000,
         "thinkingLevelMap": {
           "off": null,
           "minimal": null,
-          "low": null,
+          "low": "low",
           "medium": null,
           "high": "high",
           "xhigh": null,
-          "max": null
+          "max": "max"
         },
         "inputLimits": {
           "images": {
@@ -863,7 +864,7 @@
         "name": "Gemini 3 Flash",
         "api": "google-generative-ai",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "thinkingLevelMap": {
           "off": null,
@@ -903,7 +904,7 @@
         "name": "Gemini 3.1 Pro Preview",
         "api": "google-generative-ai",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "thinkingLevelMap": {
           "off": null,
@@ -952,7 +953,7 @@
         "name": "Gemini 3.5 Flash",
         "api": "google-generative-ai",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "thinkingLevelMap": {
           "off": null,
@@ -992,7 +993,7 @@
         "name": "Gemini 3.5 Flash Lite",
         "api": "google-generative-ai",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "thinkingLevelMap": {
           "off": null,
@@ -1032,7 +1033,7 @@
         "name": "Gemini 3.6 Flash",
         "api": "google-generative-ai",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "thinkingLevelMap": {
           "off": null,
@@ -1072,7 +1073,7 @@
         "name": "Gemini 3.7 Flash",
         "api": "google-generative-ai",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "thinkingLevelMap": {
           "off": null,
@@ -1112,7 +1113,7 @@
         "name": "Gemini 3.8 Flash",
         "api": "google-generative-ai",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "thinkingLevelMap": {
           "off": null,
@@ -1148,11 +1149,51 @@
         "type": "chat"
       },
       {
+        "id": "gemini-4-argon",
+        "name": "Gemini 4 Argon",
+        "api": "google-generative-ai",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/v1",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": null,
+          "max": null
+        },
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 2,
+          "output": 10,
+          "cacheRead": 0.1,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 65536,
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "glm-5",
         "name": "GLM-5",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -1178,7 +1219,7 @@
         "name": "GLM-5.1",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -1204,7 +1245,7 @@
         "name": "GLM-5.2",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -1239,7 +1280,7 @@
         "name": "GLM-5.3",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -1274,7 +1315,7 @@
         "name": "GLM-5.3-Flash",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1316,11 +1357,57 @@
         "type": "chat"
       },
       {
+        "id": "glm-5.3-flash-free",
+        "name": "GLM-5.3-Flash Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 200000,
+        "maxTokens": 32000,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "gpt-5",
         "name": "GPT-5",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1364,7 +1451,7 @@
         "name": "GPT-5 Codex",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1408,7 +1495,7 @@
         "name": "GPT-5 Nano",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1452,7 +1539,7 @@
         "name": "GPT-5.1",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1496,7 +1583,7 @@
         "name": "GPT-5.1 Codex",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1540,7 +1627,7 @@
         "name": "GPT-5.1 Codex Max",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1584,7 +1671,7 @@
         "name": "GPT-5.1 Codex Mini",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1628,7 +1715,7 @@
         "name": "GPT-5.2",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1672,7 +1759,7 @@
         "name": "GPT-5.2 Codex",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1716,7 +1803,7 @@
         "name": "GPT-5.3 Codex",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1760,7 +1847,7 @@
         "name": "GPT-5.4",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1815,7 +1902,7 @@
         "name": "GPT-5.4 Mini",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1861,7 +1948,7 @@
         "name": "GPT-5.4 Nano",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1905,7 +1992,7 @@
         "name": "GPT-5.4 Pro",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -1951,7 +2038,7 @@
         "name": "GPT-5.5",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2006,7 +2093,7 @@
         "name": "GPT-5.5 Pro",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2050,7 +2137,7 @@
         "name": "GPT-5.6 Luna",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2105,7 +2192,7 @@
         "name": "GPT-5.6 Sol",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2160,7 +2247,7 @@
         "name": "GPT-5.6 Terra",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2215,7 +2302,7 @@
         "name": "GPT-6 Astra",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2270,7 +2357,7 @@
         "name": "GPT-6 Luna",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2325,7 +2412,7 @@
         "name": "GPT-6 Sol",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2380,7 +2467,7 @@
         "name": "GPT-6.1 Sol",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2435,7 +2522,7 @@
         "name": "Grok 4.5",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2487,7 +2574,7 @@
         "name": "Grok 4.6",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2539,7 +2626,7 @@
         "name": "Grok 4.7",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2591,7 +2678,7 @@
         "name": "Grok Build 0.1",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2632,7 +2719,7 @@
         "name": "Kimi K2.5",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2670,7 +2757,7 @@
         "name": "Kimi K2.6",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2710,7 +2797,7 @@
         "name": "Kimi K2.7 Code",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2747,7 +2834,7 @@
         "name": "Kimi K3",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2791,11 +2878,11 @@
         "type": "chat"
       },
       {
-        "id": "ling-3.0-flash-fin-free",
-        "name": "Ling 3.0 Flash Fin Free",
+        "id": "ll-alpha-free",
+        "name": "LL Alpha Free",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -2813,33 +2900,16 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 262144,
-        "maxTokens": 32768,
-        "type": "chat"
-      },
-      {
-        "id": "ling-3.1-flash-free",
-        "name": "Ling 3.1 Flash Free",
-        "api": "openai-completions",
-        "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
-        "reasoning": true,
-        "input": [
-          "text"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
+        "maxTokens": 65536,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
         },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
-        },
-        "contextWindow": 262144,
-        "maxTokens": 32768,
         "type": "chat"
       },
       {
@@ -2847,7 +2917,7 @@
         "name": "LongCat 2.5 Preview Free",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2884,7 +2954,7 @@
         "name": "MiMo-V2.6-Flash Free",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -2921,7 +2991,7 @@
         "name": "MiniMax-M2.5",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -2947,7 +3017,7 @@
         "name": "MiniMax-M2.7",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -2974,7 +3044,7 @@
         "name": "MiniMax-M3",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3011,7 +3081,7 @@
         "name": "Mistral Large 4",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3057,7 +3127,7 @@
         "name": "Muse Spark 1.2",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3100,7 +3170,7 @@
         "name": "Muse Spark 1.3",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3143,7 +3213,7 @@
         "name": "Muse Spark 1.3 Free",
         "api": "openai-responses",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3186,7 +3256,7 @@
         "name": "Nemotron 3 Ultra Free",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -3212,7 +3282,7 @@
         "name": "Nemotron 3.5 Lightning Free",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -3234,11 +3304,57 @@
         "type": "chat"
       },
       {
+        "id": "nemotron-3.5-super-vl-free",
+        "name": "Nemotron 3.5 Super VL Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": "none",
+          "minimal": "minimal",
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": null
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "qwen3.5-plus",
         "name": "Qwen3.5 Plus",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -3269,7 +3385,7 @@
         "name": "Qwen3.6 Plus",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -3300,7 +3416,7 @@
         "name": "Qwen3.8 Flash",
         "api": "anthropic-messages",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen",
+        "baseUrl": "https://opencode.ai/inference",
         "reasoning": true,
         "input": [
           "text",
@@ -3334,7 +3450,7 @@
         "name": "Qwen3.8 Max",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3371,7 +3487,7 @@
         "name": "Space Bunny Free",
         "api": "openai-completions",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3413,58 +3529,12 @@
         "type": "chat"
       },
       {
-        "id": "step-5-preview-free",
-        "name": "Step 5 Preview Free",
-        "api": "openai-completions",
-        "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
-        "reasoning": true,
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
-        },
-        "contextWindow": 1000000,
-        "maxTokens": 65536,
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": null,
-          "max": null
-        },
-        "inputLimits": {
-          "images": {
-            "resize": {
-              "maxWidth": 2000,
-              "maxHeight": 2000,
-              "maxBytes": 4718592,
-              "jpegQuality": 80
-            }
-          }
-        },
-        "type": "chat"
-      },
-      {
         "type": "classifier",
         "id": "jev-1.13",
         "name": "Jev 1.13",
         "api": "typesafe-system-one",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "input": [
           "text"
         ],
@@ -3482,7 +3552,7 @@
         "name": "Jev 1.13 Free",
         "api": "typesafe-system-one",
         "provider": "opencode",
-        "baseUrl": "https://opencode.ai/zen/v1",
+        "baseUrl": "https://opencode.ai/inference/v1",
         "input": [
           "text"
         ],
@@ -3495,18 +3565,53 @@
         "contextWindow": 32000
       }
     ],
-    "lastModified": 1791895626000,
-    "etag": "W/\"1ff6cd48ddb612f368e77eeb5afe33ef\"",
-    "checkedAt": 1791910797954
+    "lastModified": 1792154500000,
+    "etag": "W/\"143fba288aa3585f7509ece2938f9c8c\"",
+    "checkedAt": 1792181556103
   },
   "opencode-go": {
     "models": [
+      {
+        "id": "cat-jam-free",
+        "name": "Cat Jam Free",
+        "api": "openai-completions",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
+        "reasoning": true,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "type": "chat"
+      },
       {
         "id": "claude-haiku-5-5",
         "name": "Claude Haiku 5.5",
         "api": "anthropic-messages",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go",
+        "baseUrl": "https://opencode.ai/inference/go",
         "reasoning": true,
         "input": [
           "text",
@@ -3550,92 +3655,11 @@
         "type": "chat"
       },
       {
-        "id": "deepseek-v4-flash",
-        "name": "DeepSeek V4 Flash",
-        "api": "openai-completions",
-        "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
-        "reasoning": true,
-        "input": [
-          "text"
-        ],
-        "cost": {
-          "input": 0.15,
-          "output": 0.6,
-          "cacheRead": 0.003,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens",
-          "requiresReasoningContentOnAssistantMessages": true,
-          "thinkingFormat": "deepseek"
-        },
-        "contextWindow": 1000000,
-        "maxTokens": 384000,
-        "thinkingLevelMap": {
-          "minimal": null,
-          "low": "low",
-          "medium": null,
-          "high": "high",
-          "max": "max"
-        },
-        "type": "chat"
-      },
-      {
-        "id": "deepseek-v4-flash-vision-exp",
-        "name": "DeepSeek V4 Flash Vision Exp",
-        "api": "openai-completions",
-        "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
-        "reasoning": true,
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 0.15,
-          "output": 0.6,
-          "cacheRead": 0.003,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens",
-          "requiresReasoningContentOnAssistantMessages": true,
-          "thinkingFormat": "deepseek"
-        },
-        "contextWindow": 1000000,
-        "maxTokens": 384000,
-        "thinkingLevelMap": {
-          "minimal": null,
-          "low": "low",
-          "medium": null,
-          "high": "high",
-          "max": "max"
-        },
-        "inputLimits": {
-          "images": {
-            "resize": {
-              "maxWidth": 2000,
-              "maxHeight": 2000,
-              "maxBytes": 4718592,
-              "jpegQuality": 80
-            }
-          }
-        },
-        "type": "chat"
-      },
-      {
         "id": "deepseek-v4-pro",
         "name": "DeepSeek V4 Pro (New)",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -3670,7 +3694,7 @@
         "name": "DeepSeek V4.1 Flash",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "thinkingLevelMap": {
           "off": null,
@@ -3714,11 +3738,51 @@
         "type": "chat"
       },
       {
+        "id": "gemini-4-argon-contributor",
+        "name": "Gemini 4 Argon Contributor",
+        "api": "google-generative-ai",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": null,
+          "max": null
+        },
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 4,
+          "output": 20,
+          "cacheRead": 0.2,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 65536,
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "glm-5.2",
         "name": "GLM-5.2",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -3753,7 +3817,7 @@
         "name": "GLM-5.3",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -3788,7 +3852,7 @@
         "name": "GLM-5.3-Flash",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3834,7 +3898,7 @@
         "name": "GPT-5.6 Luna",
         "api": "openai-responses",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3888,7 +3952,7 @@
         "name": "GPT-6 Luna",
         "api": "openai-responses",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -3938,63 +4002,11 @@
         "type": "chat"
       },
       {
-        "id": "grok-4.6",
-        "name": "Grok 4.6",
-        "api": "openai-responses",
-        "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
-        "reasoning": true,
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 2,
-          "output": 6,
-          "cacheRead": 0.5,
-          "cacheWrite": 0,
-          "tiers": [
-            {
-              "inputTokensAbove": 200000,
-              "input": 4,
-              "output": 12,
-              "cacheRead": 1,
-              "cacheWrite": 0
-            }
-          ]
-        },
-        "compat": {
-          "sessionAffinityFormat": "openai-nosession"
-        },
-        "contextWindow": 500000,
-        "maxTokens": 500000,
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": "xhigh",
-          "max": null
-        },
-        "inputLimits": {
-          "images": {
-            "resize": {
-              "maxWidth": 2000,
-              "maxHeight": 2000,
-              "maxBytes": 4718592,
-              "jpegQuality": 80
-            }
-          }
-        },
-        "type": "chat"
-      },
-      {
         "id": "grok-4.7",
         "name": "Grok 4.7",
         "api": "openai-responses",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4046,7 +4058,7 @@
         "name": "Hy3",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -4081,7 +4093,7 @@
         "name": "Hy4 preview",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -4116,7 +4128,7 @@
         "name": "Kimi K2.7 Code",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4153,7 +4165,7 @@
         "name": "Kimi K3",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4201,7 +4213,7 @@
         "name": "LongCat-2.0",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -4227,7 +4239,7 @@
         "name": "LongCat 2.5 Preview Free",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4264,7 +4276,7 @@
         "name": "MiMo V2.5",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4301,7 +4313,7 @@
         "name": "MiMo V2.5 Pro",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text"
@@ -4327,7 +4339,7 @@
         "name": "MiMo-V2.6-Flash",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4364,7 +4376,7 @@
         "name": "MiMo-V2.6-Pro",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4397,37 +4409,11 @@
         "type": "chat"
       },
       {
-        "id": "minimax-m2.7",
-        "name": "MiniMax-M2.7",
-        "api": "openai-completions",
-        "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
-        "reasoning": true,
-        "input": [
-          "text"
-        ],
-        "cost": {
-          "input": 0.3,
-          "output": 1.2,
-          "cacheRead": 0.06,
-          "cacheWrite": 0.375
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
-        },
-        "contextWindow": 204800,
-        "maxTokens": 131072,
-        "type": "chat"
-      },
-      {
         "id": "minimax-m3",
         "name": "MiniMax-M3",
         "api": "anthropic-messages",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go",
+        "baseUrl": "https://opencode.ai/inference/go",
         "reasoning": true,
         "input": [
           "text",
@@ -4467,7 +4453,7 @@
         "name": "Muse Spark 1.2 Contributor",
         "api": "openai-responses",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4510,7 +4496,7 @@
         "name": "Muse Spark 1.3 Contributor",
         "api": "openai-responses",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4553,7 +4539,7 @@
         "name": "Qwen3.7 Plus",
         "api": "anthropic-messages",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go",
+        "baseUrl": "https://opencode.ai/inference/go",
         "reasoning": true,
         "input": [
           "text",
@@ -4593,7 +4579,7 @@
         "name": "Qwen3.8 Flash",
         "api": "anthropic-messages",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go",
+        "baseUrl": "https://opencode.ai/inference/go",
         "reasoning": true,
         "input": [
           "text",
@@ -4627,7 +4613,7 @@
         "name": "Qwen3.8 Max",
         "api": "anthropic-messages",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go",
+        "baseUrl": "https://opencode.ai/inference/go",
         "reasoning": true,
         "input": [
           "text",
@@ -4658,7 +4644,7 @@
         "name": "Space Bunny",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
@@ -4700,20 +4686,20 @@
         "type": "chat"
       },
       {
-        "id": "step-5-preview-free",
-        "name": "Step 5 Preview Free",
+        "id": "step-5-preview",
+        "name": "Step 5 Preview",
         "api": "openai-completions",
         "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/zen/go/v1",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
         "reasoning": true,
         "input": [
           "text",
           "image"
         ],
         "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 1,
+          "output": 2.7,
+          "cacheRead": 0.1,
           "cacheWrite": 0
         },
         "compat": {
@@ -4746,9 +4732,9 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1791910797836,
-    "lastModified": 1791542002000,
-    "etag": "W/\"634a55fb553c1d2d83305159b8bfd5cc\""
+    "lastModified": 1792154503000,
+    "etag": "W/\"5504011e8b5a0715381dc92a4e6f0fb2\"",
+    "checkedAt": 1792181556179
   },
   "google": {
     "models": [
@@ -5509,6 +5495,48 @@
         "type": "chat"
       },
       {
+        "id": "gemini-4-argon",
+        "name": "Gemini 4 Argon",
+        "api": "google-generative-ai",
+        "provider": "google",
+        "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": null,
+          "max": null
+        },
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 2,
+          "output": 10,
+          "cacheRead": 0.1,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 32768,
+        "inputLimits": {
+          "maxRequestBytes": 20971520,
+          "images": {
+            "maxPerRequest": 3600,
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "gemini-flash-latest",
         "name": "Gemini Flash Latest",
         "api": "google-generative-ai",
@@ -5673,9 +5701,9 @@
         "type": "chat"
       }
     ],
-    "checkedAt": 1791910797889,
-    "lastModified": 1791541965000,
-    "etag": "W/\"f2803f8fe4c1cd17fd856e3023230371\""
+    "lastModified": 1791965958000,
+    "etag": "W/\"473f3844793bd9a7b67b89ed2e8277b3\"",
+    "checkedAt": 1792181556104
   },
   "meta": {
     "models": [
@@ -5891,9 +5919,9 @@
           "image"
         ],
         "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 4,
+          "output": 20,
+          "cacheRead": 0.2,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
@@ -5920,8 +5948,8 @@
         "type": "chat"
       }
     ],
-    "lastModified": 1791895604000,
-    "etag": "W/\"5cb507c9b6deee31ca228e85506504e7\"",
-    "checkedAt": 1791910797941
+    "lastModified": 1791965969000,
+    "etag": "W/\"d2397a60589efbabef99ee05f91cc968\"",
+    "checkedAt": 1792181556176
   }
 }
