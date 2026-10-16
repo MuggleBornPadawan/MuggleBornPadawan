@@ -7,6 +7,7 @@
 - Debian 12 (bookworm), x86_64, kernel 6.6
 - CPU: Intel i3-1215U (host 2P+4E = 8 threads, Golden Cove + Gracemont) — guest 8 vCPUs via KVM — L1d 144K / L1i 224K / L2 2M / L3 10M, line 64B, no `perf` — modest machine
 - RAM: 6.3 Gi total (~5.3 Gi available) — avoid memory-heavy tooling; prefer lean approaches
+- Hardware / Keyboard: ASUS Chromebook Plus (compact layout; no dedicated Home/End/F1-F12 keys; use `Search + 1..12` for F-keys, `Ctrl + Alt + Up/Down` for Home/End, `Search + Up/Down` for Page Up/Down)
 - Disk: 31 GB total (~10 GB free headroom, 2026-09 baseline; check live with sysinfo before trusting) — ask before large downloads (>100 MB) or package installs
 - Prohibited heavy commands: Do NOT run memory-heavy commands like `ollama run`, `docker pull`, `clojure -P`, or `lein deps` without asking
 - Java: OpenJDK 25 (Temurin-25 at /usr/lib/jvm/temurin-25-jdk-amd64, 64-Bit Server VM)

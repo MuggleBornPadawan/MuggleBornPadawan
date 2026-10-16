@@ -342,7 +342,7 @@
           ("https://www.braveclojure.com/feed.xml" clojure blog)
           ("https://borkdude.github.io/index.xml" clojure blog)
           ("https://ericnormand.me/feed" clojure blog)))
-  (setq elfeed-db-max-age (* 5 24 60 60)))
+  (setq elfeed-db-max-age (* 1 24 60 60)))
 
 ;; Lisp interaction evaluation hotkey
 (define-key lisp-interaction-mode-map (kbd "C-j") 'eval-print-last-sexp)
