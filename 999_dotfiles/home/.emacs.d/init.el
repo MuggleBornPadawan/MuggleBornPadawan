@@ -457,9 +457,10 @@
     "Static harness system prompt loaded at startup.")
 
   (setq gptel-directives
-        `((default . ,my/gptel-harness-system-message)
-          (coder   . "You are an expert programmer living inside emacs and a helpful assistant. Write clean, concise code. Respond concisely")
-          (mmm     . "Respond concisely")))
+        `((default . "You are an expert programmer living inside emacs and a helpful assistant. Write clean, concise code. Always use ASD-STE100 Simplified Technical English. Respond concisely")
+          (harness . ,my/gptel-harness-system-message)
+          (coder   . "You are an expert programmer living inside emacs and a helpful assistant. Write clean, concise code. Always use ASD-STE100 Simplified Technical English. Respond concisely")
+          (mmm     . "You are a large language model acting as a helpful assistant living inside emacs. Always use ASD-STE100 Simplified Technical English. Respond concisely")))
 
   ;; Update the system message since gptel--system-message is a defvar and won't automatically update from gptel-directives configuration set in :config
   (setq gptel--system-message (alist-get 'default gptel-directives)))
