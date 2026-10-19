@@ -1,6 +1,6 @@
 {
   "colorScheme": "colorblind-friendly dark",
-  "model": "Gemini 3.8 Flash (High)",
+  "model": "Claude Opus 4.6 (Thinking)",
   "permissions": {
     "allow": [
       "command(pass)",

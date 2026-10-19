@@ -66,6 +66,7 @@ on `PATH`:
 | `agent(prompt=None, schema=None, role=None, type_name="self", workspace="inherit", model=None)` | Defines an agent; nothing runs yet. `await agent(prompt, schema)` runs it once and returns its result. `a = agent(...)` then `await a(prompt, schema)` runs one turn in a conversation kept across calls. |
 | `parallel(items, fn)` | Promise that calls `fn(item)` for each item and awaits all results concurrently; results are in item order. If one fails, the rest are cancelled. |
 | `pipeline(items, fn)` | Promise that calls and awaits `fn(item)` one item at a time; results are in item order. |
+| `trajectory(last=None, types=None, tools=None, min_index=None, max_index=None)` | `await trajectory()` returns steps before this `run_workflow` call started, oldest first. `min_index` and `max_index` bound `step.index` (inclusive); `types` and `tools` filter by step type or tool name; `last` keeps the last N matching steps. |
 
 Arguments:
 
@@ -132,6 +133,35 @@ script can call them directly:
 -   The user cannot be asked anything from a workflow: a call that needs user
     approval that has not already been granted is denied.
 -   Tool outputs are not shown to you unless the script logs or prints them.
+
+## Reading earlier conversation steps
+
+Pass inputs you already have in `Args` (or inline in the script). Use
+`await trajectory(...)` when the script needs to inspect steps from earlier in
+this conversation—such as mining a failed `run_command` output without
+rerunning it—and pass only the relevant slice into child `agent()` prompts.
+
+Each returned `Step` is a `dict` that also supports attribute access (missing
+fields return `None` as attributes):
+
+-   `index` (`int`): 0-based step index.
+-   `type` (`str`): step type, e.g. `"USER_INPUT"`, `"PLANNER_RESPONSE"`,
+    `"SYSTEM_MESSAGE"`, or `"GENERIC"` (tool calls).
+-   `status` (`str`): e.g. `"DONE"`, `"ERROR"`, or `"CLEARED"`.
+-   Message steps set `text` (`str`); tool steps set `tool` (`str`), `args`
+    (parsed `dict`), and `output` (`str`, truncated at 200k characters).
+
+```python
+steps = await trajectory(tools=["run_command"], last=20)
+errors = [s.output for s in steps if s.status == "ERROR" and s.output]
+log(f"Found {len(errors)} failed command(s)")
+```
+
+`trajectory()` only returns steps before the `run_workflow` call started (steps
+added while the workflow runs in the background are not included). Older tool
+steps evicted from memory have `status == "CLEARED"` and `output == None`; read
+the conversation's `transcript.jsonl` / `transcript_full.jsonl` when you need
+cleared tool outputs or steps added after the workflow started.
 
 ## Behavior to know
 

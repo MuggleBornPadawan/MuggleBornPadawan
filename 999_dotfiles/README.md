@@ -75,8 +75,8 @@ Truth: `:pairs` in `manifest.edn`. Compat mirrors (`:compat? true`) are symlinks
 | `~/.config/gh/config.yml` | `home/.config/gh/config.yml` | safe, hosts.yml excluded |
 | `~/.gnupg/gpg-agent.conf` | `home/.gnupg/gpg-agent.conf` | gpg |
 | `~/.config/clojure/deps.edn` | `home/.config/clojure/deps.edn` | clojure |
-| `~/.config/cliamp/config.toml` | `home/.config/clamp/config.toml` | clamp |
-| `~/.config/cliamp/radios.toml` | `home/.config/clamp/radios.toml` | clamp |
+| `~/.config/cliamp/config.toml` | `home/.config/cliamp/config.toml` | cliamp |
+| `~/.config/cliamp/radios.toml` | `home/.config/cliamp/radios.toml` | cliamp |
 | `~/MuggleBornPadawan/.gitignore` | `templates/.gitignore` | template |
 | `~/MuggleBornPadawan/Dockerfile` | `templates/Dockerfile` | template |
 | `~/MuggleBornPadawan/Jenkinsfile` | `templates/Jenkinsfile` | template |

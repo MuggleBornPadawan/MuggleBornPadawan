@@ -3567,7 +3567,7 @@
     ],
     "lastModified": 1792154500000,
     "etag": "W/\"143fba288aa3585f7509ece2938f9c8c\"",
-    "checkedAt": 1792181556103
+    "checkedAt": 1792389467231
   },
   "opencode-go": {
     "models": [
@@ -4734,7 +4734,7 @@
     ],
     "lastModified": 1792154503000,
     "etag": "W/\"5504011e8b5a0715381dc92a4e6f0fb2\"",
-    "checkedAt": 1792181556179
+    "checkedAt": 1792389467684
   },
   "google": {
     "models": [
@@ -5703,7 +5703,7 @@
     ],
     "lastModified": 1791965958000,
     "etag": "W/\"473f3844793bd9a7b67b89ed2e8277b3\"",
-    "checkedAt": 1792181556104
+    "checkedAt": 1792389467216
   },
   "meta": {
     "models": [
@@ -5950,6 +5950,6 @@
     ],
     "lastModified": 1791965969000,
     "etag": "W/\"d2397a60589efbabef99ee05f91cc968\"",
-    "checkedAt": 1792181556176
+    "checkedAt": 1792389467371
   }
 }
