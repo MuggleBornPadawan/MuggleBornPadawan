@@ -1,5 +1,5 @@
 ---
-name: clojure-pcg
+name: pcg
 triggers: [pcg generate, seeded art, quil+raylib+webgpu triple]
 anti-triggers: [single-renderer only]
 description: >-
@@ -9,11 +9,11 @@ description: >-
 # Clojure PCG — One Generate, Three Renders
 ## Preamble (MANDATORY — run first)
 ```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-pcg
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill pcg
 ```
 - Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
-Compose `clojure-quil` + `clojure-raylib` + `clojure-webgpu` + `pcg-spaces`. `clojure-threejs` is WebGL-only preview — not USD. Do not duplicate. This skill is the glue.
+Compose `quil` + `raylib` + `webgpu` + `pcg-spaces`. `threejs` is WebGL-only preview — not USD. Do not duplicate. This skill is the glue.
 
 ## When to Use
 
@@ -33,7 +33,7 @@ src/art/generate.clj   ; pure: (generate {:seed 42 :params {...}}) -> {:points [
 src/art/render_quil.clj   ; uses quil skill (§10)
 src/art/render_raylib.clj ; uses raylib skill (§8)
 src/art/export.clj     ; -> public/art.json (for WebGPU)
-public/index.html      ; single-file WebGPU/WGSL, reads art.json, no npm (see clojure-webgpu Template D)
+public/index.html      ; single-file WebGPU/WGSL, reads art.json, no npm (see webgpu Template D)
 MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md ; spaces reference (via pcg-spaces skill)
 ```
 
@@ -55,17 +55,17 @@ Keep local coords ±1. Log seed with output. Params map for REPL tuning.
 
 ## Render A — Quil (preview)
 
-- See `clojure-quil` skill. Fun-mode, `#'setup` vars, `q/no-loop` for static.
+- See `quil` skill. Fun-mode, `#'setup` vars, `q/no-loop` for static.
 - `(draw-points (:points (generate opts)))` — map ±1 → pixels via `w`/`h`.
 
 ## Render B — Raylib (real-time)
 
-- See `clojure-raylib` skill. Panama FFM, no `-XstartOnFirstThread` on Linux.
+- See `raylib` skill. Panama FFM, no `-XstartOnFirstThread` on Linux.
 - Draw mesh/points in 3D world. 60 FPS, handles 10k+ instances.
 
 ## Render C — WebGPU (browser)
 
-- See `clojure-webgpu` skill (renderer) + `pcg-spaces` skill (spaces) for correct pipeline.
+- See `webgpu` skill (renderer) + `pcg-spaces` skill (spaces) for correct pipeline.
 - `bb.edn` task `export` writes `public/art.json` `{stage, prims:[{xformOpOrder,xformOps,mesh}]}`.
 - `index.html` inline WGSL + JS (~40 lines mat4, `perspectiveZO` 0..1 depth, top-left framebuffer). `bb http-server` to serve. No USD parser, no gl-matrix.
 

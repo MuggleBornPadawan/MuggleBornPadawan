@@ -166,13 +166,13 @@ Use this template to generate 3D mathematical surfaces and procedural terrain:
 
 ## 8. OpenUSD / `pcg-spaces` Compatibility (Real-Time Preview)
 
-Raylib is **not** USD-native (OpenGL `z -1..1`). Use it as the 60 FPS real-time preview in the `clojure-pcg` triple-render pipeline. For USD-correct browser see `clojure-webgpu` + `pcg-spaces` skills + `MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md`.
+Raylib is **not** USD-native (OpenGL `z -1..1`). Use it as the 60 FPS real-time preview in the `pcg` triple-render pipeline. For USD-correct browser see `webgpu` + `pcg-spaces` skills + `MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md`.
 
 *   **Rule 1 Model = USD local:** `art.generate` must be pure `java.util.Random` + math, no `raylib/*` imports. Emit local `±1` `points`/`indices`/`primvars:st`. Raylib maps local→world via its own draw calls, but the shared `art.json` stores USD `xformOpOrder`/`xformOps`.
-*   **Rule 2 World = USD stage:** Do not bake world matrices into points. Export `{stage:{upAxis, metersPerUnit, !resetXformStack!}, prims:[{xformOpOrder,xformOps,mesh}]}` via `clojure-pcg` `art/export.clj`. Compute `world = parentWorld * localToWorld(fromXformOps)` each frame only in the browser; Raylib just draws the preview mesh (store `!resetXformStack!` even if preview ignores it).
+*   **Rule 2 World = USD stage:** Do not bake world matrices into points. Export `{stage:{upAxis, metersPerUnit, !resetXformStack!}, prims:[{xformOpOrder,xformOps,mesh}]}` via `pcg` `art/export.clj`. Compute `world = parentWorld * localToWorld(fromXformOps)` each frame only in the browser; Raylib just draws the preview mesh (store `!resetXformStack!` even if preview ignores it).
 *   **Rule 3 USD ends after world:** Raylib camera (`raylib.models.camera`) is NOT the USD `UsdGeomCamera`. For sharing, store camera `xformOpOrder` + `focalLength`/`horizontalAperture`/`clippingRange` in JSON. Browser computes `view = inverse(cameraWorld)` + `projZO`.
 *   **Rule 4 WebGPU vs Raylib GL:** Raylib/GL uses `perspectiveNO` (`z -1..1`). WebGPU uses `perspectiveZO` (`z 0..1`, clip `0≤z≤w`). Never reuse Raylib projection in WebGPU. Use `pcg-spaces` inline helpers `mul/invert/perspectiveZO` (~40 lines, no gl-matrix).
-*   **Rule 5 Lean:** Keep `art.json` <1MB. Do not ship `clip/NDC/screen` or baked matrices. See `clojure-pcg` skill for pure `generate` template and `bb export && bb serve` flow.
+*   **Rule 5 Lean:** Keep `art.json` <1MB. Do not ship `clip/NDC/screen` or baked matrices. See `pcg` skill for pure `generate` template and `bb export && bb serve` flow.
 ## References
 - Full templates: `references/templates.md` (load only when needed)
 

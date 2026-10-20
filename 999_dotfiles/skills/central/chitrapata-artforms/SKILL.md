@@ -17,7 +17,7 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill chitrapata-
 - Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
 Generate procedural art rooted in 12 indigenous Indian traditions via pure Clojure.
-Composes with `clojure-pcg` (triple render), `clojure-quil`, `clojure-raylib`, and `clojure-webgpu`.
+Composes with `pcg` (triple render), `quil`, `raylib`, and `webgpu`.
 
 ## When to Use
 
@@ -28,7 +28,7 @@ Composes with `clojure-pcg` (triple render), `clojure-quil`, `clojure-raylib`, a
 
 ## Shared PCG Contract (All 12 Artforms)
 
-Every artform generator MUST follow the `clojure-pcg` contract:
+Every artform generator MUST follow the `pcg` contract:
 
 1. **Pure `generate` function**: `(generate {:seed 42 :artform :mandala :params {...}})` → art data map.
    - Zero side effects. No renderer imports. No `q/*`, no `raylib/*`, no JS.
@@ -37,7 +37,7 @@ Every artform generator MUST follow the `clojure-pcg` contract:
 3. **Log seed**: Every output must include `:seed` in the returned map.
 4. **Parameter map**: Expose all tunables as a flat `:params` map for REPL exploration.
 5. **Local coordinates**: All geometry in `[-1.0, 1.0]` normalized space.
-6. **art.json emission**: Output structure compatible with `clojure-pcg` export (points, polygons, colors, metadata).
+6. **art.json emission**: Output structure compatible with `pcg` export (points, polygons, colors, metadata).
 
 ### Common Output Schema
 

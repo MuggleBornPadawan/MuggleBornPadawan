@@ -1,5 +1,5 @@
 ---
-name: clojure-test
+name: clj-test
 triggers: [write test, clojure.test, bb test, deftest]
 anti-triggers: [no test needed]
 description: >-
@@ -10,13 +10,13 @@ description: >-
 
 ## Preamble (MANDATORY — run first)
 ```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-test
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clj-test
 ```
 - Read `SKILL_START_PROTO`, `SESSION_ID`, `TEL_START`.
 - If missing: use safe defaults. Continue task. Report stale install.
 - At end:
 ```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill clojure-test --outcome success --session-id SESSION_ID
+bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill clj-test --outcome success --session-id SESSION_ID
 ```
 
 Write tests for the specified namespace or target code sequentially. Do not run parallel test workers.

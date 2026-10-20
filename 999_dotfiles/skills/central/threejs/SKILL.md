@@ -1,5 +1,5 @@
 ---
-name: clojure-threejs
+name: threejs
 triggers: [threejs, scittle, browser 3d, instanced mesh]
 anti-triggers: [webgpu usd, quil]
 description: >-
@@ -9,7 +9,7 @@ description: >-
 # Scittle + Three.js Skill: Browser Procedural 3D Art
 ## Preamble (MANDATORY — run first)
 ```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-threejs
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill threejs
 ```
 - Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
@@ -165,7 +165,7 @@ Save as `index.html`:
 
 ## 5. Troubleshooting — see references/templates.md for full table (6 rows)
 
-## 6. OpenUSD — WebGL (this skill) vs WebGPU (pcg-spaces). GL z -1..1 != DirectX z 0..1. Use clojure-webgpu for USD share.
+## 6. OpenUSD — WebGL (this skill) vs WebGPU (pcg-spaces). GL z -1..1 != DirectX z 0..1. Use webgpu for USD share.
 
 ## References
 - Full templates: `references/templates.md` (load only when needed)

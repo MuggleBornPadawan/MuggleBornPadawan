@@ -1,21 +1,21 @@
 ---
-name: clojure-raylib
+name: raylib
 triggers: [raylib, realtime 60fps, particles, sdf shader]
 anti-triggers: [quil static, webgpu]
 description: >-
-  Use when building real-time procedural art with Raylib (Panama FFM) or when previewing USD-shared local ±1 art at 60 FPS via clojure-pcg (particles, SDF shaders, meshes, seeded generate).
+  Use when building real-time procedural art with Raylib (Panama FFM) or when previewing USD-shared local ±1 art at 60 FPS via pcg (particles, SDF shaders, meshes, seeded generate).
 ---
 
 # Clojure Raylib Skill: Procedural Visual Art & Real-Time PCG
 ## Preamble (MANDATORY — run first)
 ```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-raylib
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill raylib
 ```
 - Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
 Use this skill to build real-time procedural visual art, GPU shader simulations, and procedural 3D environments with [Raylib](https://www.raylib.com/) in Clojure.
 
-> **Mode:** `Standalone` = GL `z -1..1` (this skill, 60 FPS preview) vs `USD-shared` = local `±1` + `xformOpOrder` via `clojure-pcg` + `pcg-spaces` (pure `java.util.Random`). See §8.
+> **Mode:** `Standalone` = GL `z -1..1` (this skill, 60 FPS preview) vs `USD-shared` = local `±1` + `xformOpOrder` via `pcg` + `pcg-spaces` (pure `java.util.Random`). See §8.
 
 ---
 

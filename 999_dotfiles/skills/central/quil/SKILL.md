@@ -1,21 +1,21 @@
 ---
-name: clojure-quil
+name: quil
 triggers: [quil, flow field, noise, l-system, plotter, svg]
 anti-triggers: [raylib, webgpu]
 description: >-
-  Use when building 2D/3D procedural art with Quil/Processing, or when previewing USD-shared local ±1 art in Quil via clojure-pcg (flow fields, noise, L-systems, seeded art, plotter/SVG).
+  Use when building 2D/3D procedural art with Quil/Processing, or when previewing USD-shared local ±1 art in Quil via pcg (flow fields, noise, L-systems, seeded art, plotter/SVG).
 ---
 
 # Clojure Quil Skill: Procedural Visual Art
 ## Preamble (MANDATORY — run first)
 ```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-quil
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill quil
 ```
 - Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
 Use this skill to build procedural content generation (PCG) systems and generative visual art in Clojure with [Quil](http://quil.info/) (Processing).
 
-> **Mode:** `Standalone` = pixels + GL `z -1..1` (this skill, fast preview) vs `USD-shared` = local `±1` + `xformOpOrder` via `clojure-pcg` + `pcg-spaces` (pure `java.util.Random`). See §10.
+> **Mode:** `Standalone` = pixels + GL `z -1..1` (this skill, fast preview) vs `USD-shared` = local `±1` + `xformOpOrder` via `pcg` + `pcg-spaces` (pure `java.util.Random`). See §10.
 
 ---
 

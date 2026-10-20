@@ -22,9 +22,9 @@ Identify which question is being answered, using the user's prompt, the surround
 - **"Does this logic / state model feel right?"** → [LOGIC.md](LOGIC.md). Build a single shareable HTML file (free-play buttons plus tabbed guided walkthroughs) that pushes the state machine through cases that are hard to reason about on paper, and that a non-developer can drive. **Clojure option:** if the state is a pure `ns` (data in → data out), also offer a `bb` REPL harness: `bb -e "(require 'my.ns) (my.ns/transition state event)"` or a one-file `src/prototype_logic.clj` with `(comment ...)` blocks for CIDER `C-c C-e`. HTML is still best when non-devs must click.
 - **"What should this look like?"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar. Otherwise HTML/CSS.
 - **"Does this procedural generation algorithm or parameter space look good?"** → Generative Art & PCG. Build a lean visual easel to test noise scales, recursion rules, seeds, and color palettes:
-  - **Quil**: 2D/3D flow fields, static renders, or plotter paths (`clojure-quil`).
-  - **Raylib**: Real-time particle simulations or GPU raymarching shaders (`clojure-raylib`).
-  - **Three.js**: Zero-build 3D browser scenes and instanced geometries (`clojure-threejs`).
+  - **Quil**: 2D/3D flow fields, static renders, or plotter paths (`quil`).
+  - **Raylib**: Real-time particle simulations or GPU raymarching shaders (`raylib`).
+  - **Three.js**: Zero-build 3D browser scenes and instanced geometries (`threejs`).
   - Always expose parameters in an atom or keyboard controls (`r` to re-seed, arrows to adjust scale) for fast parameter exploration.
 
 The three branches produce very different artifacts, so getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend `ns` → logic; a page or component → UI; generative functions or graphics deps → PCG visual) and state the assumption at the top of the prototype.
@@ -35,7 +35,7 @@ The three branches produce very different artifacts, so getting this wrong waste
 
 2. **Trivial to run — Clojure lean.** A prototype starts from one command in the project's task runner:
    - Logic (Clojure): `bb prototype-logic` (via `bb.edn` task) or `clojure -M -e "(load-file \"prototype.clj\")"` or single HTML file double-click
-   - UI (Clojure/Quil): `bb quil-prototype` or `clojure -M -m my.prototype-sketch`; UI (Browser 3D): `bb serve` (`clojure-threejs` single HTML); Simulation/Game (Raylib): `clojure -M:run` (`clojure-raylib` template)
+   - UI (Clojure/Quil): `bb quil-prototype` or `clojure -M -m my.prototype-sketch`; UI (Browser 3D): `bb serve` (`threejs` single HTML); Simulation/Game (Raylib): `clojure -M:run` (`raylib` template)
    - Generic fallback: `bb <name>`, `clojure -M <path>`, etc.
    Either way, no thinking required to start it. Prefer `bb` on this 6 Gi box (fast, low RAM) over cold JVM.
 
@@ -50,10 +50,10 @@ The three branches produce very different artifacts, so getting this wrong waste
 ## Clojure Guardrails
 
 - Don't add `quil` or `http-kit` to `deps.edn` without asking (per `AGENTS.md` minimal deps).
-- For browser 3D prototypes, use `clojure-threejs` (zero-build HTML via CDN); do not introduce `shadow-cljs` or `npm`.
-- Raylib prototype: use `clojure-raylib` (`b12n-oss/raylib-clj`); run with `clojure`, not `clj`; never use `-XstartOnFirstThread` on Linux.
+- For browser 3D prototypes, use `threejs` (zero-build HTML via CDN); do not introduce `shadow-cljs` or `npm`.
+- Raylib prototype: use `raylib` (`b12n-oss/raylib-clj`); run with `clojure`, not `clj`; never use `-XstartOnFirstThread` on Linux.
 - For pure logic, prefer `bb` + EDN over HTML if the audience is devs + CIDER. For non-devs, HTML wins.
-- Quil prototype: use `clojure-quil`; keep sketch single-file, no `lein` plugins unless already in repo.
+- Quil prototype: use `quil`; keep sketch single-file, no `lein` plugins unless already in repo.
 ## LLM Contract
 - **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
 - **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)

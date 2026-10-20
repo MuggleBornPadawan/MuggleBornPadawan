@@ -1,5 +1,5 @@
 ---
-name: clojure-performance
+name: performance
 triggers: [profile, benchmark, criterium, flame graph, hot loop]
 anti-triggers: [cold code]
 description: >-
@@ -9,7 +9,7 @@ description: >-
 # Clojure Performance Engineering
 ## Preamble (MANDATORY — run first)
 ```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill clojure-performance
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill performance
 ```
 - Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 

@@ -5,7 +5,7 @@
 ## 4. Template D: Single-File WebGPU/WGSL
 /WGSL (`public/index.html`)
 
-Reads `art.json` from `clojure-pcg` `bb export`. Copy this as `public/index.html`:
+Reads `art.json` from `pcg` `bb export`. Copy this as `public/index.html`:
 
 ```html
 <!DOCTYPE html>
@@ -70,7 +70,7 @@ Serve: `bb serve` (`babashka/http-server` port 8000) — do not use `file://`.
 
 ---
 
-## 5. Generate (Pure) — from `clojure-pcg`
+## 5. Generate (Pure) — from `pcg`
 
 ```clojure
 (ns art.generate)
@@ -82,7 +82,7 @@ Serve: `bb serve` (`babashka/http-server` port 8000) — do not use `file://`.
      :xformOps {"xformOp:translate" {:translate [0 0 0]} "xformOp:scale" {:scale [1 1 1]}}}))
 ```
 
-Export: `art/export.clj` → `public/art.json` + `usda`. See `clojure-pcg` `bb.edn` tasks `export` + `serve`.
+Export: `art/export.clj` → `public/art.json` + `usda`. See `pcg` `bb.edn` tasks `export` + `serve`.
 
 ---
 
