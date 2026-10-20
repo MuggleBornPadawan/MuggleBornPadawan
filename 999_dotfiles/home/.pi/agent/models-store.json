@@ -2,34 +2,8 @@
   "opencode": {
     "models": [
       {
-        "id": "big-pickle",
-        "name": "Big Pickle",
-        "api": "openai-completions",
-        "provider": "opencode",
-        "baseUrl": "https://opencode.ai/inference/v1",
-        "reasoning": true,
-        "input": [
-          "text"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
-        },
-        "contextWindow": 200000,
-        "maxTokens": 32000,
-        "type": "chat"
-      },
-      {
-        "id": "cat-jam-free",
-        "name": "Cat Jam Free",
+        "id": "beam-free",
+        "name": "Beam Free",
         "api": "openai-completions",
         "provider": "opencode",
         "baseUrl": "https://opencode.ai/inference/v1",
@@ -60,6 +34,32 @@
           "xhigh": "xhigh",
           "max": "max"
         },
+        "type": "chat"
+      },
+      {
+        "id": "big-pickle",
+        "name": "Big Pickle",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/v1",
+        "reasoning": true,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 200000,
+        "maxTokens": 32000,
         "type": "chat"
       },
       {
@@ -2878,41 +2878,6 @@
         "type": "chat"
       },
       {
-        "id": "ll-alpha-free",
-        "name": "LL Alpha Free",
-        "api": "openai-completions",
-        "provider": "opencode",
-        "baseUrl": "https://opencode.ai/inference/v1",
-        "reasoning": true,
-        "input": [
-          "text"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
-        },
-        "contextWindow": 262144,
-        "maxTokens": 65536,
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": "xhigh",
-          "max": "max"
-        },
-        "type": "chat"
-      },
-      {
         "id": "longcat-2.5-preview-free",
         "name": "LongCat 2.5 Preview Free",
         "api": "openai-completions",
@@ -3077,6 +3042,52 @@
         "type": "chat"
       },
       {
+        "id": "minimax-m3.1-flash-free",
+        "name": "MiniMax M3.1 Flash Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 512000,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "mistral-large-4",
         "name": "Mistral Large 4",
         "api": "openai-completions",
@@ -3180,49 +3191,6 @@
           "input": 1.25,
           "output": 4.25,
           "cacheRead": 0.15,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "sessionAffinityFormat": "openai-nosession"
-        },
-        "contextWindow": 1048576,
-        "maxTokens": 131072,
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": "minimal",
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": "xhigh",
-          "max": null
-        },
-        "inputLimits": {
-          "images": {
-            "resize": {
-              "maxWidth": 2000,
-              "maxHeight": 2000,
-              "maxBytes": 4718592,
-              "jpegQuality": 80
-            }
-          }
-        },
-        "type": "chat"
-      },
-      {
-        "id": "muse-spark-1.3-contributor-free",
-        "name": "Muse Spark 1.3 Free",
-        "api": "openai-responses",
-        "provider": "opencode",
-        "baseUrl": "https://opencode.ai/inference/v1",
-        "reasoning": true,
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
           "cacheWrite": 0
         },
         "compat": {
@@ -3483,52 +3451,6 @@
         "type": "chat"
       },
       {
-        "id": "space-bunny-free",
-        "name": "Space Bunny Free",
-        "api": "openai-completions",
-        "provider": "opencode",
-        "baseUrl": "https://opencode.ai/inference/v1",
-        "reasoning": true,
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
-        },
-        "contextWindow": 1048576,
-        "maxTokens": 524288,
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": "xhigh",
-          "max": "max"
-        },
-        "inputLimits": {
-          "images": {
-            "resize": {
-              "maxWidth": 2000,
-              "maxHeight": 2000,
-              "maxBytes": 4718592,
-              "jpegQuality": 80
-            }
-          }
-        },
-        "type": "chat"
-      },
-      {
         "type": "classifier",
         "id": "jev-1.13",
         "name": "Jev 1.13",
@@ -3565,15 +3487,15 @@
         "contextWindow": 32000
       }
     ],
-    "lastModified": 1792154500000,
-    "etag": "W/\"143fba288aa3585f7509ece2938f9c8c\"",
-    "checkedAt": 1792389467231
+    "lastModified": 1792500106000,
+    "etag": "W/\"e9f50668d404f404cc96fa088fd3f48e\"",
+    "checkedAt": 1792501229442
   },
   "opencode-go": {
     "models": [
       {
-        "id": "cat-jam-free",
-        "name": "Cat Jam Free",
+        "id": "beam-free",
+        "name": "Beam Free",
         "api": "openai-completions",
         "provider": "opencode-go",
         "baseUrl": "https://opencode.ai/inference/go/v1",
@@ -4449,6 +4371,52 @@
         "type": "chat"
       },
       {
+        "id": "minimax-m3.1-flash-free",
+        "name": "MiniMax M3.1 Flash Free",
+        "api": "openai-completions",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 512000,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "muse-spark-1.2-contributor",
         "name": "Muse Spark 1.2 Contributor",
         "api": "openai-responses",
@@ -4640,52 +4608,6 @@
         "type": "chat"
       },
       {
-        "id": "space-bunny",
-        "name": "Space Bunny",
-        "api": "openai-completions",
-        "provider": "opencode-go",
-        "baseUrl": "https://opencode.ai/inference/go/v1",
-        "reasoning": true,
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 0.15,
-          "output": 0.6,
-          "cacheRead": 0.03,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
-        },
-        "contextWindow": 1048576,
-        "maxTokens": 524288,
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": "xhigh",
-          "max": "max"
-        },
-        "inputLimits": {
-          "images": {
-            "resize": {
-              "maxWidth": 2000,
-              "maxHeight": 2000,
-              "maxBytes": 4718592,
-              "jpegQuality": 80
-            }
-          }
-        },
-        "type": "chat"
-      },
-      {
         "id": "step-5-preview",
         "name": "Step 5 Preview",
         "api": "openai-completions",
@@ -4732,9 +4654,9 @@
         "type": "chat"
       }
     ],
-    "lastModified": 1792154503000,
-    "etag": "W/\"5504011e8b5a0715381dc92a4e6f0fb2\"",
-    "checkedAt": 1792389467684
+    "lastModified": 1792500108000,
+    "etag": "W/\"1e37e59ef19c05423fd17cbf1c168d92\"",
+    "checkedAt": 1792501229950
   },
   "google": {
     "models": [
@@ -5703,7 +5625,7 @@
     ],
     "lastModified": 1791965958000,
     "etag": "W/\"473f3844793bd9a7b67b89ed2e8277b3\"",
-    "checkedAt": 1792389467216
+    "checkedAt": 1792501229781
   },
   "meta": {
     "models": [
@@ -5950,6 +5872,6 @@
     ],
     "lastModified": 1791965969000,
     "etag": "W/\"d2397a60589efbabef99ee05f91cc968\"",
-    "checkedAt": 1792389467371
+    "checkedAt": 1792501233136
   }
 }

@@ -3,6 +3,7 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#knowledge-graph-of-machnie-learning][knowledge graph of machnie learning]]
   - [[#joel-spolsky][joel spolsky]]
   - [[#preference-function-vs-alignment-function][preference function vs alignment function]]
   - [[#napkin-math][napkin math]]
@@ -78,6 +79,16 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** knowledge graph of machnie learning
+- the palindrome - yt - https://youtu.be/WR-VyH0pIgs?si=D2Q4hMR8Y_mwS0y2
+- level zero nodes: five foundational concepts: logical implication, logical conjunction, set, element, equality 
+- level one nodes: subset, set intersection, natural numbers, ordered pair, ..
+- complexity keeps increasing at the layers above
+- important central nodes: gradient descent, betweeness centrality 
+- gradient descent
+  - prerequisites: loss function, training data, vector, gradient 
+  - dependencts: neural network, transformers 
+- top central nodes: neural network, real numbers, completeness, convergence, backpropagation, limit, gradient descent, absolute value, distance, function and matrix, triangle inequality, inequality 
 ** joel spolsky
 - fog creek software, trello, glitch, hash, fogbugz, stackoverflow, excel / microsoft, vba 
 - "all non-trivial abstractions, to some degree, are leaky" - spolsky's law - every abstraction leaks eventually
