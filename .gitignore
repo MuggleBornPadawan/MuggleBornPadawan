@@ -38,6 +38,9 @@ ehthumbs.db
 
 # Sensitive files
 .secret
+*.db
+*.sqlite
+*.sqlite3
 
 # SSH keys
 id_rsa
@@ -53,7 +56,8 @@ sshd_config
 # Local Docker configuration files
 docker-compose.override.yml
 
-# Temporary files (Logs retained)
+# Logs and temporary files
+*.log
 .tmp
 .temp
 .swp
