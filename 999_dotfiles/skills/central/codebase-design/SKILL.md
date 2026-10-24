@@ -28,9 +28,11 @@ Use when designing **deep modules**: small interface, deep implementation, testa
 ## Principles (full in refs)
 - Depth = leverage, not lines. Deletion test: if deleted, does complexity vanish (shallow) or scatter (deep)?
 - Interface = test surface. One adapter = hypothetical, two = real seam.
+- 4 Invariants: Data Authority, Minimal Runtime, Persistence Seam, Config as Data (see `references/invariants.md`).
 
 ## References
 - Full glossary: `references/glossary.md`
+- Invariants checklist: `references/invariants.md`
 - Deepening: `DEEPENING.md` | Design it twice: `DESIGN-IT-TWICE.md`
 
 ## LLM Contract

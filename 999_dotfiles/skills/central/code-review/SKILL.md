@@ -22,6 +22,7 @@ Look for:
 2. Security vulnerabilities
 3. Performance issues
 4. Naming, readability, and missing error handling
+5. Architectural invariant violations: cross-domain queries, raw SQL in pure domain logic, hardcoded configs/credentials (see `codebase-design/references/invariants.md`)
 
 For each finding report: severity (critical/major/minor), `file:line`, what's wrong, and a concrete suggested fix.
 If the diff is large, prioritize critical and major findings first.

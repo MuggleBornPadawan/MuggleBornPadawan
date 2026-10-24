@@ -21,7 +21,7 @@ Do NOT write any implementation code yet. Instead:
 1. **Explore the codebase**: Check existing namespaces, contracts, and data flows.
 2. **State understanding**: Summarize the requirement and surface open questions.
 3. **Define negative scope (Prohibitions)**: Explicitly state what the agent must **NOT** do, touch, add, or refactor (e.g., no new dependencies, no unrequested rewrites).
-4. **Evaluate trade-offs**: Propose the technical approach and contrast with alternatives.
+4. **Evaluate trade-offs**: Propose the technical approach, check architectural invariants (`codebase-design/references/invariants.md`), and contrast with alternatives.
 5. **Break into atomic steps**: Ordered, verifiable increments. Each step must have a clear verification test or check.
 6. **Flag risks and affected files**: List exact file paths and potential edge-case failures.
 
