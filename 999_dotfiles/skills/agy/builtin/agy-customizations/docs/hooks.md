@@ -152,7 +152,8 @@ Every hook payload sent to `stdin` includes these common system metadata fields:
   "workspacePaths": ["/path/to/workspace"],
   "transcriptPath": "/path/to/workspace/.gemini/antigravity/transcript.jsonl",
   "artifactDirectoryPath": "/path/to/workspace/.gemini/antigravity/artifacts",
-  "modelName": "auto"
+  "modelName": "auto",
+  "lastUserInput": "Fix the failing unit test"
 }
 ```
 

@@ -18,15 +18,25 @@ Use this skill to systematically manage your token context when performing long-
 
 ## Steps
 
-1. **Maintain a Roadmap/State File**:
-   - Write important task milestones, unresolved bugs, and active preferences to a single `MEMORIES.md` or `ROADMAP.md` at the project root.
-   - Do not rely on chat history for long-term memory. Read and update this file frequently.
+1. **Maintain a Single `STATE.md`**:
+   - Merge tasks and progress into a single root file `STATE.md`.
+   - Never create separate task and progress files.
+   - Use this exact compact format:
+     ```markdown
+     # Current State
+     **Goal:** [1 sentence goal]
+     - [x] Done: [completed step]
+     - [!] Blocked/Broken: [known bugs or blockers]
+     - [ ] Next: [single atomic next action]
+     ```
+   - Update `STATE.md` at turn boundaries. Overwrite stale notes to keep the file under 30 lines.
 
 2. **Clean up Workspace Trash**:
-   - Delete temporary files, unused scratch scripts, and redundant log files to prevent directory listing tools from bloating the context window.
+   - Delete temporary files, unused scratch scripts, and redundant log files.
+   - Prevents file search and directory listing from inflating the context window.
 
 3. **Reset Context Verbose Logs**:
-   - Run `/clear` or reset terminal sessions when pivoting to a new subtask.
+   - Run `/compact`, `/clear`, or reset terminal sessions when pivoting to a new subtask.
 ## LLM Contract
 - **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
 - **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)

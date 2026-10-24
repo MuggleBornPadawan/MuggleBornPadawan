@@ -4,6 +4,7 @@ description: Add, commit, push current branch, and merge into main
 argument-hint: "[commit-message]"
 ---
 SAFETY GATE: Preview `git status` + `git diff --stat` and ASK user to confirm before any `git add`/`push`/`merge`. If user says dry-run, stop after preview.
+Run security audit: `bb ~/MuggleBornPadawan/700_linux/scripts/git_security_scan.bb --staged` before commit. Stop immediately if secrets or policy violations are detected.
 
 Perform these git steps in the current working directory:
 

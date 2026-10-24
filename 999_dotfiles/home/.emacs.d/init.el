@@ -421,6 +421,28 @@
                   "kimi-k3"
                   "deepseek-v4-pro"))))
 
+  ;; Retrieve Mistral API key securely from 'pass'
+  (defun my/get-mistral-key-from-pass ()
+    "Retrieve Mistral API key securely from pass."
+    (when (executable-find "pass")
+      (let ((key (shell-command-to-string "pass show MISTRAL_API_KEY")))
+        (unless (string-empty-p key)
+          (string-trim-right key)))))
+
+  ;; Define Mistral backend with standard models
+  (let ((mistral-key (my/get-mistral-key-from-pass)))
+    (when mistral-key
+      (gptel-make-openai "Mistral"
+        :host "api.mistral.ai"
+        :endpoint "/v1/chat/completions"
+        :stream t
+        :key mistral-key
+        :request-params '(:safe_prompt nil)
+        :models '("mistral-large-latest"
+                  "mistral-small-latest"
+                  "codestral-latest"
+                  "open-mistral-nemo"))))
+
   ;; Retrieve Meta API key securely from 'pass'
   (defun my/get-meta-key-from-pass ()
     "Retrieve Meta API key securely from pass."

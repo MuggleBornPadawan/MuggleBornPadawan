@@ -136,6 +136,14 @@ Create the configuration file at:
     them to the Automations dashboard so they know which automation to enable.
 -   Use **snake_case** field names only (`restart_policy`, `display_name`,
     `agent_permissions`, `access_grants`, `workspace_uris`).
+-   Use lowercase string literals for **`restart_policy`** (`"always"` is
+    required for `"builtin": "schedule"` and continuous daemons; `"on-failure"`
+    or `"never"` apply only to one-shot `"command"` sidecars) — never proto enum
+    names like `"SIDECAR_RESTART_POLICY_ALWAYS"` or `"unless-stopped"`.
+-   Never place `sidecar.json` or scripts inside an ephemeral CitC workspace
+    (`/google/src/cloud/<user>/<workspace>/...`) or point symlinks in
+    `~/.gemini/config/` to an ephemeral CitC workspace that may later be
+    deleted.
 
 > [!CAUTION] **Never Hallucinate Tools or Permissions**: - Do **NOT** guess or
 > invent MCP servers (`mcp(...)`) or CLI commands (`command(...)`) that you have
@@ -171,8 +179,12 @@ Create the configuration file at:
 }
 ```
 
--   `args[0]` is the full schedule as a single string, including the
-    `CRON_TZ=<zone>` prefix.
+-   `args[0]` **must** be the full cron schedule as a single string, including
+    the `CRON_TZ=<zone>` prefix (never omit `args[0]` or place the executable at
+    `args[0]` when `"builtin": "schedule"` is set).
+-   Always use **absolute paths** for any local script arguments in `args`
+    (never bare relative filenames like `"watcher.py"` or paths inside ephemeral
+    workspaces that may later be deleted).
 -   Always include `"--"` immediately before the prompt string in `args` so the
     prompt is cleanly separated from `agentapi new-conversation` flags.
 

@@ -18,11 +18,12 @@ Create an implementation plan for the specified requirement or feature.
 Structure the plan strictly as ordered, sequential steps (no parallel subtasks).
 
 Do NOT write any implementation code yet. Instead:
-1. Explore the relevant parts of the codebase to understand current structure and conventions
-2. State your understanding of the requirement and list any open questions
-3. Propose an approach with trade-offs considered (mention alternatives briefly if relevant)
-4. Break it down into ordered, small, verifiable steps — each step should be independently checkable
-5. Flag risks, edge cases, and files that will need changes
+1. **Explore the codebase**: Check existing namespaces, contracts, and data flows.
+2. **State understanding**: Summarize the requirement and surface open questions.
+3. **Define negative scope (Prohibitions)**: Explicitly state what the agent must **NOT** do, touch, add, or refactor (e.g., no new dependencies, no unrequested rewrites).
+4. **Evaluate trade-offs**: Propose the technical approach and contrast with alternatives.
+5. **Break into atomic steps**: Ordered, verifiable increments. Each step must have a clear verification test or check.
+6. **Flag risks and affected files**: List exact file paths and potential edge-case failures.
 
 Save the plan to a markdown file so it can be reviewed and executed later.
 
