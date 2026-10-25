@@ -3,6 +3,7 @@
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
   - [[#random-notes][random notes]]
+  - [[#system-design---hacks][system design - hacks]]
   - [[#knowledge-graph-of-machnie-learning][knowledge graph of machnie learning]]
   - [[#joel-spolsky][joel spolsky]]
   - [[#preference-function-vs-alignment-function][preference function vs alignment function]]
@@ -79,6 +80,13 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** system design - hacks
+- slow reads → add a cache
+- slow writes → add a queue
+- too much traffic → load balancer
+- db struggling → read replicas
+- files → object storage + cdn
+- everything breaks → retries, timeouts, logs
 ** knowledge graph of machnie learning
 - the palindrome - yt - https://youtu.be/WR-VyH0pIgs?si=D2Q4hMR8Y_mwS0y2
 - level zero nodes: five foundational concepts: logical implication, logical conjunction, set, element, equality 
