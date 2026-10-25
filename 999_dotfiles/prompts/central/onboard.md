@@ -13,4 +13,4 @@ Give newcomer's tour (max 60 lines, stdout only, no file write).
 5. **Conventions** — test, error handling, naming, build/run commands
 6. **Gotchas** — generated code, legacy, unusual
 
-Read actual code.
+Read actual code. If Clojure, run `bb ~/.local/share/skills/graphify/scripts/generate_graph.bb .` to inspect `GRAPH_REPORT.md` for entry points (`:entry`) and core hubs (`:hub`).

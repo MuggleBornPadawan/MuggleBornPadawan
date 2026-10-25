@@ -30,6 +30,7 @@ This command is _informed_ by the project's domain model and built on a shared d
 - Otherwise, walk back a good stretch of the commit history (`git log --oneline`) to find the codebase's hot spots, the files and areas that keep coming up, and let those paths pull your attention first. If the changes are scattered with no clear hot spot, widen the net.
 
 Read the project's domain glossary (`CONTEXT.md`) and any ADRs in the area you're touching first.
+- If Clojure, run `bb ~/.local/share/skills/graphify/scripts/generate_graph.bb .` to inspect or generate `GRAPH_REPORT.md`. Check for `:hub` nodes, high fan-in/fan-out, and circular dependencies to identify structural coupling early.
 
 Then spawn a sub-agent to walk the codebase. Don't follow rigid heuristics; explore organically and note where you experience friction:
 
