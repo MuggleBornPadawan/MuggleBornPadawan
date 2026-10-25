@@ -1,12 +1,12 @@
 ---
 name: test
-description: Write tests for file/code. Delegates to clojure-test skill.
+description: Write tests for file/code. Delegates to clj-test skill.
 argument-hint: "[file]"
 ---
 
 Write tests for {{ARGS}} (file or specified code).
 
-Delegates to `clojure-test` skill for Clojure discipline.
+Delegates to `clj-test` skill for Clojure discipline.
 Steps:
 1. Match existing test framework/style (read neighbor tests)
 2. Happy path first, then edges, error paths, boundaries

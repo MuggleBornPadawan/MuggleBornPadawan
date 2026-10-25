@@ -114,14 +114,14 @@ git -C ~/MuggleBornPadawan status --short  # should be clean
 
 ## Helper script
 
-Use `scripts/backup-push.sh` for one-command run (has dry-run, verbose, commit msg support):
+Use `scripts/backup_push.bb` for one-command run (has dry-run, verbose, commit msg support):
 
 ```bash
-./scripts/backup-push.sh --dry-run --verbose
-./scripts/backup-push.sh --verbose "feat(sysinfo): add --tech prompt"
+bb ./scripts/backup_push.bb --dry-run --verbose
+bb ./scripts/backup_push.bb --verbose "feat(sysinfo): add --tech prompt"
 ```
 
-See `scripts/backup-push.sh --help` for options.
+See `bb ./scripts/backup_push.bb --help` for options.
 
 ## Safety rules
 
