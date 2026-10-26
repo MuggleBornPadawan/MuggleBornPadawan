@@ -32,7 +32,7 @@
   - Add-ons: `neil` (add dep to `deps.edn`) + `jet` (EDN<->JSON) + `cljfmt` (formatter, static binary)
   - Install: curl upstream scripts to `/usr/local/bin` (not `apt install clojure`); `default-jre-headless` = `openjdk-17` must be avoided
   - No global `~/.clojure/deps.edn` or `~/.lein/profiles.clj` — per-project only
-- Editor/REPL workflow: Emacs 30.1 (config `~/.emacs.d/init.el` + `customizations/setup-clojure.el`) with CIDER + `clojure-ts-mode` + `eglot` (`clojure-lsp`). REPL-driven eval preferred over one-off scripts. Keybindings live in `setup-clojure.el`; do not duplicate them here.
+- Editor/REPL workflow: Emacs 30.1 (config `~/.emacs.d/init.el` + `customizations/setup-clojure.el`) with CIDER / inf-clojure + `clojure-ts-mode` + `eglot` (`clojure-lsp`). REPL-driven eval preferred over one-off scripts. Keybindings live in `setup-clojure.el`; do not duplicate them here.
 - Visual / creative coding & graphics:
   - Procedural content generation (PCG) standards:
     - Separate data from rendering: generate art structures with pure Clojure functions first
