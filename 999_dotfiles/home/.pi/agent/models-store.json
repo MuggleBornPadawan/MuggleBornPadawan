@@ -2792,7 +2792,7 @@
           "input": 3,
           "output": 15,
           "cacheRead": 0.3,
-          "cacheWrite": 0
+          "cacheWrite": 3
         },
         "compat": {
           "supportsStore": false,
@@ -3404,9 +3404,9 @@
         "contextWindow": 32000
       }
     ],
-    "lastModified": 1792760301000,
-    "etag": "W/\"8747fb7f8e8687418a42ba7dfc6f1485\"",
-    "checkedAt": 1792818482505
+    "lastModified": 1792842571000,
+    "etag": "W/\"2938b0cfc9a91b10970ee32dc29829b2\"",
+    "checkedAt": 1793019060500
   },
   "opencode-go": {
     "models": [
@@ -3577,8 +3577,8 @@
         "type": "chat"
       },
       {
-        "id": "gemini-4-argon-contributor",
-        "name": "Gemini 4 Argon Contributor",
+        "id": "gemini-4-argon",
+        "name": "Gemini 4 Argon",
         "api": "google-generative-ai",
         "provider": "opencode-go",
         "baseUrl": "https://opencode.ai/inference/go/v1",
@@ -3597,9 +3597,9 @@
           "image"
         ],
         "cost": {
-          "input": 4,
-          "output": 20,
-          "cacheRead": 0.2,
+          "input": 2,
+          "output": 10,
+          "cacheRead": 0.1,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
@@ -3963,6 +3963,32 @@
         "type": "chat"
       },
       {
+        "id": "iceman-contributor-free",
+        "name": "Iceman Contributor Free",
+        "api": "openai-completions",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
+        "reasoning": true,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "contextWindow": 262144,
+        "maxTokens": 131072,
+        "type": "chat"
+      },
+      {
         "id": "kimi-k2.7-code",
         "name": "Kimi K2.7 Code",
         "api": "openai-completions",
@@ -4014,7 +4040,7 @@
           "input": 3,
           "output": 15,
           "cacheRead": 0.3,
-          "cacheWrite": 0
+          "cacheWrite": 3
         },
         "compat": {
           "supportsStore": false,
@@ -4032,6 +4058,54 @@
           "low": null,
           "medium": null,
           "high": null,
+          "xhigh": null,
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
+        "id": "kimi-k3.1-pro",
+        "name": "Kimi K3.1 Pro",
+        "api": "openai-completions",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/inference/go/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 2,
+          "output": 10,
+          "cacheRead": 0.2,
+          "cacheWrite": 2
+        },
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens",
+          "supportsMidConvoSystemMessages": true,
+          "supportsMidConvoToolAdditions": true
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": null,
+          "high": "high",
           "xhigh": null,
           "max": "max"
         },
@@ -4534,9 +4608,9 @@
         "type": "chat"
       }
     ],
-    "lastModified": 1792760304000,
-    "etag": "W/\"739d5ac829d590425bd9d13b53b7d899\"",
-    "checkedAt": 1792818482521
+    "lastModified": 1793014527000,
+    "etag": "W/\"1851065827b1e3be68012118c96c1c10\"",
+    "checkedAt": 1793019059936
   },
   "google": {
     "models": [
@@ -5556,7 +5630,7 @@
     ],
     "lastModified": 1792584796000,
     "etag": "W/\"a05c971c6366fb5f0764e317f0b30d13\"",
-    "checkedAt": 1792818483045
+    "checkedAt": 1793019060022
   },
   "meta": {
     "models": [
@@ -5803,6 +5877,6 @@
     ],
     "lastModified": 1791965969000,
     "etag": "W/\"d2397a60589efbabef99ee05f91cc968\"",
-    "checkedAt": 1792818483517
+    "checkedAt": 1793019060499
   }
 }

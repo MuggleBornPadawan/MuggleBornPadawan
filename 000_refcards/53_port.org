@@ -2,7 +2,9 @@
 #+OPTIONS: toc:2
 * Table of Contents :TOC:
 - [[#trivia][trivia]]
+  - [[#read-laterrrr][read laterrrr]]
   - [[#random-notes][random notes]]
+  - [[#principal-engineer---puneet-patwari][principal engineer - puneet patwari]]
   - [[#system-design---hacks][system design - hacks]]
   - [[#knowledge-graph-of-machnie-learning][knowledge graph of machnie learning]]
   - [[#joel-spolsky][joel spolsky]]
@@ -47,6 +49,9 @@
 - [[#github-outage][github outage]]
 
 * trivia
+** read laterrrr
+- ai engineering from scratch https://aiengineeringfromscratch.com/
+- clojure from scratch https://tcds.dev/blog/learning-clojure-1-hello-world 
 ** random notes
 - techniques to shrink a language model: quantization, pruning, distillation 
   - https://open.substack.com/pub/bytebytego/p/how-to-shrink-a-language-model-without-295?
@@ -80,6 +85,31 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** principal engineer - puneet patwari 
+- data base - carnegie mellon university - https://15445.courses.cs.cmu.edu/fall2026/ 
+- indexing - luke - https://use-the-index-luke.com/ 
+- distributed systems - martin kleppman - https://martin.kleppmann.com/2020/11/18/distributed-systems-and-elliptic-curves.html 
+- tail at scale - https://dl.acm.org/doi/10.1145/2408776.2408794 
+- timeouts, retries, backoff and jitter - aws builder center - https://builder.aws.com/content/3EumjoZascWd1oZiEgL8ORlv3qE/timeouts-retries-and-backoff-with-jitter 
+- idempotency - stripe - https://stripe.com/blog/idempotency 
+- nosql - amazon dynamo - highly available keystore - https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf
+- sharding in real world - figma - https://www.figma.com/blog/how-figmas-databases-team-lived-to-tell-the-scale/ 
+- consistency - jepsen - https://jepsen.io/analyses 
+- design docs - google - https://www.industrialempathy.com/posts/design-docs-at-google/
+- staff + grwoth - will larson - https://staffeng.com/ 
+- senior engineer - marc brooker blog - https://brooker.co.za/blog/ 
+- postmortem culture - learning from failure google - https://sre.google/sre-book/postmortem-culture/ 
+- storage at massive scale - discord - https://discord.com/blog/how-discord-stores-trillions-of-messages 
+- integrated cache - uber - https://www.uber.com/us/en/blog/how-uber-serves-over-40-million-reads-per-second-using-an-integrated-cache/
+- llm based systems - https://eugeneyan.com/writing/llm-patterns/ 
+- building effective agents - anthropic - https://www.anthropic.com/research/building-effective-agents 
+- systems thinking - arpit - https://arpitbhayani.me/
+- system design - puneet patwari - https://www.puneetpatwari.in/blogs/series/distributed-systems 
+
+
+
+
+
 ** system design - hacks
 - slow reads → add a cache
 - slow writes → add a queue

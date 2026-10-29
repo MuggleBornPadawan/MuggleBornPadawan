@@ -38,6 +38,12 @@ The `plugin.json` file serves as the marker declaring the directory as a plugin.
 
 *   **`name`** (string, optional): The display name of the plugin. If omitted,
     it defaults to the directory name.
+*   **`author`** (string or object, optional): Developer or team name string, or
+    an object with `name` and optional `url` (`https://`).
+*   **`homepage`** (string, optional): External `https://` website or
+    documentation URL.
+*   **`repository`** (string or object, optional): Source repository `https://`
+    URL (or `{"type": "git", "url": "https://..."}`).
 
 --------------------------------------------------------------------------------
 

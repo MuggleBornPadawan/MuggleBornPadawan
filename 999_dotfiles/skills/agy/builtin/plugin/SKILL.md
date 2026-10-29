@@ -269,12 +269,19 @@ are always on while the plugin is enabled.
 :                    :          : shown in UI headers, cards, and slash        :
 :                    :          : command menus.                               :
 | `version`          | string   | Optional. Semantic version string.           |
+| `author`           | string / | Optional. Developer or team name string, or  |
+:                    : object   : an object with `name` and optional `url`     :
+:                    :          : (`https://`).                                :
+| `homepage`         | string   | Optional. External `https://` website or     |
+:                    :          : documentation URL.                           :
+| `repository`       | string / | Optional. Source repository `https://` URL   |
+:                    : object   : (or `{"type": "git", "url": "https://..."}`). :
 | `disabled`         | boolean  | Optional. Ships the plugin turned off. A     |
 :                    :          : choice the user has already made wins over   :
 :                    :          : this field.                                  :
 
-> **Do not add any other top-level field.** `author` and `homepage` are silently
-> discarded by the loader — they neither take effect nor error out.
+> **Do not add any other top-level field.** Unknown top-level fields are
+> silently discarded by the loader — they neither take effect nor error out.
 
 Offer to generate a logo with the `generate_image` tool. Ask for a square asset
 of at least 128x128 with a transparent background, high contrast so it reads on

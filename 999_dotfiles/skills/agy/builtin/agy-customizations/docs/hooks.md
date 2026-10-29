@@ -309,7 +309,11 @@ Use to inject context or instructions before the model runs.
         Supported step types:
         *   `{"systemMessage": {"systemMessage": "...", "metadata": {...}}}`
             (persists in the conversation trajectory across turns; note that
-            `systemMessage` requires a nested object rather than a plain string)
+            `systemMessage` requires a nested object rather than a plain string).
+            To show markdown to the user that the model never reads, set
+            `metadata.user_markdown`: the UI renders it inline instead of a
+            collapsible "System Message" row, and the model sees only the
+            `systemMessage` text (leave it `""` to send the model nothing).
         *   `{"userMessage": "..."}` (plain string)
         *   `{"ephemeralMessage": "..."}` (plain string; transient message
             dropped after the current turn)
