@@ -75,7 +75,7 @@ source /tmp/lsrpc.sh && lsrpc GetAllPlugins '{"workspaceUris":["file:///path/to/
   disabled: (.disabled // false),
   isGlobal,
   skills: [.skills[]?.name],
-  agents: [.agents[]?.name],
+  agents: [.agents[]?.agent.name],
   rules: [.rules[]?.absolutePath],
   hooks: ((.hooksJson // "") | length > 0),
   mcp: [.mcpServers[]?.name]

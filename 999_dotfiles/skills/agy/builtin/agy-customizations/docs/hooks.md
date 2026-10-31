@@ -281,7 +281,8 @@ the beginning of a new conversation session.
 
 ### 4. `PreInvocation` Contract
 
-Use to inject context or instructions before the model runs.
+Use to gate user prompts or inject context or instructions before the model
+runs.
 
 *   **Input (stdin)**:
 
@@ -301,7 +302,8 @@ Use to inject context or instructions before the model runs.
         {
           "ephemeralMessage": "Remember to check for lint errors before proposing changes."
         }
-      ]
+      ],
+      "terminationBehavior": ""
     }
     ```
 
@@ -317,6 +319,16 @@ Use to inject context or instructions before the model runs.
         *   `{"userMessage": "..."}` (plain string)
         *   `{"ephemeralMessage": "..."}` (plain string; transient message
             dropped after the current turn)
+        *   `{"errorMessage": {"userMessage": "..."}}` (shows an error message
+            to the user without sending it to the model. Marks the turn as
+            errored with a non-zero exit code in non-interactive `-p` mode, and
+            does not stop execution on its own unless paired with
+            `"terminationBehavior": "terminate"`).
+    *   **`terminationBehavior`** (string, optional):
+        *   `"terminate"`: Stops execution immediately before calling the model
+            (pair with an injected `errorMessage` to show a block message to the
+            user).
+        *   `""` (or omitted): Proceeds to the model call (default).
 
 --------------------------------------------------------------------------------
 
@@ -338,7 +350,8 @@ Use to inspect model outputs and potentially force continuation.
         step types as `PreInvocation`).
     *   **`terminationBehavior`** (string, optional):
         *   `"force_continue"`: Forces the execution loop to continue.
-        *   `"terminate"`: Forces the loop to stop.
+        *   `"terminate"`: Forces the loop to stop (pair with an injected
+            `errorMessage` to show a block message to the user).
         *   `""` (or omitted): Default behavior.
 
 --------------------------------------------------------------------------------
@@ -368,8 +381,8 @@ Use to prevent the agent from stopping if goals are not met.
         *   `"ERROR"`: Execution terminated due to an error.
         *   `"USER_CANCELED"`: Canceled by the user.
         *   `"TERMINAL_STEP_TYPE"`: Stopped on a terminal step type.
-        *   `"TERMINAL_CUSTOM_HOOK"`: Terminated by a custom `PostInvocation`
-            hook.
+        *   `"TERMINAL_CUSTOM_HOOK"`: Terminated by a custom `PreInvocation` or
+            `PostInvocation` hook.
         *   `"INJECTED_RESPONSE"`: Terminated after an injected response.
 
 *   **Output (stdout)**:
