@@ -138,6 +138,7 @@
 {:file "x_life_of_developers.jpeg" :category "meta-misc"}
 {:file "x_limiting_friction.jpeg" :category "physics"}
 {:file "x_linear_algebra_cheat_use.jpeg" :category "math"}
+{:file "x_linear_rotational_motion (1).jpeg" :category "physics"}
 {:file "x_linear_rotational_motion.jpeg" :category "physics"}
 {:file "x_linux_bios_uefi.jpeg" :category "dev-tools"}
 {:file "x_linux_boot_process.png" :category "dev-tools"}
@@ -169,6 +170,7 @@
 {:file "x_meta_thinking_caps.png" :category "meta-misc"}
 {:file "x_ml_algorithms.jpeg" :category "ai-agents"}
 {:file "x_ml_loss_functions.jpeg" :category "ai-agents"}
+{:file "x_ml_time_complexity.jpeg" :category "dsa"}
 {:file "x_moat_ai.jpg" :category "ai-agents"}
 {:file "x_moment_of_inertia.jpeg" :category "physics"}
 {:file "x_moment_of_intertia.jpeg" :category "physics"}
