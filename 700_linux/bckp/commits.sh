@@ -125,35 +125,35 @@ main() {
   echo "test programming blocks"
 
   run_block "mit-scheme" "130_mit_scheme" "daily mit-scheme" \
-    "scheme --load hello_world.scm --eval '(exit)' | tail -n 4 2>&1 | tee -a hello_world.log"
+    "scheme --load hello_world.scm --eval '(exit)' | tail -n 4 2>&1 | tee -a hello_world.txt"
 
   run_block "racket" "150_racket_scheme" "daily racket" \
-    "racket hello_world.rkt | head -n 2 2>&1 | tee -a hello_world.log"
+    "racket hello_world.rkt | head -n 2 2>&1 | tee -a hello_world.txt"
 
   run_block "cpp" "100_cpp" "daily cpp" \
-    "./hello > hello_world.log"
+    "./hello > hello_world.txt"
 
   # nasm: runs twice (once stdout, once append to log.txt)
   run_block "nasm" "100_nasm" "daily nasm" \
-    "./hellotime; ./hellotime >> log.txt"
+    "./hellotime; ./hellotime >> hello_world.txt"
 
   run_block "java" "200_java" "daily java" \
-    "java -jar HelloWorld.jar"
+    "java -jar HelloWorld.jar > hello_world.txt"
 
   run_block "python" "300_python" "daily python" \
-    "python3 hello_world.py"
+    "python3 hello_world.py > hello_world.txt"
 
   run_block "clisp" "140_clisp" "daily clisp" \
-    "clisp hello-world.lisp"
+    "clisp hello-world.lisp > hello_world.txt"
 
   run_block "R" "400_r" "daily r" \
-    "Rscript hello_world.R"
+    "Rscript hello_world.R > hello_world.txt"
 
   run_block "clojure" "110_clojure" "daily clj" \
-    "clojure hello_world.clj"
+    "clojure hello_world.clj > hello_world.txt"
 
   run_block "elisp" "120_elisp" "daily elisp" \
-    "emacs -Q --script hello_world.el"
+    "emacs -Q --script hello_world.el > hello_world.txt"
 
   # shell + nuggets: two dirs but one commit as before
   info "--- shell and nuggets (700_linux) ---"
