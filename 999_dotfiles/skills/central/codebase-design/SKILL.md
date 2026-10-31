@@ -1,7 +1,5 @@
 ---
 name: codebase-design
-triggers: [deep module, seam, interface design, depth]
-anti-triggers: [shallow pass-through]
 description: >-
   Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary. Clojure-adapted: ns seams, pure fns, data-oriented examples.
 ---
@@ -34,10 +32,3 @@ Use when designing **deep modules**: small interface, deep implementation, testa
 - Full glossary: `references/glossary.md`
 - Invariants checklist: `references/invariants.md`
 - Deepening: `DEEPENING.md` | Design it twice: `DESIGN-IT-TWICE.md`
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

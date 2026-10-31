@@ -1,9 +1,7 @@
 ---
 name: fix-issue
-triggers: [bug fix, stack trace, failing test]
-anti-triggers: [refactor, feature]
 description: >-
-  Diagnose root causes and apply minimal surgical fixes with test verification and Clojure lean-machine checks.
+  Diagnose root causes and apply minimal surgical fixes with test verification and Clojure lean-machine checks. Use when: bug fix, stack trace, failing test.
 ---
 
 # Issue Diagnosis & Surgical Fix Protocol
@@ -29,10 +27,3 @@ Clojure / lean-machine (AGENTS.md):
 - Verify with `clj-kondo --lint src` and `cljfmt check` after fix. Keep deps minimal (ask before adding).
 - Prefer pure data-in/data-out fixes; keep `ns` seams small, error maps via `ex-info`.
 > **Delegation:** Prompt `fix.md` delegates here.
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

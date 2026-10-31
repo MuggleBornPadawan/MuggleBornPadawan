@@ -1,9 +1,7 @@
 ---
 name: handoff
-triggers: [handoff, compact session, next agent, resume session]
-anti-triggers: [mid-task quick check]
 description: >-
-  Compact the current session into a structured handoff document for a fresh agent session when nearing token limits.
+  Compact the current session into a structured handoff document for a fresh agent session when nearing token limits. Use when: handoff, compact session, next agent, resume session.
 ---
 
 # Session Handoff
@@ -62,10 +60,3 @@ Write a compact handoff document summarizing the active conversation so a fresh 
 ```
 
 ---
-
-## LLM Contract
-- **Inputs:** current conversation | user hint for next session | `git status`
-- **Outputs:** concise markdown document adhering to ASD-STE100
-- **Tools allowed:** read, bash (lean: `git`, `bb`), write (handoff file only)
-- **Stop condition:** handoff file written + user notified to reset or start fresh session
-- **Lean box:** keep active window under 32k; do not duplicate full file contents into handoff

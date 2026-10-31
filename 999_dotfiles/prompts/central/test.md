@@ -1,17 +1,8 @@
 ---
 name: test
-description: Write tests for file/code. Delegates to clj-test skill.
-argument-hint: "[file]"
+description: "Write and run tests adhering to Clojure seams and lean conventions. Delegates to clj-test skill."
+argument-hint: "[file|namespace]"
 ---
 
-Write tests for {{ARGS}} (file or specified code).
-
-Delegates to `clj-test` skill for Clojure discipline.
-Steps:
-1. Match existing test framework/style (read neighbor tests)
-2. Happy path first, then edges, error paths, boundaries
-3. One behavior per test, descriptive names (specification style)
-4. Arrange–Act–Assert, minimal fixtures
-5. Do not modify prod code to ease testing unless flagged
-
-Clojure: public ns seam (`defn` not `defn-`), `bb test -n my.ns` -> `clojure -M:test -n my.ns`; run `bb test -n <ns>` + `clj-kondo --lint src` and report results.
+Activate and execute the `clj-test` skill for: {{ARGS}}.
+Follow the test authoring rules, runner priority, and verification checks defined in `clj-test`.

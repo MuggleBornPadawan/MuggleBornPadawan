@@ -1,12 +1,7 @@
 ---
 name: chitrapata-artforms
-triggers: [mandala, kalamkari, warli, gond, traditional form]
-anti-triggers: [generic generative]
 description: >-
-  Traditional Indian artform generators for Chittu 13.14. Use when generating procedural art
-  in the style of Mandala, Kalamkari, Kalighat, Pattachitra, Pithora, Tanjore, Madhubani,
-  Kerala Murals, Pichwai, Gond, Warli, or Phad. Provides visual invariants, algorithmic
-  specs, state parameters, and art.json output contracts per artform.
+  Traditional Indian artform generators for Chittu 13.14. Use when generating procedural art in the style of Mandala, Kalamkari, Kalighat, Pattachitra, Pithora, Tanjore, Madhubani, Kerala Murals, Pichwai, Gond, Warli, or Phad. Provides visual invariants, algorithmic specs, state parameters, and art.json output contracts per artform.
 ---
 
 # Chitrapata Traditional Indian Artforms — PCG Skill
@@ -120,9 +115,3 @@ When working on a specific artform, read the corresponding reference file:
 - [ ] Palette uses only pigments listed for that artform
 - [ ] Parameter map exposed for REPL tuning
 - [ ] Output renders correctly in at least one target (Quil recommended for first pass)
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

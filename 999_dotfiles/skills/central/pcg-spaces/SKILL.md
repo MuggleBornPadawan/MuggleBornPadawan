@@ -1,7 +1,5 @@
 ---
 name: pcg-spaces
-triggers: [usd, webgpu spaces, xform, perspectiveZO]
-anti-triggers: [quil only]
 description: >-
   USD model/world + WebGPU render spaces for PCG visual art. Use when building WebGPU/WGSL browser art from Clojure/bb with USD share, mapping xformOpOrder to world matrices, or handling WebGPU NDC 0..1, clip, framebuffer, and depth.
 ---
@@ -58,9 +56,3 @@ Helper (inline, no deps): `mul(a,b)`, `invert(m)`, `perspectiveZO(fovy,aspect,ne
 - **Never store:** clip/NDC/screen, view/proj matrices.
 
 Full details, code, and 14 sources in the file above.
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

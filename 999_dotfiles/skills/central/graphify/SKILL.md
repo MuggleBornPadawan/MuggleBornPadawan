@@ -1,10 +1,7 @@
 ---
 name: graphify
-triggers: [codebase map, navigation, ns dependencies]
-anti-triggers: [brute grep]
 description: >-
-  Use this skill when researching, navigating, or searching inside a codebase.
-  Enforces using structured maps and project graphs instead of brute-force grep.
+  Use this skill when researching, navigating, or searching inside a codebase. Enforces using structured maps and project graphs instead of brute-force grep.
 ---
 
 # Graphify Skill
@@ -40,9 +37,3 @@ Optimize navigation and codebase comprehension using structured mapping:
      ```bash
      bb -e '(-> (read-string (slurp "graph.edn")) :nodes (get '\''my.namespace) :out-deps)'
      ```
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

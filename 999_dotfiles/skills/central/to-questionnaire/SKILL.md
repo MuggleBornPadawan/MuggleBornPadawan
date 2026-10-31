@@ -1,9 +1,7 @@
 ---
 name: to-questionnaire
-triggers: [questionnaire, interview external, stakeholder question, missing info]
-anti-triggers: [internal code query]
 description: >-
-  Turn an unresolved decision or ambiguous requirement into an async markdown discovery questionnaire for an external stakeholder.
+  Turn an unresolved decision or ambiguous requirement into an async markdown discovery questionnaire for an external stakeholder. Use when: questionnaire, interview external, stakeholder question, missing info.
 ---
 
 # To Questionnaire
@@ -74,10 +72,3 @@ Is there any constraint or risk we did not ask about?
 ```
 
 ---
-
-## LLM Contract
-- **Inputs:** unresolved decision | recipient description | user goal
-- **Outputs:** clean markdown questionnaire saved to `docs/questionnaires/<slug>.md`
-- **Tools allowed:** read, write (only the questionnaire file), bash (lean: `bb`)
-- **Stop condition:** questionnaire file written + file path reported to user
-- **Lean box:** keep questions atomic; no sprawling text

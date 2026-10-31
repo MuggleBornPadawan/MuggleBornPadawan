@@ -1,7 +1,5 @@
 ---
 name: error-discovery
-triggers: [trace, eval dataset, failure modes]
-anti-triggers: [code bug only]
 description: >-
   Discover failure modes in LLM traces or agent logs before writing metrics. Use when inspecting traces, finding bugs in AI outputs, or starting an eval dataset. Lean Pi adapted: turn-based review, HTML app, sequential scanning.
 ---
@@ -88,11 +86,3 @@ When the human returns:
    * Summary of discovered failure modes.
    * Count of occurrences.
    * Proposed next 10 traces to inspect.
-
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

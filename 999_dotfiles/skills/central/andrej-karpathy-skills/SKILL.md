@@ -1,10 +1,7 @@
 ---
 name: andrej-karpathy-skills
-triggers: [code generation, debugging, surgical edits, verification]
-anti-triggers: [none]
 description: >-
-  Use this skill during code generation and debugging to avoid common AI coding agent mistakes.
-  Enforces senior-engineer habits, surgical edits, and verification.
+  Use this skill during code generation and debugging to avoid common AI coding agent mistakes. Enforces senior-engineer habits, surgical edits, and verification. Use when: code generation, debugging, surgical edits, verification.
 ---
 
 # Andrej Karpathy Skills
@@ -34,9 +31,3 @@ Adopt a rigorous, high-standard engineering workflow to avoid typical AI agent p
 4. **Goal-Driven Verification**:
    * Define clear success criteria before starting.
    * Verify every step with tests or dry runs, and verify the final result before completion.
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

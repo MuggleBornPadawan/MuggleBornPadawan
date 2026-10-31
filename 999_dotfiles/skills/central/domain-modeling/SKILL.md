@@ -1,7 +1,5 @@
 ---
 name: domain-modeling
-triggers: [context.md, adr, glossary, domain term]
-anti-triggers: [just reading glossary]
 description: >-
   Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR.
 ---
@@ -80,9 +78,3 @@ Only offer to create an ADR when all three are true:
 3. **The result of a real trade-off**: there were genuine alternatives and you picked one for specific reasons
 
 If any of the three is missing, skip the ADR. Use the format in [ADR-FORMAT.md](./ADR-FORMAT.md).
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

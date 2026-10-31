@@ -1,9 +1,7 @@
 ---
 name: wayfinder
-triggers: [wayfinder map, decision tickets, multi-session]
-anti-triggers: [single session]
 description: >-
-  Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.
+  Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear. Use when: wayfinder map, decision tickets, multi-session.
 ---
 
 ## Preamble (MANDATORY — run first)
@@ -87,10 +85,3 @@ The answer isn't part of the body; it's recorded on resolution (see [Work throug
 
 ## References
 - Full details: `references/details.md`
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

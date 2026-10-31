@@ -1,6 +1,7 @@
 ---
 name: retro
-description: Conduct a retrospective on a coding session to optimize agent instructions, automated checks, and token economy.
+description: >-
+  Conduct a retrospective on a coding session to optimize agent instructions, automated checks, and token economy.
 disable-model-invocation: true
 ---
 
@@ -62,10 +63,3 @@ Present findings as a prioritized table:
 | **P3** | Memory Rule | Obsolete rule in `gemini_tail.md` never triggers. | Prune stale line from central tail. |
 
 Provide the exact code snippets or file edits needed to implement each approved fix.
-
-## LLM Contract
-- **Inputs:** active conversation transcript | harness configs | error traces
-- **Outputs:** prioritized markdown table (ASD-STE100) + exact minimal edits
-- **Tools allowed:** read, bash (lean: `bb`, `rg`, `git`), edit (surgical)
-- **Stop condition:** session analyzed + actionable recommendations presented
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

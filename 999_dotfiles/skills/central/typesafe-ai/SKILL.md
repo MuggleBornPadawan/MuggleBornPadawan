@@ -1,7 +1,5 @@
 ---
 name: typesafe-ai
-triggers: [typesafe, jev, choice/score/noul]
-anti-triggers: [freeform llm text]
 description: >-
   Use when integrating with TypeSafe AI, querying the Jev model, formulating Choice, Score, or Noul questions, or building calibrated decision workflows.
 ---
@@ -112,10 +110,3 @@ Use TypeSafe AI when software needs narrow, structured judgments rather than ope
 
 ## References
 - Full client: `references/client.md`
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

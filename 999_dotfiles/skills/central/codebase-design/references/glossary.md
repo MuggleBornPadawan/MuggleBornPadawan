@@ -114,9 +114,3 @@ Good `ns` APIs make `clojure.test` natural:
 - Prefer `deps.edn` + `clojure CLI` (1.12.6) for new work; respect `project.clj` if present. Minimal deps via `neil`.
 - Idiomatic `->`/`->>` threading, namespaces clean of unused requires (`clj-kondo` + `cljfmt`).
 - Verification seams: `bb test -n my.ns` or `clojure -M:test -n my.ns` at public `defn`, not `defn-`.
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

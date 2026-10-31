@@ -1,10 +1,7 @@
 ---
 name: superpowers
-triggers: [spec-driven, tdd, systematic workflow]
-anti-triggers: [quick fix]
 description: >-
-  Use this skill when you need to plan, implement, and test code changes systematically.
-  Enforces a strict spec-driven and test-driven workflow before editing code.
+  Use this skill when you need to plan, implement, and test code changes systematically. Enforces a strict spec-driven and test-driven workflow before editing code.
 ---
 
 # Superpowers Skill
@@ -32,9 +29,3 @@ Enforce a disciplined, spec-driven engineering methodology to ensure correctness
 3. **Verify Each Step**:
    * Run tests or verification commands after every small change.
    * Stop immediately if a test fails; do not accumulate issues.
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

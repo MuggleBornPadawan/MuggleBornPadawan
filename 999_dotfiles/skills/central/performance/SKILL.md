@@ -1,7 +1,5 @@
 ---
 name: performance
-triggers: [profile, benchmark, criterium, flame graph, hot loop]
-anti-triggers: [cold code]
 description: >-
   Performance engineering and optimization for Clojure. Use when profiling CPU or memory, diagnosing latency, eliminating GC pauses, optimizing hot loops, or writing zero-allocation Clojure pipelines.
 ---
@@ -80,10 +78,3 @@ Enable compiler warnings at the top of performance namespaces:
 
 ## References
 - Full patterns: `references/patterns.md`
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

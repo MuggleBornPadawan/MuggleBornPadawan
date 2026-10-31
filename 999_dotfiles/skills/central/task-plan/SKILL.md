@@ -1,9 +1,7 @@
 ---
 name: task-plan
-triggers: [implementation plan, steps, trade-offs]
-anti-triggers: [code now]
 description: >-
-  Formulate a step-by-step implementation plan before writing code, flagging risks and trade-offs.
+  Formulate a step-by-step implementation plan before writing code, flagging risks and trade-offs. Use when: implementation plan, steps, trade-offs.
 ---
 
 # Task Implementation Planner
@@ -38,10 +36,3 @@ Save the plan to a markdown file so it can be reviewed and executed later.
 - Never block user. User decides. Agreement is signal, not proof.
 
 > **Delegation:** Prompt `plan.md` delegates here.
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

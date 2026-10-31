@@ -1,102 +1,56 @@
 # Agent Ground Truth
 
 ## Machine & Lean Box Safety
-- Debian 12 (bookworm), x86_64, kernel 6.6
-- CPU: Intel i3-1215U (host 2P+4E = 8 threads, Golden Cove + Gracemont) — guest 8 vCPUs via KVM — L1d 144K / L1i 224K / L2 2M / L3 10M, line 64B, no `perf` — modest machine
+- OS: Debian 12 (bookworm), x86_64, kernel 6.6
+- CPU: Intel i3-1215U (host 2P+4E = 8 threads) — guest 8 vCPUs via KVM, line 64B, no `perf`
 - RAM: 6.3 Gi total (~5.3 Gi available) — avoid memory-heavy tooling; prefer lean approaches
-- Hardware / Keyboard: ASUS Chromebook Plus (compact layout; no dedicated Home/End/F1-F12 keys; use `Search + 1..12` for F-keys, `Ctrl + Alt + Up/Down` for Home/End, `Search + Up/Down` for Page Up/Down)
-- Disk: 31 GB total (~10 GB free headroom, 2026-09 baseline; check live with sysinfo before trusting) — ask before large downloads (>100 MB) or package installs
-- Prohibited heavy commands: Do NOT run memory-heavy commands like `ollama run`, `docker pull`, `clojure -P`, or `lein deps` without asking
-- Java: OpenJDK 25 (Temurin-25 at /usr/lib/jvm/temurin-25-jdk-amd64, 64-Bit Server VM)
-- Cloud: Google Cloud SDK 591.0.0 at /usr/lib/google-cloud-sdk (`gcloud` at /usr/bin/gcloud, includes `gsutil`/`bq`/`alpha`/`beta`) — auth configured
-- Net: Chromebook host + Crostini container (LXD NAT) — Mac Studio on same WiFi, SSH via LAN IP / .local only
-- VPN: PIA Play Store app with Allow LAN ON — keep ON, LAN bypass required for SSH
-- Cloud SSH: use gcloud compute ssh with default google keys — auth configured
-- Freshness rule: pinned versions above go stale. Trust live `sysinfo.sh --tech` output over this file on conflict.
+- Disk: 31 GB total (~10 GB free headroom) — ask before large downloads (>100 MB) or package installs
+- Prohibited heavy commands: Do NOT run `ollama run`, `docker pull`, `clojure -P`, or `lein deps` without asking
+- Freshness rule: Pinned environment details go stale. Trust live `sysinfo.sh --tech` output over this file on conflict.
 
 ## Primary & Exclusive Stack: Lean Clojure
-- Languages: Clojure (JVM) for main applications; Babashka (`bb`) for all scripting, automation, CLI tools, scraping, and data processing
-- Strict Stack Rule (zero exceptions; 100% Clojure / Babashka stack):
-  - ALL work must use the lean Clojure stack (Clojure JVM or Babashka).
-  - Do NOT write or suggest Python, Node.js/JavaScript, Ruby, or complex Bash scripts.
-  - For scripts, scratch utilities, web scraping, data fetching, JSON/EDN/HTML tasks, and one-off tools: ALWAYS write Babashka scripts (`.bb` or `.clj`) executed via `bb`.
-  - Lean box efficiency: Babashka starts in ~15 ms and uses ~30 MB RAM. Never default to heavy runtimes.
-- Build tools:
-  - Clojure CLI (`deps.edn`) preferred for new projects — version 1.12.6 (upstream, not apt)
-  - Leiningen (`project.clj`) acceptable when working with existing Lein projects — version 2.12.0 (upstream, not apt)
-- Toolchain (upstream via `MuggleBornPadawan/700_linux/remote_startup.sh:install_clojure_stack()`, Temurin-25, no Debian apt to avoid `openjdk-17`):
-  - Core: `clojure` CLI + `lein` + `bb` (babashka 1.13.223 at `~/.local/bin/bb`, dynamic build with `babashka.ffi` + tasks `:exec-fn` compose) + `clj-kondo` + `clojure-lsp` (rest at `/usr/local/bin`)
-  - Add-ons: `neil` (add dep to `deps.edn`) + `jet` (EDN<->JSON) + `cljfmt` (formatter, static binary)
-  - Install: curl upstream scripts to `/usr/local/bin` (not `apt install clojure`); `default-jre-headless` = `openjdk-17` must be avoided
-  - No global `~/.clojure/deps.edn` or `~/.lein/profiles.clj` — per-project only
-- Editor/REPL workflow: Emacs 30.1 (config `~/.emacs.d/init.el` + `customizations/setup-clojure.el`) with CIDER / inf-clojure + `clojure-ts-mode` + `eglot` (`clojure-lsp`). REPL-driven eval preferred over one-off scripts. Keybindings live in `setup-clojure.el`; do not duplicate them here.
-- Visual / creative coding & graphics:
-  - Procedural content generation (PCG) standards:
-    - Separate data from rendering: generate art structures with pure Clojure functions first
-    - Determinism: always seed random generators; identical seeds must produce identical visuals; log seeds with output
-    - Parameter exploration: expose tweakable parameter maps for rapid REPL tuning
-  - 2D/3D generative art, math & vector plotters: Processing stack via Quil (https://quil.info/) — use `quil/quil` (`:java2d` for 2D, `:p3d` for OpenGL 3D, DXF for CAD/3D printing)
-  - Browser 2D/3D graphics & Quil ClojureScript backend: p5.js (WebGL mode for browser 3D primitives, materials, lighting, and orbit controls)
-  - Desktop games & real-time simulations: Raylib via `b12n-oss/raylib-clj` (Panama FFM on JDK 25; no `-XstartOnFirstThread` on Linux)
-  - Browser 3D & WebGL: Scittle + Three.js (zero-build, single-file HTML, served via `bb http-server`)
-  - PCG Spaces (USD + WebGPU): see `pcg-spaces` skill + `MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md`.
-  - One PCG -> Triple Render (Quil + Raylib + WebGPU): see `pcg` skill (single pure `generate` fn -> `art.json`).
-- REPL-driven development: prefer evaluating code in a running REPL over one-off scripts
-- Testing: `clojure.test`.
-  - Runner order: Live REPL Socket (`bb scripts/test_repl.bb` or evaluating `(require 'clojure.tools.namespace.repl) (clojure.tools.namespace.repl/refresh) (clojure.test/run-all-tests)` via `.socket-port`/`.nrepl-port`) -> `bb test -n <ns>` -> `clojure -M:test -n <ns>` -> `lein test`.
-  - Prefer evaluating code and running tests in a running JVM REPL over restarting the JVM.
-- Databases:
-  - PostgreSQL for server/production persistence
-  - SQLite for local/embedded/small projects and prototypes
-- Web/frontend/HTTP libraries: no fixed preference yet; for browser graphics/3D, prefer zero-build Scittle over npm/shadow-cljs
-- Dependencies: Keep them minimal; prefer small well-maintained libraries; do NOT add dependencies without asking first
-- Code style: Community style guide (idiomatic `->`/`->>` threading, namespaces clean of unused requires); prefer simple, data-oriented solutions
+- Stack rule: 100% Clojure (JVM) or Babashka (`bb`). Write all scripts, CLI tools, scraping, data fetching, JSON/EDN/HTML tasks, and automation in Babashka.
+- Lean efficiency: Babashka starts in ~15 ms and uses ~30 MB RAM. Never default to heavy runtimes.
+- Build tools: Clojure CLI (`deps.edn`) preferred; Leiningen (`project.clj`) for existing Lein projects. No global deps.
+- REPL-driven development: Prefer evaluating code and running tests in a running JVM REPL over restarting the JVM.
+- Testing: `clojure.test`. Runner priority: Live REPL Socket -> `bb test -n <ns>` -> `clojure -M:test -n <ns>` -> `lein test`.
+- Databases: PostgreSQL for server persistence; SQLite for local/embedded projects.
+- Dependencies: Keep minimal. Do NOT add dependencies without asking first.
+- Code style: Idiomatic `->`/`->>` threading, clean namespaces, pure data in -> data out.
+
+## Visual & Creative Coding
+- PCG standards: Pure functions first (separate data from rendering); deterministic seeded randoms; expose tweakable parameter maps.
+- Render targets:
+  - 2D/3D generative: Processing via Quil (`quil/quil`).
+  - Desktop games / real-time 60 FPS: Raylib via `b12n-oss/raylib-clj` (Panama FFM).
+  - Browser 3D: Scittle + Three.js (zero build, served via `bb http-server`) or WebGPU/WGSL.
+  - Multi-target pipeline: One pure Clojure `generate` fn -> `art.json` (see `pcg` and `pcg-spaces` skills).
 
 ## Output Contract
-- Respond concisely.
-- Always use ASD-STE100 Simplified Technical English.
-- Always talk to me like I have ADHD: short sentences, bullet points, clear structure, no long walls of text.
-- For LLM coders: same rules apply — no walls, no essays. Use markdown tables + bullets. Token-efficient = survive 100k window.
+- ASD-STE100 Simplified Technical English.
+- Short sentences, bullet points, clear structure, no walls of text. Token-efficient: use markdown tables and bullets.
+- Active context window discipline: Keep active context <32k.
 
-## Context Window Discipline
-- Keep active context <32k. Beyond that use summarization/RAG/pruning.
-
-## Disagreement & Truth-Seeking (Push Back When Wrong)
-- Do not agree to be agreeable. If user is wrong, say so directly.
-- Challenge false premises, risky ideas, and factual errors. Explain why with evidence (code, docs, logs, or test output).
-- Offer correct alternative with trade-offs. Do not hide error with soft language.
-- Be direct, respectful, and brief. Truth > harmony.
-- If uncertain, state confidence level and what is missing.
-- Grill plans before code when idea is weak: use `grilling` / `plan-critique` mindset.
+## Disagreement & Truth-Seeking
+- Challenge false premises, risky ideas, and factual errors directly with evidence. Truth > harmony.
+- If uncertain, state confidence level and missing data. Grill weak plans before code.
 
 ## Collaborative Judgment & Ambiguity Handling
-- **No Silent Guessing**: When facing architectural ambiguities, trade-off decisions, missing specifications, or conflicting requirements, STOP and consult the user.
-- **Structured Interruption Format**: Present choices clearly before proceeding:
+- When facing architectural ambiguities or trade-offs, STOP and consult the user.
+- Interruption format:
   | Element | Description |
-  |---------|-------------|
+  |---|---|
   | **Situation** | Brief statement of ambiguity or trade-off |
   | **Options** | 2–3 distinct technical paths |
   | **Trade-offs** | Pros, cons, and impact for each option |
-  | **Recommendation** | Agent's reasoned preference, paused awaiting user choice |
+  | **Recommendation** | Agent preference, paused awaiting user choice |
 
 ## Atelier Ground Truth (Chitrapata / Chittu 13.14)
-- Canonical ontology: `<repo>/atelier/chitrapata.org` when present (submodule → `MuggleBornPadawan/chitrapata-ontology`)
-- Upstream: https://github.com/MuggleBornPadawan/chitrapata-ontology
-- Governance: Treat `chitrapata.org` as absolute ground truth for atelier specs, license topology, and PCG invariants. Never edit a submodule copy — change upstream repo, then run `git submodule update --remote atelier`.
-- Brand Tokens: Primary `#B3892C` (Imperial Gold), Secondary `#061735` (Abyssal Navy).
-- Licensing: GNU GPLv3 with Section 7 EPL Linking Exception (allows linking EPL Clojure, Babashka, Quil, Scittle).
-- Corpus (Series): Purchasing Power Sparsity, All Plants Are Equal, Rich Richer and Richeese, Rise Reign and Drool, Risk Frisk and Reward, Form Ploughs Function, Death Vax and Taxes, Misfits and Mutants, No Strings Attached, Behind the Scenes (Armatures, Qubit Dance, Quantum Signature), z Artwork.
-- Traditional Forms (Artforms): Mandala, Kalamkari, Kalighat, Pattachitra, Pithora, Tanjore, Madhubani, Kerala Murals, Pichwai, Gond, Warli, Phad.
-- Guardrails: `#NoAI` / `#NoAIContent` headers, Quantum Signature (TM) adversarial cloaking, cold-storage master assets.
+- Canonical ontology: `<repo>/atelier/chitrapata.org` (submodule → `MuggleBornPadawan/chitrapata-ontology`). Absolute ground truth for specs and licensing (GPLv3 + EPL exception). Never edit submodule directly; edit upstream, then `git submodule update --remote atelier`.
+- Generators: See `chitrapata-artforms` skill for 12 artforms, visual invariants, and palettes.
+- Guardrails: `#NoAI` / `#NoAIContent` headers, cold-storage master assets.
 
 ## Path Authority: Central Store (harness-sync)
-- Authority rule: edit central only. Never edit symlink or mirror copies direct.
-- EDIT (ground truth): `~/.local/share/agent-prompts` (prompts); `~/.local/share/skills` (skills); `~/.local/share/agent-memory/AGENTS_CORE.md` + `tails/` (memory).
-- DO NOT EDIT (symlinks, `:compat? true`): `~/.pi/agent/prompts`, `~/.pi/agent/skills`, `~/.gemini/config/skills`, `~/.config/opencode/skills`.
-- Repo mirrors (backup copies, written by `dotfiles.bb` only): `999_dotfiles/prompts/central`, `999_dotfiles/skills/central`, `999_dotfiles/memory/central`.
-- Compat copies (`skills/pi`, `skills/opencode`, `skills/agy/config`, `prompts/pi`) + opencode `commands` are NOT stored. Manifest flag: `:backup? false`. Re-derived via harness-sync. Never back them up.
-- Regular (non-compat) skill mirrors: `skills/agents` (from `~/.agents/skills`), `skills/agy/builtin` (from Gemini builtin skills).
-- Assembled memory (generated, do not hand-edit): `assembled/{gemini,pi,opencode,emacs}.md` = core + tail.
-- Harness consumption: Gemini reads `AGENTS.md` + `GEMINI.md` + `skills` + `prompts`; Pi reads `AGENTS.md` + `skills` + `prompts`; OpenCode reads `AGENTS.md` + `skills` + `commands`.
-- Sources: `MuggleBornPadawan/700_linux/bckp/manifest.edn`; engines `sync_harness.bb`, `sync_memory.bb`. Never commit secrets (`hosts.yml`, `auth.json`, `oauth_creds.json`, tokens, `state.json`, `*.db`, `*.log`).
+- Ground Truth Store: Edit only in `~/.local/share/agent-prompts` (prompts), `~/.local/share/skills` (skills), and `~/.local/share/agent-memory/AGENTS_CORE.md` + `tails/` (memory).
+- Never edit symlinks or repo mirror copies directly.
 - After edit, re-sync: `bb ~/.local/share/skills/harness-sync/scripts/sync_harness.bb` (`--dry-run` to audit).

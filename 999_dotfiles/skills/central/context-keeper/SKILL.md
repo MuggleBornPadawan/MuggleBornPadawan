@@ -1,10 +1,7 @@
 ---
 name: context-keeper
-triggers: [long session, token limit, roadmap]
-anti-triggers: [short single task]
 description: >-
-  Use this skill to optimize token usage, clear inactive context, and maintain
-  a consolidated state/roadmap file across long coding sessions.
+  Use this skill to optimize token usage, clear inactive context, and maintain a consolidated state/roadmap file across long coding sessions. Use when: long session, token limit, roadmap.
 ---
 
 # Context Keeper
@@ -37,9 +34,3 @@ Use this skill to systematically manage your token context when performing long-
 
 3. **Reset Context Verbose Logs**:
    - Run `/compact`, `/clear`, or reset terminal sessions when pivoting to a new subtask.
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

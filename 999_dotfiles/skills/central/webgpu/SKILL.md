@@ -1,7 +1,5 @@
 ---
 name: webgpu
-triggers: [webgpu, wgsl, usd, xformOpOrder, ndc 0..1]
-anti-triggers: [threejs webgl only]
 description: >-
   Use when rendering browser 3D with WebGPU/WGSL from Clojure/bb, sharing USD-correct art.json (xformOpOrder, local ±1, perspectiveZO 0..1), or fixing NDC/framebuffer/depth bugs.
 ---
@@ -60,10 +58,3 @@ bb generate {:seed 42} → local ±1 points (java.util.Random only)
 
 ## References
 - Full template+helpers: `references/helpers.md`
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args
-- **Outputs:** concise markdown: table or bullets, no walls
-- **Tools allowed:** read, bash, edit, write
-- **Stop condition:** verified + confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb

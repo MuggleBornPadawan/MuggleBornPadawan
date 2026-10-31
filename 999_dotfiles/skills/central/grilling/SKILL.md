@@ -1,7 +1,5 @@
 ---
 name: grilling
-triggers: [grill plan, challenge decision, stress-test]
-anti-triggers: [implement, research]
 description: >-
   Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
 ---
@@ -43,9 +41,3 @@ The session is done when the frontier is empty: every branch visited, nothing le
 
 ## Antigravity Interactive Integration
 In Antigravity, you can use the `ask_question` tool to render structured multiple-choice question sets for the user, or suggest the `/grill-me` slash command.
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

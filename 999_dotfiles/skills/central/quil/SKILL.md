@@ -1,7 +1,5 @@
 ---
 name: quil
-triggers: [quil, flow field, noise, l-system, plotter, svg]
-anti-triggers: [raylib, webgpu]
 description: >-
   Use when building 2D/3D procedural art with Quil/Processing, or when previewing USD-shared local ±1 art in Quil via pcg (flow fields, noise, L-systems, seeded art, plotter/SVG).
 ---
@@ -152,10 +150,3 @@ Subdivide rectangles recursively for generative layouts:
 ## References
 - Full templates: `references/templates.md`
 - PCG algorithms: `references/templates.md` §3
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args
-- **Outputs:** concise markdown: table or bullets
-- **Tools allowed:** read, bash, edit, write
-- **Stop condition:** verified + confirmed if destructive
-- **Lean box:** 6.3 Gi — prefer bb

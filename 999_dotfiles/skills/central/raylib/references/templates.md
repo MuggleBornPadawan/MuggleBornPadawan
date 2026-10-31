@@ -175,10 +175,3 @@ Raylib is **not** USD-native (OpenGL `z -1..1`). Use it as the 60 FPS real-time 
 *   **Rule 5 Lean:** Keep `art.json` <1MB. Do not ship `clip/NDC/screen` or baked matrices. See `pcg` skill for pure `generate` template and `bb export && bb serve` flow.
 ## References
 - Full templates: `references/templates.md` (load only when needed)
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

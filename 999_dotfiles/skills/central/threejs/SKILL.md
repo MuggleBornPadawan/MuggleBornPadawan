@@ -1,7 +1,5 @@
 ---
 name: threejs
-triggers: [threejs, scittle, browser 3d, instanced mesh]
-anti-triggers: [webgpu usd, quil]
 description: >-
   Use when creating browser 3D with Scittle + Three.js WebGL (zero build, no npm) for instanced particle arrays, procedural geometries, or custom shader materials without USD/WebGPU share.
 ---
@@ -169,10 +167,3 @@ Save as `index.html`:
 
 ## References
 - Full templates: `references/templates.md` (load only when needed)
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

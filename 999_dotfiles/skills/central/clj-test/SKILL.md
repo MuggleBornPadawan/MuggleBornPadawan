@@ -1,9 +1,7 @@
 ---
 name: clj-test
-triggers: [write test, clojure.test, bb test, deftest]
-anti-triggers: [no test needed]
 description: >-
-  Write and run tests adhering to Clojure/lean-machine conventions, public ns seams, and bb/clojure.test.
+  Write and run tests adhering to Clojure/lean-machine conventions, public ns seams, and bb/clojure.test. Use when: write test, clojure.test, bb test, deftest.
 ---
 
 # Test Authoring & Verification (Clojure / Babashka)
@@ -51,10 +49,3 @@ Run the tests when done and report results (`bb test -n <ns>` + `clj-kondo --lin
   - `UNTESTED`: list what you did not check.
 - Bounded run: stop at deadline. Show unfinished checks. No silent pass.
 > **Delegation:** Prompt `test.md` delegates here.
-
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

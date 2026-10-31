@@ -1,6 +1,7 @@
 ---
 name: to-tickets
-description: Break a plan, spec, or discussion into vertical tracer-bullet tickets with explicit blocking dependencies.
+description: >-
+  Break a plan, spec, or discussion into vertical tracer-bullet tickets with explicit blocking dependencies.
 disable-model-invocation: true
 ---
 
@@ -80,10 +81,3 @@ Concise summary of the end-to-end feature or behavior delivered.
 - [ ] Boundary integration verified with `clojure.test`.
 - [ ] Edge cases (nil, invalid shape) tested.
 ```
-
-## LLM Contract
-- **Inputs:** plan | spec | conversation context | dependency requirements
-- **Outputs:** concise ticket files saved to `docs/tickets/<feature-slug>/<NN>-<slug>.md`
-- **Tools allowed:** read, write (only new ticket files), bash (lean: `bb`, `rg`, `git`)
-- **Stop condition:** tickets written + breakdown table confirmed with user
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

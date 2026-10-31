@@ -1,9 +1,7 @@
 ---
 name: harness-sync
-triggers: [harness sync, symlink, assembled memory]
-anti-triggers: [none]
 description: >-
-  Centralized memory, skills, and prompt symlink manager across all coding harnesses (Antigravity Gemini, Pi, OpenCode).
+  Centralized memory, skills, and prompt symlink manager across all coding harnesses (Antigravity Gemini, Pi, OpenCode). Use when: harness sync, symlink, assembled memory.
 ---
 
 # Centralized Harness Symlink Manager (Gemini, Pi, OpenCode)
@@ -61,9 +59,3 @@ bb ~/.local/share/skills/harness-sync/scripts/sync_harness.bb --dry-run
 ## Helper Scripts
 - [`sync_harness.bb`](./scripts/sync_harness.bb): Fast Clojure/Babashka symlink and memory assembly engine.
 - [`sync_memory.bb`](./scripts/sync_memory.bb): Memory assembly helper (core + tails -> assembled).
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

@@ -1,6 +1,7 @@
 ---
 name: to-spec
-description: Turn the current conversation into a concrete Clojure/data-oriented specification in docs/specs/ without repetitive interview questions.
+description: >-
+  Turn the current conversation into a concrete Clojure/data-oriented specification in docs/specs/ without repetitive interview questions.
 disable-model-invocation: true
 ---
 
@@ -78,10 +79,3 @@ Define how tests run against the primary seam:
 ## 7. Out of Scope
 Explicitly list what this change will NOT do.
 ```
-
-## LLM Contract
-- **Inputs:** active conversation | existing ADRs / domain vocabulary | testing seam
-- **Outputs:** concise markdown specification saved to `docs/specs/<feature-slug>.md`
-- **Tools allowed:** read, write (only new spec file), bash (lean: `bb`, `rg`, `git`)
-- **Stop condition:** spec file written + public seam confirmed with user
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

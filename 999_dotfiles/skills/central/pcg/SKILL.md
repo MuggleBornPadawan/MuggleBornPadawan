@@ -1,7 +1,5 @@
 ---
 name: pcg
-triggers: [pcg generate, seeded art, quil+raylib+webgpu triple]
-anti-triggers: [single-renderer only]
 description: >-
   One pure Clojure PCG core rendered via Quil, Raylib, and WebGPU/WGSL. Use when you want a single seeded generate function to preview in Quil, run real-time in Raylib, and export JSON for browser WebGPU from the same data.
 ---
@@ -89,9 +87,3 @@ Run: `bb generate:quil --seed 42` → `bb generate:raylib --seed 42` → `bb exp
 - [ ] Same seed gives same `art.json` + Quil + Raylib output
 - [ ] `art.json` <1MB, local ±1, world scale via Xform
 - [ ] WebGPU uses `perspectiveZO` (not NO), handles `upAxis`
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

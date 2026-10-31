@@ -1,6 +1,7 @@
 ---
 name: napkin-math
-description: Systems design estimation and back-of-the-envelope performance math. Use when sizing infrastructure, estimating throughput/latency for memory, SSD, network, serialization, and calculating cloud costs from first principles.
+description: >-
+  Systems design estimation and back-of-the-envelope performance math. Use when sizing infrastructure, estimating throughput/latency for memory, SSD, network, serialization, and calculating cloud costs from first principles.
 ---
 
 # Napkin Math & Systems Estimation
@@ -96,9 +97,3 @@ Numbers rounded for memorization and quick mental math:
 2. **Network trumps local compute:** A cross-region network hop (~100 ms) takes as long as millions of CPU instructions.
 3. **Serialization is a bottleneck:** JSON serialization runs at ~100 MB/s, whereas fast binary protocols run at ~1 GB/s.
 4. **Disk seeks kill performance:** Random HDD reads drop to 0.7 MB/s; always prefer sequential I/O or memory caching.
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

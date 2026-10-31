@@ -1,7 +1,5 @@
 ---
 name: write-judge-prompt
-triggers: [judge prompt, pass/fail evaluator]
-anti-triggers: [code regex check]
 description: >-
   Design binary Pass/Fail LLM evaluators for specific failure modes. Use when writing an LLM judge, testing AI output quality, or evaluating subjective criteria. Lean Pi adapted: binary checks, code-first, TypeSafe AI (Jev) compatible.
 ---
@@ -94,9 +92,3 @@ Reason: $2400 is below the $2500 budget.
    * Measure **True Positive Rate (TPR)**: correctly identified Pass traces.
    * Measure **True Negative Rate (TNR)**: correctly caught Fail traces.
    * **Never use raw accuracy:** In skewed distributions, raw accuracy hides missed failures.
-## LLM Contract
-- **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
-- **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)
-- **Tools allowed:** read, bash (lean: bb, rg, git), edit (surgical), write (only new files)
-- **Stop condition:** task verified (bb test/clj-kondo/cljfmt if Clojure) + user confirmed if destructive
-- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask
