@@ -1,7 +1,7 @@
 #!/usr/bin/env bb
 (ns server
-(import [java.net ServerSocket Socket]
-        [java.io BufferedReader InputStreamReader PrintWriter OutputStream])
+  (:import [java.net ServerSocket Socket]
+           [java.io BufferedReader InputStreamReader OutputStream]))
 
 (def port (if (> (count *command-line-args*) 0)
             (Integer/parseInt (first *command-line-args*))
@@ -75,7 +75,7 @@
     (finally
       (.close socket))))
 
-(defn -main [& args]
+(defn -main [& _args]
   (let [ss (ServerSocket. port)]
     (println (str "Review server running at http://127.0.0.1:" port))
     (while true

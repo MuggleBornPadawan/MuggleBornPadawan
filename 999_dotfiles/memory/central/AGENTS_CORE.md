@@ -40,7 +40,7 @@
   - Desktop games & real-time simulations: Raylib via `b12n-oss/raylib-clj` (Panama FFM on JDK 25; no `-XstartOnFirstThread` on Linux)
   - Browser 3D & WebGL: Scittle + Three.js (zero-build, single-file HTML, served via `bb http-server`)
   - PCG Spaces (USD + WebGPU): see `pcg-spaces` skill + `MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md`.
-  - One PCG -> Triple Render (Quil + Raylib + WebGPU): see `clojure-pcg` skill (single pure `generate` fn -> `art.json`).
+  - One PCG -> Triple Render (Quil + Raylib + WebGPU): see `pcg` skill (single pure `generate` fn -> `art.json`).
 - REPL-driven development: prefer evaluating code in a running REPL over one-off scripts
 - Testing: `clojure.test`.
   - Runner order: Live REPL Socket (`bb scripts/test_repl.bb` or evaluating `(require 'clojure.tools.namespace.repl) (clojure.tools.namespace.repl/refresh) (clojure.test/run-all-tests)` via `.socket-port`/`.nrepl-port`) -> `bb test -n <ns>` -> `clojure -M:test -n <ns>` -> `lein test`.

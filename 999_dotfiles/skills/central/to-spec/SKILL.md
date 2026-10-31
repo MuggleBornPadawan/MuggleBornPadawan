@@ -6,6 +6,16 @@ disable-model-invocation: true
 
 # To Spec
 
+## Preamble (MANDATORY — run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill to-spec
+```
+- Capture `SESSION_ID` from output.
+- Run at end:
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill to-spec --outcome success --session-id $SESSION_ID
+```
+
 Synthesize the active conversation, decisions, and codebase context into a clean, actionable specification. 
 Do NOT start a new interview. Synthesize what is already decided.
 
@@ -68,3 +78,10 @@ Define how tests run against the primary seam:
 ## 7. Out of Scope
 Explicitly list what this change will NOT do.
 ```
+
+## LLM Contract
+- **Inputs:** active conversation | existing ADRs / domain vocabulary | testing seam
+- **Outputs:** concise markdown specification saved to `docs/specs/<feature-slug>.md`
+- **Tools allowed:** read, write (only new spec file), bash (lean: `bb`, `rg`, `git`)
+- **Stop condition:** spec file written + public seam confirmed with user
+- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

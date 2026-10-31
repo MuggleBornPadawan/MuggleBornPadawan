@@ -6,7 +6,7 @@ description: >-
   Write and run tests adhering to Clojure/lean-machine conventions, public ns seams, and bb/clojure.test.
 ---
 
-# Test Authoring & Verification (Clojure / Polyglot)
+# Test Authoring & Verification (Clojure / Babashka)
 
 ## Preamble (MANDATORY — run first)
 ```bash
@@ -30,7 +30,7 @@ Rules:
 
 Clojure / lean-machine (AGENTS.md):
 - Test at the public `ns` seam: public `defn`, not `defn-`. Pure data in -> data out.
-- Runner priority: Live REPL Socket (`bb scripts/test_repl.bb` or REPL evaluation via `.socket-port`/`.nrepl-port`) -> `bb test -n my.ns` (fast, low RAM on 6 Gi) -> `clojure -M:test -n my.ns` -> `lein test`. Prefer REPL-driven refresh and test execution without restarting JVM.
+- Runner priority: Live REPL Socket (`bb scripts/test_repl.bb` or REPL evaluation via `.socket-port`/`.nrepl-port`) -> `bb test -n my.ns` (fast, low RAM on 6.3 Gi) -> `clojure -M:test -n my.ns` -> `lein test`. Prefer REPL-driven refresh and test execution without restarting JVM.
 - Use `clojure.test` + `bb`; ask before adding `test.check`/`criterium`. Keep deps minimal.
 - Style: idiomatic `->`/`->>` threading, clean `ns` requires; respect `clj-kondo` + `cljfmt`.
 

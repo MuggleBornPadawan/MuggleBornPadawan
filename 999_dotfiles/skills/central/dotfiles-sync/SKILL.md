@@ -3,7 +3,7 @@ name: dotfiles-sync
 triggers: [dotfiles, backup, harness sync]
 anti-triggers: [none]
 description: >-
-  Backup dotfiles via dotfiles.sh, commit and push to chromebook and main branches. Runs dotfiles backup, checks git status, commits changes, pushes chromebook, merges to main and pushes main. Use after editing dotfiles, prompts, skills, sysinfo.sh, or templates, or for daily backup.
+  Backup dotfiles via dotfiles.bb, commit and push to chromebook and main branches. Runs dotfiles backup, checks git status, commits changes, pushes chromebook, merges to main and pushes main. Use after editing dotfiles, prompts, skills, sysinfo.sh, or templates, or for daily backup.
 ---
 
 # Dotfiles Sync
@@ -17,9 +17,9 @@ Backup dotfiles and push to both branches (`chromebook` + `main` -> `origin`).
 
 ## When to use
 
-- After you edit: `~/.pi/agent/prompts/*`, `~/.pi/agent/skills/*`, `~/.bashrc`, `~/.emacs.d/*`, `700_linux/scripts/sysinfo.sh`, templates
+- After you edit: `~/.local/share/agent-prompts/*`, `~/.local/share/skills/*`, `~/.local/share/agent-memory/*`, `~/.bashrc`, `~/.emacs.d/*`, `700_linux/scripts/sysinfo.sh`, templates
 - Before you ask for help or before shutdown
-- Daily backup on lean box (6 Gi RAM, 31G disk)
+- Daily backup on lean box (6.3 Gi RAM, 31G disk)
 
 ## Quick start
 
@@ -35,11 +35,11 @@ Backup dotfiles and push to both branches (`chromebook` + `main` -> `origin`).
 ### 1. Backup
 
 ```bash
-~/MuggleBornPadawan/700_linux/bckp/dotfiles.sh --verbose
-# or --dry-run if user passed --dry-run
+bb ~/MuggleBornPadawan/700_linux/bckp/dotfiles.bb --verbose
+# or --dry-run if user passed --dry-run (dotfiles.sh also supported)
 ```
 
-- Source: manifest `PAIRS` in `dotfiles.sh` (single truth)
+- Source: manifest `PAIRS` in `manifest.edn` / `dotfiles.bb` (single truth)
 - Dest: `~/MuggleBornPadawan/999_dotfiles/` (plain files, git tracked)
 - Excludes secrets: `auth.json`, `hosts.yml`, `oauth_creds.json`, `*.db`, `*.log`, `node_modules/`, `sessions/`, `blobs/`
 - Verify: `Done: X ok, Y skipped, 0 failed`
@@ -48,11 +48,10 @@ Backup dotfiles and push to both branches (`chromebook` + `main` -> `origin`).
 ### 2. Check git status
 
 ```bash
-cd ~/MuggleBornPadawan
-git status --short
-git diff --stat
-git log --oneline -3
-git branch -vv
+git -C ~/MuggleBornPadawan status --short
+git -C ~/MuggleBornPadawan diff --stat
+git -C ~/MuggleBornPadawan log --oneline -3
+git -C ~/MuggleBornPadawan branch -vv
 ```
 
 - If no changes: stop and report "Nothing to commit - backup was clean"
@@ -125,7 +124,7 @@ See `bb ./scripts/backup_push.bb --help` for options.
 
 ## Safety rules
 
-- Never log secrets. `dotfiles.sh` already excludes `auth.json`, `hosts.yml`, `oauth_creds.json`.
+- Never log secrets. `manifest.edn` already excludes `auth.json`, `hosts.yml`, `oauth_creds.json`.
 - Lean box: do not run `ollama run`, `clojure -P`, `lein deps`, `docker pull`.
 - Timeout 30s for backup step.
 - Never force push (`--force`) without user confirm.
@@ -135,7 +134,7 @@ See `bb ./scripts/backup_push.bb --help` for options.
 
 - Show: commit hash on both branches (e.g., `55c2609a0`)
 - Show: `git branch -vv` both tracking `origin`
-- Show: `Done` msg from `dotfiles.sh`
+- Show: `Done` msg from `dotfiles.bb` (or `dotfiles.sh`)
 ## LLM Contract
 - **Inputs:** file path | module ns | git diff | user args — resolve via read/bash before acting
 - **Outputs:** concise markdown: table or bullets, no walls of text (ASD-STE100)

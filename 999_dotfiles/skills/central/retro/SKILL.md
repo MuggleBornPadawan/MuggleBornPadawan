@@ -6,6 +6,16 @@ disable-model-invocation: true
 
 # Retro
 
+## Preamble (MANDATORY — run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill retro
+```
+- Capture `SESSION_ID` from output.
+- Run at end:
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill retro --outcome success --session-id $SESSION_ID
+```
+
 Analyze a completed coding session to recommend permanent improvements to the agent's harness environment, automated checks, and memory rules.
 
 Default to inspecting the active conversation unless an external transcript path is provided.
@@ -52,3 +62,10 @@ Present findings as a prioritized table:
 | **P3** | Memory Rule | Obsolete rule in `gemini_tail.md` never triggers. | Prune stale line from central tail. |
 
 Provide the exact code snippets or file edits needed to implement each approved fix.
+
+## LLM Contract
+- **Inputs:** active conversation transcript | harness configs | error traces
+- **Outputs:** prioritized markdown table (ASD-STE100) + exact minimal edits
+- **Tools allowed:** read, bash (lean: `bb`, `rg`, `git`), edit (surgical)
+- **Stop condition:** session analyzed + actionable recommendations presented
+- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

@@ -5,6 +5,16 @@ description: Guidelines and mechanics for authoring skills, prompt templates, an
 
 # Writing for Agents
 
+## Preamble (MANDATORY — run first)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill writing-for-agents
+```
+- Capture `SESSION_ID` from output.
+- Run at end:
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill writing-for-agents --outcome success --session-id $SESSION_ID
+```
+
 Reference for authoring documents consumed by coding agents: skills in `~/.local/share/skills`, prompts in `~/.local/share/agent-prompts`, and rules in `~/.local/share/agent-memory/AGENTS_CORE.md`.
 
 ---
@@ -68,3 +78,10 @@ Agents rush toward completion when visible future steps distract them:
 - **Environment as Truth**: Do not document what `--help`, `deps.edn`, or `git status` already report.
 - **Hunt No-Ops**: Delete instructions that the model already obeys by default.
 - **Prune Stale Layers**: Remove rules for abandoned tools or fixed edge cases to prevent sediment buildup.
+
+## LLM Contract
+- **Inputs:** skill | prompt | rule authoring request
+- **Outputs:** concise markdown document adhering to token economy and single truth
+- **Tools allowed:** read, bash (lean: `bb`, `rg`), edit (surgical), write (only new files)
+- **Stop condition:** authored document verified against context constraints (<32k context)
+- **Lean box:** 6.3 Gi RAM — prefer bb over JVM, never ollama run/docker pull/clojure -P without ask

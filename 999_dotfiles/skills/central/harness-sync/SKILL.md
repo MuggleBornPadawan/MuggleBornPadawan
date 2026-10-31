@@ -19,7 +19,7 @@ Maintains a single centralized repository for system memory, skills, and prompts
 
 - **Memory (Assembled Model):**
   - **Ground Truth Core:** `~/.local/share/agent-memory/AGENTS_CORE.md` (Hardware specs, lean Clojure/Babashka rules, Chitrapata ontology, brand tokens)
-  - **Harness Tails:** `~/.local/share/agent-memory/tails/` (`gemini_tail.md`, `pi_tail.md`, `opencode_tail.md`)
+  - **Harness Tails:** `~/.local/share/agent-memory/tails/` (`gemini_tail.md`, `pi_tail.md`, `opencode_tail.md`, `emacs_tail.md`)
   - **Assembled Targets:** `~/.local/share/agent-memory/assembled/` (Compiled per harness: `AGENTS_CORE.md` + tail)
 - **Skills:** `~/.local/share/skills/` (Shared skill collection)
 - **Prompts / Commands:** `~/.local/share/agent-prompts/` (Shared prompt and slash command collection)

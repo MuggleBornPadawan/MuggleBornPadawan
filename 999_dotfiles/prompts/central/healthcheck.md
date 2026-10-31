@@ -35,7 +35,7 @@ Do these steps:
    - **Journal:** No permission errors. Show last errors if present.
    - **Security (Section 7):** Pending updates >0 = WARN (`apt upgrade`), `reboot-required` = WARN, firewall missing (ufw/nft/iptables) = INFO (optional on Crostini), clamav/freshclam inactive = OK (no scan here).
    - **Tech stack (--tech):** All must be OK:
-     - Java Temurin-25 at /usr/lib/jvm/temurin-25-jdk-amd64 (25.0.4.1 LTS)
+     - Java Temurin-25 at /usr/lib/jvm/temurin-25-jdk-amd64 (25.0.5 LTS)
      - Clojure CLI 1.12.6, Lein 2.12.0, bb 1.13.223 (>=1.13.219), clj-kondo, clojure-lsp, neil, jet, cljfmt
      - SQLite :memory: check OK
      - PostgreSQL: pg_isready on localhost
