@@ -199,9 +199,89 @@
     (when (pos? (:failed @stats))
       (System/exit 1))))
 
+(defn glob->regex [pat]
+  (let [p (-> pat
+              (str/replace "." "\\.")
+              (str/replace "*" ".*"))]
+    (re-pattern (str "(?i)" p "$"))))
+
+(defn run-audit! [manifest]
+  (let [home (System/getProperty "user.home")
+        tracked-srcs (map #(expand-home (:src %)) (:pairs manifest))
+        tracked-set (set tracked-srcs)
+        tracked-dirs (set (filter #(try (fs/directory? %) (catch Exception _ false)) tracked-srcs))
+        excludes (:excludes manifest)
+        exclude-res (map glob->regex (remove #(str/ends-with? % "/") excludes))
+
+        excluded? (fn [p]
+                    (let [name (str (fs/file-name p))]
+                      (some #(re-find % name) exclude-res)))
+
+        covered? (fn [p]
+                   (or (contains? tracked-set p)
+                       (some #(str/starts-with? p (str % "/")) tracked-dirs)))
+
+        secret-like? (fn [p]
+                       (let [name (str/lower-case (str (fs/file-name p)))]
+                         (some #(str/includes? name %) ["token" "oauth" "secret" "password" "auth" "cred"])))
+
+        ignore-files #{"." ".." ".bash_history" ".history" ".python_history" ".clojure_history"
+                       ".sqlite_history" ".lesshst" ".viminfo" ".Xauthority" ".calc_history"
+                       ".sudo_as_admin_successful" ".wake_up_log.txt" ".wget-hsts" ".emacs.desktop"
+                       ".slime-history.eld" ".geiser_history.mit" ".geiser_history.racket"}
+
+        home-dots (->> (try (fs/list-dir home) (catch Exception _ []))
+                       (filter fs/regular-file?)
+                       (map str)
+                       (filter #(str/starts-with? (str (fs/file-name %)) "."))
+                       (remove #(or (contains? ignore-files (str (fs/file-name %)))
+                                    (str/starts-with? (str (fs/file-name %)) ".bash_history"))))
+
+        config-files (when (fs/exists? (str home "/.config"))
+                       (->> (fs/glob (str home "/.config") "*/*.{json,toml,edn,conf,ini,el,yml,yaml}")
+                            (map str)))
+
+        all-candidates (sort (distinct (concat home-dots config-files)))
+
+        missing (filter #(not (fs/exists? %)) tracked-srcs)
+        unmanaged (remove covered? all-candidates)
+        unmanaged-secrets (filter #(and (secret-like? %) (not (excluded? %))) unmanaged)]
+
+    (println "=== Dotfiles Manifest Audit ===")
+    (println (str "Tracked manifest pairs: " (count (:pairs manifest))))
+    (println (str "Exclusion rules:        " (count excludes)))
+    (println "────────────────────────────────────────")
+
+    (when (seq missing)
+      (println "\n[!] Tracked items missing on disk:")
+      (doseq [m missing]
+        (println (str "    - " m))))
+
+    (when (seq unmanaged-secrets)
+      (println "\n[!] WARNING: Potential unmanaged secrets (not in :excludes):")
+      (doseq [s unmanaged-secrets]
+        (println (str "    - " s))))
+
+    (let [unmanaged-safe (remove excluded? unmanaged)]
+      (if (seq unmanaged-safe)
+        (do
+          (println "\n[i] Candidate unmanaged dotfiles on disk:")
+          (doseq [u unmanaged-safe]
+            (println (str "    - " u))))
+        (println "\n[✓] All candidate dotfiles are managed or excluded.")))
+
+    (let [excluded-found (filter excluded? unmanaged)]
+      (when (seq excluded-found)
+        (println (str "\n[✓] Properly excluded files found on disk: " (count excluded-found)))))
+
+    (println "────────────────────────────────────────")
+    (if (seq unmanaged-secrets)
+      (do (println "Audit Status: WARNING (Unexcluded secrets detected)") (System/exit 1))
+      (println "Audit Status: OK"))))
+
 (defn parse-args [args]
   (loop [remaining args
-         opts {:dry-run? false :verbose? false :restore? false :force? false :filters []}]
+         opts {:dry-run? false :verbose? false :restore? false :force? false :audit? false :filters []}]
     (if (empty? remaining)
       opts
       (let [arg (first remaining)]
@@ -210,6 +290,7 @@
           ("--verbose" "-v") (recur (rest remaining) (assoc opts :verbose? true))
           ("--restore" "-r") (recur (rest remaining) (assoc opts :restore? true))
           ("--force" "-f") (recur (rest remaining) (assoc opts :force? true))
+          ("--audit" "-a") (recur (rest remaining) (assoc opts :audit? true))
           ("-h" "--help")
           (do
             (println "Usage: dotfiles.bb [options] [filters...]")
@@ -220,6 +301,7 @@
             (println "  -v, --verbose   Verbose logging")
             (println "  -r, --restore   Restore files from 999_dotfiles into HOME")
             (println "  -f, --force     Skip confirmation prompt on restore")
+            (println "  -a, --audit     Audit dotfiles on disk vs manifest.edn")
             (println "  -h, --help      Show this help message")
             (println "")
             (println "Manifest: manifest.edn in script directory")
@@ -232,9 +314,10 @@
   (let [opts (parse-args args)
         script-dir (fs/parent (fs/canonicalize (or *file* ".")))
         manifest (load-manifest script-dir)]
-    (if (:restore? opts)
-      (run-restore! manifest opts)
-      (run-backup! manifest opts))))
+    (cond
+      (:audit? opts) (run-audit! manifest)
+      (:restore? opts) (run-restore! manifest opts)
+      :else (run-backup! manifest opts))))
 
 (when (= *file* (System/getProperty "babashka.file"))
   (apply -main *command-line-args*))
