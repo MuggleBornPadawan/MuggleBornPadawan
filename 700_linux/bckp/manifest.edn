@@ -6,6 +6,7 @@
  :excludes
  ["hosts.yml"              ;; gh auth token
   "auth.json"              ;; pi auth token
+  "service.json"           ;; opencode service password token
   "oauth_creds.json"       ;; gemini credentials
   "google_accounts.json"
   "mcp-oauth-tokens*"
@@ -38,11 +39,12 @@
   {:src "~/bin/cleanup.sh"                    :dest "home/bin/cleanup.sh"}
   {:src "~/bin/cleanup-boot.sh"               :dest "home/bin/cleanup-boot.sh"}
 
-  ;; Git, editor, tmux, ssh
+  ;; Git, editor, tmux, ssh, lisp
   {:src "~/.gitconfig"                        :dest "home/.gitconfig"}
   {:src "~/.gitignore"                        :dest "home/.gitignore"}
   {:src "~/.dockerignore"                     :dest "home/.dockerignore"}
   {:src "~/.vimrc"                            :dest "home/.vimrc"}
+  {:src "~/.sbclrc"                           :dest "home/.sbclrc"}
   {:src "~/.tmux.conf"                        :dest "home/.tmux.conf"}
   {:src "~/.selected_editor"                  :dest "home/.selected_editor"}
   {:src "~/.ssh/config"                       :dest "home/.ssh/config"}
@@ -84,6 +86,7 @@
   ;; OpenCode (global)
   {:src "~/.config/opencode/AGENTS.md"        :dest "home/.config/opencode/AGENTS.md"}
   {:src "~/.config/opencode/opencode.jsonc"   :dest "home/.config/opencode/opencode.jsonc"}
+  {:src "~/.config/opencode/cli.json"         :dest "home/.config/opencode/cli.json"}
   {:src "~/.config/opencode/package.json"     :dest "home/.config/opencode/package.json"}
   {:src "~/.config/opencode/package-lock.json":dest "home/.config/opencode/package-lock.json"}
   {:src "~/.config/opencode/.gitignore"       :dest "home/.config/opencode/.gitignore"}

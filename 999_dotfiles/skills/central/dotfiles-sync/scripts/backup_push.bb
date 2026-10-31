@@ -8,11 +8,26 @@
 (ns backup-push
   (:require [babashka.process :refer [shell]]
             [babashka.fs :as fs]
+            [clojure.edn :as edn]
             [clojure.string :as str]
             [clojure.tools.cli :as cli]))
 
 (def repo-dir (str (fs/home) "/MuggleBornPadawan"))
 (def dotfiles-bb (str repo-dir "/700_linux/bckp/dotfiles.bb"))
+(def manifest-file (str repo-dir "/700_linux/bckp/manifest.edn"))
+
+(defn- manifest-dest-roots []
+  (try
+    (when (fs/exists? manifest-file)
+      (let [m (edn/read-string (slurp manifest-file))]
+        (->> (:pairs m)
+             (remove #(false? (:backup? %)))
+             (map :dest)
+             (map #(first (str/split % #"/")))
+             (remove nil?)
+             distinct
+             (map #(str "999_dotfiles/" %)))))
+    (catch Exception _ nil)))
 
 (defn log-msg [& msgs]
   (let [ts (.format (java.time.LocalDateTime/now)
@@ -96,14 +111,18 @@
             (log-msg (str "Changes: " changes " files"))
             (print-lines (git-output "diff" "--stat") 20)))))
 
-    ;; 3. Stage explicit list
-    (let [stage-list ["700_linux/bckp"
-                      "700_linux/scripts/sysinfo.sh"
-                      "999_dotfiles/home"
-                      "999_dotfiles/prompts"
-                      "999_dotfiles/skills"
-                      "999_dotfiles/templates"
-                      "999_dotfiles/by-tool"]]
+    ;; 3. Stage explicit list (derived from manifest.edn with safe fallback)
+    (let [manifest-roots (manifest-dest-roots)
+          stage-list (distinct
+                      (concat ["700_linux/bckp"
+                               "700_linux/scripts/sysinfo.sh"]
+                              (or (seq manifest-roots)
+                                  ["999_dotfiles/home"
+                                   "999_dotfiles/prompts"
+                                   "999_dotfiles/skills"
+                                   "999_dotfiles/memory"
+                                   "999_dotfiles/templates"
+                                   "999_dotfiles/by-tool"])))]
       (log-msg "Step 3: Stage explicit list:" (str/join " " stage-list))
       (doseq [p stage-list]
         (when (fs/exists? (str repo-dir "/" p))
