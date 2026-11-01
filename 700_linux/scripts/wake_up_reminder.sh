@@ -5,7 +5,7 @@
 # Description: A simple reminder script using espeak for periodic alerts.
 
 # Define the message variable
-REMINDER_TEXT="Time to wake up and get moving."
+REMINDER_TEXT="Time to drink water water water. timshel"
 
 # Ensure audio environment for cron / non-interactive shells
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
@@ -15,7 +15,9 @@ export PULSE_SERVER="${PULSE_SERVER:-unix:${XDG_RUNTIME_DIR}/pulse/native}"
 espeak-ng -p 80 -a 100 "[[O::]]"
 
 # timshel - thou mayest 
-espeak-ng -s 150 -v he "שלום עולם  הֲלוֹא אִם־תֵּיטִיב שְׂאֵת וְאִם לֹא תֵיטִיב לַפֶּתַח חַטָּאת רֹבֵץ וְאֵלֶיךָ תְּשׁוּקָתוֹ וְאַתָּה תִּמְשָׁל־בּוֹ׃"
+espeak-ng -s 150 -v he "תִּמְשָׁל"
+
+#espeak-ng -s 150 -v he "שלום עולם  הֲלוֹא אִם־תֵּיטִיב שְׂאֵת וְאִם לֹא תֵיטִיב לַפֶּתַח חַטָּאת רֹבֵץ וְאֵלֶיךָ תְּשׁוּקָתוֹ וְאַתָּה תִּמְשָׁל־בּוֹ׃"
 
 # -s 150 sets the speed, -v en-us sets the voice
 espeak -s 150 -v en-us "$REMINDER_TEXT"
