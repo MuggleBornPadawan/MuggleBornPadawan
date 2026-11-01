@@ -50,3 +50,5 @@
 {:t 1793534763447, :skill "test-pilot", :outcome "success", :sid "1793534760236-test-pilot", :duration-ms 3211}
 {:t 1793534983450, :skill "dotfiles-sync", :outcome "success", :sid "1793534909611-dotfiles-sync", :duration-ms 73839}
 {:t 1793537039953, :skill "harness-sync", :outcome "success", :sid "1793537029388-harness-sync", :duration-ms 10565}
+{:t 1793537084262, :skill "dotfiles-sync", :outcome "success", :sid "1793537056229-dotfiles-sync", :duration-ms 28033}
+{:t 1793538671906, :skill "writing-skills", :outcome "success", :sid "1793538660539-writing-skills", :duration-ms 11367}
