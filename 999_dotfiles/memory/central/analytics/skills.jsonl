@@ -43,3 +43,6 @@
 {:t 1793435983166, :skill "dotfiles-sync", :outcome "unknown", :sid "1793435910927-dotfiles-sync"}
 {:t 1793436461494, :skill "dotfiles-sync", :outcome "unknown", :sid "1793436444538-dotfiles-sync"}
 {:t 1793436769119, :skill "dotfiles-sync", :outcome "unknown", :sid "1793436740816-dotfiles-sync"}
+{:t 1793531384751, :skill "dotfiles-sync", :outcome "unknown", :sid "1793531318672-dotfiles-sync"}
+{:t 1793532343824, :skill "harness-sync", :outcome "unknown", :sid "1793532273799-harness-sync"}
+{:t 1793532891276, :skill "harness-sync", :outcome "success", :sid "1793532880265-harness-sync"}

@@ -35,11 +35,9 @@
     "~/.pi/agent/prompts/explain.md",
     "~/.pi/agent/prompts/find-bugs.md",
     "~/.pi/agent/prompts/healthcheck.md",
-    "~/.pi/agent/prompts/pick-model.md",
     "~/.pi/agent/prompts/pr.md",
     "~/.pi/agent/prompts/refactor.md",
     "~/.pi/agent/prompts/simplify.md",
-    "~/.pi/agent/prompts/sync-free-models.md",
     "~/.pi/agent/prompts/test.md"
   ],
   "permission": {

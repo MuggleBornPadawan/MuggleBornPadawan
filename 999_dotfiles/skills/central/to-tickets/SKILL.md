@@ -1,11 +1,10 @@
 ---
 name: to-tickets
-description: >-
-  Break a plan, spec, or discussion into vertical tracer-bullet tickets with explicit blocking dependencies.
+description: "Break spec/plan/conversation into tracer-bullet vertical tickets with blocking edges. Clojure-adapted: slice via ns APIs, expand-contract for wide refactors. Use when: tickets, tracer bullet, blocked by, vertical slice."
 disable-model-invocation: true
 ---
 
-# To Tickets
+# To Tickets -- Central + Clojure Patch
 
 ## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
 ```bash
@@ -17,67 +16,94 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill to-tickets
 bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill to-tickets --outcome success --session-id $SESSION_ID
 ```
 
-Break a plan, spec, or conversation into **tracer-bullet tickets**: narrow end-to-end vertical slices that each declare their **blocking dependencies**.
+Break a plan, spec, or conversation into **tracer-bullet tickets**: narrow end-to-end vertical slices, each declaring **blocking dependencies**.
 
-## Rules for Slices
+> **Merged:** central ticket file conventions (`docs/tickets/`) + `mattpocock/skills:to-tickets` Clojure adaption (vertical slices, `ns` APIs, `expand-contract`). Original at `https://github.com/mattpocock/skills/tree/main/skills/engineering/to-tickets`.
 
-1. **Vertical, not horizontal**:
-   - Each slice cuts through the whole path: input data shape → pure core function → persistence/system boundary → `clojure.test` verification.
-   - Do not create single-layer horizontal tickets (e.g., "build all database schemas").
-2. **Context Window Constraint**:
-   - Every ticket must be small enough to complete in a single agent session within <32k context tokens.
-3. **Executable & Verifiable**:
-   - Each completed ticket must be runnable and verifiable in a live REPL or test runner on its own.
-4. **Expand-Contract for Wide Refactors**:
-   - When a change touches many namespaces (e.g., renaming a core domain key or changing a shared spec), do not force a single vertical slice.
-   - **Expand**: Add the new data key or function beside the old one so nothing breaks.
-   - **Migrate**: Update caller namespaces in batches.
-   - **Contract**: Remove the old key/function once callers are migrated.
+## Slice Rules
 
----
+1. **Vertical, not horizontal:**
+   - Each slice cuts through whole path: `malli`/`spec` + `ns` public fns + handler/repo + `clojure.test` at seam + (if needed) `SQLite`/`PostgreSQL` migration. UI is optional; when no UI, demo is REPL call or `bb` task.
+   - Do not create single-layer tickets (e.g., "build all schemas").
+2. **Context Window Constraint:** Each ticket fits in single fresh context window (<32k, ~one `ns`, few fns).
+3. **Executable & Verifiable:** Each completed ticket is runnable via `clojure -M:test`, `bb test`, or REPL eval on its own.
+4. **Expand-Contract for Wide Refactors:** When a change fans across codebase (rename EDN key, retype shared spec) -- no vertical slice can land green:
+   - **Expand:** Add new form beside old so nothing breaks.
+   - **Migrate:** Update call sites in batches per `src/` subdir or `ns`, each batch its own ticket blocked by expand, keeping CI green.
+   - **Contract:** Delete old form once no caller remains, blocked by every migrate batch.
+   - If batches can't stay green alone, share an integration branch and block a final `integrate-and-verify` ticket; green promised only there.
+5. **Prefactoring First:** Scan `deps.edn` / `project.clj`, `src/` layout, `bb.edn` tasks. Look to prefactor to make slices easy -- "make the change easy, then make the easy change."
 
 ## Process
 
 ### 1. Gather Input
-Read the referenced spec (e.g. `docs/specs/<feature>.md`) or extract context from the active discussion.
+Work from conversation context. If user passes reference (spec path `docs/specs/<slug>.md`, issue URL, plan), fetch and read full body + comments. Use `CONTEXT.md` vocabulary, respect `docs/adr/`.
 
-### 2. Draft Tickets & Dependencies
-- Assign each ticket a sequential number (`01`, `02`, `03`...).
-- Define explicit **Blocked by** references. A ticket with no blockers can start immediately.
+### 2. Explore Codebase (if needed)
+If not already explored, scan `deps.edn`/`project.clj`, `src/` ns layout, test runner, `bb.edn` tasks, DB choice (PostgreSQL vs SQLite) so slices pick right seam.
 
-### 3. Review Breakdown with User
-Present the draft plan as a concise table:
-- **ID & Title**
-- **Blocked by** (IDs)
-- **Delivered Behavior** (observable end-to-end outcome)
+### 3. Draft Vertical Slices
+- Number sequentially `01`, `02`, `03`... in dependency order (blockers first).
+- Define explicit **Blocked by** -- tickets that must complete first. No blockers = "can start immediately".
+- Quiz user -- present table:
+  | ID & Title | Blocked by | Delivered Behavior |
+  Ask:
+  - Is granularity right? (too coarse / too fine)
+  - Are blocking edges correct -- does each only depend on genuine gates?
+  - Merge or split further?
+  Iterate until user approves.
 
-Ask:
-- Is ticket granularity appropriate?
-- Are dependency blockers strictly necessary?
-- Should any tickets merge or split?
+### 4. Publish to Tracker
 
-### 4. Write Ticket Files
-Save approved tickets locally to `docs/tickets/<feature-slug>/<NN>-<slug>.md`:
-- One file per ticket in dependency order.
-- If a project tracker CLI (`gh`, `glab`) is configured and requested, publish issues there with blocker links.
+**How** depends on `docs/agents/issue-tracker.md` / `/setup-matt-pocock-skills` config -- tickets same, shape differs:
 
----
+- **Local files (default `docs/tickets/<feature-slug>/`):** Write one file per ticket `docs/tickets/<slug>/<NN>-<slug>.md` (or `.scratch/<feature-slug>/issues/<NN>-<slug>.md` for legacy). Use template below -- one ticket per file, never combined.
+- **Real tracker (GitHub, Linear, …):** Publish one issue per ticket in dependency order so blocking edges use real IDs. Use platform's native blocking / sub-issue where available; otherwise set "Blocked by" to blocking issues. Apply `ready-for-agent` label.
 
-## Ticket File Template
+Work the **frontier:** any ticket whose blockers are all done. For linear chain, top to bottom.
 
-Save as `docs/tickets/<feature-slug>/<NN>-<slug>.md`:
+### Ticket File Template -- `docs/tickets/<slug>/<NN>-<slug>.md`
 
 ```markdown
 # <NN>: <Ticket Title>
 
 **Delivered Behavior:**
-Concise summary of the end-to-end feature or behavior delivered.
+Concise end-to-end behaviour this ticket makes work (user perspective, not layer list).
 
 **Blocked By:**
 - `<MM>-<slug>` (or "None: can start immediately")
+
+**Status:** ready-for-agent
+
+**Clojure seam:** `ns`/public `defn` under test (e.g. `app.orders/create-order`)
 
 **Acceptance Criteria:**
 - [ ] Core transformation handles valid data in REPL.
 - [ ] Boundary integration verified with `clojure.test`.
 - [ ] Edge cases (nil, invalid shape) tested.
+- [ ] Criterion is behaviour, not impl (not `defn-` internals)
 ```
+
+Legacy local alternative (`.scratch/issues/`):
+
+```markdown
+# <NN>: <Ticket title>
+
+**What to build:** End-to-end behaviour, user perspective.
+
+**Blocked by:** Numbers/titles of gating tickets, or "None (can start immediately)".
+
+**Status:** ready-for-agent
+
+**Clojure seam:** `ns`/public `defn` and verification: `clojure -M:test` or `bb test` or REPL snippet.
+
+- [ ] Acceptance criterion 1 (observable via public API)
+- [ ] Acceptance criterion 2
+```
+
+Avoid specific file paths or code snippets -- they stale fast. Exception: prototype snippet that encodes decision precisely; trim to decision-rich parts, note provenance.
+
+## Clojure Guardrails
+
+- No `npm`/`tsc`. Use `clojure -M:test`, `bb test`, `clj-kondo --lint`, `cljfmt check`.
+- Prefer `deps.edn`; respect existing `project.clj`. Keep deps minimal -- ask before adding.
