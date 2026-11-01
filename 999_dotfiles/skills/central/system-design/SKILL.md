@@ -1,6 +1,6 @@
 ---
 name: system-design
-description: "System design pattern playbook in 12 lines. Use when: system design interview, scalability, caching, queue, load balancer, sharding, CDN, rate limiting, circuit breaker, idempotency, observability."
+description: "System design pattern playbook in 12 lines. Use when: system design, scalability, architecture trade-offs, caching, queue, load balancer, sharding, CDN, rate limiting, circuit breaker, idempotency, observability."
 ---
 
 # System Design — 12 Patterns
@@ -10,8 +10,6 @@ description: "System design pattern playbook in 12 lines. Use when: system desig
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-design
 ```
 - Close: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
-
-Source: Tanuj (@tanujDE3180) — Nov 1 2026 — "System Design in 12 lines" (2.3K views). Expanded with trade-offs and lean-box mapping.
 
 ---
 
@@ -117,12 +115,12 @@ Source: Tanuj (@tanujDE3180) — Nov 1 2026 — "System Design in 12 lines" (2.3
 
 ---
 
-## 3. Decision Order (Interview Flow)
+## 3. Decision Order
 
 1. **Measure first** — `napkin-math` for QPS/latency/cost before patterns.
 2. **Cheapest first:** Index → Cache → Replica → Queue → CDN → LB → Shard.
-3. **State trade-off each step:** "Cache speeds reads but adds invalidation — use TTL 60s."
-4. **Lean check:** "On single-host `bb`/Postgres, I would stop at cache+index."
+3. **State trade-off each step:** e.g., cache speeds reads but adds invalidation — use TTL 60s.
+4. **Lean check:** On single-host `bb`/Postgres, stop at cache+index before distributing.
 
 ---
 
@@ -136,13 +134,13 @@ Source: Tanuj (@tanujDE3180) — Nov 1 2026 — "System Design in 12 lines" (2.3
 
 ---
 
-## 5. Interview Checklist
+## 5. Design Review Checklist
 
-- [ ] Restate QPS, read/write ratio, latency SLO.
-- [ ] Draw client → LB → API → cache → DB → queue/CDN path.
-- [ ] For each pattern used, state 1 trade-off + 1 alternative not chosen.
-- [ ] Mention capacity via `napkin-math` (e.g., "Redis 500μs, DB 10ms").
-- [ ] Close with observability + failure modes.
+- [ ] Define QPS, read/write ratio, latency SLO.
+- [ ] Map client → LB → API → cache → DB → queue/CDN path.
+- [ ] For each pattern used, note 1 trade-off + 1 alternative not chosen.
+- [ ] Validate capacity via `napkin-math` (e.g., "Redis 500μs, DB 10ms").
+- [ ] Include observability + failure modes.
 
 ---
 
@@ -150,4 +148,3 @@ Source: Tanuj (@tanujDE3180) — Nov 1 2026 — "System Design in 12 lines" (2.3
 
 - `napkin-math` skill — latency/throughput/cost numbers.
 - `performance` skill — local JVM hot-path (do before distributing).
-- Original tweet: https://x.com/tanujDE3180/status/2116810542686064740
