@@ -9,7 +9,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill context-keeper
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Use this skill to systematically manage your token context when performing long-running tasks.
 

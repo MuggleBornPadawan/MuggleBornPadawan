@@ -9,7 +9,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill write-judge-prompt
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Design a focused, binary Pass/Fail evaluator for one specific failure mode.
 

@@ -5,6 +5,14 @@ description: Use when you have a spec or requirements for a multi-step task, bef
 
 # Writing Plans
 
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill writing-plans
+```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+
+> **Delegation:** Prompt `plan.md` delegates here.
+
 ## Overview
 
 Write comprehensive implementation plans assuming the engineer has zero context for our codebase and questionable taste. Document everything they need to know: which files to touch for each task, code, testing, docs they might need to check, how to test it. Give them the whole plan as bite-sized tasks. DRY. YAGNI. TDD. Frequent commits.
@@ -169,3 +177,13 @@ After saving the plan, offer execution choice:
 **If Inline Execution chosen:**
 - **REQUIRED SUB-SKILL:** Use superpowers:executing-plans
 - Batch execution with checkpoints for review
+
+## Outside Review Gate (Plan Gate)
+- After draft plan: get second opinion.
+- Use other harness if present: Pi, Gemini, or OpenCode subagent.
+- Ask: score 1-10. List top 3 risks. List missing edge cases.
+- Rule:
+  - Score >=7: proceed to build.
+  - Score <7: revise plan. Re-review once.
+  - No reviewer present: note `REVIEW: skipped, no outside voice`. Proceed.
+- Never block user. User decides. Agreement is signal, not proof.

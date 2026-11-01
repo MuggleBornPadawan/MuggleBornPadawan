@@ -10,7 +10,7 @@ disable-model-invocation: true
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill to-spec
 ```
-- Capture `SESSION_ID` from output.
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 - Run at end:
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill to-spec --outcome success --session-id $SESSION_ID

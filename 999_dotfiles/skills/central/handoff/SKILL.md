@@ -9,7 +9,7 @@ description: "Compact current session into handoff for next agent to continue. C
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill handoff
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill handoff --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Write a handoff document summarising the current conversation so a fresh agent can continue without context bloat. Save efficiently -- reference, don't duplicate.
 
@@ -36,7 +36,7 @@ Write a handoff document summarising the current conversation so a fresh agent c
 5. **Suggested Skills for Next Agent:**
    - `to-tickets` if spec still needs slicing
    - `implement` if frontier tickets ready
-   - `diagnosing-bugs` / `systematic-debugging` if bug open
+   - `diagnosing-bugs` if bug open
    - `code-review` before commit
    - `codebase-design` / `domain-modeling` if seam or glossary open
 6. **Open Questions / Decisions Deferred:** What next agent must ask human.

@@ -9,7 +9,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill pcg
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Compose `quil` + `raylib` + `webgpu` + `pcg-spaces`. `threejs` is WebGL-only preview — not USD. Do not duplicate. This skill is the glue.
 

@@ -5,8 +5,15 @@ description: "Diagnosis loop for hard bugs and performance regressions. Clojure-
 
 # Diagnosing Bugs — Clojure Patch
 
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill diagnosing-bugs
+```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+
 A discipline for hard bugs. Skip phases only when explicitly justified. Do this sequentially — **pi has no background agents**, so run each phase in this session.
 
+> **Delegation:** Prompt `fix.md` delegates here.
 > **Clojure adaption of `mattpocock/skills:diagnosing-bugs`.** Pure Markdown, 0 deps. Lean-machine safe. See original at `https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs`. Location: `~/.agents/skills/diagnosing-bugs/` (global). `/reload` after edit.
 
 When exploring the codebase, read `CONTEXT.md` (if it exists) to get a clear mental model of the relevant `ns` modules, and check ADRs in `docs/adr/` in the area you're touching.

@@ -9,7 +9,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill code-review
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Review the specified namespace, file, or the current git diff sequentially.
 

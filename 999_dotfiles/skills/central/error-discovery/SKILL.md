@@ -9,7 +9,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill error-discovery
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Discover failure modes in AI applications before writing metrics.
 Adapted for Pi: turn-based workflow, no subagents, 0 extra dependencies.

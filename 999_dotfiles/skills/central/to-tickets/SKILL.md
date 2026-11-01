@@ -10,7 +10,7 @@ disable-model-invocation: true
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill to-tickets
 ```
-- Capture `SESSION_ID` from output.
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 - Run at end:
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill to-tickets --outcome success --session-id $SESSION_ID

@@ -1,6 +1,7 @@
 ---
 name: writing-for-agents
 description: "Guidelines for authoring skills, prompts, AGENTS_CORE.md -- two loads, context pointers, leading words, pruning, hierarchy. Use when: writing skill, AGENTS.md, prompt template."
+disable-model-invocation: true
 ---
 
 # Writing for Agents -- Central + Clojure/Pi Patch
@@ -9,11 +10,7 @@ description: "Guidelines for authoring skills, prompts, AGENTS_CORE.md -- two lo
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill writing-for-agents
 ```
-- Capture `SESSION_ID` from output.
-- Run at end:
-```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill writing-for-agents --outcome success --session-id $SESSION_ID
-```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Reference for writing any document an agent consumes: skills in `~/.local/share/skills`, prompts in `~/.local/share/agent-prompts`, rules in `~/.local/share/agent-memory/AGENTS_CORE.md`, plus Pi discovery (`~/.agents/skills/`, `~/.pi/agent/skills/`, `.pi/skills/`, `.agents/skills/`).
 

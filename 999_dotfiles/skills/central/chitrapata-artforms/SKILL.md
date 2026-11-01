@@ -9,7 +9,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill chitrapata-artforms
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Generate procedural art rooted in 12 indigenous Indian traditions via pure Clojure.
 Composes with `pcg` (triple render), `quil`, `raylib`, and `webgpu`.

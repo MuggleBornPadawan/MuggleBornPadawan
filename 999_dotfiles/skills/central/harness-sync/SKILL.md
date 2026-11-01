@@ -2,6 +2,7 @@
 name: harness-sync
 description: >-
   Centralized memory, skills, and prompt symlink manager across all coding harnesses (Antigravity Gemini, Pi, OpenCode). Use when: harness sync, symlink, assembled memory.
+disable-model-invocation: true
 ---
 
 # Centralized Harness Symlink Manager (Gemini, Pi, OpenCode)
@@ -9,7 +10,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill harness-sync
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Maintains a single centralized repository for system memory, skills, and prompts in `~/.local/share/`, and automatically establishes symbolic links across all active AI coding harnesses.
 

@@ -9,7 +9,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill prototype
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 A prototype is **throwaway code that answers a question**. The question decides the shape. **Clojure + lean-machine adapted.** See original at `https://github.com/mattpocock/skills` logic + pi `~/.pi/agent/skills/prototype`. Pure Markdown, 0 deps. Location: `~/.pi/agent/skills/prototype/` (global, pi). `/reload` after edit.
 

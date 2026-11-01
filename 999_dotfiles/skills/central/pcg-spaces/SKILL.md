@@ -9,7 +9,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill pcg-spaces
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Lean pointer to full research: `/home/rgroot/MuggleBornPadawan/999_art/pcg-spaces-usd-webgpu.md` (20KB, 14 primary sources: openusd.org + W3C WebGPU/WGSL).
 

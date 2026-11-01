@@ -21,7 +21,7 @@
         t0 (str (System/currentTimeMillis))]
     (try (fs/create-dirs sess-dir) (catch Exception _ nil))
     (try
-      (spit (str sess-dir "/" sid) skill)
+      (spit (str sess-dir "/" sid) (pr-str {:sid sid :skill skill :t0 (Long/parseLong t0)}))
       ;; prune files older than 2h
       (doseq [f (try (seq (fs/list-dir sess-dir)) (catch Exception _ nil))]
         (try

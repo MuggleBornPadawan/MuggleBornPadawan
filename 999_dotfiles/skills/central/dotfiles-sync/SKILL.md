@@ -2,6 +2,7 @@
 name: dotfiles-sync
 description: >-
   Backup dotfiles via dotfiles.bb, commit and push to chromebook and main branches. Runs dotfiles backup, checks git status, commits changes, pushes chromebook, merges to main and pushes main. Use after editing dotfiles, prompts, skills, sysinfo.sh, or templates, or for daily backup. Use when: dotfiles, backup, harness sync.
+disable-model-invocation: true
 ---
 
 # Dotfiles Sync
@@ -9,7 +10,7 @@ description: >-
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill dotfiles-sync
 ```
-- Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Backup dotfiles and push to both branches (`chromebook` + `main` -> `origin`).
 

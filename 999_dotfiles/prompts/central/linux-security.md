@@ -1,6 +1,7 @@
 ---
 name: linux-security
 description: Audit and remediate Debian 12 / Crostini security configurations (POSIX, ACLs, UFW, and AppArmor)
+disable-model-invocation: true
 ---
 
 INSPECTION-ONLY DEFAULT: Run checks and report. Only remediate if user explicitly says `remediate` or `fix`.

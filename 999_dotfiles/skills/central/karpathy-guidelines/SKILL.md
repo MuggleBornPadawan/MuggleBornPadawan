@@ -6,6 +6,12 @@ license: MIT
 
 # Karpathy Guidelines
 
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill karpathy-guidelines
+```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+
 Behavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
 
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
