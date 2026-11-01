@@ -6,7 +6,7 @@ description: >-
 
 # Writing for Agents
 
-## Preamble (MANDATORY — run first)
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill writing-for-agents
 ```

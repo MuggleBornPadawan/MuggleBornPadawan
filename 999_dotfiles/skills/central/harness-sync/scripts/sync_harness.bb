@@ -19,7 +19,7 @@
   #{"goal" "schedule" "browser" "plan" "grill-me" "teamwork-preview" "learn" "boost"})
 
 (def prompt-skill-collisions
-  #{"find-bugs" "refactor" "review" "test" "plan"})
+  #{"find-bugs" "refactor" "review" "test" "plan" "fix"})
 
 ;; Harness Configuration Targets
 (def harness-targets

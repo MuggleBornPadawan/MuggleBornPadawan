@@ -4,7 +4,7 @@ description: >-
   Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear. Use when: wayfinder map, decision tickets, multi-session.
 ---
 
-## Preamble (MANDATORY — run first)
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill wayfinder
 ```

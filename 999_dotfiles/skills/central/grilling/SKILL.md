@@ -1,15 +1,28 @@
 ---
 name: grilling
 description: >-
-  Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+  Grill plans, decisions, or ideas. Use when challenging assumptions, critiquing an implementation plan, stress-testing thinking, or using any 'grill' trigger phrases.
 ---
 
-## Preamble (MANDATORY — run first)
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill grilling
 ```
 - Capture SESSION_ID from output. Use for skill-end: `bb .../skill-end.bb --skill SKILL --session-id $SESSION_ID`
 
+## 1. Autonomous Plan Critique
+When evaluating a proposed implementation approach before writing code:
+1. **Challenge Assumptions**:
+   - Where will this plan fail?
+   - What unverified assumptions exist about dependencies, files, or environment constraints?
+   - What are the unintended side effects of this change?
+2. **Check Alternatives**:
+   - Is there a simpler, leaner approach?
+   - Can existing codebase helpers or idioms be reused?
+3. **Verify Compliance**:
+   - Does the plan strictly follow repository safety rules and stack conventions?
+
+## 2. Interactive Grilling Protocol
 Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.
 
 Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.

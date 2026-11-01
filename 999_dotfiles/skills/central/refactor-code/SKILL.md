@@ -5,7 +5,7 @@ description: >-
 ---
 
 # Incremental Code Refactorer
-## Preamble (MANDATORY — run first)
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill refactor-code
 ```

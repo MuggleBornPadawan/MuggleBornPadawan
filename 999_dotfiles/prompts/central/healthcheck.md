@@ -16,7 +16,7 @@ Do these steps:
    - Script redirects stdout to `~/bkp/sysinfo.log`.
    - Alias `--stack` = `--tech`. Env `NO_COLOR=1` strips ANSI, `SYSINFO_NO_IP=1` skips public IP.
 
-2. Read logs completely (use `read` tool, handle ANSI colors):
+2. Read logs completely (inspect full file, handle ANSI colors):
    - Read `~/bkp/sysinfo.log` completely.
 
 3. Analyze each section and make health table:
