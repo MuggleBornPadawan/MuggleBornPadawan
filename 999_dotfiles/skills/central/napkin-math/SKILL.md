@@ -2,6 +2,7 @@
 name: napkin-math
 description: >-
   Systems design estimation and back-of-the-envelope performance math. Use when sizing infrastructure, estimating throughput/latency for memory, SSD, network, serialization, and calculating cloud costs from first principles.
+disable-model-invocation: true
 ---
 
 # Napkin Math & Systems Estimation

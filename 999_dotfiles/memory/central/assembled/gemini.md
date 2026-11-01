@@ -4,12 +4,8 @@
 # Agent Ground Truth
 
 ## Machine & Lean Box Safety
-- OS: Debian 12 (bookworm), x86_64, kernel 6.6
-- CPU: Intel i3-1215U (host 2P+4E = 8 threads) — guest 8 vCPUs via KVM, line 64B, no `perf`
-- RAM: 6.3 Gi total (~5.3 Gi available) — avoid memory-heavy tooling; prefer lean approaches
-- Disk: 31 GB total (~10 GB free headroom) — ask before large downloads (>100 MB) or package installs
-- Prohibited heavy commands: Do NOT run `ollama run`, `docker pull`, `clojure -P`, or `lein deps` without asking
-- Freshness rule: Pinned environment details go stale. Trust live `sysinfo.sh --tech` output over this file on conflict.
+- Lean box: Debian 12, i3-1215U (8 vCPU), 6.3Gi RAM (~5.3 avail), 31GB disk (~10 free) — prefer `bb` (~15ms/30MB).
+- No `ollama run`/`docker pull`/`clojure -P`/`lein deps` or >100MB downloads without ask. Trust `sysinfo.sh --tech` over pinned.
 
 ## Primary & Exclusive Stack: Lean Clojure
 - Stack rule: 100% Clojure (JVM) or Babashka (`bb`). Write all scripts, CLI tools, scraping, data fetching, JSON/EDN/HTML tasks, and automation in Babashka.
