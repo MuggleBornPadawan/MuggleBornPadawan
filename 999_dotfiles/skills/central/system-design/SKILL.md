@@ -20,8 +20,8 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-desi
 | 1 | Slow reads | Cache | Redis, Memcached |
 | 2 | Write spikes | Queue buffer | Kafka, SQS, RabbitMQ |
 | 3 | Too much traffic | Load balancer | NGINX, HAProxy, ALB, L4/L7 |
-| 4 | Read-heavy DB | Read replicas | Postgres replicas, MySQL replicas |
-| 5 | Write-heavy DB | Sharding | Hash/range sharding, Vitess |
+| 4 | Read-heavy DB | Read replicas | Postgres replicas (`next.jdbc` + `HikariCP`) |
+| 5 | Write-heavy DB | Sharding | Hash/range sharding (last resort) |
 | 6 | Slow queries | Indexes | B-tree, hash, GIN |
 | 7 | Slow file loads | Object storage + CDN | S3/GCS + CloudFront/Cloudflare |
 | 8 | Temporary failures | Retry with backoff | Exponential + jitter |
@@ -40,7 +40,7 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-desi
 - **Tech:** Redis (persistent), Memcached (ephemeral). Cache-aside is default.
 - **Trade-off:** Invalidation hard; stale reads; thundering herd.
 - **Guard:** TTL + write-through for strong consistency; single-flight / mutex on miss.
-- **Lean box:** Prefer in-process cache (atom/LRU) before external Redis. External Redis only >1 instance.
+- **Lean box:** Prefer `atom` + `clojure.core.cache` (LRU, 5k entries) before external Redis. External Redis (`carmine`) only >1 host.
 
 ### 2. Queue — write spikes
 - **Solves:** Bursts, decoupling, async work.
@@ -48,21 +48,21 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-desi
 - **Tech:** Kafka (ordered, durable), SQS (serverless).
 - **Trade-off:** Async = eventual consistency; ordering + exactly-once hard; needs DLQ + backpressure.
 - **Guard:** Idempotent consumer + retry limit.
-- **Lean box:** Use `core.async` channel / SQLite queue before Kafka. Kafka only for cross-service durability.
+- **Lean box:** Use `core.async` chan + SQLite queue (`next.jdbc`, WAL mode) before Kafka. Kafka/SQS only for cross-service durability.
 
 ### 3. Load balancer — too much traffic
 - **Solves:** Horizontal scale, HA, TLS termination.
 - **Use when:** >1 app instance or zero-downtime deploys.
 - **Tech:** L4 TCP (fast), L7 HTTP (routing). Algorithms: round-robin, least-conn, consistent-hash.
 - **Trade-off:** LB is choke point. Needs HA pair + health checks.
-- **Lean box:** Single `bb`/http-kit instance often enough. Add LB only at >1 host.
+- **Lean box:** Single `bb`/`http-kit` + `Ring` instance often enough. Add NGINX/ALB only at >1 host.
 
 ### 4. Read replicas — read-heavy DB
 - **Solves:** Scale reads without sharding.
 - **Use when:** Read/write ratio > 5:1, replicas acceptable stale.
 - **Trade-off:** Replication lag (ms to sec); routing complexity.
 - **Guard:** Critical reads → primary; async replication → monitor lag.
-- **Lean box:** Postgres + 1 replica max. Prefer cache + indexes first.
+- **Lean box:** Postgres (`next.jdbc`+`HikariCP`) + 1 replica max; SQLite WAL for local. Prefer cache + indexes first.
 
 ### 5. Sharding — write-heavy DB
 - **Solves:** Write scale beyond single primary.
@@ -70,7 +70,7 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-desi
 - **Tech:** Hash sharding (even), range (query locality), directory service.
 - **Trade-off:** Hard to reshape; cross-shard JOIN/tx expensive; hot shards.
 - **Guard:** Choose stable shard key (`user_id`); use consistent hashing.
-- **Lean box:** Do NOT shard default. Prefer vertical scale + indexes + SQLite/Postgres tuning first. Shard is last resort.
+- **Lean box:** Do NOT shard. Prefer vertical scale + indexes + `next.jdbc` + SQLite/Postgres tuning first. Shard is last resort.
 
 ### 6. Indexes — slow queries
 - **Solves:** Scan → seek.
@@ -94,7 +94,7 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-desi
 - **Solves:** Abuse, fairness, downstream protection.
 - **Tech:** Token bucket (burst), sliding window (smooth), leaky bucket.
 - **Guard:** Per-user + per-IP + per-endpoint; return 429 + `Retry-After`.
-- **Lean box:** In-memory token bucket before Redis-based gateway.
+- **Lean box:** In-memory token bucket (`atom` + sliding window) before Redis-based gateway.
 
 ### 10. Circuit breaker — one service failing
 - **Solves:** Prevent cascade.
@@ -111,7 +111,7 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-desi
 - **Pillars:** Logs (event), Metrics (counter/gauge), Tracing (request path).
 - **Stack:** Prometheus + Grafana (metrics), ELK/Loki (logs), Jaeger/OTel (traces).
 - **Guard:** Correlation ID across services; structured JSON logs; alert on SLO not CPU.
-- **Lean box:** `println` + `bb` + file logs before full OTel. Add metrics only for prod.
+- **Lean box:** `timbre`/`tools.logging` + `println` + `bb` file logs before full OTel. Add Prometheus only for prod.
 
 ---
 
@@ -141,6 +141,20 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-desi
 - [ ] For each pattern used, note 1 trade-off + 1 alternative not chosen.
 - [ ] Validate capacity via `napkin-math` (e.g., "Redis 500μs, DB 10ms").
 - [ ] Include observability + failure modes.
+
+---
+
+## 6. Lean Clojure Stack Mapping
+
+| Pattern | Lean default (this box: 6.3Gi RAM, `bb` 15ms) | Scale-out (only when `napkin-math` proves saturation) |
+|---|---|---|
+| Cache | `atom` + `clojure.core.cache` (LRU) | Redis (`carmine`) / Memcached only if >1 host |
+| Queue | `core.async` chan + SQLite queue (`next.jdbc`, WAL) | Kafka / SQS only cross-service durable |
+| DB | SQLite (local) / Postgres (`next.jdbc`+`HikariCP`) + indexes | Postgres +1 replica max; shard last resort |
+| HTTP/LB | `http-kit` / `Ring` single instance | NGINX / HAProxy / ALB only at >1 host |
+| Files | `public/` + `bb http-server` (<10k files) | S3/GCS + CDN (global users) |
+| Observability | `timbre`/`tools.logging` + file logs | Prometheus+Grafana + OTel prod only |
+| **Rule** | Stay left column | Move right only after `EXPLAIN` + `napkin-math` shows bottleneck |
 
 ---
 
