@@ -4,6 +4,7 @@
 - [[#trivia][trivia]]
   - [[#read-laterrrr][read laterrrr]]
   - [[#random-notes][random notes]]
+  - [[#20-books-to-become-a-world-class-software-engineer][20 books to become a world-class software engineer]]
   - [[#principal-engineer---puneet-patwari][principal engineer - puneet patwari]]
   - [[#system-design---hacks][system design - hacks]]
   - [[#knowledge-graph-of-machnie-learning][knowledge graph of machnie learning]]
@@ -85,6 +86,29 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** 20 books to become a world-class software engineer
+| number | book title                                   | subtitle / edition                                                                                      | author(s)                                                                |
+|--------+----------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
+|      1 | clean code                                   | a handbook of agile software craftsmanship                                                              | robert c. martin                                                         |
+|      2 | the art of computer programming              | volumes 1–4b                                                                                            | donald e. knuth                                                          |
+|      3 | cracking the coding interview                | 189 programming questions & solutions (6th edition)                                                     | gayle laakmann mcdowell                                                  |
+|      4 | the pragmatic programmer                     | your journey to mastery (20th anniversary edition)                                                      | david thomas, andrew hunt                                                |
+|      5 | introduction to algorithms                   | fourth edition                                                                                          | thomas h. cormen, charles e. leiserson, ronald l. rivest, clifford stein |
+|      6 | the mythical man-month                       | essays on software engineering (anniversary edition)                                                    | frederick p. brooks, jr.                                                 |
+|      7 | domain-driven design                         | tackling complexity in the heart of software                                                            | eric evans                                                               |
+|      8 | design patterns                              | elements of reusable object-oriented software                                                           | erich gamma, richard helm, ralph johnson, john vlissides                 |
+|      9 | designing data-intensive applications        | the big ideas behind reliable, scalable, and maintainable systems                                       | martin kleppmann                                                         |
+|     10 | database internals                           | a deep-dive into how distributed data systems work                                                      | alex petrov                                                              |
+|     11 | computer systems: a programmer's perspective | third edition                                                                                           | randal e. bryant, david r. o'hallaron                                    |
+|     12 | operating system concepts                    | tenth edition                                                                                           | abraham silberschatz, peter baer galvin, greg gagne                      |
+|     13 | computer networks                            | 5th edition                                                                                             | andrew s. tanenbaum, david j. wetherall                                  |
+|     14 | introductory discrete mathematics            |                                                                                                         | v. k. balakrishnan                                                       |
+|     15 | the art of software testing                  | third edition                                                                                           | glenford j. myers, tom badgett, corey sandler                            |
+|     16 | the devops handbook                          | how to create world-class agility, reliability, & security in technology organizations (second edition) | gene kim, jez humble, patrick debois, john willis                        |
+|     17 | continuous delivery                          | reliable software releases through build, test, and deployment automation                               | jez humble, david farley                                                 |
+|     18 | 97 things every programmer should know       | collective wisdom from the experts                                                                      | kevlin henney (editor)                                                   |
+|     19 | the c programming language                   | second edition                                                                                          | brian w. kernighan, dennis m. ritchie                                    |
+|     20 | competitive programming in python            | 128 algorithms to develop your coding skills                                                            | christoph dürr, jill-jênn vie                                            |
 ** principal engineer - puneet patwari 
 - data base - carnegie mellon university - https://15445.courses.cs.cmu.edu/fall2026/ 
 - indexing - luke - https://use-the-index-luke.com/ 
@@ -105,11 +129,6 @@
 - building effective agents - anthropic - https://www.anthropic.com/research/building-effective-agents 
 - systems thinking - arpit - https://arpitbhayani.me/
 - system design - puneet patwari - https://www.puneetpatwari.in/blogs/series/distributed-systems 
-
-
-
-
-
 ** system design - hacks
 - slow reads → add a cache
 - slow writes → add a queue

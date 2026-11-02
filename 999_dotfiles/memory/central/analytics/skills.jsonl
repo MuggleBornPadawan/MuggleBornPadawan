@@ -56,3 +56,6 @@
 {:t 1793538849764, :skill "writing-skills", :outcome "success", :sid "1793538836554-writing-skills", :duration-ms 13210}
 {:t 1793538871591, :skill "dotfiles-sync", :outcome "success", :sid "1793538849795-dotfiles-sync", :duration-ms 21796}
 {:t 1793539123106, :skill "writing-skills", :outcome "success", :sid "1793539109353-writing-skills", :duration-ms 13753}
+{:t 1793539144471, :skill "dotfiles-sync", :outcome "success", :sid "1793539127180-dotfiles-sync", :duration-ms 17291}
+{:t 1793589035243, :skill "superpowers", :outcome "success", :sid "1793588788414-research", :duration-ms 246829}
+{:t 1793589035277, :skill "research", :outcome "success", :sid "1793588788383-superpowers", :duration-ms 246894}
