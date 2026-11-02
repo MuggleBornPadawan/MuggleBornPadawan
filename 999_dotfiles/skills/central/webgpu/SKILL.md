@@ -1,6 +1,6 @@
 ---
 name: webgpu
-description: "Render WebGPU/WGSL browser art. Use when USD share, art.json, or 0..1 depth fixes needed."
+description: "Render WebGPU/WGSL browser art via pcg router. Use when pcg delegates USD share, art.json, or 0..1 depth fixes."
 ---
 
 # Clojure WebGPU Skill: Browser USD + WGSL

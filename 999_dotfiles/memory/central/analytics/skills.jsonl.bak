@@ -1,0 +1,74 @@
+{:t 1790701198309, :skill "test-pilot", :outcome "success", :sid "test123"}
+{:t 1790705393344, :skill "unknown", :outcome "unknown", :sid "none"}
+{:t 1790705395729, :skill "unknown", :outcome "unknown", :sid "none"}
+{:t 1790705479842, :skill "unknown", :outcome "unknown", :sid "none"}
+{:t 1790707138661, :skill "unknown", :outcome "unknown", :sid "none"}
+{:t 1790707143398, :skill "unknown", :outcome "unknown", :sid "none"}
+{:t 1790707149525, :skill "dotfiles-sync", :outcome "success", :sid "1790707091632-dotfiles-sync"}
+{:t 1790707665357, :skill "unknown", :outcome "success", :sid "none"}
+{:t 1790841180448, :skill "unknown", :outcome "success", :sid "none"}
+{:t 1790974238663, :skill "unknown", :outcome "success", :sid "none"}
+{:t 1791313382465, :skill "dotfiles-sync", :outcome "unknown", :sid "none"}
+{:t 1791443138690, :skill "dotfiles-sync", :outcome "unknown", :sid "none"}
+{:t 1791548907162, :skill "dotfiles-sync", :outcome "unknown", :sid "none"}
+{:t 1791623472790, :skill "dotfiles-sync", :outcome "success", :sid "1791623440347-dotfiles-sync"}
+{:t 1791702294388, :skill "grilling", :outcome "unknown", :sid "1791702256689-grilling"}
+{:t 1791704289310, :skill "grilling", :outcome "unknown", :sid "1791704143949-grilling"}
+{:t 1791705465261, :skill "grilling", :outcome "unknown", :sid "1791705395796-grilling"}
+{:t 1791832333531, :skill "dotfiles-sync", :outcome "unknown", :sid "1791832314224-dotfiles-sync"}
+{:t 1791876983857, :skill "dotfiles-sync", :outcome "unknown", :sid "1791876962536-dotfiles-sync"}
+{:t 1791877282415, :skill "dotfiles-sync", :outcome "unknown", :sid "1791877270805-dotfiles-sync"}
+{:t 1791913358445, :skill "dotfiles-sync", :outcome "success", :sid "1791913344558-dotfiles-sync"}
+{:t 1791913806654, :skill "dotfiles-sync", :outcome "unknown", :sid "1791913789884-dotfiles-sync"}
+{:t 1791924643952, :skill "dotfiles-sync", :outcome "unknown", :sid "1791924629403-dotfiles-sync"}
+{:t 1792181607795, :skill "dotfiles-sync", :outcome "unknown", :sid "1792181594100-dotfiles-sync"}
+{:t 1792184329318, :skill "dotfiles-sync", :outcome "unknown", :sid "1792184313540-dotfiles-sync"}
+{:t 1792187776807, :skill "dotfiles-sync", :outcome "unknown", :sid "1792187762358-dotfiles-sync"}
+{:t 1792389284302, :skill "research", :outcome "success", :sid "1792389097158-research"}
+{:t 1792390464256, :skill "napkin-math", :outcome "success", :sid "1792390364658-napkin-math"}
+{:t 1792390698962, :skill "research", :outcome "success", :sid "1792390603156-research"}
+{:t 1792392966965, :skill "research", :outcome "unknown", :sid "1792392906301-research"}
+{:t 1792393181468, :skill "research", :outcome "unknown", :sid "1792393058270-research"}
+{:t 1792393213526, :skill "napkin-math", :outcome "unknown", :sid "1792393142574-napkin-math"}
+{:t 1792400749005, :skill "dotfiles-sync", :outcome "unknown", :sid "1792400720382-dotfiles-sync"}
+{:t 1792511923030, :skill "grilling", :outcome "unknown", :sid "1792511232305-grilling"}
+{:t 1792819269344, :skill "dotfiles-sync", :outcome "unknown", :sid "1792819193554-dotfiles-sync"}
+{:t 1792821190788, :skill "dotfiles-sync", :outcome "unknown", :sid "1792821126012-dotfiles-sync"}
+{:t 1792937950272, :skill "dotfiles-sync", :outcome "unknown", :sid "1792937829950-dotfiles-sync"}
+{:t 1792940859151, :skill "dotfiles-sync", :outcome "unknown", :sid "1792940784560-dotfiles-sync"}
+{:t 1792990930310, :skill "dotfiles-sync", :outcome "unknown", :sid "1792990626982-dotfiles-sync"}
+{:t 1793290348540, :skill "dotfiles-sync", :outcome "unknown", :sid "1793290258809-dotfiles-sync"}
+{:t 1793431933317, :skill "dotfiles-sync", :outcome "unknown", :sid "1793431840070-dotfiles-sync"}
+{:t 1793433872125, :skill "dotfiles-sync", :outcome "unknown", :sid "1793433755601-dotfiles-sync"}
+{:t 1793435983166, :skill "dotfiles-sync", :outcome "unknown", :sid "1793435910927-dotfiles-sync"}
+{:t 1793436461494, :skill "dotfiles-sync", :outcome "unknown", :sid "1793436444538-dotfiles-sync"}
+{:t 1793436769119, :skill "dotfiles-sync", :outcome "unknown", :sid "1793436740816-dotfiles-sync"}
+{:t 1793531384751, :skill "dotfiles-sync", :outcome "unknown", :sid "1793531318672-dotfiles-sync"}
+{:t 1793532343824, :skill "harness-sync", :outcome "unknown", :sid "1793532273799-harness-sync"}
+{:t 1793532891276, :skill "harness-sync", :outcome "success", :sid "1793532880265-harness-sync"}
+{:t 1793533163381, :skill "dotfiles-sync", :outcome "unknown", :sid "1793533106092-dotfiles-sync"}
+{:t 1793534763447, :skill "test-pilot", :outcome "success", :sid "1793534760236-test-pilot", :duration-ms 3211}
+{:t 1793534983450, :skill "dotfiles-sync", :outcome "success", :sid "1793534909611-dotfiles-sync", :duration-ms 73839}
+{:t 1793537039953, :skill "harness-sync", :outcome "success", :sid "1793537029388-harness-sync", :duration-ms 10565}
+{:t 1793537084262, :skill "dotfiles-sync", :outcome "success", :sid "1793537056229-dotfiles-sync", :duration-ms 28033}
+{:t 1793538671906, :skill "writing-skills", :outcome "success", :sid "1793538660539-writing-skills", :duration-ms 11367}
+{:t 1793538758210, :skill "dotfiles-sync", :outcome "success", :sid "1793538726339-dotfiles-sync", :duration-ms 31871}
+{:t 1793538849764, :skill "writing-skills", :outcome "success", :sid "1793538836554-writing-skills", :duration-ms 13210}
+{:t 1793538871591, :skill "dotfiles-sync", :outcome "success", :sid "1793538849795-dotfiles-sync", :duration-ms 21796}
+{:t 1793539123106, :skill "writing-skills", :outcome "success", :sid "1793539109353-writing-skills", :duration-ms 13753}
+{:t 1793539144471, :skill "dotfiles-sync", :outcome "success", :sid "1793539127180-dotfiles-sync", :duration-ms 17291}
+{:t 1793589035243, :skill "superpowers", :outcome "success", :sid "1793588788414-research", :duration-ms 246829}
+{:t 1793589035277, :skill "research", :outcome "success", :sid "1793588788383-superpowers", :duration-ms 246894}
+{:t 1793599261858, :skill "dotfiles-sync", :outcome "success", :sid "1793599253413-dotfiles-sync", :duration-ms 8445}
+{:t 1793635789634, :skill "superpowers", :outcome "success", :sid "1793635783345-superpowers", :duration-ms 6289}
+{:t 1793635926537, :skill "research", :outcome "success", :sid "1793635923160-research", :duration-ms 3377}
+{:t 1793635927626, :skill "superpowers", :outcome "success", :sid "1793635921929-superpowers", :duration-ms 5697}
+{:t 1793636060060, :skill "superpowers", :outcome "success", :sid "1793636057010-superpowers", :duration-ms 3050}
+{:t 1793637619830, :skill "dotfiles-sync", :outcome "success", :sid "1793637606167-dotfiles-sync", :duration-ms 13663}
+{:t 1793637705012, :skill "harness-sync", :outcome "success", :sid "1793637704930-harness-sync", :duration-ms 82}
+{:t 1793637723888, :skill "dotfiles-sync", :outcome "success", :sid "1793637714459-dotfiles-sync", :duration-ms 9429}
+{:t 1793638175182, :skill "harness-sync", :outcome "success", :sid "1793638175159-harness-sync", :duration-ms 23}
+{:t 1793638283692, :skill "dotfiles-sync", :outcome "success", :sid "1793638230387-dotfiles-sync", :duration-ms 53305}
+{:t 1793638643010, :skill "dotfiles-sync", :outcome "success", :sid "1793638577283-dotfiles-sync", :duration-ms 65727}
+{:t 1793639771875, :skill "dotfiles-sync", :outcome "success", :sid "1793639708295-dotfiles-sync", :duration-ms 63580}
+{:t 1793641143300, :skill "dotfiles-sync", :outcome "success", :sid "1793641053323-dotfiles-sync", :duration-ms 89977}

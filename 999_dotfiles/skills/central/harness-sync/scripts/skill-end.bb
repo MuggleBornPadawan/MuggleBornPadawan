@@ -62,10 +62,11 @@
           (when (fs/exists? named-f)
             (fs/delete named-f))))
       (catch Exception _ nil))
-    ;; Write telemetry log
+    ;; Write telemetry log (skip read-only lookups: no active session + unknown skill)
     (try
-      (fs/create-dirs (str base "/agent-memory/analytics"))
-      (spit log-file (str line "\n") :append true)
+      (when-not (and (= skill "unknown") (= sid "none"))
+        (fs/create-dirs (str base "/agent-memory/analytics"))
+        (spit log-file (str line "\n") :append true))
       (catch Exception _
         (binding [*out* *err*] (println "skill-end warn: log skip"))))
     ;; Print status

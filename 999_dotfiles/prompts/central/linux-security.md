@@ -1,12 +1,13 @@
 ---
 name: linux-security
-description: Audit and remediate Debian 12 / Crostini security configurations (POSIX, ACLs, UFW, and AppArmor)
+description: Audit and remediate Debian 12 / Crostini security configurations (POSIX, ACLs, UFW, and AppArmor). Use when user asks for security audit.
+argument-hint: "[path|host]"
 disable-model-invocation: true
 ---
 
 INSPECTION-ONLY DEFAULT: Run checks and report. Only remediate if user explicitly says `remediate` or `fix`.
 
-Audit and remediate system security for: {{target|path or host, default to local Debian container}}
+Audit and remediate system security for: {{ARGS}} (path or host, default local Debian container)
 
 Execute inspection, anti-pattern detection, and compliance verification across container security primitives:
 
@@ -15,11 +16,11 @@ Execute inspection, anti-pattern detection, and compliance verification across c
 Run non-destructive checks:
 - **POSIX Permissions:** Find world-writable or insecure permissions.
   ```bash
-  find {{target}} -type f -perm -002 ! -path "*/tmp/*"
+  find {{ARGS}} -type f -perm -002 ! -path "*/tmp/*"
   ```
 - **Extended ACLs:** Check for broad grants.
   ```bash
-  getfacl -R {{target}} 2>/dev/null | grep -E "group::rwx|other::rwx"
+  getfacl -R {{ARGS}} 2>/dev/null | grep -E "group::rwx|other::rwx"
   ```
 - **Mandatory Access Control (AppArmor):** Check service confinement.
   ```bash

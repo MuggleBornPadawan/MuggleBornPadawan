@@ -4,7 +4,7 @@ description: Explain commands from previous prompt
 argument-hint: "[empty = previous prompt]"
 ---
 
-Explain commands used in previous prompt only (not full session).
+Explain commands in {{ARGS}} (previous prompt if empty), in run order.
 
 Rules:
 - One row per command, in run order.

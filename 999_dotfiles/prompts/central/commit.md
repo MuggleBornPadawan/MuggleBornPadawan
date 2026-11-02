@@ -4,7 +4,7 @@ description: Craft conventional commit from staged or working diff. Use when use
 argument-hint: "[message]"
 ---
 
-Craft commit message from diff.
+Craft commit message from diff. Message: {{ARGS}} (or generate conventional commit if empty).
 
 0. Security audit: Run `bb ~/MuggleBornPadawan/700_linux/scripts/git_security_scan.bb --staged` (or without `--staged` if nothing staged). Stop immediately if secrets or policy violations are detected.
 1. Run `git status` then `git diff --cached --stat`. If nothing staged, run `git diff --stat` and TELL user you used working tree (not staged).

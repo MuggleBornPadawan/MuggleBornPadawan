@@ -1,6 +1,7 @@
 ---
 name: healthcheck
-description: Run sysinfo.sh --tech and review ~/bkp/sysinfo.log for system health
+description: Run sysinfo.sh --tech and review ~/bkp/sysinfo.log for system health. Use when user asks for healthcheck or system status.
+argument-hint: "[empty = full check]"
 ---
 
 Run sysinfo healthcheck with tech stack and review results.

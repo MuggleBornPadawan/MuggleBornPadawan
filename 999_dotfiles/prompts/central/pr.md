@@ -1,10 +1,10 @@
 ---
 name: pr
 description: Prepare PR title + description from branch diff. Use when user asks to open PR.
-argument-hint: ""
+argument-hint: "[branch]"
 ---
 
-Prepare PR for current branch.
+Prepare PR for {{ARGS}} (current branch if empty).
 
 1. Find merge base: `git merge-base HEAD main||master`
 2. Review commits/diffs on branch

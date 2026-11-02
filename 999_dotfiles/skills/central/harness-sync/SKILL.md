@@ -42,7 +42,20 @@ Maintains a single centralized repository for system memory, skills, and prompts
 
 ## Execution & Maintenance (Babashka)
 
-Fast Clojure/Babashka engine (`sync_harness.bb`):
+Fast Clojure/Babashka engine (`sync_harness.bb`). Order: lint -> test -> sync.
+
+### 0. Lint Gate (run first)
+Validates skill frontmatter + preamble + close, prompt hint + `{{ARGS}}` binding:
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/lint_harness.bb
+```
+Fix all FAILs before sync.
+
+### 0b. Skill IO Test
+Roundtrip `skill-start` -> `skill-end` with log backup/restore. No pollution:
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/test_skill_io.bb
+```
 
 ### 1. Run Live Sync & Link
 Assembles memory files (Core + Tails), establishes missing symlinks, repairs invalid symlinks, and merges legacy local skills:
@@ -59,3 +72,5 @@ bb ~/.local/share/skills/harness-sync/scripts/sync_harness.bb --dry-run
 ## Helper Scripts
 - [`sync_harness.bb`](./scripts/sync_harness.bb): Fast Clojure/Babashka symlink and memory assembly engine.
 - [`sync_memory.bb`](./scripts/sync_memory.bb): Memory assembly helper (core + tails -> assembled).
+- [`lint_harness.bb`](./scripts/lint_harness.bb): Gate — frontmatter, preamble, close, hint/ARGS binding. Exit 1 on drift.
+- [`test_skill_io.bb`](./scripts/test_skill_io.bb): Roundtrip start->end, asserts one clean row + unknown/no-session skip.

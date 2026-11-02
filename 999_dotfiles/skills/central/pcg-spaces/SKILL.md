@@ -1,6 +1,6 @@
 ---
 name: pcg-spaces
-description: "Handle USD and WebGPU spaces. Use when xformOpOrder, NDC 0..1, or depth bugs in browser art."
+description: "Handle USD and WebGPU spaces via pcg router. Use when pcg delegates xformOpOrder, NDC 0..1, or depth bugs."
 ---
 
 # PCG Spaces — USD + WebGPU

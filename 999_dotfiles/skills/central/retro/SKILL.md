@@ -11,10 +11,6 @@ disable-model-invocation: true
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill retro
 ```
 - Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
-- Run at end:
-```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill retro --outcome success --session-id $SESSION_ID
-```
 
 Analyze a completed coding session to recommend permanent improvements to the agent's harness environment, automated checks, and memory rules.
 

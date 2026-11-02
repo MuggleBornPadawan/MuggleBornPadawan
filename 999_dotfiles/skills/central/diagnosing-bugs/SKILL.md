@@ -10,7 +10,7 @@ description: "Diagnose bugs via tight REPL loop. Use when failing test, performa
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill diagnosing-bugs
 ```
-- Close: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 A discipline for hard bugs. Sequential — **pi has no background agents**. Skip phases only when justified.
 

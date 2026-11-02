@@ -1,10 +1,10 @@
 ---
 name: onboard
 description: Newcomer tour — purpose, layout, entry points, key modules, conventions. Use when onboarding.
-argument-hint: ""
+argument-hint: "[dir]"
 ---
 
-Give newcomer's tour (max 60 lines, stdout only, no file write).
+Give newcomer's tour of {{ARGS}} (repo root if empty). Max 60 lines, stdout only, no file write.
 
 1. **What it is** — purpose + stack (README, manifests, entry points)
 2. **Layout** — top-level dir map, one line per dir

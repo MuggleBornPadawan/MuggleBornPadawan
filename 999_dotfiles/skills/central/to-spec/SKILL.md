@@ -11,10 +11,6 @@ disable-model-invocation: true
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill to-spec
 ```
 - Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
-- Run at end:
-```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill to-spec --outcome success --session-id $SESSION_ID
-```
 
 Synthesize the active conversation, decisions, and codebase context into a clean, actionable specification. Do NOT start a new interview. Synthesize what is already decided.
 

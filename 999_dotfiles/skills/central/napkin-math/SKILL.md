@@ -10,6 +10,7 @@ disable-model-invocation: true
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill napkin-math
 ```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 Use this skill for back-of-the-envelope calculations to estimate system latency, throughput, and infrastructure costs before writing code or deploying systems.
 

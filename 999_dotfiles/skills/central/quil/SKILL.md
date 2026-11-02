@@ -1,6 +1,6 @@
 ---
 name: quil
-description: "Build 2D/3D art with Quil. Use when flow fields, noise, L-systems, or plotter SVG needed."
+description: "Build 2D/3D art with Quil via pcg router. Use when pcg delegates flow fields, noise, L-systems, or plotter SVG."
 ---
 
 # Clojure Quil Skill: Procedural Visual Art

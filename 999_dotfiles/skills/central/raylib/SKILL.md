@@ -1,6 +1,6 @@
 ---
 name: raylib
-description: "Build real-time art with Raylib Panama FFM. Use when particles, SDF shaders, or 60 FPS meshes needed."
+description: "Build real-time art with Raylib Panama FFM via pcg router. Use when pcg delegates particles, SDF shaders, or 60 FPS meshes."
 ---
 
 # Clojure Raylib Skill: Procedural Visual Art & Real-Time PCG

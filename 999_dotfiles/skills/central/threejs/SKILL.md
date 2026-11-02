@@ -1,6 +1,6 @@
 ---
 name: threejs
-description: "Build browser 3D with Scittle + Three.js WebGL. Use when instanced arrays, geometries, or shaders needed."
+description: "Build browser 3D with Scittle + Three.js WebGL via pcg router. Use when pcg delegates instanced arrays, geometries, or shaders."
 ---
 
 # Scittle + Three.js Skill: Browser Procedural 3D Art

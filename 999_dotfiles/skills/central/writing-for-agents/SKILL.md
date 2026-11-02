@@ -24,7 +24,7 @@ Per `https://agentskills.io/specification` and `docs/skills.md` (Pi is lenient b
 ---
 name: my-skill          # 1-64 chars, a-z0-9-hyphen, no leading/trailing/consecutive hyphen
 description: "Does X. Use when Y mentions Z or wants W." # max 1024, specific triggers
-# optional: disable-model-invocation: true  # user must /skill:name
+# optional: disable-model-invocation: true  # user must /skill:name — set ONLY for infra/human-gated skills that must never auto-fire (sync, telemetry, slash-only commands)
 ---
 ```
 
@@ -102,5 +102,6 @@ Agents rush when visible future steps distract them.
 - [ ] Every step has checkable, demanding completion criterion (`bb test` green, `clj-kondo` clean)
 - [ ] No duplication across `AGENTS.md` + skills; single source of truth in `~/.local/share/`
 - [ ] Negation only as paired guardrail; otherwise positive phrasing
+- [ ] `disable-model-invocation: true` only for infra/human-gated skills (sync, dotfiles, retro, to-spec/tickets) that must never auto-fire; renderers route via `pcg`, never flag them
 - [ ] `/reload` to hot-load, then test with trivial prompt triggering the pointer
 - [ ] Run `bb ~/.local/share/skills/harness-sync/scripts/sync_harness.bb` after edit

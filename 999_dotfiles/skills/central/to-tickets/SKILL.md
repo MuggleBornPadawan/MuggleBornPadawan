@@ -11,10 +11,6 @@ disable-model-invocation: true
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill to-tickets
 ```
 - Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
-- Run at end:
-```bash
-bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --skill to-tickets --outcome success --session-id $SESSION_ID
-```
 
 Break a plan, spec, or conversation into **tracer-bullet tickets**: narrow end-to-end vertical slices, each declaring **blocking dependencies**.
 

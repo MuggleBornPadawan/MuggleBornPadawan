@@ -9,7 +9,7 @@ description: "Design with 12 system patterns. Use when cache, queue, sharding, l
 ```bash
 bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-design
 ```
-- Close: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
 ## 1. The 12-Line Map
 
