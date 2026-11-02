@@ -1,7 +1,6 @@
 ---
 name: system-design
 description: "Design with 12 system patterns. Use when cache, queue, sharding, load balancer, or scaling decision."
-
 ---
 
 # System Design — 12 Patterns
@@ -12,154 +11,46 @@ bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill system-desi
 ```
 - Close: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
 
----
-
 ## 1. The 12-Line Map
 
 | # | Problem | Pattern | Core tech |
 |---|---|---|---|
 | 1 | Slow reads | Cache | Redis, Memcached |
-| 2 | Write spikes | Queue buffer | Kafka, SQS, RabbitMQ |
-| 3 | Too much traffic | Load balancer | NGINX, HAProxy, ALB, L4/L7 |
-| 4 | Read-heavy DB | Read replicas | Postgres replicas (`next.jdbc` + `HikariCP`) |
-| 5 | Write-heavy DB | Sharding | Hash/range sharding (last resort) |
-| 6 | Slow queries | Indexes | B-tree, hash, GIN |
-| 7 | Slow file loads | Object storage + CDN | S3/GCS + CloudFront/Cloudflare |
+| 2 | Write spikes | Queue buffer | Kafka, SQS |
+| 3 | Too much traffic | Load balancer | NGINX, ALB, L4/L7 |
+| 4 | Read-heavy DB | Read replicas | Postgres replicas |
+| 5 | Write-heavy DB | Sharding | Hash/range (last resort) |
+| 6 | Slow queries | Indexes | B-tree, GIN |
+| 7 | Slow file loads | Object storage + CDN | S3 + CloudFront |
 | 8 | Temporary failures | Retry with backoff | Exponential + jitter |
-| 9 | Too many requests | Rate limiting | Token bucket, sliding window |
-| 10 | One service failing | Circuit breaker | Resilience4j, Hystrix pattern |
+| 9 | Too many requests | Rate limiting | Token bucket |
+| 10 | One service failing | Circuit breaker | Fail-fast + probe |
 | 11 | Duplicate requests | Idempotency keys | UUID + dedup table |
-| 12 | Can't see what broke | Observability | Logs, metrics, tracing (OTel) |
+| 12 | Can't see what broke | Observability | Logs, metrics, tracing |
 
----
+Details + lean defaults: see `references/patterns.md`. Load only for chosen pattern.
 
-## 2. Pattern Details — When / Trade-off / Lean-box note
+## 2. Steps
 
-### 1. Cache — slow reads
-- **Solves:** DB/API latency, repeated reads.
-- **Use when:** Read >> write, hot keys, cache hit > 80%.
-- **Tech:** Redis (persistent), Memcached (ephemeral). Cache-aside is default.
-- **Trade-off:** Invalidation hard; stale reads; thundering herd.
-- **Guard:** TTL + write-through for strong consistency; single-flight / mutex on miss.
-- **Lean box:** Prefer `atom` + `clojure.core.cache` (LRU, 5k entries) before external Redis. External Redis (`carmine`) only >1 host.
+1. Measure first — `napkin-math` for QPS/latency/cost.
+2. Cheapest first: Index → Cache → Replica → Queue → CDN → LB → Shard.
+3. State trade-off per pattern, e.g. cache speeds reads but needs TTL 60s.
+4. Lean check: single-host `bb`/Postgres — stop at cache+index before distributing.
 
-### 2. Queue — write spikes
-- **Solves:** Bursts, decoupling, async work.
-- **Use when:** Producer faster than consumer, jobs tolerates delay.
-- **Tech:** Kafka (ordered, durable), SQS (serverless).
-- **Trade-off:** Async = eventual consistency; ordering + exactly-once hard; needs DLQ + backpressure.
-- **Guard:** Idempotent consumer + retry limit.
-- **Lean box:** Use `core.async` chan + SQLite queue (`next.jdbc`, WAL mode) before Kafka. Kafka/SQS only for cross-service durability.
+## 3. Anti-Patterns
 
-### 3. Load balancer — too much traffic
-- **Solves:** Horizontal scale, HA, TLS termination.
-- **Use when:** >1 app instance or zero-downtime deploys.
-- **Tech:** L4 TCP (fast), L7 HTTP (routing). Algorithms: round-robin, least-conn, consistent-hash.
-- **Trade-off:** LB is choke point. Needs HA pair + health checks.
-- **Lean box:** Single `bb`/`http-kit` + `Ring` instance often enough. Add NGINX/ALB only at >1 host.
+- Queue for sync request. Shard at <10k writes/sec.
+- Cache without invalidation. Retry without jitter/idempotency.
+- CDN without immutable assets.
 
-### 4. Read replicas — read-heavy DB
-- **Solves:** Scale reads without sharding.
-- **Use when:** Read/write ratio > 5:1, replicas acceptable stale.
-- **Trade-off:** Replication lag (ms to sec); routing complexity.
-- **Guard:** Critical reads → primary; async replication → monitor lag.
-- **Lean box:** Postgres (`next.jdbc`+`HikariCP`) + 1 replica max; SQLite WAL for local. Prefer cache + indexes first.
-
-### 5. Sharding — write-heavy DB
-- **Solves:** Write scale beyond single primary.
-- **Use when:** Single primary CPU/IO saturated, data > 1 node.
-- **Tech:** Hash sharding (even), range (query locality), directory service.
-- **Trade-off:** Hard to reshape; cross-shard JOIN/tx expensive; hot shards.
-- **Guard:** Choose stable shard key (`user_id`); use consistent hashing.
-- **Lean box:** Do NOT shard. Prefer vertical scale + indexes + `next.jdbc` + SQLite/Postgres tuning first. Shard is last resort.
-
-### 6. Indexes — slow queries
-- **Solves:** Scan → seek.
-- **Trade-off:** Faster reads, slower writes (+10-30%), more storage.
-- **Guard:** Index selective columns, measure with `EXPLAIN`; avoid over-indexing >5 per table.
-- **Lean box:** First optimization. Free and reversible.
-
-### 7. Object storage + CDN — slow files
-- **Solves:** Large/blob delivery, global latency.
-- **Trade-off:** Eventual consistency; invalidation cost; cache purge delay.
-- **Guard:** Immutable URLs (hash in filename) > purge.
-- **Lean box:** Local `public/` + `bb http-server` for <10k files. S3+CDN only for global users.
-
-### 8. Retry with backoff — temporary failures
-- **Solves:** Transient network/5xx.
-- **Use when:** Idempotent GET/PUT, timeout errors.
-- **Guard:** Exponential backoff + jitter + cap (e.g., 3 retries, 100ms→1s). Never retry non-idempotent POST without key.
-- **Anti-pattern:** Retry storm without jitter kills downstream.
-
-### 9. Rate limiting — too many requests
-- **Solves:** Abuse, fairness, downstream protection.
-- **Tech:** Token bucket (burst), sliding window (smooth), leaky bucket.
-- **Guard:** Per-user + per-IP + per-endpoint; return 429 + `Retry-After`.
-- **Lean box:** In-memory token bucket (`atom` + sliding window) before Redis-based gateway.
-
-### 10. Circuit breaker — one service failing
-- **Solves:** Prevent cascade.
-- **States:** Closed → Open (fail fast) → Half-Open (probe).
-- **Guard:** Timeout + fallback + bulkhead isolation.
-- **Lean box:** Use only for external calls (payment, LLM API). Local calls use timeout.
-
-### 11. Idempotency keys — duplicate requests
-- **Solves:** Client retry, at-least-once delivery.
-- **Guard:** Client sends `Idempotency-Key: UUID`; server stores result 24h; dedup on key+payload hash.
-- **Critical for:** Payments, webhooks, queue consumers.
-
-### 12. Observability — can't see what broke
-- **Pillars:** Logs (event), Metrics (counter/gauge), Tracing (request path).
-- **Stack:** Prometheus + Grafana (metrics), ELK/Loki (logs), Jaeger/OTel (traces).
-- **Guard:** Correlation ID across services; structured JSON logs; alert on SLO not CPU.
-- **Lean box:** `timbre`/`tools.logging` + `println` + `bb` file logs before full OTel. Add Prometheus only for prod.
-
----
-
-## 3. Decision Order
-
-1. **Measure first** — `napkin-math` for QPS/latency/cost before patterns.
-2. **Cheapest first:** Index → Cache → Replica → Queue → CDN → LB → Shard.
-3. **State trade-off each step:** e.g., cache speeds reads but adds invalidation — use TTL 60s.
-4. **Lean check:** On single-host `bb`/Postgres, stop at cache+index before distributing.
-
----
-
-## 4. Anti-Patterns
-
-- Adding queue for sync request (adds latency, no benefit).
-- Sharding at <10k writes/sec (operational debt).
-- Cache without invalidation plan (stale forever).
-- Retry without jitter or idempotency (duplicate charges).
-- CDN without immutable assets (purge pain).
-
----
-
-## 5. Design Review Checklist
+## 4. Design Review Checklist
 
 - [ ] Define QPS, read/write ratio, latency SLO.
-- [ ] Map client → LB → API → cache → DB → queue/CDN path.
-- [ ] For each pattern used, note 1 trade-off + 1 alternative not chosen.
-- [ ] Validate capacity via `napkin-math` (e.g., "Redis 500μs, DB 10ms").
-- [ ] Include observability + failure modes.
-
----
-
-## 6. Lean Clojure Stack Mapping
-
-| Pattern | Lean default (this box: 6.3Gi RAM, `bb` 15ms) | Scale-out (only when `napkin-math` proves saturation) |
-|---|---|---|
-| Cache | `atom` + `clojure.core.cache` (LRU) | Redis (`carmine`) / Memcached only if >1 host |
-| Queue | `core.async` chan + SQLite queue (`next.jdbc`, WAL) | Kafka / SQS only cross-service durable |
-| DB | SQLite (local) / Postgres (`next.jdbc`+`HikariCP`) + indexes | Postgres +1 replica max; shard last resort |
-| HTTP/LB | `http-kit` / `Ring` single instance | NGINX / HAProxy / ALB only at >1 host |
-| Files | `public/` + `bb http-server` (<10k files) | S3/GCS + CDN (global users) |
-| Observability | `timbre`/`tools.logging` + file logs | Prometheus+Grafana + OTel prod only |
-| **Rule** | Stay left column | Move right only after `EXPLAIN` + `napkin-math` shows bottleneck |
-
----
+- [ ] Map client → LB → API → cache → DB → queue/CDN.
+- [ ] Per pattern: 1 trade-off + 1 alternative not chosen.
+- [ ] Validate via `napkin-math`. Include observability + failure modes.
 
 ## References
 
-- `napkin-math` skill — latency/throughput/cost numbers.
-- `performance` skill — local JVM hot-path (do before distributing).
+- `references/patterns.md` — full pattern details + Lean Clojure mapping.
+- `napkin-math` skill — numbers. `performance` skill — local hot-path first.

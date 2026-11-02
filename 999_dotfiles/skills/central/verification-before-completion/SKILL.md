@@ -5,6 +5,12 @@ description: "Verify before claiming completion. Use when tests, lint, or eviden
 
 # Verification Before Completion
 
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill verification-before-completion
+```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+
 ## Overview
 
 **Core principle:** Evidence before claims, always.

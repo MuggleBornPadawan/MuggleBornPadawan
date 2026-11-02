@@ -4,11 +4,11 @@
 # Agent Ground Truth
 
 ## Machine & Lean Box Safety
-- Lean box: Debian 12, i3-1215U (8 vCPU), 6.3Gi RAM (~5.3 avail), 31GB disk (~10 free) — prefer `bb` (~15ms/30MB).
+- Lean box specs: 6.3 GiB RAM sandbox, 31 GiB btrfs root disk, 8-thread CPU (Crostini Debian 12 container). Prefer `bb` (~15ms/30MB). Trust `sysinfo.sh --tech` over pinned specs.
 - No `ollama run`/`docker pull`/`clojure -P`/`lein deps` or >100MB downloads without ask. Trust `sysinfo.sh --tech` over pinned.
 
 ## Primary & Exclusive Stack: Lean Clojure
-- Stack rule: 100% Clojure (JVM) or Babashka (`bb`). Write all scripts, CLI tools, scraping, data fetching, JSON/EDN/HTML tasks, and automation in Babashka.
+- Stack rule: Clojure (JVM) or Babashka (`bb`). Multi-line scripts, CLI tools, scraping, data fetching, JSON/EDN/HTML tasks, and automation in Babashka. One-liner `bash`/`rg`/`sql` allowed.
 - Lean efficiency: Babashka starts in ~15 ms and uses ~30 MB RAM. Never default to heavy runtimes.
 - Build tools: Clojure CLI (`deps.edn`) preferred; Leiningen (`project.clj`) for existing Lein projects. No global deps.
 - REPL-driven development: Prefer evaluating code and running tests in a running JVM REPL over restarting the JVM.
@@ -21,7 +21,7 @@
 - PCG: pure `generate` -> `art.json` via `pcg` + `pcg-spaces`; see `quil`/`raylib`/`webgpu`/`threejs` skills. Do not load otherwise.
 
 ## Output Contract & Context Window Discipline
-- ASD-STE100 Simplified Technical English.
+- ASD-STE100 Simplified Technical English: short sentences. One idea per bullet. Active voice, no passives.
 - Short sentences, bullet points, clear structure, no walls of text. Token-efficient: use markdown tables and bullets.
 - **Active Context Discipline:** Keep active context <32k tokens.
 - **Targeted Reading:** Never dump large file contents or raw test logs into context. Use `read` with `limit`/`offset` or filter via `grep`/`tail`.

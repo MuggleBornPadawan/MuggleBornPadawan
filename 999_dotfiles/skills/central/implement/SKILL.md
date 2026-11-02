@@ -6,13 +6,19 @@ disable-model-invocation: true
 
 # Implement — Clojure Patch
 
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill implement
+```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+
 Implement the work described by the user in the spec or tickets.
 
 > **Clojure adaption of `mattpocock/skills:implement`.** Pure Markdown, no deps. Lean-machine safe. See original at `https://github.com/mattpocock/skills/tree/main/skills/engineering/implement`.
 
 ## Pi Global Install
 
-- Location: `~/.agents/skills/implement/` (global). Run `/reload` after edit.
+- Location: `~/.local/share/skills/implement/` (central). Run `bb ~/.local/share/skills/harness-sync/scripts/sync_harness.bb`, then `/reload`.
 
 ## Preconditions
 
@@ -36,7 +42,7 @@ For each ticket (or the single spec if no tickets), do:
 - `clj-kondo --lint src test` — type/shape lint (replaces `tsc`)
 - `cljfmt check` if present
 - Single ns test run: `clojure -M:test -n my.ns` or `bb test --ns my.ns`
-- Keep machine lean: avoid running full suite every cycle on this 6 Gi box; run targeted ns first, full suite at end.
+- Keep machine lean: avoid running full suite every cycle on this lean box; run targeted ns first, full suite at end.
 
 ### 3. Full verification (once, at end of ticket)
 

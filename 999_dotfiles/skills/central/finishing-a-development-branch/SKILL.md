@@ -6,6 +6,12 @@ description: "Finish branch and integrate work. Use when tests pass and merge, p
 
 # Finishing a Development Branch — Clojure Patch
 
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill finishing-a-development-branch
+```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+
 **Announce:** "I'm using the finishing-a-development-branch skill to complete this work."
 > Clojure prio: `bb test` → `clojure -M:test` → `lein test`. See `references/steps.md` for full Steps 2-6.
 

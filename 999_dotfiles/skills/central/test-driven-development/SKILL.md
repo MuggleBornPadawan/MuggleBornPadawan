@@ -6,6 +6,12 @@ description: "Enforce Red-Green-Refactor TDD. Use when writing failing test befo
 
 # Test-Driven Development — Clojure Patch
 
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill test-driven-development
+```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+
 ## Overview
 Write test first, watch fail, minimal code to pass. **If you didn't watch it fail, it proves nothing.**
 

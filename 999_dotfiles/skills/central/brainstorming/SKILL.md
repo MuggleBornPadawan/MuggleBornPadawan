@@ -6,6 +6,12 @@ description: "Brainstorm features into designs. Use when creating components, ad
 
 # Brainstorming Ideas Into Designs
 
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill brainstorming
+```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+
 Classify how much process is needed, then understand → refine → present → get approval.
 
 <HARD-GATE>

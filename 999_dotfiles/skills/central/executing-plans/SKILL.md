@@ -5,6 +5,12 @@ description: "Execute a written implementation plan. Use when plan with review c
 
 # Executing Plans
 
+## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)
+```bash
+bb ~/.local/share/skills/harness-sync/scripts/skill-start.bb --skill executing-plans
+```
+- Close on completion: `bb ~/.local/share/skills/harness-sync/scripts/skill-end.bb --outcome success`
+
 ## Overview
 
 Load plan, review critically, execute all tasks, report when complete.
