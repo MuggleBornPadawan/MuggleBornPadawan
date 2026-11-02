@@ -64,3 +64,5 @@
 {:t 1793635926537, :skill "research", :outcome "success", :sid "1793635923160-research", :duration-ms 3377}
 {:t 1793635927626, :skill "superpowers", :outcome "success", :sid "1793635921929-superpowers", :duration-ms 5697}
 {:t 1793636060060, :skill "superpowers", :outcome "success", :sid "1793636057010-superpowers", :duration-ms 3050}
+{:t 1793637619830, :skill "dotfiles-sync", :outcome "success", :sid "1793637606167-dotfiles-sync", :duration-ms 13663}
+{:t 1793637705012, :skill "harness-sync", :outcome "success", :sid "1793637704930-harness-sync", :duration-ms 82}

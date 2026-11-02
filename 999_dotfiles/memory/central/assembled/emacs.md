@@ -37,17 +37,12 @@
 ## Collaborative Judgment & Ambiguity Handling
 - When facing architectural ambiguities or trade-offs, STOP and consult the user.
 - Interruption format:
-  | Element | Description |
-  |---|---|
-  | **Situation** | Brief statement of ambiguity or trade-off |
-  | **Options** | 2–3 distinct technical paths |
-  | **Trade-offs** | Pros, cons, and impact for each option |
+  | Element            | Description                                   |
+  |--------------------|-----------------------------------------------|
+  | **Situation**      | Brief statement of ambiguity or trade-off     |
+  | **Options**        | 2–3 distinct technical paths                  |
+  | **Trade-offs**     | Pros, cons, and impact for each option        |
   | **Recommendation** | Agent preference, paused awaiting user choice |
-
-## Atelier Ground Truth (Chitrapata / Chittu 13.14)
-- Canonical ontology: `<repo>/atelier/chitrapata.org` (submodule → `MuggleBornPadawan/chitrapata-ontology`). Absolute ground truth for specs and licensing (GPLv3 + EPL exception). Never edit submodule directly; edit upstream, then `git submodule update --remote atelier`.
-- Generators: See `chitrapata-artforms` skill for 12 artforms, visual invariants, and palettes.
-- Guardrails: `#NoAI` / `#NoAIContent` headers, cold-storage master assets.
 
 ## Path Authority: Central Store (harness-sync)
 - Ground Truth Store: Edit only in `~/.local/share/agent-prompts` (prompts), `~/.local/share/skills` (skills), and `~/.local/share/agent-memory/AGENTS_CORE.md` + `tails/` (memory).
