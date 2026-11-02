@@ -128,7 +128,8 @@
         },
         "compat": {
           "forceAdaptiveThinking": true,
-          "supportsMidConvoSystemMessages": true
+          "supportsMidConvoSystemMessages": true,
+          "supportsMidConvoEffort": true
         },
         "inputLimits": {
           "images": {
@@ -208,7 +209,8 @@
         "compat": {
           "forceAdaptiveThinking": true,
           "supportsTemperature": false,
-          "supportsMidConvoSystemMessages": true
+          "supportsMidConvoSystemMessages": true,
+          "supportsMidConvoEffort": true
         },
         "inputLimits": {
           "images": {
@@ -395,7 +397,8 @@
         "compat": {
           "forceAdaptiveThinking": true,
           "supportsTemperature": false,
-          "supportsMidConvoSystemMessages": true
+          "supportsMidConvoSystemMessages": true,
+          "supportsMidConvoEffort": true
         },
         "inputLimits": {
           "images": {
@@ -430,12 +433,14 @@
         "maxTokens": 128000,
         "thinkingLevelMap": {
           "xhigh": "xhigh",
-          "max": "max"
+          "max": "max",
+          "off": null
         },
         "compat": {
           "forceAdaptiveThinking": true,
           "supportsTemperature": false,
-          "supportsMidConvoSystemMessages": true
+          "supportsMidConvoSystemMessages": true,
+          "supportsMidConvoEffort": true
         },
         "inputLimits": {
           "images": {
@@ -585,12 +590,14 @@
         "maxTokens": 128000,
         "thinkingLevelMap": {
           "xhigh": "xhigh",
-          "max": "max"
+          "max": "max",
+          "off": null
         },
         "compat": {
           "forceAdaptiveThinking": true,
           "supportsTemperature": false,
-          "supportsMidConvoSystemMessages": true
+          "supportsMidConvoSystemMessages": true,
+          "supportsMidConvoEffort": true
         },
         "inputLimits": {
           "images": {
@@ -3338,9 +3345,9 @@
         "contextWindow": 32000
       }
     ],
-    "lastModified": 1793367454000,
-    "etag": "W/\"3e2d95e546e1b5f0bc53154b56bcff76\"",
-    "checkedAt": 1793588768451
+    "lastModified": 1793627317000,
+    "etag": "W/\"6d1c73b0f1c0b7cbb84dc026e6d41a2c\"",
+    "checkedAt": 1793630467061
   },
   "opencode-go": {
     "models": [
@@ -3413,7 +3420,8 @@
         },
         "compat": {
           "forceAdaptiveThinking": true,
-          "supportsTemperature": false
+          "supportsTemperature": false,
+          "supportsMidConvoEffort": true
         },
         "inputLimits": {
           "images": {
@@ -4542,9 +4550,9 @@
         "type": "chat"
       }
     ],
-    "lastModified": 1793367457000,
-    "etag": "W/\"2a97586719f0fc413c838181323179be\"",
-    "checkedAt": 1793588768477
+    "lastModified": 1793627319000,
+    "etag": "W/\"339e1e473ec29dbe2e2f9e2fcdc05db6\"",
+    "checkedAt": 1793630467051
   },
   "google": {
     "models": [
@@ -5522,7 +5530,7 @@
     ],
     "lastModified": 1793367416000,
     "etag": "W/\"63a5510c277fa68dc8d8955da1c7b3e9\"",
-    "checkedAt": 1793588768424
+    "checkedAt": 1793630466933
   },
   "meta": {
     "models": [
@@ -5769,6 +5777,6 @@
     ],
     "lastModified": 1791965969000,
     "etag": "W/\"d2397a60589efbabef99ee05f91cc968\"",
-    "checkedAt": 1793588768571
+    "checkedAt": 1793630469402
   }
 }
