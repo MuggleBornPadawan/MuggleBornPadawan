@@ -1,7 +1,6 @@
 ---
 name: wayfinder
-description: >-
-  Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear. Use when: wayfinder map, decision tickets, multi-session.
+description: "Builds shared multi-session decision ticket maps for massive work chunks. Use when: multi-session roadmap, complex architectural wayfinder map."
 ---
 
 ## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)

@@ -1,7 +1,6 @@
 ---
 name: improve-codebase-architecture
-description: >-
-  Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick. Use when: architecture, deepening, html report.
+description: "Scans codebase for structural debt and generates visual HTML architecture reports. Use when: architecture audit, generating structural HTML report."
 disable-model-invocation: true
 ---
 

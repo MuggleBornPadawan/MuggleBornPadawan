@@ -1,6 +1,6 @@
 ---
 name: implement
-description: "Implement a piece of work based on a spec or set of tickets. Clojure-adapted: TDD at ns seams, clojure.test, clj-kondo, REPL-friendly."
+description: "Executes a spec or set of traced tickets into working code at ns seams. Use when: implementing tickets, building feature from spec."
 disable-model-invocation: true
 ---
 

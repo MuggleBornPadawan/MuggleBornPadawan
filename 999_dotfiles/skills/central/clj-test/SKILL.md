@@ -1,7 +1,6 @@
 ---
 name: clj-test
-description: >-
-  Write and run tests adhering to Clojure/lean-machine conventions, public ns seams, and bb/clojure.test. Use when: write test, clojure.test, bb test, deftest.
+description: "Syntax and runner guide for Clojure testing primitives (clojure.test, bb test, deftest). Use when: writing test assertions, running test namespaces."
 ---
 
 # Test Authoring & Verification (Clojure / Babashka)

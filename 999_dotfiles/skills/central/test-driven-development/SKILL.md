@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: "Use when implementing any feature or bugfix, before writing implementation code. Clojure-adapted: clojure.test + bb, REPL-first, ns seams."
+description: "Enforces the Red-Green-Refactor loop, failing test assertions first, and public ns seam testing. Use when: TDD, write failing test, red-green-refactor."
 ---
 
 # Test-Driven Development — Clojure Patch
