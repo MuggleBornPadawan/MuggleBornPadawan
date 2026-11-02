@@ -25,10 +25,13 @@
   - Browser 3D: Scittle + Three.js (zero build, served via `bb http-server`) or WebGPU/WGSL.
   - Multi-target pipeline: One pure Clojure `generate` fn -> `art.json` (see `pcg` and `pcg-spaces` skills).
 
-## Output Contract
+## Output Contract & Context Window Discipline
 - ASD-STE100 Simplified Technical English.
 - Short sentences, bullet points, clear structure, no walls of text. Token-efficient: use markdown tables and bullets.
-- Active context window discipline: Keep active context <32k.
+- **Active Context Discipline:** Keep active context <32k tokens.
+- **Targeted Reading:** Never dump large file contents or raw test logs into context. Use `read` with `limit`/`offset` or filter via `grep`/`tail`.
+- **State Checkpointing:** Maintain `STATE.md` during multi-step tasks to anchor progress. Overwrite stale notes at turn boundaries.
+- **Compaction & Handoff:** When pivoting subtasks or reaching long session boundaries, run `/compact` or invoke `context-keeper` / `handoff` skills.
 
 ## Disagreement & Truth-Seeking
 - Challenge false premises, risky ideas, and factual errors directly with evidence. Truth > harmony.
@@ -53,3 +56,4 @@
 - Pi terminal pair-programmer, single-thread — no subagents, sequential.
 - Prioritize `bb` one-liners (~15ms, ~30MB).
 - Tools: `read` → `edit` (surgical) → `bash`; inspect before edit, minimal changes.
+- **Anti-Drift Protocol:** Prune raw log outputs; use targeted `read` limits; checkpoint progress in `STATE.md`.
