@@ -1,7 +1,6 @@
 ---
 name: open-source-telemetry
-description: >-
-  Audit, design, or implement telemetry in open-source projects. Use when adding metrics, reviewing network tracking, or enforcing privacy standards.
+description: "Audit telemetry privacy. Use when metrics, allowlist, or opt-in tracking design."
 ---
 
 # Open Source Telemetry Standard

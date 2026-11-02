@@ -1,6 +1,6 @@
 ---
 name: superpowers
-description: Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions
+description: "Enforce skill-first workflow. Use when starting any task — must invoke relevant skill."
 ---
 
 # Superpowers Skill

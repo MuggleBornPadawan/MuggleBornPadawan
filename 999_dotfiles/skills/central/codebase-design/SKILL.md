@@ -1,6 +1,7 @@
 ---
 name: codebase-design
-description: "Deep-module vocabulary and interface design principles. Use when: designing module APIs, finding deepening opportunities, defining ns seams."
+description: "Design deep modules and ns seams. Use when defining interfaces, depth, or adapter boundaries."
+
 ---
 
 # Codebase Design — Clojure Patch

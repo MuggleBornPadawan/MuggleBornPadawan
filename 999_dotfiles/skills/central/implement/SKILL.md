@@ -1,6 +1,6 @@
 ---
 name: implement
-description: "Executes a spec or set of traced tickets into working code at ns seams. Use when: implementing tickets, building feature from spec."
+description: "Implement spec tickets at ns seams. Use when building feature from spec via tracer bullets."
 disable-model-invocation: true
 ---
 

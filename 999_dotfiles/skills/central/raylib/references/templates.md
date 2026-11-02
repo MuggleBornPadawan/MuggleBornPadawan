@@ -175,3 +175,37 @@ Raylib is **not** USD-native (OpenGL `z -1..1`). Use it as the 60 FPS real-time 
 *   **Rule 5 Lean:** Keep `art.json` <1MB. Do not ship `clip/NDC/screen` or baked matrices. See `pcg` skill for pure `generate` template and `bb export && bb serve` flow.
 ## References
 - Full templates: `references/templates.md` (load only when needed)
+
+---
+## 3. Template A: Live Generative Agent / Particle System — Full Code (moved from SKILL.md Fix 3A)
+```clojure
+(ns art.core
+  (:require [raylib.core.window :as window]
+            [raylib.core.drawing :as drawing]
+            [raylib.core.timing :as timing]
+            [raylib.shapes.basic :as shapes]
+            [raylib.colors :as colors]
+            [nrepl.server :as nrepl])
+  (:gen-class))
+(defonce pcg-params (atom {:particle-count 800 :speed-scale 2.0 :field-frequency 0.008 :color-mode :gold}))
+(defn create-particles [n] (vec (for [_ (range n)] {:x (rand 800) :y (rand 600) :vx 0.0 :vy 0.0})))
+(defonce particles (atom (create-particles 800)))
+(defn step-particles [ps {:keys [speed-scale field-frequency]}]
+  (mapv (fn [{:keys [x y]}]
+          (let [angle (* (Math/sin (* x field-frequency)) (Math/cos (* y field-frequency)) Math/PI 4.0)
+                nx (+ x (* speed-scale (Math/cos angle))) ny (+ y (* speed-scale (Math/sin angle)))]
+            (cond (< nx 0) (assoc {:x 800 :y (rand 600) :vx 0.0 :vy 0.0} :y ny) (> nx 800) (assoc {:x 0 :y (rand 600) :vx 0.0 :vy 0.0} :y ny) (< ny 0) (assoc {:x (rand 800) :y 600 :vx 0.0 :vy 0.0} :x nx) (> ny 600) (assoc {:x (rand 800) :y 0 :vx 0.0 :vy 0.0} :x nx) :else {:x nx :y ny :vx 0.0 :vy 0.0}))) ps))
+(defn draw-frame [ps params]
+  (drawing/clear-background! [12 14 20 255])
+  (let [pt-color (if (= (:color-mode params) :gold) colors/gold colors/skyblue)]
+    (doseq [{:keys [x y]} ps] (shapes/draw-circle! (int x) (int y) 1.5 pt-color))))
+(defn -main [& _args]
+  (nrepl/start-server :port 7888 :bind "127.0.0.1")
+  (window/init-window! 800 600 "Clojure Raylib: Procedural Field")
+  (timing/set-target-fps! 60)
+  (while (not (window/window-should-close?))
+    (swap! particles step-particles @pcg-params)
+    (drawing/begin-drawing!) (draw-frame @particles @pcg-params) (drawing/end-drawing!))
+  (window/close-window!) (System/exit 0))
+;; REPL: (swap! art.core/pcg-params assoc :field-frequency 0.02) (reset! art.core/particles (art.core/create-particles 1500))
+```

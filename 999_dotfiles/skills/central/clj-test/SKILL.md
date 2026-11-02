@@ -1,6 +1,7 @@
 ---
 name: clj-test
-description: "Syntax and runner guide for Clojure testing primitives (clojure.test, bb test, deftest). Use when: writing test assertions, running test namespaces."
+description: "Write and run Clojure tests. Use when clojure.test, bb test, or deftest assertions for namespaces."
+
 ---
 
 # Test Authoring & Verification (Clojure / Babashka)

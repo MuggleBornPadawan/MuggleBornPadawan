@@ -1,7 +1,6 @@
 ---
 name: pcg-spaces
-description: >-
-  USD model/world + WebGPU render spaces for PCG visual art. Use when building WebGPU/WGSL browser art from Clojure/bb with USD share, mapping xformOpOrder to world matrices, or handling WebGPU NDC 0..1, clip, framebuffer, and depth.
+description: "Handle USD and WebGPU spaces. Use when xformOpOrder, NDC 0..1, or depth bugs in browser art."
 ---
 
 # PCG Spaces — USD + WebGPU

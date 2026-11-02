@@ -1,7 +1,6 @@
 ---
 name: context-keeper
-description: >-
-  Use this skill to optimize token usage, clear inactive context, and maintain a consolidated state/roadmap file across long coding sessions. Use when: long session, token limit, roadmap.
+description: "Manage context window with STATE.md. Use when long session, token limit, or roadmap checkpoint."
 ---
 
 # Context Keeper

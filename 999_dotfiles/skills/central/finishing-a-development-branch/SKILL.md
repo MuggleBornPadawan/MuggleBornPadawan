@@ -1,6 +1,7 @@
 ---
 name: finishing-a-development-branch
-description: "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work. Clojure-adapted: bb/clojure.test first, lean-machine safe."
+description: "Finish branch and integrate work. Use when tests pass and merge, push PR, or keep decision needed."
+
 ---
 
 # Finishing a Development Branch — Clojure Patch

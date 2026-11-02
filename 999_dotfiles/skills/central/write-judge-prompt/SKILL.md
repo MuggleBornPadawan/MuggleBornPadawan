@@ -1,7 +1,6 @@
 ---
 name: write-judge-prompt
-description: >-
-  Design binary Pass/Fail LLM evaluators for specific failure modes. Use when writing an LLM judge, testing AI output quality, or evaluating subjective criteria. Lean Pi adapted: binary checks, code-first, TypeSafe AI (Jev) compatible.
+description: "Design binary Pass/Fail LLM judges. Use when evaluator, metric, or TypeSafe judge needed."
 ---
 
 # Write LLM Judge Prompt — Pi Lean Edition

@@ -1,6 +1,7 @@
 ---
 name: system-design
-description: "System design pattern playbook in 12 lines. Use when: system design, scalability, architecture trade-offs, caching, queue, load balancer, sharding, CDN, rate limiting, circuit breaker, idempotency, observability."
+description: "Design with 12 system patterns. Use when cache, queue, sharding, load balancer, or scaling decision."
+
 ---
 
 # System Design — 12 Patterns

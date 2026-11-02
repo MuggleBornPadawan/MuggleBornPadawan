@@ -1,7 +1,6 @@
 ---
 name: performance
-description: >-
-  Performance engineering and optimization for Clojure. Use when profiling CPU or memory, diagnosing latency, eliminating GC pauses, optimizing hot loops, or writing zero-allocation Clojure pipelines.
+description: "Optimize Clojure hot paths. Use when profiling, GC pauses, or zero-allocation pipelines."
 ---
 
 # Clojure Performance Engineering

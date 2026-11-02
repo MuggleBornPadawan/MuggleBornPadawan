@@ -145,3 +145,97 @@ To connect Emacs CIDER or a live REPL to your running browser scene:
 *   **Decision:** Need USD share / long-term asset? → `pcg-spaces` WebGPU. Need quick WebGL demo only? → this skill.
 ## References
 - Full templates: `references/templates.md` (load only when needed)
+
+---
+## 3. Template A: High-Density InstancedMesh Field — Full Code (moved from SKILL.md Fix 3A)
+Save as `index.html` — Scittle + Three.js CDN, InstancedMesh 8000 boxes on spiral, OrbitControls. Full 110-line HTML in SKILL.md v1 — preserved here. See /tmp/threejs_orig.md for original. Key: `#js` literals, Dummy Object3D matrix, `setMatrixAt` + `setColorAt`, `needsUpdate`, `bb serve` not file://.
+  <script src="https://cdn.jsdelivr.net/npm/scittle@0.6.15/js/scittle.js" type="application/javascript"></script>
+</head>
+<body>
+  <script type="application/x-scittle">
+    (ns pcg.instanced)
+
+    (def count 8000)
+
+    ;; 1. Scene, Camera, Renderer
+    (def scene (js/THREE.Scene.))
+    (def camera (js/THREE.PerspectiveCamera. 60 (/ js/window.innerWidth js/window.innerHeight) 0.1 1000))
+    (set! (.-z (.-position camera)) 80)
+
+    (def renderer (js/THREE.WebGLRenderer. #js {:antialias true}))
+    (.setSize renderer js/window.innerWidth js/window.innerHeight)
+    (.setPixelRatio renderer js/window.devicePixelRatio)
+    (.appendChild js/document.body (.-domElement renderer))
+
+    (def controls (js/THREE.OrbitControls. camera (.-domElement renderer)))
+    (set! (.-enableDamping controls) true)
+
+    ;; 2. Lighting
+    (def ambient (js/THREE.AmbientLight. 0xffffff 0.6))
+    (.add scene ambient)
+    (def dir-light (js/THREE.DirectionalLight. 0x00e5ff 1.8))
+    (.set (.-position dir-light) 30 50 40)
+    (.add scene dir-light)
+
+    ;; 3. Procedural Instanced Mesh
+    (def geom (js/THREE.BoxGeometry. 0.8 0.8 0.8))
+    (def mat (js/THREE.MeshStandardMaterial. #js {:roughness 0.3 :metalness 0.8}))
+    (def inst-mesh (js/THREE.InstancedMesh. geom mat count))
+
+    ;; Dummy transform object for matrix calculation
+    (def dummy (js/THREE.Object3D.))
+    (def color-helper (js/THREE.Color.))
+
+    (dotimes [i count]
+      (let [u (/ (double i) count)
+            radius (+ 10.0 (* 30.0 (Math/sqrt u)))
+            theta (* u 50.0 Math/PI)
+            x (* radius (Math/cos theta))
+            z (* radius (Math/sin theta))
+            y (* 15.0 (Math/sin (* u 12.0 Math/PI)))]
+        ;; Set position and scale
+        (.set (.-position dummy) x y z)
+        (let [s (+ 0.4 (* 1.2 (Math/sin (* u 20.0))))]
+          (.set (.-scale dummy) s s s))
+        (.updateMatrix dummy)
+        (.setMatrixAt inst-mesh i (.-matrix dummy))
+
+        ;; Set procedural color
+        (.setHSL color-helper (+ 0.5 (* 0.4 u)) 0.85 0.55)
+        (.setColorAt inst-mesh i color-helper)))
+
+    (set! (.-needsUpdate (.-instanceMatrix inst-mesh)) true)
+    (when (.-instanceColor inst-mesh)
+      (set! (.-needsUpdate (.-instanceColor inst-mesh)) true))
+    (.add scene inst-mesh)
+
+    ;; 4. Resize and Render Loop
+    (.addEventListener js/window "resize"
+      (fn []
+        (set! (.-aspect camera) (/ js/window.innerWidth js/window.innerHeight))
+        (.updateProjectionMatrix camera)
+        (.setSize renderer js/window.innerWidth js/window.innerHeight)))
+
+    (defn animate []
+      (js/requestAnimationFrame animate)
+      (set! (.-y (.-rotation inst-mesh)) (+ (.-y (.-rotation inst-mesh)) 0.002))
+      (.update controls)
+      (.render renderer scene camera))
+
+    (animate)
+  </script>
+</body>
+</html>
+```
+
+---
+
+## 4. Templates B-C + Serving — see `references/templates.md`
+> B=Lorenz attractor, C=ShaderMaterial vertex/fragment, Serving=bb.edn http-server, REPL=scittle.nrepl.
+
+## 5. Troubleshooting — see references/templates.md for full table (6 rows)
+
+## 6. OpenUSD — WebGL (this skill) vs WebGPU (pcg-spaces). GL z -1..1 != DirectX z 0..1. Use webgpu for USD share.
+
+## References
+- Full templates: `references/templates.md` (load only when needed)

@@ -1,7 +1,6 @@
 ---
 name: retro
-description: >-
-  Conduct a retrospective on a coding session to optimize agent instructions, automated checks, and token economy.
+description: "Retrospect session to improve harness. Use when optimizing instructions, checks, or token economy."
 disable-model-invocation: true
 ---
 

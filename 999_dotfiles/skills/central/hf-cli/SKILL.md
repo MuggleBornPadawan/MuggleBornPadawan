@@ -1,6 +1,6 @@
 ---
 name: hf-cli
-description: "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when user explicitly asks via /skill:hf-cli and needs hf/Hugging Face CLI help for auth, cache, buckets, repos, papers, or jobs. Replaces the deprecated `huggingface-cli`."
+description: "Manage Hugging Face Hub via hf CLI. Use when hf download, upload, auth, or cache on lean box."
 disable-model-invocation: true
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: graphify
-description: >-
-  Use this skill when researching, navigating, or searching inside a codebase. Enforces using structured maps and project graphs instead of brute-force grep.
+description: "Map codebase with structured graphs. Use when researching, navigating, or generating GRAPH_REPORT.md."
 ---
 
 # Graphify Skill

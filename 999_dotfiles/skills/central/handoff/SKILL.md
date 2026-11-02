@@ -1,6 +1,7 @@
 ---
 name: handoff
-description: "Compact current session into handoff for next agent to continue. Clojure-adapted: references specs/tickets/ADRs by path, lean save to docs/handoffs or /tmp. Use when: handoff, compact session, next agent, resume session."
+description: "Create session handoff doc. Use when compacting context for next agent via docs/handoffs."
+
 ---
 
 # Handoff -- Central + Clojure Patch

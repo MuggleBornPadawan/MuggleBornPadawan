@@ -1,7 +1,6 @@
 ---
 name: prototype
-description: >-
-  Build a throwaway prototype to answer a design question. Use when sanity-checking state logic, exploring UI layouts, or evaluating procedural generation (PCG) algorithms and visual parameters. Clojure-adapted: bb + HTML logic demo, Quil/Raylib/Three.js for visual art.
+description: "Build throwaway prototype. Use when testing state logic, UI variations, or PCG parameters."
 ---
 
 # Prototype — Clojure Patch

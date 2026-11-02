@@ -1,7 +1,6 @@
 ---
 name: grilling
-description: >-
-  Grill plans, decisions, or ideas. Use when challenging assumptions, critiquing an implementation plan, stress-testing thinking, or using any 'grill' trigger phrases.
+description: "Critique plans and decisions. Use when challenging assumptions, alternatives, or compliance checks."
 ---
 
 ## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)

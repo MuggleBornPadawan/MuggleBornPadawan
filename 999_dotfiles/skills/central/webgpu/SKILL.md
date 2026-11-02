@@ -1,7 +1,6 @@
 ---
 name: webgpu
-description: >-
-  Use when rendering browser 3D with WebGPU/WGSL from Clojure/bb, sharing USD-correct art.json (xformOpOrder, local ±1, perspectiveZO 0..1), or fixing NDC/framebuffer/depth bugs.
+description: "Render WebGPU/WGSL browser art. Use when USD share, art.json, or 0..1 depth fixes needed."
 ---
 
 # Clojure WebGPU Skill: Browser USD + WGSL

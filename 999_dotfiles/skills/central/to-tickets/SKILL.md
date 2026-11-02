@@ -1,6 +1,6 @@
 ---
 name: to-tickets
-description: "Break spec/plan/conversation into tracer-bullet vertical tickets with blocking edges. Clojure-adapted: slice via ns APIs, expand-contract for wide refactors. Use when: tickets, tracer bullet, blocked by, vertical slice."
+description: "Slice spec into tracer-bullet tickets. Use when creating vertical tickets with blocking edges."
 disable-model-invocation: true
 ---
 

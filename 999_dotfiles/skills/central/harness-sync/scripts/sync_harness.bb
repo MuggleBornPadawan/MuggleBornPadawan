@@ -5,14 +5,15 @@
             [clojure.string :as str])
   (:import [java.nio.file Files]))
 
-;; Centralized Repository Paths
-(def central-base "/home/rgroot/.local/share")
-(def central-memory-dir "/home/rgroot/.local/share/agent-memory")
-(def central-core-memory "/home/rgroot/.local/share/agent-memory/AGENTS_CORE.md")
-(def central-tails-dir "/home/rgroot/.local/share/agent-memory/tails")
-(def central-assembled-dir "/home/rgroot/.local/share/agent-memory/assembled")
-(def central-skills "/home/rgroot/.local/share/skills")
-(def central-prompts "/home/rgroot/.local/share/agent-prompts")
+;; Centralized Repository Paths — portable via $HOME (Fix 5A)
+(def home (str (fs/home)))
+(def central-base (str home "/.local/share"))
+(def central-memory-dir (str central-base "/agent-memory"))
+(def central-core-memory (str central-memory-dir "/AGENTS_CORE.md"))
+(def central-tails-dir (str central-memory-dir "/tails"))
+(def central-assembled-dir (str central-memory-dir "/assembled"))
+(def central-skills (str central-base "/skills"))
+(def central-prompts (str central-base "/agent-prompts"))
 
 ;; Anti-pollution and collision guardrails for Antigravity prompt bridges
 (def agy-builtin-commands
@@ -24,33 +25,33 @@
 ;; Harness Configuration Targets
 (def harness-targets
   [{:name "Antigravity Gemini"
-    :base "/home/rgroot/.gemini/config"
+    :base (str home "/.gemini/config")
     :tail "gemini_tail.md"
-    :assembled "/home/rgroot/.local/share/agent-memory/assembled/gemini.md"
+    :assembled (str central-assembled-dir "/gemini.md")
     :links [{:sub "AGENTS.md" :target :assembled}
             {:sub "GEMINI.md" :target :assembled}
             {:sub "prompts"   :target central-prompts}]}
 
    {:name "Pi Agent"
-    :base "/home/rgroot/.pi/agent"
+    :base (str home "/.pi/agent")
     :tail "pi_tail.md"
-    :assembled "/home/rgroot/.local/share/agent-memory/assembled/pi.md"
+    :assembled (str central-assembled-dir "/pi.md")
     :links [{:sub "AGENTS.md" :target :assembled}
             {:sub "skills"    :target central-skills}
             {:sub "prompts"   :target central-prompts}]}
 
    {:name "OpenCode Agent"
-     :base "/home/rgroot/.config/opencode"
+     :base (str home "/.config/opencode")
      :tail "opencode_tail.md"
-     :assembled "/home/rgroot/.local/share/agent-memory/assembled/opencode.md"
+     :assembled (str central-assembled-dir "/opencode.md")
      :links [{:sub "AGENTS.md" :target :assembled}
              {:sub "skills"    :target central-skills}
              {:sub "commands"  :target central-prompts}]}
 
    {:name "Emacs Gptel"
-     :base "/home/rgroot/.emacs.d"
+     :base (str home "/.emacs.d")
      :tail "emacs_tail.md"
-     :assembled "/home/rgroot/.local/share/agent-memory/assembled/emacs.md"
+     :assembled (str central-assembled-dir "/emacs.md")
      :links []}])
 
 (defn symlink? [p]
@@ -147,7 +148,7 @@
 
 (defn sync-gemini-skills! [dry-run?]
   (println "\n--- Managing Antigravity Skills & Prompt Bridges ---")
-  (let [gemini-skills-dir "/home/rgroot/.gemini/config/skills"
+  (let [gemini-skills-dir (str home "/.gemini/config/skills")
         central-skills-dirs (filter fs/directory? (fs/list-dir central-skills))
         central-skills-set (set (map #(str (fs/file-name %)) central-skills-dirs))
         expected-entries (atom #{})]

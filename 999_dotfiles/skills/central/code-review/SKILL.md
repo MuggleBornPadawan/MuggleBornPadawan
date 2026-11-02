@@ -1,7 +1,6 @@
 ---
 name: code-review
-description: >-
-  Review git diff or files for bugs, security vulnerabilities, performance, and Clojure/lean-machine conventions. Use when: review diff, pr review, security audit, lint.
+description: "Review diffs for bugs and security. Use when audit, lint, or vulnerability check on code."
 ---
 
 # Code Review & Quality Audit

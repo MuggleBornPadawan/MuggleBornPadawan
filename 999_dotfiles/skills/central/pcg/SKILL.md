@@ -1,7 +1,6 @@
 ---
 name: pcg
-description: >-
-  One pure Clojure PCG core rendered via Quil, Raylib, and WebGPU/WGSL. Use when you want a single seeded generate function to preview in Quil, run real-time in Raylib, and export JSON for browser WebGPU from the same data.
+description: "Generate one pure art core for three renders. Use when seeded generate via Quil, Raylib, and WebGPU."
 ---
 
 # Clojure PCG — One Generate, Three Renders

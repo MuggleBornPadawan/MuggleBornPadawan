@@ -1,6 +1,7 @@
 ---
 name: wayfinder
-description: "Builds shared multi-session decision ticket maps for massive work chunks. Use when: multi-session roadmap, complex architectural wayfinder map."
+description: "Map multi-session decision tickets. Use when roadmap, architecture wayfinder, or decision locks needed."
+
 ---
 
 ## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)

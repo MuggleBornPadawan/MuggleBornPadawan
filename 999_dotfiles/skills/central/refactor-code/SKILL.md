@@ -1,6 +1,7 @@
 ---
 name: refactor-code
-description: "Performs safe, incremental code restructuring without behavior changes. Use when: refactoring code, cleaning up functions, renaming seams."
+description: "Refactor without behavior change. Use when cleaning namespaces, renaming, or deduping code."
+
 ---
 
 # Incremental Code Refactorer

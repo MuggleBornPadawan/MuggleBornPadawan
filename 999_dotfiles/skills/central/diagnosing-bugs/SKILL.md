@@ -1,6 +1,7 @@
 ---
 name: diagnosing-bugs
-description: "Diagnosis loop for hard bugs and performance regressions. Clojure-adapted: tight feedback via clojure.test/bb/REPL first, then curl/harness. Lean-machine safe."
+description: "Diagnose bugs via tight REPL loop. Use when failing test, performance regression, or hard bug."
+
 ---
 
 # Diagnosing Bugs — Clojure Patch

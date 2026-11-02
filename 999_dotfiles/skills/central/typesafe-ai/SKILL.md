@@ -1,7 +1,6 @@
 ---
 name: typesafe-ai
-description: >-
-  Use when integrating with TypeSafe AI, querying the Jev model, formulating Choice, Score, or Noul questions, or building calibrated decision workflows.
+description: "Query TypeSafe Jev model. Use when Choice, Score, or Noul calibrated decisions needed."
 ---
 
 # TypeSafe AI (Jev)

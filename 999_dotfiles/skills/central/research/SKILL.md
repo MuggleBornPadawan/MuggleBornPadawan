@@ -1,7 +1,6 @@
 ---
 name: research
-description: >-
-  Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated.
+description: "Research primary sources into markdown. Use when investigating docs, specs, or API facts."
 ---
 
 ## Preamble (Run ONLY on interactive execution, NOT for read-only lookup)

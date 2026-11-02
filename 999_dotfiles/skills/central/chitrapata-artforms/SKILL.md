@@ -1,7 +1,6 @@
 ---
 name: chitrapata-artforms
-description: >-
-  Traditional Indian artform generators for Chittu 13.14. Use when generating procedural art in the style of Mandala, Kalamkari, Kalighat, Pattachitra, Pithora, Tanjore, Madhubani, Kerala Murals, Pichwai, Gond, Warli, or Phad. Provides visual invariants, algorithmic specs, state parameters, and art.json output contracts per artform.
+description: "Generate Chittu art in 12 Indian styles. Use when Mandala, Kalamkari, Warli, Gond, or art.json invariants needed."
 ---
 
 # Chitrapata Traditional Indian Artforms — PCG Skill

@@ -1,6 +1,6 @@
 ---
 name: to-spec
-description: "Turn conversation into spec without interview -- synthesize what is decided. Clojure-adapted: seams are ns public APIs, deps.edn, docs/specs/. Use when: spec, specification, CONTEXT.md, seam design."
+description: "Synthesize conversation into spec. Use when writing spec for ns seams via docs/specs."
 disable-model-invocation: true
 ---
 

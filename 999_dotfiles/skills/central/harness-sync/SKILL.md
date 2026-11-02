@@ -1,7 +1,6 @@
 ---
 name: harness-sync
-description: >-
-  Centralized memory, skills, and prompt symlink manager across all coding harnesses (Antigravity Gemini, Pi, OpenCode). Use when: harness sync, symlink, assembled memory.
+description: "Sync central memory, skills, and prompts across harnesses. Use when symlink or assembled memory sync."
 disable-model-invocation: true
 ---
 

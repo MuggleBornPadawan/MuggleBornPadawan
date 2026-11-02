@@ -18,12 +18,7 @@
 - Code style: Idiomatic `->`/`->>` threading, clean namespaces, pure data in -> data out.
 
 ## Visual & Creative Coding
-- PCG standards: Pure functions first (separate data from rendering); deterministic seeded randoms; expose tweakable parameter maps.
-- Render targets:
-  - 2D/3D generative: Processing via Quil (`quil/quil`).
-  - Desktop games / real-time 60 FPS: Raylib via `b12n-oss/raylib-clj` (Panama FFM).
-  - Browser 3D: Scittle + Three.js (zero build, served via `bb http-server`) or WebGPU/WGSL.
-  - Multi-target pipeline: One pure Clojure `generate` fn -> `art.json` (see `pcg` and `pcg-spaces` skills).
+- PCG: pure `generate` -> `art.json` via `pcg` + `pcg-spaces`; see `quil`/`raylib`/`webgpu`/`threejs` skills. Do not load otherwise.
 
 ## Output Contract & Context Window Discipline
 - ASD-STE100 Simplified Technical English.
@@ -46,6 +41,9 @@
   | **Options**        | 2–3 distinct technical paths                  |
   | **Trade-offs**     | Pros, cons, and impact for each option        |
   | **Recommendation** | Agent preference, paused awaiting user choice |
+
+## Domain Model & Source Truth
+- Read `CONTEXT.md` + `docs/adr/*` before code; edit via `domain-modeling` skill. Tasks: `bb tasks` lists `deps.edn`/`bb.edn`.
 
 ## Path Authority: Central Store (harness-sync)
 - Ground Truth Store: Edit only in `~/.local/share/agent-prompts` (prompts), `~/.local/share/skills` (skills), and `~/.local/share/agent-memory/AGENTS_CORE.md` + `tails/` (memory).

@@ -1,6 +1,6 @@
 ---
 name: improve-codebase-architecture
-description: "Scans codebase for structural debt and generates visual HTML architecture reports. Use when: architecture audit, generating structural HTML report."
+description: "Audit architecture and propose deepening. Use when HTML report or structural debt scan needed."
 disable-model-invocation: true
 ---
 

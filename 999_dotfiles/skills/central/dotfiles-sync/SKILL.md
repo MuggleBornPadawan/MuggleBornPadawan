@@ -1,7 +1,6 @@
 ---
 name: dotfiles-sync
-description: >-
-  Backup dotfiles via dotfiles.bb, commit and push to chromebook and main branches. Runs dotfiles backup, checks git status, commits changes, pushes chromebook, merges to main and pushes main. Use after editing dotfiles, prompts, skills, sysinfo.sh, or templates, or for daily backup. Use when: dotfiles, backup, harness sync.
+description: "Backup and push dotfiles. Use when dotfiles, prompts, skills, or sysinfo.sh changed."
 disable-model-invocation: true
 ---
 

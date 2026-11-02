@@ -1,7 +1,6 @@
 ---
 name: error-discovery
-description: >-
-  Discover failure modes in LLM traces or agent logs before writing metrics. Use when inspecting traces, finding bugs in AI outputs, or starting an eval dataset. Lean Pi adapted: turn-based review, HTML app, sequential scanning.
+description: "Discover LLM failure modes from traces. Use when inspecting logs, eval dataset, or HTML review."
 ---
 
 # Error Discovery — Pi Lean Edition

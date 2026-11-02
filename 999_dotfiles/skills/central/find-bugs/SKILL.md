@@ -1,7 +1,6 @@
 ---
 name: find-bugs
-description: >-
-  Proactively hunt for edge cases, error handling flaws, concurrency issues, and resource leaks. Use when: edge case, error handling, concurrency, leak.
+description: "Hunt edge cases and leaks. Use when edge case, error handling, concurrency, or resource leak check."
 ---
 
 # Proactive Bug Hunting & Vulnerability Scanner

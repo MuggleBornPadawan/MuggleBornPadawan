@@ -1,7 +1,6 @@
 ---
 name: to-questionnaire
-description: >-
-  Turn an unresolved decision or ambiguous requirement into an async markdown discovery questionnaire for an external stakeholder. Use when: questionnaire, interview external, stakeholder question, missing info.
+description: "Create stakeholder questionnaire. Use when ambiguous requirement needs async discovery."
 ---
 
 # To Questionnaire

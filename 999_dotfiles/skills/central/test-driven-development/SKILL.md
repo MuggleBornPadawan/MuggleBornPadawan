@@ -1,6 +1,7 @@
 ---
 name: test-driven-development
-description: "Enforces the Red-Green-Refactor loop, failing test assertions first, and public ns seam testing. Use when: TDD, write failing test, red-green-refactor."
+description: "Enforce Red-Green-Refactor TDD. Use when writing failing test before production code."
+
 ---
 
 # Test-Driven Development — Clojure Patch

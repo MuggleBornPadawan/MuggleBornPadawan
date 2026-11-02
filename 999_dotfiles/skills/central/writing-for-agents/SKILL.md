@@ -1,6 +1,6 @@
 ---
 name: writing-for-agents
-description: "Guidelines for authoring skills, prompts, AGENTS_CORE.md -- two loads, context pointers, leading words, pruning, hierarchy. Use when: writing skill, AGENTS.md, prompt template."
+description: "Guide writing for LLMs with Two Loads. Use when authoring skills, prompts, or AGENTS_CORE.md."
 disable-model-invocation: true
 ---
 

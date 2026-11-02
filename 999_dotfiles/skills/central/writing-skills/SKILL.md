@@ -1,6 +1,6 @@
 ---
 name: writing-skills
-description: "Author, test, and verify skills for the central harness. Use when: creating skill, editing skill, verifying skill."
+description: "Author and verify central skills. Use when creating, editing, or testing skill design."
 disable-model-invocation: true
 ---
 
