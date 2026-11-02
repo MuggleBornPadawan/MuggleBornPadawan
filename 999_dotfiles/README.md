@@ -63,6 +63,7 @@ Truth: `:pairs` in `manifest.edn`. Compat mirrors (`:compat? true`) are symlinks
 | `~/.gitignore` | `home/.gitignore` | git |
 | `~/.dockerignore` | `home/.dockerignore` | docker |
 | `~/.vimrc` | `home/.vimrc` | vim |
+| `~/.sbclrc` | `home/.sbclrc` | sbcl |
 | `~/.tmux.conf` | `home/.tmux.conf` | tmux |
 | `~/.selected_editor` | `home/.selected_editor` | editor |
 | `~/.ssh/config` | `home/.ssh/config` | ssh (keys never stored) |
@@ -92,6 +93,7 @@ Truth: `:pairs` in `manifest.edn`. Compat mirrors (`:compat? true`) are symlinks
 | `~/.gemini/antigravity-cli/builtin/skills/` | `skills/agy/builtin/` | agy builtin |
 | `~/.config/opencode/AGENTS.md` | `home/.config/opencode/AGENTS.md` | opencode global |
 | `~/.config/opencode/opencode.jsonc` | `home/.config/opencode/opencode.jsonc` | opencode global |
+| `~/.config/opencode/cli.json` | `home/.config/opencode/cli.json` | opencode cli |
 | `~/.config/opencode/package.json` | `home/.config/opencode/package.json` | opencode |
 | `~/.config/opencode/package-lock.json` | `home/.config/opencode/package-lock.json` | opencode lock |
 | `~/.config/opencode/.gitignore` | `home/.config/opencode/.gitignore` | opencode ignore |
@@ -142,5 +144,5 @@ Truth: `:pairs` in `manifest.edn`. Compat mirrors (`:compat? true`) are symlinks
 
 ## Lean
 
-- Disk: 13GB free (59% used, 31GB total, 2026-09-30). Do not backup `~/.ollama/models/blobs` (1-2GB, re-downloadable).
+- Disk: 11GB free (66% used, 31GB total). Do not backup `~/.ollama/models/blobs` (1-2GB, re-downloadable).
 - `node_modules` excluded for opencode.

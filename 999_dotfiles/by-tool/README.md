@@ -21,7 +21,7 @@
 - Secrets excluded: `oauth_creds.json`, `google_accounts.json`, `mcp-oauth-tokens*`, `state.json`, `brain/`, `conversations/`
 
 ## opencode
-- Globals: `home/.config/opencode/opencode.jsonc`, `package.json`, `package-lock.json`, `.gitignore`, `plugins/`
+- Globals: `home/.config/opencode/opencode.jsonc`, `cli.json`, `package.json`, `package-lock.json`, `.gitignore`, `plugins/`
 - Commands: `prompts/central/` (symlinked as `~/.config/opencode/commands`)
 - Skills: `skills/central/` (symlinked as `~/.config/opencode/skills`)
 - Home source: `~/.config/opencode/`
