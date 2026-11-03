@@ -3347,7 +3347,7 @@
     ],
     "lastModified": 1793627317000,
     "etag": "W/\"6d1c73b0f1c0b7cbb84dc026e6d41a2c\"",
-    "checkedAt": 1793630467061
+    "checkedAt": 1793676591810
   },
   "opencode-go": {
     "models": [
@@ -4552,7 +4552,7 @@
     ],
     "lastModified": 1793627319000,
     "etag": "W/\"339e1e473ec29dbe2e2f9e2fcdc05db6\"",
-    "checkedAt": 1793630467051
+    "checkedAt": 1793676591981
   },
   "google": {
     "models": [
@@ -5530,7 +5530,7 @@
     ],
     "lastModified": 1793367416000,
     "etag": "W/\"63a5510c277fa68dc8d8955da1c7b3e9\"",
-    "checkedAt": 1793630466933
+    "checkedAt": 1793676591867
   },
   "meta": {
     "models": [
@@ -5777,6 +5777,6 @@
     ],
     "lastModified": 1791965969000,
     "etag": "W/\"d2397a60589efbabef99ee05f91cc968\"",
-    "checkedAt": 1793630469402
+    "checkedAt": 1793676591880
   }
 }
