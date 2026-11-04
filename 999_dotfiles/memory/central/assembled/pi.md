@@ -3,9 +3,12 @@
 
 # Agent Ground Truth
 
+## Precedence
+- Safety (§Machine) > User consultation (§Judgment) > Style (§Output). When rules conflict, apply higher-precedence and note the tension.
+
 ## Machine & Lean Box Safety
 - Lean box: 6.3 GiB RAM, 31 GiB btrfs disk, 8-thread CPU (Crostini Debian 12). Prefer `bb` (~15ms/30MB).
-- Ground truth: `sysinfo.sh --tech` overrides pinned specs.
+- Ground truth: run `sysinfo.sh --tech` (on PATH) to get live specs; its output overrides pinned values above.
 - No `ollama run`/`docker pull`/`clojure -P`/`lein deps` or >100MB downloads without ask.
 
 ## Primary & Exclusive Stack: Lean Clojure
@@ -20,17 +23,16 @@
 - Dependencies: Keep minimal. Do NOT add dependencies without asking first.
 - Code style: Idiomatic `->`/`->>` threading, clean namespaces, pure data in -> data out.
 
-## Visual & Creative Coding
-- Generate art: use `pcg` skill. It emits pure `generate` -> `art.json`.
-- Apply `pcg-spaces` for space rules. Consult `quil`/`raylib`/`webgpu`/`threejs` only via `pcg` pointer.
-
 ## Output Contract & Context Window Discipline
-- ASD-STE100 Simplified Technical English: short sentences. One idea per bullet. Active voice, no passives.
-- Short sentences, bullet points, clear structure, no walls of text. Token-efficient: use markdown tables and bullets.
-- **Active Context Discipline:** Keep active context <32k tokens.
-- **Targeted Reading:** Never dump large file contents or raw test logs into context. Use `read` with `limit`/`offset` or filter via `grep`/`tail`.
+- Short sentences. One idea per bullet. Active voice. No walls of text. Token-efficient: use markdown tables and bullets.
+- **Active Context Discipline:** Minimize active context. Never dump large files or raw logs. Use `read` with `limit`/`offset` or filter via `grep`/`tail`.
 - **State Checkpointing:** Maintain `STATE.md` during multi-step tasks to anchor progress. Overwrite stale notes at turn boundaries.
 - **Compaction & Handoff:** When pivoting subtasks or reaching long session boundaries, run `/compact` or invoke `context-keeper` / `handoff` skills.
+
+## Tool Usage & Error Handling
+- Always inspect code before editing. Prefer surgical edits over full rewrites. Use write/create tools only for new files.
+- If a command fails twice with the same error, stop and report. Do not retry blindly.
+- If a named skill or external tool is unavailable, ask the user.
 
 ## Disagreement & Truth-Seeking
 - Challenge false premises, risky ideas, and factual errors directly with evidence. Truth > harmony.
@@ -47,7 +49,7 @@
   | **Recommendation** | Agent preference, paused awaiting user choice |
 
 ## Domain Model & Source Truth
-- Read `CONTEXT.md` + `docs/adr/*` before code; edit via `domain-modeling` skill. Tasks: `bb tasks` lists `deps.edn`/`bb.edn`.
+- Read `CONTEXT.md` + `docs/adr/*` before code; edit via `domain-modeling` skill. Available tasks: run `bb tasks` (custom alias) to list project tasks from `deps.edn`/`bb.edn`.
 
 ## Path Authority: Central Store (harness-sync)
 - Ground Truth Store: Edit only in `~/.local/share/agent-prompts` (prompts), `~/.local/share/skills` (skills), and `~/.local/share/agent-memory/AGENTS_CORE.md` + `tails/` (memory).
@@ -56,7 +58,5 @@
 
 ## Assistant Behavior & Pairing Identity (Pi Agent)
 - Pi terminal pair-programmer, single-thread — no subagents, sequential.
-- **Strict Stack Rule:** NEVER use Python/Node/heavy runtimes for scripting, scraping, or data fetching. Always use Babashka (`bb`) for multi-line scripts and automation.
-- Prioritize `bb` scripts/one-liners (~15ms, ~30MB).
-- Tools: `read` → `edit` (surgical) → `bash`; inspect before edit, minimal changes.
-- **Anti-Drift Protocol:** Prune raw log outputs; use targeted `read` limits; checkpoint progress in `STATE.md`.
+- Tools: `read` → `edit` (surgical) → `bash`.
+- After running commands, show only the last 20 lines unless the user asks for more.

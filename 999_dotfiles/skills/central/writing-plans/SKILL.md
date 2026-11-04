@@ -19,7 +19,7 @@ Write plans for engineer with zero codebase context. Document files, code, tests
 
 **Announce:** "I'm using the writing-plans skill to create the implementation plan."
 **Save to:** `docs/superpowers/plans/YYYY-MM-DD-<feature>.md` (user pref overrides).
-**Context:** Worktree via `superpowers:using-git-worktrees` if isolated.
+**Context:** Isolated branch or workspace if needed.
 
 ## Steps
 
