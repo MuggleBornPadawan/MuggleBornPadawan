@@ -5,7 +5,6 @@
 ;; Fallback mode hooks (kept for when tree-sitter grammar missing)
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
 (add-hook 'clojure-mode-hook 'subword-mode)
-(require 'clojure-mode-extra-font-locking) ;; only for clojure-mode fallback
 
 ;; syntax hilighting for midje (fallback mode)
 (add-hook 'clojure-mode-hook

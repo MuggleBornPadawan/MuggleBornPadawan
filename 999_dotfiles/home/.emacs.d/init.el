@@ -8,10 +8,10 @@
 (setq gc-cons-threshold 100000000) ; 100 MB
 (setq read-process-output-max 1048576) ; 1 MB
 
-;; Restore sensible GC threshold after initialization is complete
+;; Restore sensible GC threshold after initialization is complete (16 MB)
 (add-hook 'emacs-startup-hook
           (lambda ()
-            (setq gc-cons-threshold 800000))) ; 800 KB
+            (setq gc-cons-threshold (* 16 1024 1024)))) ; 16 MB
 
 ;; ==========================================
 ;; 2. ENVIRONMENT & GENERAL SETTINGS
@@ -77,6 +77,7 @@
 
 (use-package exec-path-from-shell
   :ensure t
+  :if (memq window-system '(mac ns))
   :config
   (exec-path-from-shell-initialize))
 
@@ -84,8 +85,6 @@
 (add-to-list 'load-path (expand-file-name "customizations" user-emacs-directory))
 
 (load "shell-integration.el" t)
-;; (load "navigation.el" t) ; Commented out in original configuration
-;; (load "ui.el" t)         ; Commented out in original configuration
 (load "editing.el" t)
 (load "misc.el" t)
 (load "elisp-editing.el" t)
@@ -194,15 +193,16 @@
 ;; SLIME (Common Lisp)
 (use-package slime
   :ensure t
+  :defer t
+  :commands (slime slime-connect)
   :init
   ;; Set SBCL as the default Common Lisp implementation
   (setq inferior-lisp-program "sbcl")
+  ;; Auto-enable slime-mode in lisp-mode
+  (add-hook 'lisp-mode-hook #'slime-mode)
   :config
   ;; Enable standard SLIME contribs (fancy auto-completion, doc, inspector)
-  (setq slime-contribs '(slime-fancy))
-
-  ;; Auto-enable slime-mode in lisp-mode
-  (add-hook 'lisp-mode-hook #'slime-mode))
+  (setq slime-contribs '(slime-fancy)))
 
 ;; Rainbow Delimiters
 (use-package rainbow-delimiters
@@ -328,6 +328,8 @@
 ;; Elfeed RSS Feed Reader
 (use-package elfeed
   :ensure t
+  :defer t
+  :commands (elfeed)
   :config
   (setq elfeed-feeds
         '(;; Aggregators & Official
@@ -489,6 +491,5 @@
 
 ;; trivia
 (global-set-key (kbd "C-j") 'eval-print-last-sexp)
-(evil-mode 0)
 
 

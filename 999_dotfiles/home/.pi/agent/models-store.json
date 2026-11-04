@@ -555,7 +555,8 @@
           "max": "max"
         },
         "compat": {
-          "forceAdaptiveThinking": true
+          "forceAdaptiveThinking": true,
+          "supportsTemperature": false
         },
         "inputLimits": {
           "images": {
@@ -598,6 +599,52 @@
           "supportsTemperature": false,
           "supportsMidConvoSystemMessages": true,
           "supportsMidConvoEffort": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
+        "id": "crouton-alpha-free",
+        "name": "Crouton Alpha Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/openai/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 270000,
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": "minimal",
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
         },
         "inputLimits": {
           "images": {
@@ -3167,6 +3214,52 @@
         "type": "chat"
       },
       {
+        "id": "pulse-alpha-free",
+        "name": "Pulse Alpha Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/openai/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "qwen3.5-plus",
         "name": "Qwen3.5 Plus",
         "api": "anthropic-messages",
@@ -3345,9 +3438,9 @@
         "contextWindow": 32000
       }
     ],
-    "lastModified": 1793627317000,
-    "etag": "W/\"6d1c73b0f1c0b7cbb84dc026e6d41a2c\"",
-    "checkedAt": 1793676591810
+    "lastModified": 1793798532000,
+    "etag": "W/\"72e28eb48ad4ce2bf3a235ccb4829b6a\"",
+    "checkedAt": 1793803207822
   },
   "opencode-go": {
     "models": [
@@ -3437,7 +3530,7 @@
       },
       {
         "id": "deepseek-v4-pro",
-        "name": "DeepSeek V4 Pro (New)",
+        "name": "DeepSeek V4 Pro",
         "api": "openai-completions",
         "provider": "opencode-go",
         "baseUrl": "https://opencode.ai/inference/go/openai/v1",
@@ -4550,9 +4643,9 @@
         "type": "chat"
       }
     ],
-    "lastModified": 1793627319000,
-    "etag": "W/\"339e1e473ec29dbe2e2f9e2fcdc05db6\"",
-    "checkedAt": 1793676591981
+    "lastModified": 1793798534000,
+    "etag": "W/\"1bd64b7a4e5ceecb344acfe7686c20fc\"",
+    "checkedAt": 1793803208336
   },
   "google": {
     "models": [
@@ -5530,7 +5623,7 @@
     ],
     "lastModified": 1793367416000,
     "etag": "W/\"63a5510c277fa68dc8d8955da1c7b3e9\"",
-    "checkedAt": 1793676591867
+    "checkedAt": 1793803208331
   },
   "meta": {
     "models": [
@@ -5777,6 +5870,6 @@
     ],
     "lastModified": 1791965969000,
     "etag": "W/\"d2397a60589efbabef99ee05f91cc968\"",
-    "checkedAt": 1793676591880
+    "checkedAt": 1793803207920
   }
 }

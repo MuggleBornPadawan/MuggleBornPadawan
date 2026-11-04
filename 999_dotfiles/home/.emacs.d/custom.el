@@ -5,15 +5,15 @@
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
  '(package-selected-packages
-   '(cider clojure-mode-extra-font-locking clojure-ts-mode company
-           doom-modeline elfeed evil exec-path-from-shell geiser-mit
+   '(cider clojure-ts-mode company
+           elfeed exec-path-from-shell geiser-mit
            geiser-racket git-commit gptel ido-completing-read+
-           inf-clojure json-mode lsp-ui magit multiple-cursors
+           inf-clojure json-mode magit multiple-cursors
            ob-elixir ob-elm ob-erlang ob-fsharp ob-go ob-kotlin ob-php
            ob-powershell ob-rust ob-swift ob-typescript org-contrib
-           org-kanban paredit persistent-scratch protobuf-mode
+           paredit persistent-scratch protobuf-mode
            racket-mode rainbow-delimiters ranger request restclient
-           slime smex tagedit toc-org tree-sitter-langs treesit-auto
+           slime smex toc-org tree-sitter-langs treesit-auto
            use-package vterm-editor vterm-hotkey vterm-toggle)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
