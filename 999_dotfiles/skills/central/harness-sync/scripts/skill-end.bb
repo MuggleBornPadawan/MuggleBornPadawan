@@ -37,7 +37,9 @@
         arg-skill (arg-val a "--skill")
         outcome (or (arg-val a "--outcome") "success")
         arg-sid (arg-val a "--session-id")
-        active (resolve-active-session)
+        ;; Only resolve active session if caller explicitly identifies itself
+        has-identity? (or arg-skill arg-sid)
+        active (when has-identity? (resolve-active-session))
         sid (cond
               (and arg-sid (not= arg-sid "none")) arg-sid
               (:sid active) (:sid active)

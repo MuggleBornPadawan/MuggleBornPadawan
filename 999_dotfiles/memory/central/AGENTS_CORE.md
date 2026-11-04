@@ -1,9 +1,9 @@
 # Agent Ground Truth
 
 ## Precedence
-- Safety (§Machine) > User consultation (§Judgment) > Style (§Output). When rules conflict, apply higher-precedence and note the tension.
+- Precedence: [Safety] > [Judgment] > [Style]. When rules conflict, apply higher-precedence and note tension.
 
-## Machine & Lean Box Safety
+## [Safety] Machine & Lean Box Safety
 - Lean box: 6.3 GiB RAM, 31 GiB btrfs disk, 8-thread CPU (Crostini Debian 12). Prefer `bb` (~15ms/30MB).
 - No `ollama run`/`docker pull`/`clojure -P`/`lein deps` or >100MB downloads without ask.
 
@@ -11,22 +11,25 @@
 - Stack: Clojure (JVM) or Babashka (`bb`).
 - Use `bb` for multi-line scripts, CLI tools, scraping, data fetch, JSON/EDN/HTML, automation.
 - Use `bash`/`rg`/`sql` for one-liners only.
+- DO NOT use Python, Node, Go, or shell scripts beyond one-liners without explicit approval.
 - Lean efficiency: Babashka starts in ~15 ms and uses ~30 MB RAM. Never default to heavy runtimes.
 - Build tools: Clojure CLI (`deps.edn`) preferred; Leiningen (`project.clj`) for existing Lein projects. No global deps.
-- REPL-driven development: Prefer evaluating code and running tests in a running JVM REPL over restarting the JVM.
-- Testing: `clojure.test`. Runner priority: Live REPL Socket -> `bb test -n <ns>` -> `clojure -M:test -n <ns>` -> `lein test`.
+- REPL-driven development: Prefer evaluating code and running tests in a running JVM REPL over restarting the JVM. Discover active REPL via `.nrepl-port` or `.socket-port` in project root.
+- Testing: `clojure.test`. Runner priority: Live REPL (.nrepl-port / .socket-port) -> `bb test -n <ns>` -> `clojure -M:test -n <ns>` -> `lein test`.
 - Databases: PostgreSQL for server persistence; SQLite for local/embedded projects.
 - Dependencies: Keep minimal. Do NOT add dependencies without asking first.
 - Code style: Idiomatic `->`/`->>` threading, clean namespaces, pure data in -> data out.
 
-## Output Contract & Context Window Discipline
+## [Style] Output Contract & Context Window Discipline
 - Short sentences. One idea per bullet. Active voice. No walls of text. Token-efficient: use markdown tables and bullets.
-- **Active Context Discipline:** Minimize active context. Never dump large files or raw logs. Use `read` with `limit`/`offset` or filter via `grep`/`tail`.
-- **State Checkpointing:** Maintain `STATE.md` during multi-step tasks to anchor progress. Overwrite stale notes at turn boundaries.
-- **Compaction & Handoff:** When pivoting subtasks or reaching long session boundaries, run `/compact` or invoke `context-keeper` / `handoff` skills.
+- DO NOT produce multi-paragraph prose, repeat back the user's request, or apologize. Get to the point.
+- **Active Context Discipline:** Minimize active context. Never dump large files or raw logs. Read specific line ranges/offsets or filter via `grep`/`tail`.
+- **State Checkpointing:** Maintain `STATE.md` only for complex tasks (>=3 distinct steps or touching >=2 files). Overwrite stale notes at turn boundaries.
+- **Compaction & Handoff:** When pivoting subtasks or reaching long session boundaries, summarize context or invoke `context-keeper` / `handoff` skills.
 
 ## Tool Usage & Error Handling
 - Always inspect code before editing. Prefer surgical edits over full rewrites. Use write/create tools only for new files.
+- Use surgical edit tools when modifying existing files. Do not re-read unchanged files already in context; re-read only after mutations.
 - If a command fails twice with the same error, stop and report. Do not retry blindly.
 - If a named skill or external tool is unavailable, ask the user.
 
@@ -34,8 +37,9 @@
 - Challenge false premises, risky ideas, and factual errors directly with evidence. Truth > harmony.
 - If uncertain, state confidence level and missing data. Grill weak plans before code.
 
-## Collaborative Judgment & Ambiguity Handling
+## [Judgment] Collaborative Judgment & Ambiguity Handling
 - When facing architectural ambiguities or trade-offs, STOP and consult the user.
+- Triggers: storage engine choice, new dependency, namespace restructure, public API shape change. NOT: variable naming, `map` vs `mapv`, formatting.
 - Interruption format:
   | Element            | Description                                   |
   |--------------------|-----------------------------------------------|
@@ -45,9 +49,10 @@
   | **Recommendation** | Agent preference, paused awaiting user choice |
 
 ## Domain Model & Source Truth
-- Read `CONTEXT.md` + `docs/adr/*` before code; edit via `domain-modeling` skill. Available tasks: run `bb tasks` (custom alias) to list project tasks from `deps.edn`/`bb.edn`.
+- Read `CONTEXT.md` + `docs/adr/*` before code; if absent, proceed and note the gap to the user. Edit via `domain-modeling` skill.
+- Project-local `CONTEXT.md` overrides stack and tool defaults for that project. This doc governs defaults and behavior.
+- Available tasks: run `bb tasks` (custom alias) to list project tasks from `deps.edn`/`bb.edn`.
 
-## Path Authority: Central Store (harness-sync)
-- Ground Truth Store: Edit only in `~/.local/share/agent-prompts` (prompts), `~/.local/share/skills` (skills), and `~/.local/share/agent-memory/AGENTS_CORE.md` + `tails/` (memory).
-- Never edit symlinks or repo mirror copies directly.
-- After edit, re-sync: `bb ~/.local/share/skills/harness-sync/scripts/sync_harness.bb` (`--dry-run` to audit).
+## [Harness] Central Store Authority
+- When modifying harness configuration, prompts, or skills: edit only in `~/.local/share/{agent-prompts,skills,agent-memory}`. Never edit symlinks or assembled targets directly.
+- After modifying central store: re-sync with `bb ~/.local/share/skills/harness-sync/scripts/sync_harness.bb` (`--dry-run` to audit).
