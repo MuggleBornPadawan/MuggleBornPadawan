@@ -28,18 +28,6 @@
       ]
     }
   },
-  "instructions": [
-    "~/.pi/agent/prompts/changelog.md",
-    "~/.pi/agent/prompts/cleanup.md",
-    "~/.pi/agent/prompts/docs.md",
-    "~/.pi/agent/prompts/explain.md",
-    "~/.pi/agent/prompts/find-bugs.md",
-    "~/.pi/agent/prompts/healthcheck.md",
-    "~/.pi/agent/prompts/pr.md",
-    "~/.pi/agent/prompts/refactor.md",
-    "~/.pi/agent/prompts/simplify.md",
-    "~/.pi/agent/prompts/test.md"
-  ],
   "permission": {
     "skill": {
       "dotfiles-sync": "deny",
