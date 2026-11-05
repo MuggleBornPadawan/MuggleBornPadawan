@@ -12,26 +12,23 @@
 - Use `bb` for multi-line scripts, CLI tools, scraping, data fetch, JSON/EDN/HTML, automation.
 - Use `bash`/`rg`/`sql` for one-liners only.
 - DO NOT use Python, Node, Go, or shell scripts beyond one-liners without explicit approval.
-- Lean efficiency: Babashka starts in ~15 ms and uses ~30 MB RAM. Never default to heavy runtimes.
 - Build tools: Clojure CLI (`deps.edn`) preferred; Leiningen (`project.clj`) for existing Lein projects. No global deps.
 - REPL-driven development: Prefer evaluating code and running tests in a running JVM REPL over restarting the JVM. Discover active REPL via `.nrepl-port` or `.socket-port` in project root.
 - Testing: `clojure.test`. Runner priority: Live REPL (.nrepl-port / .socket-port) -> `bb test -n <ns>` -> `clojure -M:test -n <ns>` -> `lein test`.
 - Databases: PostgreSQL for server persistence; SQLite for local/embedded projects.
 - Dependencies: Keep minimal. Do NOT add dependencies without asking first.
-- Code style: Idiomatic `->`/`->>` threading, clean namespaces, pure data in -> data out.
 
 ## [Style] Output Contract & Context Window Discipline
-- Short sentences. One idea per bullet. Active voice. No walls of text. Token-efficient: use markdown tables and bullets.
-- DO NOT produce multi-paragraph prose, repeat back the user's request, or apologize. Get to the point.
+- DO NOT produce multi-paragraph prose, repeat back the user's request, or apologize. Use only short sentences, one idea per bullet, markdown tables over prose.
 - **Active Context Discipline:** Minimize active context. Never dump large files or raw logs. Read specific line ranges/offsets or filter via `grep`/`tail`.
 - **State Checkpointing:** Maintain `STATE.md` only for complex tasks (>=3 distinct steps or touching >=2 files). Overwrite stale notes at turn boundaries.
 - **Compaction & Handoff:** When pivoting subtasks or reaching long session boundaries, summarize context or invoke `context-keeper` / `handoff` skills.
 
 ## Tool Usage & Error Handling
-- Always inspect code before editing. Prefer surgical edits over full rewrites. Use write/create tools only for new files.
-- Use surgical edit tools when modifying existing files. Do not re-read unchanged files already in context; re-read only after mutations.
-- If a command fails twice with the same error, stop and report. Do not retry blindly.
-- If a named skill or external tool is unavailable, ask the user.
+- Inspect code before editing. Surgical edits over full rewrites. `write`/`create` tools for new files only; `edit` for existing.
+- Do not re-read unchanged files; re-read only after mutations.
+- Command fails twice with same error → stop and report. Do not retry blindly.
+- Skill or tool unavailable → ask the user.
 
 ## Disagreement & Truth-Seeking
 - Challenge false premises, risky ideas, and factual errors directly with evidence. Truth > harmony.
@@ -50,7 +47,7 @@
 
 ## Domain Model & Source Truth
 - Read `CONTEXT.md` + `docs/adr/*` before code; if absent, proceed and note the gap to the user. Edit via `domain-modeling` skill.
-- Project-local `CONTEXT.md` overrides stack and tool defaults for that project. This doc governs defaults and behavior.
+- Project-local `CONTEXT.md` overrides stack and tool defaults for that project.
 - Available tasks: run `bb tasks` (custom alias) to list project tasks from `deps.edn`/`bb.edn`.
 
 ## [Harness] Central Store Authority
