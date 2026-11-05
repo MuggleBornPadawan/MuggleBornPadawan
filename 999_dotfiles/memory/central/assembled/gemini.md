@@ -28,10 +28,10 @@
 - **Compaction & Handoff:** When pivoting subtasks or reaching long session boundaries, summarize context or invoke `context-keeper` / `handoff` skills.
 
 ## Tool Usage & Error Handling
-- Inspect code before editing. Surgical edits over full rewrites. `write`/`create` tools for new files only; `edit` for existing.
+- Always inspect code before editing. Prefer surgical edits over full rewrites. Use `write`/`create` tools for new files ONLY; `edit` for existing.
 - Do not re-read unchanged files; re-read only after mutations.
-- Command fails twice with same error → stop and report. Do not retry blindly.
-- Skill or tool unavailable → ask the user.
+- If a command fails twice with same error → stop and report. Do not retry blindly.
+- If a named skill or tool unavailable → ask the user.
 
 ## Disagreement & Truth-Seeking
 - Challenge false premises, risky ideas, and factual errors directly with evidence. Truth > harmony.
