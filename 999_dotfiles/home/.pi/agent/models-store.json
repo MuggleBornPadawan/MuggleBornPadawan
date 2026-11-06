@@ -3440,7 +3440,7 @@
     ],
     "lastModified": 1793798532000,
     "etag": "W/\"72e28eb48ad4ce2bf3a235ccb4829b6a\"",
-    "checkedAt": 1793820475248
+    "checkedAt": 1793893870225
   },
   "opencode-go": {
     "models": [
@@ -3959,6 +3959,52 @@
           "high": "high",
           "xhigh": null,
           "max": null
+        },
+        "type": "chat"
+      },
+      {
+        "id": "hy4",
+        "name": "Hy4",
+        "api": "openai-completions",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/inference/go/openai/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0.834,
+          "output": 2.501,
+          "cacheRead": 0.042,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 65536,
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "thinkingLevelMap": {
+          "off": "none",
+          "minimal": null,
+          "low": null,
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": null
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
         },
         "type": "chat"
       },
@@ -4643,9 +4689,9 @@
         "type": "chat"
       }
     ],
-    "lastModified": 1793798534000,
-    "etag": "W/\"1bd64b7a4e5ceecb344acfe7686c20fc\"",
-    "checkedAt": 1793820475085
+    "lastModified": 1793884928000,
+    "etag": "W/\"3532ecf20b2912c11a27a115a4b4ef98\"",
+    "checkedAt": 1793893872045
   },
   "google": {
     "models": [
@@ -5623,7 +5669,7 @@
     ],
     "lastModified": 1793367416000,
     "etag": "W/\"63a5510c277fa68dc8d8955da1c7b3e9\"",
-    "checkedAt": 1793820475065
+    "checkedAt": 1793888077256
   },
   "meta": {
     "models": [
@@ -5870,6 +5916,6 @@
     ],
     "lastModified": 1791965969000,
     "etag": "W/\"d2397a60589efbabef99ee05f91cc968\"",
-    "checkedAt": 1793820476404
+    "checkedAt": 1793888077367
   }
 }

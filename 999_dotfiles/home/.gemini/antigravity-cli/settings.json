@@ -1,6 +1,7 @@
 {
   "colorScheme": "colorblind-friendly dark",
-  "model": "Claude Sonnet 4.6 (Thinking)",
+  "editor": "emacs -nw",
+  "model": "Gemini 3.8 Flash (Medium)",
   "permissions": {
     "allow": [
       "command(pass)",
@@ -35,6 +36,7 @@
     "/home/rgroot/d/d",
     "/home/rgroot/d/pallete-craft",
     "/home/rgroot/d/palete-craft",
-    "/home/rgroot/MuggleBornPadawan/blogs"
+    "/home/rgroot/MuggleBornPadawan/blogs",
+    "/home/rgroot/MuggleBornPadawan/blogs/archive"
   ]
 }

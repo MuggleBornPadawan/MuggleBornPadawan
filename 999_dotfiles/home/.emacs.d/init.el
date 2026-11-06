@@ -28,12 +28,25 @@
 
 ;; History and state saving
 (desktop-save-mode 1)
-(recentf-mode 1)
 (savehist-mode 1)
 (save-place-mode 1)
 (setq history-length 25)
-(setq recentf-max-menu-items 40)
-(setq recentf-save-file (concat user-emacs-directory ".recentf"))
+
+;; Recentf configuration (robust history of manually opened files)
+(use-package recentf
+  :init
+  (setq recentf-max-saved-items 200
+        recentf-max-menu-items 40
+        recentf-save-file (concat user-emacs-directory ".recentf")
+        recentf-auto-cleanup 'never
+        recentf-exclude `(,(concat user-emacs-directory "elpa/")
+                          ,(concat user-emacs-directory "backups/")
+                          ,(concat user-emacs-directory "eln-cache/")
+                          "/tmp/"
+                          "/usr/"))
+  (recentf-mode 1)
+  :config
+  (add-hook 'kill-emacs-hook 'recentf-save-list))
 
 ;; Buffer auto-revert
 (global-auto-revert-mode 1)

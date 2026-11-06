@@ -4,6 +4,9 @@
 - [[#trivia][trivia]]
   - [[#read-laterrrr][read laterrrr]]
   - [[#random-notes][random notes]]
+  - [[#lean-programming-language][lean programming language]]
+  - [[#john-carmack][john carmack]]
+  - [[#coding-harness-skills][coding harness skills]]
   - [[#anti-patterns][anti patterns]]
   - [[#20-books-to-become-a-world-class-software-engineer][20 books to become a world-class software engineer]]
   - [[#principal-engineer---puneet-patwari][principal engineer - puneet patwari]]
@@ -87,19 +90,36 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** lean programming language 
+- 
+** john carmack
+- fpu - john carmack's floating-point-free trigonometry and angle system in doom (1993). doom eliminated fpu requirements on 386/486 hardware by using binary angular measurement (bam), 16.16 fixed-point arithmetic, and shared lookup tables (luts)
+** coding harness skills
+- https://github.com/google/elephant-goldfish-model
+- https://github.com/google-labs-code/design.md
+- https://github.com/sirupsen/napkin-math
+- https://github.com/obra/superpowers
+- https://github.com/mattpocock/skills
+- https://github.com/multica-ai/andrej-karpathy-skills
+- https://github.com/addyosmani/agent-skills
+- https://github.com/garrytan/gstack
+- https://github.com/contains-studio/agents#
+- https://github.com/obviousworks/Claude-AI-skills-collection-2026
+- https://github.com/Graphify-Labs/graphify
+- https://github.com/juliusbrussee/caveman
 ** anti patterns
--   **God Object**: A single class that controls too much of the system.
--   **Spaghetti Code**: Programs with a complex and tangled control structure.
--   **Golden Hammer**: Assuming a favorite tool is useful for every problem.
--   **Magic Number**: Using unexplained numerical constants directly in code.
--   **Copy-Paste Programming**: Duplicating code instead of creating reusable functions.
--   **Premature Optimization**: Optimizing code before correctness and bottlenecks are known.
--   **Callback Hell**: Deeply nested asynchronous callbacks that are hard to read.
--   **Lava Flow**: Retaining dead or obsolete code because removing it is too risky.
--   **Dead Code**: Unreachable code that is never executed by the program.
--   **Boat Anchor**: Keeping a useless part of a system because of perceived future value.
--   **Busy Waiting**: Continuously looping to check for an event instead of waiting efficiently.
--   **Yo-Yo Problem**: Code that is difficult to understand due to excessive inheritance depth.
+-   **god object**: a single class that controls too much of the system
+-   **spaghetti code**: programs with a complex and tangled control structure
+-   **golden hammer**: assuming a favorite tool is useful for every problem
+-   **magic number**: using unexplained numerical constants directly in code
+-   **copy-paste programming**: duplicating code instead of creating reusable functions
+-   **premature optimization**: optimizing code before correctness and bottlenecks are known
+-   **callback hell**: deeply nested asynchronous callbacks that are hard to read
+-   **lava flow**: retaining dead or obsolete code because removing it is too risky
+-   **dead code**: unreachable code that is never executed by the program
+-   **boat anchor**: keeping a useless part of a system because of perceived future value
+-   **busy waiting**: continuously looping to check for an event instead of waiting efficiently
+-   **yo-yo problem**: code that is difficult to understand due to excessive inheritance depth
 ** 20 books to become a world-class software engineer
 | number | book title                                   | subtitle / edition                                                                                      | author(s)                                                                |
 |--------+----------------------------------------------+---------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------|
