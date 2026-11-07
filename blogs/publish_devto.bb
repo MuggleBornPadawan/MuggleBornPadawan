@@ -6,6 +6,7 @@
 ;;   bb publish_devto.bb <file.md>                          # publish immediately
 ;;   bb publish_devto.bb <file.md> --tags ai,compilers      # with tags (max 4)
 ;;   bb publish_devto.bb <file.md> --draft                  # save as draft
+;;   bb publish_devto.bb <file.md> --id 4993516             # update existing article
 ;;
 ;; Title is extracted from the first `# ` heading in the markdown.
 ;; API key is read from `pass dev.to`.
@@ -42,12 +43,13 @@
 (def cli-spec
   {:tags  {:desc "Comma-separated tags (max 4)" :alias :t}
    :draft {:desc "Publish as draft"             :alias :d :coerce :boolean}
+   :id    {:desc "Article ID to update (PUT)"   :alias :i :coerce :long}
    :help  {:desc "Show this help"               :alias :h :coerce :boolean}})
 
 (defn print-help []
   (println "Usage: bb publish_devto.bb <file.md> [options]")
   (println)
-  (println "Publish a Markdown blog post to dev.to.")
+  (println "Publish or update a Markdown blog post on dev.to.")
   (println "Title is extracted from the first # heading.")
   (println)
   (println "Options:")
@@ -65,23 +67,31 @@
         title    (or (extract-title markdown)
                      (do (println "No # heading found in" file)
                          (System/exit 1)))
-        tags     (or (parse-tags (:tags opts)) [])
-        draft?   (:draft opts)]
+        tags     (parse-tags (:tags opts))
+        draft?   (:draft opts)
+        article-id (:id opts)]
 
     (println "Title:    " title)
-    (println "Tags:     " (if (seq tags) (str/join ", " tags) "(none)"))
-    (println "Published:" (if draft? "draft" "live"))
+    (println "Tags:     " (if (seq tags) (str/join ", " tags) "(preserve existing / none)"))
+    (println "Action:   " (if article-id (str "update (id: " article-id ")") "create new"))
+    (println "Published:" (if (contains? opts :draft) (if draft? "draft" "live") "(preserve / live)"))
     (println "---")
 
     (let [api-key  (get-pass "dev.to")
-          payload  {:article {:title         title
-                              :body_markdown markdown
-                              :published     (not draft?)
-                              :tags          tags}}
-          response (http/post "https://dev.to/api/articles"
-                              {:headers {"api-key"      api-key
-                                         "Content-Type" "application/json"}
-                               :body (json/generate-string payload)})
+          article-data (cond-> {:title         title
+                                :body_markdown markdown}
+                         (seq tags) (assoc :tags tags)
+                         (contains? opts :draft) (assoc :published (not draft?))
+                         (and (nil? article-id) (not (contains? opts :draft))) (assoc :published true))
+          payload  {:article article-data}
+          url      (if article-id
+                     (str "https://dev.to/api/articles/" article-id)
+                     "https://dev.to/api/articles")
+          method   (if article-id http/put http/post)
+          response (method url
+                           {:headers {"api-key"      api-key
+                                      "Content-Type" "application/json"}
+                            :body (json/generate-string payload)})
           body     (json/parse-string (:body response) true)]
       (println "Status:" (:status response))
       (if-let [url (:url body)]

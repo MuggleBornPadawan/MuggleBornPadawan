@@ -10,6 +10,7 @@ Collection of technical blog posts and publishing automation scripts.
 - **`archive/blog-doom-fixed-point-trig.md`**: "John Carmack's Fixed-Point Trigonometry in DOOM (1993)" — architectural breakdown of Binary Angular Measurement (BAM), 16.16 lookup tables, and branchless angle wrapping without floating-point hardware.
 - **`archive/blog-lean-jvm-ai-agents.md`**: "Proving What AI Generates: Running Formally Verified Lean 4 Inside Clojure Services" — how the Ansatz Lean/JVM SDK (`org.replikativ/ansatz-lean-jvm`) bridges formal verification and JVM microservices. Covers the LLM reliability wall, agent self-correction via Lean theorems, Clojure REPL invocation, dynamic host callbacks, and forkable execution states.
 - **`archive/blog-local-coding-harness-hardware-guide.md`**: Hardware guide for local AI coding harnesses. Explores the 32k context cliff and compares Mac Studio M5 Ultra, NVIDIA RTX Pro 6000, and NVIDIA DGX Spark.
+- **`archive/blog-world-models-trilemma.md`**: "The World Model Trilemma: Pixels, Splats, and Symbolic Physics" — systems analysis deconstructing Google Genie 4, Runway GWM Worlds 2, World Labs Marble, and Tencent HY-World 2.0 across latent video diffusion, 3D Gaussian splatting, and hybrid MuJoCo physics.
 
 ## Usage
 
@@ -24,6 +25,9 @@ bb publish_devto.bb archive/blog-compiler-vs-ai.md --tags ai,compilers,programmi
 
 # Save as draft on dev.to without publishing live
 bb publish_devto.bb archive/blog-compiler-vs-ai.md --draft
+
+# Update an existing article by ID (PUT)
+bb publish_devto.bb archive/blog-world-models-trilemma.md --id 4993516
 
 # View CLI options
 bb publish_devto.bb --help
