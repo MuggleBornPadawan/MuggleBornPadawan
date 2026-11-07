@@ -91,7 +91,9 @@
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
 ** lean programming language 
-- 
+- https://simm.is/blog/lean-on-the-jvm/
+- https://lean-lang.org/functional_programming_in_lean/
+- https://clojars.org/org.replikativ/ansatz-lean-jvm
 ** john carmack
 - fpu - john carmack's floating-point-free trigonometry and angle system in doom (1993). doom eliminated fpu requirements on 386/486 hardware by using binary angular measurement (bam), 16.16 fixed-point arithmetic, and shared lookup tables (luts)
 ** coding harness skills
