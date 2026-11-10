@@ -66,7 +66,7 @@ Forcing that 95% into a low-level systems language with manual lifetime annotati
 
 ## 2. How Clojure Eliminates the 13 C++ Hazards Without Lifetimes
 
-Modern C++ attempted to solve memory safety through convention (RAII, `std::unique_ptr`, `std::span`, `std::string_view`). As documented in our [vulnerability taxonomy](https://github.com/MuggleBornPadawan/MuggleBornPadawan/tree/main/000_refcards), these abstractions failed because C++ remains **unsafe by default**.
+Modern C++ attempted to solve memory safety through convention (RAII, `std::unique_ptr`, `std::span`, `std::string_view`). As demonstrated across industry vulnerability taxonomies, these conventions fail in practice because C++ remains **unsafe by default**.
 
 Rust resolved this by introducing compile-time affine type systems and a borrow checker. However, this introduces substantial developer friction—especially when modeling graph-like business topologies, cache structures, or asynchronous event pipelines.
 
@@ -334,7 +334,5 @@ Monolithic rewrites often sacrifice organizational agility in pursuit of ideolog
 6. **GraalVM Community (2024):** [*GraalVM Native Image C Interoperability & Substrate VM*](https://www.graalvm.org/latest/reference-manual/native-image/guides/build-native-shared-library/) — Ahead-of-time compilation of managed runtimes into standalone native binaries with embedded garbage collection.
 7. **Bagwell, P. & Hickey, R. (2001, 2008):** [*Ideal Hash Trees* and *Persistent Data Structures*](https://lampwww.epfl.ch/papers/idealhashtrees.pdf) — Foundations of Clojure's lock-free, structurally shared immutable collections (HAMTs).
 
-### Series Articles & Codebase Artifacts
+### Series Articles
 8. **Rajendran, G. (2024):** [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting* (Part 1)](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in) — Foundational analysis of vulnerability lifecycle costs, regulatory mandates, and modern C++ limitations.
-9. **C++ Vulnerability Taxonomy & Status Quo Matrix:** [100_cpp_memory_safety_status_quo.md](https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/000_refcards/100_cpp_memory_safety_status_quo.md) — Detailed breakdown of 13 specific C++ memory hazards.
-10. **Clojure Memory Safety Status Quo Matrix:** [110_clojure_memory_safety_status_quo.md](https://github.com/MuggleBornPadawan/MuggleBornPadawan/blob/main/000_refcards/110_clojure_memory_safety_status_quo.md) — Technical companion mapping Clojure's runtime mechanisms across JVM, GraalVM, and ClojureScript.
