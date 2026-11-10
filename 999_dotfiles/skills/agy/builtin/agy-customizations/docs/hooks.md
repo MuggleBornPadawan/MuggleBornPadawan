@@ -132,6 +132,13 @@ Each individual hook handler object supports:
 *   **`timeout`** (int, optional): Execution timeout in seconds. Defaults to
     `30`.
 
+Command hooks that ship with a plugin also get `PLUGIN_ROOT` (the plugin
+directory) and, for installed plugins, `PLUGIN_DATA` (the plugin's persistent
+data directory) as environment variables, the same paths the plugin's MCP
+servers get. They are not substituted into `command`: hooks run in the plugin
+folder, so refer to bundled files with a relative path, and use the variables
+for the rest, e.g. `"command": "./hooks/check.sh --cache \"$PLUGIN_DATA\""`.
+
 --------------------------------------------------------------------------------
 
 ## Input/Output Contract
@@ -300,7 +307,9 @@ runs.
     {
       "injectSteps": [
         {
-          "ephemeralMessage": "Remember to check for lint errors before proposing changes."
+          "systemMessage": {
+            "systemMessage": "Remember to check for lint errors before proposing changes."
+          }
         }
       ],
       "terminationBehavior": ""
@@ -317,8 +326,8 @@ runs.
             collapsible "System Message" row, and the model sees only the
             `systemMessage` text (leave it `""` to send the model nothing).
         *   `{"userMessage": "..."}` (plain string)
-        *   `{"ephemeralMessage": "..."}` (plain string; transient message
-            dropped after the current turn)
+        *   `{"ephemeralMessage": "..."}` *(deprecated — use `systemMessage`
+            instead; converted to a hidden system message)*
         *   `{"errorMessage": {"userMessage": "..."}}` (shows an error message
             to the user without sending it to the model. Marks the turn as
             errored with a non-zero exit code in non-interactive `-p` mode, and

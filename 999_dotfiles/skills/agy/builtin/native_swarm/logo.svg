@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 48 48"><title>swarm</title>
+<g stroke="#9aa0a6" stroke-width="2.5" stroke-linecap="round"><line x1="24" y1="24" x2="24" y2="9"/><line x1="24" y1="24" x2="37" y2="31.5"/><line x1="24" y1="24" x2="11" y2="31.5"/></g>
+<circle cx="24" cy="24" r="6.5" fill="#4c8df6"/>
+<g fill="#7baaf7"><circle cx="24" cy="8" r="4.5"/><circle cx="38" cy="32" r="4.5"/><circle cx="10" cy="32" r="4.5"/></g>
+</svg>

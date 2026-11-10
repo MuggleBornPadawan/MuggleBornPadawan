@@ -615,7 +615,7 @@
       {
         "id": "crouton-alpha-free",
         "name": "Crouton Alpha Free",
-        "api": "openai-completions",
+        "api": "openai-responses",
         "provider": "opencode",
         "baseUrl": "https://opencode.ai/inference/openai/v1",
         "reasoning": true,
@@ -632,10 +632,7 @@
         "contextWindow": 1048576,
         "maxTokens": 270000,
         "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
+          "sessionAffinityFormat": "openai-nosession"
         },
         "thinkingLevelMap": {
           "off": null,
@@ -2677,6 +2674,78 @@
         "type": "chat"
       },
       {
+        "id": "iceman-free",
+        "name": "Iceman Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/openai/v1",
+        "reasoning": true,
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 262144,
+        "maxTokens": 131072,
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "type": "chat"
+      },
+      {
+        "id": "inkling-2-small-free",
+        "name": "Inkling 2 Small Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/openai/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "thinkingLevelMap": {
+          "off": "none",
+          "minimal": "minimal",
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": null,
+          "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "kimi-k2.5",
         "name": "Kimi K2.5",
         "api": "openai-completions",
@@ -2826,6 +2895,43 @@
           "high": "high",
           "xhigh": null,
           "max": "max"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
+        "id": "longcat-2.5-free",
+        "name": "LongCat 2.5 Free",
+        "api": "openai-completions",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/inference/openai/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 262144,
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
         },
         "inputLimits": {
           "images": {
@@ -3214,52 +3320,6 @@
         "type": "chat"
       },
       {
-        "id": "pulse-alpha-free",
-        "name": "Pulse Alpha Free",
-        "api": "openai-completions",
-        "provider": "opencode",
-        "baseUrl": "https://opencode.ai/inference/openai/v1",
-        "reasoning": true,
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        },
-        "contextWindow": 1048576,
-        "maxTokens": 131072,
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsStrictMode": true,
-          "maxTokensField": "max_tokens"
-        },
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": null,
-          "low": "low",
-          "medium": null,
-          "high": "high",
-          "xhigh": null,
-          "max": "max"
-        },
-        "inputLimits": {
-          "images": {
-            "resize": {
-              "maxWidth": 2000,
-              "maxHeight": 2000,
-              "maxBytes": 4718592,
-              "jpegQuality": 80
-            }
-          }
-        },
-        "type": "chat"
-      },
-      {
         "id": "qwen3.5-plus",
         "name": "Qwen3.5 Plus",
         "api": "anthropic-messages",
@@ -3438,9 +3498,9 @@
         "contextWindow": 32000
       }
     ],
-    "lastModified": 1793798532000,
-    "etag": "W/\"72e28eb48ad4ce2bf3a235ccb4829b6a\"",
-    "checkedAt": 1793893870225
+    "lastModified": 1794232645000,
+    "etag": "W/\"2716eb78dc1f6952d6cbc2ba0dd3a82c\"",
+    "checkedAt": 1794242145186
   },
   "opencode-go": {
     "models": [
@@ -3515,6 +3575,49 @@
           "forceAdaptiveThinking": true,
           "supportsTemperature": false,
           "supportsMidConvoEffort": true
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
+        "id": "crouton-alpha-free",
+        "name": "Crouton Alpha Free",
+        "api": "openai-responses",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/inference/go/openai/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 270000,
+        "compat": {
+          "sessionAffinityFormat": "openai-nosession"
+        },
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": "minimal",
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
         },
         "inputLimits": {
           "images": {
@@ -4229,6 +4332,43 @@
         "type": "chat"
       },
       {
+        "id": "longcat-2.5-free",
+        "name": "LongCat 2.5 Free",
+        "api": "openai-completions",
+        "provider": "opencode-go",
+        "baseUrl": "https://opencode.ai/inference/go/openai/v1",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 262144,
+        "compat": {
+          "supportsStore": false,
+          "supportsDeveloperRole": false,
+          "supportsStrictMode": true,
+          "maxTokensField": "max_tokens"
+        },
+        "inputLimits": {
+          "images": {
+            "resize": {
+              "maxWidth": 2000,
+              "maxHeight": 2000,
+              "maxBytes": 4718592,
+              "jpegQuality": 80
+            }
+          }
+        },
+        "type": "chat"
+      },
+      {
         "id": "mimo-v2.5",
         "name": "MiMo V2.5",
         "api": "openai-completions",
@@ -4689,9 +4829,9 @@
         "type": "chat"
       }
     ],
-    "lastModified": 1793884928000,
-    "etag": "W/\"3532ecf20b2912c11a27a115a4b4ef98\"",
-    "checkedAt": 1793893872045
+    "lastModified": 1794230629000,
+    "etag": "W/\"cc99bcaf03b218278e69b4f5bd41e9b5\"",
+    "checkedAt": 1794242145185
   },
   "google": {
     "models": [
@@ -5669,7 +5809,7 @@
     ],
     "lastModified": 1793367416000,
     "etag": "W/\"63a5510c277fa68dc8d8955da1c7b3e9\"",
-    "checkedAt": 1793888077256
+    "checkedAt": 1794242145176
   },
   "meta": {
     "models": [
@@ -5916,6 +6056,6 @@
     ],
     "lastModified": 1791965969000,
     "etag": "W/\"d2397a60589efbabef99ee05f91cc968\"",
-    "checkedAt": 1793888077367
+    "checkedAt": 1794242146202
   }
 }
