@@ -24,11 +24,14 @@
       (throw (ex-info "Failed to get pass secret" res)))))
 
 (defn extract-title
-  "Pull the first `# Heading` from markdown. Returns nil if none found."
+  "Pull the title from YAML frontmatter (`title: ...`) or the first `# Heading`."
   [markdown]
-  (some->> (re-find #"(?m)^# (.+)$" markdown)
-           second
-           str/trim))
+  (or (some->> (re-find #"(?m)^title:\s*\"?([^\"]+)\"?\s*$" markdown)
+               second
+               str/trim)
+      (some->> (re-find #"(?m)^# (.+)$" markdown)
+               second
+               str/trim)))
 
 (defn parse-tags
   "Split comma-separated tag string into a vector of up to 4 tags."
