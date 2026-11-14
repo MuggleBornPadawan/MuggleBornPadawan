@@ -160,9 +160,15 @@ Every hook payload sent to `stdin` includes these common system metadata fields:
   "transcriptPath": "/path/to/workspace/.gemini/antigravity/transcript.jsonl",
   "artifactDirectoryPath": "/path/to/workspace/.gemini/antigravity/artifacts",
   "modelName": "auto",
-  "lastUserInput": "Fix the failing unit test"
+  "lastUserInput": "Fix the failing unit test",
+  "hookEventName": "PreToolUse",
+  "cwd": "/path/to/workspace"
 }
 ```
+
+`hookEventName` is the event being run, as written in `hooks.json`. `cwd` is the
+agent's working directory, where its commands run by default; it is not the hook
+process's working directory.
 
 > [!NOTE]
 > The `transcriptPath` and `artifactDirectoryPath` are product-specific. The
@@ -183,6 +189,7 @@ Use to gate, block, or audit tool executions.
     ```json
     {
       "toolCall": {
+        "id": "toolu_01",
         "name": "run_command",
         "args": {
           "CommandLine": "npm test"
@@ -243,6 +250,7 @@ Use for post-execution cleanup, auto-fixes, or analysis.
     ```json
     {
       "toolCall": {
+        "id": "toolu_01", // Same id as in PreToolUse for this call
         "name": "run_command",
         "args": {
           "CommandLine": "npm test"
@@ -377,9 +385,14 @@ Use to prevent the agent from stopping if goals are not met.
       "terminationReason": "NO_TOOL_CALL", // e.g., "NO_TOOL_CALL", "MAX_INVOCATIONS", "ERROR", "USER_CANCELED", "TERMINAL_STEP_TYPE"
       "error": "", // Present if stopped due to error
       "fullyIdle": true, // true if all background tasks are done
+      "continuationActive": true, // true after a Stop hook kept the agent going this turn (executionNum > 0)
       ... (common fields)
     }
     ```
+    *   **`continuationActive`** (boolean): `true` while the agent is doing
+        work that a `Stop` hook asked for in this turn; `false` again once a
+        new user message starts a turn. Check it so a hook that asks the agent
+        to continue doesn't ask again in a loop.
     *   **`terminationReason`** (string): The `ExecutorTerminationReason` enum
         name with the `EXECUTOR_TERMINATION_REASON_` prefix stripped:
         *   `"NO_TOOL_CALL"`: Normal turn completion (model finished without

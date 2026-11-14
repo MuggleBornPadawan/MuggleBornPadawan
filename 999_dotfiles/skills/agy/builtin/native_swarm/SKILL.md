@@ -60,8 +60,8 @@ it inline.
 ```
 swarm{action:"add", name:"parser",
       brief:"You own src/parser.rs. Make the three failing cases in
-             parser_test.rs pass without changing the test. Post the diff
-             summary and the test output to the board when they pass."}
+             parser_test.rs pass without changing the test. Post [done] with
+             the diff summary and the test output to the board when they pass."}
 ```
 
 Leaving `model` off runs the worker on your own model, and that is the plan:
@@ -89,17 +89,15 @@ worker has not got produces a worker that invents it.
 swarm{action:"add", name:"narrator",
       brief:"You are this swarm's narrator. Never call post_message;
              your <swarm_worker> posting rules don't apply to you. First load
-             the swarm_narrator skill and follow it.
-             SWARM_DIR=<appData>/brain/<your conversation id>/.system_generated/swarm/"}
+             the swarm_narrator skill and follow it."}
 ```
 
-Fill in `<appData>` and your conversation id from your environment. Do not
-load `swarm_narrator` yourself; it is for the narrator only. Leave `model` off,
-so it runs on your model like every worker. Name it `narrator`. Killed names
-cannot be reused, so if the user wants a killed narrator back, add `narrator-2`
-(then `-3`, …) with the same brief. The plugin matches `narrator` and
-`narrator-N`. The relay marker is always `@narrator user feedback:`, whatever
-the narrator's member name (see **The narrator** below).
+Do not load `swarm_narrator` yourself; it is for the narrator only. Leave
+`model` off, so it runs on your model like every worker. Name it `narrator`.
+Killed names cannot be reused, so if the user wants a killed narrator back, add
+`narrator-2` (then `-3`, …) with the same brief. The plugin matches `narrator`
+and `narrator-N`. The relay marker is always `@narrator user feedback:`,
+whatever the narrator's member name (see **The narrator** below).
 
    **Add a monitor, but only if the `swarm_monitor` skill is in your skill
    list.** If it is, always add one, in the same turn that creates the swarm.
@@ -115,16 +113,10 @@ Do not load `swarm_monitor` yourself. Leave `model` off and name it `monitor`;
 a replacement for a killed one is `monitor-2` (then `-3`, …).
 
 5. **Show the user the board.** End the reply on the turn that creates the
-   swarm the way the `swarm` tool's `add` result says: with the board link on
-   its own line, with a command to run, or with nothing where there is no board
-   to open.
-
-The user cannot see the board unless they open it, and few find it on their
-own. Point at it the same way whenever the user asks what the swarm is doing.
-Where the `add` result gives a link, chat renders it as a pill that opens the
-live board — feed, roster and @mention graph — in the side pane; add
-`?tab=graph` to that link to open the @mention graph. Where there is no board
-to open, offer none.
+   swarm with the `open_board` value of your latest `add` or `status` result,
+   on its own line, exactly as given, and do the same whenever the user asks
+   what the swarm is doing. If none is in view, call `swarm{action:"status"}`.
+   If it is empty, offer none. Never write a board link or command yourself.
 
 Name workers for their job — `parser`, `verifier`, `docs` — never `agent-1`.
 `@verifier the tests pass now` says who it is for and what it is about in three
@@ -163,7 +155,10 @@ The loop, until the goal is met:
    the monitor (`narrator`, `monitor`, and their `-N` replacements) is idle
    capacity.
 2. Give each one something, **by name**, on the board: what to do, what it
-   needs to know, what to post when it is finished. **Refer to earlier board
+   needs to know, what to post when it is finished (tell workers to start their
+   final completion post with `[done]` after the `@mention`, e.g. `@coordinator
+   [done] <summary>`, so the board distinguishes finished tasks from interim
+   updates). **Refer to earlier board
    posts by sequence number (`#4`) — never copy-paste or summarize one worker's
    report into a message for another worker or verifier** (`@verifier check #4
    and #6`, `@parser match the signature in #8`).

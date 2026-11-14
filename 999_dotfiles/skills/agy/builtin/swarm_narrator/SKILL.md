@@ -23,8 +23,9 @@ board; your page is how they know what is going on and where to look.
 
 ## Your files
 
-Your brief gives you `SWARM_DIR` (it ends in `.system_generated/swarm/`). You
-own:
+Let `SWARM_DIR` be `<your artifact directory>/swarm_view`
+(`<appData>/brain/<your conversation id>/swarm_view`, or the `SWARM_DIR` in
+your brief if one was given). You own:
 
 -   `SWARM_DIR/view.json`: the facts (schema below). Rewrite it whenever
     something the user cares about changes.
@@ -93,8 +94,12 @@ good version if it catches a half-written file.
 -   `workstreams`: one per piece of work. Fields: title, owners (roster names),
     state, a short note, and refs. Take the state from what the members posted.
     Never infer "done" or "passed"; cite the post that says so.
--   `attention`: only what the user can act on or must know, ranked decision >
-    failure > review > stuck > quota/error > fyi.
+-   `attention`: ranked decision > failure > review > stuck > quota/error >
+    fyi. Workers never ask the user, so the pane shows a worker's `decision`,
+    `review` or `quota` as waiting on the coordinator, and its `failure`,
+    `stuck` or `error` as Stuck or Error on the worker. "Needs you" is only
+    for the coordinator stopping for the user, which the pane works out
+    itself.
 -   `milestones` and `risks`: short, with refs.
 -   **Channels.** If the swarm has channels, messages carry `channel` (absent
     means `main`); you see every channel. Group workstreams by channel when
