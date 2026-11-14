@@ -25,14 +25,14 @@ Rich Hickey derived the name from an acronym, functional programming terminology
 
 ## 3. Trade-off Analysis (Pros & Cons)
 
-| Dimension             | Pros (Strengths)                                                                                  | Cons (Weaknesses)                                                                        |
-| :-------------------- | :------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------- |
-| **Data & State**      | Immutable persistent data structures by default; concurrency without manual locking primitives.   | High memory footprint from pointer-heavy persistent tree representations.                |
-| **Tooling & REPL**    | True REPL-driven development; modify running systems without process restarts.                    | Cold-start latency on JVM (mitigated by Babashka `bb` for CLI/scripting).                |
-| **Ecosystem**         | Direct, zero-overhead Java/JVM interop; transparent access to the Java ecosystem.                 | JVM stack traces are verbose and expose internal Java host plumbing.                     |
-| **Type System**       | Dynamic typing allows rapid iteration and flexible data-driven workflows.                         | No compile-time type verification; runtime validation requires specs (`malli`/`spec`).   |
-| **Syntax & Design**   | Homoiconic (code as data); expressive macro system with minimal syntax rules.                     | Prefix s-expressions present a steep initial learning curve.                             |
-| **Adoption**          | High developer productivity and compact, maintainable codebases.                                  | Smaller talent pool and niche adoption compared to Java, Python, or Go.                  |
+| Dimension           | Pros (Strengths)                                                                                | Cons (Weaknesses)                                                                      |
+|:--------------------|:------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------|
+| **Data & State**    | Immutable persistent data structures by default; concurrency without manual locking primitives. | High memory footprint from pointer-heavy persistent tree representations.              |
+| **Tooling & REPL**  | True REPL-driven development; modify running systems without process restarts.                  | Cold-start latency on JVM (mitigated by Babashka `bb` for CLI/scripting).              |
+| **Ecosystem**       | Direct, zero-overhead Java/JVM interop; transparent access to the Java ecosystem.               | JVM stack traces are verbose and expose internal Java host plumbing.                   |
+| **Type System**     | Dynamic typing allows rapid iteration and flexible data-driven workflows.                       | No compile-time type verification; runtime validation requires specs (`malli`/`spec`). |
+| **Syntax & Design** | Homoiconic (code as data); expressive macro system with minimal syntax rules.                   | Prefix s-expressions present a steep initial learning curve.                           |
+| **Adoption**        | High developer productivity and compact, maintainable codebases.                                | Smaller talent pool and niche adoption compared to Java, Python, or Go.                |
 
 ---
 
@@ -146,15 +146,15 @@ Clojure provides thread safety by default through immutable data structures and 
 
 ### Concurrency Primitives Matrix
 
-| Primitive | Coordination | Execution | Mechanism | Best Fit |
-| :--- | :--- | :--- | :--- | :--- |
-| **Persistent Collections** | None needed | Synchronous | Immutability via structural sharing | All standard data structures (`map`, `vector`, `set`) |
-| **`atom`** | Uncoordinated | Synchronous | Compare-And-Swap (CAS) retry loop | Independent state (e.g., caches, counters, session stores) |
-| **`ref`** | Coordinated | Synchronous | Software Transactional Memory (STM / `dosync`) | Multi-identity updates requiring atomic all-or-nothing transactions |
-| **`agent`** | Uncoordinated | Asynchronous | Thread-pool queue (`send` / `send-off`) | Fire-and-forget state mutations, background I/O |
-| **`volatile!`** | Uncoordinated | Synchronous | JVM volatile memory barrier | Local performance optimizations, stateful transducers (no CAS) |
-| **Dynamic `var`** | Thread-isolated | Synchronous | Thread-local frame bindings (`binding`) | Context propagation (request tracing IDs, dynamic overrides) |
-| **`core.async`** | Channel-based | Asynchronous | CSP (Communicating Sequential Processes) | Non-blocking coordination pipelines without shared state |
+| Primitive                  | Coordination    | Execution    | Mechanism                                      | Best Fit                                                            |
+|:---------------------------|:----------------|:-------------|:-----------------------------------------------|:--------------------------------------------------------------------|
+| **Persistent Collections** | None needed     | Synchronous  | Immutability via structural sharing            | All standard data structures (`map`, `vector`, `set`)               |
+| **`atom`**                 | Uncoordinated   | Synchronous  | Compare-And-Swap (CAS) retry loop              | Independent state (e.g., caches, counters, session stores)          |
+| **`ref`**                  | Coordinated     | Synchronous  | Software Transactional Memory (STM / `dosync`) | Multi-identity updates requiring atomic all-or-nothing transactions |
+| **`agent`**                | Uncoordinated   | Asynchronous | Thread-pool queue (`send` / `send-off`)        | Fire-and-forget state mutations, background I/O                     |
+| **`volatile!`**            | Uncoordinated   | Synchronous  | JVM volatile memory barrier                    | Local performance optimizations, stateful transducers (no CAS)      |
+| **Dynamic `var`**          | Thread-isolated | Synchronous  | Thread-local frame bindings (`binding`)        | Context propagation (request tracing IDs, dynamic overrides)        |
+| **`core.async`**           | Channel-based   | Asynchronous | CSP (Communicating Sequential Processes)       | Non-blocking coordination pipelines without shared state            |
 
 ### Guarantees & Operational Rules
 
@@ -170,22 +170,19 @@ In object-oriented DDD, entities encapsulate mutable state and behavior to prote
 
 ### Tactical DDD Pattern Mapping
 
-| OOP DDD Construct | Clojure / Functional Equivalent | Implementation Pattern |
-| :--- | :--- | :--- |
-| **Value Object** | Immutable plain values / maps | Native Clojure values; structural equality (`=`) is built-in without boilerplate methods. |
-| **Entity** | Immutable map with explicit ID key | Plain map containing an identity attribute (e.g., `:order/id #uuid "..."`). |
-| **Aggregate Root** | Nested immutable data tree + transition functions | Pure business functions take `[state command]` and return `{:keys [state events errors]}`. |
-| **Invariant Validation** | Encapsulated setter / constructor checks | Declarative schema validation (`malli` or `spec`) at system boundaries and function pre/post conditions. |
-| **Domain Service** | Pure functions in domain namespaces | Unencapsulated pure transformation functions operating across multiple aggregates. |
-| **Repository** | Data access boundary functions | Protocols or functions returning/persisting immutable maps (`next.jdbc`, `honeysql`). |
-| **Domain Event** | Plain data maps representing past facts | Standard event map: `{:event/type :order/placed, :order/id ..., :occurred-at #inst "..."}`. |
-| **Bounded Context** | Isolated namespaces / modules | Clear namespace hierarchies; data crossing context boundaries is transformed via schemas. |
+| OOP DDD Construct        | Clojure / Functional Equivalent                   | Implementation Pattern                                                                                   |
+|:-------------------------|:--------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
+| **Value Object**         | Immutable plain values / maps                     | Native Clojure values; structural equality (`=`) is built-in without boilerplate methods.                |
+| **Entity**               | Immutable map with explicit ID key                | Plain map containing an identity attribute (e.g., `:order/id #uuid "..."`).                              |
+| **Aggregate Root**       | Nested immutable data tree + transition functions | Pure business functions take `[state command]` and return `{:state ..., :events [...], :errors [...]}`. |
+| **Invariant Validation** | Encapsulated setter / constructor checks          | Declarative schema validation (`malli` or `spec`) at system boundaries and function pre/post conditions. |
+| **Domain Service**       | Pure functions in domain namespaces               | Unencapsulated pure transformation functions operating across multiple aggregates.                       |
+| **Repository**           | Data access boundary functions                    | Protocols or functions returning/persisting immutable maps (`next.jdbc`, `honeysql`).                    |
+| **Domain Event**         | Plain data maps representing past facts           | Standard event map: `{:event/type :order/placed, :order/id ..., :occurred-at #inst "..."}`.              |
+| **Bounded Context**      | Isolated namespaces / modules                     | Clear namespace hierarchies; data crossing context boundaries is transformed via schemas.                |
 
 ### Architectural Invariants in Functional DDD
 
 * **"Anemic" Models are Idiomatic:** Decoupling domain logic from data structures is a deliberate feature, not an anti-pattern.
 * **Pure State Transitions:** Aggregates do not manage their own persistence or concurrency; domain logic is modeled as a pure reducer: `(f state command) -> new-state`.
 * **Zero Mocking Invariant Testing:** Because aggregates and domain services are pure functions, business rule invariants are verified directly with simple data literals.
-
-
-
