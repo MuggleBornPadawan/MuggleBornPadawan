@@ -52,6 +52,26 @@
          (take 4)
          vec)))
 
+(defn validate-seo
+  "Lint markdown frontmatter for SEO and canonical URL consistency."
+  [markdown]
+  (let [canonical (some->> (re-find #"(?m)^canonical_url:\s*\"?([^\"]+)\"?\s*$" markdown)
+                           second
+                           str/trim)
+        title     (extract-title markdown)
+        desc      (some->> (re-find #"(?m)^description:\s*\"?([^\"]+)\"?\s*$" markdown)
+                           second
+                           str/trim)]
+    (println "--- SEO Lint Check ---")
+    (if (and canonical (not (str/starts-with? canonical "https://dev.to/ganesh_rajendran_art/")))
+      (println "[WARN] canonical_url does not point to dev.to/ganesh_rajendran_art:" canonical)
+      (println "[PASS] Canonical URL is valid or self-referencing dev.to"))
+    (when (and title (> (count title) 65))
+      (println (format "[WARN] Title is %d chars (>65 chars may truncate in SERP snippets)" (count title))))
+    (when (or (nil? desc) (< (count desc) 80) (> (count desc) 160))
+      (println (format "[WARN] Description is %d chars (ideal: 100-160 chars)" (count (or desc "")))))
+    (println "----------------------")))
+
 (def cli-spec
   {:tags  {:desc "Comma-separated tags (max 4)" :alias :t}
    :draft {:desc "Publish as draft"             :alias :d :coerce :boolean}
@@ -83,6 +103,7 @@
         draft?   (:draft opts)
         article-id (or (:id opts) (extract-id markdown))]
 
+    (validate-seo markdown)
     (println "Title:    " title)
     (println "Tags:     " (if (seq tags) (str/join ", " tags) "(preserve existing / none)"))
     (println "Action:   " (if article-id (str "update (id: " article-id ")") "create new"))
@@ -110,4 +131,5 @@
         (println "URL:   " url)
         (println "Response:" (:body response))))))
 
-(-main *command-line-args*)
+(when (= *file* (System/getProperty "babashka.file"))
+  (-main *command-line-args*))
