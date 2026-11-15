@@ -1,0 +1,6 @@
+{:paths ["src" "resources"]
+ :deps {quil/quil {:mvn/version "4.3.1563"}}
+ :aliases
+ {:run {:main-opts ["-m" "generative.terrain-3d"]}
+  :test {:extra-paths ["test"]
+         :main-opts ["-m" "generative.test-runner"]}}}
