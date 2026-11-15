@@ -1,7 +1,7 @@
 ---
 title: "The Self-Healing Code Thesis: Compilers, AI, and the Next 10 Years of Software"
 published: true
-description: "Compilers, AI, and the next 10 years of software. Case study (GCC vs. Copilot on bubble sort), Self-Healing feedback loop with timeline roadmap, 11 academic citations."
+description: "From GCC to Copilot to self-healing loops: compilers + AI's next 10 years. Bubble sort case study, 11 papers & timeline roadmap."
 tags: ai, compilers, programming, architecture
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/jfmj23gi3tstj9bbcqoq.png
 devto_id: 4884289

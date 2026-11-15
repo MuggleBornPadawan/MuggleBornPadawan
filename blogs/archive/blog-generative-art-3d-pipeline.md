@@ -1,7 +1,7 @@
 ---
 title: "Breaking the 2D Plane: OpenGL, Shaders, and the 3D Graphics Pipeline in Clojure & Quil"
 published: true
-description: "From CPU software rasterization to OpenGL hardware pipelines and GLSL shaders. Extending The Invisible Brush into 3D procedural terrain meshes with Clojure, Quil, and JOGL."
+description: "Clojure + Quil to OpenGL: build 3D procedural terrain with GLSL shaders, JOGL & GPU pipelines. From 2D Perlin noise to hardware-accelerated meshes."
 tags: clojure, creativecoding, opengl, shaders
 series: The Invisible Brush
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/19ojx050a9bmh71zfrtk.png

@@ -1,7 +1,7 @@
 ---
 title: "The Carmack Pipeline: How DOOM's 1993 Hacks Predict Modern LLM Architecture"
 published: true
-description: "Systems analysis linking DOOM's 1993 engine techniques (fixed-point math, BSP trees, dirty rectangles, lockstep networking, WAD caching) to modern frontier LLM inference and serving."
+description: "DOOM 1993 → LLM 2026: How Carmack's BSP trees, dirty rectangles & WAD caching predict modern LLM inference, KV-cache & serving hacks."
 tags: ai, llm, architecture, retrocomputing
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/7i1rwkjt05q1m2kkgu6e.png
 canonical_url: https://dev.to/ganesh_rajendran_art/the-carmack-pipeline-how-dooms-1993-hacks-predict-modern-llm-architecture-392d

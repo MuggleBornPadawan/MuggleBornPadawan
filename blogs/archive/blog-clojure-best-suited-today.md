@@ -1,7 +1,7 @@
 ---
 title: "The Full-Stack Case for Clojure: AI, Concurrency, and Regulatory Reality"
 published: true
-description: "In an era defined by AI proliferation, distributed systems complexity, and tightening regulatory mandates, does Clojure's design philosophy position it as the most coherent engineering stack for 2024–2026? Here is the evidence."
+description: "Why Clojure beats the stack for AI era: concurrency, data-focus & regulatory-ready design. Full-stack case study for 2024-2026 systems."
 tags: clojure, architecture, ai, concurrency
 series: The Economics of Memory Safety
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/20p1ixre6ss1zlrnw72i.png

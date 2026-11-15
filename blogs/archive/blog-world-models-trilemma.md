@@ -1,7 +1,7 @@
 ---
 title: "The World Model Trilemma: Pixels, Splats, and Symbolic Physics"
 published: true
-description: "Systems analysis deconstructing Google Genie 4, Runway GWM Worlds 2, World Labs Marble, and Tencent HY-World 2.0 across latent video diffusion, 3D Gaussian splatting, and hybrid MuJoCo physics."
+description: "World models compared: Google Genie 4 vs Runway, Marble & HY-World. Pixels, 3D Gaussian splats or symbolic physics — which wins?"
 tags: ai, machinelearning, robotics, architecture
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/cjoc58m15rbfywc4tq1g.png
 devto_id: 4993516

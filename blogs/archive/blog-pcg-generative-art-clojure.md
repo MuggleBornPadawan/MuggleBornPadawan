@@ -1,7 +1,7 @@
 ---
 title: "The Invisible Brush: Generative Art and the Algorithms That Paint"
 published: true
-description: "A long-form exploration of Procedural Content Generation as a creative engine — with Clojure and Quil."
+description: "Generative art with Clojure & Quil: master Perlin noise, L-systems, CA & particle systems. Build an infinite 2D terrain. Full code + visuals."
 tags: clojure, creativecoding, gamedev, programming
 series: The Invisible Brush
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/suz38jgtdxazc4aljs2l.png
