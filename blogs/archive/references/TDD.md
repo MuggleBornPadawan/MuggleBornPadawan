@@ -32,3 +32,6 @@ Red $\to$ Green $\to$ Refactor:
 * **Spikes & exploratory prototypes**: Fast iterations where the API shape is unknown.
 * **UI/Visual design**: Layouts, animations, and aesthetic tweaks better evaluated via visual feedback.
 * **Volatile external integrations**: Initial exploratory mapping of third-party services.
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

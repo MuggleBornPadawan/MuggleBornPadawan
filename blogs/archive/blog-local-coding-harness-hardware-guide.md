@@ -518,3 +518,6 @@ Sources are grouped by topic. All URLs verified as of October 2026.
 
 - **NVIDIA NIM** — Microservices for optimized model inference on NVIDIA hardware.
   https://developer.nvidia.com/nim
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

@@ -266,3 +266,6 @@ Maybe that is the generative artist's actual job: design a system capable of pro
 ---
 
 *What does authorship mean to you in this context — do you feel like the artist of the outputs your systems produce, or something else? Leave a comment. I'm genuinely curious where you land.*
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

@@ -330,3 +330,6 @@ The brush was always invisible. It was always mathematics. We just made it legib
 Have you experimented with creative coding or procedural generation in Clojure or other functional languages? What is your favorite generative technique? Drop a comment or share your sketches below!
 
 *Happy generating.*
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

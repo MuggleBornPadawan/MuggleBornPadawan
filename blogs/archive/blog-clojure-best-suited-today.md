@@ -500,3 +500,6 @@ That is not luck. That is convergent validity.
 9. **White House ONCD (2024):** [*Back to the Building Blocks*](https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf) — Federal guidance designating JVM runtimes as approved memory-safe languages.
 10. **CISA (2023):** [*The Case for Memory Safe Roadmaps*](https://www.cisa.gov/resources-tools/resources/case-memory-safe-roadmaps) — Procurement directives for technology manufacturers.
 11. **European Union (2024):** [*Cyber Resilience Act (CRA)*](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act) — Vendor liability framework for preventable software security flaws.
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

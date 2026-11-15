@@ -355,3 +355,6 @@ Until these boundaries are formalized, engineers must choose their compromises d
 8. **Runway Research (2024–2026).** "Introducing General World Models (GWM) & Worlds 2." [RunwayML Research](https://runwayml.com/research/introducing-general-world-models)
 9. **World Labs (2024–2026).** "Spatial Intelligence: Large World Models with Persistent 3D Representation." [worldlabs.ai](https://www.worldlabs.ai/)
 10. **Google DeepMind (2024–2026).** "Genie 2 & Foundation World Models for Interactive Simulation." [DeepMind Research](https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/)
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

@@ -117,3 +117,6 @@ Tune the generative parameters inside [src/generative/terrain.clj](src/generativ
 | `time step` | `0.005` | Faster scrolling animation               |
 | `amplitude` | `0.5`   | Taller mountain peaks                    |
 | `base`      | `0.4`   | Shifts terrain baseline higher on canvas |
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

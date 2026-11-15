@@ -319,3 +319,5 @@ The future of autonomous systems isn't just agents that code faster—it's agent
 - **SDK Artifact:** [`org.replikativ/ansatz-lean-jvm` on Clojars](https://clojars.org/org.replikativ/ansatz-lean-jvm)
 - **Lean 4 Guide:** [Functional Programming in Lean](https://lean-lang.org/functional_programming_in_lean/) by David Thrane Christiansen
 
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

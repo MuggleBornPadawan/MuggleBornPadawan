@@ -107,3 +107,6 @@ This tension is what makes generative art philosophically interesting beyond aes
 - Vera Molnár — *Toward Aesthetic Computation* (1975)
 - Tyler Hobbs — *The Aesthetics of Generative Art* (essay)
 - Kate Compton — *So you want to build a generator* (blog)
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

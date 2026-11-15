@@ -194,3 +194,6 @@ By 2031, your stateless services will optimize themselves overnight. By 2034, th
 9. Russinoff, D.M. "A Mechanically Checked Proof of IEEE Compliance of the Floating Point Multiplication, Division and Square Root Algorithms of the AMD-K7 Processor." *LMS Journal of Computation and Mathematics*, 1, 1998. [doi:10.1112/S1461157000000188](https://doi.org/10.1112/S1461157000000188)
 10. Würthinger, T., et al. "One Compiler: Deoptimization to Optimized Code." *CC '17*, 2017. [doi:10.1145/3033019.3033025](https://doi.org/10.1145/3033019.3033025)
 11. Wu, Y., et al. "Autoformalization with Large Language Models." *NeurIPS '22*, 2022. [arXiv:2205.12615](https://arxiv.org/abs/2205.12615)
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

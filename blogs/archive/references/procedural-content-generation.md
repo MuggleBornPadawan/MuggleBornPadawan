@@ -123,3 +123,6 @@ In generative art, Clojure is a first-class citizen — not a workaround.
 ### Verdict
 
 > The REPL-driven workflow matches the exploratory, iterative nature of generative art better than most languages. Clojure is not just relevant here — it is one of the best environments for the craft.
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

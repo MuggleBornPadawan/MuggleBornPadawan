@@ -186,3 +186,6 @@ In object-oriented DDD, entities encapsulate mutable state and behavior to prote
 * **"Anemic" Models are Idiomatic:** Decoupling domain logic from data structures is a deliberate feature, not an anti-pattern.
 * **Pure State Transitions:** Aggregates do not manage their own persistence or concurrency; domain logic is modeled as a pure reducer: `(f state command) -> new-state`.
 * **Zero Mocking Invariant Testing:** Because aggregates and domain services are pure functions, business rule invariants are verified directly with simple data literals.
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

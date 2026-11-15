@@ -289,3 +289,6 @@ Sutton tells us *what* to compute. Carmack shows us *how* to make it physically 
 * [BitNet b1.58: 1-bit LLMs for All](https://arxiv.org/abs/2402.17764) — Ma et al. (2024)
 * [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) — Richard S. Sutton (2019)
 * [LLaMA Architecture Source Code](https://github.com/meta-llama/llama) — Meta Platforms
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

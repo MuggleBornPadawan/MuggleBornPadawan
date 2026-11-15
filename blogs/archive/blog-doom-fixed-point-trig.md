@@ -121,3 +121,6 @@ void MoveActor(fixed_t* x, fixed_t* y, angle_t angle, fixed_t distance) {
 2. **Maximum Performance:** Avoids costly FPU traps and floating-point emulation cycles on 80386/80486 hardware.
 3. **Branchless Angle Math:** Free circular modulo arithmetic via hardware integer wraparound.
 4. **Minimal Cache / Memory Footprint:** Sine and cosine share a contiguous memory buffer of just 10,240 32-bit integers (~40 KB).
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

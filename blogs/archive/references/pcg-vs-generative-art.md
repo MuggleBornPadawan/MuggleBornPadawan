@@ -148,3 +148,6 @@ Generative artists frequently adapt PCG pipelines to impose structural coherence
 - Tyler Hobbs — *The Aesthetics of Generative Art* (essay)
 - Vera Molnár — *Toward Aesthetic Computation* (1975)
 - Philip Galanter — *What is Generative Art?* (2003)
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*
