@@ -4,7 +4,7 @@ published: true
 description: "What does it mean to make something you didn't design? A philosophy-first dive into generative art — authorship, the spectrum of control, and 60 years of artists who refused to hold the brush."
 tags: generativeart, creativecoding, clojure, philosophy
 series: The Invisible Brush
-cover_image:
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/g66re3amy3mbf18rcvg0.png
 canonical_url: "https://dev.to/ganesh_rajendran_art/who-made-this-the-author-shift-and-the-philosophy-of-generative-art-o3e"
 devto_id: 5041730
 ---

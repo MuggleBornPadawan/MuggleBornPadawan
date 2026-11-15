@@ -4,7 +4,7 @@ published: true
 description: "A long-form exploration of Procedural Content Generation as a creative engine — with Clojure and Quil."
 tags: clojure, creativecoding, gamedev, programming
 series: The Invisible Brush
-cover_image: 
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/suz38jgtdxazc4aljs2l.png
 canonical_url: https://dev.to/ganesh_rajendran_art/the-invisible-brush-generative-art-and-the-algorithms-that-paint-32ig
 devto_id: 5035755
 ---

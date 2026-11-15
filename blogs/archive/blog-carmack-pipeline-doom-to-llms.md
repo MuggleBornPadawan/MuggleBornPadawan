@@ -7,8 +7,6 @@ cover_image:
 devto_id: 4983387
 ---
 
-# The Carmack Pipeline: How DOOM's 1993 Hacks Predict Modern LLM Architecture
-
 > *"People who are really serious about software should make their own hardware."* — Alan Kay
 
 John Carmack wrote DOOM in 1993 on hardware that makes a modern smart thermostat look like a supercomputer. No GPU. No FPU on mainstream target machines. 4 MB of RAM. And yet DOOM rendered a pseudo-3D world at 35 fps, sustained multiplayer over dial-up links, and kept every networked PC in bitwise lock-step synchrony.

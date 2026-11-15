@@ -4,6 +4,7 @@
 - [[#trivia][trivia]]
   - [[#read-laterrrr][read laterrrr]]
   - [[#random-notes][random notes]]
+  - [[#lisp-in-the-age-of-ai---cameron-barre---krisa-jenkins][lisp in the age of ai - cameron barre - krisa jenkins]]
   - [[#lean-programming-language][lean programming language]]
   - [[#john-carmack][john carmack]]
   - [[#coding-harness-skills][coding harness skills]]
@@ -90,6 +91,40 @@
     - profiler monitors the code while it runs - hotspot (frequently executed code) - compiles to native code and adds it to code cache
     - garbage collection - if an object is no longer reachable from gc roots, it becomes eligible for gc
   - machine code 
+** lisp in the age of ai - cameron barre - krisa jenkins
+*** trivia 
+- source: https://youtu.be/WhXPEmdNRpA?si=IDxsN02m0zGPD7-L
+- architecting gleam?
+- innovate faster - protoype - producitivity in new languges can happen in few hours 
+- protyping using different languages and provide emperical evidence on performance 
+- cameron barre - 
+*** accidental vs essential compleixy
+- essential - domain rules, logic
+- incidental - made choices that maky my life harder - complications occur - 
+- accidental - code word for your fault (eg: kubernates, oops, state)
+  - oop - design patterns, classes (couple state)
+  - fp - we just pass functions and compose them 
+*** why clojure over haskell?
+- expertise in haskell is more important than the core business 
+  - funcitonal type systems
+  - repl is not a strong suite
+  - formalize things 
+*** the repl as feedback loop for ai agents 
+- clojure is expressive and gets out of the way soon 
+  - repl feedback loop 
+  - unit tests
+  - after 30 days too 
+  - nrepl - playwright, mcp - connect to agent 
+*** is lisp syntax a barrier or superpower
+
+*** clojure beyond the jvm : a dialect renaissance 
+*** using macros to build an event modelling dsl
+*** event sourcing : state as lossy compression
+*** how grain stores and replay events
+*** rewriting a rails app in grain
+*** contrasting coding agents with uniform architecture
+*** is ai a chance to redisover old ideas
+*** briding allium specs to grain code 
 ** lean programming language 
 - https://simm.is/blog/lean-on-the-jvm/
 - https://lean-lang.org/functional_programming_in_lean/
