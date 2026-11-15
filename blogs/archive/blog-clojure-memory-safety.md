@@ -4,6 +4,16 @@ published: true
 description: "Monolithic rewrites in Rust often result in multi-year feature freezes. Learn how a Tiered Architecture combining Clojure for domain orchestration and Rust/C++ for hardware kernels delivers 100% memory safety at a fraction of the cost."
 tags: clojure, rust, cpp, architecture
 series: The Economics of Memory Safety
+cover_image:
+canonical_url: https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b
+devto_id: 5010186
+---
+
+> *This is **Part 2** of a 3-part series on **The Economics of Memory Safety**:*
+> 1. [Part 1: The Economics of Memory Safety — Inaction vs. The Cost of Rewriting](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in)
+> 2. **Part 2: Beyond the Rewrite Trap — High-Velocity Memory Safety with Clojure and Tiered Systems** (this article)
+> 3. [Part 3: The Full-Stack Case for Clojure — AI, Concurrency, and Regulatory Reality](https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4)
+
 ---
 
 In [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting*](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in), we examined the financial and regulatory forces reshaping software engineering. Decades of telemetry from Microsoft, Google, and Apple confirmed that **~70% of all high-severity vulnerabilities are memory safety flaws**, irrespective of modern C++ language revisions (`C++11` through `C++23`). Concurrently, procurement mandates from CISA, the White House Office of the National Cyber Director (ONCD), and the EU Cyber Resilience Act (CRA) have transformed memory safety from an abstract hygiene debate into an urgent balance sheet imperative.
@@ -335,4 +345,6 @@ Monolithic rewrites often sacrifice organizational agility in pursuit of ideolog
 7. **Bagwell, P. & Hickey, R. (2001, 2008):** [*Ideal Hash Trees* and *Persistent Data Structures*](https://lampwww.epfl.ch/papers/idealhashtrees.pdf) — Foundations of Clojure's lock-free, structurally shared immutable collections (HAMTs).
 
 ### Series Articles
-8. **Rajendran, G. (2024):** [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting* (Part 1)](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in) — Foundational analysis of vulnerability lifecycle costs, regulatory mandates, and modern C++ limitations.
+8. **Rajendran, G. (2026):** [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting* (Part 1)](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in) — Foundational analysis of vulnerability lifecycle costs, regulatory mandates, and modern C++ limitations.
+9. **Rajendran, G. (2026):** [*Beyond the Rewrite Trap: High-Velocity Memory Safety with Clojure and Tiered Systems* (Part 2)](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b) — Tiered architecture combining Clojure orchestration with Rust/C++ kernels.
+10. **Rajendran, G. (2026):** [*The Full-Stack Case for Clojure: AI, Concurrency, and Regulatory Reality* (Part 3)](https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4) — Evidence-based case for Clojure across AI pipelines, concurrency, and compliance.

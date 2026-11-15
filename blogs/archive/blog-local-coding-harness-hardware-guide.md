@@ -3,8 +3,9 @@ title: "The 32k Cliff: Choosing the Right Hardware for Your Local AI Coding Harn
 published: true
 description: "A deep dive into why 32k context degradation happens across frontier models and how to pick the right local hardware across Mac Studio M5 Ultra, RTX Pro 6000, and DGX Spark."
 tags: ai, machinelearning, hardware, devops
-# canonical_url: https://medium.com/@yourusername/the-32k-cliff-slug # uncomment if cross-posting from Medium
-# cover_image: https://your-cover-image-url.png # optional
+cover_image:
+devto_id: 4877074
+canonical_url: https://dev.to/ganesh_rajendran_art/the-32k-cliff-choosing-the-right-hardware-for-your-local-ai-coding-harness-4hoa
 ---
 
 Here's a fact that should change how you spend your hardware budget:

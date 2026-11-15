@@ -33,6 +33,13 @@
                second
                str/trim)))
 
+(defn extract-id
+  "Pull devto_id from YAML frontmatter (`devto_id: ...`)."
+  [markdown]
+  (some->> (re-find #"(?m)^devto_id:\s*(\d+)\s*$" markdown)
+           second
+           Long/parseLong))
+
 (defn parse-tags
   "Split comma-separated tag string into a vector of up to 4 tags."
   [s]
@@ -72,7 +79,7 @@
                          (System/exit 1)))
         tags     (parse-tags (:tags opts))
         draft?   (:draft opts)
-        article-id (:id opts)]
+        article-id (or (:id opts) (extract-id markdown))]
 
     (println "Title:    " title)
     (println "Tags:     " (if (seq tags) (str/join ", " tags) "(preserve existing / none)"))

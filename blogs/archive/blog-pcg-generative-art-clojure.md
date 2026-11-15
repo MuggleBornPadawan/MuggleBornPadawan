@@ -3,8 +3,16 @@ title: "The Invisible Brush: Generative Art and the Algorithms That Paint"
 published: true
 description: "A long-form exploration of Procedural Content Generation as a creative engine — with Clojure and Quil."
 tags: clojure, creativecoding, gamedev, programming
+series: The Invisible Brush
 cover_image: 
-canonical_url: 
+canonical_url: https://dev.to/ganesh_rajendran_art/the-invisible-brush-generative-art-and-the-algorithms-that-paint-32ig
+devto_id: 5035755
+---
+
+> *This is **Part 1** of a 2-part series on **The Invisible Brush: Generative Art & Creative Computation**:*
+> 1. **Part 1: The Invisible Brush — Generative Art and the Algorithms That Paint** (this article)
+> 2. [Part 2: Who Made This? The Author Shift and the Philosophy of Generative Art](https://dev.to/ganesh_rajendran_art/who-made-this-the-author-shift-and-the-philosophy-of-generative-art-o3e)
+
 ---
 
 *A long-form exploration of Procedural Content Generation as a creative engine — with Clojure and Quil.*
@@ -309,6 +317,13 @@ The brush was always invisible. It was always mathematics. We just made it legib
 - [Red Blob Games](https://www.redblobgames.com/) — the finest visual explanations of PCG algorithms on the internet
 - [Generative Gestaltung](http://www.generative-gestaltung.de/2/) — a book and code library for creative coding
 - [The Coding Train](https://thecodingtrain.com/) — Daniel Shiffman's video series covers noise, L-Systems, cellular automata with infectious enthusiasm
+
+---
+
+## Series Navigation
+
+1. **Part 1 (Current):** [*The Invisible Brush: Generative Art and the Algorithms That Paint*](https://dev.to/ganesh_rajendran_art/the-invisible-brush-generative-art-and-the-algorithms-that-paint-32ig) — Foundations of PCG, noise functions, and building a terrain generator in Clojure and Quil.
+2. **Part 2:** [*Who Made This? The Author Shift and the Philosophy of Generative Art*](https://dev.to/ganesh_rajendran_art/who-made-this-the-author-shift-and-the-philosophy-of-generative-art-o3e) — Deconstructs the author shift, the spectrum of control, and 60 years of algorithmic art philosophy.
 
 ---
 

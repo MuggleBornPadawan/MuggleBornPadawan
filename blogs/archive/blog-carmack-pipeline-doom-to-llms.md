@@ -1,3 +1,12 @@
+---
+title: "The Carmack Pipeline: How DOOM's 1993 Hacks Predict Modern LLM Architecture"
+published: true
+description: "Systems analysis linking DOOM's 1993 engine techniques (fixed-point math, BSP trees, dirty rectangles, lockstep networking, WAD caching) to modern frontier LLM inference and serving."
+tags: ai, llm, architecture, retrocomputing
+cover_image:
+devto_id: 4983387
+---
+
 # The Carmack Pipeline: How DOOM's 1993 Hacks Predict Modern LLM Architecture
 
 > *"People who are really serious about software should make their own hardware."* — Alan Kay

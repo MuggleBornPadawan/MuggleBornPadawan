@@ -3,8 +3,17 @@ title: "The Full-Stack Case for Clojure: AI, Concurrency, and Regulatory Reality
 published: true
 description: "In an era defined by AI proliferation, distributed systems complexity, and tightening regulatory mandates, does Clojure's design philosophy position it as the most coherent engineering stack for 2024–2026? Here is the evidence."
 tags: clojure, architecture, ai, concurrency
+series: The Economics of Memory Safety
 cover_image:
-canonical_url:
+canonical_url: https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4
+devto_id: 5029937
+---
+
+> *This is **Part 3** of a 3-part series on **The Economics of Memory Safety**:*
+> 1. [Part 1: The Economics of Memory Safety — Inaction vs. The Cost of Rewriting](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in)
+> 2. [Part 2: Beyond the Rewrite Trap — High-Velocity Memory Safety with Clojure and Tiered Systems](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b)
+> 3. **Part 3: The Full-Stack Case for Clojure — AI, Concurrency, and Regulatory Reality** (this article)
+
 ---
 
 In [*Beyond the Rewrite Trap*](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b), we established that Clojure's managed runtime eliminates 13 categories of memory corruption hazards while maintaining feature delivery velocity that monolithic rewrites cannot match. That argument was grounded in regulatory mandates — CISA, ONCD, the EU Cyber Resilience Act.
@@ -473,8 +482,9 @@ That is not luck. That is convergent validity.
 ## References & Further Reading
 
 ### Series Articles
-1. **Rajendran, G. (2024):** [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting* (Part 1)](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in) — Foundational analysis of vulnerability lifecycle costs, regulatory mandates, and C++ limitations.
-2. **Rajendran, G. (2024):** [*Beyond the Rewrite Trap: High-Velocity Memory Safety with Clojure and Tiered Systems* (Part 2)](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b) — Tiered architecture combining Clojure orchestration with Rust/C++ kernels.
+1. **Rajendran, G. (2026):** [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting* (Part 1)](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in) — Foundational analysis of vulnerability lifecycle costs, regulatory mandates, and C++ limitations.
+2. **Rajendran, G. (2026):** [*Beyond the Rewrite Trap: High-Velocity Memory Safety with Clojure and Tiered Systems* (Part 2)](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b) — Tiered architecture combining Clojure orchestration with Rust/C++ kernels.
+3. **Rajendran, G. (2026):** [*The Full-Stack Case for Clojure: AI, Concurrency, and Regulatory Reality* (Part 3)](https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4) — Evidence-based case for Clojure across AI pipelines, concurrency, and compliance.
 
 ### Language & Runtime
 3. **Hickey, R. (2009):** [*Are We There Yet? A Deconstruction of Object-Oriented Time*](https://www.infoq.com/presentations/Are-We-There-Yet-Rich-Hickey/) — The philosophical foundation of Clojure's identity/state/value model.

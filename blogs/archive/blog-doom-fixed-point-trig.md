@@ -1,3 +1,11 @@
+---
+title: "John Carmack's Fixed-Point Trigonometry in DOOM (1993)"
+published: false
+description: "Architectural breakdown of Binary Angular Measurement (BAM), 16.16 lookup tables, and branchless angle wrapping without floating-point hardware."
+tags: retrocomputing, gamedev, algorithms, assembly
+cover_image:
+---
+
 # John Carmack's Fixed-Point Trigonometry in DOOM (1993)
 
 ## Overview
