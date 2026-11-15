@@ -10,8 +10,6 @@ canonical_url: https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixe
 
 **A Systems Engineering Deconstruction of Google Genie 4, Runway GWM Worlds 2, World Labs Marble, Tencent HY-World 2.0, and Gemini 4 Argon + MuJoCo**
 
-*By Systems & AI Research Engineering*
-
 ---
 
 ## 1. Introduction: The False Equivalence of "World Models"
