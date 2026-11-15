@@ -3,7 +3,7 @@ title: "The World Model Trilemma: Pixels, Splats, and Symbolic Physics"
 published: true
 description: "Systems analysis deconstructing Google Genie 4, Runway GWM Worlds 2, World Labs Marble, and Tencent HY-World 2.0 across latent video diffusion, 3D Gaussian splatting, and hybrid MuJoCo physics."
 tags: ai, machinelearning, robotics, architecture
-cover_image:
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/cjoc58m15rbfywc4tq1g.png
 devto_id: 4993516
 canonical_url: https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci
 ---

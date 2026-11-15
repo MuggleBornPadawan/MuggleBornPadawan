@@ -4,7 +4,7 @@ published: true
 description: "In an era defined by AI proliferation, distributed systems complexity, and tightening regulatory mandates, does Clojure's design philosophy position it as the most coherent engineering stack for 2024–2026? Here is the evidence."
 tags: clojure, architecture, ai, concurrency
 series: The Economics of Memory Safety
-cover_image:
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/20p1ixre6ss1zlrnw72i.png
 canonical_url: https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4
 devto_id: 5029937
 ---

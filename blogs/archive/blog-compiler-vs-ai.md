@@ -3,7 +3,7 @@ title: "The Self-Healing Code Thesis: Compilers, AI, and the Next 10 Years of So
 published: true
 description: "Compilers, AI, and the next 10 years of software. Case study (GCC vs. Copilot on bubble sort), Self-Healing feedback loop with timeline roadmap, 11 academic citations."
 tags: ai, compilers, programming, architecture
-cover_image:
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/jfmj23gi3tstj9bbcqoq.png
 devto_id: 4884289
 canonical_url: https://dev.to/ganesh_rajendran_art/the-self-healing-code-thesis-compilers-ai-and-the-next-10-years-of-software-49ml
 ---

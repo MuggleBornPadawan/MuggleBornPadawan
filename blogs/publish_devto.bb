@@ -21,7 +21,9 @@
   (let [res (sh "pass" path)]
     (if (zero? (:exit res))
       (str/trim (:out res))
-      (throw (ex-info "Failed to get pass secret" res)))))
+      (or (System/getenv "DEV_TO_API_KEY")
+          (System/getenv "DEVTO_API_KEY")
+          (throw (ex-info "Failed to get pass secret and no DEV_TO_API_KEY env var set" res))))))
 
 (defn extract-title
   "Pull the title from YAML frontmatter (`title: ...`) or the first `# Heading`."

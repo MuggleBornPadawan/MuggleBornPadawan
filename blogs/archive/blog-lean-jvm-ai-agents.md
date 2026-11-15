@@ -3,7 +3,7 @@ title: "Proving What AI Generates: Running Formally Verified Lean 4 Inside Cloju
 published: true
 description: "How the Ansatz Lean/JVM bridge turns theorem proving into a practical ground-truth loop for autonomous coding agents handling financial logic."
 tags: clojure, java, ai, lean4
-cover_image:
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/mo01bgk3lxorlq5hi71m.png
 canonical_url: https://simm.is/blog/lean-on-the-jvm/
 devto_id: 4985934
 ---

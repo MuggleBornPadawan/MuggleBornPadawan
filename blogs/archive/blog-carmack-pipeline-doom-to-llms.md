@@ -3,7 +3,8 @@ title: "The Carmack Pipeline: How DOOM's 1993 Hacks Predict Modern LLM Architect
 published: true
 description: "Systems analysis linking DOOM's 1993 engine techniques (fixed-point math, BSP trees, dirty rectangles, lockstep networking, WAD caching) to modern frontier LLM inference and serving."
 tags: ai, llm, architecture, retrocomputing
-cover_image:
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/7i1rwkjt05q1m2kkgu6e.png
+canonical_url: https://dev.to/ganesh_rajendran_art/the-carmack-pipeline-how-dooms-1993-hacks-predict-modern-llm-architecture-392d
 devto_id: 4983387
 ---
 
@@ -288,4 +289,3 @@ Sutton tells us *what* to compute. Carmack shows us *how* to make it physically 
 * [BitNet b1.58: 1-bit LLMs for All](https://arxiv.org/abs/2402.17764) — Ma et al. (2024)
 * [The Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) — Richard S. Sutton (2019)
 * [LLaMA Architecture Source Code](https://github.com/meta-llama/llama) — Meta Platforms
-* [Original DOOM Trig Note by @TrisH0x2A](https://x.com/TrisH0x2A/status/2118232343978938753)

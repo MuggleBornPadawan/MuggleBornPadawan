@@ -4,7 +4,7 @@ published: true
 description: "Systems and architectural analysis for engineering leadership comparing Greenfield Rewrites, Incremental FFI, Hardened Runtimes, and Hardware MTE across TCO, regulatory mandates (CISA/ONCD), and the persistent ~70% CVE metric."
 tags: cpp, rust, architecture, security
 series: The Economics of Memory Safety
-cover_image:
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/fre5ovi4qptf8rboxc9p.png
 canonical_url: https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in
 devto_id: 5009424
 ---

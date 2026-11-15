@@ -4,7 +4,7 @@ published: true
 description: "Monolithic rewrites in Rust often result in multi-year feature freezes. Learn how a Tiered Architecture combining Clojure for domain orchestration and Rust/C++ for hardware kernels delivers 100% memory safety at a fraction of the cost."
 tags: clojure, rust, cpp, architecture
 series: The Economics of Memory Safety
-cover_image:
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/fre5ovi4qptf8rboxc9p.png
 canonical_url: https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b
 devto_id: 5010186
 ---
