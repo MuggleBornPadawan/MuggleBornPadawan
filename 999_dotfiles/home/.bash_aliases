@@ -73,7 +73,7 @@ alias eo='emacs -nw -q -l /home/rgroot/MuggleBornPadawan/dummy/ollama-init.el'
 
 # ── Tmux ──
 alias t='tmux a'
-alias tn='ulimit -u 1000 && sleep 2 && tmux new -s "alpha"'
+alias tn='pw && clear && ulimit -u 1000 && sleep 30 && tmux new -s "alpha"'
 alias td='tmux detach'
 alias tk="echo 'abort now if you want to stop killing server.. ' && sleep 11 && tmux kill-server"
 alias tf='tmux set-option -g status off'
@@ -99,3 +99,6 @@ alias gcl='gcloud cloud-shell ssh --authorize-session'
 
 # --- new ---
 alias im='bb $HOME/MuggleBornPadawan/000_refcards/classify_catalog.bb --yes && bb $HOME/MuggleBornPadawan/000_refcards/generate_gallery.bb && xdg-open $HOME/MuggleBornPadawan/000_refcards/images/index.html >/dev/null 2>&1 & disown' 
+
+# --- find word recursively 
+alias fword="grep -rniw . -e"
