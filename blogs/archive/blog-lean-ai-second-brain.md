@@ -543,4 +543,11 @@ The Mac Studio M5 Ultra with 96–512 GB unified memory closes the remaining qua
 
 ---
 
+## Related Articles
+
+- [The 32k Cliff: Choosing the Right Hardware for Your Local AI Coding Harness](https://dev.to/ganesh_rajendran_art/the-32k-cliff-choosing-the-right-hardware-for-your-local-ai-coding-harness-4hoa)
+- [Proving What AI Generates: Running Formally Verified Lean 4 Inside Clojure Services](https://dev.to/ganesh_rajendran_art/proving-what-ai-generates-running-formally-verified-lean-4-inside-clojure-services-3hip)
+
+---
+
 *Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

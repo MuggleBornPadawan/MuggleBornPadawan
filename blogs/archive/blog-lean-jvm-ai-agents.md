@@ -318,6 +318,7 @@ The future of autonomous systems isn't just agents that code faster—it's agent
 - **Primary Source:** [Simmis: Lean on the JVM: proved functions for Java and Clojure](https://simm.is/blog/lean-on-the-jvm/)
 - **SDK Artifact:** [`org.replikativ/ansatz-lean-jvm` on Clojars](https://clojars.org/org.replikativ/ansatz-lean-jvm)
 - **Lean 4 Guide:** [Functional Programming in Lean](https://lean-lang.org/functional_programming_in_lean/) by David Thrane Christiansen
+- **Related Post:** [Lean AI Second Brain: Babashka, Git & Local LLMs](https://dev.to/ganesh_rajendran_art/lean-ai-second-brain-babashka-git-local-llms-14gk)
 
 ---
 *Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

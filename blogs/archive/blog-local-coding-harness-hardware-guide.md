@@ -520,4 +520,10 @@ Sources are grouped by topic. All URLs verified as of October 2026.
   https://developer.nvidia.com/nim
 
 ---
+
+## Related Articles
+
+- [Lean AI Second Brain: Babashka, Git & Local LLMs](https://dev.to/ganesh_rajendran_art/lean-ai-second-brain-babashka-git-local-llms-14gk)
+
+---
 *Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*
