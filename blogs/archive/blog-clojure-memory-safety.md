@@ -9,10 +9,11 @@ canonical_url: https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-
 devto_id: 5010186
 ---
 
-> *This is **Part 2** of a 3-part series on **The Economics of Memory Safety**:*
+> *This is **Part 2** of a 4-part series on **The Economics of Memory Safety**:*
 > 1. [Part 1: The Economics of Memory Safety — Inaction vs. The Cost of Rewriting](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in)
 > 2. **Part 2: Beyond the Rewrite Trap — High-Velocity Memory Safety with Clojure and Tiered Systems** (this article)
 > 3. [Part 3: The Full-Stack Case for Clojure — AI, Concurrency, and Regulatory Reality](https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4)
+> 4. [Part 4: Complexity-Aware TDD in Clojure — From O(n^2) to O(n log k)](https://dev.to/ganesh_rajendran_art/complexity-aware-tdd-in-clojure-from-on2-to-on-log-k-56mo)
 
 ---
 
@@ -343,11 +344,6 @@ Monolithic rewrites often sacrifice organizational agility in pursuit of ideolog
 5. **OpenJDK JEP 454 (2024):** [*Foreign Function & Memory API* (Project Panama)](https://openjdk.org/jeps/454) — Deterministic, type-safe off-heap native memory allocation and scoped arena lifecycles.
 6. **GraalVM Community (2024):** [*GraalVM Native Image C Interoperability & Substrate VM*](https://www.graalvm.org/latest/reference-manual/native-image/guides/build-native-shared-library/) — Ahead-of-time compilation of managed runtimes into standalone native binaries with embedded garbage collection.
 7. **Bagwell, P. & Hickey, R. (2001, 2008):** [*Ideal Hash Trees* and *Persistent Data Structures*](https://lampwww.epfl.ch/papers/idealhashtrees.pdf) — Foundations of Clojure's lock-free, structurally shared immutable collections (HAMTs).
-
-### Series Articles
-8. **Rajendran, G. (2026):** [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting* (Part 1)](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in) — Foundational analysis of vulnerability lifecycle costs, regulatory mandates, and modern C++ limitations.
-9. **Rajendran, G. (2026):** [*Beyond the Rewrite Trap: High-Velocity Memory Safety with Clojure and Tiered Systems* (Part 2)](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b) — Tiered architecture combining Clojure orchestration with Rust/C++ kernels.
-10. **Rajendran, G. (2026):** [*The Full-Stack Case for Clojure: AI, Concurrency, and Regulatory Reality* (Part 3)](https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4) — Evidence-based case for Clojure across AI pipelines, concurrency, and compliance.
 
 ---
 *Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

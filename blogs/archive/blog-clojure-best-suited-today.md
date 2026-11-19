@@ -9,10 +9,11 @@ canonical_url: https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-cloju
 devto_id: 5029937
 ---
 
-> *This is **Part 3** of a 3-part series on **The Economics of Memory Safety**:*
+> *This is **Part 3** of a 4-part series on **The Economics of Memory Safety**:*
 > 1. [Part 1: The Economics of Memory Safety — Inaction vs. The Cost of Rewriting](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in)
 > 2. [Part 2: Beyond the Rewrite Trap — High-Velocity Memory Safety with Clojure and Tiered Systems](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b)
 > 3. **Part 3: The Full-Stack Case for Clojure — AI, Concurrency, and Regulatory Reality** (this article)
+> 4. [Part 4: Complexity-Aware TDD in Clojure — From O(n^2) to O(n log k)](https://dev.to/ganesh_rajendran_art/complexity-aware-tdd-in-clojure-from-on2-to-on-log-k-56mo)
 
 ---
 
@@ -477,29 +478,26 @@ The case is that the **design decisions Rich Hickey made in 2007** — immutabil
 
 That is not luck. That is convergent validity.
 
+> **Continue to Part 4:** [*Complexity-Aware TDD in Clojure — From O(n^2) to O(n log k)*](https://dev.to/ganesh_rajendran_art/complexity-aware-tdd-in-clojure-from-on2-to-on-log-k-56mo) — how pure functions and the REPL turn TDD into a precision tool for complexity-correct pipelines.
+
 ---
 
 ## References & Further Reading
 
-### Series Articles
-1. **Rajendran, G. (2026):** [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting* (Part 1)](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in) — Foundational analysis of vulnerability lifecycle costs, regulatory mandates, and C++ limitations.
-2. **Rajendran, G. (2026):** [*Beyond the Rewrite Trap: High-Velocity Memory Safety with Clojure and Tiered Systems* (Part 2)](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b) — Tiered architecture combining Clojure orchestration with Rust/C++ kernels.
-3. **Rajendran, G. (2026):** [*The Full-Stack Case for Clojure: AI, Concurrency, and Regulatory Reality* (Part 3)](https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4) — Evidence-based case for Clojure across AI pipelines, concurrency, and compliance.
-
 ### Language & Runtime
-3. **Hickey, R. (2009):** [*Are We There Yet? A Deconstruction of Object-Oriented Time*](https://www.infoq.com/presentations/Are-We-There-Yet-Rich-Hickey/) — The philosophical foundation of Clojure's identity/state/value model.
-4. **Hickey, R. (2012):** [*The Value of Values*](https://www.infoq.com/presentations/Value-Values/) — Value semantics vs. place-oriented programming.
-5. **OpenJDK JEP 454 (2024):** [*Foreign Function & Memory API* (Project Panama)](https://openjdk.org/jeps/454) — Type-safe native memory access on modern JVM.
+1. **Hickey, R. (2009):** [*Are We There Yet? A Deconstruction of Object-Oriented Time*](https://www.infoq.com/presentations/Are-We-There-Yet-Rich-Hickey/) — The philosophical foundation of Clojure's identity/state/value model.
+2. **Hickey, R. (2012):** [*The Value of Values*](https://www.infoq.com/presentations/Value-Values/) — Value semantics vs. place-oriented programming.
+3. **OpenJDK JEP 454 (2024):** [*Foreign Function & Memory API* (Project Panama)](https://openjdk.org/jeps/454) — Type-safe native memory access on modern JVM.
 
 ### Tooling
-6. **Babashka:** [*babashka.org*](https://babashka.org) — Native Clojure scripting runtime with sub-15ms startup.
-7. **Shadow-CLJS:** [*shadow-cljs.org*](https://shadow-cljs.org) — Full-stack ClojureScript build tooling with npm interop.
-8. **Malli:** [*github.com/metosin/malli*](https://github.com/metosin/malli) — Data-driven schema, validation, and coercion for Clojure.
+4. **Babashka:** [*babashka.org*](https://babashka.org) — Native Clojure scripting runtime with sub-15ms startup.
+5. **Shadow-CLJS:** [*shadow-cljs.org*](https://shadow-cljs.org) — Full-stack ClojureScript build tooling with npm interop.
+6. **Malli:** [*github.com/metosin/malli*](https://github.com/metosin/malli) — Data-driven schema, validation, and coercion for Clojure.
 
 ### Regulatory
-9. **White House ONCD (2024):** [*Back to the Building Blocks*](https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf) — Federal guidance designating JVM runtimes as approved memory-safe languages.
-10. **CISA (2023):** [*The Case for Memory Safe Roadmaps*](https://www.cisa.gov/resources-tools/resources/case-memory-safe-roadmaps) — Procurement directives for technology manufacturers.
-11. **European Union (2024):** [*Cyber Resilience Act (CRA)*](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act) — Vendor liability framework for preventable software security flaws.
+7. **White House ONCD (2024):** [*Back to the Building Blocks*](https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf) — Federal guidance designating JVM runtimes as approved memory-safe languages.
+8. **CISA (2023):** [*The Case for Memory Safe Roadmaps*](https://www.cisa.gov/resources-tools/resources/case-memory-safe-roadmaps) — Procurement directives for technology manufacturers.
+9. **European Union (2024):** [*Cyber Resilience Act (CRA)*](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act) — Vendor liability framework for preventable software security flaws.
 
 ---
 *Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

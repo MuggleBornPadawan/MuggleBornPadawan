@@ -9,10 +9,11 @@ canonical_url: https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safet
 devto_id: 5009424
 ---
 
-> *This is **Part 1** of a 3-part series on **The Economics of Memory Safety**:*
+> *This is **Part 1** of a 4-part series on **The Economics of Memory Safety**:*
 > 1. **Part 1: Inaction vs. The Cost of Rewriting** (this article)
 > 2. [Part 2: Beyond the Rewrite Trap — High-Velocity Memory Safety with Clojure and Tiered Systems](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b)
 > 3. [Part 3: The Full-Stack Case for Clojure — AI, Concurrency, and Regulatory Reality](https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4)
+> 4. [Part 4: Complexity-Aware TDD in Clojure — From O(n^2) to O(n log k)](https://dev.to/ganesh_rajendran_art/complexity-aware-tdd-in-clojure-from-on2-to-on-log-k-56mo)
 
 ---
 
@@ -288,14 +289,6 @@ The winning architectural strategy is **disciplined containment**: freeze legacy
 4. **Microsoft Security Response Center (MSRC) (2019–2023):** *A Proactive Approach to More Secure Code* — Analysis of historical CVE root causes documenting the persistent ~70% memory corruption metric.
 5. **Google Chromium & Android Security Teams (2020–2024):** *Memory Safety in Android and Chromium* — Comparative data demonstrating sharp vulnerability reduction following Rust adoption for native subsystems.
 6. **ISO/IEC JTC1/SC22/WG21 (2023–2024):** Proposals P3390 (Safe C++), P2687 (Profiles), and P2900 (Contracts for C++).
-
----
-
-## Series Articles
-
-1. **Rajendran, G. (2026):** [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting* (Part 1)](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in) — Foundational analysis of vulnerability lifecycle costs, regulatory mandates, and modern C++ limitations.
-2. **Rajendran, G. (2026):** [*Beyond the Rewrite Trap: High-Velocity Memory Safety with Clojure and Tiered Systems* (Part 2)](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b) — Tiered architecture combining Clojure orchestration with Rust/C++ kernels.
-3. **Rajendran, G. (2026):** [*The Full-Stack Case for Clojure: AI, Concurrency, and Regulatory Reality* (Part 3)](https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4) — Evidence-based case for Clojure across AI pipelines, concurrency, and compliance.
 
 ---
 *Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*
