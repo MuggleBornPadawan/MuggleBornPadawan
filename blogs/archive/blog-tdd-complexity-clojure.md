@@ -55,18 +55,17 @@ The practical consequence: a test for a Clojure data pipeline function is typica
 ```clojure
 (ns pipeline.rank-test
   (:require [clojure.test :refer [deftest is testing]]
-            [pipeline.rank :refer [top-k-v1-sort top-k-v2-heap]]))
+            [pipeline.rank :refer [top-k-v1-sort]]))
 
 (deftest top-k-ranks-correctly
   (testing "returns k highest-scored items in descending order"
-    (doseq [top-k [top-k-v1-sort top-k-v2-heap]]
-      (is (= [{:id :c :score 90} {:id :a :score 75}]
-             (top-k 2 [{:id :a :score 75}
-                       {:id :b :score 42}
-                       {:id :c :score 90}]))))))
+    (is (= [{:id :c :score 90} {:id :a :score 75}]
+           (top-k-v1-sort 2 [{:id :a :score 75}
+                             {:id :b :score 42}
+                             {:id :c :score 90}])))))
 ```
 
-This is the entire test. No setup. No teardown. The function contract is fully legible at a glance.
+This is the entire test. No setup. No teardown. The function contract is fully legible at a glance. Once refactoring introduces `top-k-v2-heap`, the same assertion covers both implementations unchanged — we will see this in the final contract test below.
 
 ---
 
@@ -103,6 +102,25 @@ You are building a data pipeline that processes a stream of scored events and mu
 
 The tests say nothing about algorithm. They specify the **contract**: cardinality and sort order. This is the TDD superpower — the test survives implementation changes.
 
+**Contrast: The Naive Alternative (Why It Fails at Scale)**
+
+Before writing any implementation, consider what the same logic looks like as an imperative spike (a throwaway prototype) in Python or Java:
+
+```python
+# O(n²) naive: sort a list of dicts by repeated linear scans
+def top_k_naive(k, items):
+    result = []
+    remaining = list(items)
+    for _ in range(k):                    # O(k)
+        best = max(remaining, key=lambda x: x["score"])  # O(n) each pass
+        result.append(best)
+        remaining.remove(best)            # O(n) each pass
+    return result
+# Total: O(k * n) ≈ O(n²) when k is proportional to n
+```
+
+Each call to `max` is a full O(n) scan. Each `remove` is another O(n) scan. For k=100 and n=100,000, this is 20 million comparisons instead of 1.7 million. The contract tests would still pass — but the system collapses under production load. This is precisely why we write the contract test first: without it, the naive implementation ships.
+
 **Green Pass 1: Baseline O(n log n) Sort**
 
 ```clojure
@@ -118,25 +136,6 @@ This passes all tests immediately. The `->>` threading macro makes the data flow
 
 > **Complexity note:** `sort` in Clojure routes through [`Arrays/sort(Object[])`](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html) → TimSort, a stable O(n log n) algorithm. The implementation inherits the JVM's decades of optimization without any additional ceremony.
 
-**Spike: O(k×n) Imperative (Why It Fails to Scale)**
-
-Consider what the same logic looks like when written imperatively, as it often appears in a first-pass spike in Python or Java:
-
-```python
-# O(n²) naive: sort a list of dicts by repeated linear scans
-def top_k_naive(k, items):
-    result = []
-    remaining = list(items)
-    for _ in range(k):                    # O(k)
-        best = max(remaining, key=lambda x: x["score"])  # O(n) each pass
-        result.append(best)
-        remaining.remove(best)            # O(n) each pass
-    return result
-# Total: O(k * n) ≈ O(n²) when k is proportional to n
-```
-
-Each call to `max` is a full O(n) scan. Each `remove` is another O(n) scan. For k=100 and n=100,000, this is 20 million comparisons instead of 1.7 million. The tests would still pass — but the system collapses under production load.
-
 Clojure's idioms make the O(n²) version unnatural to write. The `->>` pipeline pulls you toward `sort-by + take`, which is correct by construction.
 
 **Refactor Pass 2: O(n log k) with a Priority Queue**
@@ -148,25 +147,43 @@ When n grows to millions and k stays small (e.g., top-10 out of 5M events), even
   (:import [java.util PriorityQueue]))
 
 (defn top-k-v2-heap [k items]
-  (let [cmp (comparator (fn [a b] (< (:score a) (:score b))))
+  (let [cmp (comparator (fn [a b] (< (:score a) (:score b)))) ; min-heap: ascending order keeps smallest at head, so .poll evicts it — retaining the k largest
         pq  (PriorityQueue. k cmp)]
     (doseq [item items]
       (.offer pq item)
       (when (> (.size pq) k)
-        (.poll pq)))          ; evict lowest — O(log k)
+        (.poll pq)))          ; evict smallest — O(log k), retaining k largest
     (->> (iterator-seq (.iterator pq))
          (sort-by :score >))))
 ```
 
 | Implementation   | Time Complexity  | Space Complexity | 1M events, k=10     |
 |:-----------------|:-----------------|:-----------------|:--------------------|
-| Naive scan loop  | O(k × n) ≈ O(n²) | O(k)             | ~20M ops (2×k×n)    |
+| O(k×n) naive scan | O(k × n) ≈ O(n²) | O(k)             | ~20M ops (2×k×n)    |
 | `sort-by + take` | O(n log n)       | O(n)             | ~20M comparisons    |
 | Priority queue   | **O(n log k)**   | O(k)             | **~3.3M ops**       |
 
 At 1M/k=10 the heap is ~6× cheaper. The gap widens as n≫k — at 5–10M events it is 20–50×.
 
 **The critical observation:** all three tests from the Red phase still pass. The contract did not change. The TDD cycle provided a stable, executable specification while the implementation evolved through three complexity classes. This is the discipline that most algorithmic refactoring lacks — a regression harness that proves correctness at each step.
+
+**Final contract test — both implementations, unchanged assertions:**
+
+```clojure
+(ns pipeline.rank-test
+  (:require [clojure.test :refer [deftest is testing]]
+            [pipeline.rank :refer [top-k-v1-sort top-k-v2-heap]]))
+
+(deftest top-k-ranks-correctly
+  (testing "returns k highest-scored items in descending order"
+    (doseq [top-k [top-k-v1-sort top-k-v2-heap]]
+      (is (= [{:id :c :score 90} {:id :a :score 75}]
+             (top-k 2 [{:id :a :score 75}
+                       {:id :b :score 42}
+                       {:id :c :score 90}]))))))
+```
+
+The same five-line assertion body drives two distinct implementations across three complexity classes. The test never changed.
 
 ---
 
@@ -208,7 +225,7 @@ Unit tests prove behavior for specific examples. For data pipelines, the deeper 
 
 ## The REPL as a Complexity Observatory
 
-One friction point that engineers moving from Python or Java to Clojure underestimate is how differently the REPL functions in an idiomatic workflow. It is not a scratchpad — it is a **live complexity observatory**.
+Property tests prove what the code guarantees; the REPL is where you discover *what to guarantee*. One friction point that engineers moving from Python or Java to Clojure underestimate is how differently the REPL functions in an idiomatic workflow. It is not a scratchpad — it is a **live complexity observatory**.
 
 The recommended Clojure workflow for algorithmic pipeline work is:
 
