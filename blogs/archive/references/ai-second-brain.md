@@ -11,7 +11,7 @@ Unlike passive digital filing systems, an AI Second Brain acts as an active cogn
 ## Comparison Matrix: Traditional vs. AI Second Brain
 
 | Dimension               | Traditional Second Brain (e.g., Notion, Vanilla Obsidian)               | AI Second Brain (e.g., Khoj, Gbrain, Agent Memory)                                          |
-| :---                    | :---                                                                    | :---                                                                                        |
+|:------------------------|:------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
 | **Data Ingestion**      | Manual classification, strict folder hierarchies, manual tagging.       | Omnivorous ingestion across Markdown, PDFs, emails, codebases, and audio transcripts.       |
 | **Retrieval Mechanism** | Lexical search (exact keywords), folder browsing, manual backlinking.   | Semantic vector search, hybrid full-text search, and knowledge graph traversals.            |
 | **Cognitive Role**      | Passive external memory store (storage and retrieval only).             | Active collaborator: synthesizes ideas, identifies gaps, and generates drafts.              |
@@ -67,17 +67,17 @@ Unlike passive digital filing systems, an AI Second Brain acts as an active cogn
 
 ## Noteworthy Open-Source Ecosystem & Repositories
 
-| # | Repository                          | Focus & Role in AI Second Brain Stack                                                 |
-|---+-------------------------------------+---------------------------------------------------------------------------------------|
-| 1 | `garrytan/gbrain`                   | Personal AI second brain architecture and automation workflows by Garry Tan.          |
-| 2 | `obsidianmd/obsidian-skills`        | Extended agent capabilities and skill integration tailored for Obsidian vaults.       |
-| 3 | `karpathy/llm-wiki`                 | Minimalist personal wiki and knowledge integration design concept by Andrej Karpathy. |
-| 4 | `anthropics/knowledge-work-plugins` | Anthropic-curated plugins and workflows for knowledge work automation.                |
-| 5 | `openai/skills`                     | Standardized agent skill definitions and tool execution protocols.                    |
-| 6 | `khoj-ai/khoj`                      | Open-source, self-hostable personal AI assistant across Markdown, Org-mode, and PDFs. |
-| 7 | `akitaonrails/ai-memory`            | Context engineering and persistent memory primitives for LLM applications.            |
-| 8 | `basicmachines-co/basic-memory`     | Local-first semantic memory engine for personal agents and LLMs.                      |
-| 9 | `huytieu/COG-second-brain`          | Cognitive architecture implementation for structuring personal knowledge.             |
+| #                                                                                                                                 | Repository                          | Focus & Role in AI Second Brain Stack                                                 |
+| ---+-------------------------------------+--------------------------------------------------------------------------------------- |
+| 1                                                                                                                                 | `garrytan/gbrain`                   | Personal AI second brain architecture and automation workflows by Garry Tan.          |
+| 2                                                                                                                                 | `obsidianmd/obsidian-skills`        | Extended agent capabilities and skill integration tailored for Obsidian vaults.       |
+| 3                                                                                                                                 | `karpathy/llm-wiki`                 | Minimalist personal wiki and knowledge integration design concept by Andrej Karpathy. |
+| 4                                                                                                                                 | `anthropics/knowledge-work-plugins` | Anthropic-curated plugins and workflows for knowledge work automation.                |
+| 5                                                                                                                                 | `openai/skills`                     | Standardized agent skill definitions and tool execution protocols.                    |
+| 6                                                                                                                                 | `khoj-ai/khoj`                      | Open-source, self-hostable personal AI assistant across Markdown, Org-mode, and PDFs. |
+| 7                                                                                                                                 | `akitaonrails/ai-memory`            | Context engineering and persistent memory primitives for LLM applications.            |
+| 8                                                                                                                                 | `basicmachines-co/basic-memory`     | Local-first semantic memory engine for personal agents and LLMs.                      |
+| 9                                                                                                                                 | `huytieu/COG-second-brain`          | Cognitive architecture implementation for structuring personal knowledge.             |
 
 ---
 

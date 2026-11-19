@@ -63,12 +63,12 @@ The reference architecture from the AI Second Brain literature decomposes knowle
 
 The substitution is deliberate at each layer:
 
-| Layer           | Traditional AI PKM                                       | This Architecture                               |
-| :-------------- | :------------------------------------------------------- | :---------------------------------------------- |
-| **Ingestion**   | Proprietary sync agents, browser plugins, cloud upload   | Markdown files, local bb watcher scripts        |
-| **Indexing**    | Persistent vector DB (Chroma, Pinecone, Weaviate)        | Git tree + ripgrep keyword index                |
-| **Synthesis**   | Cloud LLM API (OpenAI, Anthropic) + RAG pipeline         | Local Ollama HTTP call with assembled context   |
-| **Action**      | Workflow automation SaaS (Zapier, Make, cloud agents)    | Babashka cron tasks + git commit                |
+| Layer         | Traditional AI PKM                                     | This Architecture                             |
+|:--------------|:-------------------------------------------------------|:----------------------------------------------|
+| **Ingestion** | Proprietary sync agents, browser plugins, cloud upload | Markdown files, local bb watcher scripts      |
+| **Indexing**  | Persistent vector DB (Chroma, Pinecone, Weaviate)      | Git tree + ripgrep keyword index              |
+| **Synthesis** | Cloud LLM API (OpenAI, Anthropic) + RAG pipeline       | Local Ollama HTTP call with assembled context |
+| **Action**    | Workflow automation SaaS (Zapier, Make, cloud agents)  | Babashka cron tasks + git commit              |
 
 None of this is a theoretical exercise. It is running on an Apple Silicon Mac Studio, on the same machine as a live JVM REPL and a full Clojure development environment. Lean refers to software footprint (~35 MB script RSS, no background daemons), not hardware; the Ultra just gives headroom for larger local models.
 
@@ -423,7 +423,7 @@ The Active Maintainer augments deliberate capture. It does not replace the judgm
 
 ## Production Profile on Mac Studio M5 Ultra
 
-The Mac Studio M5 Ultra (announced August 2026, shipping September 22, 2026) changes the local LLM calculus entirely. With unified memory starting at **96 GB** and scaling to 512 GB, and memory bandwidth reaching **1.2 TB/s**, the M5 Ultra is not a constrained development box — it is a serious inference node.
+The Mac Studio M5 Ultra changes the local LLM calculus entirely. With unified memory starting at **96 GB** and scaling to 512 GB, and memory bandwidth reaching **1.2 TB/s**, the M5 Ultra is not a constrained development box — it is a serious inference node.
 
 This architecture runs the following stack simultaneously without memory pressure:
 
@@ -478,14 +478,14 @@ For personal knowledge management of technical notes, project documentation, and
 
 The minimalist local-first approach described here is not invented from scratch. Several open-source projects represent the design spectrum:
 
-| Project                                                                              | Design Point                                | Relevance                                                                |
-|:-------------------------------------------------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------------|
-| [karpathy/llm-wiki](https://github.com/karpathy/llm-wiki)                            | Plain text + LLM context injection          | Direct inspiration; minimalist wiki + local LLM pattern                  |
-| [garrytan/gbrain](https://github.com/garrytan/gbrain)                                | Personal AI second-brain architecture       | Real-world automation workflows; useful reference for Action Layer ideas  |
-| [khoj-ai/khoj](https://github.com/khoj-ai/khoj)                                      | Self-hostable, local LLMs, Markdown/Org/PDF | Closest production-ready equivalent; heavier but powerful                |
-| [basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory)    | Local-first semantic memory engine          | SQLite-based; natural upgrade path if `rg` keyword retrieval falls short |
-| [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory)                  | Context engineering primitives for LLMs     | Reference for context assembly and episodic/semantic memory patterns     |
-| [huytieu/COG-second-brain](https://github.com/huytieu/COG-second-brain)              | Cognitive architecture for PKM              | Useful conceptual reference for knowledge graph and memory structuring   |
+| Project                                                                           | Design Point                                | Relevance                                                                |
+|:----------------------------------------------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------------|
+| [karpathy/llm-wiki](https://github.com/karpathy/llm-wiki)                         | Plain text + LLM context injection          | Direct inspiration; minimalist wiki + local LLM pattern                  |
+| [garrytan/gbrain](https://github.com/garrytan/gbrain)                             | Personal AI second-brain architecture       | Real-world automation workflows; useful reference for Action Layer ideas |
+| [khoj-ai/khoj](https://github.com/khoj-ai/khoj)                                   | Self-hostable, local LLMs, Markdown/Org/PDF | Closest production-ready equivalent; heavier but powerful                |
+| [basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory) | Local-first semantic memory engine          | SQLite-based; natural upgrade path if `rg` keyword retrieval falls short |
+| [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory)               | Context engineering primitives for LLMs     | Reference for context assembly and episodic/semantic memory patterns     |
+| [huytieu/COG-second-brain](https://github.com/huytieu/COG-second-brain)           | Cognitive architecture for PKM              | Useful conceptual reference for knowledge graph and memory structuring   |
 
 If your retrieval requirements outgrow `rg` and frontmatter graphs, `basic-memory` is the natural upgrade path — it adds SQLite-backed semantic indexing without requiring a network-exposed vector database daemon. `gbrain` and `COG-second-brain` are worth reading for their Action Layer patterns, particularly around autonomous drafting and knowledge graph traversal.
 
