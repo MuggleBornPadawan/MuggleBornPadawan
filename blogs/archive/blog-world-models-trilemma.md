@@ -3,10 +3,16 @@ title: "The World Model Trilemma: Pixels, Splats, and Symbolic Physics"
 published: true
 description: "World models compared: Google Genie 4 vs Runway, Marble & HY-World. Pixels, 3D Gaussian splats or symbolic physics — which wins?"
 tags: ai, machinelearning, robotics, architecture
+series: The World Model Series
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/cjoc58m15rbfywc4tq1g.png
 devto_id: 4993516
 canonical_url: https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci
 ---
+
+> **The World Model Series — Part 2 of 2**
+>
+> This is the *what*: pixels vs splats vs symbolic physics.
+> Start with [Part 1: Why World Models Had to Exist →](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
 
 **A Systems Engineering Deconstruction of Google Genie 4, Runway GWM Worlds 2, World Labs Marble, Tencent HY-World 2.0, and Gemini 4 Argon + MuJoCo**
 
@@ -337,6 +343,10 @@ For ML systems engineers building in this domain, three foundational engineering
 3. **Unified Latent Control Spaces**: The industry lacks a standardized protocol for steering world models. While Runway uses its proprietary `WorldPrompt` schema and DeepMind relies on latent action tokens, the robotics ecosystem desperately requires an open, vendor-neutral interface—a *POSIX for World Models*—that standardizes camera trajectories, joint forces, spatial audio coordinates, and physical interrupts across disparate neural backends.
 
 Until these boundaries are formalized, engineers must choose their compromises deliberately: accept visual drift for infinite exploration, accept frozen geometry for metric consistency, or accept rigid symbolic domains for physical truth. The art of world modeling in 2026 is not picking the single best model, but engineering the right connective tissue between all three.
+
+---
+
+**The World Model Series — Part 2 of 2.** Missed the history? Read [Part 1: Why World Models Had to Exist →](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
 
 
 ---
