@@ -44,7 +44,7 @@ This `(observation, action, next_observation)` triple is the minimal unit needed
 
 **Hafner, D., Pasukonis, J., Ba, J., Lillicrap, T. (2023). *Mastering Diverse Domains through World Models.* arXiv:2301.04104**
 
-- 150+ diverse tasks — a substantial subset are games (Atari, DMControl, Minecraft, BSuite, Crafter)
+- 150+ diverse tasks — a substantial subset are games (Atari, Minecraft, BSuite, Crafter)
 - First AI to collect diamonds in Minecraft from scratch, without human demonstrations or curricula
 - Agent trains *entirely in imagination* inside the RSSM world model — no additional real environment rollouts
 - **Significance for game developers:** A single world model architecture, with identical hyperparameters, generalizes across wildly different game genres (arcade, 3D open-world, physics simulation). This proved that games are a sufficient universal testbed for evaluating generalization — the same role ImageNet played for vision in Era 5.
@@ -56,7 +56,7 @@ This `(observation, action, next_observation)` triple is the minimal unit needed
 - **~2,000 hours** of contractor-recorded Minecraft gameplay (video + synchronized keyboard/mouse input) trained an Inverse Dynamics Model (IDM)
 - IDM then pseudo-labeled **~70,000 hours** of unlabeled YouTube Minecraft footage
 - Resulting VPT foundation model: zero-shot complex behaviors (wood gathering, crafting, swimming)
-- Fine-tuned with RL to craft diamond tools — a 24,000+ action sequential task
+- Fine-tuned with RL to craft diamond tools — a ~10k+ action sequential task (up to 24k for full diamond tools)
 - **Significance for game developers:** This established that *human gameplay recordings are a commercially viable training asset*. The IDM trick bootstraps labeled data from unlabeled video — a technique now replicable across any game with screen recording.
 
 ### 3. Genie (Google DeepMind, 2024) — Latent actions from unlabeled game footage
@@ -71,7 +71,7 @@ This `(observation, action, next_observation)` triple is the minimal unit needed
 ### 4. Genie 2 (Google DeepMind, Dec 2024) — 3D interactive environments
 
 **DeepMind technical blog (2024). *Genie 2: A large-scale foundation world model.* deepmind.google**  
-*(Followed up in 2025 as Genie 3 with robotics + autonomous driving integration)*
+*(Followed up in 2025 as Genie 3 — higher fidelity 720p, longer horizon)*
 
 - Extends Genie from 2D to rich **3D interactive environments** from a single prompt image
 - Real-time physics, lighting, varied object interactions
@@ -87,26 +87,26 @@ This `(observation, action, next_observation)` triple is the minimal unit needed
   1. RL agent plays DOOM → recorded as training corpus
   2. Diffusion model trained to predict next frame given (past frames + player action)
 - Achieves PSNR 29.4; human raters could barely distinguish real DOOM from AI-simulated DOOM
-- **Significance for game developers:** Proof-of-concept that a game can be *replaced* by its neural approximation. Traditional game engines (physics, rendering, scripted logic) are now compressible into learned latent dynamics — directly validating what the [source document](./ai-paradigm-progression.md#era-7-world-models-2022frontier) means by "latent dynamics" as the Era 7 representation.
+- **Significance for game developers:** Proof-of-concept that a game can be *replaced* by its neural approximation. Traditional game engines (physics, rendering, scripted logic) are now compressible into learned latent dynamics — directly validating what the [source document](./ai-paradigm-progression.md) means by "latent dynamics" as the Era 7 representation.
 
 ### 6. Oasis (Decart + Etched, Oct 2024) — Real-time Minecraft neural engine
 
-**Decart (2024). *Oasis.* github.io/oasis-model** *(technical blog + open weights, no formal arXiv paper)*
+**Decart (2024). *Oasis.* [oasis-model.github.io](https://oasis-model.github.io/)** *(technical blog + open weights, no formal arXiv paper)*
 
-- Transformer-based model; trained on OpenAI's VPT dataset (Minecraft gameplay)
+- Transformer-based model; reportedly builds on VPT-style Minecraft footage; exact mix undisclosed
 - Generates interactive Minecraft-style world at ~20 FPS from keyboard/mouse inputs
 - 500M-parameter open-source version released
 - **Significance for game developers:** First open-source neural game engine trained on a specific game's footage. Demonstrates a pathway where any game studio's gameplay recordings become the training substrate for a neural replica.
 
 ### 7. NVIDIA Cosmos (2024–25) — Physical AI at industrial scale
 
-**NVIDIA (2024–25). *Cosmos World Foundation Models.* nvidia.com/cosmos**
+**NVIDIA (2024–25). *Cosmos World Foundation Models.* [nvidia.com/cosmos](https://www.nvidia.com/en-us/ai/cosmos/)**
 
 - Trained on **tens of millions of hours** of driving/robotics footage (not games primarily, but uses game-engine-rendered synthetic data via Omniverse)
 - Mixture-of-Transformers architecture; autoregressive reasoning + diffusion generation
 - Directly integrated with NVIDIA Omniverse (a game-engine-derived platform originally built for 3D visualization and simulation)
 - Used for: synthetic edge-case generation, AV perception testing, robotic manipulation training
-- **Significance for game developers:** Game engine technology (Omniverse is built on USD, the same scene description standard used in visual effects and games) is the production pipeline for Physical AI training data.
+- **Significance for game developers:** Game engine technology (Omniverse is built on USD, the same scene description standard used in visual effects and games) is the production pipeline for Physical AI training data. Robotics + autonomous driving integration lives here in Cosmos, not in Genie 3.
 
 ---
 
@@ -119,12 +119,9 @@ Every commercially released game that players have streamed or recorded is a pot
 - Agent intent (player actions are purposeful, goal-directed)
 - Environment structure (designed for navigability and challenge — ideal RL curricula)
 
-**Risk:** Studios whose game footage was scraped without licensing now face IP/data-rights disputes (noted in Reed Smith legal analysis, 2025).
-
 ### Role 2: Intentional data architects
 
 Studios and publishers are beginning to license gameplay data intentionally:
-- **Worldmodeldata** (data broker): packages frame-aligned, action-conditioned datasets from AAA and indie titles for AI labs
 - **OpenAI's VPT model** normalized the practice of paying contractors to record gameplay
 
 The commercial dynamic: game studios own a unique asset class — *action-conditioned visual physics simulations with human behavioral priors baked in*.
@@ -145,9 +142,9 @@ The [source document](./ai-paradigm-progression.md#open-problems-as-of-2026) lis
 | Open Problem (source doc)                                   | Game Developer Relevance                                                                                                                                                                      |
 |-------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Long-horizon physics violations (momentum, permanence)      | Games use deterministic physics engines; training on game data is better-grounded than internet video. But game physics is *simplified* (cheated) for playability — not perfect ground truth. |
-| Stateless architectures lack persistent internal state      | Game save-state systems are an existence proof of persistent world state. RSSM in DreamerV3 is the ML analog.                                                                                 |
+| Stateless architectures lack persistent internal state      | Game engines maintain tick-persistent state; RSSM in DreamerV3 is the learned analog.                                                                                 |
 | Sim-to-real gap: internet video insufficient                | High-fidelity game engines (Unreal 5, Unity HDRP) approach photorealism; Cosmos uses Omniverse for this exact purpose.                                                                        |
-| Compositionality: no robust generalization to novel configs | Procedural content generation in games is a decades-old solution to this exact problem in a different register.                                                                               |
+| Compositionality: no robust generalization to novel configs | Procedural content generation in games is a practical precursor: diversity curriculum, not neural solution.                                                                               |
 
 ---
 
@@ -156,7 +153,7 @@ The [source document](./ai-paradigm-progression.md#open-problems-as-of-2026) lis
 ```
 Game developers occupy a structural bottleneck in Era 7:
 
-  Game physics engines      →  causal grounding (solves LLM hallucination problem)
+  Game physics engines      →  causal grounding (mitigates hallucination via simulated dynamics)
   Gameplay recordings       →  action-conditioned training data (the core training signal)
   Procedural generation     →  infinite, diverse training curricula at zero marginal cost
   Game engine pipelines     →  synthetic data infrastructure (NVIDIA Omniverse, Unreal)
@@ -175,8 +172,7 @@ The relationship is currently asymmetric:
 2. Baker, B., et al. (2022). *Video PreTraining (VPT): Learning to Act by Watching Unlabeled Online Videos.* arXiv:2206.11795
 3. Bruce, J., et al. (2024). *Genie: Generative Interactive Environments.* arXiv:2402.15391
 4. Valevski, D., et al. (2024). *Diffusion Models Are Real-Time Game Engines (GameNGen).* arXiv:2408.14837
-5. Google DeepMind (Dec 2024). *Genie 2: A large-scale foundation world model.* deepmind.google
-6. Decart (Oct 2024). *Oasis.* github.io/oasis-model (open weights, 500M)
-7. NVIDIA (2024–25). *Cosmos World Foundation Models.* nvidia.com/cosmos
+5. Google DeepMind (Dec 2024). *Genie 2: A large-scale foundation world model.* https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/
+6. Decart (Oct 2024). *Oasis.* https://oasis-model.github.io/ (open weights, 500M)
+7. NVIDIA (2024–25). *Cosmos World Foundation Models.* https://www.nvidia.com/en-us/ai/cosmos/
 8. LeCun, Y. (2022). *A Path Towards Autonomous Machine Intelligence.* openreview.net/forum?id=BZ5a1r-kVsf  *(theoretical framing, cited in source doc)*
-9. Hafner, D. et al. (2023). arXiv:2301.04104 *(as above; primary citation for DreamerV3)*
