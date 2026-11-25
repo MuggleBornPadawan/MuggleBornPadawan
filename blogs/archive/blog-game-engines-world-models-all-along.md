@@ -6,7 +6,7 @@ tags: ai, machinelearning, gamedev, deeplearning
 series: The World Model Series
 ---
 
-> **The World Model Series — Part 3 of 3**
+> **The World Model Series — Part 3**
 >
 > This is the *who built it*: game developers as the unwitting architects of Era 7.
 > Start with [Part 1: Why World Models Had to Exist →](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
@@ -24,9 +24,9 @@ Era 7 — World Models (my term from Part 1 for the world-model paradigm) — wa
 
 Here is the part that wasn't in Parts 1 or 2.
 
-**Game developers had already built this. From Pong (1972) to Unreal Engine 5 (2022), they shipped it to consumers.**
+**Game developers had already built this. From Space Invaders (1978) to Unreal Engine 5 (2022), they shipped it to consumers.**
 
-The render loop. The physics tick. The state machine. The action-to-consequence pipeline. The agent behavior system. These are not *analogous* to world model components. They are, structurally and mathematically, the same thing. AI researchers spent 80 years trying to formalize what game engineers had been shipping to consumers since Pong.
+The render loop. The physics tick. The state machine. The action-to-consequence pipeline. The agent behavior system. These are not *analogous* to world model components. They are, structurally and mathematically, the same thing. AI researchers spent 80 years trying to formalize what game engineers had been shipping to consumers since Space Invaders.
 
 This isn't a metaphor. It's an architectural convergence — and the evidence is in the papers.
 
@@ -75,7 +75,7 @@ r̂_t ~ p(r_t | h_t, z_t)                 # reward prediction
 Where:
 - `h_t` is the hidden (recurrent) state — the game engine's world state
 - `a_{t-1}` is the previous action — the player's input
-- `x̂_t` is the predicted observation — the renderer's output
+- `x̂_t` is the model's reconstruction of the current observation (analogous to the renderer's frame); forward prediction `x̂_{t+1}` is what the world model uses for planning
 - `r̂_t` is the predicted reward — the game's scoring function
 
 **The game engine and the world model are the same computational graph.** One is hand-coded and deterministic, optimized for 60 FPS delivery to a human player. The other is learned and stochastic, trained from data. But the computational contract — state, action, transition, observation — is identical.
@@ -184,10 +184,11 @@ flowchart TD
     LAM --> DYN
     DYN --> OUT
 ```
+*Note: the LAM is a training-time component; at inference, only the dynamics model runs conditioned on a chosen latent action.*
 
 What this means architecturally: Genie didn't need game developers to hand over their source code, their physics engine, or their action logs. It reconstructed the causal structure of the game — the implicit world model — from the visual record alone.
 
-Genie 2 (December 2024) extended this to rich 3D interactive environments from a single prompt image: real-time physics, varied lighting, object interactions. Explicitly designed as a training curriculum generator for embodied agents — robotics, autonomous driving, digital assistants.
+Genie 2 (December 2024) extended this to rich 3D interactive environments from a single prompt image: real-time physics, varied lighting, object interactions. Explicitly positioned as a training curriculum generator for embodied agents — robotics, autonomous driving, digital assistants.
 
 The pipeline that produced it: **game footage → latent action → interactive world.** That pipeline is now a first-class research primitive. And its upstream dependency is the game industry's art, level design, and physics implementations — most of it sitting in Twitch VOD archives, unmonetized.
 
@@ -206,7 +207,7 @@ Two-phase process:
 1. An RL agent played DOOM, generating a corpus of `(frame, action, next_frame)` triples
 2. A diffusion model trained on that corpus to predict the next frame given past frames and player action
 
-The result ran at 20 FPS on a single TPU-v5 (20 FPS single-step, ~10 FPS autoregressive). Human raters, shown side-by-side clips, could barely distinguish the neural simulation from the real game. PSNR 29.4 dB — perceptually near-identical to source.
+The result ran at over 20 FPS on a single TPU — fast enough for real-time interactive play. Human raters, shown side-by-side clips, could barely distinguish the neural simulation from the real game. PSNR 29.4 dB — perceptually near-identical to source.
 
 ```mermaid
 flowchart LR
@@ -249,7 +250,7 @@ Every core component of a modern world model has a named, shipped equivalent in 
 | World Model Component | Game Engine Equivalent | Example |
 |---|---|---|
 | Latent state `h_t` | World state / scene graph | Transform tree, entity positions, physics body state |
-| State transition `f(h, a)` | Physics tick + game logic | Unity `FixedUpdate()`, Unreal `PhysicsStep()` |
+| State transition `f(h, a)` | Physics tick + game logic | Unity `FixedUpdate()`, Unreal `UWorld::Tick()` |
 | Observation model `p(x\|h)` | Renderer | Rasterizer, ray tracer, shader pipeline |
 | Action space | Input system | Keymap, controller binding, action mapping |
 | Reward function | Score / game objective | Points, health, win conditions |
