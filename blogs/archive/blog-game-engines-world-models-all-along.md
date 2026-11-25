@@ -1,16 +1,17 @@
 ---
 title: "Game Engines Were World Models All Along"
 published: false
-description: "AI spent 80 years trying to understand reality. The answer was sitting in every game engine ever written — state, physics, causality, action. This is the mirror."
+description: "AI spent 80 years trying to understand reality. The answer was sitting in every game engine ever written — state, physics, causality, action."
 tags: ai, machinelearning, gamedev, deeplearning
 series: The World Model Series
 ---
 
-> **The World Model Series — Part 3**
+> *This is **Part 3** of a 3-part series on **The World Model Series**:*
+> 1. [Part 1: Why World Models Had to Exist — 80 Years of AI Trying to Understand Reality](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
+> 2. [Part 2: The World Model Trilemma — Pixels, Splats, and Symbolic Physics](https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci)
+> 3. **Part 3: Game Engines Were World Models All Along** (this article)
 >
-> This is the *who built it*: game developers as the unwitting architects of Era 7.
-> Start with [Part 1: Why World Models Had to Exist →](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
-> Then read [Part 2: The World Model Trilemma →](https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci)
+> *This is the who built it: game developers as the unwitting architects of Era 7.*
 
 > **TL;DR:** If you've written a game loop, you've written a world model: state → action → next state → render. DreamerV3, VPT, Genie and GameNGen prove it's the same computation.
 
@@ -65,7 +66,7 @@ Hafner et al. define a world model in DreamerV3 (2023) as a system that maintain
 
 The notation in DreamerV3's Recurrent State Space Model (RSSM):
 
-```
+```math
 h_t = f(h_{t-1}, z_{t-1}, a_{t-1})       # recurrent state transition
 z_t ~ q(z_t | h_t, x_t)                  # posterior representation
 x̂_t ~ p(x_t | h_t, z_t)                 # observation reconstruction
@@ -119,7 +120,7 @@ DreamerV3 is not a game-playing system. It is a world model that happens to be v
 
 - Exact, reproducible state transitions (deterministic physics)
 - Action-conditioned observations at scale (every frame is a labeled training example)
-- Diverse, structured curricula at zero marginal cost (level design as RL curriculum)
+- Diverse, structured curricula at zero marginal cost (level design as reinforcement learning (RL) curriculum)
 
 The result: a single architecture, with *identical hyperparameters*, achieved superhuman performance across **150+ tasks** — Atari arcade games, 3D open-world Minecraft, continuous control locomotion, and robotic arm manipulation. The first AI to collect diamonds in Minecraft from scratch, with no human demonstrations, no task-specific tuning.
 
@@ -167,7 +168,7 @@ Genie's finding is the most conceptually provocative of the four.
 
 It trained an 11-billion-parameter system (across tokenizer + latent action model + dynamics model) on unlabeled internet video — predominantly 2D platformer game footage — with no action annotations at all. No synchronized controller logs. Just raw video.
 
-The latent action model — one of Genie's three components — learned to *infer* what control scheme must have been in use by watching the visual consequences of actions across millions of clips. It reverse-engineered the game's input interface from the game's output.
+The latent action model (LAM) — one of Genie's three components — learned to *infer* what control scheme must have been in use by watching the visual consequences of actions across millions of clips. It reverse-engineered the game's input interface from the game's output.
 
 Then it made any input image "playable."
 
@@ -190,7 +191,7 @@ What this means architecturally: Genie didn't need game developers to hand over 
 
 Genie 2 (December 2024) extended this to rich 3D interactive environments from a single prompt image: real-time physics, varied lighting, object interactions. Explicitly positioned as a training curriculum generator for embodied agents — robotics, autonomous driving, digital assistants.
 
-The pipeline that produced it: **game footage → latent action → interactive world.** That pipeline is now a first-class research primitive. And its upstream dependency is the game industry's art, level design, and physics implementations — most of it sitting in Twitch VOD archives, unmonetized.
+The pipeline that produced it: **game footage → latent action → interactive world.** That pipeline is now a first-class research primitive. And its upstream dependency is the game industry's art, level design, and physics implementations — most of it sitting in Twitch VOD (Video on Demand) archives, unmonetized.
 
 ---
 
@@ -207,7 +208,7 @@ Two-phase process:
 1. An RL agent played DOOM, generating a corpus of `(frame, action, next_frame)` triples
 2. A diffusion model trained on that corpus to predict the next frame given past frames and player action
 
-The result ran at over 20 FPS on a single TPU — fast enough for real-time interactive play. Human raters, shown side-by-side clips, could barely distinguish the neural simulation from the real game. PSNR 29.4 dB — perceptually near-identical to source.
+The result ran at over 20 FPS on a single Tensor Processing Unit (TPU) — fast enough for real-time interactive play. Human raters, shown side-by-side clips, could barely distinguish the neural simulation from the real game. PSNR (Peak Signal-to-Noise Ratio) was 29.4 dB — perceptually near-identical to source.
 
 ```mermaid
 flowchart LR
@@ -256,7 +257,7 @@ Every core component of a modern world model has a named, shipped equivalent in 
 | Reward function | Score / game objective | Points, health, win conditions |
 | RL curriculum | Level design | Difficulty progression, procedural generation |
 | Imagination rollout | Offline playtesting | Running the sim without a human player |
-| World model training data | Gameplay recordings | Telemetry, Twitch VODs, QA session logs |
+| World model training data | Gameplay recordings | Telemetry, Twitch VODs, quality assurance (QA) session logs |
 
 ---
 
@@ -308,7 +309,7 @@ They were always building toward the same thing.
 
 ---
 
-## Primary Sources
+## References
 
 1. Hafner, D., Pasukonis, J., Ba, J., Lillicrap, T. (2023). *Mastering Diverse Domains through World Models (DreamerV3).* arXiv:2301.04104
 2. Baker, B., et al. (2022). *Video PreTraining (VPT): Learning to Act by Watching Unlabeled Online Videos.* arXiv:2206.11795
@@ -316,3 +317,6 @@ They were always building toward the same thing.
 4. Valevski, D., et al. (2024). *Diffusion Models Are Real-Time Game Engines (GameNGen).* arXiv:2408.14837
 5. Google DeepMind (Dec 2024). *Genie 2: A large-scale foundation world model.* https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/
 6. LeCun, Y. (2022). *A Path Towards Autonomous Machine Intelligence.* openreview.net/forum?id=BZ5a1r-kVsf
+
+---
+*Crafted with AI: Research, drafting, review, and refinement assisted by frontier AI models.*

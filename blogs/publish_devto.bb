@@ -14,8 +14,11 @@
 (require '[babashka.http-client :as http]
          '[babashka.cli :as cli]
          '[cheshire.core :as json]
+         '[clojure.java.io :as io]
          '[clojure.java.shell :refer [sh]]
          '[clojure.string :as str])
+
+(load-file (str (.getParent (io/file *file*)) "/lint_blog.bb"))
 
 (defn get-pass [path]
   (let [res (sh "pass" path)]
@@ -53,30 +56,22 @@
          vec)))
 
 (defn validate-seo
-  "Lint markdown frontmatter for SEO and canonical URL consistency."
-  [markdown]
-  (let [canonical (some->> (re-find #"(?m)^canonical_url:\s*\"?([^\"]+)\"?\s*$" markdown)
-                           second
-                           str/trim)
-        title     (extract-title markdown)
-        desc      (some->> (re-find #"(?m)^description:\s*\"?([^\"]+)\"?\s*$" markdown)
-                           second
-                           str/trim)]
-    (println "--- SEO Lint Check ---")
-    (if (and canonical (not (str/starts-with? canonical "https://dev.to/ganesh_rajendran_art/")))
-      (println "[WARN] canonical_url does not point to dev.to/ganesh_rajendran_art:" canonical)
-      (println "[PASS] Canonical URL is valid or self-referencing dev.to"))
-    (when (and title (> (count title) 65))
-      (println (format "[WARN] Title is %d chars (>65 chars may truncate in SERP snippets)" (count title))))
-    (when (or (nil? desc) (< (count desc) 80) (> (count desc) 160))
-      (println (format "[WARN] Description is %d chars (ideal: 100-160 chars)" (count (or desc "")))))
-    (println "----------------------")))
+  "Run full blog checklist lint before publishing."
+  [markdown file & {:keys [check-urls?] :or {check-urls? false}}]
+  (let [report (lint-blog/lint-markdown markdown
+                                        :file-name (.getName (io/file file))
+                                        :check-urls? check-urls?)]
+    (lint-blog/print-report report)
+    (when (pos? (:fails report))
+      (println "Aborting publish due to lint failures.")
+      (System/exit 1))))
 
 (def cli-spec
-  {:tags  {:desc "Comma-separated tags (max 4)" :alias :t}
-   :draft {:desc "Publish as draft"             :alias :d :coerce :boolean}
-   :id    {:desc "Article ID to update (PUT)"   :alias :i :coerce :long}
-   :help  {:desc "Show this help"               :alias :h :coerce :boolean}})
+  {:tags       {:desc "Comma-separated tags (max 4)" :alias :t}
+   :draft      {:desc "Publish as draft"             :alias :d :coerce :boolean}
+   :id         {:desc "Article ID to update (PUT)"   :alias :i :coerce :long}
+   :check-urls {:desc "Verify external URLs are reachable before publishing" :alias :u :coerce :boolean}
+   :help       {:desc "Show this help"               :alias :h :coerce :boolean}})
 
 (defn print-help []
   (println "Usage: bb publish_devto.bb <file.md> [options]")
@@ -103,7 +98,7 @@
         draft?   (:draft opts)
         article-id (or (:id opts) (extract-id markdown))]
 
-    (validate-seo markdown)
+    (validate-seo markdown file :check-urls? (:check-urls opts))
     (println "Title:    " title)
     (println "Tags:     " (if (seq tags) (str/join ", " tags) "(preserve existing / none)"))
     (println "Action:   " (if article-id (str "update (id: " article-id ")") "create new"))
