@@ -26,8 +26,8 @@ This belief crashes into a hard mathematical barrier.
 What compilers *actually* do is narrower and more honest:
 
 - **GCC / LLVM** optimize within a fixed algorithm: loop unrolling, instruction scheduling, vectorization, register allocation, constant folding, dead code elimination.
-- **MLIR / XLA** rewrite tensor computation graphs for specific hardware targets (GPUs, TPUs) — but they operate on a *declared* computation graph, not inferred intent.
-- **Superoptimizers** (like Stanford's STOKE [2]) exhaustively search for optimal instruction sequences for *small* code fragments — typically ≤20 instructions. They prove equivalence via SMT solvers, but the search space explodes combinatorially beyond micro-kernels.
+- **MLIR (Multi-Level Intermediate Representation) / XLA (Accelerated Linear Algebra)** rewrite tensor computation graphs for specific hardware targets (GPUs, TPUs) — but they operate on a *declared* computation graph, not inferred intent.
+- **Superoptimizers** (like Stanford's STOKE (Stochastic Superoptimizer) [2]) exhaustively search for optimal instruction sequences for *small* code fragments — typically ≤20 instructions. They prove equivalence via Satisfiability Modulo Theories (SMT) solvers, but the search space explodes combinatorially beyond micro-kernels.
 - **Futamura Projections (1971)** [3] show that specializing an interpreter with respect to a fixed program can produce a compiler — but this is *partial evaluation*, not algorithm discovery.
 
 The gap is clear: compilers excel at **local**, **syntax-level** optimization. They do not perform **semantic leaps** — recognizing that a nested loop implements a sort and replacing it with a fundamentally different algorithm.
@@ -94,7 +94,7 @@ bubble_sort:
     ret
 ```
 
-GCC's optimizer is *impressive* at the micro level: it uses SSE registers to load both elements as a 64-bit pair, performs the comparison with scalar ops, and swaps via `pshufd` — eliminating the branch and temporary variable. But the **two nested loops remain**. The algorithm is still **O(N²)**.
+GCC's optimizer is *impressive* at the micro level: it uses Streaming SIMD Extensions (SSE) registers to load both elements as a 64-bit pair, performs the comparison with scalar ops, and swaps via `pshufd` — eliminating the branch and temporary variable. But the **two nested loops remain**. The algorithm is still **O(N²)**.
 
 ### What an AI suggests
 
@@ -149,11 +149,11 @@ Five real-world systems demonstrate that each stage of this loop is operational:
 - **AWS CodeGuru / Amazon Q Developer** [7] uses ML models trained on Amazon's internal codebase and open-source repositories to flag performance anti-patterns (e.g., excessive object creation in hot loops, sub-optimal AWS SDK usage) and suggest concrete fixes during code review.
 
 **3. Patch → Verification: Formal proof of compiler transforms**
-- **Alive2** [8] (Lopes et al.) formally verifies LLVM's peephole optimizations by encoding source and target IR in SMT and proving semantic equivalence. It has found over 50 bugs in LLVM's optimizer — transforms the compiler *thought* were correct but weren't. This is the verifier node.
-- **Intel's ACL2-based verification** and **AMD's RTL model checking** [9] apply formal methods to prove correctness of CPU microarchitecture — demonstrating that formal verification scales to billion-transistor designs when the property language is well-scoped.
+- **Alive2** [8] (Lopes et al.) formally verifies LLVM's peephole optimizations by encoding source and target intermediate representation (IR) in SMT and proving semantic equivalence. It has found over 50 bugs in LLVM's optimizer — transforms the compiler *thought* were correct but weren't. This is the verifier node.
+- **Intel's ACL2-based verification** and **AMD's Register-Transfer Level (RTL) model checking** [9] apply formal methods to prove correctness of CPU microarchitecture — demonstrating that formal verification scales to billion-transistor designs when the property language is well-scoped.
 
 **4. Verification → Deploy: JIT with profile feedback**
-- **GraalVM / HotSpot JIT** [10] already implements a mini version of this loop: it profiles running code, speculatively optimizes hot paths, and *deoptimizes* (falls back to interpreted code) when speculative assumptions are violated. The loop runs continuously at millisecond granularity.
+- **GraalVM / HotSpot Just-In-Time (JIT)** [10] already implements a mini version of this loop: it profiles running code, speculatively optimizes hot paths, and *deoptimizes* (falls back to interpreted code) when speculative assumptions are violated. The loop runs continuously at millisecond granularity.
 
 ### The Timeline
 
@@ -185,7 +185,7 @@ By 2031, your stateless services will optimize themselves overnight. By 2034, th
 ## References
 
 1. Rice, H.G. "Classes of Recursively Enumerable Sets and Their Decision Problems." *Transactions of the AMS*, 74(2), 1953. [doi:10.1090/S0002-9947-1953-0053041-6](https://doi.org/10.1090/S0002-9947-1953-0053041-6)
-2. Schkufza, E., Sharma, R., Aiken, A. "Stochastic Superoptimization." *ASPLOS '13*, 2013. [doi:10.1145/2451116.2451150](https://doi.org/10.1145/2451116.2451150)
+2. Schkufza, E., Sharma, R., Aiken, A. "Stochastic Superoptimization." *ASPLOS '13*, 2013. [doi:10.1145/2451116.2451150](https://arxiv.org/abs/1211.0557)
 3. Futamura, Y. "Partial Evaluation of Computation Process — An Approach to a Compiler-Compiler." *Systems, Computers, Controls*, 2(5), 1971. Reprinted in *Higher-Order and Symbolic Computation*, 12(4), 1999.
 4. Li, Y., et al. "Competition-Level Code Generation with AlphaCode." *Science*, 378(6624), 2022. [doi:10.1126/science.abq1158](https://doi.org/10.1126/science.abq1158)
 5. Chen, D., et al. "AutoFDO: Automatic Feedback-Directed Optimization for Warehouse-Scale Applications." *CGO '16*, 2016. [doi:10.1145/2854038.2854044](https://doi.org/10.1145/2854038.2854044)

@@ -3,6 +3,7 @@ title: "Proving What AI Generates: Lean 4 Inside Clojure"
 published: true
 description: "Stop AI hallucinating finances: run Lean 4 theorem provers inside Clojure via Ansatz Lean/JVM bridge. Verified code for autonomous agents."
 tags: clojure, java, ai, lean4
+series:
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/mo01bgk3lxorlq5hi71m.png
 canonical_url: https://dev.to/ganesh_rajendran_art/proving-what-ai-generates-running-formally-verified-lean-4-inside-clojure-services-3hip
 devto_id: 4985934
@@ -10,7 +11,7 @@ devto_id: 4985934
 
 > **TL;DR:**
 > - Unit tests only check sample points; formal verification in **Lean 4** mathematically guarantees logic for *all* inputs.
-> - The new **Ansatz Lean/JVM SDK (`org.replikativ/ansatz-lean-jvm:0.2.615`)** lets you compile Lean into an intermediate artifact (`.leanjvm`) and interpret it directly on standard OpenJDK 17+ with zero native C/JNI dependencies.
+> - The new **Ansatz Lean/JVM SDK (`org.replikativ/ansatz-lean-jvm:0.2.615`)** lets you compile Lean into an intermediate artifact (`.leanjvm`) and interpret it directly on standard OpenJDK 17+ with zero native C / Java Native Interface (JNI) dependencies.
 > - This article demonstrates how an AI coding agent can write financial ledger invariants, self-correct via Lean compiler proofs, and deploy proved code into a Clojure service.
 
 ---
@@ -293,7 +294,7 @@ When executing autonomous agent code in production, defensive constraints are ma
 
 | Guardrail | Enforcement Mechanism |
 |---|---|
-| **Infinite Recursion / DOS** | Invocations run under strict instruction budgets (default: 2,000,000 steps) and wall-clock timeouts (default: 5.0s). |
+| **Infinite Recursion / Denial of Service (DOS)** | Invocations run under strict instruction budgets (default: 2,000,000 steps) and wall-clock timeouts (default: 5.0s). |
 | **Tampered / Stale Artifacts** | Artifact loading strictly validates the build-time SHA-256 manifest hash before execution. |
 | **Error Isolation** | Out-of-budget calls fail cleanly with `ProjectFailed`. The service restarts the engine via `project.restart()`, discarding corrupted state while preserving verified code handles. |
 | **Language Constraints** | The current release enforces closed, first-order signatures across host boundaries and caps project modules at 128 (beyond Lean's `Init`). |

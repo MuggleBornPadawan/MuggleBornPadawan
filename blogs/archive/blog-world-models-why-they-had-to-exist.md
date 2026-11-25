@@ -42,7 +42,7 @@ A machine with a world model can do the same thing. It has learned enough about 
 
 There are three distinct research lineages that have converged on this idea in the 2020s:
 
-**The Dreamer lineage (Model-Based RL)** — built by Danijar Hafner at Google DeepMind. The system learns a *latent dynamics model*: a compressed internal representation of the world that it uses to train itself entirely in imagination. It never needs to try things in the real environment to know whether they will work. DreamerV3 (2023) was the first agent to collect diamonds in Minecraft from scratch, with fixed hyperparameters, across 150 completely different tasks. The same system, unchanged, playing Atari and controlling a robot arm.
+**The Dreamer lineage (model-based reinforcement learning)** — built by Danijar Hafner at Google DeepMind. The system learns a *latent dynamics model*: a compressed internal representation of the world that it uses to train itself entirely in imagination. It never needs to try things in the real environment to know whether they will work. DreamerV3 (2023) was the first agent to collect diamonds in Minecraft from scratch, with fixed hyperparameters, across 150 completely different tasks. The same system, unchanged, playing Atari and controlling a robot arm.
 
 **The JEPA lineage (LeCun's framework)** — Yann LeCun at Meta AI has argued since 2022 that the whole approach of predicting tokens — words, pixels, bytes — is architecturally wrong for building intelligence. His *Joint Embedding Predictive Architecture* (JEPA) predicts abstract *representations* of the world, not raw observations. Rather than generating what a room will look like after you open a door (which requires hallucinating every pixel), JEPA asks only: "what will the *structure* of the situation be?" V-JEPA 2 (2025) demonstrated this in robotics: a system that could plan manipulation tasks by reasoning in abstract latent space rather than in pixel space.
 
@@ -88,7 +88,7 @@ The Dartmouth Workshop of 1956 launched AI as a formal discipline. The dominant 
 
 This produced remarkable systems. The Logic Theorist (1956) proved 38 of the 52 theorems in *Principia Mathematica*. The General Problem Solver (1957) could solve abstract puzzles by reducing the gap between current state and goal state. SHRDLU (1970) could understand natural language in a "blocks world" — a simple domain of colored geometric shapes — with striking fluency.
 
-The problem was the phrase "blocks world." These systems worked inside toy universes. The moment you took GPS out of its toy domain and pointed it at the real world, it collapsed. The state space exploded combinatorially — there are simply too many possible states in reality to search through. And these systems had no background knowledge of anything outside their explicit programming. They could not handle exceptions, ambiguity, or anything genuinely new.
+The problem was the phrase "blocks world." These systems worked inside toy universes. The moment you took GPS (General Problem Solver) out of its toy domain and pointed it at the real world, it collapsed. The state space exploded combinatorially — there are simply too many possible states in reality to search through. And these systems had no background knowledge of anything outside their explicit programming. They could not handle exceptions, ambiguity, or anything genuinely new.
 
 Crucially: they had no way to update their knowledge from experience. The "world" they modeled was hand-typed by programmers, not learned from reality.
 
@@ -164,7 +164,7 @@ A world model cannot be task-specific. Reality is not task-specific. The failure
 ## Era 6: Transformers and Large Language Models (2017–2022)
 ### *The closest thing to general intelligence — that still cannot simulate a falling cup*
 
-In 2017, eight researchers at Google Brain published "Attention Is All You Need." The Transformer architecture replaced recurrence (the sequential processing of RNNs and LSTMs) with self-attention: every token looking at every other token simultaneously, in parallel. This made training vastly faster and enabled scaling to previously impossible sizes.
+In 2017, eight researchers at Google Brain published "Attention Is All You Need." The Transformer architecture replaced recurrence (the sequential processing of recurrent neural networks (RNNs) and LSTMs) with self-attention: every token looking at every other token simultaneously, in parallel. This made training vastly faster and enabled scaling to previously impossible sizes.
 
 BERT (2018) used transformers to build bidirectional language understanding that dominated every NLP benchmark. GPT-2 (2019) showed that a language model trained to predict the next word had, almost accidentally, learned to perform tasks nobody trained it for — translation, question answering, summarization — zero-shot. GPT-3 (2020) scaled this to 175 billion parameters and demonstrated few-shot learning: show it three examples of a new task in its prompt, and it generalizes.
 

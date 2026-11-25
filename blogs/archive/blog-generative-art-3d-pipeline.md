@@ -3,10 +3,10 @@ title: "Breaking the 2D Plane: 3D Graphics in Clojure & Quil"
 published: true
 description: "Clojure + Quil to OpenGL: build 3D procedural terrain with GLSL shaders, JOGL & GPU pipelines. From 2D Perlin noise to hardware-accelerated meshes."
 tags: clojure, creativecoding, opengl, shaders
-series: The Invisible Brush
+series: The Invisible Brush: Generative Art & Creative Computation
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/19ojx050a9bmh71zfrtk.png
-canonical_url: "https://dev.to/ganesh_rajendran_art/breaking-the-2d-plane-opengl-shaders-and-the-3d-graphics-pipeline-in-clojure-quil-3663"
-devto_id: 5042650 
+canonical_url: https://dev.to/ganesh_rajendran_art/breaking-the-2d-plane-opengl-shaders-and-the-3d-graphics-pipeline-in-clojure-quil-3663
+devto_id: 5042650
 ---
 
 > *This is **Part 3** of a 3-part series on **The Invisible Brush: Generative Art & Creative Computation**:*
@@ -70,15 +70,15 @@ To understand why 3D demands hardware acceleration, consider how rasterization w
 
 | Dimension                   | CPU Software Rendering (`:java2d`)                          | GPU Hardware Pipeline (`:p3d` / OpenGL)                                  |
 |-----------------------------|-------------------------------------------------------------|--------------------------------------------------------------------------|
-| **Execution Architecture**  | Few powerful, latency-optimized cores (4–16 threads)        | Thousands of high-throughput SIMD ALU cores                              |
+| **Execution Architecture**  | Few powerful, latency-optimized cores (4–16 threads)        | Thousands of high-throughput Single Instruction, Multiple Data (SIMD) ALU cores                              |
 | **Rasterization Mechanism** | Scans polygon edges in CPU cache; writes to JVM byte arrays | Dedicated hardware rasterizer chips processing billions of fragments/sec |
 | **Memory Bandwidth**        | DDR4/DDR5 system RAM (~40–80 GB/s)                          | Dedicated GDDR6/HBM VRAM (~500–1,000+ GB/s)                              |
 | **Draw Call Overhead**      | Low per-call cost; high per-pixel execution penalty         | High per-draw invocation cost; near-zero per-fragment cost               |
-| **Programmability**         | Standard JVM bytecode; CPU SIMD auto-vectorization          | Dedicated shader programs (GLSL / SPIR-V / WGSL)                         |
+| **Programmability**         | Standard JVM bytecode; CPU SIMD auto-vectorization          | Dedicated shader programs (GLSL / Standard Portable Intermediate Representation (SPIR-V) / WebGPU Shading Language (WGSL))                         |
 
 Under `:java2d`, drawing 100,000 shaded pixels requires the CPU to iterate through nested loops, calculate color values, and copy bytes to memory. The CPU’s branch predictors and deep instruction caches are completely wasted on this work.
 
-Under `:p3d`, Quil switches its backend to **JOGL** (Java OpenGL). Instead of coloring pixels in JVM memory, your Clojure code sends compact vertex arrays over the PCIe bus to GPU VRAM. The GPU’s rasterizer maps those vertices to screen tiles, while thousands of parallel fragment processors calculate colors and lighting in a single hardware cycle.
+Under `:p3d`, Quil switches its backend to Java OpenGL (JOGL). Instead of coloring pixels in JVM memory, your Clojure code sends compact vertex arrays over the PCIe bus to GPU VRAM. The GPU’s rasterizer maps those vertices to screen tiles, while thousands of parallel fragment processors calculate colors and lighting in a single hardware cycle.
 
 ---
 

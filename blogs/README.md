@@ -66,3 +66,180 @@ bb publish_devto.bb archive/blog-compiler-vs-ai.md --check-urls
 # View CLI options
 bb publish_devto.bb --help
 ```
+
+## Acronym Glossary (linter allowlist)
+
+Terms the linter (`lint_blog.bb` → `common-acronyms`) accepts without first-use expansion:
+proper nouns, units, venues, and universally understood technical terms.
+When adding a term here, add it in `lint_blog.bb` too (and vice versa).
+
+| Term | Expansion |
+|---|---| 
+| 2D | Two-Dimensional |
+| 3D | Three-Dimensional |
+| AARON | Proper noun — Harold Cohen's pioneering generative-art program |
+| ACL2 | A Computational Logic for Applicative Common Lisp |
+| ACM | Association for Computing Machinery |
+| AI | Artificial Intelligence |
+| ALU | Arithmetic Logic Unit |
+| AMD | Proper noun — Advanced Micro Devices |
+| AMS | American Mathematical Society |
+| API | Application Programming Interface |
+| ARM | Advanced RISC Machine (originally Acorn RISC Machine; officially just "Arm") |
+| ASCII | American Standard Code for Information Interchange |
+| ASUS | Proper noun — ASUSTeK Computer vendor |
+| ASPLOS | Architectural Support for Programming Languages and Operating Systems |
+| AWS | Amazon Web Services |
+| CC | International Conference on Compiler Construction |
+| CD | Continuous Delivery / Deployment (in CI/CD) |
+| CGO | Symposium on Code Generation and Optimization |
+| CHERI | Capability Hardware Enhanced RISC Instructions — expand on first use, NOT allowlisted |
+| CI | Continuous Integration |
+| CLI | Command-Line Interface |
+| CTO | Chief Technology Officer |
+| COG | Proper noun — project/repo name (e.g. COG Second Brain) |
+| CPU | Central Processing Unit |
+| CSS | Cascading Style Sheets |
+| CVPR | Conference on Computer Vision and Pattern Recognition (IEEE/CVF) |
+| DARPA | Defense Advanced Research Projects Agency |
+| DB | Database |
+| DEC | Proper noun — Digital Equipment Corporation |
+| DENDRAL | Proper noun — pioneering Stanford expert system (chemical analysis) |
+| DDR4 | Double Data Rate 4 (SDRAM, 4th generation) |
+| DDR5 | Double Data Rate 5 (SDRAM, 5th generation) |
+| DGX | Proper noun — Nvidia DGX AI server line |
+| DNA | Deoxyribonucleic Acid |
+| DNS | Domain Name System |
+| DOM | Document Object Model |
+| DOOM | Proper noun — id Software's 1993 game |
+| DR | Part of TL;DR (below) |
+| EOF | End of File |
+| ETHIC | Long-context evaluation benchmark — name, not an acronym |
+| ECC | Error Correcting Code (memory) |
+| EU | European Union |
+| FBI | Federal Bureau of Investigation |
+| FFI | Foreign Function Interface |
+| FP4 | 4-bit floating point (expanded on first use in hardware guide) |
+| FP6 | 6-bit floating point |
+| FP8 | 8-bit floating point |
+| FPS | Frames Per Second |
+| GLSL | OpenGL Shading Language |
+| GB10 | Proper noun — Nvidia GB10 Grace Blackwell Superchip codename |
+| GB202 | Proper noun — Nvidia Blackwell GPU die codename |
+| GB | Gigabyte |
+| GC | Garbage Collection / Collector |
+| GCC | GNU Compiler Collection |
+| GDDR7 | Graphics Double Data Rate 7 |
+| GDDR6 | Graphics Double Data Rate 6 |
+| GIF | Graphics Interchange Format |
+| GNU | GNU's Not Unix |
+| GPT | Generative Pre-trained Transformer |
+| GPU | Graphics Processing Unit |
+| HP | Proper noun — HP Inc. vendor |
+| HY | Tencent model-name prefix (HY-World, HY-Pano) — proper noun |
+| HBM | High Bandwidth Memory |
+| HTML | HyperText Markup Language |
+| HTTP | Hypertext Transfer Protocol |
+| HTTPS | Hypertext Transfer Protocol Secure |
+| ICML | International Conference on Machine Learning |
+| ICSE | International Conference on Software Engineering |
+| IF | IF-THEN production-rule keyword — not an acronym |
+| THEN | IF-THEN production-rule keyword — not an acronym |
+| IRE | Institute of Radio Engineers (venue; predecessor of IEEE) |
+| IROS | IEEE/RSJ International Conference on Intelligent Robots and Systems (venue) |
+| IT | Information Technology |
+| IV | Roman numeral 4 ("Part IV" numbering, not an acronym) |
+| II | Roman numeral 2 (list numbering, not an acronym) |
+| III | Roman numeral 3 (list numbering, not an acronym) |
+| ID | Identifier |
+| IDE | Integrated Development Environment |
+| IEEE | Institute of Electrical and Electronics Engineers |
+| IEC | International Electrotechnical Commission |
+| INT4 | 4-bit integer precision |
+| INT8 | 8-bit integer precision |
+| IO | Input / Output |
+| IP | Internet Protocol |
+| ISO | International Organization for Standardization |
+| JDK | Java Development Kit |
+| JSON | JavaScript Object Notation |
+| JEP | JDK Enhancement Proposal (OpenJDK feature process) |
+| JTC1 | Joint Technical Committee 1 (ISO/IEC JTC 1, information technology) |
+| JVM | Java Virtual Machine |
+| LM | Language Model (in product names LM Studio, MLX-LM) |
+| LMS | LMS Journal of Computation and Mathematics (venue) |
+| LLM | Large Language Model (LLMs = plural) |
+| LLVM | Proper noun — compiler framework (formerly "Low Level Virtual Machine") |
+| LMSYS | Large Model Systems Organization (Berkeley SkyLab; Chatbot Arena / LMArena) |
+| MB | Megabyte |
+| MYCIN | Proper noun — pioneering Stanford expert system (bacterial-infection diagnosis) |
+| MSI | Proper noun — Micro-Star International vendor |
+| MIT | Massachusetts Institute of Technology |
+| MLX | Proper noun — Apple's machine-learning framework for Apple Silicon (officially unexpanded) |
+| ML | Machine Learning |
+| MTE | Memory Tagging Extension — expand on first use, NOT allowlisted |
+| NIM | Proper noun — Nvidia Inference Microservices |
+| NAACL | North American Chapter of the Association for Computational Linguistics (venue) |
+| NLP | Natural Language Processing |
+| NVIDIA | Proper noun — Nvidia Corporation |
+| OEM | Original Equipment Manufacturer |
+| OS | Operating System |
+| PCG | Procedural Content Generation — expand on first use, NOT allowlisted |
+| POSIX | Portable Operating System Interface (used allusively for open standards) |
+| PDF | Portable Document Format |
+| PLDI | Programming Language Design and Implementation |
+| PROSPECTOR | Proper noun — pioneering SRI expert system (mineral exploration) |
+| PR | Pull Request |
+| RAM | Random Access Memory |
+| RAG | Retrieval-Augmented Generation — expand on first use, NOT allowlisted |
+| REPL | Read-Eval-Print Loop |
+| REST | Representational State Transfer |
+| RGB | Red, Green, Blue |
+| RISC | Reduced Instruction Set Computer |
+| ROM | Read-Only Memory |
+| RSJ | Robotics Society of Japan (venue) |
+| RTX | Proper noun — Nvidia RTX GPU brand |
+| RULER | Long-context evaluation benchmark — name, not an acronym ("what's the real context size") |
+| SC22 | Subcommittee 22 (ISO/IEC JTC 1/SC 22, programming languages) |
+| SDFs | Signed Distance Function/Field (graphics; plural) |
+| SDK | Software Development Kit |
+| SEIP | Software Engineering in Practice (ICSE track) |
+| SEO | Search Engine Optimization |
+| SHA | Secure Hash Algorithm |
+| SIMD | Single Instruction, Multiple Data |
+| SERP | Search Engine Results Page |
+| SPIR | Standard Portable Intermediate Representation (Khronos; SPIR-V is the Vulkan-era version) |
+| SQL | Structured Query Language |
+| SSH | Secure Shell |
+| SSL | Secure Sockets Layer |
+| SVG | Scalable Vector Graphics |
+| TB | Terabyte |
+| TDP | Thermal Design Power |
+| TDD | Test-Driven Development |
+| TPU | Tensor Processing Unit (TPUs = plural) |
+| TSMC | Taiwan Semiconductor Manufacturing Company |
+| TOPS | Tera Operations Per Second (AI compute metric) |
+| TL | Part of TL;DR (below) |
+| TL;DR | Too Long; Didn't Read (scanner sees TL + DR separately) |
+| TLS | Transport Layer Security |
+| TOC | Table of Contents |
+| TRT | TensorRT — Nvidia inference library (TRT-LLM) |
+| TRACTOR | DARPA program — Translating All C to Rust |
+| UI | User Interface |
+| USD | United States Dollar |
+| UC | University of California (in UC Berkeley) |
+| URI | Uniform Resource Identifier |
+| UV | Texture-mapping coordinate axes (U/V) — not an acronym |
+| URL | Uniform Resource Locator |
+| USB | Universal Serial Bus |
+| UTF | Unicode Transformation Format |
+| UX | User Experience |
+| VI | Roman numeral 6 ("Part VI" numbering, not an acronym) |
+| VII | Roman numeral 7 ("Part VII" numbering, not an acronym) |
+| VM | Virtual Machine |
+| VRAM | Video Random-Access Memory |
+| WASD | Keyboard movement keys (W/A/S/D) — not an acronym |
+| WASM | WebAssembly |
+| XML | Extensible Markup Language |
+| XTDB | Proper noun — Clojure-native database (formerly Crux) |
+| XCON | Proper noun — pioneering DEC expert system (computer configuration) |
+| YAML | YAML Ain't Markup Language |

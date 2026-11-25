@@ -97,7 +97,7 @@ flowchart LR
 The mechanical foundation of interactive generative video evolved rapidly from toy 2D experiments to distributed, multi-modal neural engines:
 
 - **[Genie 1 (February 2024)](https://arxiv.org/abs/2402.15391)** (Bruce et al., Google DeepMind): Introduced unsupervised *Latent Action Discovery*. By training a vector-quantized latent action model over 200,000+ hours of unlabeled gameplay footage, Genie discovered discrete control tokens $z_t \in \mathcal{Z}$ without telemetry or manual keylogging annotations. A spatiotemporal transformer then generated 2D platformer steps (~1 fps).
-- **[GameNGen (August 2024)](https://arxiv.org/abs/2408.14837)** (Valevski et al., Google Research & Tel Aviv Univ): Proved that a pure neural diffusion model can simulate the DOOM engine at >20 fps on a single TPU. GameNGen replaced the fixed game loop, binary spatial partitions (BSP trees), and state machine with an autoregressive diffusion pipeline conditioned on target actions and previous frame sequences, stabilized against cascading error via strategic noise augmentation.
+- **[GameNGen (August 2024)](https://arxiv.org/abs/2408.14837)** (Valevski et al., Google Research & Tel Aviv Univ): Proved that a pure neural diffusion model can simulate the DOOM engine at >20 fps on a single TPU. GameNGen replaced the fixed game loop, binary space partitioning (BSP) trees, and state machine with an autoregressive diffusion pipeline conditioned on target actions and previous frame sequences, stabilized against cascading error via strategic noise augmentation.
 - **Genie 2 to Genie 3 (2024–2025)**: Transitioned from 2D pixel generation to 3D interactive camera movement (720p @ 24 fps). Genie 3 introduced *Visual Backtracking Memory*, explicitly training the transformer to retain spatial layout invariants when the camera turns 180 degrees away from an object and returns within a ~1-minute temporal horizon.
 - **Genie 4 (October 2026)**: Scaled the context horizon to 2-minute continuous sessions and introduced tightly synchronized real-time environmental audio and dialogue. Crucially, Genie 4 abandoned the idea that a single model can act as renderer, game logic director, and physical engine simultaneously. It deployed a multi-model hybrid hierarchy:
   - **Generative Renderer**: Genie 4 + Gemini Omni for real-time visual-acoustic synthesis.
@@ -106,7 +106,7 @@ The mechanical foundation of interactive generative video evolved rapidly from t
 
 ### Runway GWM Worlds 2 & The Sliding KV-Cache
 
-Runway's **GWM Worlds 2** (September 2026) diverged from Google's fixed-horizon clip architecture by designing an engine for indefinite generation. Rather than resetting context windows every 60–120 seconds, Worlds 2 implements a continuous **Sliding KV-Cache Attention** mechanism over its latent visual tokens:
+Runway's **GWM Worlds 2** (September 2026) diverged from Google's fixed-horizon clip architecture by designing an engine for indefinite generation. Rather than resetting context windows every 60–120 seconds, Worlds 2 implements a continuous **Sliding Key-Value (KV) Cache Attention** mechanism over its latent visual tokens:
 
 ```mermaid
 flowchart TD

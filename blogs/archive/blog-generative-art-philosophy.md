@@ -3,9 +3,9 @@ title: "Who Made This? The Philosophy of Generative Art"
 published: true
 description: "Who owns generative art? Explore authorship, control & 60 years of artists who coded possibility spaces — from Vera Molnár to Clojure creative coding."
 tags: generativeart, creativecoding, clojure, philosophy
-series: The Invisible Brush
+series: The Invisible Brush: Generative Art & Creative Computation
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/g66re3amy3mbf18rcvg0.png
-canonical_url: "https://dev.to/ganesh_rajendran_art/who-made-this-the-author-shift-and-the-philosophy-of-generative-art-o3e"
+canonical_url: https://dev.to/ganesh_rajendran_art/who-made-this-the-author-shift-and-the-philosophy-of-generative-art-o3e
 devto_id: 5041730
 ---
 
@@ -24,7 +24,7 @@ There is a moment every generative artist knows. The sketch compiles. The window
 
 This dissonance is not a bug. It is the whole point.
 
-Generative art has existed since the 1960s — before personal computers, before the internet, long before NFTs turned it into a cultural flashpoint. But its central philosophical question is older than computers entirely. It is the oldest question in art: *what counts as making?*
+Generative art has existed since the 1960s — before personal computers, before the internet, long before non-fungible tokens (NFTs) turned it into a cultural flashpoint. But its central philosophical question is older than computers entirely. It is the oldest question in art: *what counts as making?*
 
 Computers just asked it again, with new sharpness.
 
@@ -261,7 +261,7 @@ Maybe that is the generative artist's actual job: design a system capable of pro
 
 ## Series Navigation
 
-1. **Part 1:** [*The Invisible Brush: Generative Art and the Algorithms That Paint*](https://dev.to/ganesh_rajendran_art/the-invisible-brush-generative-art-and-the-algorithms-that-paint-32ig) — Foundations of PCG, noise functions, and building a terrain generator in Clojure and Quil.
+1. **Part 1:** [*The Invisible Brush: Generative Art and the Algorithms That Paint*](https://dev.to/ganesh_rajendran_art/the-invisible-brush-generative-art-and-the-algorithms-that-paint-32ig) — Foundations of procedural content generation, noise functions, and building a terrain generator in Clojure and Quil.
 2. **Part 2 (Current):** [*Who Made This? The Author Shift and the Philosophy of Generative Art*](https://dev.to/ganesh_rajendran_art/who-made-this-the-author-shift-and-the-philosophy-of-generative-art-o3e) — Deconstructs the author shift, the spectrum of control, and 60 years of algorithmic art philosophy.
 
 ---

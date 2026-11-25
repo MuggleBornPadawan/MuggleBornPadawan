@@ -96,7 +96,7 @@ Clojure achieves identical safety through a fundamentally different mathematical
 | **Initialization** | Uninitialized Memory Read | Definite initialization | Safe default / `nil` |
 | **Type Safety** | Type Confusion / Downcasting | Safe enums / Traits | Strict runtime dynamic checks |
 | **Type Safety** | Untagged Union Misuse | Exhaustive matching | Tagged maps / Multimethods |
-| **Concurrency** | Data Races (Undefined State) | Send / Sync traits | Value immutability + CAS primitives |
+| **Concurrency** | Data Races (Undefined State) | Send / Sync traits | Value immutability + Compare-And-Swap (CAS) primitives |
 | **Resource** | Memory Leaks (Cyclic) | Weak refs / Box trees | Tracing cycle collectors |
 
 ### Why Value Semantics Beat Borrow Checking for Domain Logic
@@ -266,7 +266,7 @@ Whenever a managed language like Clojure is proposed to modernize a C++ codebase
 ### Objection 1: "Garbage collection causes unpredictable latency and stop-the-world pauses."
 
 * **The Reality:** The narrative that GC runtimes cause massive freezes is stuck in 2008. 
-* Modern generational collectors on HotSpot—specifically **ZGC** and **Shenandoah**—guarantee maximum GC pause times of **under 1 millisecond**, even on heaps scaling to multiple terabytes.
+* Modern generational collectors on HotSpot—specifically **Z Garbage Collector (ZGC)** and **Shenandoah**—guarantee maximum GC pause times of **under 1 millisecond**, even on heaps scaling to multiple terabytes.
 * For resource-constrained or CLI targets, **GraalVM Native Image** and **Babashka** embed lightweight, deterministic collectors with sub-millisecond cycles and RSS footprints under 30MB.
 * Unless you are writing hard real-time avionics or high-frequency trading matching engines running directly on Network Interface Cards (NICs), modern GC latency is an order of magnitude lower than your network round-trip time.
 
@@ -293,7 +293,7 @@ Whenever a managed language like Clojure is proposed to modernize a C++ codebase
 
 ### Objection 4: "HAMT persistent collections cause pointer chasing and destroy L1/L2 cache locality."
 
-* **The Reality:** For tight numeric matrix multiplication, cryptography, or SIMD vectorization, contiguous memory (`std::vector` or Rust `Vec<T>`) is unquestionably superior.
+* **The Reality:** For tight numeric matrix multiplication, cryptography, or Single Instruction, Multiple Data (SIMD) vectorization, contiguous memory (`std::vector` or Rust `Vec<T>`) is unquestionably superior.
 * However, 95% of application code is bound by network serialization, database transactions, and business logic validation—not L1 cache misses.
 * In the Tiered Architecture, cache-sensitive numeric buffers remain in contiguous native memory segments via Project Panama or Rust kernels. Clojure uses persistent HAMTs for application-level state where structural sharing, immutability, and zero-lock concurrency vastly outweigh cache-line packing.
 

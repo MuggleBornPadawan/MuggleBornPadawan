@@ -42,7 +42,7 @@ Transformers process context through a soft-attention mechanism. As the sequence
 |---|---|---|
 | **Advertised Context Window** | Maximum tokens accepted without an error | 128k–2M+ tokens |
 | **MECW (Maximum Effective Context Window)** | Tokens before deep reasoning, multi-hop inference, and instruction-following degrade materially | **~32k–64k tokens** |
-| **NIAH Score** | Needle-in-a-haystack single-fact retrieval accuracy | Misleadingly high — up to 99% at 100k+ on trivial tests |
+| **NIAH (Needle-in-a-Haystack) Score** | Needle-in-a-haystack single-fact retrieval accuracy | Misleadingly high — up to 99% at 100k+ on trivial tests |
 | **Practical Coding Task Accuracy** | Multi-step refactoring, bug tracing, constraint-following at 32k+ | Drops sharply — often 30–50% below peak performance |
 
 > **The bottom line:** A 1M token context window does not give you 1M tokens of reliable cognition. It gives you a 32k–64k token zone of high-quality reasoning and a large surrounding buffer of low-fidelity bulk context — useful for reference material, not for active problem-solving.
@@ -53,7 +53,7 @@ This finding changes the evaluation criteria fundamentally:
 
 1. **Raw memory capacity matters less than throughput within the working budget.** You need to fit a high-quality model in memory — but you don't need to fit the entire project history in context.
 2. **Tokens-per-second at the reference model size is the primary performance metric.** Faster inference = shorter feedback loops = more productive harness sessions.
-3. **Context engineering infrastructure matters as much as hardware.** The best hardware pairing is one that runs a strong model fast, while your harness tooling (RAG, session summarization, memory layering) handles context management.
+3. **Context engineering infrastructure matters as much as hardware.** The best hardware pairing is one that runs a strong model fast, while your harness tooling (Retrieval-Augmented Generation (RAG), session summarization, memory layering) handles context management.
 
 ---
 
@@ -111,7 +111,7 @@ NVIDIA's flagship single-GPU professional workstation card. Released March 2025.
 |---|---|
 | **Architecture** | Blackwell (GB202, 5nm TSMC 4N) |
 | **CUDA Cores** | 24,064 |
-| **Tensor Cores** | 5th gen (FP4/FP6/FP8/INT8) |
+| **Tensor Cores** | 5th gen (4-bit floating point (FP4)/FP6/FP8/INT8) |
 | **AI Performance** | ~4,000 AI TOPS |
 | **VRAM** | **96 GB GDDR7 ECC** |
 | **Memory Bandwidth** | **1,792 GB/s (~1.79 TB/s)** |
@@ -350,7 +350,7 @@ Why:
 
 Best for:
 - Teams where **inference speed per request** is the primary bottleneck
-- Active model fine-tuning, LoRA, RLHF pipelines as a daily workflow
+- Active model fine-tuning, LoRA, Reinforcement Learning from Human Feedback (RLHF) pipelines as a daily workflow
 - Organizations running proprietary models, not open-weight community models
 - Shops where the CUDA ecosystem depth (ExLlamaV2, TensorRT, quantization tooling) is a hard requirement
 

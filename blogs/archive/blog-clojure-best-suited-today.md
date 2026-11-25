@@ -328,7 +328,7 @@ This is a production-grade health check script. It runs in 12ms. It is fully tes
 
 The conventional full-stack story requires an organization to maintain two distinct languages, two package managers, two module systems, two sets of idioms, and two testing philosophies — typically TypeScript/JavaScript on the frontend and Python, Go, Java, or Rust on the backend.
 
-ClojureScript with **Shadow-CLJS** collapses this to a single language across the entire stack:
+ClojureScript (CLJS) with **Shadow-CLJS** collapses this to a single language across the entire stack:
 
 ```clojure
 ;; This schema is defined once — shared between backend (Clojure/JVM)
@@ -453,7 +453,7 @@ When exceptions occur, Clojure's interop layer surfaces full JVM stack traces co
 | **Testing & Quality Assurance** | Zero-mock testing against pure data functions + generative property-based testing (`test.check`)           |
 | **CLI and automation**          | Babashka: <15ms startup, 30MB RSS, full Clojure, no JVM                                                    |
 | **Full-stack coherence**        | ClojureScript + Shadow-CLJS: one language, one schema, one REPL across stack                               |
-| **Memory safety compliance**    | JVM-class MSL satisfying CISA, ONCD, NSA, and EU CRA mandates                                              |
+| **Memory safety compliance**    | JVM-class Memory-Safe Language (MSL) satisfying CISA, ONCD, National Security Agency (NSA), and EU CRA mandates                                              |
 | **Supply chain auditability**   | 15–40 direct deps vs 150–300 in Spring/Django; full SBOM in <10 min                                        |
 | **Regulatory & FDDD Invariants**| Functional DDD (pure aggregate reducers) + Datomic/XTDB = tamper-evident compliance for finance/health/gov  |
 | **Framework complexity tax**    | ~600-function core, composable data-driven libraries (`reitit`, `next.jdbc`, `integrant`) over convention   |

@@ -3,6 +3,7 @@ title: "Lean AI Second Brain: Babashka, Git & Local LLMs"
 published: true
 description: "Build a zero-leak AI second brain with Markdown, Git, Babashka, and local Ollama. 15ms search, no vector DB bloat."
 tags: ai, clojure, babashka, pkm
+series:
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/zygb6m23xpfuz9ltvaaz.png
 canonical_url: https://dev.to/ganesh_rajendran_art/lean-ai-second-brain-babashka-git-local-llms-14gk
 devto_id: 5063308
@@ -23,7 +24,7 @@ Five years later, the same knowledge workers report the same failure mode: **the
 
 Tag hierarchies grew inconsistent. Backlinks broke across vault reorganizations. The inbox never reached zero. The beautiful graph view in Obsidian became a hairball nobody opened. Notion's relational databases required a part-time database administrator to keep clean. The more content you captured, the harder it became to retrieve anything.
 
-Then came AI-enhanced PKM — a new generation of tools promising that semantic vector search and LLM summarization would eliminate the maintenance burden. Tools like Khoj, Mem, Reflect, and cloud-hosted RAG pipelines offered to index everything automatically.
+Then came AI-enhanced PKM — a new generation of tools promising that semantic vector search and LLM summarization would eliminate the maintenance burden. Tools like Khoj, Mem, Reflect, and cloud-hosted Retrieval-Augmented Generation (RAG) pipelines offered to index everything automatically.
 
 They solved part of the problem. They created three new ones:
 
@@ -167,7 +168,7 @@ For multi-hop synthesis — "what have I written that connects topic A with topi
          (remove str/blank?))))
 ```
 
-No embedding model. No FAISS index. No background re-embedding cron. The index is `rg` running against the filesystem, and it is always consistent with the vault because it reads the files directly.
+No embedding model. No FAISS (Facebook AI Similarity Search) index. No background re-embedding cron. The index is `rg` running against the filesystem, and it is always consistent with the vault because it reads the files directly.
 
 The vault structure also encodes the distinction between **episodic** and **semantic memory** — a split that heavyweight AI PKM systems typically collapse into a single undifferentiated vector index. Daily logs under `wiki/daily/` are episodic: timestamped, point-in-time, never edited after the fact. Concept notes under `wiki/concepts/` are semantic: distilled, durable, updated as your understanding evolves. The Active Maintainer's weekly digest pass is the bridge — it synthesizes episodic logs into semantic updates, the same way human memory consolidates during sleep.
 
@@ -452,7 +453,7 @@ The Babashka scripts add no persistent memory overhead. They start, execute, and
 
 A weekly digest synthesis across 20 daily notes takes approximately **8–20 seconds** for `qwen3.8:27b` at 25–30 t/s on M5 Ultra — quality indistinguishable from a cloud API call, at zero latency and zero cost. For maximum quality, swap to `llama3.3:70b` for 30–60 second digests. Both run unattended via `launchd` / cron.
 
-> **Performance tip:** Set `OLLAMA_FLASH_ATTENTION=1` in your environment before starting Ollama. This cuts KV cache memory overhead significantly on the 256K context windows Qwen3.8 can consume.
+> **Performance tip:** Set `OLLAMA_FLASH_ATTENTION=1` in your environment before starting Ollama. This cuts key-value (KV) cache memory overhead significantly on the 256K context windows Qwen3.8 can consume.
 
 ---
 

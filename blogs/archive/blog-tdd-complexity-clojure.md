@@ -9,7 +9,7 @@ canonical_url: https://dev.to/ganesh_rajendran_art/complexity-aware-tdd-in-cloju
 devto_id: 5076265
 ---
 
-> *This is **Part 4** of a series on **The Economics of Memory Safety**:*
+> *This is **Part 4** of a 4-part series on **The Economics of Memory Safety**:*
 > 1. [Part 1: The Economics of Memory Safety: Cost of Rewriting](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in)
 > 2. [Part 2: Beyond the Rewrite Trap: Memory Safety with Clojure](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b)
 > 3. [Part 3: The Full-Stack Case for Clojure: AI & Concurrency](https://dev.to/ganesh_rajendran_art/the-full-stack-case-for-clojure-ai-concurrency-and-regulatory-reality-4oh4)

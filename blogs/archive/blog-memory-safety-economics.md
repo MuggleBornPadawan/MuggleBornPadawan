@@ -19,7 +19,7 @@ devto_id: 5009424
 
 For three decades, memory management vulnerabilities were treated as operational overhead—a standard engineering maintenance cost resolved through code reviews, fuzzers, and periodic security patches. That paradigm is no longer economically viable.
 
-Regulatory bodies worldwide (CISA, White House ONCD, NSA, Five Eyes) have shifted their posture from passive advisory notices to active procurement mandates. Simultaneously, independent telemetry from Microsoft, Google, and Apple proves that **~70% of all high-severity vulnerabilities remain memory safety flaws**, irrespective of modern C++ language revisions (`C++11` through `C++23`).
+Regulatory bodies worldwide — the Cybersecurity and Infrastructure Security Agency (CISA), White House Office of the National Cyber Director (ONCD), National Security Agency (NSA), Five Eyes — have shifted their posture from passive advisory notices to active procurement mandates. Simultaneously, independent telemetry from Microsoft, Google, and Apple proves that **~70% of all high-severity vulnerabilities remain memory safety flaws**, irrespective of modern C++ language revisions (`C++11` through `C++23`).
 
 Engineering organizations face a strategic dilemma:
 * **The Cost of Inaction:** Escalating patch triage cycles, compliance disqualification, catastrophic exploit liability, and customer churn.
@@ -37,7 +37,7 @@ The argument that disciplined engineering teams can eliminate memory corruption 
 
 | Organization | Dataset / Period | Memory Safety Ratio | Primary Root Causes |
 |---|---|---|---|
-| **Microsoft (MSRC)** | All CVEs analyzed since 2006 | ~70% | Use-After-Free (UAF), Out-of-bounds Read/Write |
+| **Microsoft (MSRC)** | All Common Vulnerabilities and Exposures (CVEs) analyzed since 2006 | ~70% | Use-After-Free (UAF), Out-of-bounds Read/Write |
 | **Google Chromium** | High-severity bugs (2015–Present) | ~70% | Use-After-Free, Iterator Invalidation |
 | **Google Android** | Vulnerabilities prior to Android 12 | ~76% | Buffer Overflow, Dangling Pointers |
 | **Apple iOS / macOS** | Kernel / WebKit Security Bulletins | 65–75% | Memory Corruption, Pointer Confusion |
@@ -70,7 +70,7 @@ The argument that disciplined engineering teams can eliminate memory corruption 
 
 ## 2. The Modern C++ Paradox: Why Language Updates Failed to Fix the Balance Sheet
 
-A frequent objection raised in architectural reviews is: *"Modern C++ (C++11/17/20/23) solved memory management via RAII, smart pointers, and spans."*
+A frequent objection raised in architectural reviews is: *"Modern C++ (C++11/17/20/23) solved memory management via Resource Acquisition Is Initialization (RAII), smart pointers, and spans."*
 
 While modern abstractions improve expressive safety, they fail to deliver structural safety.
 
@@ -97,7 +97,7 @@ While modern abstractions improve expressive safety, they fail to deliver struct
   * Reallocating a `std::vector` instantly invalidates all existing references, pointers, and iterators to its elements.
   * The compiler cannot detect this invalidation across function boundaries without a formal borrow checker.
 * **The 40-Year ABI Trap:**
-  * The ISO C++ Standards Committee (WG21) prioritizes backward source and ABI compatibility above all else.
+  * The ISO C++ Standards Committee (WG21) prioritizes backward source and Application Binary Interface (ABI) compatibility above all else.
   * Enforcing bounds checks on `std::vector::operator[]` by default would break performance contracts for existing software.
 
 ---
@@ -157,7 +157,7 @@ Enforcing compiler hardening flags without modifying language stacks:
 
 ### Option 4: Hardware-Assisted Safety (Silicon-Level Containment)
 
-Adopting CPU architectures that integrate hardware memory tagging (ARM Memory Tagging Extension - MTE) or capability-based addressing (Cambridge CHERI).
+Adopting CPU architectures that integrate hardware memory tagging via the Arm Memory Tagging Extension (MTE) or capability-based addressing with Cambridge's CHERI (Capability Hardware Enhanced RISC Instructions).
 
 * **Pros:**
   * Catches spatial and temporal memory violations in production hardware with minimal software modification (~1–2.5% overhead).

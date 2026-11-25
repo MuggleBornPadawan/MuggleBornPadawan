@@ -25,7 +25,18 @@
     "FFI" "FPS" "GC" "GIF" "GPU" "HTML" "HTTP" "HTTPS" "ID" "IDE" "IO" "IP"
     "JDK" "JSON" "JVM" "LLM" "LLMs" "ML" "OS" "PR" "RAM" "REPL" "REST" "RGB"
     "ROM" "SDK" "SEO" "SERP" "SQL" "SSH" "SSL" "TDD" "TLS" "TOC" "UI" "URI"
-    "URL" "USB" "UTF" "UX" "VM" "VRAM" "WASM" "XML" "YAML" "2D" "3D"})
+    "URL" "USB" "UTF" "UX" "VM" "VRAM" "WASM" "XML" "YAML" "2D" "3D"
+    "NVIDIA" "DOOM" "AARON" "TL" "DR" "GB" "TB" "MB" "EU" "MIT" "ACM"
+    "ICML" "CVPR" "GCC" "LLVM" "GPT" "NLP" "XTDB" "COG" "WASD" "DNA"
+    "ALU" "DDR4" "DDR5" "GDDR6" "HBM" "SVG"
+    "ISO" "RISC" "GNU" "DARPA" "TRACTOR" "ARM" "FBI" "IEC" "JTC1" "SC22"
+    "JEP" "AWS" "ACL2" "AMD" "AMS" "ASPLOS" "CGO" "TPU" "TPUs"
+    "ICSE" "SEIP" "PLDI" "IEEE" "LMS" "CC"
+    "SIMD" "SPIR" "PDF" "SHA"
+    "RULER" "ETHIC" "LMSYS" "MLX" "GB202" "TSMC" "CTO" "RTX" "DGX" "USD" "II" "III"
+    "IV" "FP6" "FP8" "INT8" "TOPS" "GDDR7" "ECC" "TDP" "GB10" "OEM" "ASUS" "HP" "MSI" "NIM" "TRT"
+    "HY" "INT4" "POSIX" "RSJ" "UV" "LM" "VI" "VII" "IT" "UC" "GLSL"
+    "SDFs" "IROS" "DEC" "MYCIN" "XCON" "PROSPECTOR" "DENDRAL" "IF" "THEN" "IRE" "NAACL"})
 
 (defn parse-frontmatter
   "Extract raw frontmatter string, ordered keys, key->val map, and body."
@@ -111,8 +122,8 @@
   (-> body
       (str/replace #"(?s)```.*?```" " ")
       (str/replace #"`[^`]+`" " ")
-      (str/replace #"https?://\S+" " ")
-      (str/replace #"\]\([^)]+\)" "]")))
+      (str/replace #"\[([^\]]*)\]\([^)]+\)" "$1")
+      (str/replace #"https?://[^\s)]+" " ")))
 
 (defn find-unexpanded-acronyms
   "Return a seq of uppercase acronyms (2+ chars) not in allowlist and not defined as '(ACRONYM)' or 'ACRONYM ('."
@@ -126,7 +137,7 @@
          (remove (fn [acr]
                    (let [base (str/replace acr #"s$" "")]
                      (or (common-acronyms base)
-                         (re-find (re-pattern (str "\\(" (java.util.regex.Pattern/quote base) "s?\\)")) prose)
+                         (re-find (re-pattern (str "\\(" (java.util.regex.Pattern/quote base) "s?( \\d+)?\\)")) prose)
                          (re-find (re-pattern (str "\\b" (java.util.regex.Pattern/quote base) "s?\\s*\\(")) prose)))))
          (take 15)
          vec)))

@@ -3,7 +3,7 @@ title: "The Invisible Brush: Generative Art and the Algorithms That Paint"
 published: true
 description: "Generative art with Clojure & Quil: master Perlin noise, L-systems, CA & particle systems. Build an infinite 2D terrain. Full code + visuals."
 tags: clojure, creativecoding, generativeart, programming
-series: The Invisible Brush
+series: The Invisible Brush: Generative Art & Creative Computation
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/suz38jgtdxazc4aljs2l.png
 canonical_url: https://dev.to/ganesh_rajendran_art/the-invisible-brush-generative-art-and-the-algorithms-that-paint-32ig
 devto_id: 5035755
@@ -24,7 +24,7 @@ There is a particular kind of wonder that comes from watching something grow on 
 
 This is the promise of **Procedural Content Generation** — and it sits quietly at the heart of generative art.
 
-This post is for developers who can read code but have never thought of algorithms as paintbrushes. By the end, you will have a working piece of generative art in Clojure, a mental model of the major PCG techniques, and perhaps a small shift in how you think about creativity itself.
+This post is for developers who can read code but have never thought of algorithms as paintbrushes. By the end, you will have a working piece of generative art in Clojure, a mental model of the major Procedural Content Generation (PCG) techniques, and perhaps a small shift in how you think about creativity itself.
 
 ---
 
@@ -56,7 +56,7 @@ Before we write any code, let us walk the landscape. PCG is not one thing — it
 
 The workhorse of generative visuals. Noise functions produce smooth, continuous pseudo-random values across space. Feed them an `x` coordinate and get a value between 0 and 1. Feed them `x` and `y` and you get a 2D field — a heightmap, a cloud, a terrain.
 
-The key property is *coherence*: nearby points have similar values, so the output looks organic rather than static. Ken Perlin invented his noise function in 1983, inspired by his frustration with the sterile look of computer graphics while working on *Tron*. He published it at SIGGRAPH 1985 — and it earned him a Technical Academy Award in 1997. It has been in every serious generative art toolkit since.
+The key property is *coherence*: nearby points have similar values, so the output looks organic rather than static. Ken Perlin invented his noise function in 1983, inspired by his frustration with the sterile look of computer graphics while working on *Tron*. He published it at the 1985 SIGGRAPH (Special Interest Group on Computer Graphics) conference — and it earned him a Technical Academy Award in 1997. It has been in every serious generative art toolkit since.
 
 Minecraft's terrain is Perlin noise, layered. The rolling hills, the sudden cliffs, the underground cave networks — all noise, composed.
 
@@ -82,11 +82,11 @@ The output looks hand-crafted because it learned from hand-crafted input. It is 
 
 ### Grammar-Based Generation
 
-Text adventure games, quest generators, and NPC dialogue all lean on grammars. You define production rules — `<quest> → <hero> must <action> <object>` — and expand them recursively. Tracery, a tool by Kate Compton, makes this accessible enough to feel like play.
+Text adventure games, quest generators, and non-player character (NPC) dialogue all lean on grammars. You define production rules — `<quest> → <hero> must <action> <object>` — and expand them recursively. Tracery, a tool by Kate Compton, makes this accessible enough to feel like play.
 
 ### BSP Trees
 
-Binary Space Partitioning divides a rectangle into two sub-rectangles, then divides those, recursively. Place rooms at the leaves, connect them with corridors, and you have a dungeon. Doom used BSP trees for rendering; roguelikes use them for level generation. The algorithm is old, simple, and reliable.
+Binary Space Partitioning (BSP) divides a rectangle into two sub-rectangles, then divides those, recursively. Place rooms at the leaves, connect them with corridors, and you have a dungeon. Doom used BSP trees for rendering; roguelikes use them for level generation. The algorithm is old, simple, and reliable.
 
 ### Voronoi Diagrams
 
