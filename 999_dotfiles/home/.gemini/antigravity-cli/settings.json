@@ -1,7 +1,7 @@
 {
   "colorScheme": "colorblind-friendly dark",
   "editor": "emacs -nw",
-  "model": "Gemini 3.8 Flash (Medium)",
+  "model": "Claude Sonnet 4.6 (Thinking)",
   "permissions": {
     "allow": [
       "command(pass)",

@@ -5,6 +5,7 @@ description: >-
   one task, each in its own conversation, collaborating through a shared
   message board. Use when the work splits into pieces that can be done at the
   same time, or when a second pair of eyes should check the first pair's work.
+disable-model-invocation: true
 metadata:
   icon: hub
   logo: logo.svg

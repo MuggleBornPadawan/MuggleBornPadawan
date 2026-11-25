@@ -81,4 +81,5 @@ take priority over their global counterparts when a project is active:
 ## 3. Further Reading
 
 For all other questions, search the live documentation at
-`https://antigravity.google/docs`.
+`https://antigravity.google/llms.txt` (an index of every docs page; append
+`.md` to a docs page URL to fetch its Markdown version).

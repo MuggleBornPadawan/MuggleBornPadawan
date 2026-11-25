@@ -1,9 +1,10 @@
 ---
 name: swarm_pane
 description: >-
-  What the coordinator writes so the Swarm UI's Overview can show the swarm's
-  goal, its groups of work and a screenshot timeline. Load it before you brief
-  and add the first workers to a swarm.
+  ONLY for the coordinator of an active /swarm session. What the coordinator
+  writes so the Swarm UI's Overview can show the swarm's goal, its groups of
+  work and a screenshot timeline; load it before you brief and add the first
+  workers. Outside /swarm, do not load this.
 disable-slash-command: true
 ---
 
