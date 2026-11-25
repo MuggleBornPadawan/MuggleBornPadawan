@@ -9,10 +9,12 @@ devto_id: 4993516
 canonical_url: https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci
 ---
 
-> **The World Model Series — Part 2 of 2**
+> *This is **Part 2** of a 3-part series on **The World Model Series**:*
+> 1. [Part 1: Why World Models Had to Exist — 80 Years of AI Trying to Understand Reality](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
+> 2. **Part 2: The World Model Trilemma — Pixels, Splats, and Symbolic Physics** (this article)
+> 3. [Part 3: Game Engines Were World Models All Along](https://dev.to/ganesh_rajendran_art/game-engines-were-world-models-all-along-1cm4)
 >
-> This is the *what*: pixels vs splats vs symbolic physics.
-> Start with [Part 1: Why World Models Had to Exist →](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
+> *This is the *what*: pixels vs splats vs symbolic physics.*
 
 **A Systems Engineering Deconstruction of Google Genie 4, Runway GWM Worlds 2, World Labs Marble, Tencent HY-World 2.0, and Gemini 4 Argon + MuJoCo**
 

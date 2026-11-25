@@ -9,10 +9,12 @@ series: The World Model Series
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/oziiwmgu7t9ktsg3p0u9.png
 ---
 
-> **The World Model Series — Part 1 of 2**
+> *This is **Part 1** of a 3-part series on **The World Model Series**:*
+> 1. **Part 1: Why World Models Had to Exist — 80 Years of AI Trying to Understand Reality** (this article)
+> 2. [Part 2: The World Model Trilemma — Pixels, Splats, and Symbolic Physics](https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci)
+> 3. [Part 3: Game Engines Were World Models All Along](https://dev.to/ganesh_rajendran_art/game-engines-were-world-models-all-along-1cm4)
 >
-> This is the *why*: 80 years of AI failing toward World Models.
-> Continue with [Part 2: The World Model Trilemma →](https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci)
+> *This is the *why*: 80 years of AI failing toward World Models.*
 
 ---
 
