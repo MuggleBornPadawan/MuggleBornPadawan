@@ -4,7 +4,7 @@ published: true
 description: "Build a zero-leak AI second brain with Markdown, Git, Babashka, and local Ollama. 15ms search, no vector DB bloat."
 tags: ai, clojure, babashka, pkm
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/zygb6m23xpfuz9ltvaaz.png
-canonical_url: https://dev.to/ganesh_rajendran_art/lean-ai-second-brain-babashka-git-local-llms
+canonical_url: https://dev.to/ganesh_rajendran_art/lean-ai-second-brain-babashka-git-local-llms-14gk
 devto_id: 5063308
 ---
 
@@ -480,7 +480,7 @@ The minimalist local-first approach described here is not invented from scratch.
 
 | Project                                                                           | Design Point                                | Relevance                                                                |
 |:----------------------------------------------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------------|
-| [karpathy/llm-wiki](https://github.com/karpathy/llm-wiki)                         | Plain text + LLM context injection          | Direct inspiration; minimalist wiki + local LLM pattern                  |
+| [karpathy/llm.c](https://github.com/karpathy/llm.c)                               | Plain C LLM training + inference              | Direct inspiration; minimalist single-file LLM pattern                   |
 | [garrytan/gbrain](https://github.com/garrytan/gbrain)                             | Personal AI second-brain architecture       | Real-world automation workflows; useful reference for Action Layer ideas |
 | [khoj-ai/khoj](https://github.com/khoj-ai/khoj)                                   | Self-hostable, local LLMs, Markdown/Org/PDF | Closest production-ready equivalent; heavier but powerful                |
 | [basicmachines-co/basic-memory](https://github.com/basicmachines-co/basic-memory) | Local-first semantic memory engine          | SQLite-based; natural upgrade path if `rg` keyword retrieval falls short |

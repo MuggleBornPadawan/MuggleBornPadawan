@@ -10,7 +10,7 @@ devto_id: 4983387
 
 > *"People who are really serious about software should make their own hardware."* — Alan Kay
 
-John Carmack wrote DOOM in 1993 on hardware that makes a modern smart thermostat look like a supercomputer. No GPU. No FPU on mainstream target machines. 4 MB of RAM. And yet DOOM rendered a pseudo-3D world at 35 fps, sustained multiplayer over dial-up links, and kept every networked PC in bitwise lock-step synchrony.
+John Carmack wrote DOOM in 1993 on hardware that makes a modern smart thermostat look like a supercomputer. No graphics processing unit (GPU). No floating-point unit (FPU) on mainstream target machines. 4 megabytes (MB) of RAM. And yet DOOM rendered a pseudo-3D world at 35 fps, sustained multiplayer over dial-up links, and kept every networked personal computer (PC) in bitwise lock-step synchrony.
 
 Thirty years later, the systems engineers scaling frontier large language models are solving structurally identical problems. The bottleneck is unchanged: **your math is too slow for your silicon, so you change your math.**
 
@@ -50,16 +50,16 @@ typedef int fixed_t;
 
 ### Modern LLMs: Memory Walls and Low-Precision Quantization
 
-A 70-billion-parameter model stored in FP32 requires 280 GB of memory just for its weights. During inference, memory bandwidth — not compute throughput — is the primary wall. Accelerators like NVIDIA H100s can perform tensor operations far faster than High Bandwidth Memory (HBM) can deliver the weight matrices to the compute cores.
+A 70-billion-parameter model stored in 32-bit floating point (FP32) requires 280 gigabytes (GB) of memory just for its weights. During inference, memory bandwidth — not compute throughput — is the primary wall. Accelerators like NVIDIA H100s can perform tensor operations far faster than High Bandwidth Memory (HBM) can deliver the weight matrices to the compute cores.
 
 The modern response mirrors Carmack's: **replace wide floating-point types with compact integers.**
 
 | Format | Bits per Weight | Memory vs. FP32 | Primary Benefit |
 | :--- | :--- | :--- | :--- |
 | **FP32** | 32 | 1× | Baseline precision |
-| **FP16 / BF16** | 16 | 2× | Half-precision training standard |
-| **INT8** | 8 | 4× | Standard server-side inference quantization |
-| **INT4 (AWQ/GPTQ)** | 4 | 8× | Consumer GPU deployment (fits 70B in 48 GB) |
+| **FP16 (16-bit floating point) / BF16 (brain float 16)** | 16 | 2× | Half-precision training standard |
+| **INT8 (8-bit integer)** | 8 | 4× | Standard server-side inference quantization |
+| **INT4 (Activation-aware Weight Quantization (AWQ)/Generative Pre-trained Transformer Quantization (GPTQ))** | 4 | 8× | Consumer GPU deployment (fits 70B in 48 GB) |
 | **Ternary (BitNet 1.58b)** | ~1.58 | ~20× | Replaces matrix multiplies with pure addition |
 
 In PyTorch, post-training quantization moves weights from FP32 down to 8-bit or 4-bit integer containers:
@@ -81,11 +81,11 @@ weight_int8 = torch.quantize_per_channel(
 # weights pack into single uint8 bytes, cutting storage to ~8 MB (8x reduction).
 ```
 
-Carmack eliminated the FPU because integer ALUs were fast and coprocessors were absent. Modern ML engineers downcast to INT8/INT4/FP8 because memory buses cannot feed FP32 weights fast enough. The constraint shifted from compute cycles to bus width, but the architectural pattern is identical.
+Carmack eliminated the FPU because integer arithmetic logic units (ALUs) were fast and coprocessors were absent. Modern ML engineers downcast to INT8/INT4/FP8 (8-bit floating point) because memory buses cannot feed FP32 weights fast enough. The constraint shifted from compute cycles to bus width, but the architectural pattern is identical.
 
 ---
 
-## 2. Precomputed Trigonometry: LUTs Then, RoPE Now
+## 2. Precomputed Trigonometry: Lookup Tables (LUTs) Then, RoPE Now
 
 ### DOOM's Binary Angular Measurement (BAM)
 
@@ -184,11 +184,11 @@ def apply_rotary_emb(xq, xk, freqs_cis):
 
 ---
 
-## 3. Memory Hierarchy: L1 Cache Lines in 1993, SRAM Tiling in 2024
+## 3. Memory Hierarchy: L1 Cache Lines in 1993, Static Random-Access Memory (SRAM) Tiling in 2024
 
 ### DOOM's Data Layout
 
-Carmack's combined trigonometric table fits into 10,240 × 4 bytes = **40.96 KB**. On an Intel 486 with an 8 KB to 16 KB L1 cache, maintaining spatial locality was vital. By packing sine and cosine into a single contiguous array, index calculations stayed cache-dense and avoided pipeline-stalling RAM roundtrips.
+Carmack's combined trigonometric table fits into 10,240 × 4 bytes = **40.96 kilobytes (KB)**. On an Intel 486 with an 8 KB to 16 KB L1 cache, maintaining spatial locality was vital. By packing sine and cosine into a single contiguous array, index calculations stayed cache-dense and avoided pipeline-stalling RAM roundtrips.
 
 ### FlashAttention: Managing Modern Memory Walls
 
@@ -204,21 +204,21 @@ Standard Attention:
   Intermediate HBM footprint: O(N²)
 
 FlashAttention (Tiled):
-  Load blocks of Q, K, V into fast on-chip SRAM (~20 MB on H100)
+  Load blocks of Q, K, V into fast on-chip Static Random-Access Memory (SRAM) (~20 MB on H100)
   Compute attention, online softmax, and reduction entirely within SRAM
   Write only the final output back to HBM
   Intermediate HBM footprint: O(N)
 ```
 
-Carmack laid out tables to stay within CPU cache boundaries; Tri Dao restructured attention into SRAM tiles. The engineering rule remains constant: **compute is nearly free; data transit across memory hierarchies is where performance dies.**
+Carmack laid out tables to stay within CPU cache boundaries; Tri Dao restructured attention into SRAM (Static Random-Access Memory) tiles. The engineering rule remains constant: **compute is nearly free; data transit across memory hierarchies is where performance dies.**
 
 ---
 
-## 4. Bitwise Determinism: Multiplayer DOOM to Distributed RL
+## 4. Bitwise Determinism: Multiplayer DOOM to Distributed Reinforcement Learning (RL)
 
 ### DOOM's Input-Only Lockstep Protocol
 
-In 1993, sending complete 3D player coordinates across 9600-baud modems or IPX local networks overwhelmed available bandwidth.
+In 1993, sending complete 3D player coordinates across 9600-baud modems or Internetwork Packet Exchange (IPX) local networks overwhelmed available bandwidth.
 
 Carmack designed DOOM's multiplayer engine around **input-synchronous lockstep simulation**. Instead of syncing world states, peer machines exchanged only tiny 4-byte `ticcmd_t` input structs containing controller deltas:
 
@@ -236,11 +236,11 @@ typedef struct {
 
 For lockstep to work without desynchronization, every machine had to arrive at the **exact same game state** given identical input sequences. With floating-point arithmetic, disparate processor stepping levels and differing rounding modes produce divergent results within seconds. Fixed-point integer arithmetic made DOOM's simulation 100% bitwise deterministic across diverse hardware.
 
-### Distributed RL and Robotics Rollouts
+### Distributed Reinforcement Learning (RL) and Robotics Rollouts
 
 Modern reinforcement learning systems (e.g., Isaac Gym, MuJoCo parallel rollouts, Brax) run thousands of simultaneous environment instances to train robotic policies and autonomous agents.
 
-Non-deterministic floating-point accumulation (e.g., arbitrary thread execution order in CUDA non-associative `atomicAdd`) leads to divergent trajectory states, making rollouts un-reproducible and gradient updates noisy:
+Non-deterministic floating-point accumulation (e.g., arbitrary thread execution order in Compute Unified Device Architecture (CUDA) non-associative `atomicAdd`) leads to divergent trajectory states, making rollouts un-reproducible and gradient updates noisy:
 
 1. **Integer State Representation:** Environments keep discrete counters, grid coordinates, and action indices in fixed integer domains.
 2. **Deterministic Reduction Kernels:** Distributed frameworks enforce fixed reduction tree structures (`torch.use_deterministic_algorithms(True)`).

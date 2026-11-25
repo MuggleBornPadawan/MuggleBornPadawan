@@ -251,7 +251,7 @@ Maybe that is the generative artist's actual job: design a system capable of pro
 ## References
 
 - [Quil Documentation](http://quil.info/) — the Clojure/Processing wrapper used in this series
-- Tyler Hobbs — *[The Aesthetics of Generative Art](https://tylerxhobbs.com/essays/2021/the-aesthetics-of-generative-art)* — the best contemporary essay on the craft
+- Tyler Hobbs — *[The Aesthetics of Generative Art](https://tylerxhobbs.com)* — the best contemporary essay on the craft
 - Philip Galanter — *What is Generative Art? Complexity Theory as a Context for Art Theory* (2003) — the theoretical foundation
 - Vera Molnár — *[Toward Aesthetic Computation](https://www.atariarchives.org/artist/sec11.php)* (1975) — the original source
 - [The Book of Shaders](https://thebookofshaders.com/) — noise, fractals, and colour, explained visually

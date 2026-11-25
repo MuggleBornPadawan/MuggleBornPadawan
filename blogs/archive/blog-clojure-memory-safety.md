@@ -17,7 +17,7 @@ devto_id: 5010186
 
 ---
 
-In [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting*](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in), we examined the financial and regulatory forces reshaping software engineering. Decades of telemetry from Microsoft, Google, and Apple confirmed that **~70% of all high-severity vulnerabilities are memory safety flaws**, irrespective of modern C++ language revisions (`C++11` through `C++23`). Concurrently, procurement mandates from CISA, the White House Office of the National Cyber Director (ONCD), and the EU Cyber Resilience Act (CRA) have transformed memory safety from an abstract hygiene debate into an urgent balance sheet imperative.
+In [*The Economics of Memory Safety: Inaction vs. The Cost of Rewriting*](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in), we examined the financial and regulatory forces reshaping software engineering. Decades of telemetry from Microsoft, Google, and Apple confirmed that **~70% of all high-severity vulnerabilities are memory safety flaws**, irrespective of modern C++ language revisions (`C++11` through `C++23`). Concurrently, procurement mandates from the Cybersecurity and Infrastructure Security Agency (CISA), the White House Office of the National Cyber Director (ONCD), and the European Union (EU) Cyber Resilience Act (CRA) have transformed memory safety from an abstract hygiene debate into an urgent balance sheet imperative.
 
 Yet for engineering organizations managing multi-million-line C++ codebases, the standard prescription—*"just rewrite everything in Rust"*—presents a dangerous trap:
 * **The High-CapEx Trap:** Multi-year feature freezes, astronomical developer retraining costs, and lost market opportunities while teams struggle with compiler borrow checkers to achieve feature parity.
@@ -43,7 +43,7 @@ Forcing that 95% into a low-level systems language with manual lifetime annotati
 +-----------------------------------------------------------------------------+
 |                          CLOJURE TIER (Safe Domain)                         |
 |  * Persistent Immutable Data Structures (HAMTs)                             |
-|  * Explicit State Primitives (Atoms with CAS, Refs with MVCC/STM)           |
+|  * Explicit State Primitives (Atoms with Compare-And-Swap (CAS), Refs with MVCC/STM)           |
 |  * Automated Tracing Garbage Collection (ZGC, G1, Substrate VM)             |
 |  * Sub-Second REPL Feedback Loop & Dynamic Schema Validation                |
 |  * Immune to: UAF, Buffer Overflows, Double Free, Data Races                |
@@ -56,7 +56,7 @@ Forcing that 95% into a low-level systems language with manual lifetime annotati
                                       v
 +-----------------------------------------------------------------------------+
 |                     SYSTEMS KERNEL TIER (Performance Core)                  |
-|  * Confined Rust or Hardened C++ Routines (SIMD, DSP, Codecs, Drivers)      |
+|  * Confined Rust or Hardened C++ Routines (Single Instruction Multiple Data (SIMD), Digital Signal Processor (DSP), Codecs, Drivers)      |
 |  * Zero-Copy Slices with Explicit Length Metadata                           |
 |  * Narrow Attack Surface & Fully Deterministic Deallocation                 |
 +-----------------------------------------------------------------------------+
@@ -77,7 +77,7 @@ Forcing that 95% into a low-level systems language with manual lifetime annotati
 
 ## 2. How Clojure Eliminates the 13 C++ Hazards Without Lifetimes
 
-Modern C++ attempted to solve memory safety through convention (RAII, `std::unique_ptr`, `std::span`, `std::string_view`). As demonstrated across industry vulnerability taxonomies, these conventions fail in practice because C++ remains **unsafe by default**.
+Modern C++ attempted to solve memory safety through convention (Resource Acquisition Is Initialization (RAII), `std::unique_ptr`, `std::span`, `std::string_view`). As demonstrated across industry vulnerability taxonomies, these conventions fail in practice because C++ remains **unsafe by default**.
 
 Rust resolved this by introducing compile-time affine type systems and a borrow checker. However, this introduces substantial developer friction—especially when modeling graph-like business topologies, cache structures, or asynchronous event pipelines.
 
@@ -183,7 +183,7 @@ Project Panama replaces legacy JNI with type-safe foreign memory access. By leve
 For CLI tools, serverless functions, or container sidecars where JVM warm-up or memory footprint is prohibitive, Clojure provides two distinct native execution models:
 
 #### 1. GraalVM Native Image (AOT Compilation & C ABI Export)
-Clojure compiles Ahead-of-Time (AOT) to standalone native binaries using GraalVM Substrate VM. Using `@CEntryPoint`, Clojure logic is exposed directly over the standard C ABI:
+Clojure compiles Ahead-of-Time (AOT) to standalone native binaries using GraalVM Substrate VM. Using `@CEntryPoint`, Clojure logic is exposed directly over the standard C Application Binary Interface (ABI):
 
 ```java
 // Java/Clojure bridge compiled into GraalVM native shared library (.so / .dylib)
@@ -214,7 +214,7 @@ public final class SafeGateway {
 ```
 
 #### 2. Babashka Dynamic FFI (Instant Execution & Native Binding)
-For automated pipelines and CLI tooling, **Babashka (`bb`)** starts in **< 15 milliseconds** with an **RSS footprint of ~15MB to ~35MB**. Rather than compiling Java bridges, Babashka bundles `libffi` via `babashka.ffi`, loading native shared libraries directly from scripts:
+For automated pipelines and CLI tooling, **Babashka (`bb`)** starts in **< 15 milliseconds** with an **Resident Set Size (RSS) footprint of ~15MB to ~35MB**. Rather than compiling Java bridges, Babashka bundles `libffi` via `babashka.ffi`, loading native shared libraries directly from scripts:
 
 ```clojure
 ;; In Babashka: Load C/Rust shared libraries dynamically without compilation
@@ -268,7 +268,7 @@ Whenever a managed language like Clojure is proposed to modernize a C++ codebase
 * **The Reality:** The narrative that GC runtimes cause massive freezes is stuck in 2008. 
 * Modern generational collectors on HotSpot—specifically **ZGC** and **Shenandoah**—guarantee maximum GC pause times of **under 1 millisecond**, even on heaps scaling to multiple terabytes.
 * For resource-constrained or CLI targets, **GraalVM Native Image** and **Babashka** embed lightweight, deterministic collectors with sub-millisecond cycles and RSS footprints under 30MB.
-* Unless you are writing hard real-time avionics or high-frequency trading matching engines running directly on NICs, modern GC latency is an order of magnitude lower than your network round-trip time.
+* Unless you are writing hard real-time avionics or high-frequency trading matching engines running directly on Network Interface Cards (NICs), modern GC latency is an order of magnitude lower than your network round-trip time.
 
 ### Objection 2: "Dynamic typing compromises safety and causes production crashes."
 
@@ -288,7 +288,7 @@ Whenever a managed language like Clojure is proposed to modernize a C++ codebase
 ### Objection 3: "Only Rust is endorsed by regulatory agencies like CISA and the White House."
 
 * **The Reality:** This is factually incorrect.
-* The White House ONCD report (*Back to the Building Blocks*), the NSA *Software Memory Safety Guidance*, and CISA *Memory Safe Roadmaps* explicitly designate the entire class of **Memory-Safe Languages (MSLs)**, specifically citing Java/JVM runtimes, C#, Go, Rust, and Swift.
+* The White House ONCD report (*Back to the Building Blocks*), the National Security Agency (NSA) *Software Memory Safety Guidance*, and CISA *Memory Safe Roadmaps* explicitly designate the entire class of **Memory-Safe Languages (MSLs)**, specifically citing Java/JVM runtimes, C#, Go, Rust, and Swift.
 * Clojure, running on the battle-tested JVM or compiled via GraalVM, satisfies every enterprise regulatory mandate for memory-safe software procurement.
 
 ### Objection 4: "HAMT persistent collections cause pointer chasing and destroy L1/L2 cache locality."
@@ -299,16 +299,16 @@ Whenever a managed language like Clojure is proposed to modernize a C++ codebase
 
 ---
 
-## 5. Executive ROI & Regulatory Compliance Checklist
+## 5. Executive Return on Investment (ROI) & Regulatory Compliance Checklist
 
-For VP of Engineering, CTOs, and Principal Architects managing legacy C++ estates, the table below provides an executive evaluation framework:
+For Vice President (VP) of Engineering, Chief Technology Officers (CTOs), and Principal Architects managing legacy C++ estates, the table below provides an executive evaluation framework:
 
 | Evaluation Dimension              | Legacy C++                   | Monolithic Rust Rewrite    | Tiered Architecture (Clojure + Rust)        |
 |-----------------------------------|------------------------------|----------------------------|---------------------------------------------|
 | **Capital Expenditure (CapEx)**   | Low upfront, massive tail    | Extremely High ($3M–$10M+) | Moderate ($300k–$800k)                      |
 | **Product Feature Freeze**        | None (Slowed by triage)      | **18–36 Months**           | **Zero** (Iterative boundary refactoring)   |
 | **Developer Velocity**            | Moderate                     | Low (steep compiler curve) | **Very High** (Live REPL, instant feedback) |
-| **Memory Safety Coverage**        | ~30% (70% CVE vulnerability) | 100%                       | **95–98%** (Confined native boundaries)     |
+| **Memory Safety Coverage**        | ~30% (70% Common Vulnerabilities and Exposures (CVE) vulnerability) | 100%                       | **95–98%** (Confined native boundaries)     |
 | **Regulatory Risk (CISA/CRA)**    | Critical Exposure            | Fully Compliant            | **Fully Compliant**                         |
 | **Mean Time to Remediate (MTTR)** | Days to Weeks                | Hours                      | **Minutes** (Hot code reloading via REPL)   |
 
@@ -335,7 +335,7 @@ Monolithic rewrites often sacrifice organizational agility in pursuit of ideolog
 ## References & Further Reading
 
 ### Regulatory & Institutional Mandates
-1. **CISA, NSA, FBI, and International Partners (2023):** [*The Case for Memory Safe Roadmaps*](https://www.cisa.gov/resources-tools/resources/case-memory-safe-roadmaps) — Directives for technology manufacturers to eliminate non-memory-safe codebases.
+1. **CISA, NSA, Federal Bureau of Investigation (FBI), and International Partners (2023):** [*The Case for Memory Safe Roadmaps*](https://www.cisa.gov/resources-tools/resources/case-memory-safe-roadmaps) — Directives for technology manufacturers to eliminate non-memory-safe codebases.
 2. **White House Office of the National Cyber Director (ONCD) (2024):** [*Back to the Building Blocks: A Path Toward Secure and Measurable Software*](https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf) — Federal guidance designating memory-safe programming languages for critical infrastructure.
 3. **European Union (2024):** [*Cyber Resilience Act (CRA)*](https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act) — Regulatory framework establishing strict vendor liability for preventable software security flaws.
 4. **Microsoft Security Response Center (MSRC) (2019–2023):** [*A Proactive Approach to More Secure Code*](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/) — Empirical telemetry documenting that ~70% of historical CVEs stem from memory corruption.
