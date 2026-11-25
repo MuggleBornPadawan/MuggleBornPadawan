@@ -75,6 +75,36 @@
       (catch Throwable t
         {:url url :ok? false :err (.getMessage t)}))))
 
+(defn- stem-word
+  "Simple heuristic suffix removal for tag-to-content matching."
+  [w]
+  (-> w
+      (str/replace #"s$" "")
+      (str/replace #"ing$" "")
+      (str/replace #"ers?$" "")
+      (str/replace #"ed$" "")))
+
+(defn tag-in-text?
+  "Check if a tag (or its stem/compound parts) appears in the given text."
+  [tag text]
+  (let [clean-text (str/lower-case (str/replace text #"[^a-zA-Z0-9\s]" " "))
+        clean-tag  (str/lower-case (str/replace tag #"[^a-zA-Z0-9]" ""))
+        condensed-text (str/replace clean-text #"\s+" "")
+        words (set (str/split clean-text #"\s+"))
+        tag-stem (stem-word clean-tag)]
+    (or
+      (str/includes? condensed-text clean-tag)
+      (contains? words clean-tag)
+      (some #(and (>= (count tag-stem) 3) (str/starts-with? % tag-stem)) words)
+      (when (> (count clean-tag) 5)
+        (some (fn [split-idx]
+                (let [p1 (subs clean-tag 0 split-idx)
+                      p2 (subs clean-tag split-idx)]
+                  (and (>= (count p1) 3) (>= (count p2) 3)
+                       (some #(str/starts-with? % (stem-word p1)) words)
+                       (some #(str/starts-with? % (stem-word p2)) words))))
+              (range 3 (- (count clean-tag) 2)))))))
+
 (defn strip-non-prose
   "Remove fenced code blocks, inline code, URLs, and markdown link targets for acronym scanning."
   [body]
@@ -117,6 +147,27 @@
                         :title (get kvs "title")
                         :devto_id (get kvs "devto_id")}))))
            (group-by :series)))))
+
+(defn scan-archive-posts
+  "Scan archive directory for all published posts, their titles, canonical URLs, and devto IDs."
+  [archive-dir]
+  (let [dir (io/file archive-dir)]
+    (when (.isDirectory dir)
+      (->> (.listFiles dir)
+           (filter #(and (.isFile %) (str/ends-with? (.getName %) ".md")))
+           (keep (fn [f]
+                   (let [{:keys [kvs]} (parse-frontmatter (slurp f))
+                         title (get kvs "title")
+                         canon (get kvs "canonical_url")
+                         devto-id (get kvs "devto_id")]
+                     (when (and title (or canon devto-id))
+                       (let [phrase (str/trim (first (str/split title #":|—")))]
+                         {:file (.getName f)
+                          :title title
+                          :phrase (when (>= (count phrase) 10) phrase)
+                          :canonical canon
+                          :devto-id devto-id})))))
+           vec))))
 
 (defn check-code-fences
   "Check for unclosed code fences and opening fences missing a language tag."
@@ -173,7 +224,7 @@
         (add! :pass "Canonical URL is blank or self-referencing dev.to")
         (add! :warn (str "canonical_url does not point to dev.to/ganesh_rajendran_art: " canon))))
 
-    ;; 3. dev.to conformance
+    ;; 3. dev.to conformance & tag SEO
     (let [tags-str (get kvs "tags")
           tags (when-not (str/blank? tags-str)
                  (->> (str/split tags-str #",") (map str/trim) (remove str/blank?) vec))]
@@ -182,7 +233,19 @@
           (add! :fail (format "Too many tags (%d); dev.to allows max 4" (count tags))))
         (doseq [t tags]
           (when-not (re-matches #"^[a-z0-9]+$" t)
-            (add! :fail (format "Invalid dev.to tag '%s' (must be lowercase alphanumeric, no hyphens/spaces)" t))))))
+            (add! :fail (format "Invalid dev.to tag '%s' (must be lowercase alphanumeric, no hyphens/spaces)" t))))
+        (let [title (or (get kvs "title") "")
+              desc  (or (get kvs "description") "")
+              full-text (str title " " desc " " (strip-non-prose body))
+              in-meta (filter #(or (tag-in-text? % title) (tag-in-text? % desc)) tags)
+              absent  (remove #(tag-in-text? % full-text) tags)]
+          (if (seq in-meta)
+            (add! :pass (format "Tag SEO relevance: %d/%d tag(s) align with title/description (%s)"
+                                (count in-meta) (count tags) (str/join ", " in-meta)))
+            (add! :warn "Tag SEO relevance: none of the tags appear in the title or meta description; aligning primary tags improves SERP matching"))
+          (when (seq absent)
+            (add! :warn (format "Tag(s) not found in post content: %s (ensure tags are grounded in the text for search indexation)"
+                                (str/join ", " absent)))))))
 
     (when (re-find #"(?m)^# " (strip-non-prose body))
       (add! :warn "Body contains an H1 (# ) heading; dev.to renders frontmatter title as H1"))
@@ -233,9 +296,10 @@
         (add! :fail (str "Found personal GitHub repo reference(s): "
                          (str/join ", " (distinct gh-links))))))
 
-    ;; 4. Series check
+    ;; 4. Series & Internal Links check
     (let [series (get kvs "series")
-          archive-series (scan-archive-series archive-dir)]
+          archive-series (scan-archive-series archive-dir)
+          archive-posts (remove #(= (:file %) file-name) (scan-archive-posts archive-dir))]
       (if-not (str/blank? series)
         (do
           (if (re-find #"(?m)^>\s*\*This is \*\*Part\s+\d+\*\*" body)
@@ -246,7 +310,19 @@
                                 (count peers) series (str/join ", " (map :file peers))))))
         (when (seq archive-series)
           (add! :info (str "No series set. Existing series in archive/: "
-                           (str/join ", " (sort (keys archive-series))))))))
+                           (str/join ", " (sort (keys archive-series)))))))
+
+      ;; Check if any previous blogs are mentioned in prose
+      (doseq [{:keys [title phrase canonical devto-id]} archive-posts]
+        (let [target-phrase (or phrase title)
+              pattern (re-pattern (str "(?i)\\b" (java.util.regex.Pattern/quote target-phrase) "\\b"))]
+          (when (re-find pattern (strip-non-prose body))
+            (let [linked? (or (and canonical (str/includes? body canonical))
+                              (and devto-id (re-find (re-pattern (str "dev\\.to/[^/]+/[^)\"\\s]*-" devto-id)) body)))]
+              (if linked?
+                (add! :pass (format "Referenced previous blog '%s' is hyperlinked" target-phrase))
+                (add! :warn (format "Mention of previous blog '%s' appears unlinked in prose; hyperlink to: %s"
+                                    target-phrase (or canonical (str "https://dev.to/api/articles/" devto-id))))))))))
 
     ;; 5. Editorial: acronyms, references, AI footnote
     (let [urls (extract-urls markdown)]

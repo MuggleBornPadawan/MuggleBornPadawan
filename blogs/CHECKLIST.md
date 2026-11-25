@@ -25,7 +25,8 @@ devto_id:
 - [ ] `title` is present and matches the post's main topic
 - [ ] `published` is `true` (or `false` when saving a draft via `--draft`)
 - [ ] `description` is present and 80–160 characters
-- [ ] `tags` has at most 4 tags, comma-separated, lowercase alphanumeric only (`a-z`, `0-9`)
+- [ ] **tags**: Has at most 4 tags, comma-separated, lowercase alphanumeric only (`a-z`, `0-9`)
+- [ ] **Tag relevance to SEO**: Tags directly reflect target search intent and the article's core subject. At least 1–2 tags align with keywords in the title or meta description, and every tag is substantiated in the body text (no detached or phantom tags)
 - [ ] `series` is set if the post belongs to a multi-part series, or left blank/omitted otherwise
 - [ ] `cover_image`, `canonical_url`, `devto_id` are populated if known, or left blank (`key:`) until published
 
@@ -47,6 +48,7 @@ devto_id:
 
 - [ ] **Title length**: `<= 65` characters (avoid SERP truncation; `keyword phrase — hook` format recommended)
 - [ ] **Meta description**: `80–160` characters, includes primary long-tail keywords and a clear takeaway
+- [ ] **Tag & keyword alignment**: Primary tags align with title and meta description keywords for strong SERP query relevance
 - [ ] **Canonical URL**: Blank before first publish, or valid `https://dev.to/ganesh_rajendran_art/...` (or owned domain)
 
 ---
@@ -63,6 +65,7 @@ devto_id:
 ```
 
 - [ ] **Prior part revisions**: Update the TOC blockquote in all earlier posts of the series and re-publish them with `bb publish_devto.bb <file.md> --id <devto_id>`
+- [ ] **Cross-linking previous blogs**: Any reference or mention of your previous blog posts (by title, series name, or conceptual continuation) in the prose must be hyperlinked directly to its published dev.to canonical URL (e.g. `[*Beyond the Rewrite Trap*](https://dev.to/ganesh_rajendran_art/...)`), never left as unlinked plain text or a local file link
 - [ ] **Internal links**: Link naturally to relevant prior posts in the body where concepts build on earlier work
 
 ---
