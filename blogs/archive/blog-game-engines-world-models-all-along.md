@@ -1,9 +1,12 @@
 ---
 title: "Game Engines Were World Models All Along"
-published: false
+published: true
 description: "AI spent 80 years trying to understand reality. The answer was sitting in every game engine ever written — state, physics, causality, action."
 tags: ai, machinelearning, gamedev, deeplearning
 series: The World Model Series
+cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/5hd55tccyzdwg24vqx9q.png
+canonical_url: "https://dev.to/ganesh_rajendran_art/game-engines-were-world-models-all-along-1cm4"
+devto_id: 5114913
 ---
 
 > *This is **Part 3** of a 3-part series on **The World Model Series**:*
