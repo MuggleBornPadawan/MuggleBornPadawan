@@ -1,8 +1,8 @@
 ---
-title: "The Economics of Memory Safety: Inaction vs. The Cost of Rewriting"
+title: "The Economics of Memory Safety: Cost of Rewriting"
 published: true
 description: "The $ trillion cost of 70% memory CVEs: Compare Greenfield Rust, MTE, FFI & hardened runtimes for CISA compliance. TCO decision framework."
-tags: cpp, rust, architecture, security
+tags: rust, architecture, security
 series: The Economics of Memory Safety
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/fre5ovi4qptf8rboxc9p.png
 canonical_url: https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in
@@ -47,7 +47,7 @@ The argument that disciplined engineering teams can eliminate memory corruption 
 
 ### The Real Cost Drivers of an Unsafe Codebase
 
-```
+```text
 +-------------------------------------------------------------+
 |               Total Cost of Vulnerability Lifecycle         |
 +-------------------------------------------------------------+
@@ -74,7 +74,7 @@ A frequent objection raised in architectural reviews is: *"Modern C++ (C++11/17/
 
 While modern abstractions improve expressive safety, they fail to deliver structural safety.
 
-```
+```text
        +--------------------------------------------------------+
        |   Modern C++ Abstraction  | Residual Risk In Practice  |
        |---------------------------+----------------------------|
@@ -203,7 +203,7 @@ Cumulative Cost Over 5 Years ($)
 
 For engineering leaders managing substantial C++ assets, the following phased approach provides maximum risk reduction with predictable expenditure:
 
-```
+```text
 +-----------------------------------------------------------------------------------+
 |  PHASE 1: Immediate Triage (Months 0 - 3)                                         |
 |  * Turn on libc++ / libstdc++ hardened runtime assertions in production.          |
@@ -281,7 +281,7 @@ The winning architectural strategy is **disciplined containment**: freeze legacy
 
 ---
 
-## Appendix C: Primary Regulatory & Industry Citations
+## References
 
 1. **CISA, FBI, NSA, and International Partners (2023):** *The Case for Memory Safe Roadmaps* — Directives for technology manufacturers to eliminate memory safety vulnerabilities.
 2. **White House Office of the National Cyber Director (ONCD) (2024):** *Back to the Building Blocks: A Path Toward Secure and Measurable Software* — Imperatives for adopting memory-safe programming languages in critical infrastructure.

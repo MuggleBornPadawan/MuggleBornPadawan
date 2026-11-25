@@ -1,5 +1,5 @@
 ---
-title: "Breaking the 2D Plane: OpenGL, Shaders, and the 3D Graphics Pipeline in Clojure & Quil"
+title: "Breaking the 2D Plane: 3D Graphics in Clojure & Quil"
 published: true
 description: "Clojure + Quil to OpenGL: build 3D procedural terrain with GLSL shaders, JOGL & GPU pipelines. From 2D Perlin noise to hardware-accelerated meshes."
 tags: clojure, creativecoding, opengl, shaders
@@ -44,7 +44,7 @@ When you write Clojure code with [Quil](http://quil.info/) (a Clojure wrapper ar
 
 The pipeline crosses four distinct architectural boundaries:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │ 1. Application Layer (Clojure / Quil)                       │
 │    • Pure immutable simulation state (m/fun-mode)           │
@@ -88,7 +88,7 @@ In 2D canvas drawing, the coordinate system is trivial: origin `(0, 0)` sits at 
 
 In 3D, space is governed by linear algebra and homogeneous coordinates. When switching to `:p3d`, Quil introduces the Z-axis and a 3-stage coordinate transformation pipeline:
 
-```
+```text
 Local Mesh Coordinates [X, Y, Z, 1.0]
               │
               ▼   (Model Matrix: position, rotation, scale)
@@ -203,7 +203,7 @@ Every interior vertex is specified and transformed up to 6 times.
 
 Instead, we use **Triangle Strips** (`:triangle-strip`). In a triangle strip, every vertex after the first two creates a new triangle sharing the previous edge:
 
-```
+```text
 Row Z:   v0 ───── v2 ───── v4 ───── v6
          │ ╲      │ ╲      │ ╲      │
          │   ╲    │   ╲    │   ╲    │
@@ -258,7 +258,7 @@ You write custom **GLSL (OpenGL Shading Language)** programs.
 
 In Quil `:p3d`, a shader is split into two stages compiled and executed entirely on the GPU:
 
-```
+```text
 Clojure / Host Memory
    │
    ├── Attributes:  position, normal, color (per vertex)
@@ -383,7 +383,7 @@ Through the **`m/fun-mode`** middleware.
 
 In `fun-mode`, the sketch lifecycle is divided into two strictly isolated phases:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │ Pure Functional Domain (No Side Effects)                    │
 │                                                             │
@@ -517,7 +517,7 @@ Code is not paint, and monitors are not canvases. But when functional abstractio
 
 ---
 
-### References & Further Reading
+## References
 
 - [Processing Foundation Documentation](https://processing.org) — Official API specifications for `PApplet` and `PShader`.
 - [Quil API Documentation](http://quil.info/) — Functional Clojure wrappers for Processing and JOGL.

@@ -1,8 +1,8 @@
 ---
-title: "The Carmack Pipeline: How DOOM's 1993 Hacks Predict Modern LLM Architecture"
+title: "The Carmack Pipeline: How DOOM Hacks Predict LLM Architecture"
 published: true
 description: "DOOM 1993 → LLM 2026: How Carmack's BSP trees, dirty rectangles & WAD caching predict modern LLM inference, KV-cache & serving hacks."
-tags: ai, llm, architecture, retrocomputing
+tags: ai, llm, architecture
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/7i1rwkjt05q1m2kkgu6e.png
 canonical_url: https://dev.to/ganesh_rajendran_art/the-carmack-pipeline-how-dooms-1993-hacks-predict-modern-llm-architecture-392d
 devto_id: 4983387
@@ -196,7 +196,7 @@ The breakthrough of [FlashAttention (Dao et al., 2022)](https://arxiv.org/abs/22
 
 Standard attention materializes an intermediate N × N attention score matrix in high-latency GPU High Bandwidth Memory (HBM). For long contexts, transferring this matrix back and forth across the bus dominates execution time.
 
-```
+```text
 Standard Attention:
   Read Q, K from HBM -> Compute QK^T -> Write S (N x N) to HBM
   Read S from HBM -> Compute Softmax -> Write P (N x N) to HBM

@@ -2,7 +2,7 @@
 title: "The Invisible Brush: Generative Art and the Algorithms That Paint"
 published: true
 description: "Generative art with Clojure & Quil: master Perlin noise, L-systems, CA & particle systems. Build an infinite 2D terrain. Full code + visuals."
-tags: clojure, creativecoding, gamedev, programming
+tags: clojure, creativecoding, generativeart, programming
 series: The Invisible Brush
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/suz38jgtdxazc4aljs2l.png
 canonical_url: https://dev.to/ganesh_rajendran_art/the-invisible-brush-generative-art-and-the-algorithms-that-paint-32ig
@@ -32,7 +32,7 @@ This post is for developers who can read code but have never thought of algorith
 
 At its core, PCG is disarmingly simple:
 
-```
+```text
 seed → algorithm → content
 ```
 
@@ -64,7 +64,7 @@ Minecraft's terrain is Perlin noise, layered. The rolling hills, the sudden clif
 
 Invented by biologist Aristid Lindenmayer in 1968 to model plant growth, L-Systems are rewriting rules applied repeatedly to a string of symbols. Start with `X`. Apply rules. `X` becomes `F+[[X]-X]-F[-FX]+X`. Apply again. The string grows. Eventually you interpret each character as a drawing command — move forward, turn left, push position onto a stack — and you have a tree.
 
-```
+```text
 F → move forward
 + → turn right
 - → turn left
@@ -106,7 +106,7 @@ Conway's Game of Life is the canonical example. Each cell is alive or dead. Each
 
 These techniques rarely live alone. In practice, generative systems *compose* them into layers, each one consuming the output of the last:
 
-```
+```text
 Raw noise
   → Terrain shape
     → Biome placement
@@ -120,7 +120,7 @@ The bottom of the stack is mathematical. The top is semantic. PCG is the act of 
 
 In generative art, this stack might look different:
 
-```
+```text
 Noise field
   → Form silhouettes
     → Colour palette selection
@@ -310,7 +310,7 @@ The brush was always invisible. It was always mathematics. We just made it legib
 
 ---
 
-## Resources
+## References
 
 - [Quil Documentation](http://quil.info/)
 - [The Book of Shaders](https://thebookofshaders.com/) — noise functions explained visually (GLSL, but the math translates)

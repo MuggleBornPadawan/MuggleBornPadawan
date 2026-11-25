@@ -39,7 +39,7 @@ There is a simpler architecture. It trades approximate semantic retrieval for a 
 
 The reference architecture from the AI Second Brain literature decomposes knowledge systems into four layers: Ingestion, Indexing & Memory, Reasoning & Synthesis, and Action. The key insight is that **every one of these layers can be satisfied by tools you already have on your machine.**
 
-```
+```text
 ┌────────────────────────────────────────────────────────┐
 │                    4. Action Layer                     │
 │    Babashka Cron • Git Commits • Ollama Tool Calls     │
@@ -87,7 +87,7 @@ This is not anti-technology minimalism. It is a deliberate systems choice with c
 
 The vault structure follows a simple convention:
 
-```
+```text
 wiki/
 ├── daily/
 │   ├── 2026-11-18.md      # Daily capture log
@@ -383,7 +383,7 @@ Schedule the maintenance pass with `launchd` (primary on macOS), `cron` as fallb
 ```bash
 # cron fallback — crontab -e
 # Run the Active Maintainer every day at 06:30
-30 6 * * * /opt/homebrew/bin/bb /Users/you/repo/wiki/maintain.bb /Users/you/repo/wiki >> /tmp/wiki-maintain.log 2>&1
+30 6 * * * /opt/homebrew/bin/bb /path/to/wiki/maintain.bb /path/to/wiki >> /tmp/wiki-maintain.log 2>&1
 ```
 
 On Mac Studio prefer `launchd` — `~/Library/LaunchAgents/wiki.maintain.plist`:
@@ -396,8 +396,8 @@ On Mac Studio prefer `launchd` — `~/Library/LaunchAgents/wiki.maintain.plist`:
   <key>ProgramArguments</key>
   <array>
     <string>/opt/homebrew/bin/bb</string>
-    <string>/Users/you/repo/wiki/maintain.bb</string>
-    <string>/Users/you/repo/wiki</string>
+    <string>/path/to/wiki/maintain.bb</string>
+    <string>/path/to/wiki</string>
   </array>
   <key>StartCalendarInterval</key>
   <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>30</integer></dict>
@@ -540,6 +540,12 @@ The heavy vector database stack optimizes for retrieval precision at a scale no 
 The Mac Studio M5 Ultra with 96–512 GB unified memory closes the remaining quality gap against cloud APIs. You have more inference capacity on your desk than most cloud functions run on. Use it privately, and own the output.
 
 **Start with what you can trust. Run what you can inspect. Own what you think.**
+
+## References
+
+- Babashka Documentation — [Babashka Scripting Guide](https://book.babashka.org/)
+- RiPGrep — [Fast Line-Oriented Search Tool](https://github.com/BurntSushi/ripgrep)
+- Ollama — [Local LLM Runner](https://ollama.com/)
 
 ---
 

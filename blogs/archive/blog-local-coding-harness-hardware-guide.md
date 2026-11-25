@@ -1,11 +1,12 @@
 ---
-title: "The 32k Cliff: Choosing the Right Hardware for Your Local AI Coding Harness"
+title: "The 32k Cliff: Hardware for Local AI Coding"
 published: true
 description: "32K context cliff explained: why frontier LLMs degrade & which hardware survives — Mac Studio M5 Ultra vs RTX Pro 6000 vs DGX Spark compared."
 tags: ai, machinelearning, hardware, devops
+series:
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/76092nst6512jpob0kr4.png
-devto_id: 4877074
 canonical_url: https://dev.to/ganesh_rajendran_art/the-32k-cliff-choosing-the-right-hardware-for-your-local-ai-coding-harness-4hoa
+devto_id: 4877074
 ---
 
 Here's a fact that should change how you spend your hardware budget:
@@ -363,7 +364,7 @@ Why:
 
 ## Part VII: The Decision Tree
 
-```
+```text
 START: What is your primary use case?
 │
 ├─ Pure local inference (running models, no training)

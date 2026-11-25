@@ -2,11 +2,11 @@
 title: "The World Model Trilemma: Pixels, Splats, and Symbolic Physics"
 published: true
 description: "World models compared: Google Genie 4 vs Runway, Marble & HY-World. Pixels, 3D Gaussian splats or symbolic physics — which wins?"
-tags: ai, machinelearning, robotics, architecture
+tags: ai, worldmodels, robotics, architecture
 series: The World Model Series
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/cjoc58m15rbfywc4tq1g.png
-devto_id: 4993516
 canonical_url: https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci
+devto_id: 4993516
 ---
 
 > *This is **Part 2** of a 3-part series on **The World Model Series**:*

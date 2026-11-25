@@ -1,5 +1,5 @@
 ---
-title: "Who Made This? The Author Shift and the Philosophy of Generative Art"
+title: "Who Made This? The Philosophy of Generative Art"
 published: true
 description: "Who owns generative art? Explore authorship, control & 60 years of artists who coded possibility spaces — from Vera Molnár to Clojure creative coding."
 tags: generativeart, creativecoding, clojure, philosophy
@@ -34,7 +34,7 @@ Computers just asked it again, with new sharpness.
 
 Traditional art has a simple topology:
 
-```
+```text
 Artist → Output
 ```
 
@@ -42,7 +42,7 @@ The painter's hand moves. The mark appears. The relationship is direct, legible,
 
 Generative art breaks this. Its topology is different:
 
-```
+```text
 Artist → System → Output
 ```
 
@@ -62,7 +62,7 @@ She was, without the vocabulary, describing the spectrum of control.
 
 Here is the central concept. Everything else hangs off it.
 
-```
+```text
 Full Chaos ←————————————————————————→ Full Control
   white noise         flow fields        LOGO turtle
   (not art)            Fidenza            (rigid)
@@ -248,7 +248,7 @@ Maybe that is the generative artist's actual job: design a system capable of pro
 
 ---
 
-## Going Further
+## References
 
 - [Quil Documentation](http://quil.info/) — the Clojure/Processing wrapper used in this series
 - Tyler Hobbs — *[The Aesthetics of Generative Art](https://tylerxhobbs.com/essays/2021/the-aesthetics-of-generative-art)* — the best contemporary essay on the craft

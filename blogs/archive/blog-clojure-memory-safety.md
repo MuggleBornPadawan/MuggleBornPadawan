@@ -1,8 +1,8 @@
 ---
-title: "Beyond the Rewrite Trap: High-Velocity Memory Safety with Clojure and Tiered Systems"
+title: "Beyond the Rewrite Trap: Memory Safety with Clojure"
 published: true
 description: "Skip the 5-year Rust rewrite: tiered Clojure + Rust/C++ architecture for 100% memory safety without feature freeze. Code & cost analysis."
-tags: clojure, rust, cpp, architecture
+tags: clojure, rust, performance, architecture
 series: The Economics of Memory Safety
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/fre5ovi4qptf8rboxc9p.png
 canonical_url: https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b

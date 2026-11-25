@@ -1,5 +1,5 @@
 ---
-title: "Proving What AI Generates: Running Formally Verified Lean 4 Inside Clojure Services"
+title: "Proving What AI Generates: Lean 4 Inside Clojure"
 published: true
 description: "Stop AI hallucinating finances: run Lean 4 theorem provers inside Clojure via Ansatz Lean/JVM bridge. Verified code for autonomous agents."
 tags: clojure, java, ai, lean4
@@ -38,7 +38,7 @@ This unlocks an autonomous ground-truth loop: **agents synthesize formally verif
 
 ## The Architecture: Build-Time Proofs, Run-Time JVM
 
-```
+```text
 ┌────────────────────────────────────────────────────────┐
 │                   BUILD & PROOF STAGE                  │
 │               (Linux x86-64 / CI / Docker)             │
@@ -111,7 +111,7 @@ theorem transfer_conserves_value (fromBal toBal amount : Nat) :
 In Lean, natural numbers (`Nat`) truncate subtraction at zero (`3 - 5 = 0`). Because of this, `fromBal - amount` breaks conservation of value whenever `amount > fromBal`!
 
 The Lean compiler rejects the code:
-```
+```text
 error: unsolved goals
 case h
 fromBal toBal amount : Nat
@@ -313,7 +313,7 @@ The future of autonomous systems isn't just agents that code faster—it's agent
 
 ---
 
-## Further Reading
+## References
 
 - **Primary Source:** [Simmis: Lean on the JVM: proved functions for Java and Clojure](https://simm.is/blog/lean-on-the-jvm/)
 - **SDK Artifact:** [`org.replikativ/ansatz-lean-jvm` on Clojars](https://clojars.org/org.replikativ/ansatz-lean-jvm)

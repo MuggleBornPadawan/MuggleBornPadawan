@@ -1,12 +1,12 @@
 ---
-title: "Why World Models Had to Exist: 80 Years of AI Trying to Understand Reality"
+title: "Why World Models Had to Exist: 80 Years of AI"
 published: true
-devto_id: 5101895
-canonical_url: https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk
 description: "Every AI paradigm since 1943 has failed in the same direction — no model of reality. Here's how eight decades of failure led inevitably to World Models."
-tags: ai, machinelearning, deeplearning, robotics
+tags: ai, worldmodels, deeplearning, robotics
 series: The World Model Series
 cover_image: https://dev-to-uploads.s3.us-east-2.amazonaws.com/uploads/articles/oziiwmgu7t9ktsg3p0u9.png
+canonical_url: https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk
+devto_id: 5101895
 ---
 
 > *This is **Part 1** of a 3-part series on **The World Model Series**:*

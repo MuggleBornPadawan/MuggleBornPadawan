@@ -1,5 +1,5 @@
 ---
-title: "The Full-Stack Case for Clojure: AI, Concurrency, and Regulatory Reality"
+title: "The Full-Stack Case for Clojure: AI & Concurrency"
 published: true
 description: "Why Clojure beats the stack for AI era: concurrency, data-focus & regulatory-ready design. Full-stack case study for 2024-2026 systems."
 tags: clojure, architecture, ai, concurrency
