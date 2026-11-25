@@ -10,8 +10,8 @@ devto_id: 5114913
 ---
 
 > *This is **Part 3** of a 3-part series on **The World Model Series**:*
-> 1. [Part 1: Why World Models Had to Exist — 80 Years of AI Trying to Understand Reality](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
-> 2. [Part 2: The World Model Trilemma — Pixels, Splats, and Symbolic Physics](https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci)
+> 1. [Part 1: Why World Models Had to Exist: 80 Years of AI](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
+> 2. [Part 2: The World Model Trilemma: Pixels, Splats, and Symbolic Physics](https://dev.to/ganesh_rajendran_art/the-world-model-trilemma-pixels-splats-and-symbolic-physics-59ci)
 > 3. **Part 3: Game Engines Were World Models All Along** (this article)
 >
 > *This is the who built it: game developers as the unwitting architects of Era 7.*

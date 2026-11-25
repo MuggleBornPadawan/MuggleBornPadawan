@@ -10,9 +10,9 @@ devto_id: 5035755
 ---
 
 > *This is **Part 1** of a 3-part series on **The Invisible Brush: Generative Art & Creative Computation**:*
-> 1. **Part 1: The Invisible Brush — Generative Art and the Algorithms That Paint** (this article)
-> 2. [Part 2: Who Made This? The Author Shift and the Philosophy of Generative Art](https://dev.to/ganesh_rajendran_art/who-made-this-the-author-shift-and-the-philosophy-of-generative-art-o3e)
-> 3. [Part 3: Breaking the 2D Plane — OpenGL, Shaders, and the 3D Graphics Pipeline in Clojure & Quil](https://dev.to/ganesh_rajendran_art/breaking-the-2d-plane-opengl-shaders-and-the-3d-graphics-pipeline-in-clojure-quil-3663)
+> 1. **Part 1: The Invisible Brush: Generative Art and the Algorithms That Paint** (this article)
+> 2. [Part 2: Who Made This? The Philosophy of Generative Art](https://dev.to/ganesh_rajendran_art/who-made-this-the-author-shift-and-the-philosophy-of-generative-art-o3e)
+> 3. [Part 3: Breaking the 2D Plane: 3D Graphics in Clojure & Quil](https://dev.to/ganesh_rajendran_art/breaking-the-2d-plane-opengl-shaders-and-the-3d-graphics-pipeline-in-clojure-quil-3663)
 
 ---
 

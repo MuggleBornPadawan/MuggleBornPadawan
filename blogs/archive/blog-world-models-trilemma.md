@@ -10,8 +10,8 @@ devto_id: 4993516
 ---
 
 > *This is **Part 2** of a 3-part series on **The World Model Series**:*
-> 1. [Part 1: Why World Models Had to Exist — 80 Years of AI Trying to Understand Reality](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
-> 2. **Part 2: The World Model Trilemma — Pixels, Splats, and Symbolic Physics** (this article)
+> 1. [Part 1: Why World Models Had to Exist: 80 Years of AI](https://dev.to/ganesh_rajendran_art/why-world-models-had-to-exist-80-years-of-ai-trying-to-understand-reality-42nk)
+> 2. **Part 2: The World Model Trilemma: Pixels, Splats, and Symbolic Physics** (this article)
 > 3. [Part 3: Game Engines Were World Models All Along](https://dev.to/ganesh_rajendran_art/game-engines-were-world-models-all-along-1cm4)
 >
 > *This is the *what*: pixels vs splats vs symbolic physics.*

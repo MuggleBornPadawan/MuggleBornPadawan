@@ -10,9 +10,9 @@ devto_id: 5029937
 ---
 
 > *This is **Part 3** of a 4-part series on **The Economics of Memory Safety**:*
-> 1. [Part 1: The Economics of Memory Safety — Inaction vs. The Cost of Rewriting](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in)
-> 2. [Part 2: Beyond the Rewrite Trap — High-Velocity Memory Safety with Clojure and Tiered Systems](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b)
-> 3. **Part 3: The Full-Stack Case for Clojure — AI, Concurrency, and Regulatory Reality** (this article)
+> 1. [Part 1: The Economics of Memory Safety: Cost of Rewriting](https://dev.to/ganesh_rajendran_art/the-economics-of-memory-safety-inaction-vs-the-cost-of-rewriting-43in)
+> 2. [Part 2: Beyond the Rewrite Trap: Memory Safety with Clojure](https://dev.to/ganesh_rajendran_art/beyond-the-rewrite-trap-high-velocity-memory-safety-with-clojure-and-tiered-systems-2m9b)
+> 3. **Part 3: The Full-Stack Case for Clojure: AI & Concurrency** (this article)
 > 4. [Part 4: Complexity-Aware TDD in Clojure — From O(n^2) to O(n log k)](https://dev.to/ganesh_rajendran_art/complexity-aware-tdd-in-clojure-from-on2-to-on-log-k-56mo)
 
 ---
