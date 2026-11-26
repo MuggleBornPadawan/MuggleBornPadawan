@@ -252,6 +252,7 @@ John Ruskin’s views on Gothic architecture are foundational to the Arts and Cr
 - **The Pointed Arch:** Not just a structural trick for height, but a symbol of spiritual aspiration and organic growth.
 ** math - the palindrome - 10 most important lessons
 - yt channel video - https://www.youtube.com/watch?v=dxWeZMszSGo
+- the starting point of machine learning and mathematics library - https://thepalindrome.org/p/the-palindrome-library?
 - graph theory for visual learners - https://open.substack.com/pub/thepalindrome/p/graph-theory-for-visual-learners? 
 *** 10 most important lessons
 - break the rules - 

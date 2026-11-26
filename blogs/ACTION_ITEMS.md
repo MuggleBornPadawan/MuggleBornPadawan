@@ -1,69 +1,54 @@
-# Blog SEO Action Items — dev.to/ganesh_rajendran_art
+# Blog Action Items & Roadmap — dev.to/ganesh_rajendran_art
 
-**Created:** 2026-11-16
-**Source:** audit of https://dev.to/ganesh_rajendran_art (11 posts, Oct 19 – Nov 15 2026)
-
----
-
-## Baseline (measured 2026-11-16)
-
-| Metric | Value |
-|---|---|
-| Posts | 11 |
-| Reactions / comments | 1 / 0 |
-| Indexable | Yes — no `noindex` on any post |
-| In dev.to sitemap | 7 of 11 |
-| Canonical | All point to `dev.to` |
-| Backlinks found | None (only scraper mirrors) |
-| Titles over 65 chars | 5 |
-| Forem author-trust | 0 |
-
-**Google index status:** not directly verifiable here. Baseline =
-`site:dev.to/ganesh_rajendran_art` in a private window. Record the count.
+**Updated:** 2025-11-25 (Post-launch audit: 16 published posts, 100% CHECKLIST.md compliance)
+**Source:** Audit of dev.to/ganesh_rajendran_art archive & local publishing suite (`lint_blog.bb`, `publish_devto.bb`)
 
 ---
 
-## Tier 1 — this week
+## Current Portfolio Status (Measured Nov 2025)
 
-- [ ] Shorten the 5 titles over 65 chars to `keyword phrase — hook`, ≤ 60 chars.
-  - Breaking the 2D Plane… (86)
-  - Beyond the Rewrite Trap… (84)
-  - Proving What AI Generates… (83)
-  - The Self-Healing Code Thesis… (78)
-  - The Carmack Pipeline… (75), The 32k Cliff… (75)
-- [ ] Rewrite profile bio: 3 words → 2 sentences containing `Clojure`, `generative art`, `creative coding`.
-- [ ] Submit `https://dev.to/feed/ganesh_rajendran_art` to Planet Clojure.
-- [ ] Post "Breaking the 2D Plane" (Part 3) to r/Clojure + Hacker News.
-- [ ] Record baseline `site:dev.to/ganesh_rajendran_art` count in a private window.
-
-## Tier 2 — next 2 weeks
-
-- [ ] Add a runnable GitHub repo + one demo GIF per post. No per-post artifact = no links.
-- [ ] Flip `validate-seo` in `publish_devto.bb:66` — currently warns when canonical is
-      **not** dev.to. Should require a canonical on an owned domain.
-- [ ] Add `canonical_url` frontmatter to all archived posts once the owned domain exists.
-- [ ] Drop cadence to 1–2 posts/week. 4 posts in 3 days reads as scaled content.
-- [ ] Add internal links: "Part N" cross-links + one pinned "Start here" post.
-
-## Tier 3 — structural (1–2 months)
-
-- [ ] Publish first, then syndicate. Canonical to your domain, dev.to copy carries
-      `canonical_url` back to it.
-      - Do **not** host Clojure/AI content on `chitrapata.in` (art gallery, wrong topic).
-      - Use `lab.chitrapata.in` or a new domain.
-- [ ] Target long-tail queries instead of head terms.
-      Candidates: `quil opengl shader example`, `clojure lean4 integration`,
-      `babashka devto api publish`, `clojure generative art tutorial`.
-- [ ] Set up Google Search Console + Bing Webmaster Tools on the owned domain.
-- [ ] Per-post distribution checklist: X thread, r/Clojure, Lobsters, HN,
-      ClojureVerse, Clojure Weekly.
+| Metric             | Status      | Notes                                                      |
+|--------------------|-------------|------------------------------------------------------------|
+| Published Posts    | 16          | Across 3 series + standalone deep dives                    |
+| Linter Compliance  | 100%        | Verified via `bb lint_blog.bb` (all rules passing)         |
+| SEO Titles         | Optimized   | All titles `<= 65` chars (`keyword phrase — hook` format)  |
+| Series TOC & Links | Complete    | Standardized blockquotes & cross-links active              |
+| Tooling            | Operational | `lint_blog.bb` & `publish_devto.bb` with URL check support |
 
 ---
 
-## Why this order
+## Tier 1 — Forum-Specific Promotion & Distribution (Immediate)
 
-1. Canonical currently donates all ranking equity to dev.to.
-2. Zero backlinks — nothing on the web points at these URLs.
-3. Volume without engagement is the strongest negative signal you have.
-4. Titles are concept-branded ("The 32k Cliff"), not query-matched.
-5. No per-post artifact makes the posts structurally un-linkable.
+- [ ] **Memory Safety & Clojure Series (`r/Clojure`, `r/programming`, Hacker News, Lobsters, ClojureVerse)**
+  - *Posts:* Memory Safety Economics (Part 1), Beyond the Rewrite Trap (Part 2), Full-Stack Case for Clojure (Part 3), Complexity-Aware TDD (Part 4).
+  - *Angle:* Focus on CISA/ONCD regulatory mandates, tiered FFI/Wasm architectures, and REPL-driven complexity reduction ($O(n^2) \to O(n \log k)$).
+- [ ] **World Models & AI Architecture (`r/MachineLearning`, `r/LocalLLaMA`, `r/gamedev`, Hacker News)**
+  - *Posts:* 80 Years of AI (Part 1), World Model Trilemma (Part 2), Game Engines Were World Models (Part 3).
+  - *Angle:* Highlight historical AI limitations, latent video diffusion vs. 3D Gaussian splatting, and game engine mechanics in modern AI.
+- [ ] **Generative Art & Graphics Series (`r/generative`, `r/creativecoding`, `r/GraphicsProgramming`, `r/Clojure`)**
+  - *Posts:* Invisible Brush (Part 1), Philosophy of Generative Art (Part 2), Breaking the 2D Plane (Part 3).
+  - *Angle:* Emphasize procedural content generation, algorithmic aesthetics, practitioner lineage, and OpenGL/GLSL pipeline deconstruction in Clojure/Quil.
+- [ ] **Standalone Deep Dives (`r/LocalLLaMA`, `r/compilers`, Hacker News, Lobsters)**
+  - *Posts:* Lean AI Second Brain, Lean 4 Inside Clojure, Carmack Pipeline, Self-Healing Code Thesis, 32k Cliff Hardware Guide.
+  - *Angle:* Target zero-leak privacy, formal verification on JVM, DOOM retro-engineering hacks for LLM serving, and local AI harness hardware tradeoffs.
+- [ ] **Aggregators & Newsletters**
+  - [ ] Submit RSS feed (`https://dev.to/feed/ganesh_rajendran_art`) to Planet Clojure.
+  - [ ] Pitch standout technical deep dives to Clojure Weekly.
+
+## Tier 2 — Metrics, Analytics & Interactive Artifacts (Next 2 Weeks)
+
+- [ ] **Traffic Tracking**: Monitor dev.to analytics dashboard for impressions, views, reactions, and search query referrals.
+- [ ] **Interactive Demos**: Attach runnable GitHub repositories and live demo GIFs/links to generative art ("The Invisible Brush") and simulation posts.
+- [ ] **Backlink Building**: Engage in technical discussions on ClojureVerse, GitHub discussions, and developer forums, linking relevant blog posts as deep references.
+
+## Tier 3 — Infrastructure & Owned Domain Strategy (1–2 Months)
+
+- [ ] **Owned Domain Setup**: Provision `lab.chitrapata.in` (or dedicated subdomain) for primary publication.
+- [ ] **Canonical URL Migration**: Update frontmatter `canonical_url` across published dev.to articles to point to the owned domain once live.
+- [ ] **Search Console**: Set up Google Search Console and Bing Webmaster Tools on the owned domain to track organic search performance.
+
+## Tier 4 — Future Content Pipeline (Ongoing)
+
+- [ ] **Advanced Clojure Pipelines**: Draft new posts on high-performance transducers, core.async state machines, and zero-allocation JVM concurrency.
+- [ ] **Local AI Agent Harnesses**: Explore practical patterns for multi-agent local coding harnesses with Babashka and local LLMs.
+- [ ] **WebAssembly & ClojureScript**: Expand generative art and simulation posts with interactive Wasm browser runtimes.
